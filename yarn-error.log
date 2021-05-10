@@ -1,0 +1,45 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add ts-node
+
+PATH: 
+  D:\Programs\cmder\bin;D:\Programs\cmder\vendor\bin;D:\Programs\cmder\vendor\conemu-maximus5\ConEmu\Scripts;D:\Programs\cmder\vendor\conemu-maximus5;D:\Programs\cmder\vendor\conemu-maximus5\ConEmu;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Git\cmd;C:\Users\38169\AppData\Local\Android\Sdk\platform-tools;C:\Users\38169\AppData\Local\Android\Sdk;C:\Program Files\Java\jdk1.8.0_221\bin;C:\Program Files\SafeNet\Authentication\SAC\x64;C:\Program Files\SafeNet\Authentication\SAC\x32;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Users\38169\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\IntelliJ IDEA 2019.2.3\bin;C:\Users\38169\AppData\Local\GitHubDesktop\bin;C:\Users\38169\AppData\Roaming\npm;C:\Users\38169\AppData\Local\Yarn\bin;C:\Users\38169\AppData\Local\nvs\;C:\Users\38169\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2019.1.2\bin;C:\Users\38169\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;D:\Programs\cmder
+
+Yarn version: 
+  1.22.4
+
+Node version: 
+  10.19.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.oykos-development.npme.io registry.oykos-development.npme.io:443
+      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:56:26)
+
+npm manifest: 
+  {
+    "name": "devkit",
+    "version": "0.0.1",
+    "description": "Devkit package for Oykos Development ReactJS projects written in TypeScript.",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/oykos-development-hub/devkit.git"
+    },
+    "author": "Oykos Development",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/oykos-development-hub/devkit/issues"
+    },
+    "homepage": "https://github.com/oykos-development-hub/devkit#readme"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

@@ -1,0 +1,28 @@
+{
+  "name": "devkit",
+  "version": "0.0.1",
+  "description": "Devkit package for Oykos Development ReactJS projects written in TypeScript.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oykos-development-hub/devkit.git"
+  },
+  "author": "Oykos Development",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oykos-development-hub/devkit/issues"
+  },
+  "homepage": "https://github.com/oykos-development-hub/devkit#readme",
+  "dependencies": {
+    "react": "^17.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.5"
+  }
+}
