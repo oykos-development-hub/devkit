@@ -202,9 +202,10 @@ export const ItemDownloadIcon = ({ className, width, height }: IIcon) => {
     );
 };
 
-export const FileManagerIcons = {
-    getIcon: (name, { className, width, height }: IIcon) => {
+export const FileManagerIcons:any = {
+    getIcon: (name:string, { className, width, height }: IIcon) : object => {
         const func = FileManagerIcons[name] || FileManagerIcons["generic"];
+
         return func({ className, width, height });
     },
     generic: ({ className, width, height }: IIcon) => {
@@ -236,7 +237,7 @@ export const FileManagerIcons = {
             </svg>
         );
     },
-    folder: ({ className, width, height }: IIcon) => {
+    folder: ({ className, width, height }: IIcon) : object => {
         return (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -255,7 +256,7 @@ export const FileManagerIcons = {
             </svg>
         );
     },
-    png: ({ className, width, height }: IIcon) => {
+    png: ({ className, width, height }: IIcon) : object => {
         return (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -289,7 +290,7 @@ export const FileManagerIcons = {
             </svg>
         );
     },
-    jpg: ({ className, width, height }: IIcon) => {
+    jpg: ({ className, width, height }: IIcon) : object  => {
         return (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -323,10 +324,10 @@ export const FileManagerIcons = {
             </svg>
         );
     },
-    jpeg: ({ className, width, height }: IIcon) => {
+    jpeg: ({ className, width, height }: IIcon) : object  => {
         return FileManagerIcons.jpg({ className, width, height });
     },
-    doc: ({ className, width, height }: IIcon) => {
+    doc: ({ className, width, height }: IIcon) : object  => {
         return (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -359,10 +360,10 @@ export const FileManagerIcons = {
             </svg>
         );
     },
-    docx: ({ className, width, height }: IIcon) => {
+    docx: ({ className, width, height }: IIcon) : object  => {
         return FileManagerIcons.doc({ className, width, height });
     },
-    zip: ({ className, width, height }: IIcon) => {
+    zip: ({ className, width, height }: IIcon) : object  => {
         return (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -395,10 +396,10 @@ export const FileManagerIcons = {
             </svg>
         );
     },
-    rar: ({ className, width, height }: IIcon) => {
+    rar: ({ className, width, height }: IIcon) : object  => {
         return FileManagerIcons.zip({ className, width, height });
     },
-    txt: ({ className, width, height }: IIcon) => {
+    txt: ({ className, width, height }: IIcon) : object  => {
         return (
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -431,7 +432,7 @@ export const FileManagerIcons = {
             </svg>
         );
     },
-    pdf: ({ className, width, height }: IIcon) => {
+    pdf: ({ className, width, height }: IIcon) : object  => {
         return (
             <svg
                 xmlns="http://www.w3.org/2000/svg"

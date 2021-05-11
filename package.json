@@ -1,10 +1,16 @@
 {
-  "name": "devkit",
-  "version": "0.0.1",
+  "name": "@oykos-development/devkit",
+  "version": "1.0.0",
   "description": "Devkit package for Oykos Development ReactJS projects written in TypeScript.",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.es.js",
+  "jsnext:main": "./dist/index.es.js",
+  "files": [
+    "./dist"
+  ],
   "scripts": {
-    "build": "tsc",
+    "transpile": "./node_modules/.bin/babel src --out-file index.js",
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,11 +24,30 @@
   },
   "homepage": "https://github.com/oykos-development-hub/devkit#readme",
   "dependencies": {
-    "react": "^17.0.2",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   },
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
   "devDependencies": {
-    "@types/react": "^17.0.5"
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
+    "@babel/preset-react": "^7.13.13",
+    "@types/node": "^15.0.2",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.4",
+    "@types/react-test-renderer": "^17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts-ts": "^3.1.0",
+    "react-test-renderer": "^17.0.2",
+    "rollup": "^2.47.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-typescript2": "^0.30.0"
   }
 }
