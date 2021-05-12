@@ -1,10 +1,13 @@
 {
   "name": "@oykos-development/devkit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Devkit package for Oykos Development ReactJS projects written in TypeScript.",
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
   "jsnext:main": "./dist/index.es.js",
+  "files": [
+    "./dist"
+  ],
   "scripts": {
     "transpile": "./node_modules/.bin/babel src --out-file index.js",
     "build": "rollup -c",
@@ -21,6 +24,9 @@
   },
   "homepage": "https://github.com/oykos-development-hub/devkit#readme",
   "dependencies": {
+    "@types/react-select": "^4.0.15",
+    "firebase": "8.2.1",
+    "react-select": "^4.3.1",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   },
