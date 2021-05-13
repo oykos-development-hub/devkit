@@ -85,9 +85,11 @@ const _cdd: React.FC<ICustomDropdown> = ({
                     options={data}
                     noDataRenderer={"Nema rezultata"}
                     onChange={(e:any) => {
+                        const value = !multiple && e && e.value ? e.value : e;
+
                         handleValueChange(
                             name,
-                            !multiple ? e.value : e,
+                            value,
                             index,
                             multiple
                         );
@@ -115,9 +117,11 @@ const _cdd: React.FC<ICustomDropdown> = ({
                     options={data}
                     noDataRenderer={"Nema rezultata"}
                     onChange={(e: any) => {
+                        const value = !multiple && e && e.value ? e.value : e;
+
                         handleValueChange(
                             name,
-                            !multiple ? e.value : e,
+                            value,
                             index,
                             multiple
                         );
