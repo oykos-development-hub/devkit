@@ -465,6 +465,79 @@ export const FirebaseService = {
                     });
             });
     },
+    sendNotification: (
+        action:string,
+        item:string,
+        link:string = '',
+        read?:any,
+        table?: any,
+        users?:any,
+        username?: string,
+        photoUrl?: string
+    ) => {
+        const userData:any = FirebaseService.util.getCurrentUser();
+        const timestamp = new Date();
+        const notificationId = String(timestamp.valueOf());
+        const senderUid = userData.id;
+
+        username = username ? username : userData[FirebaseService.util.userObjectStructure.firstName] +
+            " " + userData[FirebaseService.util.userObjectStructure.lastName];
+        photoUrl = photoUrl ? photoUrl :
+            FirebaseService.util.imagesUrlPrefix ? FirebaseService.util.imagesUrlPrefix +
+                userData[FirebaseService.util.userObjectStructure.profilePicUrl] :
+                userData[FirebaseService.util.userObjectStructure.profilePicUrl];
+        users = Object.values(users).filter((user) => {
+            return user !== senderUid;
+        }).sort();
+
+        const docId = notificationId;
+
+        return firebase
+            .firestore()
+            .collection(ConstantsService.FIREBASE.NOTIFICATIONS)
+            .doc(docId)
+            .set({
+                action,
+                item,
+                link,
+                read,
+                table,
+                users,
+                user: username,
+                profilePictureUrl: photoUrl,
+                icon: 'default',
+                docId: docId,
+                id: docId,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                created_at: firebase.firestore.FieldValue.serverTimestamp(),
+                updated_at: firebase.firestore.FieldValue.serverTimestamp()
+            });
+    },
+    getNotificationsForUser: (userId: string | number, userType = null, callback: any) => {
+        const firestore = firebase.firestore();
+        let query = null;
+
+        if (!userType) {
+            query = firestore
+                .collection(ConstantsService.FIREBASE.NOTIFICATIONS)
+                .where("users", "array-contains", userId)
+                .orderBy("id", "desc");
+        } else {
+            query = firestore
+                .collection(ConstantsService.FIREBASE.NOTIFICATIONS)
+                .where("users", "array-contains", userId)
+                .where("table", "==", 1)
+                .orderBy("id", "desc");
+        }
+
+        query.onSnapshot((doc) => {
+            if (callback && doc) {
+                callback(doc);
+            }
+        });
+    },
+    markNotificationAsRead: () => {},
+    deleteNotification: () => {},
     util: {
         getCurrentUser: () => {},
         updateCurrentUser: (user:object) => {

@@ -3,5 +3,6 @@ export const ConstantsService = {
         CHAT_PROFILES: "chatProfiles",
         MESSAGES: "messages",
         FCM_TOKENS: "fcmTokens",
+        NOTIFICATIONS: "notifications"
     }
 };

@@ -29,71 +29,19 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
-/* global Reflect, Promise */
 
-var extendStatics$1 = function(d, b) {
-    extendStatics$1 = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-    return extendStatics$1(d, b);
-};
-
-function __extends$1(d, b) {
-    extendStatics$1(d, b);
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-}
-
-var __assign = function() {
-    __assign = Object.assign || function __assign(t) {
+var __assign$6 = function() {
+    __assign$6 = Object.assign || function __assign(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
             s = arguments[i];
             for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
         }
         return t;
     };
-    return __assign.apply(this, arguments);
+    return __assign$6.apply(this, arguments);
 };
 
-function __awaiter(thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-}
-
-function __generator(thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-}
-
-function __values$1(o) {
+function __values$4(o) {
     var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
     if (m) return m.call(o);
     if (o && typeof o.length === "number") return {
@@ -105,35 +53,33 @@ function __values$1(o) {
     throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
 }
 
-function __read(o, n) {
-    var m = typeof Symbol === "function" && o[Symbol.iterator];
-    if (!m) return o;
-    var i = m.call(o), r, ar = [], e;
-    try {
-        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
-    }
-    catch (error) { e = { error: error }; }
-    finally {
-        try {
-            if (r && !r.done && (m = i["return"])) m.call(i);
-        }
-        finally { if (e) throw e.error; }
-    }
-    return ar;
-}
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
 
-function __spread() {
-    for (var ar = [], i = 0; i < arguments.length; i++)
-        ar = ar.concat(__read(arguments[i]));
-    return ar;
-}
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
 
-function __spreadArrays$1() {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics$3 = function(d, b) {
+    extendStatics$3 = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics$3(d, b);
+};
+
+function __extends$3(d, b) {
+    extendStatics$3(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 }
 
 /**
@@ -428,7 +374,7 @@ var ERROR_NAME = 'FirebaseError';
 // Based on code from:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error#Custom_Error_Types
 var FirebaseError = /** @class */ (function (_super) {
-    __extends$1(FirebaseError, _super);
+    __extends$3(FirebaseError, _super);
     function FirebaseError(code, message, customData) {
         var _this = _super.call(this, message) || this;
         _this.code = code;
@@ -767,6 +713,105 @@ function calculateBackoffMillis(backoffCount, intervalMillis, backoffFactor) {
     return Math.min(MAX_VALUE_MILLIS, currBaseValue + randomWait);
 }
 
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+var __assign$5 = function() {
+    __assign$5 = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign$5.apply(this, arguments);
+};
+
+function __awaiter$5(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator$5(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __values$3(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __read$2(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+function __spread$2() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read$2(arguments[i]));
+    return ar;
+}
+
 /**
  * Component for service name T, e.g. `auth`, `auth-internal`
  */
@@ -875,7 +920,7 @@ var Provider = /** @class */ (function () {
         return this.instancesDeferred.get(normalizedIdentifier).promise;
     };
     Provider.prototype.getImmediate = function (options) {
-        var _a = __assign({ identifier: DEFAULT_ENTRY_NAME$2, optional: false }, options), identifier = _a.identifier, optional = _a.optional;
+        var _a = __assign$5({ identifier: DEFAULT_ENTRY_NAME$2, optional: false }, options), identifier = _a.identifier, optional = _a.optional;
         // if multipleInstances is not supported, use the default name
         var normalizedIdentifier = this.normalizeInstanceIdentifier(identifier);
         try {
@@ -925,8 +970,8 @@ var Provider = /** @class */ (function () {
             // Create service instances for the pending promises and resolve them
             // NOTE: if this.multipleInstances is false, only the default instance will be created
             // and all promises with resolve with it regardless of the identifier.
-            for (var _b = __values$1(this.instancesDeferred.entries()), _c = _b.next(); !_c.done; _c = _b.next()) {
-                var _d = __read(_c.value, 2), instanceIdentifier = _d[0], instanceDeferred = _d[1];
+            for (var _b = __values$3(this.instancesDeferred.entries()), _c = _b.next(); !_c.done; _c = _b.next()) {
+                var _d = __read$2(_c.value, 2), instanceIdentifier = _d[0], instanceDeferred = _d[1];
                 var normalizedIdentifier = this.normalizeInstanceIdentifier(instanceIdentifier);
                 try {
                     // `getOrInitializeService()` should always return a valid instance since a component is guaranteed. use ! to make typescript happy.
@@ -955,13 +1000,13 @@ var Provider = /** @class */ (function () {
     // app.delete() will call this method on every provider to delete the services
     // TODO: should we mark the provider as deleted?
     Provider.prototype.delete = function () {
-        return __awaiter(this, void 0, void 0, function () {
+        return __awaiter$5(this, void 0, void 0, function () {
             var services;
-            return __generator(this, function (_a) {
+            return __generator$5(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         services = Array.from(this.instances.values());
-                        return [4 /*yield*/, Promise.all(__spread(services
+                        return [4 /*yield*/, Promise.all(__spread$2(services
                                 .filter(function (service) { return 'INTERNAL' in service; }) // legacy services
                                 // eslint-disable-next-line @typescript-eslint/no-explicit-any
                                 .map(function (service) { return service.INTERNAL.delete(); }), services
@@ -1089,7 +1134,7 @@ See the Apache Version 2.0 License for specific language governing permissions
 and limitations under the License.
 ***************************************************************************** */
 
-function __spreadArrays() {
+function __spreadArrays$3() {
     for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
     for (var r = Array(s), k = 0, i = 0; i < il; i++)
         for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
@@ -1179,7 +1224,7 @@ var defaultLogHandler = function (instance, logType) {
     var now = new Date().toISOString();
     var method = ConsoleMethod[logType];
     if (method) {
-        console[method].apply(console, __spreadArrays(["[" + now + "]  " + instance.name + ":"], args));
+        console[method].apply(console, __spreadArrays$3(["[" + now + "]  " + instance.name + ":"], args));
     }
     else {
         throw new Error("Attempted to log a message with an invalid logType (value: " + logType + ")");
@@ -1260,40 +1305,40 @@ var Logger = /** @class */ (function () {
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays([this, LogLevel.DEBUG], args));
-        this._logHandler.apply(this, __spreadArrays([this, LogLevel.DEBUG], args));
+        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays$3([this, LogLevel.DEBUG], args));
+        this._logHandler.apply(this, __spreadArrays$3([this, LogLevel.DEBUG], args));
     };
     Logger.prototype.log = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays([this, LogLevel.VERBOSE], args));
-        this._logHandler.apply(this, __spreadArrays([this, LogLevel.VERBOSE], args));
+        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays$3([this, LogLevel.VERBOSE], args));
+        this._logHandler.apply(this, __spreadArrays$3([this, LogLevel.VERBOSE], args));
     };
     Logger.prototype.info = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays([this, LogLevel.INFO], args));
-        this._logHandler.apply(this, __spreadArrays([this, LogLevel.INFO], args));
+        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays$3([this, LogLevel.INFO], args));
+        this._logHandler.apply(this, __spreadArrays$3([this, LogLevel.INFO], args));
     };
     Logger.prototype.warn = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays([this, LogLevel.WARN], args));
-        this._logHandler.apply(this, __spreadArrays([this, LogLevel.WARN], args));
+        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays$3([this, LogLevel.WARN], args));
+        this._logHandler.apply(this, __spreadArrays$3([this, LogLevel.WARN], args));
     };
     Logger.prototype.error = function () {
         var args = [];
         for (var _i = 0; _i < arguments.length; _i++) {
             args[_i] = arguments[_i];
         }
-        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays([this, LogLevel.ERROR], args));
-        this._logHandler.apply(this, __spreadArrays([this, LogLevel.ERROR], args));
+        this._userLogHandler && this._userLogHandler.apply(this, __spreadArrays$3([this, LogLevel.ERROR], args));
+        this._logHandler.apply(this, __spreadArrays$3([this, LogLevel.ERROR], args));
     };
     return Logger;
 }());
@@ -1500,7 +1545,7 @@ var FirebaseAppImpl = /** @class */ (function () {
         this._addComponent(new Component('app', function () { return _this; }, "PUBLIC" /* PUBLIC */));
         try {
             // populate ComponentContainer with existing components
-            for (var _b = __values$1(this.firebase_.INTERNAL.components.values()), _c = _b.next(); !_c.done; _c = _b.next()) {
+            for (var _b = __values$4(this.firebase_.INTERNAL.components.values()), _c = _b.next(); !_c.done; _c = _b.next()) {
                 var component = _c.value;
                 this._addComponent(component);
             }
@@ -1790,7 +1835,7 @@ function createFirebaseNamespaceCore(firebaseAppImpl) {
         }
         try {
             // add the component to existing app instances
-            for (var _b = __values$1(Object.keys(apps)), _c = _b.next(); !_c.done; _c = _b.next()) {
+            for (var _b = __values$4(Object.keys(apps)), _c = _b.next(); !_c.done; _c = _b.next()) {
                 var appName = _c.value;
                 apps[appName]._addComponent(component);
             }
@@ -1880,7 +1925,7 @@ function createFirebaseNamespaceCore(firebaseAppImpl) {
  */
 function createFirebaseNamespace() {
     var namespace = createFirebaseNamespaceCore(FirebaseAppImpl);
-    namespace.INTERNAL = __assign(__assign({}, namespace.INTERNAL), { createFirebaseNamespace: createFirebaseNamespace,
+    namespace.INTERNAL = __assign$6(__assign$6({}, namespace.INTERNAL), { createFirebaseNamespace: createFirebaseNamespace,
         extendNamespace: extendNamespace,
         createSubscribe: createSubscribe,
         ErrorFactory: ErrorFactory,
@@ -2423,6 +2468,92 @@ Y(tm.prototype,{Qb:{name:"getSession",j:[]},ec:{name:"enroll",j:[Do(),V("display
 Z(a,"OAuthProvider",Pg,[V("providerId")]);Z(a,"SAMLAuthProvider",Og,[V("providerId")]);Z(a,"PhoneAuthProvider",lh,[Ao()]);Z(a,"RecaptchaVerifier",to,[X(V(),zo(),"recaptchaContainer"),W("recaptchaParameters",!0),Bo()]);Z(a,"ActionCodeURL",Jf,[]);Z(a,"PhoneMultiFactorGenerator",co,[]);firebase$1.INTERNAL.registerComponent({name:"auth",instanceFactory:function(b){b=b.getProvider("app").getImmediate();return new En(b)},multipleInstances:!1,serviceProps:a,instantiationMode:"LAZY",type:"PUBLIC"});firebase$1.INTERNAL.registerComponent({name:"auth-internal",
 instanceFactory:function(b){b=b.getProvider("auth").getImmediate();return {getUid:q(b.getUid,b),getToken:q(b.mc,b),addAuthTokenListener:q(b.cc,b),removeAuthTokenListener:q(b.Oc,b)}},multipleInstances:!1,instantiationMode:"LAZY",type:"PRIVATE"});firebase$1.registerVersion("@firebase/auth","0.16.1");firebase$1.INTERNAL.extendNamespace({User:Im});}else throw Error("Cannot find the firebase namespace; be sure to include firebase-app.js before this library.");})();}).apply(typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : typeof window !== 'undefined' ? window : {});
 
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics$2 = function(d, b) {
+    extendStatics$2 = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics$2(d, b);
+};
+
+function __extends$2(d, b) {
+    extendStatics$2(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+var __assign$4 = function() {
+    __assign$4 = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign$4.apply(this, arguments);
+};
+
+function __awaiter$4(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator$4(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __spreadArrays$2() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+}
+
 /**
  * @license
  * Copyright 2017 Google LLC
@@ -2464,7 +2595,7 @@ var DEFAULT_MAX_OPERATION_RETRY_TIME = 2 * 60 * 1000;
 var DEFAULT_MAX_UPLOAD_RETRY_TIME = 10 * 60 * 1000;
 
 var FirebaseStorageError = /** @class */ (function (_super) {
-    __extends$1(FirebaseStorageError, _super);
+    __extends$2(FirebaseStorageError, _super);
     function FirebaseStorageError(code, message) {
         var _this = _super.call(this, prependCode(code), "Firebase Storage: " + message + " (" + prependCode(code) + ")") || this;
         _this.customData = { serverResponse: null };
@@ -4795,7 +4926,7 @@ function uploadString(ref, value, format, metadata) {
     if (format === void 0) { format = StringFormat.RAW; }
     ref._throwIfRoot('putString');
     var data = dataFromString(format, value);
-    var metadataClone = __assign({}, metadata);
+    var metadataClone = __assign$4({}, metadata);
     if (metadataClone['contentType'] == null && data.contentType != null) {
         metadataClone['contentType'] = data.contentType;
     }
@@ -4835,10 +4966,10 @@ function listAll(ref) {
  * @param pageToken
  */
 function listAllHelper(ref, accumulator, pageToken) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$4(this, void 0, void 0, function () {
         var opt, nextPage;
         var _a, _b;
-        return __generator(this, function (_c) {
+        return __generator$4(this, function (_c) {
             switch (_c.label) {
                 case 0:
                     opt = {
@@ -4883,9 +5014,9 @@ function listAllHelper(ref, accumulator, pageToken) {
  *      can be used to get the rest of the results.
  */
 function list$1(ref, options) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$4(this, void 0, void 0, function () {
         var authToken, op, requestInfo;
-        return __generator(this, function (_a) {
+        return __generator$4(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     if (options != null) {
@@ -4914,9 +5045,9 @@ function list$1(ref, options) {
  * @param ref - Storage Reference to get metadata from.
  */
 function getMetadata$1(ref) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$4(this, void 0, void 0, function () {
         var authToken, requestInfo;
-        return __generator(this, function (_a) {
+        return __generator$4(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     ref._throwIfRoot('getMetadata');
@@ -4941,9 +5072,9 @@ function getMetadata$1(ref) {
  *     See `firebaseStorage.Reference.prototype.getMetadata`
  */
 function updateMetadata$1(ref, metadata) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$4(this, void 0, void 0, function () {
         var authToken, requestInfo;
-        return __generator(this, function (_a) {
+        return __generator$4(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     ref._throwIfRoot('updateMetadata');
@@ -4963,9 +5094,9 @@ function updateMetadata$1(ref, metadata) {
  *     URL for this object.
  */
 function getDownloadURL(ref) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$4(this, void 0, void 0, function () {
         var authToken, requestInfo;
-        return __generator(this, function (_a) {
+        return __generator$4(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     ref._throwIfRoot('getDownloadURL');
@@ -4993,9 +5124,9 @@ function getDownloadURL(ref) {
  * @returns A promise that resolves if the deletion succeeds.
  */
 function deleteObject$1(ref) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$4(this, void 0, void 0, function () {
         var authToken, requestInfo;
-        return __generator(this, function (_a) {
+        return __generator$4(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     ref._throwIfRoot('deleteObject');
@@ -5456,12 +5587,12 @@ callback, timeout) {
             return;
         }
         if (success) {
-            triggerCallback.call.apply(triggerCallback, __spreadArrays$1([null, success], args));
+            triggerCallback.call.apply(triggerCallback, __spreadArrays$2([null, success], args));
             return;
         }
         var mustStop = canceled() || hitTimeout;
         if (mustStop) {
-            triggerCallback.call.apply(triggerCallback, __spreadArrays$1([null, success], args));
+            triggerCallback.call.apply(triggerCallback, __spreadArrays$2([null, success], args));
             return;
         }
         if (waitSeconds < 64) {
@@ -5860,9 +5991,9 @@ var StorageService = /** @class */ (function () {
         configurable: true
     });
     StorageService.prototype.getAuthToken = function () {
-        return __awaiter(this, void 0, void 0, function () {
+        return __awaiter$4(this, void 0, void 0, function () {
             var auth, tokenData;
-            return __generator(this, function (_a) {
+            return __generator$4(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         auth = this._authProvider.getImmediate({ optional: true });
@@ -6048,6 +6179,105 @@ function registerStorage(instance) {
     instance.registerVersion(name$4, version$3);
 }
 registerStorage(firebase$1);
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+var __assign$3 = function() {
+    __assign$3 = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign$3.apply(this, arguments);
+};
+
+function __awaiter$3(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator$3(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __values$2(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __read$1(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+function __spread$1() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read$1(arguments[i]));
+    return ar;
+}
 
 function toArray(arr) {
   return Array.prototype.slice.call(arr);
@@ -6441,9 +6671,9 @@ function extractAuthTokenInfoFromResponse(response) {
     };
 }
 function getErrorFromResponse(requestName, response) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var responseJson, errorData;
-        return __generator(this, function (_a) {
+        return __generator$3(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, response.json()];
                 case 1:
@@ -6479,9 +6709,9 @@ function getHeadersWithAuth(appConfig, _a) {
  * returns the response.
  */
 function retryIfServerError(fn) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var result;
-        return __generator(this, function (_a) {
+        return __generator$3(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, fn()];
                 case 1:
@@ -6521,9 +6751,9 @@ function getAuthorizationHeader(refreshToken) {
  */
 function createInstallationRequest(appConfig, _a) {
     var fid = _a.fid;
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var endpoint, headers, body, request, response, responseValue, registeredInstallationEntry;
-        return __generator(this, function (_b) {
+        return __generator$3(this, function (_b) {
             switch (_b.label) {
                 case 0:
                     endpoint = getInstallationsEndpoint(appConfig);
@@ -6600,7 +6830,7 @@ function sleep$1(ms) {
  * limitations under the License.
  */
 function bufferToBase64UrlSafe(array) {
-    var b64 = btoa(String.fromCharCode.apply(String, __spread(array)));
+    var b64 = btoa(String.fromCharCode.apply(String, __spread$1(array)));
     return b64.replace(/\+/g, '-').replace(/\//g, '_');
 }
 
@@ -6730,7 +6960,7 @@ function callFidChangeCallbacks(key, fid) {
         return;
     }
     try {
-        for (var callbacks_1 = __values$1(callbacks), callbacks_1_1 = callbacks_1.next(); !callbacks_1_1.done; callbacks_1_1 = callbacks_1.next()) {
+        for (var callbacks_1 = __values$2(callbacks), callbacks_1_1 = callbacks_1.next(); !callbacks_1_1.done; callbacks_1_1 = callbacks_1.next()) {
             var callback = callbacks_1_1.value;
             callback(fid);
         }
@@ -6806,9 +7036,9 @@ function getDbPromise$1() {
 }
 /** Assigns or overwrites the record for the given key with the given value. */
 function set(appConfig, value) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var key, db, tx, objectStore, oldValue;
-        return __generator(this, function (_a) {
+        return __generator$3(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     key = getKey$1(appConfig);
@@ -6836,9 +7066,9 @@ function set(appConfig, value) {
 }
 /** Removes record(s) from the objectStore that match the given key. */
 function remove(appConfig) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var key, db, tx;
-        return __generator(this, function (_a) {
+        return __generator$3(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     key = getKey$1(appConfig);
@@ -6864,9 +7094,9 @@ function remove(appConfig) {
  * @return Updated value
  */
 function update(appConfig, updateFn) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var key, db, tx, store, oldValue, newValue;
-        return __generator(this, function (_a) {
+        return __generator$3(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     key = getKey$1(appConfig);
@@ -6921,10 +7151,10 @@ function update(appConfig, updateFn) {
  * Also triggers a registration request if it is necessary and possible.
  */
 function getInstallationEntry(appConfig) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var registrationPromise, installationEntry;
         var _a;
-        return __generator(this, function (_b) {
+        return __generator$3(this, function (_b) {
             switch (_b.label) {
                 case 0: return [4 /*yield*/, update(appConfig, function (oldEntry) {
                         var installationEntry = updateOrCreateInstallationEntry(oldEntry);
@@ -6997,9 +7227,9 @@ function triggerRegistrationIfNecessary(appConfig, installationEntry) {
 }
 /** This will be executed only once for each new Firebase Installation. */
 function registerInstallation(appConfig, installationEntry) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var registeredInstallationEntry, e_1;
-        return __generator(this, function (_a) {
+        return __generator$3(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 2, , 7]);
@@ -7036,9 +7266,9 @@ function registerInstallation(appConfig, installationEntry) {
 }
 /** Call if FID registration is pending in another request. */
 function waitUntilFidRegistration(appConfig) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var entry, _a, installationEntry, registrationPromise;
-        return __generator(this, function (_b) {
+        return __generator$3(this, function (_b) {
             switch (_b.label) {
                 case 0: return [4 /*yield*/, updateInstallationRequest(appConfig)];
                 case 1:
@@ -7120,9 +7350,9 @@ function hasInstallationRequestTimedOut(installationEntry) {
  */
 function generateAuthTokenRequest(_a, installationEntry) {
     var appConfig = _a.appConfig, platformLoggerProvider = _a.platformLoggerProvider;
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var endpoint, headers, platformLogger, body, request, response, responseValue, completedAuthToken;
-        return __generator(this, function (_b) {
+        return __generator$3(this, function (_b) {
             switch (_b.label) {
                 case 0:
                     endpoint = getGenerateAuthTokenEndpoint(appConfig, installationEntry);
@@ -7187,9 +7417,9 @@ function getGenerateAuthTokenEndpoint(appConfig, _a) {
  */
 function refreshAuthToken(dependencies, forceRefresh) {
     if (forceRefresh === void 0) { forceRefresh = false; }
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var tokenPromise, entry, authToken, _a;
-        return __generator(this, function (_b) {
+        return __generator$3(this, function (_b) {
             switch (_b.label) {
                 case 0: return [4 /*yield*/, update(dependencies.appConfig, function (oldEntry) {
                         if (!isEntryRegistered(oldEntry)) {
@@ -7239,9 +7469,9 @@ function refreshAuthToken(dependencies, forceRefresh) {
  * tries once in this thread as well.
  */
 function waitUntilAuthTokenRequest(dependencies, forceRefresh) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var entry, authToken;
-        return __generator(this, function (_a) {
+        return __generator$3(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, updateAuthTokenRequest(dependencies.appConfig)];
                 case 1:
@@ -7286,22 +7516,22 @@ function updateAuthTokenRequest(appConfig) {
         }
         var oldAuthToken = oldEntry.authToken;
         if (hasAuthTokenRequestTimedOut(oldAuthToken)) {
-            return __assign(__assign({}, oldEntry), { authToken: { requestStatus: 0 /* NOT_STARTED */ } });
+            return __assign$3(__assign$3({}, oldEntry), { authToken: { requestStatus: 0 /* NOT_STARTED */ } });
         }
         return oldEntry;
     });
 }
 function fetchAuthTokenFromServer(dependencies, installationEntry) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var authToken, updatedInstallationEntry, e_1, updatedInstallationEntry;
-        return __generator(this, function (_a) {
+        return __generator$3(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 3, , 8]);
                     return [4 /*yield*/, generateAuthTokenRequest(dependencies, installationEntry)];
                 case 1:
                     authToken = _a.sent();
-                    updatedInstallationEntry = __assign(__assign({}, installationEntry), { authToken: authToken });
+                    updatedInstallationEntry = __assign$3(__assign$3({}, installationEntry), { authToken: authToken });
                     return [4 /*yield*/, set(dependencies.appConfig, updatedInstallationEntry)];
                 case 2:
                     _a.sent();
@@ -7319,7 +7549,7 @@ function fetchAuthTokenFromServer(dependencies, installationEntry) {
                     _a.sent();
                     return [3 /*break*/, 7];
                 case 5:
-                    updatedInstallationEntry = __assign(__assign({}, installationEntry), { authToken: { requestStatus: 0 /* NOT_STARTED */ } });
+                    updatedInstallationEntry = __assign$3(__assign$3({}, installationEntry), { authToken: { requestStatus: 0 /* NOT_STARTED */ } });
                     return [4 /*yield*/, set(dependencies.appConfig, updatedInstallationEntry)];
                 case 6:
                     _a.sent();
@@ -7349,7 +7579,7 @@ function makeAuthTokenRequestInProgressEntry(oldEntry) {
         requestStatus: 1 /* IN_PROGRESS */,
         requestTime: Date.now()
     };
-    return __assign(__assign({}, oldEntry), { authToken: inProgressAuthToken });
+    return __assign$3(__assign$3({}, oldEntry), { authToken: inProgressAuthToken });
 }
 function hasAuthTokenRequestTimedOut(authToken) {
     return (authToken.requestStatus === 1 /* IN_PROGRESS */ &&
@@ -7373,9 +7603,9 @@ function hasAuthTokenRequestTimedOut(authToken) {
  * limitations under the License.
  */
 function getId(dependencies) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var _a, installationEntry, registrationPromise;
-        return __generator(this, function (_b) {
+        return __generator$3(this, function (_b) {
             switch (_b.label) {
                 case 0: return [4 /*yield*/, getInstallationEntry(dependencies.appConfig)];
                 case 1:
@@ -7412,9 +7642,9 @@ function getId(dependencies) {
  */
 function getToken$1(dependencies, forceRefresh) {
     if (forceRefresh === void 0) { forceRefresh = false; }
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var authToken;
-        return __generator(this, function (_a) {
+        return __generator$3(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, completeInstallationRegistration(dependencies.appConfig)];
                 case 1:
@@ -7428,9 +7658,9 @@ function getToken$1(dependencies, forceRefresh) {
     });
 }
 function completeInstallationRegistration(appConfig) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var registrationPromise;
-        return __generator(this, function (_a) {
+        return __generator$3(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, getInstallationEntry(appConfig)];
                 case 1:
@@ -7465,9 +7695,9 @@ function completeInstallationRegistration(appConfig) {
  * limitations under the License.
  */
 function deleteInstallationRequest(appConfig, installationEntry) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var endpoint, headers, request, response;
-        return __generator(this, function (_a) {
+        return __generator$3(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     endpoint = getDeleteEndpoint(appConfig, installationEntry);
@@ -7509,9 +7739,9 @@ function getDeleteEndpoint(appConfig, _a) {
  * limitations under the License.
  */
 function deleteInstallation(dependencies) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$3(this, void 0, void 0, function () {
         var appConfig, entry;
-        return __generator(this, function (_a) {
+        return __generator$3(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     appConfig = dependencies.appConfig;
@@ -7604,7 +7834,7 @@ function extractAppConfig$1(app) {
         'appId'
     ];
     try {
-        for (var configKeys_1 = __values$1(configKeys), configKeys_1_1 = configKeys_1.next(); !configKeys_1_1.done; configKeys_1_1 = configKeys_1.next()) {
+        for (var configKeys_1 = __values$2(configKeys), configKeys_1_1 = configKeys_1.next(); !configKeys_1_1.done; configKeys_1_1 = configKeys_1.next()) {
             var keyName = configKeys_1_1.value;
             if (!app.options[keyName]) {
                 throw getMissingValueError$1(keyName);
@@ -7674,6 +7904,105 @@ function registerInstallations(instance) {
     instance.registerVersion(name$3, version$2);
 }
 registerInstallations(firebase$1);
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+var __assign$2 = function() {
+    __assign$2 = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign$2.apply(this, arguments);
+};
+
+function __awaiter$2(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator$2(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __values$1(o) {
+    var s = typeof Symbol === "function" && Symbol.iterator, m = s && o[s], i = 0;
+    if (m) return m.call(o);
+    if (o && typeof o.length === "number") return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+    throw new TypeError(s ? "Object is not iterable." : "Symbol.iterator is not defined.");
+}
+
+function __read(o, n) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator];
+    if (!m) return o;
+    var i = m.call(o), r, ar = [], e;
+    try {
+        while ((n === void 0 || n-- > 0) && !(r = i.next()).done) ar.push(r.value);
+    }
+    catch (error) { e = { error: error }; }
+    finally {
+        try {
+            if (r && !r.done && (m = i["return"])) m.call(i);
+        }
+        finally { if (e) throw e.error; }
+    }
+    return ar;
+}
+
+function __spread() {
+    for (var ar = [], i = 0; i < arguments.length; i++)
+        ar = ar.concat(__read(arguments[i]));
+    return ar;
+}
 
 /**
  * @license
@@ -7830,10 +8159,10 @@ var OLD_DB_NAME = 'fcm_token_details_db';
 var OLD_DB_VERSION = 5;
 var OLD_OBJECT_STORE_NAME = 'fcm_token_object_Store';
 function migrateOldDatabase(senderId) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var databases, dbNames, tokenDetails, db;
         var _this = this;
-        return __generator(this, function (_a) {
+        return __generator$2(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     if (!('databases' in indexedDB)) return [3 /*break*/, 2];
@@ -7848,10 +8177,10 @@ function migrateOldDatabase(senderId) {
                     _a.label = 2;
                 case 2:
                     tokenDetails = null;
-                    return [4 /*yield*/, openDb(OLD_DB_NAME, OLD_DB_VERSION, function (db) { return __awaiter(_this, void 0, void 0, function () {
+                    return [4 /*yield*/, openDb(OLD_DB_NAME, OLD_DB_VERSION, function (db) { return __awaiter$2(_this, void 0, void 0, function () {
                             var objectStore, value, oldDetails, oldDetails, oldDetails;
                             var _a;
-                            return __generator(this, function (_b) {
+                            return __generator$2(this, function (_b) {
                                 switch (_b.label) {
                                     case 0:
                                         if (db.oldVersion < 2) {
@@ -8002,9 +8331,9 @@ function getDbPromise() {
 }
 /** Gets record(s) from the objectStore that match the given key. */
 function dbGet(firebaseDependencies) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var key, db, tokenDetails, oldTokenDetails;
-        return __generator(this, function (_a) {
+        return __generator$2(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     key = getKey(firebaseDependencies);
@@ -8034,9 +8363,9 @@ function dbGet(firebaseDependencies) {
 }
 /** Assigns or overwrites the record for the given key with the given value. */
 function dbSet(firebaseDependencies, tokenDetails) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var key, db, tx;
-        return __generator(this, function (_a) {
+        return __generator$2(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     key = getKey(firebaseDependencies);
@@ -8057,9 +8386,9 @@ function dbSet(firebaseDependencies, tokenDetails) {
 }
 /** Removes record(s) from the objectStore that match the given key. */
 function dbRemove(firebaseDependencies) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var key, db, tx;
-        return __generator(this, function (_a) {
+        return __generator$2(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     key = getKey(firebaseDependencies);
@@ -8100,9 +8429,9 @@ function getKey(_a) {
  * limitations under the License.
  */
 function requestGetToken(firebaseDependencies, subscriptionOptions) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var headers, body, subscribeOptions, responseData, response, err_1, message;
-        return __generator(this, function (_a) {
+        return __generator$2(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, getHeaders$1(firebaseDependencies)];
                 case 1:
@@ -8144,9 +8473,9 @@ function requestGetToken(firebaseDependencies, subscriptionOptions) {
     });
 }
 function requestUpdateToken(firebaseDependencies, tokenDetails) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var headers, body, updateOptions, responseData, response, err_2, message;
-        return __generator(this, function (_a) {
+        return __generator$2(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, getHeaders$1(firebaseDependencies)];
                 case 1:
@@ -8188,9 +8517,9 @@ function requestUpdateToken(firebaseDependencies, tokenDetails) {
     });
 }
 function requestDeleteToken(firebaseDependencies, token) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var headers, unsubscribeOptions, response, responseData, message, err_3;
-        return __generator(this, function (_a) {
+        return __generator$2(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, getHeaders$1(firebaseDependencies)];
                 case 1:
@@ -8231,9 +8560,9 @@ function getEndpoint(_a) {
 }
 function getHeaders$1(_a) {
     var appConfig = _a.appConfig, installations = _a.installations;
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var authToken;
-        return __generator(this, function (_b) {
+        return __generator$2(this, function (_b) {
             switch (_b.label) {
                 case 0: return [4 /*yield*/, installations.getToken()];
                 case 1:
@@ -8282,9 +8611,9 @@ function getBody(_a) {
 /** UpdateRegistration will be called once every week. */
 var TOKEN_EXPIRATION_MS = 7 * 24 * 60 * 60 * 1000; // 7 days
 function getToken(firebaseDependencies, swRegistration, vapidKey) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var pushSubscription, tokenDetails, subscriptionOptions, e_1;
-        return __generator(this, function (_a) {
+        return __generator$2(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     if (Notification.permission !== 'granted') {
@@ -8344,9 +8673,9 @@ function getToken(firebaseDependencies, swRegistration, vapidKey) {
  * the push subscription if it exists.
  */
 function deleteToken(firebaseDependencies, swRegistration) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var tokenDetails, pushSubscription;
-        return __generator(this, function (_a) {
+        return __generator$2(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, dbGet(firebaseDependencies)];
                 case 1:
@@ -8372,16 +8701,16 @@ function deleteToken(firebaseDependencies, swRegistration) {
     });
 }
 function updateToken(tokenDetails, firebaseDependencies, swRegistration) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var updatedToken, updatedTokenDetails, e_2;
-        return __generator(this, function (_a) {
+        return __generator$2(this, function (_a) {
             switch (_a.label) {
                 case 0:
                     _a.trys.push([0, 3, , 5]);
                     return [4 /*yield*/, requestUpdateToken(firebaseDependencies, tokenDetails)];
                 case 1:
                     updatedToken = _a.sent();
-                    updatedTokenDetails = __assign(__assign({}, tokenDetails), { token: updatedToken, createTime: Date.now() });
+                    updatedTokenDetails = __assign$2(__assign$2({}, tokenDetails), { token: updatedToken, createTime: Date.now() });
                     return [4 /*yield*/, dbSet(firebaseDependencies, updatedTokenDetails)];
                 case 2:
                     _a.sent();
@@ -8398,9 +8727,9 @@ function updateToken(tokenDetails, firebaseDependencies, swRegistration) {
     });
 }
 function getNewToken(firebaseDependencies, subscriptionOptions) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var token, tokenDetails;
-        return __generator(this, function (_a) {
+        return __generator$2(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, requestGetToken(firebaseDependencies, subscriptionOptions)];
                 case 1:
@@ -8422,9 +8751,9 @@ function getNewToken(firebaseDependencies, subscriptionOptions) {
  * Gets a PushSubscription for the current user.
  */
 function getPushSubscription(swRegistration, vapidKey) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var subscription;
-        return __generator(this, function (_a) {
+        return __generator$2(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, swRegistration.pushManager.getSubscription()];
                 case 1:
@@ -8642,9 +8971,9 @@ var SwController = /** @class */ (function () {
     // trouble.
     SwController.prototype.getToken = function () {
         var _a, _b;
-        return __awaiter(this, void 0, void 0, function () {
+        return __awaiter$2(this, void 0, void 0, function () {
             var tokenDetails;
-            return __generator(this, function (_c) {
+            return __generator$2(this, function (_c) {
                 switch (_c.label) {
                     case 0:
                         if (!!this.vapidKey) return [3 /*break*/, 2];
@@ -8696,9 +9025,9 @@ var SwController = /** @class */ (function () {
      * If there is no notification data in the payload then no notification will be shown.
      */
     SwController.prototype.onPush = function (event) {
-        return __awaiter(this, void 0, void 0, function () {
+        return __awaiter$2(this, void 0, void 0, function () {
             var internalPayload, clientList, isNotificationShown, payload;
-            return __generator(this, function (_a) {
+            return __generator$2(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         internalPayload = getMessagePayloadInternal(event);
@@ -8748,9 +9077,9 @@ var SwController = /** @class */ (function () {
     };
     SwController.prototype.onSubChange = function (event) {
         var _a, _b;
-        return __awaiter(this, void 0, void 0, function () {
+        return __awaiter$2(this, void 0, void 0, function () {
             var newSubscription, tokenDetails;
-            return __generator(this, function (_c) {
+            return __generator$2(this, function (_c) {
                 switch (_c.label) {
                     case 0:
                         newSubscription = event.newSubscription;
@@ -8777,9 +9106,9 @@ var SwController = /** @class */ (function () {
     };
     SwController.prototype.onNotificationClick = function (event) {
         var _a, _b;
-        return __awaiter(this, void 0, void 0, function () {
+        return __awaiter$2(this, void 0, void 0, function () {
             var internalPayload, link, url, originUrl, client;
-            return __generator(this, function (_c) {
+            return __generator$2(this, function (_c) {
                 switch (_c.label) {
                     case 0:
                         internalPayload = (_b = (_a = event.notification) === null || _a === void 0 ? void 0 : _a.data) === null || _b === void 0 ? void 0 : _b[FCM_MSG];
@@ -8838,7 +9167,7 @@ var SwController = /** @class */ (function () {
 }());
 function wrapInternalPayload(internalPayload) {
     var _a;
-    var wrappedInternalPayload = __assign({}, internalPayload.notification);
+    var wrappedInternalPayload = __assign$2({}, internalPayload.notification);
     // Put the message payload under FCM_MSG name so we can identify the notification as being an FCM
     // notification vs a notification from somewhere else (i.e. normal web push or developer generated
     // notification).
@@ -8865,10 +9194,10 @@ function getMessagePayloadInternal(_a) {
  * @return Returns an existing window client or a newly opened WindowClient.
  */
 function getWindowClient(url) {
-    return __awaiter(this, void 0, void 0, function () {
+    return __awaiter$2(this, void 0, void 0, function () {
         var clientList, clientList_1, clientList_1_1, client, clientUrl;
         var e_1, _a;
-        return __generator(this, function (_b) {
+        return __generator$2(this, function (_b) {
             switch (_b.label) {
                 case 0: return [4 /*yield*/, getClientList()];
                 case 1:
@@ -8993,9 +9322,9 @@ var WindowController = /** @class */ (function () {
         configurable: true
     });
     WindowController.prototype.messageEventListener = function (event) {
-        return __awaiter(this, void 0, void 0, function () {
+        return __awaiter$2(this, void 0, void 0, function () {
             var internalPayload, dataPayload;
-            return __generator(this, function (_a) {
+            return __generator$2(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         internalPayload = event.data;
@@ -9033,8 +9362,8 @@ var WindowController = /** @class */ (function () {
         return this.swRegistration;
     };
     WindowController.prototype.getToken = function (options) {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
+        return __awaiter$2(this, void 0, void 0, function () {
+            return __generator$2(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!(Notification.permission === 'default')) return [3 /*break*/, 2];
@@ -9058,8 +9387,8 @@ var WindowController = /** @class */ (function () {
         });
     };
     WindowController.prototype.updateVapidKey = function (vapidKey) {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
+        return __awaiter$2(this, void 0, void 0, function () {
+            return __generator$2(this, function (_a) {
                 if (!!vapidKey) {
                     this.vapidKey = vapidKey;
                 }
@@ -9071,8 +9400,8 @@ var WindowController = /** @class */ (function () {
         });
     };
     WindowController.prototype.updateSwReg = function (swRegistration) {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
+        return __awaiter$2(this, void 0, void 0, function () {
+            return __generator$2(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!(!swRegistration && !this.swRegistration)) return [3 /*break*/, 2];
@@ -9094,9 +9423,9 @@ var WindowController = /** @class */ (function () {
         });
     };
     WindowController.prototype.registerDefaultSw = function () {
-        return __awaiter(this, void 0, void 0, function () {
+        return __awaiter$2(this, void 0, void 0, function () {
             var _a, e_1;
-            return __generator(this, function (_b) {
+            return __generator$2(this, function (_b) {
                 switch (_b.label) {
                     case 0:
                         _b.trys.push([0, 2, , 3]);
@@ -9126,8 +9455,8 @@ var WindowController = /** @class */ (function () {
         });
     };
     WindowController.prototype.deleteToken = function () {
-        return __awaiter(this, void 0, void 0, function () {
-            return __generator(this, function (_a) {
+        return __awaiter$2(this, void 0, void 0, function () {
+            return __generator$2(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (!!this.swRegistration) return [3 /*break*/, 2];
@@ -9149,9 +9478,9 @@ var WindowController = /** @class */ (function () {
      * https://developer.mozilla.org/en-US/docs/Web/API/Notification/requestPermission
      */
     WindowController.prototype.requestPermission = function () {
-        return __awaiter(this, void 0, void 0, function () {
+        return __awaiter$2(this, void 0, void 0, function () {
             var permissionResult;
-            return __generator(this, function (_a) {
+            return __generator$2(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         if (Notification.permission === 'granted') {
@@ -9225,9 +9554,9 @@ var WindowController = /** @class */ (function () {
         return function () { };
     };
     WindowController.prototype.logEvent = function (messageType, data) {
-        return __awaiter(this, void 0, void 0, function () {
+        return __awaiter$2(this, void 0, void 0, function () {
             var eventType, analytics;
-            return __generator(this, function (_a) {
+            return __generator$2(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         eventType = getEventType(messageType);
@@ -9423,15 +9752,15 @@ PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
 /* global Reflect, Promise */
 
-var extendStatics = function(d, b) {
-    extendStatics = Object.setPrototypeOf ||
+var extendStatics$1 = function(d, b) {
+    extendStatics$1 = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
         function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
-    return extendStatics(d, b);
+    return extendStatics$1(d, b);
 };
 
-function __extends(d, b) {
-    extendStatics(d, b);
+function __extends$1(d, b) {
+    extendStatics$1(d, b);
     function __() { this.constructor = d; }
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 }
@@ -9820,7 +10149,7 @@ else
     throw Error("Invalid listener argument"); return 2147483647 < Number(b) ? -1 : k$1.setTimeout(a, b || 0); }
 function Jb(a) { a.a = Ib(function () { a.a = null; a.c && (a.c = !1, Jb(a)); }, a.h); var b = a.b; a.b = null; a.g.apply(null, b); }
 var Kb = /** @class */ (function (_super) {
-    __extends(Kb, _super);
+    __extends$1(Kb, _super);
     function Kb(a, b) {
         var _this = _super.call(this) || this;
         _this.g = a;
@@ -10803,6 +11132,81 @@ var Stat = { gb: 0, jb: 1, kb: 2, Db: 3, Ib: 4, Fb: 5, Gb: 6, Eb: 7, Cb: 8, Hb: 
 var WebChannel = bc$1;
 var XhrIo = X$1;
 
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+/* global Reflect, Promise */
+
+var extendStatics = function(d, b) {
+    extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return extendStatics(d, b);
+};
+
+function __extends(d, b) {
+    extendStatics(d, b);
+    function __() { this.constructor = d; }
+    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+}
+
+function __awaiter$1(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator$1(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
+
+function __spreadArrays$1() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+}
+
 /**
  * @license
  * Copyright 2020 Google LLC
@@ -11220,7 +11624,7 @@ var V = {
             return r.name + ": [code=" + r.code + "]: " + r.message;
         }, r;
     }
-    return __extends$1(e, t), e;
+    return __extends(e, t), e;
 }(Error), U = /** @class */ function() {
     /** @hideconstructor */
     function t(t) {
@@ -11312,7 +11716,7 @@ var V = {
     function e() {
         return null !== t && t.apply(this, arguments) || this;
     }
-    return __extends$1(e, t), e.fromBase64String = function(t) {
+    return __extends(e, t), e.fromBase64String = function(t) {
         return j(), new e(U.fromBase64String(t));
     }, e.fromUint8Array = function(t) {
         return F(), new e(U.fromUint8Array(t));
@@ -11725,7 +12129,7 @@ var X = /** @class */ function() {
     function e() {
         return null !== t && t.apply(this, arguments) || this;
     }
-    return __extends$1(e, t), e.prototype.Y = function(t, n, r) {
+    return __extends(e, t), e.prototype.Y = function(t, n, r) {
         return new e(t, n, r);
     }, e.prototype.ot = function() {
         // NOTE: The client is ignorant of any path segments containing escape
@@ -11761,7 +12165,7 @@ var X = /** @class */ function() {
     function e() {
         return null !== t && t.apply(this, arguments) || this;
     }
-    return __extends$1(e, t), e.prototype.Y = function(t, n, r) {
+    return __extends(e, t), e.prototype.Y = function(t, n, r) {
         return new e(t, n, r);
     }, 
     /**
@@ -12512,7 +12916,7 @@ var Rt = function(t, e) {
         return (o = t.call(this, e, n) || this).Vt = r, o.bt = !!i.bt, o.hasCommittedMutations = !!i.hasCommittedMutations, 
         o;
     }
-    return __extends$1(e, t), e.prototype.field = function(t) {
+    return __extends(e, t), e.prototype.field = function(t) {
         return this.Vt.field(t);
     }, e.prototype.data = function() {
         return this.Vt;
@@ -12535,7 +12939,7 @@ var Rt = function(t, e) {
         return (i = t.call(this, e, n) || this).hasCommittedMutations = !(!r || !r.hasCommittedMutations), 
         i;
     }
-    return __extends$1(e, t), e.prototype.toString = function() {
+    return __extends(e, t), e.prototype.toString = function() {
         return "NoDocument(" + this.key + ", " + this.version + ")";
     }, Object.defineProperty(e.prototype, "hasPendingWrites", {
         get: function() {
@@ -12550,7 +12954,7 @@ var Rt = function(t, e) {
     function e() {
         return null !== t && t.apply(this, arguments) || this;
     }
-    return __extends$1(e, t), e.prototype.toString = function() {
+    return __extends(e, t), e.prototype.toString = function() {
         return "UnknownDocument(" + this.key + ", " + this.version + ")";
     }, Object.defineProperty(e.prototype, "hasPendingWrites", {
         get: function() {
@@ -12630,7 +13034,7 @@ var Bt = /** @class */ function(t) {
     }
     /**
      * Creates a filter based on the provided arguments.
-     */    return __extends$1(e, t), e.create = function(t, n, r) {
+     */    return __extends(e, t), e.create = function(t, n, r) {
         return t.ht() ? "in" /* IN */ === n || "not-in" /* NOT_IN */ === n ? this.Dt(t, n, r) : new Kt(t, n, r) : "array-contains" /* ARRAY_CONTAINS */ === n ? new Qt(t, r) : "in" /* IN */ === n ? new Yt(t, r) : "not-in" /* NOT_IN */ === n ? new $t(t, r) : "array-contains-any" /* ARRAY_CONTAINS_ANY */ === n ? new Xt(t, r) : new e(t, n, r);
     }, e.Dt = function(t, e, n) {
         return "in" /* IN */ === e ? new Ht(t, n) : new Jt(t, n);
@@ -12672,7 +13076,7 @@ var Kt = /** @class */ function(t) {
         var i = this;
         return (i = t.call(this, e, n, r) || this).key = it.dt(r.referenceValue), i;
     }
-    return __extends$1(e, t), e.prototype.matches = function(t) {
+    return __extends(e, t), e.prototype.matches = function(t) {
         var e = it.J(t.key, this.key);
         return this.Ct(e);
     }, e;
@@ -12682,7 +13086,7 @@ var Kt = /** @class */ function(t) {
         return (r = t.call(this, e, "in" /* IN */ , n) || this).keys = Wt("in" /* IN */ , n), 
         r;
     }
-    return __extends$1(e, t), e.prototype.matches = function(t) {
+    return __extends(e, t), e.prototype.matches = function(t) {
         return this.keys.some((function(e) {
             return e.isEqual(t.key);
         }));
@@ -12693,7 +13097,7 @@ var Kt = /** @class */ function(t) {
         return (r = t.call(this, e, "not-in" /* NOT_IN */ , n) || this).keys = Wt("not-in" /* NOT_IN */ , n), 
         r;
     }
-    return __extends$1(e, t), e.prototype.matches = function(t) {
+    return __extends(e, t), e.prototype.matches = function(t) {
         return !this.keys.some((function(e) {
             return e.isEqual(t.key);
         }));
@@ -12711,7 +13115,7 @@ var Kt = /** @class */ function(t) {
     function e(e, n) {
         return t.call(this, e, "array-contains" /* ARRAY_CONTAINS */ , n) || this;
     }
-    return __extends$1(e, t), e.prototype.matches = function(t) {
+    return __extends(e, t), e.prototype.matches = function(t) {
         var e = t.field(this.field);
         return xt(e) && It(e.arrayValue, this.value);
     }, e;
@@ -12719,7 +13123,7 @@ var Kt = /** @class */ function(t) {
     function e(e, n) {
         return t.call(this, e, "in" /* IN */ , n) || this;
     }
-    return __extends$1(e, t), e.prototype.matches = function(t) {
+    return __extends(e, t), e.prototype.matches = function(t) {
         var e = t.field(this.field);
         return null !== e && It(this.value.arrayValue, e);
     }, e;
@@ -12727,7 +13131,7 @@ var Kt = /** @class */ function(t) {
     function e(e, n) {
         return t.call(this, e, "not-in" /* NOT_IN */ , n) || this;
     }
-    return __extends$1(e, t), e.prototype.matches = function(t) {
+    return __extends(e, t), e.prototype.matches = function(t) {
         if (It(this.value.arrayValue, {
             nullValue: "NULL_VALUE"
         })) return !1;
@@ -12738,7 +13142,7 @@ var Kt = /** @class */ function(t) {
     function e(e, n) {
         return t.call(this, e, "array-contains-any" /* ARRAY_CONTAINS_ANY */ , n) || this;
     }
-    return __extends$1(e, t), e.prototype.matches = function(t) {
+    return __extends(e, t), e.prototype.matches = function(t) {
         var e = this, n = t.field(this.field);
         return !(!xt(n) || !n.arrayValue.values) && n.arrayValue.values.some((function(t) {
             return It(e.value.arrayValue, t);
@@ -13205,13 +13609,13 @@ function Ie(t, e, n) {
     function e() {
         return null !== t && t.apply(this, arguments) || this;
     }
-    return __extends$1(e, t), e;
+    return __extends(e, t), e;
 }(Ae), Oe = /** @class */ function(t) {
     function e(e) {
         var n = this;
         return (n = t.call(this) || this).elements = e, n;
     }
-    return __extends$1(e, t), e;
+    return __extends(e, t), e;
 }(Ae);
 
 /** Transforms an array value via a union operation. */ function Pe(t, e) {
@@ -13234,7 +13638,7 @@ function Ie(t, e, n) {
         var n = this;
         return (n = t.call(this) || this).elements = e, n;
     }
-    return __extends$1(e, t), e;
+    return __extends(e, t), e;
 }(Ae);
 
 function Le(t, e) {
@@ -13262,7 +13666,7 @@ function Le(t, e) {
         var r = this;
         return (r = t.call(this) || this).Kt = e, r.Qt = n, r;
     }
-    return __extends$1(e, t), e;
+    return __extends(e, t), e;
 }(Ae);
 
 function Ve(t) {
@@ -13543,7 +13947,7 @@ function He(t, e) {
         return (o = t.call(this) || this).key = e, o.value = n, o.Gt = r, o.fieldTransforms = i, 
         o.type = 0 /* Set */ , o;
     }
-    return __extends$1(e, t), e;
+    return __extends(e, t), e;
 }(ze), Qe = /** @class */ function(t) {
     function e(e, n, r, i, o) {
         void 0 === o && (o = []);
@@ -13551,7 +13955,7 @@ function He(t, e) {
         return (u = t.call(this) || this).key = e, u.data = n, u.zt = r, u.Gt = i, u.fieldTransforms = o, 
         u.type = 1 /* Patch */ , u;
     }
-    return __extends$1(e, t), e;
+    return __extends(e, t), e;
 }(ze);
 
 function Ye(t, e, n) {
@@ -13616,14 +14020,14 @@ function Ze(t, e, n) {
         return (r = t.call(this) || this).key = e, r.Gt = n, r.type = 2 /* Delete */ , r.fieldTransforms = [], 
         r;
     }
-    return __extends$1(e, t), e;
+    return __extends(e, t), e;
 }(ze), rn = /** @class */ function(t) {
     function e(e, n) {
         var r = this;
         return (r = t.call(this) || this).key = e, r.Gt = n, r.type = 3 /* Verify */ , r.fieldTransforms = [], 
         r;
     }
-    return __extends$1(e, t), e;
+    return __extends(e, t), e;
 }(ze), on = 
 // TODO(b/33078163): just use simplest form of existence filter for now
 function(t) {
@@ -15586,9 +15990,9 @@ function dr(t) {
      * Opens the specified database, creating or upgrading it if necessary.
      */
     t.prototype.Jn = function(t) {
-        return __awaiter(this, void 0, void 0, (function() {
+        return __awaiter$1(this, void 0, void 0, (function() {
             var e, n = this;
-            return __generator(this, (function(r) {
+            return __generator$1(this, (function(r) {
                 switch (r.label) {
                   case 0:
                     return this.db ? [ 3 /*break*/ , 2 ] : (E("SimpleDb", "Opening database:", this.name), 
@@ -15631,14 +16035,14 @@ function dr(t) {
             return t(e);
         });
     }, t.prototype.runTransaction = function(t, e, n, r) {
-        return __awaiter(this, void 0, void 0, (function() {
+        return __awaiter$1(this, void 0, void 0, (function() {
             var i, o, u, s, a;
-            return __generator(this, (function(c) {
+            return __generator$1(this, (function(c) {
                 switch (c.label) {
                   case 0:
                     i = "readonly" === e, o = 0, u = function() {
                         var e, u, a, c, f;
-                        return __generator(this, (function(h) {
+                        return __generator$1(this, (function(h) {
                             switch (h.label) {
                               case 0:
                                 ++o, h.label = 1;
@@ -15742,7 +16146,7 @@ function dr(t) {
         return (r = t.call(this, V.UNAVAILABLE, "IndexedDB transaction '" + e + "' failed: " + n) || this).name = "IndexedDbTransactionError", 
         r;
     }
-    return __extends$1(e, t), e;
+    return __extends(e, t), e;
 }(M);
 
 /**
@@ -16718,7 +17122,7 @@ var $r = __spreadArrays$1(__spreadArrays$1(__spreadArrays$1(__spreadArrays$1([ M
         var r = this;
         return (r = t.call(this) || this).vs = e, r.Ss = n, r;
     }
-    return __extends$1(e, t), e;
+    return __extends(e, t), e;
 }(kr);
 
 // V2 is no longer usable (see comment at top of file)
@@ -17219,8 +17623,8 @@ function wi(t) {
  * @returns A Promise that resolves after we recovered, or the original error.
  */
 function _i(t) {
-    return __awaiter(this, void 0, void 0, (function() {
-        return __generator(this, (function(e) {
+    return __awaiter$1(this, void 0, void 0, (function() {
+        return __generator$1(this, (function(e) {
             if (t.code !== V.FAILED_PRECONDITION || t.message !== Dr) throw t;
             return E("LocalStore", "Unexpectedly lost primary lease"), [ 2 /*return*/ ];
         }));
@@ -18088,9 +18492,9 @@ function Li(t) {
     }), t.prototype.Tr = function(t) {
         var e = this, n = this.wr ? 3e5 : 6e4;
         E("LruGarbageCollector", "Garbage collection scheduled in " + n + "ms"), this.Er = this.fs.mr("lru_garbage_collection" /* LruGarbageCollection */ , n, (function() {
-            return __awaiter(e, void 0, void 0, (function() {
+            return __awaiter$1(e, void 0, void 0, (function() {
                 var e;
-                return __generator(this, (function(n) {
+                return __generator$1(this, (function(n) {
                     switch (n.label) {
                       case 0:
                         this.Er = null, this.wr = !0, n.label = 1;
@@ -18499,7 +18903,7 @@ function Li(t) {
             return t.isEqual(e);
         })), r;
     }
-    return __extends$1(e, t), e.prototype.Ti = function(t) {
+    return __extends(e, t), e.prototype.Ti = function(t) {
         var e = this, n = [], r = 0, i = new hn((function(t, e) {
             return P$1(t.ot(), e.ot());
         }));
@@ -18864,8 +19268,8 @@ var Yi = "Failed to obtain exclusive access to the persistence layer. To allow s
     t.prototype.yo = function(t) {
         var e = this;
         return this.lo = function(n) {
-            return __awaiter(e, void 0, void 0, (function() {
-                return __generator(this, (function(e) {
+            return __awaiter$1(e, void 0, void 0, (function() {
+                return __generator$1(this, (function(e) {
                     return this.Ir ? [ 2 /*return*/ , t(n) ] : [ 2 /*return*/ ];
                 }));
             }));
@@ -18880,8 +19284,8 @@ var Yi = "Failed to obtain exclusive access to the persistence layer. To allow s
     t.prototype.Vo = function(t) {
         var e = this;
         this.fo.Zn((function(n) {
-            return __awaiter(e, void 0, void 0, (function() {
-                return __generator(this, (function(e) {
+            return __awaiter$1(e, void 0, void 0, (function() {
+                return __generator$1(this, (function(e) {
                     switch (e.label) {
                       case 0:
                         return null === n.newVersion ? [ 4 /*yield*/ , t() ] : [ 3 /*break*/ , 2 ];
@@ -18908,8 +19312,8 @@ var Yi = "Failed to obtain exclusive access to the persistence layer. To allow s
         // Schedule a primary lease refresh for immediate execution. The eventual
         // lease update will be propagated via `primaryStateListener`.
         this.no.ys((function() {
-            return __awaiter(e, void 0, void 0, (function() {
-                return __generator(this, (function(t) {
+            return __awaiter$1(e, void 0, void 0, (function() {
+                return __generator$1(this, (function(t) {
                     switch (t.label) {
                       case 0:
                         return this.Ir ? [ 4 /*yield*/ , this.mo() ] : [ 3 /*break*/ , 2 ];
@@ -18975,9 +19379,9 @@ var Yi = "Failed to obtain exclusive access to the persistence layer. To allow s
      * time of all clients.
      */
     t.prototype.Fo = function() {
-        return __awaiter(this, void 0, void 0, (function() {
+        return __awaiter$1(this, void 0, void 0, (function() {
             var t, e, n, r, i = this;
-            return __generator(this, (function(o) {
+            return __generator$1(this, (function(o) {
                 switch (o.label) {
                   case 0:
                     return !this.isPrimary || this.Oo(this.ho, 18e5) ? [ 3 /*break*/ , 2 ] : (this.ho = Date.now(), 
@@ -19082,9 +19486,9 @@ var Yi = "Failed to obtain exclusive access to the persistence layer. To allow s
             t;
         }));
     }, t.prototype.$o = function() {
-        return __awaiter(this, void 0, void 0, (function() {
+        return __awaiter$1(this, void 0, void 0, (function() {
             var t = this;
-            return __generator(this, (function(e) {
+            return __generator$1(this, (function(e) {
                 switch (e.label) {
                   case 0:
                     // Use `SimpleDb.runTransaction` directly to avoid failing if another tab
@@ -19665,9 +20069,9 @@ t, e, n, r) {
 // PORTING NOTE: Android and iOS only return the documents affected by the
 // change.
 function uo(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r, i, o;
-        return __generator(this, (function(u) {
+        return __generator$1(this, (function(u) {
             switch (u.label) {
               case 0:
                 return n = D(t), r = n.Ho, i = n.Ic, [ 4 /*yield*/ , n.persistence.runTransaction("Handle user change", "readonly", (function(t) {
@@ -19965,9 +20369,9 @@ function ho(t, e) {
  */
 // PORTING NOTE: `keepPersistedTargetData` is multi-tab only.
 function po(t, e, n) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var r, i, o, u;
-        return __generator(this, (function(s) {
+        return __generator$1(this, (function(s) {
             switch (s.label) {
               case 0:
                 r = D(t), i = r.dc.get(e), o = n ? "readwrite" : "readwrite-primary", s.label = 1;
@@ -20078,9 +20482,9 @@ function mo(t) {
  */
 // PORTING NOTE: Multi-Tab only.
 function go(t) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var e;
-        return __generator(this, (function(n) {
+        return __generator$1(this, (function(n) {
             return [ 2 /*return*/ , (e = D(t)).persistence.runTransaction("Synchronize last document change read time", "readonly", (function(t) {
                 return function(t) {
                     var e = Hi(t), n = Z.min();
@@ -20415,7 +20819,7 @@ function go(t) {
         var n = this;
         return (n = t.call(this) || this).zr = e, n;
     }
-    return __extends$1(e, t), e.prototype.Ti = function(t) {
+    return __extends(e, t), e.prototype.Ti = function(t) {
         var e = this, n = [];
         return this.ci.forEach((function(r, i) {
             i && i._i ? n.push(e.zr.hi(t, i._i, e.ui(r))) : e.zr.fi(r);
@@ -20564,7 +20968,7 @@ function go(t) {
         var n = this;
         return (n = t.call(this) || this).Ss = e, n;
     }
-    return __extends$1(e, t), e;
+    return __extends(e, t), e;
 }(kr), ko = /** @class */ function() {
     function t(t) {
         this.persistence = t, 
@@ -20844,9 +21248,9 @@ var Lo = /** @class */ function() {
     /** Returns 'true' if WebStorage is available in the current environment. */    return t.Wn = function(t) {
         return !(!t || !t.localStorage);
     }, t.prototype.start = function() {
-        return __awaiter(this, void 0, void 0, (function() {
+        return __awaiter$1(this, void 0, void 0, (function() {
             var t, e, n, r, i, o, u, s, a, c, f, h = this;
-            return __generator(this, (function(l) {
+            return __generator$1(this, (function(l) {
                 switch (l.label) {
                   case 0:
                     return [ 4 /*yield*/ , this.fa.Ko() ];
@@ -20929,9 +21333,9 @@ var Lo = /** @class */ function() {
                 if (n.storageArea === this.storage) {
             if (E("SharedClientState", "EVENT", n.key, n.newValue), n.key === this.ma) return void T("Received WebStorage notification for local change. Another client might have garbage-collected our state");
             this.no.vo((function() {
-                return __awaiter(e, void 0, void 0, (function() {
+                return __awaiter$1(e, void 0, void 0, (function() {
                     var t, e, r, i, o, u;
-                    return __generator(this, (function(s) {
+                    return __generator$1(this, (function(s) {
                         if (this.Ir) {
                             if (null !== n.key) if (this.Ra.test(n.key)) {
                                 if (null == n.newValue) return t = this.za(n.key), [ 2 /*return*/ , this.Ha(t, null) ];
@@ -21023,8 +21427,8 @@ var Lo = /** @class */ function() {
     t.prototype.ba = function(t) {
         return Mo.aa(t);
     }, t.prototype.Xa = function(t) {
-        return __awaiter(this, void 0, void 0, (function() {
-            return __generator(this, (function(e) {
+        return __awaiter$1(this, void 0, void 0, (function() {
+            return __generator$1(this, (function(e) {
                 return t.user.uid === this.currentUser.uid ? [ 2 /*return*/ , this.fa.nu(t.batchId, t.state, t.error) ] : (E("SharedClientState", "Ignoring mutation for non-active user " + t.user.uid), 
                 [ 2 /*return*/ ]);
             }));
@@ -21158,7 +21562,7 @@ var Lo = /** @class */ function() {
      * Base class for all Rest-based connections to the backend (WebChannel and
      * HTTP).
      */
-    return __extends$1(e, t), e.prototype.Du = function(t, e, n, r) {
+    return __extends(e, t), e.prototype.Du = function(t, e, n, r) {
         return new Promise((function(i, o) {
             var u = new XhrIo;
             u.listenOnce(EventType.COMPLETE, (function() {
@@ -21560,8 +21964,8 @@ function Ho() {
      * When stop returns, isStarted() and isOpen() will both return false.
      */
     t.prototype.stop = function() {
-        return __awaiter(this, void 0, void 0, (function() {
-            return __generator(this, (function(t) {
+        return __awaiter$1(this, void 0, void 0, (function() {
+            return __generator$1(this, (function(t) {
                 switch (t.label) {
                   case 0:
                     return this.Hu() ? [ 4 /*yield*/ , this.close(0 /* Initial */) ] : [ 3 /*break*/ , 2 ];
@@ -21608,8 +22012,8 @@ function Ho() {
         this.nh(), this.stream.send(t);
     }, 
     /** Called by the idle timer when the stream should close due to inactivity. */ t.prototype.th = function() {
-        return __awaiter(this, void 0, void 0, (function() {
-            return __generator(this, (function(t) {
+        return __awaiter$1(this, void 0, void 0, (function() {
+            return __generator$1(this, (function(t) {
                 return this.Ju() ? [ 2 /*return*/ , this.close(0 /* Initial */) ] : [ 2 /*return*/ ];
             }));
         }));
@@ -21631,8 +22035,8 @@ function Ho() {
      * @param error - the error the connection was closed with.
      */
     t.prototype.close = function(t, e) {
-        return __awaiter(this, void 0, void 0, (function() {
-            return __generator(this, (function(n) {
+        return __awaiter$1(this, void 0, void 0, (function() {
+            return __generator$1(this, (function(n) {
                 switch (n.label) {
                   case 0:
                     // Notify the listener that the stream closed.
@@ -21706,8 +22110,8 @@ function Ho() {
     }, t.prototype.Yu = function() {
         var t = this;
         this.state = 4 /* Backoff */ , this.zu.Bu((function() {
-            return __awaiter(t, void 0, void 0, (function() {
-                return __generator(this, (function(t) {
+            return __awaiter$1(t, void 0, void 0, (function() {
+                return __generator$1(this, (function(t) {
                     return this.state = 0 /* Initial */ , this.start(), [ 2 /*return*/ ];
                 }));
             }));
@@ -21742,7 +22146,7 @@ function Ho() {
         return (u = t.call(this, e, "listen_stream_connection_backoff" /* ListenStreamConnectionBackoff */ , "listen_stream_idle" /* ListenStreamIdle */ , n, r, o) || this).Kt = i, 
         u;
     }
-    return __extends$1(e, t), e.prototype.ah = function(t) {
+    return __extends(e, t), e.prototype.ah = function(t) {
         return this.Ku.xu("Listen", t);
     }, e.prototype.onMessage = function(t) {
         // A successful response means the stream is healthy
@@ -21849,7 +22253,7 @@ function Ho() {
         return (u = t.call(this, e, "write_stream_connection_backoff" /* WriteStreamConnectionBackoff */ , "write_stream_idle" /* WriteStreamIdle */ , n, r, o) || this).Kt = i, 
         u._h = !1, u;
     }
-    return __extends$1(e, t), Object.defineProperty(e.prototype, "fh", {
+    return __extends(e, t), Object.defineProperty(e.prototype, "fh", {
         /**
          * Tracks whether or not a handshake has been successfully exchanged and
          * the stream is ready to accept mutations.
@@ -21925,7 +22329,7 @@ function Ho() {
         return (i = t.call(this) || this).credentials = e, i.Ku = n, i.Kt = r, i.Ih = !1, 
         i;
     }
-    return __extends$1(e, t), e.prototype.mh = function() {
+    return __extends(e, t), e.prototype.mh = function() {
         if (this.Ih) throw new M(V.FAILED_PRECONDITION, "The client has already been terminated.");
     }, 
     /** Gets an auth token and invokes the provided RPC. */ e.prototype.bu = function(t, e, n) {
@@ -22066,15 +22470,15 @@ e, n, r, i) {
              */
     this.Oh = [], this.kh = i, this.kh.cu((function(t) {
         n.ys((function() {
-            return __awaiter(o, void 0, void 0, (function() {
-                return __generator(this, (function(t) {
+            return __awaiter$1(o, void 0, void 0, (function() {
+                return __generator$1(this, (function(t) {
                     switch (t.label) {
                       case 0:
                         return fu(this) ? (E("RemoteStore", "Restarting streams for network reachability change."), 
                         [ 4 /*yield*/ , function(t) {
-                            return __awaiter(this, void 0, void 0, (function() {
+                            return __awaiter$1(this, void 0, void 0, (function() {
                                 var e;
-                                return __generator(this, (function(n) {
+                                return __generator$1(this, (function(n) {
                                     switch (n.label) {
                                       case 0:
                                         return (e = D(t)).Fh.add(4 /* ConnectivityChange */), [ 4 /*yield*/ , ru(e) ];
@@ -22150,9 +22554,9 @@ e, n, r, i) {
  *    connection stream
  *  ListenerType: The type of the listener that will be used for callbacks
  */ function nu(t) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var e, n;
-        return __generator(this, (function(r) {
+        return __generator$1(this, (function(r) {
             switch (r.label) {
               case 0:
                 if (!fu(t)) return [ 3 /*break*/ , 4 ];
@@ -22178,9 +22582,9 @@ e, n, r, i) {
  * Temporarily disables the network. The network can be re-enabled using
  * enableNetwork().
  */ function ru(t) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var e, n;
-        return __generator(this, (function(r) {
+        return __generator$1(this, (function(r) {
             switch (r.label) {
               case 0:
                 e = 0, n = t.Oh, r.label = 1;
@@ -22269,8 +22673,8 @@ function hu(t) {
 }
 
 function lu(t) {
-    return __awaiter(this, void 0, void 0, (function() {
-        return __generator(this, (function(e) {
+    return __awaiter$1(this, void 0, void 0, (function() {
+        return __generator$1(this, (function(e) {
             return t.Nh.forEach((function(e, n) {
                 uu(t, e);
             })), [ 2 /*return*/ ];
@@ -22279,8 +22683,8 @@ function lu(t) {
 }
 
 function pu(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
-        return __generator(this, (function(n) {
+    return __awaiter$1(this, void 0, void 0, (function() {
+        return __generator$1(this, (function(n) {
             return hu(t), 
             // If we still need the watch stream, retry the connection.
             cu(t) ? (t.Mh.ph(e), au(t)) : 
@@ -22293,9 +22697,9 @@ function pu(t, e) {
 }
 
 function du(t, e, n) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var r, i, o;
-        return __generator(this, (function(u) {
+        return __generator$1(this, (function(u) {
             switch (u.label) {
               case 0:
                 if (t.Mh.set("Online" /* Online */), !(e instanceof On && 2 /* Removed */ === e.state && e.cause)) 
@@ -22307,9 +22711,9 @@ function du(t, e, n) {
                 return u.trys.push([ 1, 3, , 5 ]), [ 4 /*yield*/ , 
                 /** Handles an error on a target */
                 function(t, e) {
-                    return __awaiter(this, void 0, void 0, (function() {
+                    return __awaiter$1(this, void 0, void 0, (function() {
                         var n, r, i, o;
-                        return __generator(this, (function(u) {
+                        return __generator$1(this, (function(u) {
                             switch (u.label) {
                               case 0:
                                 n = e.cause, r = 0, i = e.targetIds, u.label = 1;
@@ -22424,9 +22828,9 @@ function du(t, e, n) {
  * The returned Promise is resolved once the network is disabled and before
  * any retry attempt.
  */ function vu(t, e, n) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var r = this;
-        return __generator(this, (function(i) {
+        return __generator$1(this, (function(i) {
             switch (i.label) {
               case 0:
                 if (!Ir(e)) throw e;
@@ -22444,8 +22848,8 @@ function du(t, e, n) {
                 }), 
                 // Probe IndexedDB periodically and re-enable network
                 t.fs.vo((function() {
-                    return __awaiter(r, void 0, void 0, (function() {
-                        return __generator(this, (function(e) {
+                    return __awaiter$1(r, void 0, void 0, (function() {
+                        return __generator$1(this, (function(e) {
                             switch (e.label) {
                               case 0:
                                 return E("RemoteStore", "Retrying IndexedDB access"), [ 4 /*yield*/ , n() ];
@@ -22474,9 +22878,9 @@ function du(t, e, n) {
 }
 
 function mu(t) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var e, n, r, i, o;
-        return __generator(this, (function(u) {
+        return __generator$1(this, (function(u) {
             switch (u.label) {
               case 0:
                 e = D(t), n = Au(e), r = e.xh.length > 0 ? e.xh[e.xh.length - 1].batchId : -1, u.label = 1;
@@ -22532,17 +22936,17 @@ function wu(t) {
 }
 
 function bu(t) {
-    return __awaiter(this, void 0, void 0, (function() {
-        return __generator(this, (function(e) {
+    return __awaiter$1(this, void 0, void 0, (function() {
+        return __generator$1(this, (function(e) {
             return Au(t).Th(), [ 2 /*return*/ ];
         }));
     }));
 }
 
 function Iu(t) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var e, n, r, i;
-        return __generator(this, (function(o) {
+        return __generator$1(this, (function(o) {
             // Send the write pipeline now that the stream is established.
             for (e = Au(t), n = 0, r = t.xh; n < r.length; n++) i = r[n], e.dh(i.mutations);
             return [ 2 /*return*/ ];
@@ -22551,9 +22955,9 @@ function Iu(t) {
 }
 
 function _u(t, e, n) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var r, i;
-        return __generator(this, (function(o) {
+        return __generator$1(this, (function(o) {
             switch (o.label) {
               case 0:
                 return r = t.xh.shift(), i = ei.from(r, e, n), [ 4 /*yield*/ , yu(t, (function() {
@@ -22575,14 +22979,14 @@ function _u(t, e, n) {
 }
 
 function Eu(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
-        return __generator(this, (function(n) {
+    return __awaiter$1(this, void 0, void 0, (function() {
+        return __generator$1(this, (function(n) {
             switch (n.label) {
               case 0:
                 return e && Au(t).fh ? [ 4 /*yield*/ , function(t, e) {
-                    return __awaiter(this, void 0, void 0, (function() {
+                    return __awaiter$1(this, void 0, void 0, (function() {
                         var n, r;
-                        return __generator(this, (function(i) {
+                        return __generator$1(this, (function(i) {
                             switch (i.label) {
                               case 0:
                                 return un(r = e.code) && r !== V.ABORTED ? (n = t.xh.shift(), 
@@ -22632,9 +23036,9 @@ function Eu(t, e) {
 /**
  * Toggles the network state when the client gains or loses its primary lease.
  */ function Tu(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n;
-        return __generator(this, (function(i) {
+        return __generator$1(this, (function(i) {
             switch (i.label) {
               case 0:
                 return n = D(t), e ? (n.Fh.delete(2 /* IsSecondary */), [ 4 /*yield*/ , nu(n) ]) : [ 3 /*break*/ , 2 ];
@@ -22677,8 +23081,8 @@ function Eu(t, e) {
         Iu: pu.bind(null, t),
         uh: du.bind(null, t)
     }), t.Oh.push((function(n) {
-        return __awaiter(e, void 0, void 0, (function() {
-            return __generator(this, (function(e) {
+        return __awaiter$1(e, void 0, void 0, (function() {
+            return __generator$1(this, (function(e) {
                 switch (e.label) {
                   case 0:
                     return n ? (t.Qh.Xu(), cu(t) ? au(t) : t.Mh.set("Unknown" /* Unknown */), [ 3 /*break*/ , 3 ]) : [ 3 /*break*/ , 1 ];
@@ -22718,8 +23122,8 @@ function Au(t) {
         Eh: Iu.bind(null, t),
         wh: _u.bind(null, t)
     }), t.Oh.push((function(n) {
-        return __awaiter(e, void 0, void 0, (function() {
-            return __generator(this, (function(e) {
+        return __awaiter$1(e, void 0, void 0, (function() {
+            return __generator$1(this, (function(e) {
                 switch (e.label) {
                   case 0:
                     return n ? (t.Kh.Xu(), [ 4 /*yield*/ , mu(t) ]) : [ 3 /*break*/ , 2 ];
@@ -22772,9 +23176,9 @@ var Su = function() {
 };
 
 function Du(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r, i, o, u, s, a;
-        return __generator(this, (function(c) {
+        return __generator$1(this, (function(c) {
             switch (c.label) {
               case 0:
                 if (n = D(t), r = e.query, i = !1, (o = n.queries.get(r)) || (i = !0, o = new Su), 
@@ -22801,9 +23205,9 @@ function Du(t, e) {
 }
 
 function ku(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r, i, o, u;
-        return __generator(this, (function(s) {
+        return __generator$1(this, (function(s) {
             return n = D(t), r = e.query, i = !1, (o = n.queries.get(r)) && (u = o.listeners.indexOf(e)) >= 0 && (o.listeners.splice(u, 1), 
             i = 0 === o.listeners.length), i ? [ 2 /*return*/ , (n.queries.delete(r), n.Jh(r)) ] : [ 2 /*return*/ ];
         }));
@@ -23241,9 +23645,9 @@ n) {
  * subscribed handlers. Returns the initial snapshot.
  */
 function Ku(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r, i, o, u, s;
-        return __generator(this, (function(a) {
+        return __generator$1(this, (function(a) {
             switch (a.label) {
               case 0:
                 return n = bs(t), (o = n.Sl.get(e)) ? (
@@ -23275,9 +23679,9 @@ function Ku(t, e) {
  * Registers a view for a previously unknown query and computes its initial
  * snapshot.
  */ function Hu(t, e, n, r) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var i, o, u, s, a, c;
-        return __generator(this, (function(f) {
+        return __generator$1(this, (function(f) {
             switch (f.label) {
               case 0:
                 // PORTING NOTE: On Web only, we inject the code that registers new Limbo
@@ -23285,9 +23689,9 @@ function Ku(t, e) {
                 // changes when user code includes queries.
                 return t.Bl = function(e, n, r) {
                     return function(t, e, n, r) {
-                        return __awaiter(this, void 0, void 0, (function() {
+                        return __awaiter$1(this, void 0, void 0, (function() {
                             var i, o, u;
-                            return __generator(this, (function(s) {
+                            return __generator$1(this, (function(s) {
                                 switch (s.label) {
                                   case 0:
                                     return i = e.view.dl(n), i._c ? [ 4 /*yield*/ , vo(t.Sh, e.query, 
@@ -23324,9 +23728,9 @@ function Ku(t, e) {
 }
 
 /** Stops listening to the query. */ function Ju(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r, i;
-        return __generator(this, (function(o) {
+        return __generator$1(this, (function(o) {
             switch (o.label) {
               case 0:
                 return n = D(t), r = n.Sl.get(e), (i = n.Dl.get(r.targetId)).length > 1 ? [ 2 /*return*/ , (n.Dl.set(r.targetId, i.filter((function(t) {
@@ -23369,9 +23773,9 @@ function Ku(t, e) {
  * userCallback is resolved once the write was acked/rejected by the
  * backend (or failed locally for any other reason).
  */ function Wu(t, e, n) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var r, i, o, u;
-        return __generator(this, (function(s) {
+        return __generator$1(this, (function(s) {
             switch (s.label) {
               case 0:
                 r = Is(t), s.label = 1;
@@ -23436,9 +23840,9 @@ function Ku(t, e) {
  * changes, and releasing any pending mutation batches that would become
  * visible because of the snapshot version the remote event contains.
  */ function Qu(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r;
-        return __generator(this, (function(i) {
+        return __generator$1(this, (function(i) {
             switch (i.label) {
               case 0:
                 n = D(t), i.label = 1;
@@ -23514,9 +23918,9 @@ function Ku(t, e) {
  * Nearly always this will be an indication that the user is no longer
  * authorized to see the data matching the target.
  */ function $u(t, e, n) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var r, i, o, u, s, a;
-        return __generator(this, (function(c) {
+        return __generator$1(this, (function(c) {
             switch (c.label) {
               case 0:
                 // PORTING NOTE: Multi-tab only.
@@ -23551,9 +23955,9 @@ function Ku(t, e) {
 }
 
 function Xu(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r, i;
-        return __generator(this, (function(o) {
+        return __generator$1(this, (function(o) {
             switch (o.label) {
               case 0:
                 n = D(t), r = e.batch.batchId, o.label = 1;
@@ -23590,9 +23994,9 @@ function Xu(t, e) {
 }
 
 function Zu(t, e, n) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var r, i;
-        return __generator(this, (function(o) {
+        return __generator$1(this, (function(o) {
             switch (o.label) {
               case 0:
                 r = D(t), o.label = 1;
@@ -23644,9 +24048,9 @@ function Zu(t, e, n) {
  * Registers a user callback that resolves when all pending mutations at the moment of calling
  * are acknowledged .
  */ function ts(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r, i, o, u;
-        return __generator(this, (function(s) {
+        return __generator$1(this, (function(s) {
             switch (s.label) {
               case 0:
                 fu((n = D(t)).gl) || E("SyncEngine", "The network is disabled. The task returned by 'awaitPendingWrites()' will not complete until the network is enabled."), 
@@ -23745,9 +24149,9 @@ function us(t, e) {
 }
 
 function as(t, e, n) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var r, i, o, u;
-        return __generator(this, (function(s) {
+        return __generator$1(this, (function(s) {
             switch (s.label) {
               case 0:
                 return r = D(t), i = [], o = [], u = [], r.Sl.nt() ? [ 3 /*break*/ , 3 ] : (r.Sl.forEach((function(t, s) {
@@ -23762,9 +24166,9 @@ function as(t, e, n) {
 
               case 1:
                 return s.sent(), r.vl.uh(i), [ 4 /*yield*/ , function(t, e) {
-                    return __awaiter(this, void 0, void 0, (function() {
+                    return __awaiter$1(this, void 0, void 0, (function() {
                         var n, r, i, o, u, s, a, c, f;
-                        return __generator(this, (function(h) {
+                        return __generator$1(this, (function(h) {
                             switch (h.label) {
                               case 0:
                                 n = D(t), h.label = 1;
@@ -23816,9 +24220,9 @@ function as(t, e, n) {
 }
 
 function cs(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r;
-        return __generator(this, (function(i) {
+        return __generator$1(this, (function(i) {
             switch (i.label) {
               case 0:
                 return (n = D(t)).currentUser.isEqual(e) ? [ 3 /*break*/ , 3 ] : (E("SyncEngine", "User change. New user:", e.R()), 
@@ -23863,9 +24267,9 @@ function fs(t, e) {
  * Reconcile the list of synced documents in an existing view with those
  * from persistence.
  */ function hs(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r, i;
-        return __generator(this, (function(o) {
+        return __generator$1(this, (function(o) {
             switch (o.label) {
               case 0:
                 return [ 4 /*yield*/ , vo((n = D(t)).Sh, e.query, 
@@ -23885,9 +24289,9 @@ function fs(t, e) {
  */
 // PORTING NOTE: Multi-Tab only.
 function ls(t) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var e;
-        return __generator(this, (function(n) {
+        return __generator$1(this, (function(n) {
             return [ 2 /*return*/ , mo((e = D(t)).Sh).then((function(t) {
                 return as(e, t);
             })) ];
@@ -23898,9 +24302,9 @@ function ls(t) {
 /** Applies a mutation state to an existing batch.  */
 // PORTING NOTE: Multi-Tab only.
 function ps(t, e, n, r) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var i, o;
-        return __generator(this, (function(u) {
+        return __generator$1(this, (function(u) {
             switch (u.label) {
               case 0:
                 return [ 4 /*yield*/ , function(t, e) {
@@ -23955,9 +24359,9 @@ function ps(t, e, n, r) {
 /** Applies a query target change from a different tab. */
 // PORTING NOTE: Multi-Tab only.
 function ds(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r, i, o, u, s, a, c;
-        return __generator(this, (function(f) {
+        return __generator$1(this, (function(f) {
             switch (f.label) {
               case 0:
                 return bs(n = D(t)), Is(n), !0 !== e || !0 === n.Ll ? [ 3 /*break*/ , 3 ] : (r = n.pl.Sa(), 
@@ -24003,9 +24407,9 @@ function ds(t, e) {
 }
 
 function vs(t, e, n) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r, i, o, u, s, a, c, f, h, l, p, d, v;
-        return __generator(this, (function(y) {
+        return __generator$1(this, (function(y) {
             switch (y.label) {
               case 0:
                 n = D(t), r = [], i = [], o = 0, u = e, y.label = 1;
@@ -24083,9 +24487,9 @@ function ms(t) {
 /** Applies a query target change from a different tab. */
 // PORTING NOTE: Multi-Tab only.
 function gs(t, e, n, r) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var i, o, u;
-        return __generator(this, (function(s) {
+        return __generator$1(this, (function(s) {
             switch (s.label) {
               case 0:
                 return (i = D(t)).Ll ? (
@@ -24132,9 +24536,9 @@ function gs(t, e, n, r) {
 }
 
 /** Adds or removes Watch targets for queries from different tabs. */ function ws(t, e, n) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var r, i, o, u, s, a, c, f, h, l;
-        return __generator(this, (function(p) {
+        return __generator$1(this, (function(p) {
             switch (p.label) {
               case 0:
                 if (!(r = bs(t)).Ll) return [ 3 /*break*/ , 10 ];
@@ -24160,7 +24564,7 @@ function gs(t, e, n, r) {
 
               case 6:
                 c = function(t) {
-                    return __generator(this, (function(e) {
+                    return __generator$1(this, (function(e) {
                         switch (e.label) {
                           case 0:
                             return r.Dl.has(t) ? [ 4 /*yield*/ , po(r.Sh, t, 
@@ -24219,8 +24623,8 @@ var Es = /** @class */ function() {
         this.synchronizeTabs = !1;
     }
     return t.prototype.initialize = function(t) {
-        return __awaiter(this, void 0, void 0, (function() {
-            return __generator(this, (function(e) {
+        return __awaiter$1(this, void 0, void 0, (function() {
+            return __generator$1(this, (function(e) {
                 switch (e.label) {
                   case 0:
                     return this.Kt = Wo(t.gu.T), this.pl = this.jl(t), this.persistence = this.Gl(t), 
@@ -24240,8 +24644,8 @@ var Es = /** @class */ function() {
     }, t.prototype.jl = function(t) {
         return new Fo;
     }, t.prototype.terminate = function() {
-        return __awaiter(this, void 0, void 0, (function() {
-            return __generator(this, (function(t) {
+        return __awaiter$1(this, void 0, void 0, (function() {
+            return __generator$1(this, (function(t) {
                 switch (t.label) {
                   case 0:
                     return this.zl && this.zl.stop(), [ 4 /*yield*/ , this.pl.$o() ];
@@ -24261,9 +24665,9 @@ var Es = /** @class */ function() {
         return (i = t.call(this) || this).Xl = e, i.cacheSizeBytes = n, i.forceOwnership = r, 
         i.synchronizeTabs = !1, i;
     }
-    return __extends$1(e, t), e.prototype.initialize = function(e) {
-        return __awaiter(this, void 0, void 0, (function() {
-            return __generator(this, (function(n) {
+    return __extends(e, t), e.prototype.initialize = function(e) {
+        return __awaiter$1(this, void 0, void 0, (function() {
+            return __generator$1(this, (function(n) {
                 switch (n.label) {
                   case 0:
                     return [ 4 /*yield*/ , t.prototype.initialize.call(this, e) ];
@@ -24304,10 +24708,10 @@ var Es = /** @class */ function() {
         return (r = t.call(this, e, n, /* forceOwnership= */ !1) || this).Xl = e, r.cacheSizeBytes = n, 
         r.synchronizeTabs = !0, r;
     }
-    return __extends$1(e, t), e.prototype.initialize = function(e) {
-        return __awaiter(this, void 0, void 0, (function() {
+    return __extends(e, t), e.prototype.initialize = function(e) {
+        return __awaiter$1(this, void 0, void 0, (function() {
             var n, r = this;
-            return __generator(this, (function(i) {
+            return __generator$1(this, (function(i) {
                 switch (i.label) {
                   case 0:
                     return [ 4 /*yield*/ , t.prototype.initialize.call(this, e) ];
@@ -24328,8 +24732,8 @@ var Es = /** @class */ function() {
                     // NOTE: This will immediately call the listener, so we make sure to
                     // set it after localStore / remoteStore are started.
                     return [ 4 /*yield*/ , this.persistence.yo((function(t) {
-                        return __awaiter(r, void 0, void 0, (function() {
-                            return __generator(this, (function(e) {
+                        return __awaiter$1(r, void 0, void 0, (function() {
+                            return __generator$1(this, (function(e) {
                                 switch (e.label) {
                                   case 0:
                                     return [ 4 /*yield*/ , ds(this.Xl.fa, t) ];
@@ -24358,9 +24762,9 @@ var Es = /** @class */ function() {
 }(Ts), As = /** @class */ function() {
     function t() {}
     return t.prototype.initialize = function(t, e) {
-        return __awaiter(this, void 0, void 0, (function() {
+        return __awaiter$1(this, void 0, void 0, (function() {
             var n = this;
-            return __generator(this, (function(r) {
+            return __generator$1(this, (function(r) {
                 switch (r.label) {
                   case 0:
                     return this.Sh ? [ 3 /*break*/ , 2 ] : (this.Sh = t.Sh, this.pl = t.pl, this.Dh = this.Zl(e), 
@@ -24398,9 +24802,9 @@ var Es = /** @class */ function() {
         }(this.Sh, this.gl, this.Vl, this.pl, t.Yl, t.bl, e);
     }, t.prototype.terminate = function() {
         return function(t) {
-            return __awaiter(this, void 0, void 0, (function() {
+            return __awaiter$1(this, void 0, void 0, (function() {
                 var e;
-                return __generator(this, (function(n) {
+                return __generator$1(this, (function(n) {
                     switch (n.label) {
                       case 0:
                         return e = D(t), E("RemoteStore", "RemoteStore shutting down."), e.Fh.add(5 /* Shutdown */), 
@@ -24814,7 +25218,7 @@ function qs(t, e) {
         return (i = t.call(this, e, n, se(r)) || this).firestore = e, i.D_ = r, i.type = "collection", 
         i;
     }
-    return __extends$1(e, t), Object.defineProperty(e.prototype, "id", {
+    return __extends(e, t), Object.defineProperty(e.prototype, "id", {
         /** The collection's identifier. */ get: function() {
             return this.C_.path.et();
         },
@@ -25178,7 +25582,7 @@ var oa = /** @class */ function(t) {
     function e() {
         return null !== t && t.apply(this, arguments) || this;
     }
-    return __extends$1(e, t), e.prototype.z_ = function(t) {
+    return __extends(e, t), e.prototype.z_ = function(t) {
         if (2 /* MergeSet */ !== t.k_) throw 1 /* Update */ === t.k_ ? t.K_(this._methodName + "() can only appear at the top level of your update data") : t.K_(this._methodName + "() cannot be used with set() unless you pass {merge:true}");
         // No transform to add for a delete, but we need to add it to our
         // fieldMask so it gets deleted.
@@ -25216,7 +25620,7 @@ var sa = /** @class */ function(t) {
     function e() {
         return null !== t && t.apply(this, arguments) || this;
     }
-    return __extends$1(e, t), e.prototype.z_ = function(t) {
+    return __extends(e, t), e.prototype.z_ = function(t) {
         return new Ue(t.path, new ke);
     }, e.prototype.isEqual = function(t) {
         return t instanceof e;
@@ -25226,7 +25630,7 @@ var sa = /** @class */ function(t) {
         var r = this;
         return (r = t.call(this, e) || this).H_ = n, r;
     }
-    return __extends$1(e, t), e.prototype.z_ = function(t) {
+    return __extends(e, t), e.prototype.z_ = function(t) {
         var e = ua(this, t, 
         /*array=*/ !0), n = this.H_.map((function(t) {
             return da(t, e);
@@ -25241,7 +25645,7 @@ var sa = /** @class */ function(t) {
         var r = this;
         return (r = t.call(this, e) || this).H_ = n, r;
     }
-    return __extends$1(e, t), e.prototype.z_ = function(t) {
+    return __extends(e, t), e.prototype.z_ = function(t) {
         var e = ua(this, t, 
         /*array=*/ !0), n = this.H_.map((function(t) {
             return da(t, e);
@@ -25256,7 +25660,7 @@ var sa = /** @class */ function(t) {
         var r = this;
         return (r = t.call(this, e) || this).J_ = n, r;
     }
-    return __extends$1(e, t), e.prototype.z_ = function(t) {
+    return __extends(e, t), e.prototype.z_ = function(t) {
         var e = new Re(t.Kt, Ne(t.Kt, this.J_));
         return new Ue(t.path, e);
     }, e.prototype.isEqual = function(t) {
@@ -25545,16 +25949,16 @@ function _a$2(t, e) {
         this.tf = new Set;
     }
     return t.prototype.ef = function(t) {
-        return __awaiter(this, void 0, void 0, (function() {
+        return __awaiter$1(this, void 0, void 0, (function() {
             var e, n = this;
-            return __generator(this, (function(r) {
+            return __generator$1(this, (function(r) {
                 switch (r.label) {
                   case 0:
                     if (this.nf(), this.mutations.length > 0) throw new M(V.INVALID_ARGUMENT, "Firestore transactions require all reads to be executed before all writes.");
                     return [ 4 /*yield*/ , function(t, e) {
-                        return __awaiter(this, void 0, void 0, (function() {
+                        return __awaiter$1(this, void 0, void 0, (function() {
                             var n, r, i, o, u, s;
-                            return __generator(this, (function(a) {
+                            return __generator$1(this, (function(a) {
                                 switch (a.label) {
                                   case 0:
                                     return n = D(t), r = Qn(n.Kt) + "/documents", i = {
@@ -25609,9 +26013,9 @@ function _a$2(t, e) {
     }, t.prototype.delete = function(t) {
         this.write(new nn(t, this.Gt(t))), this.tf.add(t.toString());
     }, t.prototype.commit = function() {
-        return __awaiter(this, void 0, void 0, (function() {
+        return __awaiter$1(this, void 0, void 0, (function() {
             var t, e = this;
-            return __generator(this, (function(n) {
+            return __generator$1(this, (function(n) {
                 switch (n.label) {
                   case 0:
                     if (this.nf(), this.Z_) throw this.Z_;
@@ -25626,9 +26030,9 @@ function _a$2(t, e) {
                         var r = it.ft(n);
                         e.mutations.push(new rn(r, e.Gt(r)));
                     })), [ 4 /*yield*/ , function(t, e) {
-                        return __awaiter(this, void 0, void 0, (function() {
+                        return __awaiter$1(this, void 0, void 0, (function() {
                             var n, r, i;
-                            return __generator(this, (function(o) {
+                            return __generator$1(this, (function(o) {
                                 switch (o.label) {
                                   case 0:
                                     return n = D(t), r = Qn(n.Kt) + "/documents", i = {
@@ -25710,9 +26114,9 @@ function _a$2(t, e) {
     }, t.prototype.af = function() {
         var t = this;
         this.zu.Bu((function() {
-            return __awaiter(t, void 0, void 0, (function() {
+            return __awaiter$1(t, void 0, void 0, (function() {
                 var t, e, n = this;
-                return __generator(this, (function(r) {
+                return __generator$1(this, (function(r) {
                     return t = new Ea(this.Dh), (e = this.uf(t)) && e.then((function(e) {
                         n.fs.ys((function() {
                             return t.commit().then((function() {
@@ -25768,8 +26172,8 @@ function _a$2(t, e) {
         }));
     }
     return t.prototype.getConfiguration = function() {
-        return __awaiter(this, void 0, void 0, (function() {
-            return __generator(this, (function(t) {
+        return __awaiter$1(this, void 0, void 0, (function() {
+            return __generator$1(this, (function(t) {
                 switch (t.label) {
                   case 0:
                     return [ 4 /*yield*/ , this.N.promise ];
@@ -25805,9 +26209,9 @@ function _a$2(t, e) {
         this.fs.Ef();
         var e = new vr;
         return this.fs.Tf((function() {
-            return __awaiter(t, void 0, void 0, (function() {
+            return __awaiter$1(t, void 0, void 0, (function() {
                 var t, n;
-                return __generator(this, (function(r) {
+                return __generator$1(this, (function(r) {
                     switch (r.label) {
                       case 0:
                         return r.trys.push([ 0, 5, , 6 ]), this.If ? [ 4 /*yield*/ , this.If.terminate() ] : [ 3 /*break*/ , 2 ];
@@ -25859,9 +26263,9 @@ function _a$2(t, e) {
  * TransactionRunner encapsulates the logic needed to run and retry transactions
  * with backoff.
  */ function Aa(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r, i = this;
-        return __generator(this, (function(o) {
+        return __generator$1(this, (function(o) {
             switch (o.label) {
               case 0:
                 return t.fs.Af(), E("FirestoreClient", "Initializing OfflineComponentProvider"), 
@@ -25873,8 +26277,8 @@ function _a$2(t, e) {
               case 2:
                 return o.sent(), r = n.Yl, t.ff((function(n) {
                     r.isEqual(n) || (r = n, t.fs.vo((function() {
-                        return __awaiter(i, void 0, void 0, (function() {
-                            return __generator(this, (function(t) {
+                        return __awaiter$1(i, void 0, void 0, (function() {
+                            return __generator$1(this, (function(t) {
                                 switch (t.label) {
                                   case 0:
                                     return [ 4 /*yield*/ , uo(e.Sh, n) ];
@@ -25897,9 +26301,9 @@ function _a$2(t, e) {
 }
 
 function Sa(t, e) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var n, r;
-        return __generator(this, (function(i) {
+        return __generator$1(this, (function(i) {
             switch (i.label) {
               case 0:
                 return t.fs.Af(), [ 4 /*yield*/ , xa(t) ];
@@ -25918,9 +26322,9 @@ function Sa(t, e) {
                 t.ff((function(n) {
                     return t.fs.vo((function() {
                         return function(t, e) {
-                            return __awaiter(this, void 0, void 0, (function() {
+                            return __awaiter$1(this, void 0, void 0, (function() {
                                 var n, r;
-                                return __generator(this, (function(i) {
+                                return __generator$1(this, (function(i) {
                                     switch (i.label) {
                                       case 0:
                                         return (n = D(t)).fs.Af(), E("RemoteStore", "RemoteStore received new credentials"), 
@@ -25955,8 +26359,8 @@ function Sa(t, e) {
 }
 
 function xa(t) {
-    return __awaiter(this, void 0, void 0, (function() {
-        return __generator(this, (function(e) {
+    return __awaiter$1(this, void 0, void 0, (function() {
+        return __generator$1(this, (function(e) {
             switch (e.label) {
               case 0:
                 return t.mf ? [ 3 /*break*/ , 2 ] : (E("FirestoreClient", "Using default OfflineComponentProvider"), 
@@ -25973,8 +26377,8 @@ function xa(t) {
 }
 
 function Da(t) {
-    return __awaiter(this, void 0, void 0, (function() {
-        return __generator(this, (function(e) {
+    return __awaiter$1(this, void 0, void 0, (function() {
+        return __generator$1(this, (function(e) {
             switch (e.label) {
               case 0:
                 return t.If ? [ 3 /*break*/ , 2 ] : (E("FirestoreClient", "Using default OnlineComponentProvider"), 
@@ -26015,9 +26419,9 @@ function Ca(t) {
 }
 
 function La(t) {
-    return __awaiter(this, void 0, void 0, (function() {
+    return __awaiter$1(this, void 0, void 0, (function() {
         var e, n;
-        return __generator(this, (function(r) {
+        return __generator$1(this, (function(r) {
             switch (r.label) {
               case 0:
                 return [ 4 /*yield*/ , Da(t) ];
@@ -26035,9 +26439,9 @@ function La(t) {
     void 0 === n && (n = {});
     var i = new vr;
     return t.fs.ys((function() {
-        return __awaiter(r, void 0, void 0, (function() {
+        return __awaiter$1(r, void 0, void 0, (function() {
             var r;
-            return __generator(this, (function(o) {
+            return __generator$1(this, (function(o) {
                 switch (o.label) {
                   case 0:
                     return r = function(t, e, n, r, i) {
@@ -26082,9 +26486,9 @@ function Va(t, e, n) {
     void 0 === n && (n = {});
     var i = new vr;
     return t.fs.ys((function() {
-        return __awaiter(r, void 0, void 0, (function() {
+        return __awaiter$1(r, void 0, void 0, (function() {
             var r;
-            return __generator(this, (function(o) {
+            return __generator$1(this, (function(o) {
                 switch (o.label) {
                   case 0:
                     return r = function(t, e, n, r, i) {
@@ -26184,9 +26588,9 @@ var Ma = /** @class */ function() {
      * reschedules with backoff.
      */
     t.prototype.Cf = function() {
-        return __awaiter(this, void 0, void 0, (function() {
+        return __awaiter$1(this, void 0, void 0, (function() {
             var t, e = this;
-            return __generator(this, (function(n) {
+            return __generator$1(this, (function(n) {
                 switch (n.label) {
                   case 0:
                     if (0 === this.Pf.length) return [ 3 /*break*/ , 5 ];
@@ -26264,9 +26668,9 @@ var Ma = /** @class */ function() {
      * operations are not run.
      */
     t.prototype.Nf = function() {
-        return __awaiter(this, void 0, void 0, (function() {
+        return __awaiter$1(this, void 0, void 0, (function() {
             var t;
-            return __generator(this, (function(e) {
+            return __generator$1(this, (function(e) {
                 switch (e.label) {
                   case 0:
                     return [ 4 /*yield*/ , t = this.Rf ];
@@ -26334,7 +26738,7 @@ var Ma = /** @class */ function() {
         return (r = t.call(this, e, n) || this).Mf = new Ma, r.w_ = "name" in e ? e.name : "[DEFAULT]", 
         r;
     }
-    return __extends$1(e, t), e.prototype.b_ = function() {
+    return __extends(e, t), e.prototype.b_ = function() {
         return this.Lf || 
         // The client must be initialized to ensure that all subsequent API
         // usage throws an exception.
@@ -26384,9 +26788,9 @@ function ja(t) {
  */ function za(t, e, n) {
     var r = this, i = new vr;
     return t.fs.enqueue((function() {
-        return __awaiter(r, void 0, void 0, (function() {
+        return __awaiter$1(r, void 0, void 0, (function() {
             var r;
-            return __generator(this, (function(o) {
+            return __generator$1(this, (function(o) {
                 switch (o.label) {
                   case 0:
                     return o.trys.push([ 0, 3, , 4 ]), [ 4 /*yield*/ , Aa(t, n) ];
@@ -26605,7 +27009,7 @@ function Ga(t) {
      *
      * @override
      * @returns An `Object` containing all fields in the document.
-     */    return __extends$1(e, t), e.prototype.data = function() {
+     */    return __extends(e, t), e.prototype.data = function() {
         return t.prototype.data.call(this);
     }, e;
 }(Ka);
@@ -26693,7 +27097,7 @@ var $a = /** @class */ function(t) {
         return (i = t.call(this) || this).Xf = e, i.Zf = n, i.td = r, i.type = "where", 
         i;
     }
-    return __extends$1(e, t), e.prototype.Yf = function(t) {
+    return __extends(e, t), e.prototype.Yf = function(t) {
         var e = ra(t.firestore), n = function(t, e, n, r, i, o, u) {
             var s;
             if (i.ht()) {
@@ -26776,7 +27180,7 @@ var $a = /** @class */ function(t) {
         var r = this;
         return (r = t.call(this) || this).Xf = e, r.ed = n, r.type = "orderBy", r;
     }
-    return __extends$1(e, t), e.prototype.Yf = function(t) {
+    return __extends(e, t), e.prototype.Yf = function(t) {
         var e = function(t, e, n) {
             if (null !== t.startAt) throw new M(V.INVALID_ARGUMENT, "Invalid query. You must not call startAt() or startAfter() before calling orderBy().");
             if (null !== t.endAt) throw new M(V.INVALID_ARGUMENT, "Invalid query. You must not call endAt() or endBefore() before calling orderBy().");
@@ -26800,7 +27204,7 @@ var $a = /** @class */ function(t) {
         var i = this;
         return (i = t.call(this) || this).type = e, i.nd = n, i.sd = r, i;
     }
-    return __extends$1(e, t), e.prototype.Yf = function(t) {
+    return __extends(e, t), e.prototype.Yf = function(t) {
         return new Bs(t.firestore, t.v_, ve(t.C_, this.nd, this.sd));
     }, e;
 }(Qa), tc = /** @class */ function(t) {
@@ -26808,7 +27212,7 @@ var $a = /** @class */ function(t) {
         var i = this;
         return (i = t.call(this) || this).type = e, i.rd = n, i.od = r, i;
     }
-    return __extends$1(e, t), e.prototype.Yf = function(t) {
+    return __extends(e, t), e.prototype.Yf = function(t) {
         var e = nc(t, this.type, this.rd, this.od);
         return new Bs(t.firestore, t.v_, function(t, e) {
             return new oe(t.path, t.collectionGroup, t.Nt.slice(), t.filters.slice(), t.limit, t.limitType, e, t.endAt);
@@ -26819,7 +27223,7 @@ var $a = /** @class */ function(t) {
         var i = this;
         return (i = t.call(this) || this).type = e, i.rd = n, i.od = r, i;
     }
-    return __extends$1(e, t), e.prototype.Yf = function(t) {
+    return __extends(e, t), e.prototype.Yf = function(t) {
         var e = nc(t, this.type, this.rd, this.od);
         return new Bs(t.firestore, t.v_, function(t, e) {
             return new oe(t.path, t.collectionGroup, t.Nt.slice(), t.filters.slice(), t.limit, t.limitType, t.startAt, e);
@@ -26952,7 +27356,7 @@ var ac = /** @class */ function(t) {
         var n = this;
         return (n = t.call(this) || this).firestore = e, n;
     }
-    return __extends$1(e, t), e.prototype.Uf = function(t) {
+    return __extends(e, t), e.prototype.Uf = function(t) {
         return new U(t);
     }, e.prototype.Qf = function(t) {
         var e = this.Gf(t, this.firestore.I_);
@@ -26982,7 +27386,7 @@ var ac = /** @class */ function(t) {
     /**
      * Property of the `DocumentSnapshot` that signals whether or not the data
      * exists. True if the document exists.
-     */    return __extends$1(e, t), e.prototype.exists = function() {
+     */    return __extends(e, t), e.prototype.exists = function() {
         return t.prototype.exists.call(this);
     }, 
     /**
@@ -27051,7 +27455,7 @@ var ac = /** @class */ function(t) {
      * the snapshot (for example the desired behavior for server timestamps that
      * have not yet been set to their final value).
      * @returns An `Object` containing all fields in the document.
-     */    return __extends$1(e, t), e.prototype.data = function(e) {
+     */    return __extends(e, t), e.prototype.data = function(e) {
         return void 0 === e && (e = {}), t.prototype.data.call(this, e);
     }, e;
 }(fc), lc = /** @class */ function() {
@@ -27223,7 +27627,7 @@ var ac = /** @class */ function(t) {
         var n = this;
         return (n = t.call(this) || this).firestore = e, n;
     }
-    return __extends$1(e, t), e.prototype.Uf = function(t) {
+    return __extends(e, t), e.prototype.Uf = function(t) {
         return new U(t);
     }, e.prototype.Qf = function(t) {
         var e = this.Gf(t, this.firestore.I_);
@@ -27288,9 +27692,9 @@ var ac = /** @class */ function(t) {
     return function(t, e, n, r) {
         var i = this, o = new xs(r), u = new Lu(e, o, n);
         return t.fs.ys((function() {
-            return __awaiter(i, void 0, void 0, (function() {
+            return __awaiter$1(i, void 0, void 0, (function() {
                 var e;
-                return __generator(this, (function(n) {
+                return __generator$1(this, (function(n) {
                     switch (n.label) {
                       case 0:
                         return e = Du, [ 4 /*yield*/ , La(t) ];
@@ -27302,9 +27706,9 @@ var ac = /** @class */ function(t) {
             }));
         })), function() {
             o.r_(), t.fs.ys((function() {
-                return __awaiter(i, void 0, void 0, (function() {
+                return __awaiter$1(i, void 0, void 0, (function() {
                     var e;
-                    return __generator(this, (function(n) {
+                    return __generator$1(this, (function(n) {
                         switch (n.label) {
                           case 0:
                             return e = ku, [ 4 /*yield*/ , La(t) ];
@@ -27323,9 +27727,9 @@ var ac = /** @class */ function(t) {
     return function(t, e) {
         var n = this, r = new vr;
         return t.fs.ys((function() {
-            return __awaiter(n, void 0, void 0, (function() {
+            return __awaiter$1(n, void 0, void 0, (function() {
                 var n;
-                return __generator(this, (function(i) {
+                return __generator$1(this, (function(i) {
                     switch (i.label) {
                       case 0:
                         return n = Wu, [ 4 /*yield*/ , Ca(t) ];
@@ -27483,7 +27887,7 @@ function Ic(t, e) {
      *
      * @param documentRef - A reference to the document to be read.
      * @returns A `DocumentSnapshot` with the read data.
-     */    return __extends$1(e, t), e.prototype.get = function(e) {
+     */    return __extends(e, t), e.prototype.get = function(e) {
         var n = this, r = Ic(e, this.zf), i = new vc(this.zf);
         return t.prototype.get.call(this, e).then((function(t) {
             return new fc(n.zf, i, r.S_, t.Jf, new cc(
@@ -27554,15 +27958,15 @@ function Ic(t, e) {
             if (t.R_ && !t.P_) throw new M(V.FAILED_PRECONDITION, "Persistence can only be cleared before a Firestore instance is initialized or after it is terminated.");
             var n = new vr;
             return t.Mf.Tf((function() {
-                return __awaiter(e, void 0, void 0, (function() {
+                return __awaiter$1(e, void 0, void 0, (function() {
                     var e;
-                    return __generator(this, (function(r) {
+                    return __generator$1(this, (function(r) {
                         switch (r.label) {
                           case 0:
                             return r.trys.push([ 0, 2, , 3 ]), [ 4 /*yield*/ , function(t) {
-                                return __awaiter(this, void 0, void 0, (function() {
+                                return __awaiter$1(this, void 0, void 0, (function() {
                                     var e;
-                                    return __generator(this, (function(n) {
+                                    return __generator$1(this, (function(n) {
                                         switch (n.label) {
                                           case 0:
                                             return gr.Wn() ? (e = t + "main", [ 4 /*yield*/ , gr.delete(e) ]) : [ 2 /*return*/ , Promise.resolve() ];
@@ -27613,7 +28017,7 @@ function Ic(t, e) {
             }
         }, e instanceof B || (i.md = e), i;
     }
-    return __extends$1(e, t), Object.defineProperty(e.prototype, "I_", {
+    return __extends(e, t), Object.defineProperty(e.prototype, "I_", {
         get: function() {
             return this._.I_;
         },
@@ -27634,9 +28038,9 @@ function Ic(t, e) {
         return function(t) {
             var e = this;
             return t.fs.enqueue((function() {
-                return __awaiter(e, void 0, void 0, (function() {
+                return __awaiter$1(e, void 0, void 0, (function() {
                     var e, n;
-                    return __generator(this, (function(r) {
+                    return __generator$1(this, (function(r) {
                         switch (r.label) {
                           case 0:
                             return [ 4 /*yield*/ , ka(t) ];
@@ -27659,9 +28063,9 @@ function Ic(t, e) {
         return function(t) {
             var e = this;
             return t.fs.enqueue((function() {
-                return __awaiter(e, void 0, void 0, (function() {
+                return __awaiter$1(e, void 0, void 0, (function() {
                     var e, n;
-                    return __generator(this, (function(r) {
+                    return __generator$1(this, (function(r) {
                         switch (r.label) {
                           case 0:
                             return [ 4 /*yield*/ , ka(t) ];
@@ -27671,9 +28075,9 @@ function Ic(t, e) {
 
                           case 2:
                             return n = r.sent(), [ 2 /*return*/ , (e.po(!1), function(t) {
-                                return __awaiter(this, void 0, void 0, (function() {
+                                return __awaiter$1(this, void 0, void 0, (function() {
                                     var e;
-                                    return __generator(this, (function(n) {
+                                    return __generator$1(this, (function(n) {
                                         switch (n.label) {
                                           case 0:
                                             return (e = D(t)).Fh.add(0 /* UserDisabled */), [ 4 /*yield*/ , ru(e) ];
@@ -27709,9 +28113,9 @@ function Ic(t, e) {
         return function(t) {
             var e = this, n = new vr;
             return t.fs.ys((function() {
-                return __awaiter(e, void 0, void 0, (function() {
+                return __awaiter$1(e, void 0, void 0, (function() {
                     var e;
-                    return __generator(this, (function(r) {
+                    return __generator$1(this, (function(r) {
                         switch (r.label) {
                           case 0:
                             return e = ts, [ 4 /*yield*/ , Ca(t) ];
@@ -27728,9 +28132,9 @@ function Ic(t, e) {
             return function(t, e) {
                 var n = this, r = new xs(e);
                 return t.fs.ys((function() {
-                    return __awaiter(n, void 0, void 0, (function() {
+                    return __awaiter$1(n, void 0, void 0, (function() {
                         var e;
-                        return __generator(this, (function(n) {
+                        return __generator$1(this, (function(n) {
                             switch (n.label) {
                               case 0:
                                 return e = function(t, e) {
@@ -27747,9 +28151,9 @@ function Ic(t, e) {
                     }));
                 })), function() {
                     r.r_(), t.fs.ys((function() {
-                        return __awaiter(n, void 0, void 0, (function() {
+                        return __awaiter$1(n, void 0, void 0, (function() {
                             var e;
-                            return __generator(this, (function(n) {
+                            return __generator$1(this, (function(n) {
                                 switch (n.label) {
                                   case 0:
                                     return e = function(t, e) {
@@ -27824,9 +28228,9 @@ function Ic(t, e) {
             return function(t, e) {
                 var n = this, r = new vr;
                 return t.fs.ys((function() {
-                    return __awaiter(n, void 0, void 0, (function() {
+                    return __awaiter$1(n, void 0, void 0, (function() {
                         var n;
-                        return __generator(this, (function(i) {
+                        return __generator$1(this, (function(i) {
                             switch (i.label) {
                               case 0:
                                 return [ 4 /*yield*/ , function(t) {
@@ -27862,7 +28266,7 @@ function Ic(t, e) {
         var n = this;
         return (n = t.call(this) || this).firestore = e, n;
     }
-    return __extends$1(e, t), e.prototype.Uf = function(t) {
+    return __extends(e, t), e.prototype.Uf = function(t) {
         return new z(new U(t));
     }, e.prototype.Qf = function(t) {
         var e = this.Gf(t, this.firestore.I_);
@@ -27884,7 +28288,7 @@ function Ic(t, e) {
         var r = this;
         return (r = t.call(this, n) || this).zf = e, r;
     }
-    return __extends$1(e, t), e.prototype.get = function(t) {
+    return __extends(e, t), e.prototype.get = function(t) {
         var e = this, n = qc(t);
         return this._.get(n).then((function(t) {
             return new Cc(e.zf, t);
@@ -27905,7 +28309,7 @@ function Ic(t, e) {
     function e() {
         return null !== t && t.apply(this, arguments) || this;
     }
-    return __extends$1(e, t), e.prototype.set = function(t, e, n) {
+    return __extends(e, t), e.prototype.set = function(t, e, n) {
         var r = qc(t);
         return n ? (Cs("WriteBatch.set", n), this._.set(r, e, n)) : this._.set(r, e), this;
     }, e.prototype.update = function(t, e, n) {
@@ -27924,7 +28328,7 @@ function Ic(t, e) {
         var r = this;
         return (r = t.call(this, n) || this).firestore = e, r.Hf = new Nc(e), r;
     }
-    return __extends$1(e, t), e.Rd = function(t, n, r) {
+    return __extends(e, t), e.Rd = function(t, n, r) {
         if (t.length % 2 != 0) throw new M(V.INVALID_ARGUMENT, "Invalid document reference. Document references must have an even number of segments, but " + t.ot() + " has " + t.length);
         return new e(n, new Gs(n._, r, new it(t)));
     }, e.Ad = function(t, n, r) {
@@ -27999,15 +28403,15 @@ function Ic(t, e) {
             return function(t, e) {
                 var n = this, r = new vr;
                 return t.fs.ys((function() {
-                    return __awaiter(n, void 0, void 0, (function() {
+                    return __awaiter$1(n, void 0, void 0, (function() {
                         var n;
-                        return __generator(this, (function(i) {
+                        return __generator$1(this, (function(i) {
                             switch (i.label) {
                               case 0:
                                 return n = function(t, e, n) {
-                                    return __awaiter(this, void 0, void 0, (function() {
+                                    return __awaiter$1(this, void 0, void 0, (function() {
                                         var r, i;
-                                        return __generator(this, (function(o) {
+                                        return __generator$1(this, (function(o) {
                                             switch (o.label) {
                                               case 0:
                                                 return o.trys.push([ 0, 2, , 3 ]), [ 4 /*yield*/ , function(t, e) {
@@ -28117,7 +28521,7 @@ var Cc = /** @class */ function(t) {
         var r = this;
         return (r = t.call(this, n) || this).zf = e, r;
     }
-    return __extends$1(e, t), Object.defineProperty(e.prototype, "ref", {
+    return __extends(e, t), Object.defineProperty(e.prototype, "ref", {
         get: function() {
             return new Dc(this.zf, this._.ref);
         },
@@ -28152,7 +28556,7 @@ var Cc = /** @class */ function(t) {
     function e() {
         return null !== t && t.apply(this, arguments) || this;
     }
-    return __extends$1(e, t), e.prototype.data = function(t) {
+    return __extends(e, t), e.prototype.data = function(t) {
         return this._.data(t);
     }, e;
 }(Cc), Rc = /** @class */ function(t) {
@@ -28160,7 +28564,7 @@ var Cc = /** @class */ function(t) {
         var r = this;
         return (r = t.call(this, n) || this).firestore = e, r.Hf = new Nc(e), r;
     }
-    return __extends$1(e, t), e.prototype.where = function(t, n, r) {
+    return __extends(e, t), e.prototype.where = function(t, n, r) {
         try {
             // The "as string" cast is a little bit of a hack. `where` accepts the
             // FieldPath Compat type as input, but is not typed as such in order to
@@ -28259,15 +28663,15 @@ var Cc = /** @class */ function(t) {
             return function(t, e) {
                 var n = this, r = new vr;
                 return t.fs.ys((function() {
-                    return __awaiter(n, void 0, void 0, (function() {
+                    return __awaiter$1(n, void 0, void 0, (function() {
                         var n;
-                        return __generator(this, (function(i) {
+                        return __generator$1(this, (function(i) {
                             switch (i.label) {
                               case 0:
                                 return n = function(t, e, n) {
-                                    return __awaiter(this, void 0, void 0, (function() {
+                                    return __awaiter$1(this, void 0, void 0, (function() {
                                         var r, i, o, u, s;
-                                        return __generator(this, (function(a) {
+                                        return __generator$1(this, (function(a) {
                                             switch (a.label) {
                                               case 0:
                                                 return a.trys.push([ 0, 2, , 3 ]), [ 4 /*yield*/ , vo(t, e, 
@@ -28328,7 +28732,7 @@ var Cc = /** @class */ function(t) {
         var r = this;
         return (r = t.call(this, n) || this).zf = e, r;
     }
-    return __extends$1(e, t), Object.defineProperty(e.prototype, "type", {
+    return __extends(e, t), Object.defineProperty(e.prototype, "type", {
         get: function() {
             return this._.type;
         },
@@ -28358,7 +28762,7 @@ var Cc = /** @class */ function(t) {
         var r = this;
         return (r = t.call(this, n) || this).zf = e, r;
     }
-    return __extends$1(e, t), Object.defineProperty(e.prototype, "query", {
+    return __extends(e, t), Object.defineProperty(e.prototype, "query", {
         get: function() {
             return new Rc(this.zf, this._.query);
         },
@@ -28409,7 +28813,7 @@ var Cc = /** @class */ function(t) {
         var r = this;
         return (r = t.call(this, e, n) || this).firestore = e, r._ = n, r;
     }
-    return __extends$1(e, t), Object.defineProperty(e.prototype, "id", {
+    return __extends(e, t), Object.defineProperty(e.prototype, "id", {
         get: function() {
             return this._.id;
         },
@@ -28489,7 +28893,7 @@ function qc(t) {
         for (var e = [], n = 0; n < arguments.length; n++) e[n] = arguments[n];
         return t.call(this, new (ks.bind.apply(ks, __spreadArrays$1([ void 0 ], e)))) || this;
     }
-    return __extends$1(e, t), e.documentId = function() {
+    return __extends(e, t), e.documentId = function() {
         /**
          * Internal Note: The backend doesn't technically support querying by
          * document ID. Instead it queries by the entire document name (full path
@@ -28504,7 +28908,7 @@ function qc(t) {
     function e() {
         return null !== t && t.apply(this, arguments) || this;
     }
-    return __extends$1(e, t), e.serverTimestamp = function() {
+    return __extends(e, t), e.serverTimestamp = function() {
         var t = new sa("serverTimestamp");
         return t._methodName = "FieldValue.serverTimestamp", new e(t);
     }, e.delete = function() {
@@ -28610,6 +29014,40 @@ function d(e) {
 }
 
 d(firebase$1);
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+var __assign$1 = function() {
+    __assign$1 = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign$1.apply(this, arguments);
+};
+
+function __spreadArrays() {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+}
 
 var name$2 = "@firebase/performance";
 var version$1 = "0.4.5";
@@ -29321,7 +29759,7 @@ function dispatchQueueEvents() {
     sendEventsToFl(data, staged).catch(function () {
         // If the request fails for some reason, add the events that were attempted
         // back to the primary queue to retry later.
-        queue = __spreadArrays$1(staged, queue);
+        queue = __spreadArrays(staged, queue);
         remainingTries--;
         consoleLogger.info("Tries left: " + remainingTries + ".");
         processQueue(DEFAULT_SEND_INTERVAL_MS);
@@ -29348,7 +29786,7 @@ function sendEventsToFl(data, staged) {
         if (Array.isArray(logResponseDetails) &&
             logResponseDetails.length > 0 &&
             logResponseDetails[0].responseAction === 'RETRY_REQUEST_LATER') {
-            queue = __spreadArrays$1(staged, queue);
+            queue = __spreadArrays(staged, queue);
             consoleLogger.info("Retry transport request later.");
         }
         remainingTries = DEFAULT_REMAINING_TRIES;
@@ -29368,7 +29806,7 @@ function addToQueue(evt) {
         throw ERROR_FACTORY$1.create("invalid cc log" /* INVALID_CC_LOG */);
     }
     // Add the new event to the queue.
-    queue = __spreadArrays$1(queue, [evt]);
+    queue = __spreadArrays(queue, [evt]);
 }
 /** Log handler for cc service to send the performance logs to the server. */
 function transportHandler(
@@ -29675,7 +30113,7 @@ var Trace = /** @class */ (function () {
         this.durationUs = Math.floor(duration * 1000);
         this.startTimeUs = Math.floor(startTime * 1000);
         if (options && options.attributes) {
-            this.customAttributes = __assign({}, options.attributes);
+            this.customAttributes = __assign$1({}, options.attributes);
         }
         if (options && options.metrics) {
             for (var _i = 0, _a = Object.keys(options.metrics); _i < _a.length; _i++) {
@@ -29765,7 +30203,7 @@ var Trace = /** @class */ (function () {
         delete this.customAttributes[attr];
     };
     Trace.prototype.getAttributes = function () {
-        return __assign({}, this.customAttributes);
+        return __assign$1({}, this.customAttributes);
     };
     Trace.prototype.setStartTime = function (startTime) {
         this.startTimeUs = startTime;
@@ -30053,6 +30491,70 @@ function registerPerformance(instance) {
     instance.registerVersion(name$2, version$1);
 }
 registerPerformance(firebase$1);
+
+/*! *****************************************************************************
+Copyright (c) Microsoft Corporation.
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH
+REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY
+AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT,
+INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM
+LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
+OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+PERFORMANCE OF THIS SOFTWARE.
+***************************************************************************** */
+
+var __assign = function() {
+    __assign = Object.assign || function __assign(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+function __awaiter(thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+}
+
+function __generator(thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+}
 
 /**
  * @license
@@ -31249,6 +31751,7 @@ var ConstantsService = {
         CHAT_PROFILES: "chatProfiles",
         MESSAGES: "messages",
         FCM_TOKENS: "fcmTokens",
+        NOTIFICATIONS: "notifications"
     }
 };
 
@@ -31619,6 +32122,68 @@ var FirebaseService = {
             });
         });
     },
+    sendNotification: function (action, item, link, read, table, users, username, photoUrl) {
+        if (link === void 0) { link = ''; }
+        var userData = FirebaseService.util.getCurrentUser();
+        var timestamp = new Date();
+        var notificationId = String(timestamp.valueOf());
+        var senderUid = userData.id;
+        username = username ? username : userData[FirebaseService.util.userObjectStructure.firstName] +
+            " " + userData[FirebaseService.util.userObjectStructure.lastName];
+        photoUrl = photoUrl ? photoUrl :
+            FirebaseService.util.imagesUrlPrefix ? FirebaseService.util.imagesUrlPrefix +
+                userData[FirebaseService.util.userObjectStructure.profilePicUrl] :
+                userData[FirebaseService.util.userObjectStructure.profilePicUrl];
+        users = Object.values(users).filter(function (user) {
+            return user !== senderUid;
+        }).sort();
+        var docId = notificationId;
+        return firebase$1
+            .firestore()
+            .collection(ConstantsService.FIREBASE.NOTIFICATIONS)
+            .doc(docId)
+            .set({
+            action: action,
+            item: item,
+            link: link,
+            read: read,
+            table: table,
+            users: users,
+            user: username,
+            profilePictureUrl: photoUrl,
+            icon: 'default',
+            docId: docId,
+            id: docId,
+            timestamp: firebase$1.firestore.FieldValue.serverTimestamp(),
+            created_at: firebase$1.firestore.FieldValue.serverTimestamp(),
+            updated_at: firebase$1.firestore.FieldValue.serverTimestamp()
+        });
+    },
+    getNotificationsForUser: function (userId, userType, callback) {
+        if (userType === void 0) { userType = null; }
+        var firestore = firebase$1.firestore();
+        var query = null;
+        if (!userType) {
+            query = firestore
+                .collection(ConstantsService.FIREBASE.NOTIFICATIONS)
+                .where("users", "array-contains", userId)
+                .orderBy("id", "desc");
+        }
+        else {
+            query = firestore
+                .collection(ConstantsService.FIREBASE.NOTIFICATIONS)
+                .where("users", "array-contains", userId)
+                .where("table", "==", 1)
+                .orderBy("id", "desc");
+        }
+        query.onSnapshot(function (doc) {
+            if (callback && doc) {
+                callback(doc);
+            }
+        });
+    },
+    markNotificationAsRead: function () { },
+    deleteNotification: function () { },
     util: {
         getCurrentUser: function () { },
         updateCurrentUser: function (user) {
