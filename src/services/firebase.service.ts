@@ -26,8 +26,9 @@ export const FirebaseService = {
         FirebaseService.util.imagesUrlPrefix = imagesUrlPrefix ? imagesUrlPrefix : '';
         FirebaseService.util.userObjectStructure = userObjectStructure;
 
-        firebase.initializeApp(config);
         firebase.analytics();
+
+        return firebase.initializeApp(config);
     },
     authUser: (handleDeleteMessage:any, handleDisplayMessage:any) => {
         FirebaseService.util.handleDeleteMessage = handleDeleteMessage;
@@ -536,8 +537,52 @@ export const FirebaseService = {
             }
         });
     },
-    markNotificationAsRead: () => {},
-    deleteNotification: () => {},
+    markNotificationAsRead: (
+        notificationId: string | number,
+        userId: string | number
+    ) => {
+        const query = firebase.firestore()
+            .collection(ConstantsService.FIREBASE.NOTIFICATIONS)
+            .where("id", "==", notificationId);
+
+        return query.onSnapshot((doc) => {
+            let notification = doc.docs.map((doc) => doc.data());
+
+            if (notification && notification[0]) {
+                let updatedNotification = notification[0];
+                let notificationUsers = updatedNotification.users;
+                const docId = updatedNotification.id;
+
+                notificationUsers = Object.values(notificationUsers).filter((user) => {
+                    return Number(user) !== Number(userId);
+                });
+
+                // If notification doesn't have any more subscribed users, delete it
+                if (!notificationUsers || !notificationUsers.length) {
+                    return doc.docs.map((doc) => doc.ref.delete());
+                }
+
+                updatedNotification.users = notificationUsers;
+
+                return firebase
+                    .firestore()
+                    .collection(ConstantsService.FIREBASE.NOTIFICATIONS)
+                    .doc(docId)
+                    .set(updatedNotification);
+            }
+        });
+    },
+    deleteNotification: (
+        notificationId: string | number
+    ) => {
+        const query = firebase.firestore()
+            .collection(ConstantsService.FIREBASE.NOTIFICATIONS)
+            .where("id", "==", notificationId);
+
+        return query.onSnapshot((doc) => {
+            return doc.docs.map((doc) => doc.ref.delete());
+        });
+    },
     util: {
         getCurrentUser: () => {},
         updateCurrentUser: (user:object) => {
