@@ -26,7 +26,9 @@ export const FirebaseService = {
         FirebaseService.util.imagesUrlPrefix = imagesUrlPrefix ? imagesUrlPrefix : '';
         FirebaseService.util.userObjectStructure = userObjectStructure;
 
-        firebase.analytics();
+        setTimeout(() => {
+            firebase.analytics();
+        }, 2000);
 
         return firebase.initializeApp(config);
     },

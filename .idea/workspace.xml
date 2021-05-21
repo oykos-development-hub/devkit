@@ -3,61 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3c79e51f-66a6-4b4b-8966-e8673e744bf2" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ts-node" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/ts-node" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ts-node-script" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/ts-node-script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ts-node-script.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/ts-node-script.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ts-node-transpile-only" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/ts-node-transpile-only" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ts-node-transpile-only.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/ts-node-transpile-only.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ts-node.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/ts-node.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ts-script" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/ts-script" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/ts-script.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/ts-script.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsserver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsserver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsserver.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsserver.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/arg/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/arg/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/buffer-from/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/buffer-from/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/create-require/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/create-require/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/CONTRIBUTING.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/dist/diff.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/dist/diff.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/dist/diff.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/dist/diff.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/convert/dmp.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/convert/dmp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/convert/xml.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/convert/xml.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/array.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/diff/array.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/diff/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/character.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/diff/character.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/css.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/diff/css.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/json.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/diff/json.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/line.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/diff/line.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/sentence.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/diff/sentence.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/word.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/diff/word.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/patch/apply.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/patch/apply.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/patch/create.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/patch/create.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/patch/merge.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/patch/merge.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/patch/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/patch/parse.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/util/array.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/util/array.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/util/distance-iterator.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/util/distance-iterator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/util/params.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/lib/util/params.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/release-notes.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/release-notes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/runtime.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/diff/runtime.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/make-error/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/make-error/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map-support/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map-support/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map/dist/source-map.debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map/dist/source-map.debug.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map/dist/source-map.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map/dist/source-map.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map/dist/source-map.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map/dist/source-map.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map/dist/source-map.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map/dist/source-map.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map/lib/source-map-consumer.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map/lib/source-map-consumer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map/lib/source-map-generator.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map/lib/source-map-generator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map/lib/source-node.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map/lib/source-node.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map/lib/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map/lib/util.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/yn/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/yn/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/constants.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/constants.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.es.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.es.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.es.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.es.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/firebase.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/firebase.service.ts" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
+            <state relative-caret-position="44">
+              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -101,10 +51,9 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/services/firebase.service.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="467" column="23" lean-forward="true" selection-start-line="467" selection-start-column="23" selection-end-line="467" selection-end-column="23" />
+            <state relative-caret-position="352">
+              <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
               <folding>
-                <element signature="e#561#1112#0" />
                 <element signature="e#1183#3991#0" />
                 <element signature="e#1576#2417#0" />
                 <element signature="e#1806#1886#0" />
@@ -219,17 +168,17 @@
         <option value="$PROJECT_DIR$/src/index.tsx" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/components/Form/CustomDropdown/CustomDropdown.tsx" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/services/constants.service.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/services/firebase.service.ts" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="652" />
+    <option name="x" value="651" />
     <option name="y" value="60" />
-    <option name="width" value="1314" />
-    <option name="height" value="1103" />
+    <option name="width" value="1315" />
+    <option name="height" value="1104" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -328,7 +277,7 @@
       <workItem from="1620831151318" duration="949000" />
       <workItem from="1620902272146" duration="1242000" />
       <workItem from="1620905243887" duration="306000" />
-      <workItem from="1621588192463" duration="5771000" />
+      <workItem from="1621588192463" duration="10522000" />
     </task>
     <task id="LOCAL-00001" summary="Setting up new package">
       <created>1620642489842</created>
@@ -379,11 +328,32 @@
       <option name="project" value="LOCAL" />
       <updated>1620902298607</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added Notifications module">
+      <created>1621598956669</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1621598956669</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added Notifications module">
+      <created>1621598964935</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1621598964935</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added Notifications module features - mark notification as read for user, and delete notification">
+      <created>1621623275661</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1621623275661</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22957000" />
+    <option name="totallyTimeSpent" value="27708000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
@@ -476,7 +446,9 @@
     <MESSAGE value="We have first working version of package!" />
     <MESSAGE value="Added Loader component to master branch" />
     <MESSAGE value="Added Chat module" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Chat module" />
+    <MESSAGE value="Added Notifications module" />
+    <MESSAGE value="Added Notifications module features - mark notification as read for user, and delete notification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Notifications module features - mark notification as read for user, and delete notification" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/components/ContextMenu/ContextMenu.tsx" />
@@ -572,13 +544,6 @@
     <entry file="file://$PROJECT_DIR$/src/components/Form/Form.tsx">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Form/CustomDropdown/CustomDropdown.tsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7">
@@ -597,12 +562,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/firebase.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="467" column="23" lean-forward="true" selection-start-line="467" selection-start-column="23" selection-end-line="467" selection-end-column="23" />
+        <state relative-caret-position="352">
+          <caret line="29" column="33" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
           <folding>
-            <element signature="e#561#1112#0" />
             <element signature="e#1183#3991#0" />
             <element signature="e#1576#2417#0" />
             <element signature="e#1806#1886#0" />

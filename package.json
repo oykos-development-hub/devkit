@@ -1,6 +1,6 @@
 {
   "name": "@oykos-development/devkit",
-  "version": "1.0.8",
+  "version": "1.0.10",
   "description": "Devkit package for Oykos Development ReactJS projects written in TypeScript.",
   "main": "./dist/index.js",
   "module": "./dist/index.es.js",
