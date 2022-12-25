@@ -1,8 +1,0 @@
-{
-  "name": "Devkit",
-  "short_name": "Devkit",
-  "start_url": "/index.html",
-  "display": "standalone",
-  "orientation": "portrait",
-  "gcm_sender_id": "103953800507"
-}

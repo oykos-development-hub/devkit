@@ -1,8 +1,5 @@
-import * as React from "react";
-import {Loader} from "./components/Loader/Loader";
-import {FirebaseService} from "./services/firebase.service";
+import { Loader as LoaderOneComponent } from "./components/loader/one";
+import { Loader as LoaderTwoComponent } from "./components/loader/one";
 
-export const Devkit:any = {
-    LoaderComponent: Loader,
-    FirebaseService: FirebaseService
-};
+export const LoaderOne = LoaderOneComponent;
+export const LoaderTwo = LoaderTwoComponent;
