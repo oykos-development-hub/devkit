@@ -3,6 +3,16 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oykos-development-hub/devkit.git"
+  },
+  "author": "Oykos Development",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oykos-development-hub/devkit/issues"
+  },
+  "homepage": "https://github.com/oykos-development-hub/devkit#readme",
   "scripts": {
     "vite": "vite",
     "vite:build": "npm run ts:build && vite build",
