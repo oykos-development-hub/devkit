@@ -4,4 +4,5 @@ export interface LoaderTwoProps {
     height?: string;
     primaryColor?: string;
     secondaryColor?: string;
+    wrapperBackgroundColor?: string;
 }

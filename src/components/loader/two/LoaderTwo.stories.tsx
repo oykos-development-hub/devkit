@@ -1,6 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import styled from "styled-components";
 import { Loader } from './index';
+import { StoryWrapper } from "../../../shared/components/story-wrapper";
 
 export default {
   title: 'Example/Loader Two',
@@ -19,12 +21,16 @@ export default {
   },
 } as ComponentMeta<typeof Loader>;
 
+const SmallDiv = styled.div`
+  width: 10%;
+`;
+
 const Template: ComponentStory<typeof Loader> = (args) => (
-  <div className="w-12 h-12 position-absolute top-0 left-0 d-flex align-center justify-center">
-    <div className="w-1">
+  <StoryWrapper>
+    <SmallDiv>
       <Loader { ...args } />
-    </div>
-  </div>
+    </SmallDiv>
+  </StoryWrapper>
 );
 
 export const LoaderTwo = Template.bind({});

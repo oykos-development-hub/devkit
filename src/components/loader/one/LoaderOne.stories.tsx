@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Loader } from './index';
+import { StoryWrapper } from "../../../shared/components/story-wrapper";
 
 export default {
   title: 'Example/Loader One',
@@ -20,14 +21,9 @@ export default {
 } as ComponentMeta<typeof Loader>;
 
 const Template: ComponentStory<typeof Loader> = (args) => (
-  <div
-    className="w-12 h-12 position-absolute top-0 left-0 d-flex align-center justify-center"
-  >
+  <StoryWrapper>
     <Loader {...args} />
-  </div>
+  </StoryWrapper>
 );
 
 export const LoaderOne = Template.bind({});
-LoaderOne.args = {
-  className: 'loader',
-};

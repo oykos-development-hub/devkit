@@ -1,3 +1,2 @@
-/// <reference types="react" />
-export declare const LoaderOne: ({ className }: import("./types").LoaderOneProps) => JSX.Element;
-export declare const LoaderTwo: ({ className }: import("./types").LoaderOneProps) => JSX.Element;
+export declare const LoaderOne: import("styled-components").StyledComponent<"div", any, import("./types").LoaderOneProps, never>;
+export declare const LoaderTwo: import("styled-components").StyledComponent<"div", any, import("./types").LoaderOneProps, never>;

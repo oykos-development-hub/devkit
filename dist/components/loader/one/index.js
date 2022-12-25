@@ -1,11 +1,9 @@
-import React from 'react';
-export var Loader = function (_a) {
-    var className = _a.className;
-    var classBase = 'loader';
-    var classes = [
-        classBase,
-        "".concat(className || ''),
-    ];
-    return (React.createElement("div", { className: classes.join(' '), "data-testid": classBase }));
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
 };
+import styled from 'styled-components';
+import { rotation } from "../../../shared/animations/rotation";
+export var Loader = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  width: ", ";\n  height: ", ";\n  border: 3px solid;\n  border-color: ", ";\n  border-radius: 50%;\n  display: inline-block;\n  position: relative;\n  box-sizing: border-box;\n  animation-name: ", ";\n  animation-duration: 1.5s;\n  animation-iteration-count: infinite;\n  animation-timing-function: linear;\n  &:after {\n    content: '';\n    box-sizing: border-box;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    width: 100px;\n    height: 100px;\n    border-radius: 50%;\n    border: 3px solid;\n    border-color: ", " transparent;\n  } \n"], ["\n  width: ", ";\n  height: ", ";\n  border: 3px solid;\n  border-color: ", ";\n  border-radius: 50%;\n  display: inline-block;\n  position: relative;\n  box-sizing: border-box;\n  animation-name: ", ";\n  animation-duration: 1.5s;\n  animation-iteration-count: infinite;\n  animation-timing-function: linear;\n  &:after {\n    content: '';\n    box-sizing: border-box;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    width: 100px;\n    height: 100px;\n    border-radius: 50%;\n    border: 3px solid;\n    border-color: ", " transparent;\n  } \n"])), function (props) { return props.width || '80px'; }, function (props) { return props.width || '80px'; }, function (props) { return props.primaryColor || props.theme.primaryColor || 'red'; }, rotation, function (props) { return props.secondaryColor || props.theme.secondaryColor || 'green'; });
+var templateObject_1;
 //# sourceMappingURL=index.js.map

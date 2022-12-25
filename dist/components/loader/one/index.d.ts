@@ -1,3 +1,2 @@
-/// <reference types="react" />
 import { LoaderOneProps } from "./types";
-export declare const Loader: ({ className }: LoaderOneProps) => JSX.Element;
+export declare const Loader: import("styled-components").StyledComponent<"div", any, LoaderOneProps, never>;
