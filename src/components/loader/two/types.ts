@@ -1,8 +1,8 @@
 export interface LoaderTwoProps {
-  className?: string
-  width?: string
-  height?: string
-  primaryColor?: string
-  secondaryColor?: string
-  wrapperBackgroundColor?: string
+  className?: string;
+  width?: string;
+  height?: string;
+  primaryColor?: string;
+  secondaryColor?: string;
+  wrapperBackgroundColor?: string;
 }

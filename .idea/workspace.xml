@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="fix: run lint:fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/one/LoaderOne.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/one/LoaderOne.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/one/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/one/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/one/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/one/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/two/LoaderTwo.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/two/LoaderTwo.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/two/_style.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/two/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/two/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/two/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/two/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/animations/rotation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/animations/rotation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/components/story-wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/story-wrapper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vite-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/vite-env.d.ts" afterDir="false" />
     </list>
     <list id="601978c2-3436-41c8-af59-e644f6e96305" name="Local changes" comment="Local changes">
       <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc" afterDir="false" />
@@ -159,7 +169,7 @@
       <workItem from="1671777498841" duration="16620000" />
       <workItem from="1671993955229" duration="2835000" />
       <workItem from="1671998948389" duration="2412000" />
-      <workItem from="1672040927811" duration="881000" />
+      <workItem from="1672040927811" duration="1461000" />
     </task>
     <task id="LOCAL-00001" summary="fix: fix package lock name of the project">
       <created>1651650186010</created>
@@ -441,7 +451,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672001354640</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="fix: run lint:fix">
+      <created>1672041873665</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1672041873665</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -488,7 +505,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fix: improve button render code" />
     <MESSAGE value="refactor: remove redundant files from vite project" />
     <MESSAGE value="refactor: sort package.json exports" />
     <MESSAGE value="refactor: improve typography component props" />
@@ -513,6 +529,7 @@
     <MESSAGE value="build: new storybook bundle" />
     <MESSAGE value="refactor: delete all component and set new structure" />
     <MESSAGE value="feat: add styled component and rewrite loader components to remove scss" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add styled component and rewrite loader components to remove scss" />
+    <MESSAGE value="fix: run lint:fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: run lint:fix" />
   </component>
 </project>

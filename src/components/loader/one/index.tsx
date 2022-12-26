@@ -7,7 +7,8 @@ export const Loader = styled.div<LoaderOneProps>`
   width: ${(props: LoaderOneProps) => props.width || "80px"};
   height: ${(props: LoaderOneProps) => props.width || "80px"};
   border: 3px solid;
-  border-color: ${(props: LoaderOneProps) => props.primaryColor || props.theme.primaryColor || "red"};
+  border-color: ${(props: LoaderOneProps) =>
+    props.primaryColor || props.theme.primaryColor || "red"};
   border-radius: 50%;
   display: inline-block;
   position: relative;
@@ -17,7 +18,7 @@ export const Loader = styled.div<LoaderOneProps>`
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   &:after {
-    content: '';
+    content: "";
     box-sizing: border-box;
     position: absolute;
     left: 50%;
@@ -27,6 +28,8 @@ export const Loader = styled.div<LoaderOneProps>`
     height: 100px;
     border-radius: 50%;
     border: 3px solid;
-    border-color: ${(props: LoaderOneProps) => props.secondaryColor || props.theme.secondaryColor || "green"} transparent;
-  } 
+    border-color: ${(props: LoaderOneProps) =>
+        props.secondaryColor || props.theme.secondaryColor || "green"}
+      transparent;
+  }
 `;
