@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="">
+    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="build: update npm scripts to work on unix os">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
@@ -158,14 +158,7 @@
       <workItem from="1671777498841" duration="16620000" />
       <workItem from="1671993955229" duration="2835000" />
       <workItem from="1671998948389" duration="2412000" />
-      <workItem from="1672040927811" duration="20615000" />
-    </task>
-    <task id="LOCAL-00007" summary="refactor: improve loader component">
-      <created>1651654463988</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1651654463988</updated>
+      <workItem from="1672040927811" duration="21779000" />
     </task>
     <task id="LOCAL-00008" summary="feat: add util scss functions">
       <created>1651655015873</created>
@@ -503,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672065169714</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="build: update npm scripts to work on unix os">
+      <created>1672066413292</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1672066413297</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,7 +555,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="feat: add story example for accordion where custom nodeElement is passed as accordion content" />
     <MESSAGE value="refactor: improve accordion component props and render function" />
     <MESSAGE value="feat: add missing states for the dropdown component" />
     <MESSAGE value="feat: improve sidebar behavior and props" />
@@ -580,6 +579,7 @@
     <MESSAGE value="build: deploy new version" />
     <MESSAGE value="build: test deploying via github actions" />
     <MESSAGE value="build: ignore files when publishing to NPM" />
-    <option name="LAST_COMMIT_MESSAGE" value="build: ignore files when publishing to NPM" />
+    <MESSAGE value="build: update npm scripts to work on unix os" />
+    <option name="LAST_COMMIT_MESSAGE" value="build: update npm scripts to work on unix os" />
   </component>
 </project>
