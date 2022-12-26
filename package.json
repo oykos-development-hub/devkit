@@ -1,9 +1,10 @@
 {
   "name": "@oykos-development/devkit-react-ts-styled-components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
   "description": "Devkit module for development of React + Typescript + StyledComponents projects, built with Storybook framework.",
   "main": "./dist/index.js",
+  "types": "./dist/types.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oykos-development-hub/devkit.git"
@@ -14,7 +15,6 @@
     "url": "https://github.com/oykos-development-hub/devkit/issues"
   },
   "homepage": "https://github.com/oykos-development-hub/devkit#readme",
-  "types": "./dist/types.d.ts",
   "scripts": {
     "vite": "vite",
     "vite:build": "npm run ts:build && vite build",
