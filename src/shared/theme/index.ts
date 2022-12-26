@@ -23,6 +23,14 @@ export const Index: DefaultTheme = {
     md: '3px',
     lg: '4px',
   },
+  fontSize: {
+    xs: '0.6rem',
+    sm: '1rem',
+    md: '1.6rem',
+    lg: '2.8rem',
+    xl: '4rem',
+    xxl: '7rem',
+  },
   palette: {
     main: {
       one: '#0068B6FF',

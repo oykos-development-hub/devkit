@@ -1,41 +1,42 @@
 import React from "react";
-import { LoaderTwoProps } from "./types";
+import { LoaderProps } from "./types";
 import styled from "styled-components";
 import {
   rotation,
   rotationBackwards,
-} from "../../../shared/animations/rotation";
+} from "../../shared/animations/rotation";
 
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  background-color: ${(props: LoaderTwoProps) =>
-    props.wrapperBackgroundColor || "transparent"};
+  background-color: ${ (props: LoaderProps) =>
+          props.wrapperBackgroundColor || props.theme?.palette.dark.four || "transparent"
+  };
 
   & #loader {
-    width: ${(props: LoaderTwoProps) => props.width || "120px"};
-    height: ${(props: LoaderTwoProps) => props.height || "120px"};
+    width: ${ (props: LoaderProps) => props.width || "120px" };
+    height: ${ (props: LoaderProps) => props.height || "120px" };
   }
 
   & #loader-ring-1 {
-    stroke: ${(props: LoaderTwoProps) => props.primaryColor || "red"};
-    animation: ${rotation} 1.5s linear infinite;
+    stroke: ${ (props: LoaderProps) => props.primaryColor || props.theme?.palette.main.two || "red" };
+    animation: ${ rotation } 1.5s linear infinite;
     transform-origin: center;
   }
 
   & #loader-ring-2 {
-    stroke: ${(props: LoaderTwoProps) => props.secondaryColor || "green"};
-    animation: ${rotationBackwards} 1.5s linear infinite;
+    stroke: ${ (props: LoaderProps) => props.secondaryColor || props.theme?.palette.important.two || "green" };
+    animation: ${ rotationBackwards } 1.5s linear infinite;
     transform-origin: center;
   }
 `;
 
-export const Loader = (props: LoaderTwoProps) => {
+export const Two = (props: LoaderProps) => {
   return (
-    <Wrapper {...props}>
+    <Wrapper { ...props }>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        style={{ margin: "auto" }}
+        style={ { margin: "auto" } }
         display="block"
         preserveAspectRatio="xMidYMid"
         viewBox="0 0 100 100"
