@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="build: update npm scripts to work on unix os">
+    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
     </list>
     <list id="601978c2-3436-41c8-af59-e644f6e96305" name="Local changes" comment="Local changes">
       <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc" afterDir="false" />
@@ -158,14 +159,7 @@
       <workItem from="1671777498841" duration="16620000" />
       <workItem from="1671993955229" duration="2835000" />
       <workItem from="1671998948389" duration="2412000" />
-      <workItem from="1672040927811" duration="21779000" />
-    </task>
-    <task id="LOCAL-00008" summary="feat: add util scss functions">
-      <created>1651655015873</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1651655015873</updated>
+      <workItem from="1672040927811" duration="23391000" />
     </task>
     <task id="LOCAL-00009" summary="feat: add util scss functions">
       <created>1651655083025</created>
@@ -503,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672066413297</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="build: test npm publish after merge">
+      <created>1672068043890</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1672068043890</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,7 +556,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="refactor: improve accordion component props and render function" />
     <MESSAGE value="feat: add missing states for the dropdown component" />
     <MESSAGE value="feat: improve sidebar behavior and props" />
     <MESSAGE value="feat: improve explanation behavior and props" />
@@ -580,6 +580,7 @@
     <MESSAGE value="build: test deploying via github actions" />
     <MESSAGE value="build: ignore files when publishing to NPM" />
     <MESSAGE value="build: update npm scripts to work on unix os" />
-    <option name="LAST_COMMIT_MESSAGE" value="build: update npm scripts to work on unix os" />
+    <MESSAGE value="build: test npm publish after merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="build: test npm publish after merge" />
   </component>
 </project>
