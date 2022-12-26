@@ -15,6 +15,7 @@
     "url": "https://github.com/oykos-development-hub/devkit/issues"
   },
   "homepage": "https://github.com/oykos-development-hub/devkit#readme",
+  "types": "./dist/types.d.ts",
   "scripts": {
     "vite": "vite",
     "vite:build": "npm run ts:build && vite build",

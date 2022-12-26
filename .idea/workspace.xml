@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="refactor: update favicon">
-      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/shared/theme/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/shared/theme/types.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/types.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/types.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/types.js.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/theme/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/project.json" afterDir="false" />
     </list>
     <list id="601978c2-3436-41c8-af59-e644f6e96305" name="Local changes" comment="Local changes">
       <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc" afterDir="false" />
@@ -160,14 +165,7 @@
       <workItem from="1671777498841" duration="16620000" />
       <workItem from="1671993955229" duration="2835000" />
       <workItem from="1671998948389" duration="2412000" />
-      <workItem from="1672040927811" duration="12322000" />
-    </task>
-    <task id="LOCAL-00001" summary="fix: fix package lock name of the project">
-      <created>1651650186010</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1651650186010</updated>
+      <workItem from="1672040927811" duration="15615000" />
     </task>
     <task id="LOCAL-00002" summary="fix: simplify button component props">
       <created>1651652797141</created>
@@ -505,7 +503,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672051886656</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="refactor: update favicon">
+      <created>1672053458560</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1672053458560</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
