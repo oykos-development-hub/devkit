@@ -14,9 +14,9 @@ import { One } from "./one";
 import { Two } from "./two";
 var resolveSecondaryValue = function (value) {
     if (!value)
-        return '';
+        return "";
     var numericValue = parseFloat(value);
-    var unitValue = value.replace(new RegExp(String(numericValue), 'g'), '');
+    var unitValue = value.replace(new RegExp(String(numericValue), "g"), "");
     return String(numericValue + 20) + unitValue;
 };
 export var Loader = function (props) {
@@ -25,9 +25,9 @@ export var Loader = function (props) {
     var secondaryWidth = useMemo(function () { return resolveSecondaryValue(props.width); }, []);
     var secondaryHeight = useMemo(function () { return resolveSecondaryValue(props.height); }, []);
     if (variant === "one")
-        return (React.createElement(One, __assign({}, props, { secondaryWidth: secondaryWidth, secondaryHeight: secondaryHeight })));
+        return React.createElement(One, __assign({}, props, { secondaryWidth: secondaryWidth, secondaryHeight: secondaryHeight }));
     if (variant === "two")
-        return (React.createElement(Two, __assign({}, props, { secondaryWidth: secondaryWidth, secondaryHeight: secondaryHeight })));
-    return (React.createElement(One, __assign({}, props)));
+        return React.createElement(Two, __assign({}, props, { secondaryWidth: secondaryWidth, secondaryHeight: secondaryHeight }));
+    return React.createElement(One, __assign({}, props));
 };
 //# sourceMappingURL=index.js.map

@@ -63,30 +63,30 @@ var Template = function (args) { return (React.createElement(StoryWrapper, null,
     React.createElement(Loader, __assign({}, args)))); };
 export var VariantOneDefault = Template.bind({});
 VariantOneDefault.args = {
-    width: '100px',
-    height: '100px',
-    testId: 'VariantOneDefault',
-    primaryColor: '#b2a422',
-    secondaryColor: '#7199aa'
+    width: "100px",
+    height: "100px",
+    testId: "VariantOneDefault",
+    primaryColor: "#b2a422",
+    secondaryColor: "#7199aa",
 };
 export var VariantOneThemed = Template.bind({});
 VariantOneThemed.args = {
-    testId: 'VariantOneThemed',
-    theme: Theme
+    testId: "VariantOneThemed",
+    theme: Theme,
 };
 export var VariantTwoDefault = Template.bind({});
 VariantTwoDefault.args = {
-    variant: 'two',
-    width: '100px',
-    height: '100px',
-    testId: 'VariantTwoDefault',
-    primaryColor: '#b2a422',
-    secondaryColor: '#7199aa'
+    variant: "two",
+    width: "100px",
+    height: "100px",
+    testId: "VariantTwoDefault",
+    primaryColor: "#b2a422",
+    secondaryColor: "#7199aa",
 };
 export var VariantTwoThemed = Template.bind({});
 VariantTwoThemed.args = {
-    variant: 'two',
-    testId: 'VariantTwoThemed',
-    theme: Theme
+    variant: "two",
+    testId: "VariantTwoThemed",
+    theme: Theme,
 };
 //# sourceMappingURL=index.stories.js.map

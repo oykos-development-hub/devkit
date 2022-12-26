@@ -1,2 +1,2 @@
-import { DefaultTheme } from 'styled-components';
+import { DefaultTheme } from "styled-components";
 export declare const Theme: DefaultTheme;

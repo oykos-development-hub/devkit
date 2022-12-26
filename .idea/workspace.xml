@@ -1,96 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="feat: writing stories for loader one">
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/index.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/index.stories.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/index.stories.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/index.stories.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/one.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/one.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/one.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/two.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/two.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/two.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/types.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/components/loader/types.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/border-types.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/border-types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/border-types.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/color-types.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/color-types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/color-types.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/font-types.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/font-types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/font-types.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/index.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/media-types.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/media-types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/media-types.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/types.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/types.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/shared/theme/types.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-docs/assets/index.stories-9fe876e9.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/storybook-docs/assets/index.stories-9fe876e9.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/shared/animations/rotation.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/shared/animations/rotation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/shared/components/story-wrapper.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/shared/components/story-wrapper.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/types.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/types.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/types.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/index.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/index.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/one.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/one.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/two.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/two.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/theme/border-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/border-types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/theme/color-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/color-types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/theme/font-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/font-types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/theme/media-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/media-types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/theme/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/LoaderOne.stories-96f8bd4c.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/LoaderOne.stories-96f8bd4c.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/LoaderTwo.stories-4d9daed1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/LoaderTwo.stories-4d9daed1.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/config-3e8b8811.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/config-0d0f388d.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/config-3e8b8811.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/config-0d0f388d.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/iframe-4f98eccd.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/iframe-483c1bac.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/iframe-4f98eccd.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/iframe-483c1bac.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/index-7067631b.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/index-b308c716.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/index-7067631b.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/index-b308c716.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-0b6619d6.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-36e54ede.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-0b6619d6.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-36e54ede.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-2a9b0104.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-e65ed9f0.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-2a9b0104.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-e65ed9f0.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-39e39016.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-1bc43430.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-39e39016.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-1bc43430.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-6bf291a7.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-f7dec71e.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-6bf291a7.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-f7dec71e.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-d66c41b7.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-f7957ca7.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-d66c41b7.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-f7957ca7.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-ed2fb671.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-ece974c5.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-ed2fb671.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-ece974c5.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-f696ca3f.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-d898aede.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-f696ca3f.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-d898aede.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/story-wrapper-3e82a7e2.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/story-wrapper-3e82a7e2.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/iframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/iframe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/project.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storybook-docs/stories.json" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/stories.json" afterDir="false" />
-    </list>
+    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="" />
     <list id="601978c2-3436-41c8-af59-e644f6e96305" name="Local changes" comment="Local changes">
       <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc.cmd" afterDir="false" />
@@ -244,7 +155,7 @@
       <workItem from="1671777498841" duration="16620000" />
       <workItem from="1671993955229" duration="2835000" />
       <workItem from="1671998948389" duration="2412000" />
-      <workItem from="1672040927811" duration="9056000" />
+      <workItem from="1672040927811" duration="9148000" />
     </task>
     <task id="LOCAL-00001" summary="fix: fix package lock name of the project">
       <created>1651650186010</created>
@@ -561,7 +472,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672049102136</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="build: new version of storybook">
+      <created>1672050137839</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1672050137839</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -608,7 +526,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="refactor: improve loader component" />
     <MESSAGE value="feat: add util scss functions" />
     <MESSAGE value="refactor: adjust input story" />
     <MESSAGE value="fix: fix input changes after merge" />
@@ -633,6 +550,7 @@
     <MESSAGE value="fix: run prettier" />
     <MESSAGE value="feat: add styled theme type and properties" />
     <MESSAGE value="feat: writing stories for loader one" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: writing stories for loader one" />
+    <MESSAGE value="build: new version of storybook" />
+    <option name="LAST_COMMIT_MESSAGE" value="build: new version of storybook" />
   </component>
 </project>
