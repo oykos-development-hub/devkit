@@ -38,7 +38,7 @@ jobs:
               cd ./${{secrets.GIT_REPO}}
               npm install -g typescript
               npm install
-              npm run git:pull-request
+              npm run production
               cp -R ./storybook-docs/** ../../
               cd ../../
               rm -rf github
