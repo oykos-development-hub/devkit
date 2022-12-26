@@ -1,15 +1,8 @@
 {
-  "name": "@oykos-development/devkit",
-  "version": "1.0.10",
-  "description": "Devkit package for Oykos Development ReactJS projects written in TypeScript.",
-  "main": "./dist/index.js",
-  "module": "./dist/index.es.js",
-  "jsnext:main": "./dist/index.es.js",
-  "scripts": {
-    "transpile": "./node_modules/.bin/babel src --out-file index.js",
-    "build": "rollup -c",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "devkit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oykos-development-hub/devkit.git"
@@ -20,34 +13,49 @@
     "url": "https://github.com/oykos-development-hub/devkit/issues"
   },
   "homepage": "https://github.com/oykos-development-hub/devkit#readme",
-  "dependencies": {
-    "@types/react-select": "^4.0.15",
-    "firebase": "8.2.1",
-    "react-select": "^4.3.1",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.4"
+  "scripts": {
+    "vite": "vite",
+    "vite:build": "npm run ts:build && vite build",
+    "vite:dev": "vite preview",
+    "ts:build": "npx tsc -b",
+    "ts:declarations": "npx tsc --declaration",
+    "lint": "eslint ./src --ext .ts,.tsx",
+    "lint:fix": "eslint ./src --fix --ext .ts,.tsx",
+    "format": "npx prettier --write ./src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
+    "storybook:dev": "start-storybook -p 6006",
+    "storybook:clean": "rmdir /s /q storybook-docs",
+    "storybook:prefix": "node ./.storybook/apply-prefix.js",
+    "storybook:build": "npm run storybook:clean && build-storybook -o ./storybook-docs",
+    "pull-request": "npm run ts:declarations && npm run lint:fix && npm run format && npm run storybook:build"
   },
-  "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
-    "@babel/cli": "^7.13.16",
-    "@babel/core": "^7.14.0",
-    "@babel/preset-env": "^7.14.1",
-    "@babel/preset-react": "^7.13.13",
-    "@types/node": "^15.0.2",
-    "@types/react": "^17.0.5",
-    "@types/react-dom": "^17.0.4",
-    "@types/react-test-renderer": "^17.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts-ts": "^3.1.0",
-    "react-test-renderer": "^17.0.2",
-    "rollup": "^2.47.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-typescript2": "^0.30.0"
+    "@babel/core": "^7.20.7",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/builder-vite": "^0.2.6",
+    "@storybook/react": "^6.5.15",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.26",
+    "@types/react-dom": "^18.0.9",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "babel-loader": "^8.3.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
   }
 }
