@@ -40,5 +40,3 @@ jobs:
               npm install husky
               npm config set _authToken=${{secrets.NPM_TOKEN}}
               npm publish --access public
-              cd ../../
-              rm -rf github
