@@ -36,10 +36,7 @@ jobs:
               rm -rf ./${{secrets.GIT_REPO}}
               git clone https://oykos-development-hub:${{secrets.GIT_ACCESS_TOKEN}}@github.com/oykos-development-hub/${{secrets.GIT_REPO}}.git
               cd ./${{secrets.GIT_REPO}}
-              git checkout master
+              npm run git:pull-request
               cp -R ./storybook-docs/** ../../
-              npm install husky
-              npm config set _authToken=${{secrets.NPM_TOKEN}}
-              npm publish --access public
               cd ../../
               rm -rf github
