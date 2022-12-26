@@ -1,7 +1,6 @@
 {
-  "name": "@oykos-development/devkit",
-  "private": true,
-  "version": "1.0.12",
+  "name": "@oykos-development/devkit-react-ts-styled-components",
+  "version": "1.0.0",
   "type": "module",
   "description": "Devkit module for development of React + Typescript + StyledComponents projects, built with Storybook framework.",
   "main": "./dist/index.js",

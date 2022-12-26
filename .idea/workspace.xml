@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/storybook-docs/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/project.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <list id="601978c2-3436-41c8-af59-e644f6e96305" name="Local changes" comment="Local changes">
       <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc" afterDir="false" />
@@ -157,14 +158,7 @@
       <workItem from="1671777498841" duration="16620000" />
       <workItem from="1671993955229" duration="2835000" />
       <workItem from="1671998948389" duration="2412000" />
-      <workItem from="1672040927811" duration="16499000" />
-    </task>
-    <task id="LOCAL-00003" summary="fix: improve button render code">
-      <created>1651653296249</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1651653296249</updated>
+      <workItem from="1672040927811" duration="18075000" />
     </task>
     <task id="LOCAL-00004" summary="refactor: remove redundant files from vite project">
       <created>1651653499983</created>
@@ -502,7 +496,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672057901260</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="build: deploy new version">
+      <created>1672058801818</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1672058801818</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -554,7 +555,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fix: fix input changes after merge" />
     <MESSAGE value="refactor:improve pin input component" />
     <MESSAGE value="refactor: relocate pin input component" />
     <MESSAGE value="feat: add story example for accordion where custom nodeElement is passed as accordion content" />
@@ -579,6 +579,7 @@
     <MESSAGE value="build: new version of storybook" />
     <MESSAGE value="refactor: update favicon" />
     <MESSAGE value="refactor: update types" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: update types" />
+    <MESSAGE value="build: deploy new version" />
+    <option name="LAST_COMMIT_MESSAGE" value="build: deploy new version" />
   </component>
 </project>
