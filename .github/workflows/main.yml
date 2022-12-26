@@ -36,9 +36,6 @@ jobs:
               rm -rf ./${{secrets.GIT_REPO}}
               git clone https://oykos-development-hub:${{secrets.GIT_ACCESS_TOKEN}}@github.com/oykos-development-hub/${{secrets.GIT_REPO}}.git
               cd ./${{secrets.GIT_REPO}}
-              npm install -g typescript
-              npm install
-              npm run production
               cp -R ./storybook-docs/** ../../
               cd ../../
               rm -rf github
