@@ -2,19 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/shared/theme/font-types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.prettierrc" beforeDir="false" afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/index.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/index.stories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/loader/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/one/LoaderOne.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/index.stories.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/one/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/one.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/one/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/two/LoaderTwo.stories.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/two/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/two.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/two/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/loader/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/theme/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/types.ts" afterDir="false" />
     </list>
     <list id="601978c2-3436-41c8-af59-e644f6e96305" name="Local changes" comment="Local changes">
       <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc" afterDir="false" />
@@ -169,7 +160,7 @@
       <workItem from="1671777498841" duration="16620000" />
       <workItem from="1671993955229" duration="2835000" />
       <workItem from="1671998948389" duration="2412000" />
-      <workItem from="1672040927811" duration="7546000" />
+      <workItem from="1672040927811" duration="8034000" />
     </task>
     <task id="LOCAL-00001" summary="fix: fix package lock name of the project">
       <created>1651650186010</created>
@@ -472,7 +463,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672045475913</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="feat: writing stories for loader one">
+      <created>1672048616414</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1672048616414</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -519,7 +517,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="refactor: improve typography component props" />
     <MESSAGE value="refactor: improve loader component" />
     <MESSAGE value="feat: add util scss functions" />
     <MESSAGE value="refactor: adjust input story" />
@@ -544,6 +541,7 @@
     <MESSAGE value="fix: run lint:fix" />
     <MESSAGE value="fix: run prettier" />
     <MESSAGE value="feat: add styled theme type and properties" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add styled theme type and properties" />
+    <MESSAGE value="feat: writing stories for loader one" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: writing stories for loader one" />
   </component>
 </project>

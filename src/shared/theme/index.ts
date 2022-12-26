@@ -1,6 +1,6 @@
 import { DefaultTheme } from 'styled-components';
 
-export const Index: DefaultTheme = {
+export const Theme: DefaultTheme = {
   mediaScreenBreakpoints: {
     xs: '480px',
     sm: '576px',

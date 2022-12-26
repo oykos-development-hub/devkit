@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Loader } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { LoaderProps } from "./types";
+import { Theme } from "../../shared/theme";
 
 export default {
   title: "Example/Loader",
@@ -65,4 +66,11 @@ VariantOneDefault.args = {
   testId: 'VariantOneDefault',
   primaryColor: '#b2a422',
   secondaryColor: '#7199aa'
+};
+
+export const VariantOneThemed = Template.bind({});
+
+VariantOneThemed.args = {
+  testId: 'VariantOneThemed',
+  theme: Theme
 };
