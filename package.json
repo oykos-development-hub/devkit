@@ -27,8 +27,10 @@
     "storybook:dev": "start-storybook -p 6006",
     "storybook:clean": "rmdir /s /q storybook-docs",
     "storybook:build": "npm run storybook:clean && build-storybook -o ./storybook-docs",
+    "storybook:production": "rm -rf ./storybook-docs && build-storybook -o ./storybook-docs",
     "git:commit": "npm run ts:declarations && npm run lint:fix && npm run format",
     "git:pull-request": "npm run ts:declarations && npm run lint:fix && npm run format && npm run storybook:build",
+    "production": "npm run ts:declarations && npm run lint:fix && npm run format && npm run storybook:production",
     "prepare": "husky install"
   },
   "dependencies": {
