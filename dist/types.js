@@ -1,3 +1,2 @@
-export * from "./components/loader/one/types";
-export * from "./components/loader/two/types";
+export * from "./components/loader/types";
 //# sourceMappingURL=types.js.map

@@ -61,16 +61,35 @@ const Template: ComponentStory<typeof Loader> = (args: LoaderProps) => (
 export const VariantOneDefault = Template.bind({});
 
 VariantOneDefault.args = {
-  width: '100px',
-  height: '100px',
-  testId: 'VariantOneDefault',
-  primaryColor: '#b2a422',
-  secondaryColor: '#7199aa'
+  width: "100px",
+  height: "100px",
+  testId: "VariantOneDefault",
+  primaryColor: "#b2a422",
+  secondaryColor: "#7199aa",
 };
 
 export const VariantOneThemed = Template.bind({});
 
 VariantOneThemed.args = {
-  testId: 'VariantOneThemed',
-  theme: Theme
+  testId: "VariantOneThemed",
+  theme: Theme,
+};
+
+export const VariantTwoDefault = Template.bind({});
+
+VariantTwoDefault.args = {
+  variant: "two",
+  width: "100px",
+  height: "100px",
+  testId: "VariantTwoDefault",
+  primaryColor: "#b2a422",
+  secondaryColor: "#7199aa",
+};
+
+export const VariantTwoThemed = Template.bind({});
+
+VariantTwoThemed.args = {
+  variant: "two",
+  testId: "VariantTwoThemed",
+  theme: Theme,
 };

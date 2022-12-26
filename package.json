@@ -25,7 +25,8 @@
     "storybook:dev": "start-storybook -p 6006",
     "storybook:clean": "rmdir /s /q storybook-docs",
     "storybook:prefix": "node ./.storybook/apply-prefix.js",
-    "storybook:build": "npm run storybook:clean && build-storybook -o ./storybook-docs"
+    "storybook:build": "npm run storybook:clean && build-storybook -o ./storybook-docs",
+    "pull-request": "npm run ts:declarations && npm run lint:fix && npm run format && npm run storybook:build"
   },
   "dependencies": {
     "react": "^18.2.0",
