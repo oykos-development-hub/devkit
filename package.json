@@ -1,8 +1,10 @@
 {
-  "name": "devkit",
+  "name": "@oykos-development/devkit",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.12",
   "type": "module",
+  "description": "Devkit module for development of React + Typescript + StyledComponents projects, built with Storybook framework.",
+  "main": "./dist/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oykos-development-hub/devkit.git"
@@ -24,9 +26,10 @@
     "format": "npx prettier --write ./src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
     "storybook:dev": "start-storybook -p 6006",
     "storybook:clean": "rmdir /s /q storybook-docs",
-    "storybook:prefix": "node ./.storybook/apply-prefix.js",
     "storybook:build": "npm run storybook:clean && build-storybook -o ./storybook-docs",
-    "pull-request": "npm run ts:declarations && npm run lint:fix && npm run format && npm run storybook:build"
+    "git:commit": "npm run ts:declarations && npm run lint:fix && npm run format",
+    "git:pull-request": "npm run ts:declarations && npm run lint:fix && npm run format && npm run storybook:build",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -54,8 +57,15 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.2",
     "prettier": "^2.8.1",
     "typescript": "^4.9.3",
     "vite": "^4.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run git:commit",
+      "pre-push": "npm run git:pull-request"
+    }
   }
 }
