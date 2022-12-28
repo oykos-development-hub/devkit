@@ -64,7 +64,7 @@ VariantOneDefault.args = {
   width: "100px",
   height: "100px",
   testId: "VariantOneDefault",
-  primaryColor: "#b2a422",
+  primaryColor: "lightblue",
   secondaryColor: "#7199aa",
 };
 
