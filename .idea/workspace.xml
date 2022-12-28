@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="">
+    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="refactor: include index in types">
+      <change afterPath="$PROJECT_DIR$/src/components/typography/styles.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/typography/variants.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
     </list>
     <list id="601978c2-3436-41c8-af59-e644f6e96305" name="Local changes" comment="Local changes">
       <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc" afterDir="false" />
@@ -78,6 +84,13 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
@@ -99,7 +112,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="28gs409NgbaJRPWul9BI9iLQHKg" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -109,18 +122,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\38267\Development\Startup\devkit\node_modules\prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
-    <property name="ts.external.directory.path" value="C:\Users\38267\Development\Startup\devkit\node_modules\typescript\lib" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Projects/Terra/devkit&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;C:\\Projects\\Terra\\devkit\\node_modules\\eslint&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Projects\\Terra\\devkit\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Projects\\Terra\\devkit\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\38267\Development\Startup\devkit\public" />
@@ -158,6 +177,15 @@
       <workItem from="1671993955229" duration="2835000" />
       <workItem from="1671998948389" duration="2412000" />
       <workItem from="1672040927811" duration="23525000" />
+      <workItem from="1672176479805" duration="547000" />
+      <workItem from="1672177063494" duration="378000" />
+      <workItem from="1672177467654" duration="32000" />
+      <workItem from="1672177595560" duration="371000" />
+      <workItem from="1672177994921" duration="1378000" />
+      <workItem from="1672179487972" duration="202000" />
+      <workItem from="1672179709754" duration="280000" />
+      <workItem from="1672180018387" duration="2662000" />
+      <workItem from="1672215367731" duration="6930000" />
     </task>
     <task id="LOCAL-00011" summary="fix: fix input changes after merge">
       <created>1651656143878</created>
