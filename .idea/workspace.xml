@@ -1,84 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="refactor: include index in types">
-      <change afterPath="$PROJECT_DIR$/src/components/typography/styles.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/typography/variants.tsx" afterDir="false" />
+    <list default="true" id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="refactor: remove node modules">
+      <change afterPath="$PROJECT_DIR$/src/shared/colors.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/types.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/dist/types.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/types.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/dist/types.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/index.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/index.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/one.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/one.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/two.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/two.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/loader/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/loader/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/typography/index.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typography/index.stories.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/typography/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typography/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/typography/styles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typography/styles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/typography/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typography/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/typography/variants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/typography/variants.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/animations/rotation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/animations/rotation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/components/story-wrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/components/story-wrapper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/theme/border-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/border-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/theme/color-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/color-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/theme/font-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/font-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/theme/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/theme/media-types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/media-types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/theme/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/theme/types.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/vite-env.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/vite-env.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/0.5d2269b81144a0f2c680.manager.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/0.5d2269b81144a0f2c680.manager.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/0.5d2269b81144a0f2c680.manager.bundle.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/0.5d2269b81144a0f2c680.manager.bundle.js.LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/5.b73feab80d411aa00bd2.manager.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/5.b73feab80d411aa00bd2.manager.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/5.b73feab80d411aa00bd2.manager.bundle.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/5.b73feab80d411aa00bd2.manager.bundle.js.LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/8.93ce47e4847574b30534.manager.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/8.93ce47e4847574b30534.manager.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/8.93ce47e4847574b30534.manager.bundle.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/8.93ce47e4847574b30534.manager.bundle.js.LICENSE.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/Color-f953d088-2d182fc8.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/Color-f953d088-2d182fc8.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/GlobalScrollAreaStyles-8793ce4a-7611b5a9.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/GlobalScrollAreaStyles-8793ce4a-7611b5a9.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/OverlayScrollbars-1355f44c-6b81cfae.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/OverlayScrollbars-1355f44c-6b81cfae.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/WithTooltip-167e9982-0764d9fc.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/WithTooltip-167e9982-0764d9fc.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/client-c681bc30.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/client-c681bc30.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/config-0d0f388d.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/config-0d0f388d.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/config-e9e78718.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/config-e9e78718.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/es.map.constructor-59feb477.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/es.map.constructor-59feb477.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/es.number.is-integer-73c81490.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/es.number.is-integer-73c81490.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/es.number.is-nan-3d719c48.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/es.number.is-nan-3d719c48.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/es.number.to-fixed-5095722b.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/es.number.to-fixed-5095722b.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/es.object.get-own-property-descriptor-ca06259f.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/es.object.get-own-property-descriptor-ca06259f.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/es.regexp.flags-d8e3abb5.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/es.regexp.flags-d8e3abb5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/es.string.from-code-point-a9cb0095.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/es.string.from-code-point-a9cb0095.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/formatter-0d5cb0eb-30d3d2a8.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/formatter-0d5cb0eb-30d3d2a8.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/iframe-483c1bac.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/iframe-483c1bac.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/index-4cb24bae.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/index-4cb24bae.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/index-67ef4239.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/index-67ef4239.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/index-681e4b07-9bdc2a05.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/index-681e4b07-9bdc2a05.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/index-8da2e181.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/index-8da2e181.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/index-b308c716.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/index-b308c716.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/index-d84d9d3b.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/index-d84d9d3b.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/index.stories-9fe876e9.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/index.stories-9fe876e9.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/jsx-runtime-82e0d3de.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/jsx-runtime-82e0d3de.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/make-decorator-470a9479.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/make-decorator-470a9479.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-1bc43430.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-1bc43430.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-356c9ae2.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/preview-356c9ae2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-36e54ede.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-36e54ede.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-d898aede.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-d898aede.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-e65ed9f0.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-e65ed9f0.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-ece974c5.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-ece974c5.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-f7957ca7.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-f7957ca7.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-f7dec71e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/preview-f7dec71e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/renderDocs-2f8493c7.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/renderDocs-2f8493c7.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/string-d2fe5096.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/string-d2fe5096.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/syntaxhighlighter-b07b042a-6c172503.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/syntaxhighlighter-b07b042a-6c172503.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/assets/web.url.constructor-4b012573.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/assets/web.url.constructor-4b012573.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/iframe.html" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/iframe.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/project.json" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/project.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/stories.json" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/stories.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/vendors~main.1cb5b4aee929818f2c1c.manager.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/vendors~main.1cb5b4aee929818f2c1c.manager.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storybook-docs/vendors~main.1cb5b4aee929818f2c1c.manager.bundle.js.LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/storybook-docs/vendors~main.1cb5b4aee929818f2c1c.manager.bundle.js.LICENSE.txt" afterDir="false" />
     </list>
-    <list id="601978c2-3436-41c8-af59-e644f6e96305" name="Local changes" comment="Local changes">
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsc.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsc.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsserver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsserver" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/tsserver.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/tsserver.cmd" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/arg/LICENSE.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/arg/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/arg/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/arg/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/arg/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/buffer-from/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/buffer-from/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/buffer-from/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/buffer-from/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/buffer-from/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/buffer-from/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/buffer-from/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/buffer-from/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/create-require/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/create-require/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/create-require/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/create-require/create-require.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/create-require/create-require.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/create-require/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/CONTRIBUTING.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/dist/diff.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/dist/diff.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/convert/dmp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/convert/xml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/array.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/character.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/css.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/json.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/line.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/sentence.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/diff/word.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/patch/apply.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/patch/create.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/patch/merge.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/patch/parse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/util/array.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/util/distance-iterator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/lib/util/params.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/release-notes.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/diff/runtime.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/make-error/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/make-error/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/make-error/dist/make-error.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/make-error/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/make-error/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/make-error/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map-support/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map-support/LICENSE.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map-support/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map-support/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map-support/browser-source-map-support.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map-support/browser-source-map-support.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map-support/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map-support/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map-support/register.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map-support/register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/source-map-support/source-map-support.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/source-map-support/source-map-support.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ts-node/node_modules/.bin/tsc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ts-node/node_modules/.bin/tsc.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ts-node/node_modules/.bin/tsserver" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ts-node/node_modules/.bin/tsserver.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/yn/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/yn/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/yn/lenient.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/yn/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/yn/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/yn/readme.md" beforeDir="false" />
-    </list>
+    <list id="9cf6f070-b729-4484-b3df-caa9065157c9" name="Local changelist" comment="" />
+    <list id="601978c2-3436-41c8-af59-e644f6e96305" name="Local changes" comment="Local changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -88,6 +103,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -122,31 +138,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Projects/Terra/devkit&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;C:\\Projects\\Terra\\devkit\\node_modules\\eslint&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Projects\\Terra\\devkit\\node_modules\\prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Projects\\Terra\\devkit\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "last_opened_file_path": "C:/Projects/Terra/devkit-tr-33/src/shared",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "C:\\Projects\\Terra\\devkit-tr-33\\node_modules\\eslint",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Projects\\Terra\\devkit\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "ts.external.directory.path": "C:\\Projects\\Terra\\devkit-tr-33\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Terra\devkit-tr-33\src\shared" />
       <recent name="C:\Users\38267\Development\Startup\devkit\public" />
       <recent name="C:\Users\38267\Development\Startup\devkit\src\components\loader" />
       <recent name="C:\Users\38267\Development\Startup\devkit" />
       <recent name="C:\Users\38267\Development\Startup\Terra\terra-library\src" />
-      <recent name="C:\Users\38267\Development\Startup\Terra\terra-library" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\38267\Development\Startup\devkit\src\components\loader" />
@@ -155,11 +171,62 @@
       <recent name="C:\Users\38267\Development\Startup\Terra\terra-library\src\components" />
     </key>
   </component>
+  <component name="RunManager" selected="npm.storybook:dev">
+    <configuration name="git:pull-request" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="git:pull-request" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="prepare" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prepare" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="storybook:dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="storybook:dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="ts:declarations" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="ts:declarations" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.git:pull-request" />
+        <item itemvalue="npm.ts:declarations" />
+        <item itemvalue="npm.storybook:dev" />
+        <item itemvalue="npm.prepare" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="6710e4b6-efeb-48b3-9d56-9366a063ae18" name="Changes" comment="" />
       <changelist id="601978c2-3436-41c8-af59-e644f6e96305" name="Local changes" comment="" />
+      <changelist id="9cf6f070-b729-4484-b3df-caa9065157c9" name="Local changelist" comment="" />
       <created>1651649367508</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -186,13 +253,11 @@
       <workItem from="1672179709754" duration="280000" />
       <workItem from="1672180018387" duration="2662000" />
       <workItem from="1672215367731" duration="6930000" />
-    </task>
-    <task id="LOCAL-00011" summary="fix: fix input changes after merge">
-      <created>1651656143878</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1651656143878</updated>
+      <workItem from="1672310322023" duration="47000" />
+      <workItem from="1672317922576" duration="3279000" />
+      <workItem from="1672321285068" duration="3375000" />
+      <workItem from="1672353324813" duration="3453000" />
+      <workItem from="1672388716319" duration="5058000" />
     </task>
     <task id="LOCAL-00012" summary="refactor:improve pin input component">
       <created>1651657031808</created>
@@ -530,7 +595,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672071234280</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="refactor: remove node modules">
+      <created>1672321414010</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1672321414011</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +654,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="feat: improve sidebar behavior and props" />
     <MESSAGE value="feat: improve explanation behavior and props" />
     <MESSAGE value="feat: improve popup behavior and props" />
     <MESSAGE value="feat: improve upload behavior and props" />
@@ -607,6 +678,7 @@
     <MESSAGE value="build: update npm scripts to work on unix os" />
     <MESSAGE value="build: test npm publish after merge" />
     <MESSAGE value="refactor: include index in types" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: include index in types" />
+    <MESSAGE value="refactor: remove node modules" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: remove node modules" />
   </component>
 </project>

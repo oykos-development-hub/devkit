@@ -6,3 +6,7 @@ export interface FontSize {
   xl: string;
   xxl: string;
 }
+
+export interface FontFamily {
+  one: string;
+}

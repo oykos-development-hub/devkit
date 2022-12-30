@@ -1,144 +1,153 @@
 import styled from "styled-components";
-import {TypographyProps} from "./types";
+import { TypographyProps } from "./types";
 
-
-export const StyledTypographyH1 = styled.h1<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "red")};
+export const H1 = styled.h1<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
   font-weight: 700;
-  font-size: 96px;
-  line-height: 120px;
-  // -1.5% or -0.015em
+  font-size: 6rem;
+  line-height: 7.5rem;
   letter-spacing: -0.015em;
-  margin: ${(props: TypographyProps) => (props.noMargins ? 0 : "initial")};
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;
 
-export const StyledTypographyH2 = styled.h2<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "green")};
+export const H2 = styled.h2<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
-  font-size: 60px;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
+  font-size: 3.75rem;
   font-weight: 700;
-  line-height: 79.8px;
+  line-height: 4.988rem;
   letter-spacing: -0.01em;
-  margin: ${(props: TypographyProps) => (props.noMargins ? 0 : "initial")};
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;
 
-export const StyledTypographyH3 = styled.h3<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "yellow")};
+export const H3 = styled.h3<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
-  font-size: 48px;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
+  font-size: 3rem;
   font-weight: 700;
-  line-height: 63.84px;
+  line-height: 3.99rem;
   letter-spacing: -0.005em;
-  margin: ${(props: TypographyProps) => (props.noMargins ? 0 : "initial")};
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;
 
-export const StyledTypographyH4 = styled.h4<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "cyan")};
+export const H4 = styled.h4<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
   font-weight: 500;
-  font-size: 34px;
-  line-height: 41px;
+  font-size: 2.125rem;
+  line-height: 2.563rem;
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;
 
-export const StyledTypographyH5 = styled.h5<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "dark")};
+export const H5 = styled.h5<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
   font-weight: 500;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 1.5rem;
+  line-height: 1.875rem;
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;
 
-export const StyledTypographyH6 = styled.h6<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "dark")};
+export const H6 = styled.h6<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
   font-weight: 500;
-  font-size: 20px;
-  line-height: 26px;
+  font-size: 1.25rem;
+  line-height: 1.625rem;
   letter-spacing: 0.0075em;
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;
 
-export const StyledTypographySub1 = styled.span<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "dark")};
+export const Sub1 = styled.span<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
   font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   letter-spacing: 0.005em;
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;
 
-export const StyledTypographySub2 = styled.span<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "dark")};
+export const Sub2 = styled.span<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
   font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   letter-spacing: 0.005em;
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;
 
-export const StyledTypographyBody1 = styled.p<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "dark")};
+export const Body1 = styled.p<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
   font-weight: normal;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 1rem;
+  line-height: 1.5rem;
   letter-spacing: 0.0168em;
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;
 
-export const StyledTypographyBody2 = styled.p<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "dark")};
+export const Body2 = styled.p<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
   font-weight: normal;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   letter-spacing: 0.0168em;
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;
 
-export const StyledTypographyButton = styled.span<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "dark")};
+export const Button = styled.span<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 150%;
   letter-spacing: 0.05em;
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;
 
-export const StyledTypographyCaption = styled.label<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "dark")};
+export const Caption = styled.label<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
   font-weight: normal;
-  font-size: 12px;
-  line-height: 15px;
+  font-size: 0.75rem;
+  line-height: 0.938rem;
   letter-spacing: 0.03em;
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;
 
-export const StyledTypographyOverline = styled.p<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "dark")};
+export const Overline = styled.p<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
   font-weight: bold;
-  font-size: 10px;
-  line-height: 12px;
+  font-size: 0.625rem;
+  line-height: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;
 
-export const StyledTypographyError = styled.span<TypographyProps>`
-  color: ${(props: TypographyProps) => (props.color || "red")};
+export const Error = styled.span<TypographyProps>`
+  color: ${(props: TypographyProps) => props.color || props?.theme?.palette?.dark?.one || "#000"};
   display: block;
-  font-family: Rubik, sans-serif;
+  font-family: ${(props: TypographyProps) => props.fontFamily || props?.theme?.fontFamily?.one || "serif"};
   font-weight: normal;
-  font-size: 12px;
+  font-size: 0.75rem;
+  margin: ${(props: TypographyProps) => props.margin || "initial"};
 `;

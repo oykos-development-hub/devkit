@@ -1,9 +1,16 @@
-import { TypographyVariants } from "./variants";
+import React from "react";
+import { TypographyVariants as Variants } from "./variants";
+import { DefaultTheme } from "styled-components";
 
 export interface TypographyProps {
-  variant?: TypographyVariants | string;
-  children?: string;
+  variant?: Variants | string;
+  children?: React.ReactNode;
   color?: string;
   className?: string;
-  noMargins?: boolean;
+  margin?: string;
+  fontFamily?: string;
+  fontSize?: string;
+  theme?: DefaultTheme;
 }
+
+export default Variants;

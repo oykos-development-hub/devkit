@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Loader } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { LoaderProps } from "./types";

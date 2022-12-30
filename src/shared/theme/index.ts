@@ -31,6 +31,9 @@ export const Theme: DefaultTheme = {
     xl: "4rem",
     xxl: "7rem",
   },
+  fontFamily: {
+    one: "Rubik",
+  },
   palette: {
     main: {
       one: "#0068B6FF",
