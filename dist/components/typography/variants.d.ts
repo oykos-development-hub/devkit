@@ -14,3 +14,4 @@ export declare enum TypographyVariants {
     overline = "p",
     error = "span"
 }
+export declare const VariantNames: string[];

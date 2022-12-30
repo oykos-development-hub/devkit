@@ -15,4 +15,5 @@ export var TypographyVariants;
     TypographyVariants["overline"] = "p";
     TypographyVariants["error"] = "span";
 })(TypographyVariants || (TypographyVariants = {}));
+export var VariantNames = Object.keys(TypographyVariants).map(function (key) { return key; });
 //# sourceMappingURL=variants.js.map

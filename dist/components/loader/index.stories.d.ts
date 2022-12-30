@@ -1,5 +1,5 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { LoaderProps } from "./types";
 declare const _default: ComponentMeta<(props: LoaderProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
 export default _default;
