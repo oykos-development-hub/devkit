@@ -1,0 +1,9 @@
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+import styled from "styled-components";
+import { shared } from "./shared";
+export var StyledTertiaryButton = styled.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", ";\n  background-color: transparent;\n  border-color: transparent;\n  color: ", ";\n\n  &:hover {\n    border-color: ", ";\n  }\n  &:disabled {\n    border-color: transparent;\n    color: ", ";\n  }\n"], ["\n  ", ";\n  background-color: transparent;\n  border-color: transparent;\n  color: ", ";\n\n  &:hover {\n    border-color: ", ";\n  }\n  &:disabled {\n    border-color: transparent;\n    color: ", ";\n  }\n"])), shared, function (props) { var _a, _b, _c; return props.tertiaryColor || ((_c = (_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.important) === null || _c === void 0 ? void 0 : _c.two) || "red"; }, function (props) { var _a, _b, _c; return props.tertiaryColor || ((_c = (_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.important) === null || _c === void 0 ? void 0 : _c.two) || "red"; }, function (props) { var _a, _b, _c; return ((_c = (_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.light) === null || _c === void 0 ? void 0 : _c.six) || "lightgrey"; });
+var templateObject_1;
+//# sourceMappingURL=tertiary.js.map
