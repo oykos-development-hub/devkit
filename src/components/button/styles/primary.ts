@@ -1,21 +1,21 @@
 import styled from "styled-components";
 import { ButtonProps } from "../types";
-import { shared } from "./shared";
+import { shared, disabledColor, primaryColor } from "./shared";
 
 export const StyledPrimaryButton = styled.button<ButtonProps>`
   ${shared};
-  background-color: ${(props: ButtonProps) => props.primaryColor || props.theme?.palette?.main?.one || "blue"};
-  border-color: ${(props: ButtonProps) => props.primaryColor || props.theme?.palette?.main?.one || "blue"};
+  background-color: ${(props: ButtonProps) => primaryColor(props)};
+  border-color: ${(props: ButtonProps) => primaryColor(props)};
   color: ${(props: ButtonProps) => props.theme?.palette?.light.one || "white"};
 
   &:hover {
     background-color: transparent;
-    border-color: ${(props: ButtonProps) => props.primaryColor || props.theme?.palette?.main?.one || "blue"};
-    color: ${(props: ButtonProps) => props.primaryColor || props.theme?.palette?.main?.one || "blue"};
+    color: ${(props: ButtonProps) => primaryColor(props)};
   }
+
   &:disabled {
-    background-color: ${(props: ButtonProps) => props.theme?.palette?.light?.six || "lightgrey"};
+    background-color: ${(props: ButtonProps) => disabledColor(props)};
     color: ${(props: ButtonProps) => props.theme?.palette?.light.one || "white"};
-    border-color: ${(props: ButtonProps) => props.theme?.palette?.light?.six || "lightgrey"};
+    border-color: ${(props: ButtonProps) => disabledColor(props)};
   }
 `;
