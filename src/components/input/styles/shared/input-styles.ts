@@ -4,40 +4,40 @@ import { InputProps } from "../../types";
 import { errorColor, basicColor, hoverColor, focusColor } from "./colors";
 
 const defaultHeight = {
-  standard: "2.5em",
-  outlined: "3em",
+    standard: "2.5em",
+    outlined: "3em",
 };
 
 const paddingLeft = {
-  standard: (props: InputProps) => (!props.textarea ? (props.iconLeft ? "2.25em" : "0em") : "0em"),
-  outlined: (props: InputProps) => (!props.textarea ? (props.iconLeft ? "3em" : "1em") : "1em"),
+    standard: (props: InputProps) => (!props.textarea ? (props.iconLeft ? "2.25em" : "0em") : "0em"),
+    outlined: (props: InputProps) => (!props.textarea ? (props.iconLeft ? "3em" : "1em") : "1em"),
 };
 
 const paddingRight = {
-  standard: (props: InputProps) => (!props.textarea ? (props.iconRight ? "2.25em" : "0em") : "0em"),
-  outlined: (props: InputProps) => (!props.textarea ? (props.iconRight ? "3em" : "1em") : "1em"),
+    standard: (props: InputProps) => (!props.textarea ? (props.iconRight ? "2.25em" : "0em") : "0em"),
+    outlined: (props: InputProps) => (!props.textarea ? (props.iconRight ? "3em" : "1em") : "1em"),
 };
 
 const borderWidth = {
-  standard: (props: InputProps) => `0 0 ${props.theme?.borderWidth?.xs || "1px"} 0`,
-  outlined: (props: InputProps) => props.theme?.borderWidth?.xs || "1px",
+    standard: (props: InputProps) => `0 0 ${props.theme?.borderWidth?.xs || "1px"} 0`,
+    outlined: (props: InputProps) => props.theme?.borderWidth?.xs || "1px",
 };
 
 // border-width when input is in focus
 const focusBorderWidth = {
-  standard: borderWidth.standard,
-  outlined: (props: InputProps) => props.theme?.borderWidth?.sm || "2px",
+    standard: borderWidth.standard,
+    outlined: (props: InputProps) => props.theme?.borderWidth?.sm || "2px",
 };
 
 // border-color when input is in focus
 const focusBorderColor = {
-  standard: (props: InputProps) => (props.error ? errorColor(props) : hoverColor(props)),
-  outlined: (props: InputProps) => (props.error ? errorColor(props) : focusColor(props)),
+    standard: (props: InputProps) => (props.error ? errorColor(props) : hoverColor(props)),
+    outlined: (props: InputProps) => (props.error ? errorColor(props) : focusColor(props)),
 };
 
 const borderRadius = {
-  standard: 0,
-  outlined: (props: InputProps) => props.borderRadius || props.theme?.borderRadius?.md || "0.5em",
+    standard: 0,
+    outlined: (props: InputProps) => props.borderRadius || props.theme?.borderRadius?.md || "0.5em",
 };
 
 // input styles

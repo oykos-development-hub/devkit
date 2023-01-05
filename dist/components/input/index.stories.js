@@ -1,10 +1,18 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Input } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { InputProps } from "./types";
 import { Theme } from "../../shared/theme";
-
 export default {
     title: "Components/Input",
     component: Input,
@@ -111,26 +119,17 @@ export default {
             },
         },
     },
-} as ComponentMeta<typeof Input>;
-
-const Template: ComponentStory<typeof Input> = (args: InputProps) => (
-    <StoryWrapper>
-        <Input {...args} />
-    </StoryWrapper>
-);
-
-// standard
-export const StandardInputDefault = Template.bind({});
-
+};
+var Template = function (args) { return (React.createElement(StoryWrapper, null,
+    React.createElement(Input, __assign({}, args)))); };
+export var StandardInputDefault = Template.bind({});
 StandardInputDefault.args = {
     label: "Input Label*",
     errorMessage: "This field is required!",
     placeholder: "placeholder...",
     variant: "standard",
 };
-
-export const StandardInputThemed = Template.bind({});
-
+export var StandardInputThemed = Template.bind({});
 StandardInputThemed.args = {
     label: "Input Label*",
     errorMessage: "This field is required!",
@@ -138,19 +137,14 @@ StandardInputThemed.args = {
     variant: "standard",
     theme: Theme,
 };
-
-// outlined
-export const OutlinedInputDefault = Template.bind({});
-
+export var OutlinedInputDefault = Template.bind({});
 OutlinedInputDefault.args = {
     label: "Input Label*",
     errorMessage: "This field is required!",
     placeholder: "placeholder...",
     variant: "outlined",
 };
-
-export const OutlinedInputThemed = Template.bind({});
-
+export var OutlinedInputThemed = Template.bind({});
 OutlinedInputThemed.args = {
     label: "Input Label*",
     errorMessage: "This field is required!",
@@ -158,3 +152,4 @@ OutlinedInputThemed.args = {
     variant: "outlined",
     theme: Theme,
 };
+//# sourceMappingURL=index.stories.js.map
