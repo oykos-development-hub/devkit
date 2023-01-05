@@ -14,8 +14,7 @@ export interface InputProps {
   margin?: string;
   borderColor?: string;
   borderRadius?: string;
-  error?: boolean;
-  errorMessage?: string;
+  error?: string;
   errorColor?: string;
   disabled?: boolean;
   textarea?: boolean;
