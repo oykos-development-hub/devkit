@@ -8,7 +8,7 @@ const pinRefs: any = {};
 const pinPrefix = "pinRef-";
 const re = /^(\d*\.)?\d+$/;
 
-export const Pin = ({ handleInput, length = 4, type = "password" }: IPinCode) => {
+export const Pin = ({ handleInput, length = 4, type = "password", variant }: IPinCode) => {
   const [value, setValue] = useState<string[]>([]);
 
   value.forEach((e, i) => {
@@ -52,7 +52,7 @@ export const Pin = ({ handleInput, length = 4, type = "password" }: IPinCode) =>
 
     if (filledValues.length && pinRefs[`pinRef-${filledValues.length}`]) {
       pinRefs[`pinRef-${filledValues.length}`].current?.focus();
-    } else pinRefs[`pinRef-0`].current?.focus();
+    } else pinRefs["pinRef-0"].current?.focus();
   };
 
   useEffect(() => {
@@ -70,7 +70,7 @@ export const Pin = ({ handleInput, length = 4, type = "password" }: IPinCode) =>
 
     setTimeout(() => {
       handleFocus();
-    }, 150);
+    }, 100);
   }, [value]);
 
   useEffect(() => {
@@ -89,7 +89,7 @@ export const Pin = ({ handleInput, length = 4, type = "password" }: IPinCode) =>
     <StyledMainWrapper>
       {value.map((e, i) => (
         <Input
-          variant="outlined"
+          variant={variant}
           type={type}
           id={`${i}`}
           key={i}

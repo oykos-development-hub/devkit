@@ -23,11 +23,6 @@ export default {
                 options: ["standard", "outlined"],
             },
         },
-        name: {
-            control: {
-                type: "text",
-            },
-        },
         label: {
             control: {
                 type: "text",
@@ -80,11 +75,6 @@ export default {
         },
         error: {
             control: {
-                type: "boolean",
-            },
-        },
-        errorMessage: {
-            control: {
                 type: "text",
             },
         },
@@ -125,14 +115,12 @@ var Template = function (args) { return (React.createElement(StoryWrapper, null,
 export var StandardInputDefault = Template.bind({});
 StandardInputDefault.args = {
     label: "Input Label*",
-    errorMessage: "This field is required!",
     placeholder: "placeholder...",
     variant: "standard",
 };
 export var StandardInputThemed = Template.bind({});
 StandardInputThemed.args = {
     label: "Input Label*",
-    errorMessage: "This field is required!",
     placeholder: "placeholder...",
     variant: "standard",
     theme: Theme,
@@ -140,14 +128,12 @@ StandardInputThemed.args = {
 export var OutlinedInputDefault = Template.bind({});
 OutlinedInputDefault.args = {
     label: "Input Label*",
-    errorMessage: "This field is required!",
     placeholder: "placeholder...",
     variant: "outlined",
 };
 export var OutlinedInputThemed = Template.bind({});
 OutlinedInputThemed.args = {
     label: "Input Label*",
-    errorMessage: "This field is required!",
     placeholder: "placeholder...",
     variant: "outlined",
     theme: Theme,
