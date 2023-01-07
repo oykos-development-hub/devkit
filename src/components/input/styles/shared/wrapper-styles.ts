@@ -7,8 +7,8 @@ import { inputStyles } from "./input-styles";
 
 export const wrapperStyles = css<InputProps>`
   width: ${(props: InputProps) => (props.fullWidth ? "100%" : props.width || "400px")};
-  min-width: 200px;
-  padding: 1.75em 0 1.25em 0;
+  min-width: ${(props: InputProps) => (props.label ? "200px" : "3em")};
+  padding: ${(props: InputProps) => `${props.label ? "1.75em" : 0} 0 ${props.error ? "1.25em" : 0} 0`};
   margin: ${(props: InputProps) => props.margin || "0em"};
   font-size: ${(props: InputProps) => props.fontSize || "16px"};
 

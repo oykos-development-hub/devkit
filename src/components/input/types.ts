@@ -1,4 +1,4 @@
-import { ReactElement, ReactSVGElement } from "react";
+import { ChangeEventHandler, ReactElement, ReactSVGElement } from "react";
 import { DefaultTheme } from "styled-components";
 
 export interface InputProps {
@@ -21,7 +21,13 @@ export interface InputProps {
   iconLeft?: ReactElement | ReactSVGElement;
   iconRight?: ReactElement | ReactSVGElement;
   theme?: DefaultTheme;
-  onChange?: () => void;
+  onChange?: ChangeEventHandler;
   onFocus?: () => void;
   onBlur?: () => void;
+  id?: string;
+  inputRef?: any;
+  inputMode?: "text" | "numeric" | "none" | "tel" | "url" | "email" | "decimal";
+  value?: string;
+  maxLength?: number;
+  pattern?: string;
 }

@@ -15,11 +15,6 @@ export default {
         options: ["standard", "outlined"],
       },
     },
-    name: {
-      control: {
-        type: "text",
-      },
-    },
     label: {
       control: {
         type: "text",
