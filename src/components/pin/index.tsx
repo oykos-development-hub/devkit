@@ -40,6 +40,9 @@ export const Pin = ({ handleInput, length = 4, type = "password", variant }: IPi
       setValue((oldValue) => oldValue.map((e, i) => (i !== index ? e : val)));
     }
 
+    // keep only the last value and override the previous
+    if (val?.length > 1) val = val[val.length - 1];
+
     // When user pastes full pin value
     // We want to fill out every pin input
     if (val?.length === length && re.test(val)) {
@@ -95,7 +98,7 @@ export const Pin = ({ handleInput, length = 4, type = "password", variant }: IPi
           key={i}
           value={e}
           onChange={(ev) => handleOnChange((ev.target as HTMLInputElement).value, i)}
-          disabled={(!!i && !value[i - 1]) || !!value[i]}
+          disabled={(!!i && !value[i - 1]) || (!!value[i] && i !== length - 1)}
           maxLength={length}
           inputRef={pinRefs[`${pinPrefix}${i}`]}
           inputMode="numeric"
