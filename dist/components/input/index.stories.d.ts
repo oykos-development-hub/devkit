@@ -7,3 +7,6 @@ export declare const StandardInputDefault: ComponentStory<(props: InputProps) =>
 export declare const StandardInputThemed: ComponentStory<(props: InputProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
 export declare const OutlinedInputDefault: ComponentStory<(props: InputProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
 export declare const OutlinedInputThemed: ComponentStory<(props: InputProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
+export declare const WithError: ComponentStory<(props: InputProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
+export declare const Search: ComponentStory<(props: InputProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
+export declare const Confirmed: ComponentStory<(props: InputProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;

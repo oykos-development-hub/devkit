@@ -25,6 +25,8 @@ export var Pin = function (_a) {
         if (re.test(val)) {
             setValue(function (oldValue) { return oldValue.map(function (e, i) { return (i !== index ? e : val); }); });
         }
+        if ((val === null || val === void 0 ? void 0 : val.length) > 1)
+            val = val[val.length - 1];
         if ((val === null || val === void 0 ? void 0 : val.length) === length && re.test(val)) {
             return setValue(val.split(""));
         }
@@ -61,6 +63,6 @@ export var Pin = function (_a) {
             setValue(startValue);
         }
     }, []);
-    return (React.createElement(StyledMainWrapper, null, value.map(function (e, i) { return (React.createElement(Input, { variant: variant, type: type, id: "".concat(i), key: i, value: e, onChange: function (ev) { return handleOnChange(ev.target.value, i); }, disabled: (!!i && !value[i - 1]) || !!value[i], maxLength: length, inputRef: pinRefs["".concat(pinPrefix).concat(i)], inputMode: "numeric", pattern: "[0-9]*" })); })));
+    return (React.createElement(StyledMainWrapper, null, value.map(function (e, i) { return (React.createElement(Input, { variant: variant, type: type, id: "".concat(i), key: i, value: e, onChange: function (ev) { return handleOnChange(ev.target.value, i); }, disabled: (!!i && !value[i - 1]) || !!value[i + 1], maxLength: length, inputRef: pinRefs["".concat(pinPrefix).concat(i)], inputMode: "numeric", pattern: "[0-9]*" })); })));
 };
 //# sourceMappingURL=index.js.map

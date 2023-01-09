@@ -20,12 +20,18 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import React from "react";
+import React, { useState } from "react";
 import { StyledMainWrapper } from "../styles/standard";
 export var Standard = function (_a) {
-    var variant = _a.variant, _b = _a.type, type = _b === void 0 ? "text" : _b, onChange = _a.onChange, onBlur = _a.onBlur, onFocus = _a.onFocus, placeholder = _a.placeholder, name = _a.name, id = _a.id, value = _a.value, pattern = _a.pattern, inputMode = _a.inputMode, maxLength = _a.maxLength, inputRef = _a.inputRef, props = __rest(_a, ["variant", "type", "onChange", "onBlur", "onFocus", "placeholder", "name", "id", "value", "pattern", "inputMode", "maxLength", "inputRef"]);
+    var variant = _a.variant, _b = _a.type, type = _b === void 0 ? "text" : _b, onChange = _a.onChange, onBlur = _a.onBlur, onFocus = _a.onFocus, _c = _a.placeholder, placeholder = _c === void 0 ? "" : _c, name = _a.name, id = _a.id, value = _a.value, pattern = _a.pattern, inputMode = _a.inputMode, maxLength = _a.maxLength, inputRef = _a.inputRef, props = __rest(_a, ["variant", "type", "onChange", "onBlur", "onFocus", "placeholder", "name", "id", "value", "pattern", "inputMode", "maxLength", "inputRef"]);
+    var _d = useState(false), showClearButton = _d[0], setShowClearButton = _d[1];
+    var changeHandler = function (event) {
+        if (props.search)
+            setShowClearButton(!!event.target.value.length);
+        if (onChange)
+            onChange(event);
+    };
     var textfieldProps = {
-        onChange: onChange,
         onBlur: onBlur,
         onFocus: onFocus,
         placeholder: placeholder,
@@ -38,9 +44,11 @@ export var Standard = function (_a) {
     return (React.createElement(StyledMainWrapper, __assign({}, props, { variant: "standard" }),
         React.createElement("div", { id: "input-content-wrapper" },
             React.createElement("label", null, props.label),
-            props.iconLeft && !props.textarea && React.createElement("div", { id: "input-left-icon-wrapper" }),
-            props.iconRight && !props.textarea && React.createElement("div", { id: "input-right-icon-wrapper" }),
-            props.textarea ? (React.createElement("textarea", __assign({}, textfieldProps))) : (React.createElement("input", __assign({ type: type }, textfieldProps, { ref: inputRef, inputMode: inputMode, pattern: pattern }))),
-            props.error && props.error && !props.disabled && React.createElement("p", null, props.error))));
+            props.textarea ? (React.createElement("textarea", __assign({}, textfieldProps, { onChange: onChange }))) : (React.createElement("input", __assign({ type: type, ref: inputRef, inputMode: inputMode, pattern: pattern, onChange: changeHandler }, textfieldProps))),
+            props.iconLeft && !props.textarea && React.createElement("div", { id: "input-left-icon-wrapper" }, props.iconLeft),
+            props.search && showClearButton && props.iconRight && !props.textarea && !props.disabled && (React.createElement("div", { id: "input-right-icon-wrapper", onClick: props.clear }, props.iconRight)),
+            props.confirmed && props.iconRight && !props.textarea && !props.error && (React.createElement("div", { id: "input-right-icon-wrapper" }, props.iconRight)),
+            props.error && props.iconRight && !props.textarea && !props.disabled && (React.createElement("div", { id: "input-right-icon-wrapper" }, props.iconRight)),
+            props.error && !props.disabled && React.createElement("p", null, props.error))));
 };
 //# sourceMappingURL=standard.js.map

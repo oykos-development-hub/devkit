@@ -1,4 +1,4 @@
-import { ChangeEventHandler, ReactElement, ReactSVGElement } from "react";
+import { ChangeEventHandler, FocusEventHandler, ReactElement, ReactSVGElement } from "react";
 import { DefaultTheme } from "styled-components";
 export interface InputProps {
     variant: "standard" | "outlined";
@@ -21,12 +21,15 @@ export interface InputProps {
     iconRight?: ReactElement | ReactSVGElement;
     theme?: DefaultTheme;
     onChange?: ChangeEventHandler;
-    onFocus?: () => void;
-    onBlur?: () => void;
+    onFocus?: FocusEventHandler;
+    onBlur?: FocusEventHandler;
     id?: string;
-    inputRef?: any;
+    inputRef?: React.Ref<HTMLInputElement>;
     inputMode?: "text" | "numeric" | "none" | "tel" | "url" | "email" | "decimal";
     value?: string;
     maxLength?: number;
     pattern?: string;
+    clear?: () => void;
+    search?: boolean;
+    confirmed?: boolean;
 }

@@ -2,4 +2,5 @@ export var basicColor = function (props) { var _a, _b, _c; return props.borderCo
 export var errorColor = function (props) { var _a, _b, _c; return props.errorColor || ((_c = (_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.important) === null || _c === void 0 ? void 0 : _c.two) || "red"; };
 export var focusColor = function (props) { var _a, _b, _c; return ((_c = (_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.main) === null || _c === void 0 ? void 0 : _c.two) || "dodgerblue"; };
 export var hoverColor = function (props) { var _a, _b, _c; return ((_c = (_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.dark) === null || _c === void 0 ? void 0 : _c.one) || "black"; };
+export var confirmedColor = function (props) { var _a, _b, _c; return ((_c = (_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.info) === null || _c === void 0 ? void 0 : _c.one) || "#7CFC00"; };
 //# sourceMappingURL=colors.js.map
