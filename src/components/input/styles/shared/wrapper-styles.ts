@@ -32,7 +32,6 @@ export const wrapperStyles = css<InputProps>`
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    border: 1px solid lightgrey;
   }
 
   & #input-left-icon-wrapper {

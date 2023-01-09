@@ -1,7 +1,7 @@
 import { css } from "styled-components";
 import { InputProps } from "../../types";
 
-import { errorColor, basicColor, hoverColor, focusColor } from "./colors";
+import { errorColor, basicColor, hoverColor, focusColor, confirmedColor } from "./colors";
 
 const defaultHeight = {
   standard: "2.5em",
@@ -31,8 +31,10 @@ const focusBorderWidth = {
 
 // border-color when input is in focus
 const focusBorderColor = {
-  standard: (props: InputProps) => (props.error ? errorColor(props) : hoverColor(props)),
-  outlined: (props: InputProps) => (props.error ? errorColor(props) : focusColor(props)),
+  standard: (props: InputProps) =>
+    props.error ? errorColor(props) : props.confirmed ? confirmedColor(props) : hoverColor(props),
+  outlined: (props: InputProps) =>
+    props.error ? errorColor(props) : props.confirmed ? confirmedColor(props) : focusColor(props),
 };
 
 const borderRadius = {
@@ -51,13 +53,15 @@ export const inputStyles = css<InputProps>`
   padding-left: ${(props: InputProps) => paddingLeft[props.variant]};
   padding-right: ${(props: InputProps) => paddingRight[props.variant]};
   border-style: solid;
-  border-color: ${(props: InputProps) => (props.error ? errorColor(props) : basicColor(props))};
+  border-color: ${(props: InputProps) =>
+    props.error ? errorColor(props) : props.confirmed ? confirmedColor(props) : basicColor(props)};
   border-width: ${(props: InputProps) => borderWidth[props.variant]};
   border-radius: ${(props: InputProps) => borderRadius[props.variant]};
   outline: none;
 
   &:hover {
-    border-color: ${(props: InputProps) => (props.error ? errorColor(props) : hoverColor(props))};
+    border-color: ${(props: InputProps) =>
+      props.error ? errorColor(props) : props.confirmed ? confirmedColor(props) : hoverColor(props)};
   }
   &:focus {
     border-color: ${(props: InputProps) => focusBorderColor[props.variant]};

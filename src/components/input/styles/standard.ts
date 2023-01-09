@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { InputProps } from "../types";
-import { errorColor, focusColor } from "./shared/colors";
+import { confirmedColor, errorColor, focusColor } from "./shared/colors";
 import { wrapperStyles } from "./shared/wrapper-styles";
 
 export const StyledMainWrapper = styled.div<InputProps>`
@@ -14,7 +14,8 @@ export const StyledMainWrapper = styled.div<InputProps>`
     bottom: 0;
     height: 2px;
     width: 100%;
-    background-color: ${(props: InputProps) => (props.error ? errorColor(props) : focusColor(props))};
+    background-color: ${(props: InputProps) =>
+      props.error ? errorColor(props) : props.confirmed ? confirmedColor(props) : focusColor(props)};
     transform: scale(0, 1);
     transition: transform 0.3s;
   }

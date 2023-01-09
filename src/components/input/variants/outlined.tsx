@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, ChangeEvent } from "react";
 import { InputProps } from "../types";
 import { StyledMainWrapper } from "../styles/outlined";
 
@@ -18,8 +18,15 @@ export const Outlined = ({
   inputRef,
   ...props
 }: InputProps): React.ReactElement => {
+  const [showClearButton, setShowClearButton] = useState(false);
+
+  const changeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    if (props.search) setShowClearButton(!!event.target.value.length);
+
+    if (onChange) onChange(event);
+  };
+
   const textfieldProps = {
-    onChange,
     onBlur,
     onFocus,
     placeholder,
@@ -35,14 +42,33 @@ export const Outlined = ({
       <div id="input-content-wrapper">
         <label>{props.label}</label>
 
-        {props.iconLeft && !props.textarea && <div id="input-left-icon-wrapper"></div>}
-
-        {props.iconRight && !props.textarea && <div id="input-right-icon-wrapper"></div>}
-
         {props.textarea ? (
-          <textarea {...textfieldProps} />
+          <textarea {...textfieldProps} onChange={onChange} />
         ) : (
-          <input type={type} {...textfieldProps} ref={inputRef} inputMode={inputMode} pattern={pattern} />
+          <input
+            type={type}
+            ref={inputRef}
+            inputMode={inputMode}
+            pattern={pattern}
+            onChange={changeHandler}
+            {...textfieldProps}
+          />
+        )}
+
+        {props.iconLeft && !props.textarea && <div id="input-left-icon-wrapper">{props.iconLeft}</div>}
+
+        {props.search && showClearButton && props.iconRight && !props.textarea && !props.disabled && (
+          <div id="input-right-icon-wrapper" onClick={props.clear}>
+            {props.iconRight}
+          </div>
+        )}
+
+        {props.confirmed && props.iconRight && !props.textarea && !props.error && (
+          <div id="input-right-icon-wrapper">{props.iconRight}</div>
+        )}
+
+        {props.error && props.iconRight && !props.textarea && !props.disabled && (
+          <div id="input-right-icon-wrapper">{props.iconRight}</div>
         )}
 
         {props.error && !props.disabled && <p>{props.error}</p>}

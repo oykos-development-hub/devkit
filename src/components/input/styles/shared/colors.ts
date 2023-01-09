@@ -8,3 +8,5 @@ export const errorColor = (props: InputProps) => props.errorColor || props.theme
 export const focusColor = (props: InputProps) => props.theme?.palette?.main?.two || "dodgerblue";
 
 export const hoverColor = (props: InputProps) => props.theme?.palette?.dark?.one || "black";
+
+export const confirmedColor = (props: InputProps) => props.theme?.palette?.info?.one || "#7CFC00";
