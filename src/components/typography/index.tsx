@@ -8,59 +8,45 @@ export const Typography = (props: TypographyProps): React.ReactElement => {
   switch (variant) {
     case "h1":
       return <H1 {...props} />;
-      break;
 
     case "h2":
       return <H2 {...props} />;
-      break;
 
     case "h3":
       return <H3 {...props} />;
-      break;
 
     case "h4":
       return <H4 {...props} />;
-      break;
 
     case "h5":
       return <H5 {...props} />;
-      break;
 
     case "h6":
       return <H6 {...props} />;
-      break;
 
     case "subtitle1":
       return <Sub1 {...props} />;
-      break;
 
     case "subtitle2":
       return <Sub2 {...props} />;
-      break;
 
     case "body1":
       return <Body1 {...props} />;
-      break;
 
     case "body2":
       return <Body2 {...props} />;
-      break;
 
     case "button":
       return <Button {...props} />;
-      break;
 
     case "caption":
       return <Caption {...props} />;
-      break;
 
     case "overline":
       return <Overline {...props} />;
-      break;
 
     case "error":
       return <Error {...props} />;
-      break;
 
     default:
       return <H1 as={"p"} {...props} />;
