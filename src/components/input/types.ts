@@ -2,7 +2,7 @@ import { ChangeEventHandler, FocusEventHandler, ReactElement, ReactSVGElement } 
 import { DefaultTheme } from "styled-components";
 
 export interface InputProps {
-  variant: "standard" | "outlined";
+  variant?: "standard" | "outlined";
   name?: string;
   label?: string;
   fontSize?: string;
@@ -21,7 +21,7 @@ export interface InputProps {
   iconLeft?: ReactElement | ReactSVGElement;
   iconRight?: ReactElement | ReactSVGElement;
   theme?: DefaultTheme;
-  onChange?: ChangeEventHandler;
+  onChange?: ChangeEventHandler<any>;
   onFocus?: FocusEventHandler;
   onBlur?: FocusEventHandler;
   id?: string;
@@ -33,4 +33,5 @@ export interface InputProps {
   clear?: () => void;
   search?: boolean;
   confirmed?: boolean;
+  children?: React.ReactNode;
 }

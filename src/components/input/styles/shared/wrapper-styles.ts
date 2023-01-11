@@ -6,11 +6,11 @@ import { errorColor, basicColor, hoverColor } from "./colors";
 import { inputStyles } from "./input-styles";
 
 export const wrapperStyles = css<InputProps>`
-  width: ${(props: InputProps) => (props.fullWidth ? "100%" : props.width || "400px")};
-  min-width: ${(props: InputProps) => (props.label ? "200px" : "3em")};
-  padding: ${(props: InputProps) => `${props.label ? "1.75em" : 0} 0 ${props.error ? "1.25em" : 0} 0`};
-  margin: ${(props: InputProps) => props.margin || "0em"};
-  font-size: ${(props: InputProps) => props.fontSize || "16px"};
+  width: ${(props) => (props.fullWidth ? "100%" : props.width || "400px")};
+  min-width: ${(props) => (props.label ? "200px" : "3em")};
+  padding: ${(props) => `${props.label ? "1.75em" : 0} 0 ${props.error ? "1.25em" : 0} 0`};
+  margin: ${(props) => props.margin || "0em"};
+  font-size: ${(props) => props.fontSize || "16px"};
 
   & * {
     font-size: 1em;
@@ -35,17 +35,17 @@ export const wrapperStyles = css<InputProps>`
   }
 
   & #input-left-icon-wrapper {
-    left: ${(props: InputProps) => (props.variant === "standard" ? 0 : "0.75em")};
+    left: ${(props) => (props.variant === "standard" ? 0 : "0.75em")};
   }
   & #input-right-icon-wrapper {
-    right: ${(props: InputProps) => (props.variant === "standard" ? 0 : "0.75em")};
+    right: ${(props) => (props.variant === "standard" ? 0 : "0.75em")};
   }
 
   & label {
     position: absolute;
     top: -1.75em;
     left: 0;
-    color: ${(props: InputProps) => (props.disabled ? basicColor(props) : hoverColor(props))};
+    color: ${(props) => (props.disabled ? basicColor(props) : hoverColor(props))};
   }
 
   & input,
@@ -63,6 +63,6 @@ export const wrapperStyles = css<InputProps>`
     left: 0;
     bottom: -1.5em;
     margin: 0;
-    color: ${(props: InputProps) => errorColor(props)};
+    color: ${(props) => errorColor(props)};
   }
 `;
