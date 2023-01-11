@@ -1,4 +1,3 @@
-import { Colors } from "../../shared/colors";
 import { DefaultTheme } from "styled-components";
 
 export enum Directions {
@@ -10,7 +9,7 @@ export enum Directions {
 
 export interface IconProps {
   fill?: string;
-  color?: Colors | keyof typeof Colors;
+  color?: string;
   width?: string | number;
   height?: string | number;
   onClick?: () => void;

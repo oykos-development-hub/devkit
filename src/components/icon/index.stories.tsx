@@ -1,34 +1,19 @@
 import React from "react";
 
-import { ColorNames } from "../../shared/colors";
-import { Directions, IconProps } from "./types";
+import { Directions } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { Icon } from "./index";
-
-export const Icons = (args: IconProps) => (
-  <StoryWrapper>
-    <Icon {...args} />
-  </StoryWrapper>
-);
+import { Theme } from "../../shared/theme";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { DefaultIcon, AssignIcon, XIcon, DangerIcon } from "./icons";
 
 export default {
-  title: "Example/Icon",
-  component: Icons,
+  title: "Example/Icons",
+  component: DefaultIcon,
   argTypes: {
-    color: {
-      control: {
-        type: "select",
-        options: ["No color", ...ColorNames],
-      },
-    },
     theme: {
       control: {
         type: "object",
-      },
-    },
-    fill: {
-      control: {
-        type: "text",
+        options: Theme,
       },
     },
     width: {
@@ -53,4 +38,21 @@ export default {
       },
     },
   },
+} as ComponentMeta<typeof DefaultIcon>;
+
+const Template: ComponentStory<typeof DefaultIcon> = (args) => (
+  <StoryWrapper>
+    <AssignIcon {...args} />
+    <XIcon {...args} />
+    <DangerIcon {...args} />
+  </StoryWrapper>
+);
+
+export const Icon = Template.bind({});
+Icon.args = {
+  color: "",
+  fill: "",
+  width: "50",
+  height: "",
+  theme: Theme,
 };
