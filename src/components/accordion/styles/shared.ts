@@ -10,9 +10,9 @@ export const collapsedColor = (props: AccordionProps) =>
 export const hoverColor = (props: AccordionProps) =>
   props.hoverBackground || props.theme?.palette?.light?.two || "#ededed";
 
-export const wrapperStyles = css`
+export const wrapperStyles = css<AccordionProps>`
   overflow: hidden;
-  width: ${(props: AccordionProps) => props.width || "300px"};
+  width: ${(props) => props.width || "100%"};
 
   & p {
     margin: 0;
@@ -35,7 +35,7 @@ export const wrapperStyles = css`
     position: relative;
     justify-content: space-between;
     padding: 0.75em;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: ${(props) => `1px solid ${hoverColor(props)}`};
 
     &:hover {
       cursor: pointer;
@@ -48,7 +48,7 @@ export const wrapperStyles = css`
 
     & #arrow-wrapper {
       & svg {
-        transform: ${(props: AccordionProps) => `rotate(${props.collapsed ? "-180deg" : "0"})`};
+        transform: ${(props) => `rotate(${props.collapsed ? "-180deg" : 0})`};
         transition: transform 0.3s ease-out;
       }
     }
@@ -57,7 +57,7 @@ export const wrapperStyles = css`
   & #accordion-content {
     display: block;
 
-    height: ${(props: AccordionProps) => (props.collapsed ? `${props.scrollHeight!}px` : 0)};
+    height: ${(props) => (props.collapsed ? `${props.scrollHeight!}px` : 0)};
     transition: all 0.3s ease-out;
 
     & > * {

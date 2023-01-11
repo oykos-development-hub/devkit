@@ -13,8 +13,8 @@ export const StyledMainWrapper = styled.div<AccordionProps>`
     top: 100%;
     height: 2px;
     width: 100%;
-    background-color: ${(props: AccordionProps) => collapsedColor(props)};
-    transform: ${(props: AccordionProps) => `scale(${props.collapsed ? "1" : "0"}, 1)`};
+    background-color: ${(props) => collapsedColor(props)};
+    transform: ${(props) => `scale(${props.collapsed ? "1" : "0"}, 1)`};
     transition: transform 0.3s ease-out;
   }
 `;

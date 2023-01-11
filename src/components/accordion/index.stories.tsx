@@ -22,6 +22,7 @@ export const StandardDefault = Template.bind({});
 StandardDefault.args = {
   title: "Accordion",
   variant: "standard",
+  width: "300px",
   iconRight: (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
       <path
@@ -39,6 +40,7 @@ export const StandardTheme = Template.bind({});
 StandardTheme.args = {
   title: "Accordion",
   variant: "standard",
+  width: "300px",
   iconRight: (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
       <path
@@ -57,6 +59,7 @@ export const FilledDefault = Template.bind({});
 FilledDefault.args = {
   title: "Accordion",
   variant: "filled",
+  width: "300px",
   iconRight: (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
       <path
@@ -74,6 +77,7 @@ export const FilledThemed = Template.bind({});
 FilledThemed.args = {
   title: "Accordion",
   variant: "filled",
+  width: "300px",
   iconRight: (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
       <path
@@ -92,6 +96,7 @@ export const WithContentElement = Template.bind({});
 WithContentElement.args = {
   title: "Accordion",
   variant: "filled",
+  width: "300px",
   iconRight: (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
       <path
@@ -113,6 +118,7 @@ export const WithIconLeft = Template.bind({});
 WithIconLeft.args = {
   title: "Accordion",
   variant: "standard",
+  width: "300px",
   iconRight: (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
       <path

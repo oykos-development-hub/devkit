@@ -6,12 +6,12 @@ export const StyledMainWrapper = styled.div<AccordionProps>`
   ${wrapperStyles}
 
   #accordion-header {
-    background-color: ${(props: AccordionProps) => (!props.collapsed ? basicColor(props) : collapsedColor(props))};
+    background-color: ${(props) => (!props.collapsed ? basicColor(props) : collapsedColor(props))};
     border: none;
-    border-radius: ${(props: AccordionProps) => props.borderRadius || props.theme?.borderRadius?.md || "0em"};
+    border-radius: ${(props) => props.borderRadius || props.theme?.borderRadius?.md || 0};
 
     &:hover {
-      background-color: ${(props: AccordionProps) => (!props.collapsed ? hoverColor(props) : collapsedColor(props))};
+      background-color: ${(props) => (!props.collapsed ? hoverColor(props) : collapsedColor(props))};
     }
   }
 `;
