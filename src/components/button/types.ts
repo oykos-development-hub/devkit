@@ -13,10 +13,9 @@ export interface ButtonProps {
   icon?: React.ReactSVGElement | React.ReactElement;
   iconPosition?: "left" | "right";
   gap?: string;
-  primaryColor?: string;
-  secondaryColor?: string;
-  tertiaryColor?: string;
+  color?: string;
   theme?: DefaultTheme;
   disabled?: boolean;
   onClick?: () => void;
+  children?: React.ReactNode;
 }
