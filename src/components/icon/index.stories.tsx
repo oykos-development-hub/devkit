@@ -4,7 +4,7 @@ import { Directions } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { DefaultIcon, AssignIcon, XIcon, DangerIcon } from "./icons";
+import { DefaultIcon, AssignIcon, XIcon, DangerIcon, CircleCheckIcon } from "./icons";
 
 export default {
   title: "Example/Icons",
@@ -45,6 +45,7 @@ const Template: ComponentStory<typeof DefaultIcon> = (args) => (
     <AssignIcon {...args} />
     <XIcon {...args} />
     <DangerIcon {...args} />
+    <CircleCheckIcon {...args} />
   </StoryWrapper>
 );
 
