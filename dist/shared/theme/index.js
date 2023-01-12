@@ -29,6 +29,9 @@ export var Theme = {
         xl: "4rem",
         xxl: "7rem",
     },
+    fontFamily: {
+        one: "Rubik, sans-serif",
+    },
     palette: {
         main: {
             one: "#0068B6FF",

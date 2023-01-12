@@ -1,36 +1,12 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Dropdown } from "./index";
+import { Dropdown } from "./";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
+import { Theme } from "../../shared/theme";
 
 export default {
   title: "Example/Dropdown",
   component: Dropdown,
-  argTypes: {
-    label: {
-      name: "label",
-      type: { name: "string", required: false },
-      description: "Dropdown label",
-      control: "text",
-    },
-    className: {
-      name: "className",
-      type: { name: "string", required: false },
-      description: "Dropdown classes",
-      control: "text",
-    },
-    isSearchable: {
-      name: "isSearchable",
-      type: { name: "boolean", required: false },
-      control: "boolean",
-    },
-    confirmed: {
-      name: "confirmed",
-      type: { name: "boolean", required: false },
-      defaultValue: false,
-      control: "boolean",
-    },
-  },
 } as ComponentMeta<typeof Dropdown>;
 
 const Template: ComponentStory<typeof Dropdown> = (args) => {
@@ -46,24 +22,27 @@ const Template: ComponentStory<typeof Dropdown> = (args) => {
 
   return (
     <StoryWrapper>
-      <Dropdown {...args} label={args.label} className={`${args.className || ""}`} data={data} defaultValue={1} />
+      <Dropdown {...args} data={data} />
     </StoryWrapper>
   );
 };
 
 export const Basic = Template.bind({});
+Basic.args = {
+  color: "",
+  theme: Theme,
+};
 
 export const Multiselect = Template.bind({});
 Multiselect.args = {
-  isMulti: true,
+  color: "",
+  multi: true,
+  theme: Theme,
 };
 
 export const Searchable = Template.bind({});
 Searchable.args = {
-  isSearchable: true,
-};
-
-export const Confirmed = Template.bind({});
-Confirmed.args = {
-  confirmed: true,
+  color: "",
+  searchable: true,
+  theme: Theme,
 };

@@ -1,8 +1,7 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-declare const _default: ComponentMeta<React.FC<import("./types").DropdownProps>>;
+declare const _default: ComponentMeta<(props: import("./types").DropdownProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
 export default _default;
-export declare const Basic: ComponentStory<React.FC<import("./types").DropdownProps>>;
-export declare const Multiselect: ComponentStory<React.FC<import("./types").DropdownProps>>;
-export declare const Searchable: ComponentStory<React.FC<import("./types").DropdownProps>>;
-export declare const Confirmed: ComponentStory<React.FC<import("./types").DropdownProps>>;
+export declare const Basic: ComponentStory<(props: import("./types").DropdownProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
+export declare const Multiselect: ComponentStory<(props: import("./types").DropdownProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
+export declare const Searchable: ComponentStory<(props: import("./types").DropdownProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;

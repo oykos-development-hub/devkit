@@ -10,36 +10,12 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import React from "react";
-import { Dropdown } from "./index";
+import { Dropdown } from "./";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
+import { Theme } from "../../shared/theme";
 export default {
     title: "Example/Dropdown",
     component: Dropdown,
-    argTypes: {
-        label: {
-            name: "label",
-            type: { name: "string", required: false },
-            description: "Dropdown label",
-            control: "text",
-        },
-        className: {
-            name: "className",
-            type: { name: "string", required: false },
-            description: "Dropdown classes",
-            control: "text",
-        },
-        isSearchable: {
-            name: "isSearchable",
-            type: { name: "boolean", required: false },
-            control: "boolean",
-        },
-        confirmed: {
-            name: "confirmed",
-            type: { name: "boolean", required: false },
-            defaultValue: false,
-            control: "boolean",
-        },
-    },
 };
 var Template = function (args) {
     var data = [
@@ -52,19 +28,23 @@ var Template = function (args) {
         { label: "German", value: 7 },
     ];
     return (React.createElement(StoryWrapper, null,
-        React.createElement(Dropdown, __assign({}, args, { label: args.label, className: "".concat(args.className || ""), data: data, defaultValue: 1 }))));
+        React.createElement(Dropdown, __assign({}, args, { data: data }))));
 };
 export var Basic = Template.bind({});
+Basic.args = {
+    color: "",
+    theme: Theme,
+};
 export var Multiselect = Template.bind({});
 Multiselect.args = {
-    isMulti: true,
+    color: "",
+    multi: true,
+    theme: Theme,
 };
 export var Searchable = Template.bind({});
 Searchable.args = {
-    isSearchable: true,
-};
-export var Confirmed = Template.bind({});
-Confirmed.args = {
-    confirmed: true,
+    color: "",
+    searchable: true,
+    theme: Theme,
 };
 //# sourceMappingURL=index.stories.js.map
