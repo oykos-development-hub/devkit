@@ -22,7 +22,7 @@ import React from "react";
 import { Directions } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { DefaultIcon, AssignIcon, XIcon, DangerIcon } from "./icons";
+import { DefaultIcon, AssignIcon, XIcon, DangerIcon, CircleCheckIcon } from "./icons";
 export default {
     title: "Example/Icons",
     component: DefaultIcon,
@@ -59,7 +59,8 @@ export default {
 var Template = function (args) { return (React.createElement(StoryWrapper, null,
     React.createElement(AssignIcon, __assign({}, args)),
     React.createElement(XIcon, __assign({}, args)),
-    React.createElement(DangerIcon, __assign({}, args)))); };
+    React.createElement(DangerIcon, __assign({}, args)),
+    React.createElement(CircleCheckIcon, __assign({}, args)))); };
 export var Icon = Template.bind({});
 Icon.args = {
     color: "",
