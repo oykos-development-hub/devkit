@@ -12,7 +12,7 @@ export declare enum Directions {
 export interface IData {
     value: string | number;
     label: string;
-    icon?: ReactElement | string;
+    icon?: ReactElement | string | undefined;
 }
 export interface DropdownProps {
     data: IData[];
@@ -21,13 +21,35 @@ export interface DropdownProps {
     value?: number | string;
     onChange?: (newValue: any) => void;
     onBlur?: () => void;
-    clearOnBlur: boolean;
+    clearOnBlur?: boolean;
     multi?: boolean;
     disabled?: boolean;
-    color: string;
+    hoverBorderColor?: string;
+    bgColor?: string;
+    borderColor?: string;
+    borderSize?: string;
+    borderRadius?: string;
+    shadowColor?: string;
+    shadowSize?: string;
+    handleClearColor?: string;
+    itemColor?: string;
+    selectedItemColor?: string;
+    selectedItemBgColor?: string;
+    selectedItemBorderRadius?: string;
+    selectedItemBorderWidth?: string;
+    selectedItemBorderColor?: string;
+    itemHoverColor?: string;
+    itemHoverBgColor?: string;
+    dropdownBgColor?: string;
+    dropdownBorderRadius?: string;
+    dropdownWidth?: string;
+    dropdownPadding?: string;
+    dropdownMaxHeight?: string;
+    dropdownSelectedItemColor?: string;
+    inputColor?: string;
+    fontFamily?: string;
     className?: string;
     searchable?: boolean;
-    confirmed?: boolean;
     loading?: boolean;
     closeOnSelect?: boolean;
     clearable?: boolean;

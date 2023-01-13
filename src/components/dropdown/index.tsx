@@ -1,16 +1,17 @@
 import React from "react";
 
-import Select from "react-dropdown-select";
 import { DropdownProps } from "./types";
+import { StyledDropdown } from "./styles/dropdown";
 
-export const Dropdown = (props: DropdownProps): React.ReactElement => {
-  return (
+export const Dropdown = (props: DropdownProps): React.ReactElement => (
+  <div>
+    {!!props.label && <p>{props.label}</p>}
     <React.Fragment>
       {!!props.label && <p>{props.label}</p>}
-      <Select
+      <StyledDropdown
+        {...props}
         options={props.data}
         values={[]}
-        color={props.color || props.theme?.palette?.dark.one || "#333"}
         direction={props.direction || "ltr"}
         dropdownPosition={props.dropdownPosition || "auto"}
         multi={props.multi}
@@ -24,5 +25,5 @@ export const Dropdown = (props: DropdownProps): React.ReactElement => {
         onChange={(value) => props.onChange && props.onChange(value)}
       />
     </React.Fragment>
-  );
-};
+  </div>
+);

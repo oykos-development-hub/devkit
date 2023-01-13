@@ -16,6 +16,18 @@ import { Theme } from "../../shared/theme";
 export default {
     title: "Example/Dropdown",
     component: Dropdown,
+    argTypes: {
+        dropdownWidth: {
+            control: {
+                type: "text",
+            },
+        },
+        dropdownPadding: {
+            control: {
+                type: "text",
+            },
+        },
+    },
 };
 var Template = function (args) {
     var data = [
@@ -32,19 +44,79 @@ var Template = function (args) {
 };
 export var Basic = Template.bind({});
 Basic.args = {
-    color: "",
+    bgColor: "#fff",
+    hoverBorderColor: "#111",
+    borderColor: "#7b7b7b",
+    borderSize: "0.1rem",
+    borderRadius: "0.25rem",
+    handleClearColor: "#7b7b7b",
+    selectedItemColor: "",
+    selectedItemBgColor: "#7b7b7b",
+    selectedItemBorderRadius: "0.25rem",
+    selectedItemBorderColor: "",
+    selectedItemBorderWidth: "0rem",
+    itemColor: "",
+    itemHoverColor: "",
+    itemHoverBgColor: "",
+    dropdownBgColor: "",
+    dropdownBorderRadius: "0.25rem",
+    dropdownWidth: "",
+    dropdownPadding: "0rem",
+    dropdownMaxHeight: "18.75rem",
+    dropdownSelectedItemColor: "",
+    inputColor: "",
     theme: Theme,
 };
 export var Multiselect = Template.bind({});
 Multiselect.args = {
-    color: "",
     multi: true,
+    bgColor: "#fff",
+    hoverBorderColor: "#111",
+    borderColor: "#7b7b7b",
+    borderSize: "0.1rem",
+    borderRadius: "0.25rem",
+    handleClearColor: "#7b7b7b",
+    selectedItemColor: "",
+    selectedItemBgColor: "#7b7b7b",
+    selectedItemBorderRadius: "0.25rem",
+    selectedItemBorderColor: "",
+    selectedItemBorderWidth: "0rem",
+    itemColor: "",
+    itemHoverColor: "",
+    itemHoverBgColor: "",
+    dropdownBgColor: "",
+    dropdownBorderRadius: "0.25rem",
+    dropdownWidth: "",
+    dropdownPadding: "0rem",
+    dropdownMaxHeight: "18.75rem",
+    dropdownSelectedItemColor: "",
+    inputColor: "",
     theme: Theme,
 };
 export var Searchable = Template.bind({});
 Searchable.args = {
-    color: "",
     searchable: true,
+    bgColor: "#fff",
+    hoverBorderColor: "#111",
+    borderColor: "#7b7b7b",
+    borderSize: "0.1rem",
+    borderRadius: "0.25rem",
+    handleClearColor: "#7b7b7b",
+    selectedItemColor: "",
+    selectedItemBgColor: "#7b7b7b",
+    selectedItemBorderRadius: "0.25rem",
+    selectedItemBorderColor: "",
+    selectedItemBorderWidth: "0rem",
+    itemColor: "",
+    itemHoverColor: "",
+    itemHoverBgColor: "",
+    dropdownBgColor: "",
+    dropdownBorderRadius: "0.25rem",
+    dropdownWidth: "",
+    dropdownPadding: "0rem",
+    dropdownMaxHeight: "18.75rem",
+    dropdownSelectedItemColor: "",
+    inputColor: "",
     theme: Theme,
 };
 //# sourceMappingURL=index.stories.js.map
