@@ -7,6 +7,11 @@ export enum Directions {
   top = "top",
 }
 
+export enum Positions {
+  absolute = "absolute",
+  relative = "relative",
+}
+
 export interface IconProps {
   fill?: string;
   color?: string;
@@ -15,5 +20,10 @@ export interface IconProps {
   onClick?: () => void;
   className?: string;
   direction?: Directions | keyof typeof Directions;
+  top?: string;
+  bottom?: string;
+  right?: string;
+  left?: string;
+  position?: Positions | keyof typeof Positions;
   theme?: DefaultTheme;
 }

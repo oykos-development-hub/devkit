@@ -52,8 +52,8 @@ const Template: ComponentStory<typeof DefaultIcon> = (args) => (
 export const Icon = Template.bind({});
 Icon.args = {
   color: "",
-  fill: "",
   width: "50",
   height: "",
+  position: "relative",
   theme: Theme,
 };
