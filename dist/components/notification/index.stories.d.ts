@@ -1,0 +1,10 @@
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
+declare const _default: ComponentMeta<React.FC<import("./types").INotificationProps>>;
+export default _default;
+export declare const FailureNotification: ComponentStory<React.FC<import("./types").INotificationProps>>;
+export declare const SuccessNotification: ComponentStory<React.FC<import("./types").INotificationProps>>;
+export declare const InfoNotification: ComponentStory<React.FC<import("./types").INotificationProps>>;
+export declare const InfoNotificationTwoIcons: ComponentStory<React.FC<import("./types").INotificationProps>>;
+export declare const NeutralNotification: ComponentStory<React.FC<import("./types").INotificationProps>>;
+export declare const ButtonNotification: ComponentStory<React.FC<import("./types").INotificationProps>>;
