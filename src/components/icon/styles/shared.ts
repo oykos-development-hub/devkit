@@ -2,12 +2,17 @@ import { css } from "styled-components";
 import { IconProps } from "../types";
 
 export const sharedPath = css<IconProps>`
-  "color": ${(props: IconProps) => props.color || props.theme?.palette?.main.one || "#7E8A96"};
-  "fill": ${(props: IconProps) => props.fill || props.theme?.palette?.main.one || "#7E8A96"};
+  color: ${(props) => props.color || props.theme?.palette?.main.one || "#fff"};
+  fill: ${(props) => props.color || props.theme?.palette?.main.one || "#fff"};
 `;
 
 export const sharedSvg = css<IconProps>`
-"width": ${(props: IconProps) => props.width || 24};
-"height": ${(props: IconProps) => props.height || props.width || 24};
+  position: ${(props) => props.position || "absolute"};
+  width: ${(props) => props.width || 24};
+  height: ${(props) => props.height || props.width || 24};
+  top: ${(props) => props.top || "0"};
+  bottom: ${(props) => props.bottom || "0"};
+  right: ${(props) => props.right || "0"};
+  left: ${(props) => props.left || "0"};
   ${sharedPath}
 `;
