@@ -1,20 +1,19 @@
 import styled from "styled-components";
 import { ButtonProps } from "../../types";
-import { shared, disabledColor, color } from "../shared";
+import { shared } from "../shared";
+import { Theme } from "../../../../shared/theme";
+
+const backgroundColor = (props: ButtonProps) => props.style?.backgroundColor || props.theme?.palette?.light?.one || Theme.palette.light.one;
+const color = (props: ButtonProps) => props.style?.color || props.theme?.palette?.main?.one || Theme.palette.main.one;
 
 export const Secondary = styled.button<ButtonProps>`
   ${shared};
   background-color: transparent;
   border-color: ${(props) => color(props)};
   color: ${(props) => color(props)};
-
-  &:hover {
-    background-color: ${(props) => color(props)};
-    color: ${(props) => props.theme?.palette?.light?.one || "white"};
-  }
-  &:disabled {
-    background-color: transparent;
-    color: ${(props) => disabledColor(props)};
-    border-color: ${(props) => disabledColor(props)};
+  
+  &:hover:not([disabled]) {
+    background-color: ${(props) => color(props) + ' !important'};
+    color: ${(props) => backgroundColor(props) + ' !important'};
   }
 `;

@@ -1,6 +1,6 @@
 import React from "react";
-import { Button } from "./index";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { Button } from "./index";
 import { ButtonProps } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
@@ -8,58 +8,14 @@ import { Theme } from "../../shared/theme";
 export default {
   component: Button,
   title: "Components/Button",
-
   argTypes: {
+    content: {
+      defaultValue: () => (<span>Button</span>)
+    },
     variant: {
       control: {
         type: "radio",
         options: ["primary", "secondary", "tertiary"],
-      },
-    },
-    width: {
-      control: {
-        type: "text",
-      },
-    },
-    type: {
-      control: {
-        type: "text",
-      },
-    },
-    height: {
-      control: {
-        type: "text",
-      },
-    },
-    primaryColor: {
-      control: {
-        type: "text",
-      },
-    },
-    secondaryColor: {
-      control: {
-        type: "text",
-      },
-    },
-    tertiaryColor: {
-      control: {
-        type: "text",
-      },
-    },
-    theme: {
-      control: {
-        type: "object",
-      },
-    },
-    icon: {
-      control: {
-        type: "text",
-      },
-    },
-    iconPosition: {
-      control: {
-        type: "radio",
-        options: ["left", "right"],
       },
     },
     disabled: {
@@ -67,36 +23,25 @@ export default {
         type: "boolean",
       },
     },
-    label: {
+    onClick: {
+      defaultValue: () => alert('Button clicked!')
+    },
+    theme: {
       control: {
-        type: "text",
+        type: "object",
       },
     },
-    padding: {
-      control: {
-        type: "text",
-      },
-    },
-    margin: {
-      control: {
-        type: "text",
-      },
-    },
-    borderRadius: {
-      control: {
-        type: "text",
-      },
-    },
-    borderWidth: {
-      control: {
-        type: "text",
-      },
-    },
-    gap: {
-      control: {
-        type: "text",
-      },
-    },
+    style: {
+      defaultValue: {
+        width: 'fit-content',
+        height: 'fit-content',
+        padding: '1em 2em',
+        margin: '0em',
+        borderRadius: '1em',
+        borderWidth: '1px',
+        gap: '0.5em'
+      }
+    }
   },
 } as ComponentMeta<typeof Button>;
 
@@ -106,50 +51,88 @@ const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
   </StoryWrapper>
 );
 
-// primary
-export const PrimaryButtonDefault = Template.bind({});
-PrimaryButtonDefault.args = {
-  label: "Primary",
-  variant: "primary",
-  color: "purple",
-  borderRadius: "2em",
+// Primary
+export const PrimaryDefault = Template.bind({});
+PrimaryDefault.args = {
+  content: "Primary Default",
+  onClick: () => alert('PrimaryDefault clicked!')
 };
 
-export const PrimaryButtonThemed = Template.bind({});
-PrimaryButtonThemed.args = {
-  label: "Primary",
-  variant: "primary",
+export const PrimaryCustomStyle = Template.bind({});
+PrimaryCustomStyle.args = {
+  content: "Primary Custom Style",
+  style: {
+    width: '150px',
+    boxShadow: '5px 5px 2px #333',
+    backgroundColor: 'green',
+    fontWeight: 900
+  },
+  onClick: () => alert('PrimaryCustomStyle clicked!')
+};
+
+export const PrimaryThemed = Template.bind({});
+PrimaryThemed.args = {
+  content: "Primary Themed",
   theme: Theme,
+  onClick: () => alert('PrimaryThemed clicked!')
 };
 
-// secondary
-export const SecondaryButtonDefault = Template.bind({});
-SecondaryButtonDefault.args = {
-  label: "Secondary",
+// Secondary
+export const SecondaryDefault = Template.bind({});
+SecondaryDefault.args = {
+  content: "Secondary Default",
   variant: "secondary",
-  color: "lightblue",
-  borderRadius: "2em",
+  onClick: () => alert('SecondaryDefault clicked!')
 };
 
-export const SecondaryButtonThemed = Template.bind({});
-SecondaryButtonThemed.args = {
-  label: "Secondary",
+export const SecondaryCustomStyle = Template.bind({});
+SecondaryCustomStyle.args = {
+  content: "Secondary Custom Style",
+  variant: "secondary",
+  style: {
+    width: '150px',
+    boxShadow: '5px 5px 2px #333',
+    backgroundColor: "white",
+    color: "blue",
+    fontWeight: 900
+  },
+  onClick: () => alert('SecondaryCustomStyle clicked!')
+};
+
+export const SecondaryThemed = Template.bind({});
+SecondaryThemed.args = {
+  content: "Secondary Themed",
   variant: "secondary",
   theme: Theme,
+  onClick: () => alert('SecondaryThemed clicked!')
 };
 
-//tertiary
-export const TertiaryButtonDefault = Template.bind({});
-TertiaryButtonDefault.args = {
-  label: "Tertiary",
-  color: "red",
+// Tertiary
+export const TertiaryDefault = Template.bind({});
+TertiaryDefault.args = {
+  content: "Tertiary Default",
   variant: "tertiary",
-  borderRadius: "2em",
+  onClick: () => alert('TertiaryDefault clicked!')
 };
 
-export const TertiaryButtonThemed = Template.bind({});
-TertiaryButtonThemed.args = {
-  label: "Tertiary",
+export const TertiaryCustomStyle = Template.bind({});
+TertiaryCustomStyle.args = {
+  content: "Tertiary Custom Style",
+  variant: "tertiary",
+  style: {
+    width: '150px',
+    boxShadow: '0px 0px 4px #333',
+    backgroundColor: "white",
+    color: "#333",
+    padding: '4px 8px'
+  },
+  onClick: () => alert('TertiaryCustomStyle clicked!')
+};
+
+export const TertiaryThemed = Template.bind({});
+TertiaryThemed.args = {
+  content: "Tertiary Themed",
   variant: "tertiary",
   theme: Theme,
+  onClick: () => alert('TertiaryThemed clicked!')
 };
