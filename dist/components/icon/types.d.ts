@@ -10,7 +10,6 @@ export declare enum Positions {
     relative = "relative"
 }
 export interface IconProps {
-    fill?: string;
     color?: string;
     width?: string | number;
     height?: string | number;

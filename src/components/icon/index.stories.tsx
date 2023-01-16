@@ -18,12 +18,47 @@ export default {
     },
     width: {
       control: {
-        type: "text",
+        type: "range",
+        min: 1,
+        max: 100,
+        step: 0.1,
       },
     },
     height: {
       control: {
         type: "text",
+      },
+    },
+    top: {
+      control: {
+        type: "range",
+        min: 1,
+        max: 10,
+        step: 0.1,
+      },
+    },
+    bottom: {
+      control: {
+        type: "range",
+        min: 1,
+        max: 10,
+        step: 0.1,
+      },
+    },
+    left: {
+      control: {
+        type: "range",
+        min: 1,
+        max: 10,
+        step: 0.1,
+      },
+    },
+    right: {
+      control: {
+        type: "range",
+        min: 1,
+        max: 10,
+        step: 0.1,
       },
     },
     direction: {
@@ -52,7 +87,7 @@ const Template: ComponentStory<typeof DefaultIcon> = (args) => (
 export const Icon = Template.bind({});
 Icon.args = {
   color: "",
-  width: "50",
+  width: 50,
   height: "",
   position: "relative",
   theme: Theme,

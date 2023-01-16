@@ -13,7 +13,6 @@ export enum Positions {
 }
 
 export interface IconProps {
-  fill?: string;
   color?: string;
   width?: string | number;
   height?: string | number;

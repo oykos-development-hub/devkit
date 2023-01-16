@@ -2,8 +2,8 @@ import { css } from "styled-components";
 import { IconProps } from "../types";
 
 export const sharedPath = css<IconProps>`
-  color: ${(props) => props.color || props.theme?.palette?.main.one || "#fff"};
-  fill: ${(props) => props.color || props.theme?.palette?.main.one || "#fff"};
+  color: ${(props: IconProps) => props.color || props.theme?.palette?.main.one || "#fff"};
+  fill: ${(props: IconProps) => props.color || props.theme?.palette?.main.one || "#fff"};
 `;
 
 export const sharedSvg = css<IconProps>`
