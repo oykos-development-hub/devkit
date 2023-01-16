@@ -17,56 +17,13 @@ export default {
     component: Button,
     title: "Components/Button",
     argTypes: {
+        content: {
+            defaultValue: function () { return (React.createElement("span", null, "Button")); }
+        },
         variant: {
             control: {
                 type: "radio",
                 options: ["primary", "secondary", "tertiary"],
-            },
-        },
-        width: {
-            control: {
-                type: "text",
-            },
-        },
-        type: {
-            control: {
-                type: "text",
-            },
-        },
-        height: {
-            control: {
-                type: "text",
-            },
-        },
-        primaryColor: {
-            control: {
-                type: "text",
-            },
-        },
-        secondaryColor: {
-            control: {
-                type: "text",
-            },
-        },
-        tertiaryColor: {
-            control: {
-                type: "text",
-            },
-        },
-        theme: {
-            control: {
-                type: "object",
-            },
-        },
-        icon: {
-            control: {
-                type: "text",
-            },
-        },
-        iconPosition: {
-            control: {
-                type: "radio",
-                options: ["left", "right"],
             },
         },
         disabled: {
@@ -74,77 +31,101 @@ export default {
                 type: "boolean",
             },
         },
-        label: {
+        onClick: {
+            defaultValue: function () { return alert('Button clicked!'); }
+        },
+        theme: {
             control: {
-                type: "text",
+                type: "object",
             },
         },
-        padding: {
-            control: {
-                type: "text",
-            },
-        },
-        margin: {
-            control: {
-                type: "text",
-            },
-        },
-        borderRadius: {
-            control: {
-                type: "text",
-            },
-        },
-        borderWidth: {
-            control: {
-                type: "text",
-            },
-        },
-        gap: {
-            control: {
-                type: "text",
-            },
-        },
+        style: {
+            defaultValue: {
+                width: 'fit-content',
+                height: 'fit-content',
+                padding: '1em 2em',
+                margin: '0em',
+                borderRadius: '1em',
+                borderWidth: '1px',
+                gap: '0.5em'
+            }
+        }
     },
 };
 var Template = function (args) { return (React.createElement(StoryWrapper, null,
     React.createElement(Button, __assign({}, args)))); };
-export var PrimaryButtonDefault = Template.bind({});
-PrimaryButtonDefault.args = {
-    label: "Primary",
-    variant: "primary",
-    primaryColor: "purple",
-    borderRadius: "2em",
+export var PrimaryDefault = Template.bind({});
+PrimaryDefault.args = {
+    content: "Primary Default",
+    onClick: function () { return alert('PrimaryDefault clicked!'); }
 };
-export var PrimaryButtonThemed = Template.bind({});
-PrimaryButtonThemed.args = {
-    label: "Primary",
-    variant: "primary",
+export var PrimaryCustomStyle = Template.bind({});
+PrimaryCustomStyle.args = {
+    content: "Primary Custom Style",
+    style: {
+        width: '150px',
+        boxShadow: '5px 5px 2px #333',
+        backgroundColor: 'green',
+        fontWeight: 900
+    },
+    onClick: function () { return alert('PrimaryCustomStyle clicked!'); }
+};
+export var PrimaryThemed = Template.bind({});
+PrimaryThemed.args = {
+    content: "Primary Themed",
     theme: Theme,
+    onClick: function () { return alert('PrimaryThemed clicked!'); }
 };
-export var SecondaryButtonDefault = Template.bind({});
-SecondaryButtonDefault.args = {
-    label: "Secondary",
+export var SecondaryDefault = Template.bind({});
+SecondaryDefault.args = {
+    content: "Secondary Default",
     variant: "secondary",
-    secondaryColor: "lightblue",
-    borderRadius: "2em",
+    onClick: function () { return alert('SecondaryDefault clicked!'); }
 };
-export var SecondaryButtonThemed = Template.bind({});
-SecondaryButtonThemed.args = {
-    label: "Secondary",
+export var SecondaryCustomStyle = Template.bind({});
+SecondaryCustomStyle.args = {
+    content: "Secondary Custom Style",
+    variant: "secondary",
+    style: {
+        width: '150px',
+        boxShadow: '5px 5px 2px #333',
+        backgroundColor: "white",
+        color: "blue",
+        fontWeight: 900
+    },
+    onClick: function () { return alert('SecondaryCustomStyle clicked!'); }
+};
+export var SecondaryThemed = Template.bind({});
+SecondaryThemed.args = {
+    content: "Secondary Themed",
     variant: "secondary",
     theme: Theme,
+    onClick: function () { return alert('SecondaryThemed clicked!'); }
 };
-export var TertiaryButtonDefault = Template.bind({});
-TertiaryButtonDefault.args = {
-    label: "Tertiary",
-    tertiaryColor: "red",
+export var TertiaryDefault = Template.bind({});
+TertiaryDefault.args = {
+    content: "Tertiary Default",
     variant: "tertiary",
-    borderRadius: "2em",
+    onClick: function () { return alert('TertiaryDefault clicked!'); }
 };
-export var TertiaryButtonThemed = Template.bind({});
-TertiaryButtonThemed.args = {
-    label: "Tertiary",
+export var TertiaryCustomStyle = Template.bind({});
+TertiaryCustomStyle.args = {
+    content: "Tertiary Custom Style",
+    variant: "tertiary",
+    style: {
+        width: '150px',
+        boxShadow: '0px 0px 4px #333',
+        backgroundColor: "white",
+        color: "#333",
+        padding: '4px 8px'
+    },
+    onClick: function () { return alert('TertiaryCustomStyle clicked!'); }
+};
+export var TertiaryThemed = Template.bind({});
+TertiaryThemed.args = {
+    content: "Tertiary Themed",
     variant: "tertiary",
     theme: Theme,
+    onClick: function () { return alert('TertiaryThemed clicked!'); }
 };
 //# sourceMappingURL=index.stories.js.map

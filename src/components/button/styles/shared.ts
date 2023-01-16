@@ -19,7 +19,7 @@ export const shared = css<ButtonProps>`
   &:hover {
     transition: all 0.3s;
   }
-  
+
   &[disabled] {
     cursor: not-allowed;
     opacity: 0.4;
