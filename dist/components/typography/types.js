@@ -1,3 +1,2 @@
-import { TypographyVariants as Variants } from "./variants";
-export default Variants;
+export * from "./variants";
 //# sourceMappingURL=types.js.map

@@ -51,8 +51,8 @@ HeadlineH1Custom.args = {
   style: {
     color: "#51a322",
     margin: "5rem 2rem",
-    letterSpacing: "3px"
-  }
+    letterSpacing: "3px",
+  },
 };
 
 export const HeadlineH2 = Template.bind({});

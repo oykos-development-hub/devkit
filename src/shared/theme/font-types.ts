@@ -7,7 +7,7 @@ export interface FontSize {
   xxl: string;
 }
 
-export interface LineHeight extends FontSize {}
+export type LineHeight = FontSize;
 
 export interface FontFamily {
   one: string;

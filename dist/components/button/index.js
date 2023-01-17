@@ -17,12 +17,12 @@ export var StyledButton = function (props) {
     var _a;
     var variant = (_a = props.variant) !== null && _a !== void 0 ? _a : "primary";
     if (variant === "secondary")
-        return (React.createElement(Secondary, __assign({}, props, { type: "button" })));
+        return React.createElement(Secondary, __assign({}, props, { type: "button" }));
     if (variant === "tertiary")
-        return (React.createElement(Tertiary, __assign({}, props, { type: "button" })));
-    return (React.createElement(Primary, __assign({}, props, { type: "submit" })));
+        return React.createElement(Tertiary, __assign({}, props, { type: "button" }));
+    return React.createElement(Primary, __assign({}, props, { type: "submit" }));
 };
 export var Button = function (props) {
-    return (React.createElement(StyledButton, __assign({}, props), props.content));
+    return React.createElement(StyledButton, __assign({}, props), props.content);
 };
 //# sourceMappingURL=index.js.map
