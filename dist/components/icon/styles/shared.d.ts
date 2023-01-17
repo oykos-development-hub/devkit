@@ -1,3 +1,3 @@
 import { IconProps } from "../types";
-export declare const sharedPath: import("styled-components").FlattenInterpolation<import("styled-components").ThemedStyledProps<IconProps, import("styled-components").DefaultTheme>>;
-export declare const sharedSvg: import("styled-components").FlattenInterpolation<import("styled-components").ThemedStyledProps<IconProps, import("styled-components").DefaultTheme>>;
+export declare const Svg: import("styled-components").StyledComponent<"svg", import("styled-components").DefaultTheme, IconProps, never>;
+export declare const Path: import("styled-components").StyledComponent<"path", import("styled-components").DefaultTheme, IconProps, never>;

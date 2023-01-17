@@ -1,3 +1,4 @@
+import React from "react";
 import { DefaultTheme } from "styled-components";
 export declare enum Directions {
     bottom = "bottom",
@@ -10,16 +11,10 @@ export declare enum Positions {
     relative = "relative"
 }
 export interface IconProps {
-    color?: string;
-    width?: string | number;
-    height?: string | number;
-    onClick?: () => void;
-    className?: string;
+    size?: string;
+    onClick?: (e?: React.MouseEvent<any>) => any;
     direction?: Directions | keyof typeof Directions;
-    top?: string;
-    bottom?: string;
-    right?: string;
-    left?: string;
     position?: Positions | keyof typeof Positions;
     theme?: DefaultTheme;
+    style?: React.CSSProperties;
 }

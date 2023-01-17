@@ -15,37 +15,56 @@ import { Body1, Body2, Button, Caption, Error, H1, H2, H3, H4, H5, H6, Overline,
 export var Typography = function (props) {
     var _a;
     var variant = (_a = props.variant) !== null && _a !== void 0 ? _a : TypographyVariants.body2;
+    var Component;
+    var componentProps = __assign({}, props);
+    delete componentProps.content;
     switch (variant) {
         case "h1":
-            return React.createElement(H1, __assign({}, props));
+            Component = H1;
+            break;
         case "h2":
-            return React.createElement(H2, __assign({}, props));
+            Component = H2;
+            break;
         case "h3":
-            return React.createElement(H3, __assign({}, props));
+            Component = H3;
+            break;
         case "h4":
-            return React.createElement(H4, __assign({}, props));
+            Component = H4;
+            break;
         case "h5":
-            return React.createElement(H5, __assign({}, props));
+            Component = H5;
+            break;
         case "h6":
-            return React.createElement(H6, __assign({}, props));
+            Component = H6;
+            break;
         case "subtitle1":
-            return React.createElement(Sub1, __assign({}, props));
+            Component = Sub1;
+            break;
         case "subtitle2":
-            return React.createElement(Sub2, __assign({}, props));
+            Component = Sub2;
+            break;
         case "body1":
-            return React.createElement(Body1, __assign({}, props));
+            Component = Body1;
+            break;
         case "body2":
-            return React.createElement(Body2, __assign({}, props));
+            Component = Body2;
+            break;
         case "button":
-            return React.createElement(Button, __assign({}, props));
+            Component = Button;
+            break;
         case "caption":
-            return React.createElement(Caption, __assign({}, props));
+            Component = Caption;
+            break;
         case "overline":
-            return React.createElement(Overline, __assign({}, props));
+            Component = Overline;
+            break;
         case "error":
-            return React.createElement(Error, __assign({}, props));
+            Component = Error;
+            break;
         default:
-            return React.createElement(Body1, __assign({}, props));
+            Component = Body1;
+            break;
     }
+    return (React.createElement(Component, __assign({}, componentProps), props.content));
 };
 //# sourceMappingURL=index.js.map

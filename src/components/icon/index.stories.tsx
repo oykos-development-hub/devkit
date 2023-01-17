@@ -49,5 +49,5 @@ const Custom: ComponentStory<typeof XIcon> = (args) => (
 
 export const CustomIcons = Custom.bind({});
 CustomIcons.args = {
-  size: '100px'
+  size: "100px",
 };

@@ -9,99 +9,44 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 import React from "react";
-import { Directions } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { Theme } from "../../shared/theme";
-import { DefaultIcon, AssignIcon, XIcon, DangerIcon, CircleCheckIcon } from "./icons";
+import { AssignIcon, XIcon, DangerIcon, CircleCheckIcon } from "./";
 export default {
-    title: "Example/Icons",
-    component: DefaultIcon,
+    title: "Components/Icons",
+    component: XIcon,
     argTypes: {
+        onClick: {
+            defaultValue: function () { return alert("Icon clicked!"); },
+        },
         theme: {
             control: {
                 type: "object",
-                options: Theme,
             },
         },
-        width: {
-            control: {
-                type: "range",
-                min: 1,
-                max: 100,
-                step: 0.1,
-            },
-        },
-        height: {
-            control: {
-                type: "text",
-            },
-        },
-        top: {
-            control: {
-                type: "range",
-                min: 1,
-                max: 10,
-                step: 0.1,
-            },
-        },
-        bottom: {
-            control: {
-                type: "range",
-                min: 1,
-                max: 10,
-                step: 0.1,
-            },
-        },
-        left: {
-            control: {
-                type: "range",
-                min: 1,
-                max: 10,
-                step: 0.1,
-            },
-        },
-        right: {
-            control: {
-                type: "range",
-                min: 1,
-                max: 10,
-                step: 0.1,
-            },
-        },
-        direction: {
-            control: {
-                type: "select",
-                options: __spreadArray(["No direction"], Object.keys(Directions).map(function (key) { return key; }), true),
-            },
-        },
-        className: {
-            control: {
-                type: "text",
+        style: {
+            defaultValue: {
+                width: "40px",
+                height: "40px",
+                padding: "0.2rem",
             },
         },
     },
 };
-var Template = function (args) { return (React.createElement(StoryWrapper, null,
+var Default = function (args) { return (React.createElement(StoryWrapper, null,
     React.createElement(AssignIcon, __assign({}, args)),
     React.createElement(XIcon, __assign({}, args)),
     React.createElement(DangerIcon, __assign({}, args)),
     React.createElement(CircleCheckIcon, __assign({}, args)))); };
-export var Icon = Template.bind({});
-Icon.args = {
-    color: "",
-    width: 50,
-    height: "",
-    position: "relative",
-    theme: Theme,
+export var DefaultIcons = Default.bind({});
+DefaultIcons.args = {};
+var Custom = function (args) { return (React.createElement(StoryWrapper, null,
+    React.createElement(AssignIcon, __assign({}, args)),
+    React.createElement(XIcon, __assign({}, args)),
+    React.createElement(DangerIcon, __assign({}, args)),
+    React.createElement(CircleCheckIcon, __assign({}, args)))); };
+export var CustomIcons = Custom.bind({});
+CustomIcons.args = {
+    size: '100px'
 };
 //# sourceMappingURL=index.stories.js.map

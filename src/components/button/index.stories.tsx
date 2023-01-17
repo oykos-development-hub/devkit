@@ -56,20 +56,13 @@ const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
 // Primary
 export const PrimaryDefault = Template.bind({});
 PrimaryDefault.args = {
-  content: (<Typography
-    content="Primary Default"
-    variant={TypographyVariants.button}
-    theme={Theme}
-  />),
+  content: <Typography content="Primary Default" variant={TypographyVariants.button} theme={Theme} />,
   onClick: () => alert("PrimaryDefault clicked!"),
 };
 
 export const PrimaryCustomStyle = Template.bind({});
 PrimaryCustomStyle.args = {
-  content: (<Typography
-    content="Primary Custom Style"
-    variant={TypographyVariants.button}
-  />),
+  content: <Typography content="Primary Custom Style" variant={TypographyVariants.button} />,
   style: {
     width: "150px",
     boxShadow: "5px 5px 2px #333",
@@ -81,10 +74,7 @@ PrimaryCustomStyle.args = {
 
 export const PrimaryThemed = Template.bind({});
 PrimaryThemed.args = {
-  content: (<Typography
-    content="Primary Themed"
-    variant={TypographyVariants.button}
-  />),
+  content: <Typography content="Primary Themed" variant={TypographyVariants.button} />,
   theme: Theme,
   onClick: () => alert("PrimaryThemed clicked!"),
 };
@@ -92,20 +82,14 @@ PrimaryThemed.args = {
 // Secondary
 export const SecondaryDefault = Template.bind({});
 SecondaryDefault.args = {
-  content: (<Typography
-    content="Secondary Default"
-    variant={TypographyVariants.button}
-  />),
+  content: <Typography content="Secondary Default" variant={TypographyVariants.button} />,
   variant: ButtonVariants.secondary,
   onClick: () => alert("SecondaryDefault clicked!"),
 };
 
 export const SecondaryCustomStyle = Template.bind({});
 SecondaryCustomStyle.args = {
-  content: (<Typography
-    content="Secondary Custom Style"
-    variant={TypographyVariants.button}
-  />),
+  content: <Typography content="Secondary Custom Style" variant={TypographyVariants.button} />,
   variant: ButtonVariants.secondary,
   style: {
     width: "150px",
@@ -119,10 +103,7 @@ SecondaryCustomStyle.args = {
 
 export const SecondaryThemed = Template.bind({});
 SecondaryThemed.args = {
-  content: (<Typography
-    content="Secondary Themed"
-    variant={TypographyVariants.button}
-  />),
+  content: <Typography content="Secondary Themed" variant={TypographyVariants.button} />,
   variant: ButtonVariants.secondary,
   theme: Theme,
   onClick: () => alert("SecondaryThemed clicked!"),
@@ -131,20 +112,14 @@ SecondaryThemed.args = {
 // Tertiary
 export const TertiaryDefault = Template.bind({});
 TertiaryDefault.args = {
-  content: (<Typography
-    content="Tertiary Default"
-    variant={TypographyVariants.button}
-  />),
+  content: <Typography content="Tertiary Default" variant={TypographyVariants.button} />,
   variant: ButtonVariants.tertiary,
   onClick: () => alert("TertiaryDefault clicked!"),
 };
 
 export const TertiaryCustomStyle = Template.bind({});
 TertiaryCustomStyle.args = {
-  content: (<Typography
-    content="Tertiary Custom Style"
-    variant={TypographyVariants.button}
-  />),
+  content: <Typography content="Tertiary Custom Style" variant={TypographyVariants.button} />,
   variant: ButtonVariants.tertiary,
   style: {
     width: "150px",
@@ -158,10 +133,7 @@ TertiaryCustomStyle.args = {
 
 export const TertiaryThemed = Template.bind({});
 TertiaryThemed.args = {
-  content: (<Typography
-    content="Tertiary Themed"
-    variant={TypographyVariants.button}
-  />),
+  content: <Typography content="Tertiary Themed" variant={TypographyVariants.button} />,
   variant: ButtonVariants.tertiary,
   theme: Theme,
   onClick: () => alert("TertiaryThemed clicked!"),
