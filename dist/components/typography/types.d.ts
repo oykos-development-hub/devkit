@@ -4,8 +4,6 @@ import { DefaultTheme } from "styled-components";
 export interface TypographyProps {
     content: React.ReactNode | string;
     variant?: Variants | string;
-    disabled?: boolean;
-    onClick?: (e?: React.MouseEvent<any>) => any;
     theme?: DefaultTheme;
     style?: React.CSSProperties;
 }
