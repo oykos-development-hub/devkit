@@ -14,7 +14,7 @@ import { Loader } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 export default {
-    title: "Example/Loader",
+    title: "Components/Loader",
     component: Loader,
     argTypes: {
         variant: {

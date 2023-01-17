@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { ButtonProps } from "./types";
 declare const _default: ComponentMeta<(props: ButtonProps) => JSX.Element>;
 export default _default;

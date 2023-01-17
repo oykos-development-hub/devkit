@@ -6,3 +6,9 @@ export interface FontSize {
   xl: string;
   xxl: string;
 }
+
+export type LineHeight = FontSize;
+
+export interface FontFamily {
+  one: string;
+}

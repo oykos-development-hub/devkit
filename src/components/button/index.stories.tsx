@@ -1,7 +1,7 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Button } from "./index";
-import { ButtonProps } from "./types";
+import { ButtonProps, ButtonVariants } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 
@@ -81,14 +81,14 @@ PrimaryThemed.args = {
 export const SecondaryDefault = Template.bind({});
 SecondaryDefault.args = {
   content: "Secondary Default",
-  variant: "secondary",
+  variant: ButtonVariants.secondary,
   onClick: () => alert("SecondaryDefault clicked!"),
 };
 
 export const SecondaryCustomStyle = Template.bind({});
 SecondaryCustomStyle.args = {
   content: "Secondary Custom Style",
-  variant: "secondary",
+  variant: ButtonVariants.secondary,
   style: {
     width: "150px",
     boxShadow: "5px 5px 2px #333",
@@ -102,7 +102,7 @@ SecondaryCustomStyle.args = {
 export const SecondaryThemed = Template.bind({});
 SecondaryThemed.args = {
   content: "Secondary Themed",
-  variant: "secondary",
+  variant: ButtonVariants.secondary,
   theme: Theme,
   onClick: () => alert("SecondaryThemed clicked!"),
 };
@@ -111,14 +111,14 @@ SecondaryThemed.args = {
 export const TertiaryDefault = Template.bind({});
 TertiaryDefault.args = {
   content: "Tertiary Default",
-  variant: "tertiary",
+  variant: ButtonVariants.tertiary,
   onClick: () => alert("TertiaryDefault clicked!"),
 };
 
 export const TertiaryCustomStyle = Template.bind({});
 TertiaryCustomStyle.args = {
   content: "Tertiary Custom Style",
-  variant: "tertiary",
+  variant: ButtonVariants.tertiary,
   style: {
     width: "150px",
     boxShadow: "0px 0px 4px #333",
@@ -132,7 +132,7 @@ TertiaryCustomStyle.args = {
 export const TertiaryThemed = Template.bind({});
 TertiaryThemed.args = {
   content: "Tertiary Themed",
-  variant: "tertiary",
+  variant: ButtonVariants.tertiary,
   theme: Theme,
   onClick: () => alert("TertiaryThemed clicked!"),
 };
