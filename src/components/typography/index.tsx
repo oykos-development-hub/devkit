@@ -6,7 +6,7 @@ import { StyledComponent } from "styled-components";
 export const Typography = (props: TypographyProps): React.ReactElement => {
   const variant = props.variant ?? TypographyVariants.body2;
   let Component: StyledComponent<any, any>;
-  let componentProps = {...props};
+  const componentProps = { ...props };
 
   delete componentProps.content;
 
@@ -58,7 +58,5 @@ export const Typography = (props: TypographyProps): React.ReactElement => {
       break;
   }
 
-  return (<Component {...componentProps}>
-    {props.content}
-  </Component>)
+  return <Component {...componentProps}>{props.content}</Component>;
 };

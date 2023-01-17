@@ -6,7 +6,8 @@ import {
   Body1,
   Body2,
   Button,
-  Caption, Error,
+  Caption,
+  Error,
   H1,
   H2,
   H3,
@@ -15,7 +16,7 @@ import {
   H6,
   Overline,
   Sub1,
-  Sub2
+  Sub2,
 } from "../../../typography/styles/variants";
 
 const backgroundColor = (props: ButtonProps) =>
@@ -33,12 +34,12 @@ export const Primary = styled.button<ButtonProps>`
   &:hover:not([disabled]) {
     background-color: transparent !important;
     color: ${(props) => backgroundColor(props)};
-    
+
     ${H1}, ${H2}, ${H3}, ${H4}, ${H5}, ${H6}, ${Sub1}, ${Sub2}, ${Body1}, ${Body2}, ${Button}, ${Caption}, ${Overline}, ${Error} {
       color: ${(props) => backgroundColor(props)};
     }
   }
-  
+
   ${H1}, ${H2}, ${H3}, ${H4}, ${H5}, ${H6}, ${Sub1}, ${Sub2}, ${Body1}, ${Body2}, ${Button}, ${Caption}, ${Overline}, ${Error} {
     color: ${(props) => color(props)};
   }
