@@ -1,40 +1,64 @@
 import React from "react";
 import { TypographyProps, TypographyVariants } from "./types";
 import { Body1, Body2, Button, Caption, Error, H1, H2, H3, H4, H5, H6, Overline, Sub1, Sub2 } from "./styles/variants";
+import { StyledComponent } from "styled-components";
 
 export const Typography = (props: TypographyProps): React.ReactElement => {
   const variant = props.variant ?? TypographyVariants.body2;
+  let Component: StyledComponent<any, any>;
+  let componentProps = {...props};
+
+  delete componentProps.content;
 
   switch (variant) {
     case "h1":
-      return <H1 {...props} />;
+      Component = H1;
+      break;
     case "h2":
-      return <H2 {...props} />;
+      Component = H2;
+      break;
     case "h3":
-      return <H3 {...props} />;
+      Component = H3;
+      break;
     case "h4":
-      return <H4 {...props} />;
+      Component = H4;
+      break;
     case "h5":
-      return <H5 {...props} />;
+      Component = H5;
+      break;
     case "h6":
-      return <H6 {...props} />;
+      Component = H6;
+      break;
     case "subtitle1":
-      return <Sub1 {...props} />;
+      Component = Sub1;
+      break;
     case "subtitle2":
-      return <Sub2 {...props} />;
+      Component = Sub2;
+      break;
     case "body1":
-      return <Body1 {...props} />;
+      Component = Body1;
+      break;
     case "body2":
-      return <Body2 {...props} />;
+      Component = Body2;
+      break;
     case "button":
-      return <Button {...props} />;
+      Component = Button;
+      break;
     case "caption":
-      return <Caption {...props} />;
+      Component = Caption;
+      break;
     case "overline":
-      return <Overline {...props} />;
+      Component = Overline;
+      break;
     case "error":
-      return <Error {...props} />;
+      Component = Error;
+      break;
     default:
-      return <Body1 {...props} />;
+      Component = Body1;
+      break;
   }
+
+  return (<Component {...componentProps}>
+    {props.content}
+  </Component>)
 };
