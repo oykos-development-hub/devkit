@@ -3,14 +3,12 @@ import { TypographyVariants as Variants } from "./variants";
 import { DefaultTheme } from "styled-components";
 
 export interface TypographyProps {
+  content: React.ReactNode | string;
   variant?: Variants | string;
-  children?: React.ReactNode;
-  color?: string;
-  className?: string;
-  margin?: string;
-  fontFamily?: string;
-  fontSize?: string;
+  disabled?: boolean;
+  onClick?: (e?: React.MouseEvent<any>) => any;
   theme?: DefaultTheme;
+  style?: React.CSSProperties;
 }
 
-export default Variants;
+export * from "./variants";
