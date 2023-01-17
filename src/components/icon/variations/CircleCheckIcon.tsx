@@ -1,6 +1,6 @@
 import React from "react";
 import { IconProps } from "../types";
-import { Path, Svg } from "../styles/elements";
+import { Path, Svg } from "../styles/shared";
 
 const CircleCheckIcon = (props: IconProps): React.ReactElement => (
   <Svg data-testid="circle-check-icon" viewBox="0 0 23 22" onClick={props.onClick} {...props}>

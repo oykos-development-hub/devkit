@@ -1,81 +1,32 @@
 import React from "react";
-
-import { Directions } from "./types";
-import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { Theme } from "../../shared/theme";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { DefaultIcon, AssignIcon, XIcon, DangerIcon, CircleCheckIcon } from "./icons";
+import { StoryWrapper } from "../../shared/components/story-wrapper";
+import { AssignIcon, XIcon, DangerIcon, CircleCheckIcon } from "./";
+import { IconProps } from "./types";
 
 export default {
-  title: "Example/Icons",
-  component: DefaultIcon,
+  title: "Components/Icons",
+  component: XIcon,
   argTypes: {
+    onClick: {
+      defaultValue: () => alert("Icon clicked!"),
+    },
     theme: {
       control: {
         type: "object",
-        options: Theme,
       },
     },
-    width: {
-      control: {
-        type: "range",
-        min: 1,
-        max: 100,
-        step: 0.1,
-      },
-    },
-    height: {
-      control: {
-        type: "text",
-      },
-    },
-    top: {
-      control: {
-        type: "range",
-        min: 1,
-        max: 10,
-        step: 0.1,
-      },
-    },
-    bottom: {
-      control: {
-        type: "range",
-        min: 1,
-        max: 10,
-        step: 0.1,
-      },
-    },
-    left: {
-      control: {
-        type: "range",
-        min: 1,
-        max: 10,
-        step: 0.1,
-      },
-    },
-    right: {
-      control: {
-        type: "range",
-        min: 1,
-        max: 10,
-        step: 0.1,
-      },
-    },
-    direction: {
-      control: {
-        type: "select",
-        options: ["No direction", ...Object.keys(Directions).map((key: string) => key)],
-      },
-    },
-    className: {
-      control: {
-        type: "text",
+    style: {
+      defaultValue: {
+        width: "40px",
+        height: "40px",
+        padding: "0.2rem",
       },
     },
   },
-} as ComponentMeta<typeof DefaultIcon>;
+} as ComponentMeta<typeof XIcon>;
 
-const Template: ComponentStory<typeof DefaultIcon> = (args) => (
+const Default: ComponentStory<typeof XIcon> = (args) => (
   <StoryWrapper>
     <AssignIcon {...args} />
     <XIcon {...args} />
@@ -84,11 +35,19 @@ const Template: ComponentStory<typeof DefaultIcon> = (args) => (
   </StoryWrapper>
 );
 
-export const Icon = Template.bind({});
-Icon.args = {
-  color: "",
-  width: 50,
-  height: "",
-  position: "relative",
-  theme: Theme,
+export const DefaultIcons = Default.bind({});
+DefaultIcons.args = {};
+
+const Custom: ComponentStory<typeof XIcon> = (args) => (
+  <StoryWrapper>
+    <AssignIcon {...args} />
+    <XIcon {...args} />
+    <DangerIcon {...args} />
+    <CircleCheckIcon {...args} />
+  </StoryWrapper>
+);
+
+export const CustomIcons = Custom.bind({});
+CustomIcons.args = {
+  size: '100px'
 };

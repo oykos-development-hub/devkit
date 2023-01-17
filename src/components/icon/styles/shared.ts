@@ -1,18 +1,24 @@
+import styled from "styled-components";
 import { css } from "styled-components";
-import { IconProps } from "../types";
+import { IconProps, Positions } from "../types";
+import { Theme } from "../../../shared/theme";
 
-export const sharedPath = css<IconProps>`
-  color: ${(props) => props.color || props.theme?.palette?.main.one || "#fff"}!important;
-  fill: ${(props) => props.color || props.theme?.palette?.main.one || "#fff"}!important;
+const sharedPath = css<IconProps>`
+  color: ${(props) => props.style?.color || props.theme?.palette?.main.one || Theme?.palette?.main.one} !important;
+  fill: ${(props) => props.style?.color || props.theme?.palette?.main.one || Theme?.palette?.main.one} !important;
 `;
 
-export const sharedSvg = css<IconProps>`
-  position: ${(props) => props.position || "absolute"};
-  width: ${(props) => props.width || 24};
-  height: ${(props) => props.height || props.width || 24};
-  top: ${(props) => props.top + "rem" || "0"};
-  bottom: ${(props) => props.bottom + "rem" || "0"};
-  right: ${(props) => props.right + "rem" || "0"};
-  left: ${(props) => props.left + "rem" || "0"};
+export const Svg = styled.svg<IconProps>`
+  ${sharedPath};
+  position: ${(props) => props.position || Positions.relative};
+  width: ${(props) => props?.size || props.style?.width || "2rem"} !important;
+  height: ${(props) => props?.size || props.style?.height || props.style?.width || "2rem"} !important;
+  top: ${(props) => props.style?.top || "initial"};
+  bottom: ${(props) => props.style?.bottom || "initial"};
+  right: ${(props) => props.style?.right || "initial"};
+  left: ${(props) => props.style?.left || "initial"};
+`;
+
+export const Path = styled.path<IconProps>`
   ${sharedPath}
 `;

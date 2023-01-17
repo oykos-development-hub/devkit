@@ -1,6 +1,6 @@
 import React from "react";
 import { IconProps } from "../types";
-import { Path, Svg } from "../styles/elements";
+import { Path, Svg } from "../styles/shared";
 
 const XIcon = (props: IconProps): React.ReactElement => (
   <Svg data-testid="x-icon" viewBox="0 0 8 8" onClick={props.onClick} {...props}>
