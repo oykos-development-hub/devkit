@@ -10,7 +10,9 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import React, { useState } from "react";
-import { DatePickerWrapper, StyledDatePicker } from "./styles/shared";
+import { DatePickerWrapper } from "./styles/shared";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 export var RangeDatePicker = function (props) {
     var _a = useState(false), calendarOpened = _a[0], setCalendarOpened = _a[1];
     var onDateRangeChange = function (value) {
@@ -19,6 +21,6 @@ export var RangeDatePicker = function (props) {
     };
     return (React.createElement("div", null,
         React.createElement(DatePickerWrapper, __assign({}, props),
-            React.createElement(StyledDatePicker, __assign({}, props, { startDate: props.startDateValue, endDate: props.endDateValue, onChange: onDateRangeChange, open: calendarOpened, onInputClick: function () { return setCalendarOpened(true); }, selectsRange: true, wrapperClassName: "range-datepicker-wrapper", className: "custom-datepicker", dateFormat: props.dateFormat, placeholderText: props.placeholderText || "Start date - End date", customInput: React.createElement("input", { name: "range-datepicker-custom-input", placeholder: "Start date - End date", onClick: function () { return setCalendarOpened(true); } }) })))));
+            React.createElement(DatePicker, __assign({}, props, { startDate: props.startDateValue, endDate: props.endDateValue, onChange: onDateRangeChange, open: calendarOpened, onInputClick: function () { return setCalendarOpened(true); }, selectsRange: true, wrapperClassName: "range-datepicker-wrapper", className: "custom-datepicker", dateFormat: props.dateFormat, placeholderText: props.placeholderText || "Start date - End date", customInput: React.createElement("input", { name: "range-datepicker-custom-input", placeholder: "Start date - End date", onClick: function () { return setCalendarOpened(true); } }) })))));
 };
 //# sourceMappingURL=index.js.map

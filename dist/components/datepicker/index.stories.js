@@ -13,6 +13,7 @@ import React, { useState } from "react";
 import { RangeDatePicker } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { DateFormat } from "./types";
+import { Theme } from "../../shared/theme";
 export default {
     title: "Example/RangeDatePicker",
     component: RangeDatePicker,
@@ -41,7 +42,6 @@ export default {
                 margin: "0em",
                 padding: "0em",
                 outline: "none",
-                fontFamily: "Rubik, sans-serif",
             },
         },
         styleWrapper: {
@@ -51,8 +51,6 @@ export default {
                 justifyContent: "center",
                 margin: "0em",
                 padding: "0em",
-                border: "none",
-                outline: "none",
             },
         },
     },
@@ -70,5 +68,7 @@ var Template = function (args) {
         React.createElement(RangeDatePicker, __assign({}, args, { startDateValue: start, endDateValue: end, label: "Pick a date", onRangeChange: onRangeChange }))));
 };
 export var RangeDatePickerExample = Template.bind({});
-RangeDatePickerExample.args = {};
+RangeDatePickerExample.args = {
+    theme: Theme,
+};
 //# sourceMappingURL=index.stories.js.map

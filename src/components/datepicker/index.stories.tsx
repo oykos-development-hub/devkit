@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { RangeDatePicker } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { DateFormat } from "./types";
+import { Theme } from "../../shared/theme";
 
 export default {
   title: "Example/RangeDatePicker",
@@ -32,7 +33,6 @@ export default {
         margin: "0em",
         padding: "0em",
         outline: "none",
-        fontFamily: "Rubik, sans-serif",
       },
     },
     styleWrapper: {
@@ -42,8 +42,6 @@ export default {
         justifyContent: "center",
         margin: "0em",
         padding: "0em",
-        border: "none",
-        outline: "none",
       },
     },
   },
@@ -74,4 +72,6 @@ const Template: ComponentStory<typeof RangeDatePicker> = (args) => {
   );
 };
 export const RangeDatePickerExample = Template.bind({});
-RangeDatePickerExample.args = {};
+RangeDatePickerExample.args = {
+  theme: Theme,
+};

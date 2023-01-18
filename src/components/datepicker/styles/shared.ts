@@ -1,36 +1,37 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { RangeDatePickerProps } from "../types";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Theme } from "../../../shared/theme";
 
 export const initialShadow = "0 1px 2px rgba(97, 97, 97, 1), 0 2px 4px rgba(97, 97, 97, 1)";
-export const DatePickerWrapper = styled.div<RangeDatePickerProps>`
+
+export const shared = css`
   align-items: center;
   box-sizing: border-box;
   display: flex;
   cursor: pointer;
+  justify-content: center;
+  min-width: fit-content;
+`;
+
+export const DatePickerWrapper = styled.div<RangeDatePickerProps>`
+  ${shared};
   width: ${(props) => props.styleWrapper?.width || "fit-content"};
   height: ${(props) => props.styleWrapper?.height || "fit-content"};
-  justify-content: center;
   margin: ${(props) => props.styleWrapper?.margin || "0em"};
-  min-width: fit-content;
   padding: ${(props) => props.styleWrapper?.padding || "0em"};
   position: ${(props) => props.styleWrapper?.position || "relative"};
   top: ${(props) => props.styleWrapper?.top || "0em"};
-  gap: ${(props) => props.styleWrapper?.gap || "0em"};
+  gap: ${(props) => props.styleWrapper?.gap || "0em"};  
+  
 
   .react-datepicker {
+    ${shared};
     border: ${(props) => props.styleCalendar?.border || "none"};
-    border-radius: ${(props) => props.styleCalendar?.borderRadius || "0em"};
-    align-items: center;
-    box-sizing: border-box;
-    display: flex;
-    cursor: pointer;
+    border-radius: ${(props) => props.styleCalendar?.borderRadius || "0em"};    
     width: ${(props) => props.styleCalendar?.width || "100%"};
     height: ${(props) => props.styleCalendar?.height || "100%"};
-    justify-content: center;
-    margin: ${(props) => props.styleCalendar?.margin || "0em"};
-    min-width: fit-content;
+    margin: ${(props) => props.styleCalendar?.margin || "0em"};    
     padding: ${(props) => props.styleCalendar?.padding || "1rem"};
     position: ${(props) => props.styleCalendar?.position || "relative"};
     top: ${(props) => props.styleCalendar?.top || "0em"};
@@ -39,6 +40,8 @@ export const DatePickerWrapper = styled.div<RangeDatePickerProps>`
     font-family: ${(props) => props.styleCalendar?.fontFamily || props.theme.fontFamily?.one || "sans-serif"};
     line-height: ${(props) => props.styleCalendar?.lineHeight || props.theme.lineHeight?.sm || "1em"};
     box-shadow: ${(props) => props.styleCalendar?.boxShadow || initialShadow};
+    font-family: ${(props) => props.styleInput?.fontFamily || props.theme.fontFamily?.one || "sans-serif"} !important;
+    line-height: ${(props) => props.styleInput?.lineHeight || props.theme.lineHeight?.sm || "1em"};
 
     &__header {
       border-radius: ${(props) => props.styleCalendar?.borderRadius || "0em"};
@@ -88,7 +91,8 @@ export const DatePickerWrapper = styled.div<RangeDatePickerProps>`
         top: 8px;
         left: -4px;
         border-width: 2px 2px 0 0;
-        border-color: ${(props) => props.styleCalendar?.color || props.theme.palette?.main.one || "orange"};
+        border-color: ${(props) =>
+          props.styleCalendar?.color || props.theme.palette?.main.one || Theme.palette?.main.one};
       }
     }
 
@@ -124,11 +128,12 @@ export const DatePickerWrapper = styled.div<RangeDatePickerProps>`
           props.styleCalendar?.backgroundColor || props.theme.palette?.light.four || "#616161"};
         color: ${(props) => props.styleCalendar?.color || props.theme.palette?.light.one || "#fff"};
         right: 0.46px;
-        bottom: 0.46px;
+        bottom: 5.46px;
         border-radius: 0;
 
         &:hover {
-          background-color: #E6F4F8;
+          background-color: ${(props) => props.styleCalendar?.color || props.theme.palette?.dark.one || "#000"};
+          color: ${(props) => props.theme.palette?.light.one || "#fff"};
         }
       }
 
@@ -137,9 +142,7 @@ export const DatePickerWrapper = styled.div<RangeDatePickerProps>`
         background-color: ${(props) =>
           props.styleCalendar?.backgroundColor || props.theme.palette?.dark.four || "#616161"};
         font-weight: bold;
-        box-shadow: 0 1.56082px 3.12163px rgba(15, 86, 179, 0.18),
-        0 3.12163px 6.24327px rgba(15, 86, 179, 0.18);
-        
+        box-shadow: 0 1.56082px 3.12163px rgba(15, 86, 179, 0.18), 0 3.12163px 6.24327px rgba(15, 86, 179, 0.18);        
       }
 
       &--range-end {
@@ -150,34 +153,5 @@ export const DatePickerWrapper = styled.div<RangeDatePickerProps>`
           background-color: ${(props) => props.styleCalendar?.color || props.theme.palette?.main.one || "#0068B6FF"};
         }
       }
-  }
-`;
-
-export const StyledDatePicker = styled(DatePicker)<RangeDatePickerProps>`
-  align-items: center;
-  box-sizing: border-box;
-  display: flex;
-  cursor: pointer;
-  width: ${(props) => props.styleInput?.width || "fit-content"};
-  height: ${(props) => props.styleInput?.height || "fit-content"};
-  justify-content: center;
-  margin: ${(props) => props.styleInput?.margin || "0em"};
-  min-width: fit-content;
-  padding: ${(props) => props.styleInput?.padding || "1rem"};
-  position: ${(props) => props.styleInput?.position || "relative"};
-  top: ${(props) => props.styleInput?.top || "0em"};
-  gap: ${(props) => props.styleInput?.gap || "0em"};
-  outline: ${(props) => props.styleInput?.outline || "none"};
-  font-family: ${(props) => props.styleInput?.fontFamily || props.theme.fontFamily?.one || "sans-serif"};
-  line-height: ${(props) => props.styleInput?.lineHeight || props.theme.lineHeight?.sm || "1em"};
-
-  &:hover {
-    transition: all 0.3s;
-    outline: 1px solid red;
-  }
-
-  &[disabled] {
-    cursor: not-allowed;
-    opacity: 0.4;
   }
 `;
