@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
 import { RangeDatePickerProps } from "./types";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { DatePickerWrapper } from "./styles/shared";
+import { DatePickerWrapper, StyledDatePicker } from "./styles/shared";
 
 export const RangeDatePicker = (props: RangeDatePickerProps): React.ReactElement => {
   const [calendarOpened, setCalendarOpened] = useState(false);
@@ -16,7 +14,7 @@ export const RangeDatePicker = (props: RangeDatePickerProps): React.ReactElement
   return (
     <div>
       <DatePickerWrapper {...props}>
-        <DatePicker
+        <StyledDatePicker
           {...props}
           startDate={props.startDateValue}
           endDate={props.endDateValue}

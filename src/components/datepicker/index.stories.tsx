@@ -19,6 +19,22 @@ export default {
         type: "select",
       },
     },
+    styleCalendar: {
+      defaultValue: {
+        color: "#000",
+        backgroundColor: "#9e9e9e",
+        border: "none",
+        borderRadius: "0.7rem",
+        width: "300px",
+        height: "100%",
+        alignItems: "center",
+        justifyContent: "center",
+        margin: "0em",
+        padding: "0em",
+        outline: "none",
+        fontFamily: "Rubik, sans-serif",
+      },
+    },
     styleWrapper: {
       defaultValue: {
         width: "fit-content",
@@ -26,6 +42,8 @@ export default {
         justifyContent: "center",
         margin: "0em",
         padding: "0em",
+        border: "none",
+        outline: "none",
       },
     },
   },

@@ -24,5 +24,7 @@ export interface RangeDatePickerProps {
     onRangeChange: (start: Date, end: Date) => void;
     placeholderText?: string;
     theme?: DefaultTheme;
+    styleInput?: React.CSSProperties;
+    styleCalendar?: React.CSSProperties;
     styleWrapper?: React.CSSProperties;
 }
