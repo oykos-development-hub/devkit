@@ -32,11 +32,10 @@ export default {
         styleCalendar: {
             defaultValue: {
                 color: "#000",
-                backgroundColor: "#9e9e9e",
+                backgroundColor: "#343aa",
                 border: "none",
                 borderRadius: "0.7rem",
                 width: "300px",
-                height: "100%",
                 alignItems: "center",
                 justifyContent: "center",
                 margin: "0em",

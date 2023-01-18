@@ -24,7 +24,6 @@ export const DatePickerWrapper = styled.div<RangeDatePickerProps>`
   top: ${(props) => props.styleWrapper?.top || "0em"};
   gap: ${(props) => props.styleWrapper?.gap || "0em"};  
   
-
   .react-datepicker {
     ${shared};
     border: ${(props) => props.styleCalendar?.border || "none"};
@@ -142,7 +141,21 @@ export const DatePickerWrapper = styled.div<RangeDatePickerProps>`
         background-color: ${(props) =>
           props.styleCalendar?.backgroundColor || props.theme.palette?.dark.four || "#616161"};
         font-weight: bold;
-        box-shadow: 0 1.56082px 3.12163px rgba(15, 86, 179, 0.18), 0 3.12163px 6.24327px rgba(15, 86, 179, 0.18);        
+        box-shadow: 0 1.56082px 3.12163px rgba(15, 86, 179, 0.18), 0 3.12163px 6.24327px rgba(15, 86, 179, 0.18);
+        border-radius: 0;
+      }
+
+      &--range-start {
+        background-color: ${(props) => props.styleCalendar?.color || props.theme.palette?.main.one || "orange"};
+        color: white;
+        box-shadow: 0 1.56082px 3.12163px rgba(15, 86, 179, 0.18),
+        0 3.12163px 6.24327px rgba(15, 86, 179, 0.18);
+        border-radius: 0;
+
+        &:hover {
+          background-color: ${(props) => props.styleCalendar?.color || props.theme.palette?.main.one || "#343aa"};
+          border-radius: 0;
+        }
       }
 
       &--range-end {
@@ -150,7 +163,8 @@ export const DatePickerWrapper = styled.div<RangeDatePickerProps>`
         color: white;
 
         &:hover {
-          background-color: ${(props) => props.styleCalendar?.color || props.theme.palette?.main.one || "#0068B6FF"};
+          background-color: ${(props) => props.styleCalendar?.color || props.theme.palette?.main.one || "#343aa"};
+          border-radius: 0;
         }
       }
   }
