@@ -19,13 +19,15 @@ export default {
       control: {
         type: "select",
       },
+      defaultValue: DateFormat.DD_MM_YYYY,
     },
     styleCalendar: {
       defaultValue: {
-        color: "#000",
-        backgroundColor: "#343aa",
+        color: "#fff",
+        backgroundColor: "#0C3E66",
         border: "none",
-        borderRadius: "0.7rem",
+        borderWidth: "0",
+        borderRadius: "",
         width: "300px",
         alignItems: "center",
         justifyContent: "center",
