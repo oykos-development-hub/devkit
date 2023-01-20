@@ -1,7 +1,11 @@
+import { Button as ButtonComponent } from "./components/button";
 import { Loader as LoaderComponent } from "./components/loader";
 import { Input as InputComponent } from "./components/input";
-import { Pin as PinComponent } from "./components/pin";
+import { Typography as TypographyComponent } from "./components/typography";
 
+export const Button = ButtonComponent;
 export const Loader = LoaderComponent;
 export const Input = InputComponent;
-export const Pin = PinComponent;
+export const Typography = TypographyComponent;
+
+export * from "./components/icon";

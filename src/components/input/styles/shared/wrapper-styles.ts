@@ -1,23 +1,24 @@
 import { css } from "styled-components";
-
 import { InputProps } from "../../types";
-
-import { errorColor, basicColor, hoverColor } from "./colors";
+import { errorColor, basicColor, hoverColor, confirmedColor } from "./colors";
 import { inputStyles } from "./input-styles";
+import { Theme } from "../../../../shared/theme";
 
 export const wrapperStyles = css<InputProps>`
-  width: ${(props) => (props.fullWidth ? "100%" : props.width || "400px")};
+  font-size: ${(props) => props.style?.fontSize || "16px"};
+  font-family: ${(props) => props.style?.fontFamily || props.theme?.fontFamily?.one || Theme.fontFamily?.one};
+  margin: ${(props) => props.style?.margin || "0em"};
   min-width: ${(props) => (props.label ? "200px" : "3em")};
   padding: ${(props) => `${props.label ? "1.75em" : 0} 0 ${props.error ? "1.25em" : 0} 0`};
-  margin: ${(props) => props.margin || "0em"};
-  font-size: ${(props) => props.fontSize || "16px"};
+  width: ${(props) => (props.fullWidth ? "100%" : props.style?.width || "400px")};
+  color: ${(props) => (props.error ? errorColor(props) : props.confirmed ? confirmedColor(props) : basicColor(props))};
 
   & * {
     font-size: 1em;
     line-height: 1;
   }
 
-  & #input-content-wrapper {
+  & .input-content-wrapper {
     position: relative;
     display: flex;
   }
@@ -37,6 +38,7 @@ export const wrapperStyles = css<InputProps>`
   & #input-left-icon-wrapper {
     left: ${(props) => (props.variant === "standard" ? 0 : "0.75em")};
   }
+
   & #input-right-icon-wrapper {
     right: ${(props) => (props.variant === "standard" ? 0 : "0.75em")};
   }

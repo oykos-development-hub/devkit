@@ -12,6 +12,7 @@ var __assign = (this && this.__assign) || function () {
 import React from "react";
 import { Pin } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
+import { InputTypes } from "../input/types";
 export default {
     title: "Components/PIN input",
     component: Pin,
@@ -34,22 +35,22 @@ var Template = function (args) { return (React.createElement(StoryWrapper, null,
     React.createElement(Pin, __assign({}, args)))); };
 export var PINPasswordStandard = Template.bind({});
 PINPasswordStandard.args = {
-    type: "password",
+    type: InputTypes.password,
     variant: "standard",
 };
 export var PINPasswordOutlined = Template.bind({});
 PINPasswordOutlined.args = {
-    type: "password",
+    type: InputTypes.password,
     variant: "outlined",
 };
 export var PINNumericStandard = Template.bind({});
 PINNumericStandard.args = {
-    type: "numeric",
+    type: InputTypes.number,
     variant: "standard",
 };
 export var PINNumericOutlined = Template.bind({});
 PINNumericOutlined.args = {
-    type: "numeric",
+    type: InputTypes.number,
     variant: "outlined",
 };
 //# sourceMappingURL=index.stories.js.map

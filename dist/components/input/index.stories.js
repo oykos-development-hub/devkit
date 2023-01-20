@@ -12,6 +12,7 @@ var __assign = (this && this.__assign) || function () {
 import React from "react";
 import { Input } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
+import { InputVariants } from "./types";
 import { Theme } from "../../shared/theme";
 export default {
     title: "Components/Input",
@@ -20,7 +21,7 @@ export default {
         variant: {
             control: {
                 type: "radio",
-                options: ["standard", "outlined"],
+                options: [InputVariants.standard, InputVariants.outlined],
             },
         },
         label: {
@@ -28,7 +29,17 @@ export default {
                 type: "text",
             },
         },
-        fontSize: {
+        id: {
+            control: {
+                type: "text",
+            },
+        },
+        name: {
+            control: {
+                type: "text",
+            },
+        },
+        value: {
             control: {
                 type: "text",
             },
@@ -43,7 +54,12 @@ export default {
                 type: "text",
             },
         },
-        width: {
+        pattern: {
+            control: {
+                type: "text",
+            },
+        },
+        maxLength: {
             control: {
                 type: "text",
             },
@@ -51,26 +67,6 @@ export default {
         fullWidth: {
             control: {
                 type: "boolean",
-            },
-        },
-        height: {
-            control: {
-                type: "text",
-            },
-        },
-        margin: {
-            control: {
-                type: "text",
-            },
-        },
-        borderColor: {
-            control: {
-                type: "text",
-            },
-        },
-        borderRadius: {
-            control: {
-                type: "text",
             },
         },
         error: {
@@ -88,6 +84,11 @@ export default {
                 type: "boolean",
             },
         },
+        confirmed: {
+            control: {
+                type: "boolean",
+            },
+        },
         textarea: {
             control: {
                 type: "boolean",
@@ -95,12 +96,36 @@ export default {
         },
         iconLeft: {
             control: {
-                type: "boolean",
+                type: "object",
             },
         },
         iconRight: {
             control: {
-                type: "boolean",
+                type: "object",
+            },
+        },
+        clear: {
+            defaultValue: function () { return console.log("Clear function"); },
+        },
+        onChange: {
+            defaultValue: function () { return console.log("Change function"); },
+        },
+        onFocus: {
+            defaultValue: function () { return console.log("Focus function"); },
+        },
+        onBlur: {
+            defaultValue: function () { return console.log("Blur function"); },
+        },
+        style: {
+            defaultValue: {
+                width: "fit-content",
+                height: "fit-content",
+                padding: "1em 2em",
+                margin: "0em",
+                borderRadius: "1em",
+                borderWidth: "1px",
+                gap: "0.5em",
+                borderColor: "#333",
             },
         },
         theme: {
@@ -114,44 +139,44 @@ var Template = function (args) { return (React.createElement(StoryWrapper, null,
     React.createElement(Input, __assign({}, args)))); };
 export var StandardInputDefault = Template.bind({});
 StandardInputDefault.args = {
-    label: "Input Label*",
-    placeholder: "placeholder...",
-    variant: "standard",
+    label: "StandardInputDefault",
+    placeholder: "Placeholder...",
+    variant: InputVariants.standard,
 };
 export var StandardInputThemed = Template.bind({});
 StandardInputThemed.args = {
-    label: "Input Label*",
-    placeholder: "placeholder...",
-    variant: "standard",
+    label: "StandardInputThemed",
+    placeholder: "Placeholder...",
+    variant: InputVariants.standard,
     theme: Theme,
 };
 export var OutlinedInputDefault = Template.bind({});
 OutlinedInputDefault.args = {
-    label: "Input Label*",
-    placeholder: "placeholder...",
-    variant: "outlined",
+    label: "OutlinedInputDefault",
+    placeholder: "Placeholder...",
+    variant: InputVariants.outlined,
 };
 export var OutlinedInputThemed = Template.bind({});
 OutlinedInputThemed.args = {
-    label: "Input Label*",
-    placeholder: "placeholder...",
-    variant: "outlined",
+    label: "OutlinedInputThemed",
+    placeholder: "Placeholder...",
+    variant: InputVariants.outlined,
     theme: Theme,
 };
 export var WithError = Template.bind({});
 WithError.args = {
-    label: "Input Label*",
-    placeholder: "placeholder...",
-    variant: "standard",
+    label: "WithError",
+    placeholder: "Placeholder...",
+    variant: InputVariants.standard,
     error: "This field is required",
     iconRight: (React.createElement("svg", { width: "20", height: "20", fill: "red", viewBox: "0 0 20 20" },
         React.createElement("path", { fill: "red", d: "M10 4a1 1 0 011 1v6a1 1 0 11-2 0V5a1 1 0 011-1zM10 14a1 1 0 100 2 1 1 0 000-2z" }))),
 };
 export var Search = Template.bind({});
 Search.args = {
-    label: "Input Label*",
-    placeholder: "placeholder...",
-    variant: "outlined",
+    label: "Search",
+    placeholder: "Placeholder...",
+    variant: InputVariants.outlined,
     iconLeft: (React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", width: "16", height: "16", fill: "grey", viewBox: "0 0 20 20" },
         React.createElement("path", { fill: "grey", fillRule: "evenodd", d: "M14.869 13.457A8.001 8.001 0 002.893 2.893 8 8 0 0013.457 14.87l.043.045 4.242 4.243a1 1 0 001.414-1.415L14.914 13.5a1.116 1.116 0 00-.045-.043zm-2.077-9.15a6 6 0 11-8.485 8.486 6 6 0 018.485-8.486z", clipRule: "evenodd" }))),
     search: true,
@@ -160,9 +185,9 @@ Search.args = {
 };
 export var Confirmed = Template.bind({});
 Confirmed.args = {
-    label: "Input Label*",
-    placeholder: "placeholder...",
-    variant: "outlined",
+    label: "Confirmed",
+    placeholder: "Placeholder...",
+    variant: InputVariants.outlined,
     confirmed: true,
     iconRight: (React.createElement("svg", { width: "16", height: "16", fill: "#7CFC00", viewBox: "0 0 17 13" },
         React.createElement("path", { fill: "#7CFC00", d: "M5.414 9.586l-4-4L0 7l5.414 5.414 11-11L15 0 5.414 9.586z" }))),

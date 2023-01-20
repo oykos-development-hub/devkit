@@ -5,8 +5,7 @@ import { wrapperStyles } from "./shared/wrapper-styles";
 
 export const StyledMainWrapper = styled.div<InputProps>`
   ${wrapperStyles}
-
-  & #input-content-wrapper:after {
+  & .input-content-wrapper:after {
     content: "";
     box-sizing: border-box;
     position: absolute;
@@ -20,7 +19,7 @@ export const StyledMainWrapper = styled.div<InputProps>`
     transition: transform 0.3s;
   }
 
-  & #input-content-wrapper:focus-within:after {
+  & .input-content-wrapper:focus-within:after {
     transform: scale(1, 1);
     transition: all 0.3s;
   }

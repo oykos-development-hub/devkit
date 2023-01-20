@@ -1,66 +1,52 @@
-import React, { ChangeEvent, useState } from "react";
-
-import { InputProps } from "./types";
+import React, { ChangeEvent, ReactNode, useState } from "react";
+import { InputProps, InputTypes, InputVariants, InputWrapperProps } from "./types";
 import { StyledMainWrapper as Outlined } from "./styles/outlined";
 import { StyledMainWrapper as Standard } from "./styles/standard";
+import { DefaultTheme } from "styled-components";
 
-const Wrapper = (props: InputProps) => {
-  const variant = props.variant ?? "outlined";
+const Wrapper = (props: InputWrapperProps) => {
+  const variant = props.variant ?? InputVariants.standard;
+  const wrapperProps = {
+    variant: props.variant,
+    type: props.type,
+    error: props.error,
+    errorColor: props.errorColor,
+    fullWidth: props.fullWidth,
+    disabled: props.disabled,
+    textarea: props.textarea,
+    search: props.search,
+    confirmed: props.confirmed,
+    iconLeft: props.iconLeft,
+    iconRight: props.iconRight,
+    theme: props.theme,
+    style: props.style,
+    children: props.children,
+  };
 
-  return variant === "outlined" ? <Outlined {...props} /> : <Standard {...props} />;
+  return variant === InputVariants.outlined ? <Outlined {...wrapperProps} /> : <Standard {...wrapperProps} />;
 };
 
 export const Input = ({
-  variant,
-  type = "text",
-  onChange,
-  onBlur,
-  onFocus,
-  placeholder = "",
-  name,
-  id,
-  value,
-  pattern,
-  maxLength,
-  inputMode,
-  inputRef,
+  variant = InputVariants.standard,
+  type = InputTypes.text,
   ...props
 }: InputProps): React.ReactElement => {
   const [showClearButton, setShowClearButton] = useState(false);
 
-  const changeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    if (props.search) setShowClearButton(!!event.target.value.length);
-
-    if (onChange) onChange(event);
-  };
-
-  const textfieldProps = {
-    onBlur,
-    onFocus,
-    placeholder,
-    name,
-    disabled: props.disabled,
-    id,
-    value,
-    maxLength,
+  const changeHandler = (event: ChangeEvent<any>) => {
+    if (props?.search) setShowClearButton(!!event?.target?.value?.length);
+    if (props?.onChange) props.onChange(event);
   };
 
   return (
     <Wrapper {...props} variant={variant}>
-      <div id="input-content-wrapper">
+      <div className="input-content-wrapper">
         <label>{props.label}</label>
 
-        {props.textarea ? (
-          <textarea {...textfieldProps} onChange={onChange} />
+        {props?.textarea ? (
+          <textarea {...props} ref={props.inputRef} onChange={changeHandler} />
         ) : (
-          <input
-            type={type}
-            ref={inputRef}
-            inputMode={inputMode}
-            pattern={pattern}
-            onChange={changeHandler}
-            {...textfieldProps}
-          />
+          <input {...props} ref={props.inputRef} onChange={changeHandler} />
         )}
 
         {props.iconLeft && !props.textarea && <div id="input-left-icon-wrapper">{props.iconLeft}</div>}

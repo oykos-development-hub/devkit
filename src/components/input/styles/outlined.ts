@@ -6,12 +6,12 @@ import { wrapperStyles } from "./shared/wrapper-styles";
 export const StyledMainWrapper = styled.div<InputProps>`
   ${wrapperStyles}
 
-  & input {
-    height: ${(props) => props.height || (props.textarea ? "6em" : "3em")};
+  & input, & textarea {
+    height: ${(props) => props.style?.height || (props.textarea ? "6em" : "3em")};
     padding-left: ${(props) => (!props.textarea ? (props.iconLeft ? "3em" : "1em") : "1em")};
     padding-right: ${(props) => (!props.textarea ? (props.iconLeft ? "3em" : "1em") : "1em")};
     border-width: ${(props) => props.theme?.borderWidth?.xs || "1px"};
-    border-radius: ${(props) => props.borderRadius || props.theme?.borderRadius?.md || "0.5em"};
+    border-radius: ${(props) => props.style?.borderRadius || props.theme?.borderRadius?.md || "0.5em"};
 
     &:focus {
       border-width: ${(props) => props.theme?.borderWidth?.sm || "2px"};

@@ -1,0 +1,9 @@
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+import styled from "styled-components";
+import { shared, disabledColor, primaryColor } from "./shared";
+export var StyledPrimaryButton = styled.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  ", ";\n  background-color: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &:hover {\n    background-color: transparent;\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    color: ", ";\n    border-color: ", ";\n  }\n"], ["\n  ", ";\n  background-color: ", ";\n  border-color: ", ";\n  color: ", ";\n\n  &:hover {\n    background-color: transparent;\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    color: ", ";\n    border-color: ", ";\n  }\n"])), shared, function (props) { return primaryColor(props); }, function (props) { return primaryColor(props); }, function (props) { var _a, _b; return ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.light.one) || "white"; }, function (props) { return primaryColor(props); }, function (props) { return disabledColor(props); }, function (props) { var _a, _b; return ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.light.one) || "white"; }, function (props) { return disabledColor(props); });
+var templateObject_1;
+//# sourceMappingURL=primary.js.map

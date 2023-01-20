@@ -3,12 +3,13 @@ import { Input } from "../input";
 import { StyledMainWrapper } from "./styles";
 
 import { IPinCode } from "./types";
+import { InputTypes } from "../input/types";
 
 const pinRefs: any = {};
 const pinPrefix = "pinRef-";
 const re = /^(\d*\.)?\d+$/;
 
-export const Pin = ({ handleInput, length = 4, type = "password", variant }: IPinCode) => {
+export const Pin = ({ handleInput, length = 4, type = InputTypes["number"], variant }: IPinCode) => {
   const [value, setValue] = useState<string[]>([]);
 
   value.forEach((e, i) => {
@@ -97,11 +98,10 @@ export const Pin = ({ handleInput, length = 4, type = "password", variant }: IPi
           id={`${i}`}
           key={i}
           value={e}
-          onChange={(ev) => handleOnChange((ev.target as HTMLInputElement).value, i)}
+          onChange={(ev: any) => handleOnChange((ev.target as HTMLInputElement).value, i)}
           disabled={(!!i && !value[i - 1]) || !!value[i + 1]}
           maxLength={length}
           inputRef={pinRefs[`${pinPrefix}${i}`]}
-          inputMode="numeric"
           pattern="[0-9]*"
         />
       ))}

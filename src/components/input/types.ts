@@ -1,37 +1,49 @@
-import { ChangeEventHandler, FocusEventHandler, ReactElement, ReactSVGElement } from "react";
+import React, { ChangeEventHandler, FocusEventHandler, FormEventHandler, ReactNode } from "react";
 import { DefaultTheme } from "styled-components";
 
-export interface InputProps {
-  variant?: "standard" | "outlined";
-  name?: string;
-  label?: string;
-  fontSize?: string;
-  type?: string;
-  placeholder?: string;
-  width?: string;
-  fullWidth?: boolean;
-  height?: string;
-  margin?: string;
-  borderColor?: string;
-  borderRadius?: string;
+export enum InputTypes {
+  text = "text",
+  number = "number",
+  password = "password",
+  tel = "tel",
+  url = "url",
+  email = "email",
+  color = "color",
+}
+
+export enum InputVariants {
+  standard = "standard",
+  outlined = "outlined",
+}
+
+export interface InputWrapperProps {
+  variant?: InputVariants | keyof typeof InputVariants;
+  type?: InputTypes | keyof typeof InputTypes;
   error?: string;
   errorColor?: string;
+  fullWidth?: boolean;
   disabled?: boolean;
   textarea?: boolean;
-  iconLeft?: ReactElement | ReactSVGElement;
-  iconRight?: ReactElement | ReactSVGElement;
-  theme?: DefaultTheme;
-  onChange?: ChangeEventHandler<any>;
-  onFocus?: FocusEventHandler;
-  onBlur?: FocusEventHandler;
-  id?: string;
-  inputRef?: React.Ref<HTMLInputElement>;
-  inputMode?: "text" | "numeric" | "none" | "tel" | "url" | "email" | "decimal";
-  value?: string;
-  maxLength?: number;
-  pattern?: string;
-  clear?: () => void;
   search?: boolean;
   confirmed?: boolean;
+  iconLeft?: ReactNode;
+  iconRight?: ReactNode;
+  theme?: DefaultTheme;
+  style?: React.CSSProperties;
   children?: React.ReactNode;
+}
+
+export interface InputProps extends InputWrapperProps {
+  value?: string | number;
+  id?: string;
+  name?: string;
+  label?: string;
+  placeholder?: string;
+  pattern?: string;
+  maxLength?: number;
+  inputRef?: React.Ref<any>;
+  clear?: (e?: any) => any;
+  onChange?: ChangeEventHandler | FormEventHandler;
+  onFocus?: FocusEventHandler;
+  onBlur?: FocusEventHandler;
 }

@@ -1,8 +1,8 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import React, { ChangeEventHandler, FocusEventHandler, FormEventHandler } from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Input } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { InputProps } from "./types";
+import { InputProps, InputVariants } from "./types";
 import { Theme } from "../../shared/theme";
 
 export default {
@@ -12,7 +12,7 @@ export default {
     variant: {
       control: {
         type: "radio",
-        options: ["standard", "outlined"],
+        options: [InputVariants.standard, InputVariants.outlined],
       },
     },
     label: {
@@ -20,7 +20,17 @@ export default {
         type: "text",
       },
     },
-    fontSize: {
+    id: {
+      control: {
+        type: "text",
+      },
+    },
+    name: {
+      control: {
+        type: "text",
+      },
+    },
+    value: {
       control: {
         type: "text",
       },
@@ -35,7 +45,12 @@ export default {
         type: "text",
       },
     },
-    width: {
+    pattern: {
+      control: {
+        type: "text",
+      },
+    },
+    maxLength: {
       control: {
         type: "text",
       },
@@ -43,26 +58,6 @@ export default {
     fullWidth: {
       control: {
         type: "boolean",
-      },
-    },
-    height: {
-      control: {
-        type: "text",
-      },
-    },
-    margin: {
-      control: {
-        type: "text",
-      },
-    },
-    borderColor: {
-      control: {
-        type: "text",
-      },
-    },
-    borderRadius: {
-      control: {
-        type: "text",
       },
     },
     error: {
@@ -80,6 +75,11 @@ export default {
         type: "boolean",
       },
     },
+    confirmed: {
+      control: {
+        type: "boolean",
+      },
+    },
     textarea: {
       control: {
         type: "boolean",
@@ -87,12 +87,36 @@ export default {
     },
     iconLeft: {
       control: {
-        type: "boolean",
+        type: "object",
       },
     },
     iconRight: {
       control: {
-        type: "boolean",
+        type: "object",
+      },
+    },
+    clear: {
+      defaultValue: () => console.log("Clear function"),
+    },
+    onChange: {
+      defaultValue: () => console.log("Change function"),
+    },
+    onFocus: {
+      defaultValue: () => console.log("Focus function"),
+    },
+    onBlur: {
+      defaultValue: () => console.log("Blur function"),
+    },
+    style: {
+      defaultValue: {
+        width: "fit-content",
+        height: "fit-content",
+        padding: "1em 2em",
+        margin: "0em",
+        borderRadius: "1em",
+        borderWidth: "1px",
+        gap: "0.5em",
+        borderColor: "#333",
       },
     },
     theme: {
@@ -112,43 +136,43 @@ const Template: ComponentStory<typeof Input> = (args: InputProps) => (
 export const StandardInputDefault = Template.bind({});
 
 StandardInputDefault.args = {
-  label: "Input Label*",
-  placeholder: "placeholder...",
-  variant: "standard",
+  label: "StandardInputDefault",
+  placeholder: "Placeholder...",
+  variant: InputVariants.standard,
 };
 
 export const StandardInputThemed = Template.bind({});
 
 StandardInputThemed.args = {
-  label: "Input Label*",
-  placeholder: "placeholder...",
-  variant: "standard",
+  label: "StandardInputThemed",
+  placeholder: "Placeholder...",
+  variant: InputVariants.standard,
   theme: Theme,
 };
 
 export const OutlinedInputDefault = Template.bind({});
 
 OutlinedInputDefault.args = {
-  label: "Input Label*",
-  placeholder: "placeholder...",
-  variant: "outlined",
+  label: "OutlinedInputDefault",
+  placeholder: "Placeholder...",
+  variant: InputVariants.outlined,
 };
 
 export const OutlinedInputThemed = Template.bind({});
 
 OutlinedInputThemed.args = {
-  label: "Input Label*",
-  placeholder: "placeholder...",
-  variant: "outlined",
+  label: "OutlinedInputThemed",
+  placeholder: "Placeholder...",
+  variant: InputVariants.outlined,
   theme: Theme,
 };
 
 export const WithError = Template.bind({});
 
 WithError.args = {
-  label: "Input Label*",
-  placeholder: "placeholder...",
-  variant: "standard",
+  label: "WithError",
+  placeholder: "Placeholder...",
+  variant: InputVariants.standard,
   error: "This field is required",
   iconRight: (
     <svg width="20" height="20" fill="red" viewBox="0 0 20 20">
@@ -160,9 +184,9 @@ WithError.args = {
 export const Search = Template.bind({});
 
 Search.args = {
-  label: "Input Label*",
-  placeholder: "placeholder...",
-  variant: "outlined",
+  label: "Search",
+  placeholder: "Placeholder...",
+  variant: InputVariants.outlined,
   iconLeft: (
     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="grey" viewBox="0 0 20 20">
       <path
@@ -188,9 +212,9 @@ Search.args = {
 export const Confirmed = Template.bind({});
 
 Confirmed.args = {
-  label: "Input Label*",
-  placeholder: "placeholder...",
-  variant: "outlined",
+  label: "Confirmed",
+  placeholder: "Placeholder...",
+  variant: InputVariants.outlined,
   confirmed: true,
   iconRight: (
     <svg width="16" height="16" fill="#7CFC00" viewBox="0 0 17 13">

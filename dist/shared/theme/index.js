@@ -29,6 +29,17 @@ export var Theme = {
         xl: "4rem",
         xxl: "7rem",
     },
+    lineHeight: {
+        xs: "0.85rem",
+        sm: "1.2rem",
+        md: "2rem",
+        lg: "3.4rem",
+        xl: "5rem",
+        xxl: "8.5rem",
+    },
+    fontFamily: {
+        one: "Rubik, sans-serif",
+    },
     palette: {
         main: {
             one: "#0068B6FF",
