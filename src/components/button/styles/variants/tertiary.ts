@@ -19,7 +19,7 @@ import {
   Sub2,
 } from "../../../typography/styles/variants";
 
-const color = (props: ButtonProps) => props.style?.color || props.theme?.palette?.dark?.two || Theme.palette.dark.two;
+const color = (props: ButtonProps) => props.style?.color || props.theme?.palette?.error500 || Theme.palette.error500;
 
 export const Tertiary = styled.button<ButtonProps>`
   ${shared};

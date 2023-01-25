@@ -1,4 +1,5 @@
 import { DefaultTheme } from "styled-components";
+import colors from "./color-types";
 
 export const Theme: DefaultTheme = {
   mediaScreenBreakpoints: {
@@ -43,38 +44,6 @@ export const Theme: DefaultTheme = {
     one: "Rubik, sans-serif",
   },
   palette: {
-    main: {
-      one: "#0068B6FF",
-      two: "#00A1E0FF",
-      three: "#00a1e0",
-      four: "#d5f1ff",
-    },
-    dark: {
-      one: "#181818",
-      two: "#212121",
-      three: "#424242",
-      four: "#616161",
-    },
-    light: {
-      one: "#fafafa",
-      two: "#f2f2f2",
-      three: "#d9d9d9",
-      four: "#9e9e9e",
-      five: "#7f7f7f",
-    },
-    important: {
-      one: "#ff0000",
-      two: "#f44336",
-      three: "#ff5722",
-      four: "#fcae53",
-      five: "#ffc107",
-    },
-    info: {
-      one: "#00b300",
-      two: "#00c47b",
-      three: "#74b560",
-      four: "#598d82",
-      five: "#31b3e5",
-    },
+    ...colors,
   },
 };

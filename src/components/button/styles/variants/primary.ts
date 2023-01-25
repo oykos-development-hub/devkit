@@ -20,10 +20,13 @@ import {
 } from "../../../typography/styles/variants";
 
 const backgroundColor = (props: ButtonProps) =>
-  props.style?.backgroundColor || props.theme?.palette?.info?.one || Theme.palette.info.one;
+  props.style?.backgroundColor || props.theme?.palette?.primary500 || Theme.palette.primary500;
 const borderColor = (props: ButtonProps) =>
-  props.style?.borderColor || props.style?.backgroundColor || props.theme?.palette?.info?.one || Theme.palette.info.one;
-const color = (props: ButtonProps) => props.style?.color || props.theme?.palette?.light?.one || Theme.palette.light.one;
+  props.style?.borderColor ||
+  props.style?.backgroundColor ||
+  props.theme?.palette?.primary500 ||
+  Theme.palette.primary500;
+const color = (props: ButtonProps) => props.style?.color || props.theme?.palette?.white || Theme.palette.white;
 
 export const Primary = styled.button<ButtonProps>`
   ${shared};

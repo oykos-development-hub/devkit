@@ -20,8 +20,8 @@ import {
 } from "../../../typography/styles/variants";
 
 const backgroundColor = (props: ButtonProps) =>
-  props.style?.backgroundColor || props.theme?.palette?.light?.one || Theme.palette.light.one;
-const color = (props: ButtonProps) => props.style?.color || props.theme?.palette?.main?.one || Theme.palette.main.one;
+  props.style?.backgroundColor || props.theme?.palette?.secondary500 || Theme.palette.secondary500;
+const color = (props: ButtonProps) => props.style?.color || props.theme?.palette?.gray700 || Theme.palette.gray700;
 
 export const Secondary = styled.button<ButtonProps>`
   ${shared};

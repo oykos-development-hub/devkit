@@ -117,5 +117,5 @@ export const Error = styled.span<TypographyProps>`
   line-height: ${(props: TypographyProps) =>
     props.style?.fontSize || props?.theme?.fontSize?.md || Theme?.fontSize?.md};
   color: ${(props: TypographyProps) =>
-    props.style?.color || props?.theme?.palette?.important?.one || Theme?.palette?.important?.one};
+    props.style?.color || props?.theme?.palette?.error500 || Theme?.palette?.error500};
 `;
