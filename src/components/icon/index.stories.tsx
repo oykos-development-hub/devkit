@@ -3,6 +3,10 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { AssignIcon, XIcon, DangerIcon, CircleCheckIcon } from "./";
 import { IconProps } from "./types";
+import EyeIcon from "./variations/EyeIcon";
+import TrashIcon from "./variations/TrashIcon";
+import ListIcon from "./variations/ListIcon";
+import UploadIcon from "./variations/UploadIcon";
 
 export default {
   title: "Components/Icons",
@@ -32,6 +36,10 @@ const Default: ComponentStory<typeof XIcon> = (args) => (
     <XIcon {...args} />
     <DangerIcon {...args} />
     <CircleCheckIcon {...args} />
+    <EyeIcon {...args} />
+    <TrashIcon {...args} />
+    <ListIcon {...args} />
+    <UploadIcon {...args} />
   </StoryWrapper>
 );
 
@@ -44,6 +52,10 @@ const Custom: ComponentStory<typeof XIcon> = (args) => (
     <XIcon {...args} />
     <DangerIcon {...args} />
     <CircleCheckIcon {...args} />
+    <EyeIcon {...args} />
+    <TrashIcon {...args} />
+    <ListIcon {...args} />
+    <UploadIcon {...args} />
   </StoryWrapper>
 );
 
