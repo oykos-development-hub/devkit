@@ -65,6 +65,6 @@ export var Typography = function (props) {
             Component = Body1;
             break;
     }
-    return (React.createElement(Component, __assign({}, componentProps), props.content));
+    return React.createElement(Component, __assign({}, componentProps), props.content);
 };
 //# sourceMappingURL=index.js.map

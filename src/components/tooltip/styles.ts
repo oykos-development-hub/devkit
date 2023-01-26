@@ -117,7 +117,7 @@ const ArrowPositions = {
 
 // styles based on current position
 const tooltipPosition = (props: TooltipProps) => TooltipPositions[props.position];
-const arrowPosition = (props: TooltipProps) => (!!props.arrow ? ArrowPositions[props.position] : null);
+const arrowPosition = (props: TooltipProps) => (props.arrow ? ArrowPositions[props.position] : null);
 
 export const StyledTooltip = styled.div<TooltipProps>`
   position: relative;
