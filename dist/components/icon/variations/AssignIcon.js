@@ -12,7 +12,7 @@ var __assign = (this && this.__assign) || function () {
 import React from "react";
 import { Path, Svg } from "../styles/shared";
 var AssignIcon = function (props) {
-    console.log('props', props);
+    console.log("props", props);
     return (React.createElement(Svg, __assign({ "data-testid": "assign-icon", viewBox: "0 0 16 16" }, props),
         React.createElement(Path, __assign({ d: "M14 2H10V0H16V6H14V2Z" }, props)),
         React.createElement(Path, __assign({ d: "M10 14H14V10H16V16H10V14Z" }, props)),
