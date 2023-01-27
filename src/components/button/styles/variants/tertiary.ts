@@ -19,12 +19,13 @@ import {
   Sub2,
 } from "../../../typography/styles/variants";
 
-const color = (props: ButtonProps) => props.style?.color || props.theme?.palette?.error500 || Theme.palette.error500;
+const backgroundColor = (props: ButtonProps) =>
+  props.style?.backgroundColor || props.theme?.palette?.error500 || Theme.palette.error500;
+const color = (props: ButtonProps) => props.style?.color || props.theme?.palette?.white || Theme.palette.white;
 
 export const Tertiary = styled.button<ButtonProps>`
   ${shared};
-  background-color: transparent;
-  border-color: transparent;
+  background-color: ${(props) => backgroundColor(props)};
   color: ${(props) => color(props)};
   padding: 0;
 

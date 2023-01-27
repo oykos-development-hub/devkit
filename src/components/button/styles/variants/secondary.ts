@@ -25,12 +25,13 @@ const color = (props: ButtonProps) => props.style?.color || props.theme?.palette
 
 export const Secondary = styled.button<ButtonProps>`
   ${shared};
-  background-color: transparent;
+  background-color: ${(props) => backgroundColor(props)};
   border-color: ${(props) => color(props)};
   color: ${(props) => color(props)};
 
   &:hover:not([disabled]) {
-    background-color: ${(props) => color(props) + " !important"};
+    border-color: ${(props) => backgroundColor(props) + " !important"};
+    background-color: transparent;
     color: ${(props) => backgroundColor(props) + " !important"};
 
     ${H1}, ${H2}, ${H3}, ${H4}, ${H5}, ${H6}, ${Sub1}, ${Sub2}, ${Body1}, ${Body2}, ${Button}, ${Caption}, ${Overline}, ${Error} {
