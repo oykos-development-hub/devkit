@@ -39,7 +39,6 @@ export default {
         height: "fit-content",
         padding: "1em 2em",
         margin: "0em",
-        borderRadius: "1em",
         borderWidth: "1px",
         gap: "0.5em",
       },

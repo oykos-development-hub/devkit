@@ -48,7 +48,6 @@ export default {
                 height: "fit-content",
                 padding: "1em 2em",
                 margin: "0em",
-                borderRadius: "1em",
                 borderWidth: "1px",
                 gap: "0.5em",
             },
@@ -59,12 +58,12 @@ var Template = function (args) { return (React.createElement(StoryWrapper, null,
     React.createElement(Button, __assign({}, args)))); };
 export var PrimaryDefault = Template.bind({});
 PrimaryDefault.args = {
-    content: (React.createElement(Typography, { content: "Primary Default", variant: TypographyVariants.button, theme: Theme })),
+    content: React.createElement(Typography, { content: "Primary Default", variant: TypographyVariants.button, theme: Theme }),
     onClick: function () { return alert("PrimaryDefault clicked!"); },
 };
 export var PrimaryCustomStyle = Template.bind({});
 PrimaryCustomStyle.args = {
-    content: (React.createElement(Typography, { content: "Primary Custom Style", variant: TypographyVariants.button })),
+    content: React.createElement(Typography, { content: "Primary Custom Style", variant: TypographyVariants.button }),
     style: {
         width: "150px",
         boxShadow: "5px 5px 2px #333",
@@ -75,19 +74,19 @@ PrimaryCustomStyle.args = {
 };
 export var PrimaryThemed = Template.bind({});
 PrimaryThemed.args = {
-    content: (React.createElement(Typography, { content: "Primary Themed", variant: TypographyVariants.button })),
+    content: React.createElement(Typography, { content: "Primary Themed", variant: TypographyVariants.button }),
     theme: Theme,
     onClick: function () { return alert("PrimaryThemed clicked!"); },
 };
 export var SecondaryDefault = Template.bind({});
 SecondaryDefault.args = {
-    content: (React.createElement(Typography, { content: "Secondary Default", variant: TypographyVariants.button })),
+    content: React.createElement(Typography, { content: "Secondary Default", variant: TypographyVariants.button }),
     variant: ButtonVariants.secondary,
     onClick: function () { return alert("SecondaryDefault clicked!"); },
 };
 export var SecondaryCustomStyle = Template.bind({});
 SecondaryCustomStyle.args = {
-    content: (React.createElement(Typography, { content: "Secondary Custom Style", variant: TypographyVariants.button })),
+    content: React.createElement(Typography, { content: "Secondary Custom Style", variant: TypographyVariants.button }),
     variant: ButtonVariants.secondary,
     style: {
         width: "150px",
@@ -100,20 +99,20 @@ SecondaryCustomStyle.args = {
 };
 export var SecondaryThemed = Template.bind({});
 SecondaryThemed.args = {
-    content: (React.createElement(Typography, { content: "Secondary Themed", variant: TypographyVariants.button })),
+    content: React.createElement(Typography, { content: "Secondary Themed", variant: TypographyVariants.button }),
     variant: ButtonVariants.secondary,
     theme: Theme,
     onClick: function () { return alert("SecondaryThemed clicked!"); },
 };
 export var TertiaryDefault = Template.bind({});
 TertiaryDefault.args = {
-    content: (React.createElement(Typography, { content: "Tertiary Default", variant: TypographyVariants.button })),
+    content: React.createElement(Typography, { content: "Tertiary Default", variant: TypographyVariants.button }),
     variant: ButtonVariants.tertiary,
     onClick: function () { return alert("TertiaryDefault clicked!"); },
 };
 export var TertiaryCustomStyle = Template.bind({});
 TertiaryCustomStyle.args = {
-    content: (React.createElement(Typography, { content: "Tertiary Custom Style", variant: TypographyVariants.button })),
+    content: React.createElement(Typography, { content: "Tertiary Custom Style", variant: TypographyVariants.button }),
     variant: ButtonVariants.tertiary,
     style: {
         width: "150px",
@@ -126,7 +125,7 @@ TertiaryCustomStyle.args = {
 };
 export var TertiaryThemed = Template.bind({});
 TertiaryThemed.args = {
-    content: (React.createElement(Typography, { content: "Tertiary Themed", variant: TypographyVariants.button })),
+    content: React.createElement(Typography, { content: "Tertiary Themed", variant: TypographyVariants.button }),
     variant: ButtonVariants.tertiary,
     theme: Theme,
     onClick: function () { return alert("TertiaryThemed clicked!"); },

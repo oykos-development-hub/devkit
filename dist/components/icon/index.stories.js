@@ -47,6 +47,6 @@ var Custom = function (args) { return (React.createElement(StoryWrapper, null,
     React.createElement(CircleCheckIcon, __assign({}, args)))); };
 export var CustomIcons = Custom.bind({});
 CustomIcons.args = {
-    size: '100px'
+    size: "100px",
 };
 //# sourceMappingURL=index.stories.js.map
