@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { TooltipProps } from "./types";
+import { TooltipProps, Positions } from "./types";
 
 // colors
 const backgroundColor = (props: TooltipProps) => (props.variant === "standard" ? "white" : "#004FFF");
@@ -116,23 +116,24 @@ const ArrowPositions = {
 };
 
 // styles based on current position
-const tooltipPosition = (props: TooltipProps) => TooltipPositions[props.position];
-const arrowPosition = (props: TooltipProps) => (props.arrow ? ArrowPositions[props.position] : null);
+const tooltipPosition = (props: TooltipProps) => TooltipPositions[Positions[props.position]];
+const arrowPosition = (props: TooltipProps) => (props.arrow ? ArrowPositions[Positions[props.position]] : null);
 
 export const StyledTooltip = styled.div<TooltipProps>`
   position: relative;
 
   #tooltip-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
     visibility: hidden;
     background-color: ${backgroundColor};
     border-radius: 0.5em;
     white-space: nowrap;
     z-index: 1;
-    text-align: center;
     padding: 0.5em 0.75em;
     position: absolute;
     box-shadow: 0px 8px 14px 3px rgba(0, 0, 0, 0.1);
-    & h6,
     & p {
       color: ${color};
     }

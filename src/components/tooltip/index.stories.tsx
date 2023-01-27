@@ -47,3 +47,9 @@ export const TooltipDefault = Template.bind({});
 TooltipDefault.args = {
   content: "This is a tooltip",
 };
+
+export const WithTitle = Template.bind({});
+WithTitle.args = {
+  title: "Tooltip title",
+  content: "This is a tooltip",
+};
