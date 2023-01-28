@@ -1,85 +1,92 @@
 import styled, { css } from "styled-components";
 import { ButtonVariants, ButtonSize } from "./types";
+import { DefaultTheme } from "../../types";
+import { Theme } from "../../shared/theme";
 
 export const Container = styled.button<{
   disabled: boolean;
   variant: ButtonVariants;
   size: ButtonSize;
-}>(
-  () =>
-    ({
-      theme: {
-        palette: { primary100, primary700, secondary700, secondary100 },
-      },
-      disabled,
-      variant,
-      size,
-    }) => {
-      const background = {
-        primary: disabled ? primary100 : primary700,
-        secondary: 0,
-        secondaryLight: secondary100,
-        primaryLight: primary100,
-        success: secondary700,
-      };
+  theme: DefaultTheme;
+}>(() => ({ theme, disabled, variant, size }) => {
+  const themeToUse = theme || Theme;
+  const { gray50, white, primary500, secondary500, gray200, error500, error100, primary800, secondary800, error800 } =
+    themeToUse.palette;
 
-      const borderColor = {
-        primary: 0,
-        secondary: disabled ? primary100 : primary700,
-        secondaryLight: secondary100,
-        primaryLight: primary100,
-        success: secondary700,
-      };
+  const background = {
+    primary: disabled ? gray200 : primary500,
+    secondary: disabled ? gray200 : secondary500,
+    tertiary: disabled ? error100 : error500,
+  };
 
-      const padding = {
-        lg: "14.5px 14px",
-        sm: "12.5px 24px",
-        xs: "8px 14.5px",
-        xxs: "5px 12px",
-      };
+  const hoverBackground = {
+    primary: primary800,
+    secondary: secondary800,
+    tertiary: error800,
+  };
 
-      return css`
-        align-items: center;
-        justify-content: center;
-        background-color: ${background[variant]};
-        border-color: ${borderColor[variant]};
-        border-width: 1px;
-        border-radius: 4px;
-        padding: ${padding[size]};
-      `;
-    },
-);
+  const borderColor = {
+    primary: disabled ? gray200 : primary500,
+    secondary: disabled ? gray200 : secondary500,
+    tertiary: disabled ? error100 : error500,
+  };
+
+  const padding = {
+    xs: "8px 14px",
+    sm: "10px 16px",
+    md: "10px 18px",
+    lg: "12px 20px",
+    xl: "16px 28px",
+  };
+
+  const hoverTextColor = {
+    primary: white,
+    secondary: gray50,
+    tertiary: white,
+  };
+
+  return css`
+    align-items: center;
+    justify-content: center;
+    background-color: ${background[variant]};
+    border: 1px solid ${borderColor[variant]};
+    border-radius: 8px;
+    padding: ${padding[size]};
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    &:hover {
+      background-color: ${hoverBackground[variant]};
+      div {
+        color: ${hoverTextColor[variant]};
+      }
+    }
+  `;
+});
 
 export const Content = styled.div<{
   disabled: boolean;
   variant: ButtonVariants;
   size: ButtonSize;
-}>(
-  ({
-    disabled,
-    theme: {
-      palette: { primary200, primary700, secondary200, primary900 },
-    },
-    size,
-    variant,
-  }) => {
-    const textColor = {
-      primary: disabled ? primary200 : "white",
-      secondary: disabled ? primary200 : primary700,
-      secondaryLight: secondary200,
-      primaryLight: primary900,
-      success: "white",
-    };
-    const fontSize = {
-      sm: "16px",
-      lg: "16px",
-      xs: "14px",
-      xxs: "12px",
-    };
+  theme: DefaultTheme;
+}>(({ disabled, theme, size, variant }) => {
+  const themeToUse = theme || Theme;
+  const { gray300, gray700, white } = themeToUse.palette;
 
-    return css`
-      color: ${textColor[variant]};
-      font-size: ${fontSize[size]};
-    `;
-  },
-);
+  const fontSize = {
+    xs: "14px",
+    sm: "14px",
+    md: "16px",
+    lg: "16px",
+    xl: "18px",
+  };
+
+  const textColor = {
+    primary: disabled ? gray300 : white,
+    secondary: disabled ? gray300 : gray700,
+    tertiary: white,
+  };
+
+  return css`
+    color: ${textColor[variant]};
+    font-size: ${fontSize[size]};
+  `;
+});
