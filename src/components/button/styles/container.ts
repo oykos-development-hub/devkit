@@ -1,14 +1,15 @@
 import styled, { css } from "styled-components";
-import { ButtonVariants, ButtonSize } from "./types";
-import { DefaultTheme } from "../../types";
-import { Theme } from "../../shared/theme";
+import { ButtonVariants, ButtonSizes } from "../types";
+import { DefaultTheme } from "../../../types";
+import { Theme } from "../../../shared/theme";
 
 export const Container = styled.button<{
   disabled: boolean;
   variant: ButtonVariants;
-  size: ButtonSize;
+  size: ButtonSizes;
   theme: DefaultTheme;
-}>(() => ({ theme, disabled, variant, size }) => {
+  style: React.CSSProperties | undefined;
+}>(() => ({ theme, disabled, variant, size, style }) => {
   const themeToUse = theme || Theme;
   const { gray50, white, primary500, secondary500, gray200, error500, error100, primary800, secondary800, error800 } =
     themeToUse.palette;
@@ -32,11 +33,11 @@ export const Container = styled.button<{
   };
 
   const padding = {
-    xs: "8px 14px",
-    sm: "10px 16px",
-    md: "10px 18px",
-    lg: "12px 20px",
-    xl: "16px 28px",
+    xs: "0.5rem 0.875rem",
+    sm: "0.625rem 1rem",
+    md: "0.625rem 1.125rem",
+    lg: "0.75rem 1.25rem",
+    xl: "1rem 1.75rem",
   };
 
   const hoverTextColor = {
@@ -48,10 +49,10 @@ export const Container = styled.button<{
   return css`
     align-items: center;
     justify-content: center;
-    background-color: ${background[variant]};
-    border: 1px solid ${borderColor[variant]};
-    border-radius: 8px;
-    padding: ${padding[size]};
+    background-color: ${style?.backgroundColor || background[variant]};
+    border: 1px solid ${style?.borderColor || borderColor[variant]};
+    border-radius: ${style?.borderRadius || themeToUse.borderRadius.lg || "0.5rem"};
+    padding: ${style?.padding || padding[size]};
     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
     &:hover {
       background-color: ${hoverBackground[variant]};
@@ -59,34 +60,5 @@ export const Container = styled.button<{
         color: ${hoverTextColor[variant]};
       }
     }
-  `;
-});
-
-export const Content = styled.div<{
-  disabled: boolean;
-  variant: ButtonVariants;
-  size: ButtonSize;
-  theme: DefaultTheme;
-}>(({ disabled, theme, size, variant }) => {
-  const themeToUse = theme || Theme;
-  const { gray300, gray700, white } = themeToUse.palette;
-
-  const fontSize = {
-    xs: "14px",
-    sm: "14px",
-    md: "16px",
-    lg: "16px",
-    xl: "18px",
-  };
-
-  const textColor = {
-    primary: disabled ? gray300 : white,
-    secondary: disabled ? gray300 : gray700,
-    tertiary: white,
-  };
-
-  return css`
-    color: ${textColor[variant]};
-    font-size: ${fontSize[size]};
   `;
 });
