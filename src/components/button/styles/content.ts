@@ -8,8 +8,8 @@ export const Content = styled.div<{
   variant: ButtonVariants;
   size: ButtonSizes;
   theme: DefaultTheme;
-  style: React.CSSProperties | undefined;
-}>(({ disabled, theme, size, variant, style }) => {
+  customStyle: React.CSSProperties | undefined;
+}>(({ disabled, theme, size, variant, customStyle }) => {
   const themeToUse = theme || Theme;
   const { gray300, gray700, white } = themeToUse.palette;
 
@@ -28,7 +28,7 @@ export const Content = styled.div<{
   };
 
   return css`
-    color: ${style?.color || textColor[variant]};
-    font-size: ${style?.fontSize || fontSize[size]};
+    color: ${customStyle?.color || textColor[variant]};
+    font-size: ${customStyle?.fontSize || fontSize[size]};
   `;
 });

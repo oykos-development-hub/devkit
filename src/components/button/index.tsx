@@ -14,7 +14,7 @@ export const Button = ({
 }: ButtonProps) => {
   return (
     <Container style={style} disabled={disabled} variant={variant} size={size} onClick={onClick} theme={theme}>
-      <Content size={size} disabled={disabled} variant={variant} theme={theme} style={style}>
+      <Content size={size} disabled={disabled} variant={variant} theme={theme} customStyle={style}>
         {content}
       </Content>
     </Container>

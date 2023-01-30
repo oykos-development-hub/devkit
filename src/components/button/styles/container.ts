@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import { ButtonVariants, ButtonSizes } from "../types";
 import { DefaultTheme } from "../../../types";
 import { Theme } from "../../../shared/theme";
+import React from "react";
 
 export const Container = styled.button<{
   disabled: boolean;
@@ -49,10 +50,10 @@ export const Container = styled.button<{
   return css`
     align-items: center;
     justify-content: center;
-    background-color: ${style?.backgroundColor || background[variant]};
-    border: 1px solid ${style?.borderColor || borderColor[variant]};
-    border-radius: ${style?.borderRadius || themeToUse.borderRadius.lg || "0.5rem"};
-    padding: ${style?.padding || padding[size]};
+    background-color: ${background[variant]};
+    border: 1px solid ${borderColor[variant]};
+    border-radius: ${themeToUse.borderRadius.lg || "0.5rem"};
+    padding: ${padding[size]};
     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
     &:hover {
       background-color: ${hoverBackground[variant]};
@@ -60,5 +61,6 @@ export const Container = styled.button<{
         color: ${hoverTextColor[variant]};
       }
     }
+    ${{ ...style }}
   `;
 });
