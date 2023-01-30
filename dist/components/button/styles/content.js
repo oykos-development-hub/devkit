@@ -5,7 +5,7 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
 import styled, { css } from "styled-components";
 import { Theme } from "../../../shared/theme";
 export var Content = styled.div(function (_a) {
-    var disabled = _a.disabled, theme = _a.theme, size = _a.size, variant = _a.variant, style = _a.style;
+    var disabled = _a.disabled, theme = _a.theme, size = _a.size, variant = _a.variant, customStyle = _a.customStyle;
     var themeToUse = theme || Theme;
     var _b = themeToUse.palette, gray300 = _b.gray300, gray700 = _b.gray700, white = _b.white;
     var fontSize = {
@@ -20,7 +20,7 @@ export var Content = styled.div(function (_a) {
         secondary: disabled ? gray300 : gray700,
         tertiary: white,
     };
-    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    color: ", ";\n    font-size: ", ";\n  "], ["\n    color: ", ";\n    font-size: ", ";\n  "])), (style === null || style === void 0 ? void 0 : style.color) || textColor[variant], (style === null || style === void 0 ? void 0 : style.fontSize) || fontSize[size]);
+    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    color: ", ";\n    font-size: ", ";\n  "], ["\n    color: ", ";\n    font-size: ", ";\n  "])), (customStyle === null || customStyle === void 0 ? void 0 : customStyle.color) || textColor[variant], (customStyle === null || customStyle === void 0 ? void 0 : customStyle.fontSize) || fontSize[size]);
 });
 var templateObject_1;
 //# sourceMappingURL=content.js.map

@@ -5,5 +5,5 @@ export declare const Content: import("styled-components").StyledComponent<"div",
     variant: ButtonVariants;
     size: ButtonSizes;
     theme: DefaultTheme;
-    style: React.CSSProperties | undefined;
+    customStyle: React.CSSProperties | undefined;
 }, never>;
