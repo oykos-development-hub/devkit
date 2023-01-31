@@ -13,8 +13,16 @@ export enum Positions {
   relative = "relative",
 }
 
+export enum IconSizes {
+  xs = "xs",
+  sm = "sm",
+  md = "md",
+  lg = "lg",
+  xl = "xl",
+}
+
 export interface IconProps {
-  size?: string;
+  size?: IconSizes;
   onClick?: (e?: React.MouseEvent<any>) => any;
   direction?: Directions | keyof typeof Directions;
   position?: Positions | keyof typeof Positions;

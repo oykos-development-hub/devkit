@@ -11,7 +11,8 @@ var __assign = (this && this.__assign) || function () {
 };
 import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { AssignIcon, XIcon, DangerIcon, CircleCheckIcon } from "./";
+import { AssignIcon, CircleCheckIcon, DangerIcon, XIcon } from "./";
+import { IconSizes } from "./types";
 export default {
     title: "Components/Icons",
     component: XIcon,
@@ -47,6 +48,6 @@ var Custom = function (args) { return (React.createElement(StoryWrapper, null,
     React.createElement(CircleCheckIcon, __assign({}, args)))); };
 export var CustomIcons = Custom.bind({});
 CustomIcons.args = {
-    size: "100px",
+    size: IconSizes.sm,
 };
 //# sourceMappingURL=index.stories.js.map

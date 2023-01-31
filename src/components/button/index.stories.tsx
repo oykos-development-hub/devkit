@@ -10,7 +10,7 @@ export default {
   title: "Components/Button",
   argTypes: {
     content: {
-      defaultValue: () => <span>Button</span>,
+      defaultValue: () => "Testiranje",
     },
     variant: {
       control: {

@@ -19,7 +19,7 @@ export default {
     title: "Components/Button",
     argTypes: {
         content: {
-            defaultValue: function () { return React.createElement("span", null, "Button"); },
+            defaultValue: function () { return "Testiranje"; },
         },
         variant: {
             control: {
