@@ -31,6 +31,48 @@ export const Theme: DefaultTheme = {
     xl: "4rem",
     xxl: "7rem",
   },
+  typographyFontSize: {
+    h1: "3.375rem",
+    h2: "2.625rem",
+    h3: "2rem",
+    h4: "1.75rem",
+    h5: "1.25rem",
+    h6: "1.125rem",
+    body: {
+      sm: "0.875rem",
+      md: "1rem",
+      lg: "1.125rem",
+    },
+    link: {
+      sm: "0.875rem",
+      md: "1rem",
+      lg: "1.125rem",
+    },
+    caption: "0.75rem",
+    helperText: "0.75rem",
+    code: "0.875rem",
+  },
+  typographyLineHeight: {
+    h1: "4rem",
+    h2: "3.125rem",
+    h3: "2.5rem",
+    h4: "2.25rem",
+    h5: "1.75rem",
+    h6: "1.625rem",
+    body: {
+      sm: "1.25rem",
+      md: "1.5rem",
+      lg: "1.625rem",
+    },
+    link: {
+      sm: "1.25rem",
+      md: "1.5rem",
+      lg: "1.625rem",
+    },
+    caption: "1rem",
+    helperText: "1rem",
+    code: "1.25rem",
+  },
   lineHeight: {
     xs: "0.85rem",
     sm: "1.2rem",
@@ -41,6 +83,8 @@ export const Theme: DefaultTheme = {
   },
   fontFamily: {
     one: "Rubik, sans-serif",
+    two: "Inter, sans-serif",
+    three: "JetBrains Mono",
   },
   palette: {
     main: {

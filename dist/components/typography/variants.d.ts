@@ -5,13 +5,20 @@ export declare enum TypographyVariants {
     h4 = "h4",
     h5 = "h5",
     h6 = "h6",
-    subtitle1 = "subtitle1",
-    subtitle2 = "subtitle2",
-    body1 = "body1",
-    body2 = "body2",
-    button = "button",
+    bodyLarge = "bodyLarge",
+    bodyMedium = "bodyMedium",
+    bodySmall = "bodySmall",
+    bodyLargeSemiBold = "bodyLargeSemiBold",
+    bodyMediumSemiBold = "bodyMediumSemiBold",
+    bodySmallSemiBold = "bodySmallSemiBold",
+    linkLarge = "linkLarge",
+    linkMedium = "linkMedium",
+    linkSmall = "linkSmall",
+    linkLargeSemiBold = "linkLargeSemiBold",
+    linkMediumSemiBold = "linkMediumSemiBold",
+    linkSmallSemiBold = "linkSmallSemiBold",
     caption = "caption",
-    overline = "overline",
-    error = "error"
+    helperText = "helperText",
+    code = "code"
 }
 export declare const VariantNames: string[];

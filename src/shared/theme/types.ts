@@ -2,7 +2,7 @@ import "styled-components";
 import { BorderRadius, BorderWidth } from "./border-types";
 import { MediaScreenBreakpoints } from "./media-types";
 import { Palette } from "./color-types";
-import { FontFamily, FontSize, LineHeight } from "./font-types";
+import { FontFamily, FontSize, LineHeight, TypographyFontSize, TypographyLineHeight } from "./font-types";
 
 export interface DefaultTheme {
   mediaScreenBreakpoints: MediaScreenBreakpoints;
@@ -21,6 +21,8 @@ declare module "styled-components" {
     borderWidth: BorderWidth;
     palette: Palette;
     fontSize: FontSize;
+    typographyFontSize: TypographyFontSize;
+    typographyLineHeight: TypographyLineHeight;
     lineHeight: LineHeight;
     fontFamily: FontFamily;
   }

@@ -63,8 +63,8 @@ HeadlineH1Custom.args = {
     style: {
         color: "#51a322",
         margin: "5rem 2rem",
-        letterSpacing: "3px"
-    }
+        letterSpacing: "3px",
+    },
 };
 export var HeadlineH2 = Template.bind({});
 HeadlineH2.args = {
@@ -96,34 +96,76 @@ HeadlineH6.args = {
     content: "HeadlineH6",
     theme: Theme,
 };
-export var Subtitle1 = Template.bind({});
-Subtitle1.args = {
-    variant: TypographyVariants.subtitle1,
-    content: "Subtitle1",
+export var BodyLarge = Template.bind({});
+BodyLarge.args = {
+    variant: TypographyVariants.bodyLarge,
+    content: "Body Large",
     theme: Theme,
 };
-export var Subtitle2 = Template.bind({});
-Subtitle2.args = {
-    variant: TypographyVariants.subtitle2,
-    content: "Subtitle2",
+export var BodyMedium = Template.bind({});
+BodyMedium.args = {
+    variant: TypographyVariants.bodyMedium,
+    content: "Body Medium",
     theme: Theme,
 };
-export var Body1 = Template.bind({});
-Body1.args = {
-    variant: TypographyVariants.body1,
-    content: "Body1",
+export var BodySmall = Template.bind({});
+BodySmall.args = {
+    variant: TypographyVariants.bodySmall,
+    content: "Body Small",
     theme: Theme,
 };
-export var Body2 = Template.bind({});
-Body2.args = {
-    variant: TypographyVariants.body2,
-    content: "Body2",
+export var BodyLargeSemiBold = Template.bind({});
+BodyLargeSemiBold.args = {
+    variant: TypographyVariants.bodyLargeSemiBold,
+    content: "Body Large, semi bold",
     theme: Theme,
 };
-export var Button = Template.bind({});
-Button.args = {
-    variant: TypographyVariants.button,
-    content: "Button",
+export var BodyMediumSemiBold = Template.bind({});
+BodyMediumSemiBold.args = {
+    variant: TypographyVariants.bodyMediumSemiBold,
+    content: "Body Medium, semi bold",
+    theme: Theme,
+};
+export var BodySmallSemiBold = Template.bind({});
+BodySmallSemiBold.args = {
+    variant: TypographyVariants.bodySmallSemiBold,
+    content: "Body Small, semi bold",
+    theme: Theme,
+};
+export var LinkLarge = Template.bind({});
+LinkLarge.args = {
+    variant: TypographyVariants.linkLarge,
+    content: "Link Large",
+    theme: Theme,
+};
+export var LinkMedium = Template.bind({});
+LinkMedium.args = {
+    variant: TypographyVariants.linkMedium,
+    content: "Link Medium",
+    theme: Theme,
+};
+export var LinkSmall = Template.bind({});
+LinkSmall.args = {
+    variant: TypographyVariants.linkSmall,
+    content: "Link Small",
+    theme: Theme,
+};
+export var LinkLargeSemiBold = Template.bind({});
+LinkLargeSemiBold.args = {
+    variant: TypographyVariants.linkLargeSemiBold,
+    content: "Link Large, semi bold",
+    theme: Theme,
+};
+export var LinkMediumSemiBold = Template.bind({});
+LinkMediumSemiBold.args = {
+    variant: TypographyVariants.linkMediumSemiBold,
+    content: "Link Medium, semi bold",
+    theme: Theme,
+};
+export var LinkSmallSemiBold = Template.bind({});
+LinkSmallSemiBold.args = {
+    variant: TypographyVariants.linkSmallSemiBold,
+    content: "Link Small, semi bold",
     theme: Theme,
 };
 export var Caption = Template.bind({});
@@ -132,10 +174,16 @@ Caption.args = {
     content: "Caption",
     theme: Theme,
 };
-export var Overline = Template.bind({});
-Overline.args = {
-    variant: TypographyVariants.overline,
-    content: "Overline",
+export var HelperText = Template.bind({});
+HelperText.args = {
+    variant: TypographyVariants.helperText,
+    content: "Helper Text",
+    theme: Theme,
+};
+export var Code = Template.bind({});
+Code.args = {
+    variant: TypographyVariants.code,
+    content: "Code",
     theme: Theme,
 };
 //# sourceMappingURL=index.stories.js.map

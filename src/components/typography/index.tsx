@@ -1,9 +1,31 @@
 import React from "react";
 import { TypographyProps, TypographyVariants } from "./types";
-import { Body1, Body2, Button, Caption, Error, H1, H2, H3, H4, H5, H6, Overline, Sub1, Sub2 } from "./styles/variants";
+import {
+  BodyLarge,
+  BodyLargeSemiBold,
+  BodyMedium,
+  BodyMediumSemiBold,
+  BodySmall,
+  BodySmallSemiBold,
+  Caption,
+  Code,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  HelperText,
+  LinkLarge,
+  LinkLargeSemiBold,
+  LinkMedium,
+  LinkMediumSemiBold,
+  LinkSmall,
+  LinkSmallSemiBold,
+} from "./styles/variants";
 
 export const Typography = (props: TypographyProps): React.ReactElement => {
-  const variant = props.variant ?? TypographyVariants.body2;
+  const variant = props.variant ?? TypographyVariants.bodyMedium;
 
   switch (variant) {
     case "h1":
@@ -18,23 +40,37 @@ export const Typography = (props: TypographyProps): React.ReactElement => {
       return <H5 {...props} />;
     case "h6":
       return <H6 {...props} />;
-    case "subtitle1":
-      return <Sub1 {...props} />;
-    case "subtitle2":
-      return <Sub2 {...props} />;
-    case "body1":
-      return <Body1 {...props} />;
-    case "body2":
-      return <Body2 {...props} />;
-    case "button":
-      return <Button {...props} />;
+    case "bodyLarge":
+      return <BodyLarge {...props} />;
+    case "bodyMedium":
+      return <BodyMedium {...props} />;
+    case "bodySmall":
+      return <BodySmall {...props} />;
+    case "bodyLargeSemiBold":
+      return <BodyLargeSemiBold {...props} />;
+    case "bodyMediumSemiBold":
+      return <BodyMediumSemiBold {...props} />;
+    case "bodySmallSemiBold":
+      return <BodySmallSemiBold {...props} />;
+    case "linkLarge":
+      return <LinkLarge {...props} />;
+    case "linkMedium":
+      return <LinkMedium {...props} />;
+    case "linkSmall":
+      return <LinkSmall {...props} />;
+    case "linkLargeSemiBold":
+      return <LinkLargeSemiBold {...props} />;
+    case "linkMediumSemiBold":
+      return <LinkMediumSemiBold {...props} />;
+    case "linkSmallSemiBold":
+      return <LinkSmallSemiBold {...props} />;
     case "caption":
       return <Caption {...props} />;
-    case "overline":
-      return <Overline {...props} />;
-    case "error":
-      return <Error {...props} />;
+    case "helperText":
+      return <HelperText {...props} />;
+    case "code":
+      return <Code {...props} />;
     default:
-      return <Body1 {...props} />;
+      return <H1 {...props} />;
   }
 };
