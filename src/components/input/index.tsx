@@ -25,6 +25,7 @@ export const Input = ({
     onBlur,
     onFocus,
     id,
+    inputRef,
     ...props
 }: InputProps): React.ReactElement => {
     const [leftElementWidth, setLeftElementWidth] = useState(0);
@@ -66,7 +67,7 @@ export const Input = ({
                 {textarea ? (
                     <Textarea {...fieldProps} theme={theme || Theme} />
                 ) : (
-                    <StyledInput {...fieldProps} {...props} theme={theme || Theme} />
+                    <StyledInput {...fieldProps} {...props} theme={theme || Theme} ref={inputRef} />
                 )}
 
                 {leftContent && <LeftElement ref={leftElementRef}>{leftContent}</LeftElement>}
