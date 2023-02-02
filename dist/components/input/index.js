@@ -26,6 +26,7 @@ import { StyledInput, Textarea } from "./styles/input";
 import { Typography } from "../typography";
 import { LeftElement } from "./styles/leftElement";
 import { RightElement } from "./styles/rightElement";
+import { Theme } from "../../shared/theme";
 export var Input = function (_a) {
     var name = _a.name, value = _a.value, theme = _a.theme, style = _a.style, disabled = _a.disabled, label = _a.label, textarea = _a.textarea, leftContent = _a.leftContent, rightContent = _a.rightContent, error = _a.error, hint = _a.hint, placeholder = _a.placeholder, onChange = _a.onChange, onBlur = _a.onBlur, onFocus = _a.onFocus, id = _a.id, props = __rest(_a, ["name", "value", "theme", "style", "disabled", "label", "textarea", "leftContent", "rightContent", "error", "hint", "placeholder", "onChange", "onBlur", "onFocus", "id"]);
     var _b = useState(0), leftElementWidth = _b[0], setLeftElementWidth = _b[1];
@@ -52,13 +53,12 @@ export var Input = function (_a) {
         placeholder: placeholder,
         value: value,
         error: error,
-        theme: theme,
         style: __assign({ paddingLeft: "".concat(leftContent ? "".concat(leftElementWidth, "px") : "1em"), paddingRight: "".concat(rightContent ? "".concat(rightElementWidth, "px") : "1em") }, style),
     };
-    return (React.createElement(Container, { theme: theme, label: label, error: error, hint: hint },
+    return (React.createElement(Container, { theme: theme || Theme, label: label, error: error, hint: hint },
         React.createElement("div", null,
             label && React.createElement(Typography, { variant: "label", content: label }),
-            textarea ? React.createElement(Textarea, __assign({}, fieldProps)) : React.createElement(StyledInput, __assign({}, fieldProps, props)),
+            textarea ? (React.createElement(Textarea, __assign({}, fieldProps, { theme: theme || Theme }))) : (React.createElement(StyledInput, __assign({}, fieldProps, props, { theme: theme || Theme }))),
             leftContent && React.createElement(LeftElement, { ref: leftElementRef }, leftContent),
             rightContent && React.createElement(RightElement, { ref: rightElementRef }, rightContent),
             error && !disabled && React.createElement(Typography, { variant: "body1", content: error }),
