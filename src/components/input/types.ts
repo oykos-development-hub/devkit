@@ -1,4 +1,4 @@
-import { ChangeEventHandler, FocusEventHandler, ReactElement, ReactSVGElement } from "react";
+import { ChangeEventHandler, FocusEventHandler, ReactElement } from "react";
 import { CSSProperties, DefaultTheme } from "styled-components";
 
 export interface InputProps {
