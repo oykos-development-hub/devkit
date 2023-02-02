@@ -3,10 +3,9 @@ import { Theme } from "../../../shared/theme";
 import { InputProps } from "../types";
 
 export const Container = styled.div(() => ({ label, error, theme, hint }: InputProps) => {
-    const themeToUse = theme || Theme;
-    const { error500, gray700 } = themeToUse.palette;
+  const { error500, gray700 } = theme!.palette;
 
-    return css`
+  return css`
     width: 100%;
     min-width: ${label ? "200px" : "3em"};
     padding: ${label ? "1.75em" : 0} 0 ${error || hint ? "1.75em" : 0} 0;
