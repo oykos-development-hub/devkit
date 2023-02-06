@@ -39,7 +39,18 @@ export var Container = styled.div(function () { return function (_a) {
         error: white,
         info: white,
     };
-    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    font-family: ", ";\n    background-color: ", ";\n    color: ", ";\n    display: flex;\n    align-content: center;\n    border-radius: 0.5rem;\n    padding: ", ";\n    gap: 0.75rem;\n    z-index: 999;\n    flex: none;\n    order: 0;\n    flex-grow: 1;\n\n    ", "\n  "], ["\n    font-family: ", ";\n    background-color: ", ";\n    color: ", ";\n    display: flex;\n    align-content: center;\n    border-radius: 0.5rem;\n    padding: ", ";\n    gap: 0.75rem;\n    z-index: 999;\n    flex: none;\n    order: 0;\n    flex-grow: 1;\n\n    ", "\n  "])), ((_b = themeToUse.fontFamily) === null || _b === void 0 ? void 0 : _b.one) || "sans-serif", background[variant], (style === null || style === void 0 ? void 0 : style.color) || textColor[variant], padding[size], __assign({}, style));
+    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    flex: none;\n    align-items: center;\n    max-width: 828px;\n    max-height: fit-content;\n    flex-grow: 1;\n    font-family: ", ";\n    background-color: ", ";\n    color: ", " !important;\n    border-radius: 0.5rem;\n    padding: ", ";\n    gap: 0.75rem;\n    z-index: 999;\n\n    & p,\n    h1,\n    h2,\n    h3,\n    h4,\n    h5,\n    h6,\n    span,\n    label {\n      color: ", ";\n    }\n\n    & svg path {\n      fill: ", " !important;\n      color: ", " !important;\n    }\n\n    ", "\n  "], ["\n    flex: none;\n    align-items: center;\n    max-width: 828px;\n    max-height: fit-content;\n    flex-grow: 1;\n    font-family: ", ";\n    background-color: ", ";\n    color: ", " !important;\n    border-radius: 0.5rem;\n    padding: ", ";\n    gap: 0.75rem;\n    z-index: 999;\n\n    & p,\n    h1,\n    h2,\n    h3,\n    h4,\n    h5,\n    h6,\n    span,\n    label {\n      color: ", ";\n    }\n\n    & svg path {\n      fill: ", " !important;\n      color: ", " !important;\n    }\n\n    ", "\n  "])), ((_b = themeToUse.fontFamily) === null || _b === void 0 ? void 0 : _b.one) || "sans-serif", background[variant], (style === null || style === void 0 ? void 0 : style.color) || textColor[variant], padding[size], (style === null || style === void 0 ? void 0 : style.color) || textColor[variant], (style === null || style === void 0 ? void 0 : style.color) || textColor[variant], (style === null || style === void 0 ? void 0 : style.color) || textColor[variant], __assign({}, style));
 }; });
-var templateObject_1;
+export var Row = styled.div(function () { return function (_a) {
+    var size = _a.size;
+    var padding = {
+        xs: "0.5rem 0.875rem",
+        sm: "0.625rem 1rem",
+        md: "0.625rem 1.125rem",
+        lg: "0.75rem 1.25rem",
+        xl: "1rem 1.75rem",
+    };
+    return css(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n    display: flex;\n    justify-content: space-between;\n    flex-direction: row;\n    align-content: flex-start;\n    order: 0;\n    flex-grow: 1;\n    word-wrap: break-word;\n    padding: ", ";\n  "], ["\n    display: flex;\n    justify-content: space-between;\n    flex-direction: row;\n    align-content: flex-start;\n    order: 0;\n    flex-grow: 1;\n    word-wrap: break-word;\n    padding: ", ";\n  "])), padding[size]);
+}; });
+var templateObject_1, templateObject_2;
 //# sourceMappingURL=container.js.map

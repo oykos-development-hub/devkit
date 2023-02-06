@@ -1,10 +1,17 @@
 import React from "react";
 import { AlertSizes, AlertVariants } from "./types";
-import { Content } from "./styles/content";
-import { Container } from "./styles/container";
+import { LeftContent, RightContent } from "./styles/content";
+import { Container, Row } from "./styles/container";
+import { XIcon } from "../icon";
+import { Typography } from "../typography";
 export var Alert = function (_a) {
-    var _b = _a.variant, variant = _b === void 0 ? AlertVariants.primary : _b, content = _a.content, additionalText = _a.additionalText, closeIcon = _a.closeIcon, _c = _a.size, size = _c === void 0 ? AlertSizes.lg : _c, style = _a.style, theme = _a.theme;
+    var _b = _a.variant, variant = _b === void 0 ? AlertVariants.success : _b, content = _a.content, additionalText = _a.additionalText, _c = _a.closeIcon, closeIcon = _c === void 0 ? true : _c, onClose = _a.onClose, _d = _a.size, size = _d === void 0 ? AlertSizes.xs : _d, style = _a.style, theme = _a.theme;
     return (React.createElement(Container, { variant: variant, size: size, style: style, theme: theme },
-        React.createElement(Content, { variant: variant, content: content, size: size, additionalText: additionalText, closeIcon: closeIcon, style: style })));
+        React.createElement(Row, { size: size },
+            React.createElement(LeftContent, { variant: variant, content: content, size: size, style: style, theme: theme }),
+            closeIcon && (React.createElement(RightContent, { style: style },
+                React.createElement(XIcon, { onClick: onClose })))),
+        additionalText && (React.createElement(Row, { size: size },
+            React.createElement(Typography, { variant: "p", content: additionalText })))));
 };
 //# sourceMappingURL=index.js.map

@@ -7,3 +7,6 @@ export declare const Container: import("styled-components").StyledComponent<"div
     theme: DefaultTheme;
     style: React.CSSProperties | undefined;
 }, never>;
+export declare const Row: import("styled-components").StyledComponent<"div", DefaultTheme, {
+    size: AlertSizes;
+}, never>;

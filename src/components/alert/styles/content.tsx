@@ -1,35 +1,61 @@
 import { AlertProps, AlertSizes, AlertVariants } from "../types";
 import React from "react";
-import { IconContainer } from "../styles/icon-container";
+import { LeftIconContent } from "./icon-content";
 import { XIcon } from "../../icon";
 import { Typography } from "../../typography";
 import styled, { css } from "styled-components";
 import { DefaultTheme } from "../../../shared/theme/types";
-import { Theme } from "../../../shared/theme";
 
 const StyledContent = styled.div`
   display: flex;
-  justify-content: space-between;
-  padding: 0.5rem;
+  order: 0;
+  flex-direction: row;
+  padding: 0;
+  gap: 1rem;
 `;
 
-export const Content: React.FC<AlertProps> = ({
-  content,
-  variant = AlertVariants.success,
-  additionalText = "",
-  closeIcon = false,
-  onClose,
-  size = AlertSizes.lg,
-  style,
-  theme,
-}) => {
+export const Content = styled.div<{
+  variant: AlertVariants;
+  closeIcon?: boolean;
+  size?: AlertSizes;
+  onClose?: (e?: React.MouseEvent<any>) => any;
+  theme?: DefaultTheme;
+  style?: React.CSSProperties | undefined;
+}>(() => ({ style }) => {
+  return css`
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    gap: 1rem;
+
+    ${{ ...style }}
+  `;
+});
+
+export const LeftContent: React.FC<AlertProps> = ({ content, variant = AlertVariants.success, size, style, theme }) => {
   return (
     <StyledContent>
-      <IconContainer variant={variant} className="left" size={size} closeIcon={closeIcon} onClose={onClose}>
-        <Typography variant={"h6"} content={content} theme={theme} style={style} />
-      </IconContainer>
-
-      {additionalText && <Typography variant={"p"} content={additionalText} />}
+      <LeftIconContent variant={variant} size={size} />
+      <Typography variant={"h6"} content={content} theme={theme} style={style} />
     </StyledContent>
   );
 };
+
+export const RightContent = styled.div<{
+  style?: React.CSSProperties | undefined;
+}>(() => ({ style }) => {
+  return css`
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0;
+    gap: 1rem;
+
+    & svg:hover {
+      cursor: pointer;
+    }
+
+    ${{ ...style }}
+  `;
+});
