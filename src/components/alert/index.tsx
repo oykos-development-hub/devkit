@@ -19,7 +19,7 @@ export const Alert: React.FC<AlertProps> = ({
   <Container variant={variant} size={size} style={style} theme={theme}>
     <Row size={size}>
       <Content style={style}>
-        <LeftIconContent variant={variant} size={size} />
+        <LeftIconContent variant={variant} />
         <Typography variant={"h6"} content={content} theme={theme} style={style} />
       </Content>
 
