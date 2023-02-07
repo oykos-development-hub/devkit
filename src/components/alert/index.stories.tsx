@@ -51,7 +51,6 @@ export const Custom = Template.bind({});
 Custom.args = {
   content: "Title",
   variant: AlertVariants.success,
-  additionalText: "Description",
   size: AlertSizes.xs,
   theme: Theme,
 };
