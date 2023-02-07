@@ -4,27 +4,27 @@ import { Content } from "./styles/content";
 import { Container, Row } from "./styles/container";
 import { XIcon } from "../icon";
 import { Typography } from "../typography";
-import { LeftIconContent } from "./styles/icon-content";
 
 export const Alert: React.FC<AlertProps> = ({
   variant = AlertVariants.success,
   content,
   additionalText,
+  icon,
   closeIcon = true,
   onClose,
-  size = AlertSizes.xs,
+  size = AlertSizes.md,
   style,
   theme,
 }) => (
   <Container variant={variant} size={size} style={style} theme={theme}>
     <Row size={size}>
-      <Content style={style}>
-        <LeftIconContent variant={variant} />
-        <Typography variant={"h6"} content={content} theme={theme} style={style} />
+      <Content style={style} size={size} theme={theme}>
+        {icon && icon}
+        <Typography content={content} theme={theme} style={style} />
       </Content>
 
       {closeIcon && (
-        <Content style={style}>
+        <Content style={style} size={size} theme={theme}>
           <XIcon onClick={onClose} />
         </Content>
       )}

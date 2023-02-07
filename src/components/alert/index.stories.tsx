@@ -4,13 +4,16 @@ import { AlertProps, AlertSizes, AlertVariants } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Alert } from "./index";
 import { Theme } from "../../shared/theme";
+import { DangerIcon } from "../icon";
 
 export default {
   component: Alert,
   title: "Example/Alert",
   argTypes: {
     content: {
-      defaultValue: () => <span>Test</span>,
+      control: {
+        type: "text",
+      },
     },
     variant: {
       control: {
@@ -51,6 +54,7 @@ export const Custom = Template.bind({});
 Custom.args = {
   content: "Title",
   variant: AlertVariants.success,
-  size: AlertSizes.xs,
+  icon: <DangerIcon />,
+  size: AlertSizes.md,
   theme: Theme,
 };

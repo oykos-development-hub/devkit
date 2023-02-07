@@ -22,6 +22,7 @@ export interface AlertProps {
   variant: AlertVariants;
   button?: JSX.Element | React.ReactNode;
   className?: string;
+  icon?: JSX.Element | React.ReactNode;
   closeIcon?: boolean;
   additionalText?: string;
   onClose?: (e?: React.MouseEvent<any>) => any;
