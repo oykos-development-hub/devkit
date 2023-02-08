@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { CSSProperties, DefaultTheme } from "styled-components";
 
-type ValueType = { value: string; label: string };
+export type ValueType = { value: string; label: string };
 
 export interface DropdownProps {
   theme: DefaultTheme;
@@ -19,7 +19,7 @@ export interface DropdownProps {
   noOptionsText?: string;
   controlIcon?: ReactElement;
   optionIcon?: ReactElement;
-  onChange?: (e: any) => void;
+  onChange?: (option: ValueType | null) => void;
   onBlur?: (e: any) => void;
   onFocus?: (e: any) => void;
 }
