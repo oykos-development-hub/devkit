@@ -3,9 +3,9 @@ import styled, { css } from "styled-components";
 import { DropdownProps } from "../types";
 
 export const StyledSelect = styled(Select)<DropdownProps>(() => ({ theme, showArrow, style, controlIcon }) => {
-  const { primary200, gray50, gray100, gray700, gray400, gray600, gray900, white } = theme!.palette;
+    const { primary200, gray50, gray100, gray700, gray400, gray600, gray900, white } = theme!.palette;
 
-  return css`
+    return css`
     width: 100%;
     height: 3em;
 

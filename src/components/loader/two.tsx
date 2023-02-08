@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${(props: LoaderProps) =>
-    props.wrapperBackgroundColor || props.theme?.palette?.secondary500 || "transparent"};
+        props.wrapperBackgroundColor || props.theme?.palette?.secondary500 || "transparent"};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -31,38 +31,38 @@ const Wrapper = styled.div`
 `;
 
 export const Two = (props: LoaderProps) => {
-  return (
-    <Wrapper {...props}>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        style={{ margin: "auto" }}
-        display="block"
-        preserveAspectRatio="xMidYMid"
-        viewBox="0 0 100 100"
-        id="loader"
-      >
-        <circle
-          cx="50"
-          cy="50"
-          r="32"
-          fill="none"
-          strokeDasharray="50.26548245743669 50.26548245743669"
-          strokeLinecap="round"
-          strokeWidth="2"
-          id="loader-ring-1"
-        />
-        <circle
-          cx="50"
-          cy="50"
-          r="23"
-          fill="none"
-          strokeDasharray="36.12831551628262 36.12831551628262"
-          strokeDashoffset="36.128"
-          strokeLinecap="round"
-          strokeWidth="2"
-          id="loader-ring-2"
-        />
-      </svg>
-    </Wrapper>
-  );
+    return (
+        <Wrapper {...props}>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ margin: "auto" }}
+                display="block"
+                preserveAspectRatio="xMidYMid"
+                viewBox="0 0 100 100"
+                id="loader"
+            >
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="32"
+                    fill="none"
+                    strokeDasharray="50.26548245743669 50.26548245743669"
+                    strokeLinecap="round"
+                    strokeWidth="2"
+                    id="loader-ring-1"
+                />
+                <circle
+                    cx="50"
+                    cy="50"
+                    r="23"
+                    fill="none"
+                    strokeDasharray="36.12831551628262 36.12831551628262"
+                    strokeDashoffset="36.128"
+                    strokeLinecap="round"
+                    strokeWidth="2"
+                    id="loader-ring-2"
+                />
+            </svg>
+        </Wrapper>
+    );
 };
