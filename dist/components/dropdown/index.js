@@ -39,7 +39,7 @@ export var Dropdown = function (_a) {
                 optionIcon,
                 " "),
             e.label),
-        selectedOption === e.value && (React.createElement("div", { className: "option-icon" },
+        (selectedOption === null || selectedOption === void 0 ? void 0 : selectedOption.value) === e.value && (React.createElement("div", { className: "option-icon" },
             React.createElement(XIcon, { style: { color: theme.palette.gray700 } }))))); };
     useEffect(function () {
         var _a;
@@ -50,7 +50,7 @@ export var Dropdown = function (_a) {
         label && React.createElement(Typography, { content: label, variant: "body1" }),
         React.createElement("div", null,
             React.createElement(StyledSelect, __assign({ options: options, classNamePrefix: "select", theme: theme, blurInputOnSelect: true, isSearchable: isSearchable, noOptionsMessage: function () { return noOptionsText; }, style: __assign({ paddingLeft: "".concat(controlIcon ? "calc(".concat(controlIconWidth, "px + 1em)") : "1em") }, style), onChange: function (e) {
-                    setSelectedOption(e.value);
+                    setSelectedOption(e);
                     onChange && onChange(e);
                 }, controlIcon: controlIcon, showArrow: showArrow, formatOptionLabel: optionLabel }, props)),
             React.createElement(ControlIconWrapper, { ref: controlIconWrapperRef }, controlIcon))));
