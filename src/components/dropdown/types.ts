@@ -1,6 +1,8 @@
 import { ReactElement } from "react";
 import { CSSProperties, DefaultTheme } from "styled-components";
 
+type ValueType = { value: string; label: string };
+
 export interface DropdownProps {
   theme: DefaultTheme;
   style?: CSSProperties;
@@ -9,14 +11,14 @@ export interface DropdownProps {
   menuIsOpen?: boolean;
   isMulti?: boolean;
   showArrow?: boolean;
-  options?: { value: string; label: string }[];
-  defaultValue?: string;
-  value?: string;
+  options?: ValueType[];
+  defaultValue?: ValueType;
+  value?: ValueType;
   label?: string;
   placeholder?: string;
   noOptionsText?: string;
-  controlLeftIcon?: ReactElement;
-  optionLeftIcon?: ReactElement;
+  controlIcon?: ReactElement;
+  optionIcon?: ReactElement;
   onChange?: (e: any) => void;
   onBlur?: (e: any) => void;
   onFocus?: (e: any) => void;

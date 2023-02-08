@@ -11,8 +11,8 @@ const sharedPath = css<IconProps>`
 export const Svg = styled.svg<IconProps>`
   ${sharedPath};
   position: ${(props) => props.position || Positions.relative};
-  width: ${(props) => props?.size || props.style?.width || "2rem"} !important;
-  height: ${(props) => props?.size || props.style?.height || props.style?.width || "2rem"} !important;
+  width: ${(props) => props?.size || props.style?.width || "1rem"} !important;
+  height: ${(props) => props?.size || props.style?.height || props.style?.width || "1rem"} !important;
   top: ${(props) => props.style?.top || "initial"};
   bottom: ${(props) => props.style?.bottom || "initial"};
   right: ${(props) => props.style?.right || "initial"};

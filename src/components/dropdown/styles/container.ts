@@ -9,7 +9,8 @@ export const Container = styled.div<DropdownProps>(() => ({ theme }) => {
     flex-direction: column;
     gap: 0.75em;
 
-    & * {
+    & *,
+    & p {
       font-family: "Inter";
       color: ${gray900};
     }

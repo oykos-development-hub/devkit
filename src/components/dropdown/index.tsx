@@ -4,31 +4,45 @@ import { StyledSelect } from "./styles/select";
 import { DropdownProps } from "./types";
 import { Container } from "./styles/container";
 import { Typography } from "../typography";
-import { LeftElementControl } from "./styles/leftElementControl";
 import { XIcon } from "../icon";
+import { Option } from "./styles/option";
+import { ControlIconWrapper } from "./styles/controlIconWrapper";
 
-const Dropdown = ({
+export const Dropdown = ({
   options,
   theme = Theme,
   isSearchable = false,
   noOptionsText = "No options",
   label,
-  value,
   style,
   showArrow = true,
-  controlLeftIcon,
-  optionLeftIcon,
+  controlIcon,
+  optionIcon,
   onChange,
   ...props
 }: DropdownProps) => {
   const [selectedOption, setSelectedOption] = useState();
 
-  const [leftElementControlWidth, setLeftElementControlWidth] = useState(0);
-  const leftElementControlRef = useRef<HTMLDivElement>(null);
+  const [controlIconWidth, setControlIconWidth] = useState(0);
+  const controlIconWrapperRef = useRef<HTMLDivElement>(null);
+
+  const optionLabel = (e: any) => (
+    <Option theme={theme}>
+      <div>
+        {optionIcon && <div className="option-icon">{optionIcon} </div>}
+        {e.label}
+      </div>
+      {selectedOption === e.value && (
+        <div className="option-icon">
+          <XIcon style={{ color: theme.palette.gray700 }} />
+        </div>
+      )}
+    </Option>
+  );
 
   useEffect(() => {
-    if (controlLeftIcon) setLeftElementControlWidth(leftElementControlRef.current?.offsetWidth!);
-  }, [controlLeftIcon]);
+    if (controlIcon) setControlIconWidth(controlIconWrapperRef.current?.offsetWidth!);
+  }, []);
 
   return (
     <Container theme={theme}>
@@ -43,34 +57,21 @@ const Dropdown = ({
           isSearchable={isSearchable}
           noOptionsMessage={() => noOptionsText}
           style={{
-            paddingLeft: `${controlLeftIcon ? `calc(${leftElementControlWidth}px + 1em)` : "1em"}`,
+            paddingLeft: `${controlIcon ? `calc(${controlIconWidth}px + 1em)` : "1em"}`,
             ...style,
           }}
           onChange={(e) => {
             setSelectedOption(e.value);
             onChange && onChange(e);
           }}
-          formatOptionLabel={(e: any) => (
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "1em" }}>
-                <div className="option-icon">{optionLeftIcon} </div>
-                {e.label}
-              </div>
-              {selectedOption === e.value && (
-                <div className="option-icon">
-                  <XIcon size="16px" style={{ color: theme.palette.gray700 }} />
-                </div>
-              )}
-            </div>
-          )}
+          controlIcon={controlIcon}
           showArrow={showArrow}
+          formatOptionLabel={optionLabel}
           {...props}
         />
 
-        <LeftElementControl ref={leftElementControlRef}>{controlLeftIcon}</LeftElementControl>
+        <ControlIconWrapper ref={controlIconWrapperRef}>{controlIcon}</ControlIconWrapper>
       </div>
     </Container>
   );
 };
-
-export default Dropdown;
