@@ -5,33 +5,17 @@ import { Theme } from "../../../shared/theme";
 
 export const Container = styled.div<{
   variant: AlertVariants;
-  size: AlertSizes | keyof typeof AlertSizes;
   theme: DefaultTheme;
   style: React.CSSProperties | undefined;
-}>(() => ({ theme, variant, size, style }) => {
+}>(() => ({ theme, variant, style }) => {
   const themeToUse = theme || Theme;
-  const { white, primary500, success500, error500, gray600 } = themeToUse.palette || {};
+  const { primary500, success500, error500, gray600 } = themeToUse.palette || {};
 
   const background = {
     primary: primary500,
     success: success500,
     error: error500,
     info: gray600,
-  };
-
-  const padding = {
-    xs: "0.5rem 0.875rem",
-    sm: "0.625rem 1rem",
-    md: "0.625rem 1.125rem",
-    lg: "0.75rem 1.25rem",
-    xl: "1rem 1.75rem",
-  };
-
-  const textColor = {
-    primary: white,
-    success: white,
-    error: white,
-    info: white,
   };
 
   return css`
@@ -42,28 +26,10 @@ export const Container = styled.div<{
     flex-grow: 1;
     font-family: ${themeToUse.fontFamily?.one || "sans-serif"};
     background-color: ${background[variant]};
-    color: ${style?.color || textColor[variant]} !important;
-    border-radius: 0.5rem;
-    padding: ${padding[size]};
+    border-radius: 0.125rem;
+    padding: 0;
     gap: 0.75rem;
     z-index: 999;
-
-    & p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    span,
-    label {
-      color: ${style?.color || textColor[variant]};
-    }
-
-    & svg path {
-      fill: ${style?.color || textColor[variant]} !important;
-      color: ${style?.color || textColor[variant]} !important;
-    }
 
     ${{ ...style }}
   `;
@@ -72,12 +38,16 @@ export const Container = styled.div<{
 export const Row = styled.div<{
   size: AlertSizes;
 }>(() => ({ size }) => {
+  const gapSize = {
+    sm: "0.75rem",
+    md: "0.75rem",
+    lg: "1rem",
+  };
+
   const padding = {
-    xs: "0.5rem 0.875rem",
-    sm: "0.625rem 1rem",
-    md: "0.625rem 1.125rem",
-    lg: "0.75rem 1.25rem",
-    xl: "1rem 1.75rem",
+    sm: "0.5rem",
+    md: "0.75rem",
+    lg: "1rem",
   };
 
   return css`
@@ -85,9 +55,10 @@ export const Row = styled.div<{
     justify-content: space-between;
     flex-direction: row;
     align-content: flex-start;
-    order: 0;
-    flex-grow: 1;
+    align-items: center;
+    align-self: stretch;
     word-wrap: break-word;
     padding: ${padding[size]};
+    gap: ${gapSize[size]};
   `;
 });

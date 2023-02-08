@@ -38,7 +38,7 @@ export default {
     size: {
       control: {
         type: "radio",
-        options: ["xs", "sm", "md", "lg", "xl"],
+        options: ["sm", "md", "lg"],
       },
     },
   },
@@ -54,7 +54,7 @@ export const Custom = Template.bind({});
 Custom.args = {
   content: "Title",
   variant: AlertVariants.success,
-  icon: <DangerIcon />,
   size: AlertSizes.md,
+  icon: <DangerIcon />,
   theme: Theme,
 };

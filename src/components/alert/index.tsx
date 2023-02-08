@@ -16,7 +16,7 @@ export const Alert: React.FC<AlertProps> = ({
   style,
   theme,
 }) => (
-  <Container variant={variant} size={size} style={style} theme={theme}>
+  <Container variant={variant} style={style} theme={theme}>
     <Row size={size}>
       <Content style={style} size={size} theme={theme}>
         {icon && icon}
@@ -32,7 +32,9 @@ export const Alert: React.FC<AlertProps> = ({
 
     {additionalText && (
       <Row size={size}>
-        <Typography variant={"p"} content={additionalText} />
+        <Content style={style} size={size} theme={theme}>
+          <Typography content={additionalText} theme={theme} style={style} />
+        </Content>
       </Row>
     )}
   </Container>
