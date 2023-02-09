@@ -7,83 +7,83 @@ import { CircleCheckIcon } from "../icon";
 import { DropdownProps } from "./types";
 
 const dropdownOptions = [
-    { value: "one", label: "One" },
-    { value: "two", label: "Two" },
-    { value: "three", label: "Three" },
-    { value: "four", label: "Four" },
+  { value: "one", label: "One" },
+  { value: "two", label: "Two" },
+  { value: "three", label: "Three" },
+  { value: "four", label: "Four" },
 ];
 
 export default {
-    component: Dropdown,
-    title: "Components/Dropdown",
-    argTypes: {
-        theme: {
-            control: {
-                type: "object",
-            },
-            defaultValue: Theme,
-        },
-        options: {
-            control: {
-                type: "object",
-            },
-            defaultValue: dropdownOptions,
-        },
-        isMulti: {
-            control: {
-                type: "boolean",
-            },
-        },
-        menuIsOpen: {
-            control: {
-                type: "boolean",
-            },
-        },
-        isDisabled: {
-            control: {
-                type: "boolean",
-            },
-        },
-        isSearchable: {
-            control: {
-                type: "boolean",
-            },
-        },
-        showArrow: {
-            control: {
-                type: "boolean",
-            },
-        },
-        placeholder: {
-            control: {
-                type: "text",
-            },
-        },
-        label: {
-            control: {
-                type: "text",
-            },
-        },
-        noOptionsText: {
-            control: {
-                type: "text",
-            },
-        },
+  component: Dropdown,
+  title: "Components/Dropdown",
+  argTypes: {
+    theme: {
+      control: {
+        type: "object",
+      },
+      defaultValue: Theme,
     },
+    options: {
+      control: {
+        type: "object",
+      },
+      defaultValue: dropdownOptions,
+    },
+    isMulti: {
+      control: {
+        type: "boolean",
+      },
+    },
+    menuIsOpen: {
+      control: {
+        type: "boolean",
+      },
+    },
+    isDisabled: {
+      control: {
+        type: "boolean",
+      },
+    },
+    isSearchable: {
+      control: {
+        type: "boolean",
+      },
+    },
+    showArrow: {
+      control: {
+        type: "boolean",
+      },
+    },
+    placeholder: {
+      control: {
+        type: "text",
+      },
+    },
+    label: {
+      control: {
+        type: "text",
+      },
+    },
+    noOptionsText: {
+      control: {
+        type: "text",
+      },
+    },
+  },
 } as ComponentMeta<typeof Dropdown>;
 
 const Template: ComponentStory<typeof Dropdown> = (args: DropdownProps) => (
-    <StoryWrapper>
-        <div style={{ width: "400px" }}>
-            <Dropdown {...args} />
-        </div>
-    </StoryWrapper>
+  <StoryWrapper>
+    <div style={{ width: "400px" }}>
+      <Dropdown {...args} />
+    </div>
+  </StoryWrapper>
 );
 
 export const DropdownDefault = Template.bind({});
 
 DropdownDefault.args = {
-    label: "Dropdown label*",
+  label: "Dropdown label*",
 };
 
 //
@@ -91,8 +91,8 @@ DropdownDefault.args = {
 export const DropdownWithIcons = Template.bind({});
 
 DropdownWithIcons.args = {
-    controlIcon: <CircleCheckIcon size="16px" />,
-    optionIcon: <CircleCheckIcon size="16px" />,
+  controlIcon: <CircleCheckIcon size="16px" />,
+  optionIcon: <CircleCheckIcon size="16px" />,
 };
 
 //
@@ -100,7 +100,7 @@ DropdownWithIcons.args = {
 export const MultipleSelect = Template.bind({});
 
 MultipleSelect.args = {
-    isMulti: true,
+  isMulti: true,
 };
 
 //
@@ -108,9 +108,9 @@ MultipleSelect.args = {
 export const MultipleSelectWithIcons = Template.bind({});
 
 MultipleSelectWithIcons.args = {
-    isMulti: true,
-    controlIcon: <CircleCheckIcon size="16px" />,
-    optionIcon: <CircleCheckIcon size="16px" />,
+  isMulti: true,
+  controlIcon: <CircleCheckIcon size="16px" />,
+  optionIcon: <CircleCheckIcon size="16px" />,
 };
 
 //
@@ -118,8 +118,8 @@ MultipleSelectWithIcons.args = {
 export const StyledDropdown = Template.bind({});
 
 StyledDropdown.args = {
-    style: {
-        border: "1px solid red",
-        borderRadius: "16px",
-    },
+  style: {
+    border: "1px solid red",
+    borderRadius: "16px",
+  },
 };

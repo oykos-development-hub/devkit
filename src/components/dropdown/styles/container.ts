@@ -1,9 +1,9 @@
 import styled, { css, DefaultTheme } from "styled-components";
 
 export const Container = styled.div(({ theme }: { theme: DefaultTheme }) => {
-    const { gray900 } = theme.palette;
+  const { gray900 } = theme.palette;
 
-    return css`
+  return css`
     display: flex;
     flex-direction: column;
     gap: 0.75em;
