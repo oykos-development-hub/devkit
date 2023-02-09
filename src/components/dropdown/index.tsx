@@ -25,6 +25,7 @@ export const Dropdown = ({
 
   const [controlIconWidth, setControlIconWidth] = useState(0);
   const controlIconWrapperRef = useRef<HTMLDivElement>(null);
+  console.log("test");
 
   const optionLabel = (e: any) => (
     <Option theme={theme}>
