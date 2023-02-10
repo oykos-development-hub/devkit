@@ -54,7 +54,7 @@ export const Container = styled.button<{
     border: 1px solid ${borderColor[variant]};
     border-radius: ${themeToUse.borderRadius.lg || "0.5rem"};
     padding: ${padding[size]};
-    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
     &:hover {
       background-color: ${hoverBackground[variant]};
       div {
