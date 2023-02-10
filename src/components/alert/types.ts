@@ -22,7 +22,6 @@ export interface AlertProps {
   closeIcon?: boolean;
   additionalText?: string;
   onClose?: (e?: React.MouseEvent<any>) => any;
-  children?: JSX.Element | React.ReactNode;
   theme?: DefaultTheme;
   style?: React.CSSProperties;
 }
