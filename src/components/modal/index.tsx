@@ -6,18 +6,23 @@ import { ModalBox } from "./styles/modal";
 import { ModalHeader } from "./styles/header";
 import { Typography } from "../typography";
 import { XIcon } from "../icon";
-import { ModalFooter } from "./styles/footer";
 
-export const Modal = ({ theme = Theme, title, footerContent, content }: ModalProps) => {
+export const Modal = ({ theme = Theme, title, content, open, onClose, variant = "light", style }: ModalProps) => {
   return (
-    <Container theme={theme}>
-      <ModalBox theme={theme}>
-        <ModalHeader>
-          <Typography content={title} variant="h6" />
-          <XIcon size="16px" />
+    <Container open={open} onClick={onClose && onClose()}>
+      <ModalBox
+        theme={theme}
+        variant={variant}
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+        style={style}
+      >
+        <ModalHeader theme={theme}>
+          {title && <Typography content={title} variant="h6" />}
+          <XIcon size="16px" onClick={onClose && onClose()} />
         </ModalHeader>
         {content}
-        <ModalFooter>{footerContent}</ModalFooter>
       </ModalBox>
     </Container>
   );
