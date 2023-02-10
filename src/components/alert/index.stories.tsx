@@ -30,9 +30,8 @@ export default {
       },
     },
     style: {
-      defaultValue: {
-        width: "fit-content",
-        height: "fit-content",
+      control: {
+        type: "object",
       },
     },
     size: {

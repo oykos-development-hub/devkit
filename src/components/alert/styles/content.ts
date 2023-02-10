@@ -9,7 +9,7 @@ export const Content = styled.div<{
   theme?: DefaultTheme;
 }>(() => ({ size, style, theme }) => {
   const themeToUse = theme || Theme;
-  const { white } = themeToUse.palette || {};
+  const { white } = themeToUse.palette;
   const defaultColor = style?.color || white;
 
   const textSize = {
@@ -18,16 +18,10 @@ export const Content = styled.div<{
     lg: "1rem",
   };
 
-  const leftIconSize = {
+  const iconSize = {
     sm: "1.25rem",
     md: "1.25rem",
     lg: "1.5rem",
-  };
-
-  const rightIconSize = {
-    sm: "0.729rem",
-    md: "0.729rem",
-    lg: "0.875rem",
   };
 
   const lineHeight = {
@@ -43,30 +37,30 @@ export const Content = styled.div<{
     gap: 0.75rem;
 
     & p {
-      font-size: ${textSize[size]};
-      line-height: ${lineHeight[size]};
-      color: ${defaultColor};
+      font-size: ${style?.fontSize || textSize[size]};
+      line-height: ${style?.lineHeight || lineHeight[size]};
+      color: ${style?.color || defaultColor};
     }
 
     & p:nth-child(1) {
       font-size: 0.875rem;
       line-height: 1.25rem;
-      color: ${defaultColor};
+      color: ${style?.color || defaultColor};
     }
 
     & svg:first-child {
-      width: ${leftIconSize[size]} !important;
-      height: ${leftIconSize[size]} !important;
+      width: ${style?.width || iconSize[size]} !important;
+      height: ${style?.height || iconSize[size]} !important;
     }
 
     & svg:last-child {
-      width: ${rightIconSize[size]} !important;
-      height: ${rightIconSize[size]} !important;
+      width: ${style?.width || iconSize[size]} !important;
+      height: ${style?.height || iconSize[size]} !important;
     }
 
     & svg path {
-      fill: ${defaultColor} !important;
-      color: ${defaultColor} !important;
+      fill: ${style?.color || defaultColor} !important;
+      color: ${style?.color || defaultColor} !important;
     }
 
     ${{ ...style }}
