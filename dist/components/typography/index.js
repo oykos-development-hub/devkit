@@ -11,60 +11,43 @@ var __assign = (this && this.__assign) || function () {
 };
 import React from "react";
 import { TypographyVariants } from "./types";
-import { Body1, Body2, Button, Caption, Error, H1, H2, H3, H4, H5, H6, Overline, Sub1, Sub2 } from "./styles/variants";
+import { BodyLarge, BodyMedium, BodySmall, Caption, Code, H1, H2, H3, H4, H5, H6, HelperText, LinkLarge, LinkMedium, LinkSmall, } from "./styles/variants";
 export var Typography = function (props) {
     var _a;
-    var variant = (_a = props.variant) !== null && _a !== void 0 ? _a : TypographyVariants.body2;
-    var Component;
-    var componentProps = __assign({}, props);
-    delete componentProps.content;
+    var variant = (_a = props.variant) !== null && _a !== void 0 ? _a : TypographyVariants.bodyMedium;
     switch (variant) {
         case "h1":
-            Component = H1;
-            break;
+            return React.createElement(H1, __assign({}, props), props.content);
         case "h2":
-            Component = H2;
-            break;
+            return React.createElement(H2, __assign({}, props), props.content);
         case "h3":
-            Component = H3;
-            break;
+            return React.createElement(H3, __assign({}, props), props.content);
         case "h4":
-            Component = H4;
-            break;
+            return React.createElement(H4, __assign({}, props), props.content);
         case "h5":
-            Component = H5;
-            break;
+            return React.createElement(H5, __assign({}, props), props.content);
         case "h6":
-            Component = H6;
-            break;
-        case "subtitle1":
-            Component = Sub1;
-            break;
-        case "subtitle2":
-            Component = Sub2;
-            break;
-        case "body1":
-            Component = Body1;
-            break;
-        case "body2":
-            Component = Body2;
-            break;
-        case "button":
-            Component = Button;
-            break;
+            return React.createElement(H6, __assign({}, props), props.content);
+        case "bodyLarge":
+            return React.createElement(BodyLarge, __assign({}, props), props.content);
+        case "bodyMedium":
+            return React.createElement(BodyMedium, __assign({}, props), props.content);
+        case "bodySmall":
+            return React.createElement(BodySmall, __assign({}, props), props.content);
+        case "linkLarge":
+            return React.createElement(LinkLarge, __assign({}, props), props.content);
+        case "linkMedium":
+            return React.createElement(LinkMedium, __assign({}, props), props.content);
+        case "linkSmall":
+            return React.createElement(LinkSmall, __assign({}, props), props.content);
         case "caption":
-            Component = Caption;
-            break;
-        case "overline":
-            Component = Overline;
-            break;
-        case "error":
-            Component = Error;
-            break;
+            return React.createElement(Caption, __assign({}, props), props.content);
+        case "helperText":
+            return React.createElement(HelperText, __assign({}, props), props.content);
+        case "code":
+            return React.createElement(Code, __assign({}, props), props.content);
         default:
-            Component = Body1;
-            break;
+            return React.createElement(BodyMedium, __assign({}, props), props.content);
     }
-    return React.createElement(Component, __assign({}, componentProps), props.content);
 };
 //# sourceMappingURL=index.js.map
