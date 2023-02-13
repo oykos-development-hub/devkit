@@ -43,7 +43,7 @@ export var Dropdown = function (_a) {
             React.createElement(XIcon, { style: { color: theme.palette.gray700 } }))))); };
     useEffect(function () {
         var _a;
-        if (controlIcon)
+        if (controlIcon && controlIconWrapperRef.current)
             setControlIconWidth((_a = controlIconWrapperRef.current) === null || _a === void 0 ? void 0 : _a.offsetWidth);
     }, []);
     return (React.createElement(Container, { theme: theme },
