@@ -11,9 +11,8 @@ export const Container = styled.button<{
   theme: DefaultTheme;
   style: React.CSSProperties | undefined;
 }>(() => ({ theme, disabled, variant, size, style }) => {
-  const themeToUse = theme || Theme;
   const { gray50, white, primary500, secondary500, gray200, error500, error100, primary800, secondary800, error800 } =
-    themeToUse.palette;
+    theme!.palette;
 
   const background = {
     primary: disabled ? gray200 : primary500,
@@ -52,7 +51,7 @@ export const Container = styled.button<{
     justify-content: center;
     background-color: ${background[variant]};
     border: 1px solid ${borderColor[variant]};
-    border-radius: ${themeToUse.borderRadius.lg || "0.5rem"};
+    border-radius: ${theme!.borderRadius.lg || "0.5rem"};
     padding: ${padding[size]};
     box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
     &:hover {

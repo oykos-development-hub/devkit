@@ -18,13 +18,6 @@ export default {
         options: [...VariantNames],
       },
     },
-    fontWeight: {
-      options: Object.keys(WeightVariants),
-      mapping: WeightVariants,
-      control: {
-        type: "radio",
-      },
-    },
     theme: {
       control: {
         type: "object",
@@ -34,6 +27,29 @@ export default {
       defaultValue: {
         color: "#333",
       },
+    },
+  },
+  variant: {
+    control: {
+      type: "select",
+      options: [...VariantNames],
+    },
+  },
+  fontWeight: {
+    options: Object.keys(WeightVariants),
+    mapping: WeightVariants,
+    control: {
+      type: "radio",
+    },
+  },
+  theme: {
+    control: {
+      type: "object",
+    },
+  },
+  style: {
+    defaultValue: {
+      color: "#333",
     },
   },
 } as ComponentMeta<typeof Typography>;
