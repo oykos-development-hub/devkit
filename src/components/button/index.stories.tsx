@@ -1,9 +1,9 @@
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Button } from "./index";
-import { ButtonProps } from "./types";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ButtonProps, ButtonSizes, ButtonVariants } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
+import { Button } from "./index";
 
 export default {
   component: Button,
@@ -30,16 +30,21 @@ export default {
       control: {
         type: "object",
       },
+      defaultValue: Theme,
     },
     style: {
       defaultValue: {
         width: "fit-content",
         height: "fit-content",
-        padding: "1em 2em",
         margin: "0em",
-        borderRadius: "1em",
         borderWidth: "1px",
         gap: "0.5em",
+      },
+    },
+    size: {
+      control: {
+        type: "radio",
+        options: ["xs", "sm", "md", "lg", "xl"],
       },
     },
   },
@@ -51,88 +56,22 @@ const Template: ComponentStory<typeof Button> = (args: ButtonProps) => (
   </StoryWrapper>
 );
 
-// Primary
-export const PrimaryDefault = Template.bind({});
-PrimaryDefault.args = {
-  content: "Primary Default",
-  onClick: () => alert("PrimaryDefault clicked!"),
+export const CustomButton = Template.bind({});
+CustomButton.args = {
+  content: "Button CTA",
+  onClick: () => alert("Button clicked!"),
+  variant: ButtonVariants.primary,
+  size: ButtonSizes.lg,
 };
 
-export const PrimaryCustomStyle = Template.bind({});
-PrimaryCustomStyle.args = {
-  content: "Primary Custom Style",
+export const StyledButton = Template.bind({});
+StyledButton.args = {
+  content: "Styled Button",
+  onClick: () => alert("Button clicked!"),
+  variant: ButtonVariants.primary,
+  size: ButtonSizes.lg,
   style: {
-    width: "150px",
-    boxShadow: "5px 5px 2px #333",
-    backgroundColor: "green",
-    fontWeight: 900,
+    backgroundColor: Theme.palette.success500,
+    color: Theme.palette.white,
   },
-  onClick: () => alert("PrimaryCustomStyle clicked!"),
-};
-
-export const PrimaryThemed = Template.bind({});
-PrimaryThemed.args = {
-  content: "Primary Themed",
-  theme: Theme,
-  onClick: () => alert("PrimaryThemed clicked!"),
-};
-
-// Secondary
-export const SecondaryDefault = Template.bind({});
-SecondaryDefault.args = {
-  content: "Secondary Default",
-  variant: "secondary",
-  onClick: () => alert("SecondaryDefault clicked!"),
-};
-
-export const SecondaryCustomStyle = Template.bind({});
-SecondaryCustomStyle.args = {
-  content: "Secondary Custom Style",
-  variant: "secondary",
-  style: {
-    width: "150px",
-    boxShadow: "5px 5px 2px #333",
-    backgroundColor: "white",
-    color: "blue",
-    fontWeight: 900,
-  },
-  onClick: () => alert("SecondaryCustomStyle clicked!"),
-};
-
-export const SecondaryThemed = Template.bind({});
-SecondaryThemed.args = {
-  content: "Secondary Themed",
-  variant: "secondary",
-  theme: Theme,
-  onClick: () => alert("SecondaryThemed clicked!"),
-};
-
-// Tertiary
-export const TertiaryDefault = Template.bind({});
-TertiaryDefault.args = {
-  content: "Tertiary Default",
-  variant: "tertiary",
-  onClick: () => alert("TertiaryDefault clicked!"),
-};
-
-export const TertiaryCustomStyle = Template.bind({});
-TertiaryCustomStyle.args = {
-  content: "Tertiary Custom Style",
-  variant: "tertiary",
-  style: {
-    width: "150px",
-    boxShadow: "0px 0px 4px #333",
-    backgroundColor: "white",
-    color: "#333",
-    padding: "4px 8px",
-  },
-  onClick: () => alert("TertiaryCustomStyle clicked!"),
-};
-
-export const TertiaryThemed = Template.bind({});
-TertiaryThemed.args = {
-  content: "Tertiary Themed",
-  variant: "tertiary",
-  theme: Theme,
-  onClick: () => alert("TertiaryThemed clicked!"),
 };

@@ -1,6 +1,6 @@
 {
   "name": "@oykos-development/devkit-react-ts-styled-components",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "description": "Devkit module for development of React + Typescript + StyledComponents projects, built with Storybook framework.",
   "main": "./dist/index.js",
@@ -28,14 +28,17 @@
     "storybook:clean": "rmdir /s /q storybook-docs",
     "storybook:build": "npm run storybook:clean && build-storybook -o ./storybook-docs",
     "storybook:production": "rm -rf ./storybook-docs && build-storybook -o ./storybook-docs",
+    "storybook:production:windows": "rmdir /s /q storybook-docs && build-storybook -o ./storybook-docs",
     "git:commit": "npm run ts:declarations && npm run lint:fix && npm run format",
     "git:pull-request": "npm run ts:declarations && npm run lint:fix && npm run format && npm run storybook:build",
     "production": "npm run ts:declarations && npm run lint:fix && npm run format && npm run storybook:production",
+    "production:windows": "npm run ts:declarations && npm run lint:fix && npm run format && npm run storybook:production:windows",
     "prepare": "husky install"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-select": "^5.7.0",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {

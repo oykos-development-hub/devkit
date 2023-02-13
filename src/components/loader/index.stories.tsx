@@ -6,7 +6,7 @@ import { LoaderProps } from "./types";
 import { Theme } from "../../shared/theme";
 
 export default {
-  title: "Example/Loader",
+  title: "Components/Loader",
   component: Loader,
   argTypes: {
     variant: {
