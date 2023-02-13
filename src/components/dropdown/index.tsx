@@ -42,7 +42,7 @@ export const Dropdown = ({
   );
 
   useEffect(() => {
-    if (controlIcon) setControlIconWidth(controlIconWrapperRef.current?.offsetWidth!);
+    if (controlIcon && controlIconWrapperRef.current) setControlIconWidth(controlIconWrapperRef.current?.offsetWidth);
   }, []);
 
   return (
