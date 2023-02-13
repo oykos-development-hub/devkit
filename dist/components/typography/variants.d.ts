@@ -5,13 +5,19 @@ export declare enum TypographyVariants {
     h4 = "h4",
     h5 = "h5",
     h6 = "h6",
-    subtitle1 = "subtitle1",
-    subtitle2 = "subtitle2",
-    body1 = "body1",
-    body2 = "body2",
-    button = "button",
+    bodyLarge = "bodyLarge",
+    bodyMedium = "bodyMedium",
+    bodySmall = "bodySmall",
+    linkLarge = "linkLarge",
+    linkMedium = "linkMedium",
+    linkSmall = "linkSmall",
     caption = "caption",
-    overline = "overline",
-    error = "error"
+    helperText = "helperText",
+    code = "code"
+}
+export declare enum WeightVariants {
+    regular = "400",
+    semiBold = "600",
+    bold = "700"
 }
 export declare const VariantNames: string[];
