@@ -47,7 +47,7 @@ export var Dropdown = function (_a) {
             setControlIconWidth((_a = controlIconWrapperRef.current) === null || _a === void 0 ? void 0 : _a.offsetWidth);
     }, []);
     return (React.createElement(Container, { theme: theme },
-        label && React.createElement(Typography, { content: label, variant: "body1" }),
+        label && React.createElement(Typography, { content: label, variant: "bodyMedium" }),
         React.createElement("div", null,
             React.createElement(StyledSelect, __assign({ options: options, classNamePrefix: "select", theme: theme, blurInputOnSelect: true, isSearchable: isSearchable, noOptionsMessage: function () { return noOptionsText; }, style: __assign({ paddingLeft: "".concat(controlIcon ? "calc(".concat(controlIconWidth, "px + 1em)") : "1em") }, style), onChange: function (e) {
                     !isMulti && setSelectedOption(e);

@@ -1,4 +1,5 @@
 import styled, { css, DefaultTheme } from "styled-components";
+import { BodyMedium } from "../../typography/styles/variants";
 
 export const Container = styled.div(({ theme }: { theme: DefaultTheme }) => {
   const { gray900 } = theme.palette;
@@ -9,7 +10,7 @@ export const Container = styled.div(({ theme }: { theme: DefaultTheme }) => {
     gap: 0.75em;
 
     & *,
-    & p {
+    & ${BodyMedium} {
       font-family: "Inter";
       color: ${gray900};
     }

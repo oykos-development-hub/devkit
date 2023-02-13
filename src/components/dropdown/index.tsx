@@ -47,7 +47,7 @@ export const Dropdown = ({
 
   return (
     <Container theme={theme}>
-      {label && <Typography content={label} variant="body1" />}
+      {label && <Typography content={label} variant="bodyMedium" />}
 
       <div>
         <StyledSelect
