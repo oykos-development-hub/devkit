@@ -30,7 +30,7 @@ const shared = ({ style, theme, error }: InputProps) => {
   `;
 };
 
-export const StyledInput = styled.input(() => ({ style, theme, error, maxLength }: InputProps) => {
+export const StyledInput = styled.input(({ style, theme, error, maxLength }: InputProps) => {
   return css`
     ${shared({ style, theme, error, maxLength })}
     text-align: ${maxLength === 1 ? "center" : "left"};
@@ -38,7 +38,7 @@ export const StyledInput = styled.input(() => ({ style, theme, error, maxLength 
   `;
 });
 
-export const Textarea = styled.textarea(() => ({ style, theme, error }: InputProps) => {
+export const Textarea = styled.textarea(({ style, theme, error }: InputProps) => {
   return css`
     ${shared({ style, theme, error })}
     resize: none;

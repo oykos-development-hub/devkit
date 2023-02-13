@@ -28,9 +28,9 @@ import { LeftElement } from "./styles/leftElement";
 import { RightElement } from "./styles/rightElement";
 import { Theme } from "../../shared/theme";
 export var Input = function (_a) {
-    var name = _a.name, value = _a.value, theme = _a.theme, style = _a.style, disabled = _a.disabled, label = _a.label, textarea = _a.textarea, leftContent = _a.leftContent, rightContent = _a.rightContent, error = _a.error, hint = _a.hint, placeholder = _a.placeholder, onChange = _a.onChange, onBlur = _a.onBlur, onFocus = _a.onFocus, id = _a.id, inputRef = _a.inputRef, props = __rest(_a, ["name", "value", "theme", "style", "disabled", "label", "textarea", "leftContent", "rightContent", "error", "hint", "placeholder", "onChange", "onBlur", "onFocus", "id", "inputRef"]);
-    var _b = useState(0), leftElementWidth = _b[0], setLeftElementWidth = _b[1];
-    var _c = useState(0), rightElementWidth = _c[0], setRightElementWidth = _c[1];
+    var name = _a.name, value = _a.value, _b = _a.theme, theme = _b === void 0 ? Theme : _b, style = _a.style, disabled = _a.disabled, label = _a.label, textarea = _a.textarea, leftContent = _a.leftContent, rightContent = _a.rightContent, error = _a.error, hint = _a.hint, placeholder = _a.placeholder, onChange = _a.onChange, onBlur = _a.onBlur, onFocus = _a.onFocus, id = _a.id, inputRef = _a.inputRef, props = __rest(_a, ["name", "value", "theme", "style", "disabled", "label", "textarea", "leftContent", "rightContent", "error", "hint", "placeholder", "onChange", "onBlur", "onFocus", "id", "inputRef"]);
+    var _c = useState(0), leftElementWidth = _c[0], setLeftElementWidth = _c[1];
+    var _d = useState(0), rightElementWidth = _d[0], setRightElementWidth = _d[1];
     var leftElementRef = useRef(null);
     var rightElementRef = useRef(null);
     useEffect(function () {
@@ -55,13 +55,13 @@ export var Input = function (_a) {
         error: error,
         style: __assign({ paddingLeft: "".concat(leftContent ? "".concat(leftElementWidth, "px") : "1em"), paddingRight: "".concat(rightContent ? "".concat(rightElementWidth, "px") : "1em") }, style),
     };
-    return (React.createElement(Container, { theme: theme || Theme, label: label, error: error, hint: hint },
+    return (React.createElement(Container, { theme: theme, label: label, error: error, hint: hint },
         React.createElement("div", null,
-            label && React.createElement(Typography, { variant: "label", content: label }),
+            label && React.createElement(Typography, { variant: "bodyMedium", content: label }),
             textarea ? (React.createElement(Textarea, __assign({}, fieldProps, { theme: theme || Theme }))) : (React.createElement(StyledInput, __assign({}, fieldProps, props, { theme: theme || Theme, ref: inputRef }))),
             leftContent && React.createElement(LeftElement, { ref: leftElementRef }, leftContent),
             rightContent && React.createElement(RightElement, { ref: rightElementRef }, rightContent),
-            error && !disabled && React.createElement(Typography, { variant: "body1", content: error }),
-            hint && !error && React.createElement(Typography, { variant: "body1", content: hint }))));
+            error && !disabled && React.createElement(Typography, { variant: "bodyMedium", content: error }),
+            hint && !error && React.createElement(Typography, { variant: "bodyMedium", content: hint }))));
 };
 //# sourceMappingURL=index.js.map

@@ -11,7 +11,7 @@ import { Theme } from "../../shared/theme";
 export const Input = ({
   name,
   value,
-  theme,
+  theme = Theme,
   style,
   disabled,
   label,
@@ -60,9 +60,9 @@ export const Input = ({
   };
 
   return (
-    <Container theme={theme || Theme} label={label} error={error} hint={hint}>
+    <Container theme={theme} label={label} error={error} hint={hint}>
       <div>
-        {label && <Typography variant="label" content={label} />}
+        {label && <Typography variant="bodyMedium" content={label} />}
 
         {textarea ? (
           <Textarea {...fieldProps} theme={theme || Theme} />
@@ -74,9 +74,9 @@ export const Input = ({
 
         {rightContent && <RightElement ref={rightElementRef}>{rightContent}</RightElement>}
 
-        {error && !disabled && <Typography variant="body1" content={error} />}
+        {error && !disabled && <Typography variant="bodyMedium" content={error} />}
 
-        {hint && !error && <Typography variant="body1" content={hint} />}
+        {hint && !error && <Typography variant="bodyMedium" content={hint} />}
       </div>
     </Container>
   );

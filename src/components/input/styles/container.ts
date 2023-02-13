@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
-import { Theme } from "../../../shared/theme";
+import { BodyMedium } from "../../typography/styles/variants";
 import { InputProps } from "../types";
 
-export const Container = styled.div(() => ({ label, error, theme, hint }: InputProps) => {
+export const Container = styled.div(({ label, error, theme, hint }: InputProps) => {
   const { error500, gray700 } = theme!.palette;
 
   return css`
@@ -19,13 +19,13 @@ export const Container = styled.div(() => ({ label, error, theme, hint }: InputP
       position: relative;
     }
 
-    & p:first-child {
+    ${BodyMedium}:first-child {
       position: absolute;
       top: -1.75em;
       left: 0;
     }
 
-    & p:last-child {
+    ${BodyMedium}:last-child {
       position: absolute;
       bottom: -1.75em;
       left: 0;
