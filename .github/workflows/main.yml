@@ -39,6 +39,7 @@ jobs:
               npm install husky
               npm install
               storybook:production
+              rm -rf ../../storybook-docs
               cp -R ./storybook-docs/** ../../
               npm config set _authToken=${{secrets.NPM_TOKEN}}
               npm publish --access public
