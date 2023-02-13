@@ -35,12 +35,12 @@ export var Input = function (_a) {
     var rightElementRef = useRef(null);
     useEffect(function () {
         var _a;
-        if (leftContent)
+        if (leftContent && leftElementRef.current)
             setLeftElementWidth((_a = leftElementRef.current) === null || _a === void 0 ? void 0 : _a.offsetWidth);
     }, [leftContent]);
     useEffect(function () {
         var _a;
-        if (rightContent)
+        if (rightContent && rightElementRef.current)
             setRightElementWidth((_a = rightElementRef.current) === null || _a === void 0 ? void 0 : _a.offsetWidth);
     }, [rightContent]);
     var fieldProps = {

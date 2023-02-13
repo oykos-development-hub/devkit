@@ -3,9 +3,9 @@ import { Theme } from "../../../shared/theme";
 import { InputProps } from "../types";
 
 const shared = ({ style, theme, error }: InputProps) => {
-    const { gray200, gray300, gray700, error200, error50, primary100, white } = theme!.palette;
+  const { gray200, gray300, gray700, error200, error50, primary100, white } = theme!.palette;
 
-    return css`
+  return css`
     width: 100%;
     border-radius: ${theme!.borderRadius?.lg || "0.5em"};
     border: ${`${theme!.borderWidth?.xs || "1px"} solid ${error ? error200 : gray300}`};
@@ -31,7 +31,7 @@ const shared = ({ style, theme, error }: InputProps) => {
 };
 
 export const StyledInput = styled.input(() => ({ style, theme, error, maxLength }: InputProps) => {
-    return css`
+  return css`
     ${shared({ style, theme, error, maxLength })}
     text-align: ${maxLength === 1 ? "center" : "left"};
     height: 3em;
@@ -39,7 +39,7 @@ export const StyledInput = styled.input(() => ({ style, theme, error, maxLength 
 });
 
 export const Textarea = styled.textarea(() => ({ style, theme, error }: InputProps) => {
-    return css`
+  return css`
     ${shared({ style, theme, error })}
     resize: none;
     height: 6em;

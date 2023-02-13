@@ -10,23 +10,23 @@ export const Content = styled.div<{
   theme: DefaultTheme;
   customStyle: React.CSSProperties | undefined;
 }>(({ disabled, theme, size, variant, customStyle }) => {
-    const { gray300, gray700, white } = theme!.palette;
+  const { gray300, gray700, white } = theme!.palette;
 
-    const fontSize = {
-        xs: "0.875rem",
-        sm: "0.875rem",
-        md: "1rem",
-        lg: "1rem",
-        xl: "1.125rem",
-    };
+  const fontSize = {
+    xs: "0.875rem",
+    sm: "0.875rem",
+    md: "1rem",
+    lg: "1rem",
+    xl: "1.125rem",
+  };
 
-    const textColor = {
-        primary: disabled ? gray300 : white,
-        secondary: disabled ? gray300 : gray700,
-        tertiary: white,
-    };
+  const textColor = {
+    primary: disabled ? gray300 : white,
+    secondary: disabled ? gray300 : gray700,
+    tertiary: white,
+  };
 
-    return css`
+  return css`
     color: ${customStyle?.color || textColor[variant]};
     font-size: ${customStyle?.fontSize || fontSize[size]};
   `;

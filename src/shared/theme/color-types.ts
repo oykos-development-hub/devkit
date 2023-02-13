@@ -64,7 +64,7 @@ enum Colors {
 }
 
 export default {
-    ...Colors,
+  ...Colors,
 };
 
 type ColorKeys = keyof typeof Colors;
