@@ -91,6 +91,7 @@ DropdownDefault.args = {
 export const DropdownWithIcons = Template.bind({});
 
 DropdownWithIcons.args = {
+  label: "Dropdown label*",
   placeholder: "placeholder...",
   controlIcon: <CircleCheckIcon style={{ color: "grey" }} size="24px" />,
   optionIcon: <CircleCheckIcon style={{ color: "grey" }} size="24px" />,
@@ -101,6 +102,7 @@ DropdownWithIcons.args = {
 export const MultipleSelect = Template.bind({});
 
 MultipleSelect.args = {
+  label: "Dropdown label*",
   placeholder: "placeholder...",
   isMulti: true,
 };

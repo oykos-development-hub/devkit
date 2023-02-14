@@ -99,7 +99,7 @@ WithDropdown.args = {
   leftContent: (
     <Dropdown
       options={options}
-      style={{ border: "none", width: "72px", boxShadow: "none" }}
+      style={{ border: "none", width: "76px", boxShadow: "none" }}
       placeholder={options[0].label}
     />
   ),
