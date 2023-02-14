@@ -1,12 +1,11 @@
 import styled, { css } from "styled-components";
 import { ButtonVariants, ButtonSizes } from "../types";
 import { DefaultTheme } from "../../../types";
-import { Theme } from "../../../shared/theme";
 
 export const Content = styled.div<{
   disabled: boolean;
-  variant: ButtonVariants;
-  size: ButtonSizes;
+  variant: keyof typeof ButtonVariants;
+  size: keyof typeof ButtonSizes;
   theme: DefaultTheme;
   customStyle: React.CSSProperties | undefined;
 }>(({ disabled, theme, size, variant, customStyle }) => {

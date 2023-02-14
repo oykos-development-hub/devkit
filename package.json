@@ -29,7 +29,6 @@
     "git:commit": "npm run ts:declarations && npm run lint:fix && npm run format",
     "git:pull-request": "npm run ts:declarations && npm run lint:fix && npm run format && npm run storybook:build",
     "production": "npm run ts:declarations && npm run lint:fix && npm run format && npm run storybook:production",
-    "production:windows": "npm run ts:declarations && npm run lint:fix && npm run format && npm run storybook:production:windows",
     "prepare": "husky install"
   },
   "dependencies": {

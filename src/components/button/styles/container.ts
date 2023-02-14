@@ -1,13 +1,12 @@
 import styled, { css } from "styled-components";
 import { ButtonVariants, ButtonSizes } from "../types";
 import { DefaultTheme } from "../../../types";
-import { Theme } from "../../../shared/theme";
 import React from "react";
 
 export const Container = styled.button<{
   disabled: boolean;
-  variant: ButtonVariants;
-  size: ButtonSizes;
+  variant: keyof typeof ButtonVariants;
+  size: keyof typeof ButtonSizes;
   theme: DefaultTheme;
   style: React.CSSProperties | undefined;
 }>(() => ({ theme, disabled, variant, size, style }) => {
