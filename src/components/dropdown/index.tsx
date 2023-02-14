@@ -20,6 +20,7 @@ export const Dropdown = ({
   controlIcon,
   optionIcon,
   onChange,
+  placeholder = "",
   ...props
 }: DropdownProps) => {
   const [selectedOption, setSelectedOption] = useState<ValueType | null>(null);
@@ -69,6 +70,7 @@ export const Dropdown = ({
           showArrow={showArrow}
           isMulti={isMulti}
           formatOptionLabel={optionLabel}
+          placeholder={placeholder}
           {...props}
         />
 

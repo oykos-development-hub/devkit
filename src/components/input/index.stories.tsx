@@ -5,6 +5,7 @@ import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { InputProps } from "./types";
 import { Theme } from "../../shared/theme";
 import { CircleCheckIcon, XIcon } from "../icon";
+import { Dropdown } from "../dropdown";
 
 export default {
   title: "Components/Input",
@@ -84,3 +85,24 @@ WithHint.args = {
   placeholder: "placeholder...",
   hint: "This is hint.",
 };
+
+//
+
+export const WithDropdown = Template.bind({});
+
+const options = [
+  { value: "us", label: "US" },
+  { value: "es", label: "ES" },
+];
+
+WithDropdown.args = {
+  leftContent: (
+    <Dropdown
+      options={options}
+      style={{ border: "none", width: "72px", boxShadow: "none" }}
+      placeholder={options[0].label}
+    />
+  ),
+};
+
+//
