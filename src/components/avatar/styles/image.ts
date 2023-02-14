@@ -43,5 +43,7 @@ export const Image = styled.img<{
 
         ${{ ...style }}
       `;
+    default:
+      return AvatarVariants.square;
   }
 });
