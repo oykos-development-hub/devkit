@@ -53,7 +53,7 @@ export var Input = function (_a) {
         placeholder: placeholder,
         value: value,
         error: error,
-        style: __assign({ paddingLeft: "".concat(leftContent ? "".concat(leftElementWidth, "px") : "1em"), paddingRight: "".concat(rightContent ? "".concat(rightElementWidth, "px") : "1em") }, style),
+        style: __assign({ paddingTop: 0, paddingBottom: 0, paddingLeft: "".concat(leftContent ? "".concat(leftElementWidth, "px") : "1em"), paddingRight: "".concat(rightContent ? "".concat(rightElementWidth, "px") : "1em") }, style),
     };
     return (React.createElement(Container, { theme: theme, label: label, error: error, hint: hint },
         React.createElement("div", null,

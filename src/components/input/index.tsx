@@ -53,6 +53,8 @@ export const Input = ({
     value,
     error,
     style: {
+      paddingTop: 0,
+      paddingBottom: 0,
       paddingLeft: `${leftContent ? `${leftElementWidth}px` : "1em"}`,
       paddingRight: `${rightContent ? `${rightElementWidth}px` : "1em"}`,
       ...style,
