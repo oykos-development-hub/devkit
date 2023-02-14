@@ -5,8 +5,8 @@ import React from "react";
 
 export const Container = styled.button<{
   disabled: boolean;
-  variant: keyof typeof ButtonVariants;
-  size: keyof typeof ButtonSizes;
+  variant: ButtonVariants;
+  size: ButtonSizes;
   theme: DefaultTheme;
   style: React.CSSProperties | undefined;
 }>(() => ({ theme, disabled, variant, size, style }) => {

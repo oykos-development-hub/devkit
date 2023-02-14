@@ -4,8 +4,8 @@ import { DefaultTheme } from "../../../types";
 
 export const Content = styled.div<{
   disabled: boolean;
-  variant: keyof typeof ButtonVariants;
-  size: keyof typeof ButtonSizes;
+  variant: ButtonVariants;
+  size: ButtonSizes;
   theme: DefaultTheme;
   customStyle: React.CSSProperties | undefined;
 }>(({ disabled, theme, size, variant, customStyle }) => {
