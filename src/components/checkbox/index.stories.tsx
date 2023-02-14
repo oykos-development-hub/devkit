@@ -20,6 +20,11 @@ export default {
         type: "boolean",
       },
     },
+    checked: {
+      control: {
+        disable: true,
+      },
+    },
     style: {
       control: {
         type: "object",
@@ -34,7 +39,7 @@ export default {
 } as ComponentMeta<typeof Checkbox>;
 
 const Template: ComponentStory<typeof Checkbox> = (args) => {
-  const [value, setValue] = useState(false);
+  const [value, setValue] = useState<boolean>(false);
   return (
     <StoryWrapper>
       <Checkbox

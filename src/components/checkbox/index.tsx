@@ -16,8 +16,8 @@ export const Checkbox: React.FC<CheckboxProps> = ({
     <Container>
       <HiddenCheckbox checked={checked} />
       <Content checked={checked} onClick={onClick} size={size} style={style} theme={theme} disabled={disabled}>
-        <Icon viewBox="0 0 24 24" theme={theme} disabled={disabled}>
-          <polyline points="20 6 9 17 4 12" />
+        <Icon theme={theme} disabled={disabled}>
+          <path d="M10 3L4.5 8.5L2 6" />
         </Icon>
       </Content>
     </Container>

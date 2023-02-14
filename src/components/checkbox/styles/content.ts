@@ -4,7 +4,11 @@ import { CheckboxSize } from "../types";
 import { DefaultTheme } from "../../../shared/theme/types";
 import { Theme } from "../../../shared/theme";
 
-export const Icon = styled.svg<{
+export const Icon = styled.svg.attrs({
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 12 12",
+  fill: "none",
+})<{
   disabled: boolean;
   theme: DefaultTheme;
 }>(({ disabled, theme }) => {
@@ -14,8 +18,9 @@ export const Icon = styled.svg<{
   return css`
     fill: none;
     stroke: ${disabled ? gray300 : white};
-    stroke-width: 0.25rem;
-    border-radius: 50%;
+    stroke-width: 1.6666;
+    stroke-linecap: round;
+    stroke-linejoin: round;
   `;
 });
 
