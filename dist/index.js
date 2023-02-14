@@ -9,4 +9,5 @@ export var Typography = TypographyComponent;
 export var Input = InputComponent;
 export var Pin = PinComponent;
 export * from "./components/icon";
+export * from "./types";
 //# sourceMappingURL=index.js.map

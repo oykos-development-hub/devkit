@@ -5,7 +5,7 @@ export type ValueType = {
     label: string;
 };
 export interface DropdownProps {
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
     style?: CSSProperties;
     isSearchable?: boolean;
     isDisabled?: boolean;

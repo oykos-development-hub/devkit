@@ -1,29 +1,29 @@
 import styled, { css } from "styled-components";
-import { Theme } from "../../../shared/theme";
 import { InputProps } from "../types";
 
 const shared = ({ style, theme, error }: InputProps) => {
-  const { gray200, gray300, gray700, error200, error50, primary100, white } = theme!.palette;
+  const { gray400, gray600, error200, primary200, white } = theme!.palette;
 
   return css`
     width: 100%;
     border-radius: ${theme!.borderRadius?.lg || "0.5em"};
-    border: ${`${theme!.borderWidth?.xs || "1px"} solid ${error ? error200 : gray300}`};
+    border: ${`${theme!.borderWidth?.xs || "1px"} solid ${error ? error200 : gray400}`};
     box-sizing: border-box;
     outline: none;
 
     &:focus {
-      border-color: ${error ? error200 : primary100};
-      outline: 3px solid ${error ? error50 : gray200};
+      border-color: ${error ? error200 : primary200};
+      box-shadow: ${style?.boxShadow || "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #f4ebff"};
     }
 
     &[disabled] {
-      color: ${gray300};
+      color: ${gray600};
       background-color: ${white};
     }
 
     &::placeholder {
-      color: ${gray700};
+      color: ${gray600};
+      font-size: 14px;
     }
 
     ${{ ...style }}

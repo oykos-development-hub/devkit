@@ -11,3 +11,4 @@ export const Input = InputComponent;
 export const Pin = PinComponent;
 
 export * from "./components/icon";
+export * from "./types";
