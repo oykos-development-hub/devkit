@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import { DropdownProps } from "../types";
 
 export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, style, controlIcon }) => {
-  const { primary200, gray50, gray100, gray700, gray400, gray600, gray900, white } = theme.palette;
+  const { primary200, gray50, gray100, gray400, gray600, gray900, white } = theme.palette;
 
   const borderColor = style?.borderColor || gray400;
 
@@ -20,7 +20,7 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
       border-radius: ${theme.borderRadius.lg || "0.5rem"};
       padding: 0 1em;
       svg {
-        fill: ${gray700};
+        fill: ${gray600};
       }
       ${{ ...style }}
     }

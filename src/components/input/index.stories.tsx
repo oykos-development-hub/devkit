@@ -22,7 +22,7 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (args: InputProps) => (
   <StoryWrapper>
-    <div style={{ width: "300px" }}>
+    <div style={{ width: "400px" }}>
       <Input {...args} />
     </div>
   </StoryWrapper>
