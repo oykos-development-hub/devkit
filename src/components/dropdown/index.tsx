@@ -28,7 +28,7 @@ export const Dropdown = ({
   const controlIconWrapperRef = useRef<HTMLDivElement>(null);
 
   const optionLabel = (e: any) => (
-    <Option theme={theme}>
+    <Option>
       <div>
         {optionIcon && <div className="option-icon">{optionIcon} </div>}
         {e.label}

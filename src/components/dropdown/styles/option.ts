@@ -12,6 +12,6 @@ export const Option = styled.div`
   }
 
   & .option-icon {
-    height: 1rem;
+    display: flex;
   }
 `;
