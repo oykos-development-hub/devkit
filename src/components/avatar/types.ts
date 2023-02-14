@@ -21,6 +21,8 @@ export interface AvatarProps {
   alt?: string;
   name?: string;
   source?: ReactNode | string;
+  online?: boolean;
+  statusIcon?: boolean;
   theme?: DefaultTheme;
   style?: React.CSSProperties;
 }

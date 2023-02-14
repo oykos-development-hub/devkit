@@ -1,13 +1,15 @@
 import styled, { css } from "styled-components";
 import { rem } from "polished";
+import { AvatarVariants } from "../types";
 
 export const Flex = styled.div<{
-  alignItems?: string;
-  gap?: string;
-}>(() => ({ alignItems, gap }) => {
+  variant: AvatarVariants | string;
+}>(() => ({ variant }) => {
+  const gap = (variantName: string) => (variantName === AvatarVariants.square ? rem("6px") : "0");
+
   return css`
     display: flex;
-    align-items: ${alignItems || "center"};
-    gap: ${gap || rem("6px")};
+    align-items: center;
+    gap: ${gap(variant)};
   `;
 });
