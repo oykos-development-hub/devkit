@@ -83,25 +83,33 @@ var Template = function (args) { return (React.createElement(StoryWrapper, null,
         React.createElement(Dropdown, __assign({}, args))))); };
 export var DropdownDefault = Template.bind({});
 DropdownDefault.args = {
-    label: "Dropdown label*",
+    placeholder: "placeholder...",
 };
 export var DropdownWithIcons = Template.bind({});
 DropdownWithIcons.args = {
-    controlIcon: React.createElement(CircleCheckIcon, { size: "16px" }),
-    optionIcon: React.createElement(CircleCheckIcon, { size: "16px" }),
+    label: "Dropdown label*",
+    placeholder: "placeholder...",
+    controlIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
+    optionIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
 };
 export var MultipleSelect = Template.bind({});
 MultipleSelect.args = {
+    label: "Dropdown label*",
+    placeholder: "placeholder...",
     isMulti: true,
 };
 export var MultipleSelectWithIcons = Template.bind({});
 MultipleSelectWithIcons.args = {
+    label: "Dropdown label*",
+    placeholder: "placeholder...",
     isMulti: true,
-    controlIcon: React.createElement(CircleCheckIcon, { size: "16px" }),
-    optionIcon: React.createElement(CircleCheckIcon, { size: "16px" }),
+    controlIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
+    optionIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
 };
 export var StyledDropdown = Template.bind({});
 StyledDropdown.args = {
+    label: "Dropdown label*",
+    placeholder: "placeholder...",
     style: {
         border: "1px solid red",
         borderRadius: "16px",
