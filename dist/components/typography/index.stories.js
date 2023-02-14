@@ -55,6 +55,29 @@ export default {
             },
         },
     },
+    variant: {
+        control: {
+            type: "select",
+            options: __spreadArray([], VariantNames, true),
+        },
+    },
+    fontWeight: {
+        options: Object.keys(WeightVariants),
+        mapping: WeightVariants,
+        control: {
+            type: "radio",
+        },
+    },
+    theme: {
+        control: {
+            type: "object",
+        },
+    },
+    style: {
+        defaultValue: {
+            color: "#333",
+        },
+    },
 };
 var Template = function (args) { return (React.createElement(StoryWrapper, null,
     React.createElement(Typography, __assign({}, args), args.content))); };

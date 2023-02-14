@@ -36,6 +36,29 @@ export default {
       },
     },
   },
+  variant: {
+    control: {
+      type: "select",
+      options: [...VariantNames],
+    },
+  },
+  fontWeight: {
+    options: Object.keys(WeightVariants),
+    mapping: WeightVariants,
+    control: {
+      type: "radio",
+    },
+  },
+  theme: {
+    control: {
+      type: "object",
+    },
+  },
+  style: {
+    defaultValue: {
+      color: "#333",
+    },
+  },
 } as ComponentMeta<typeof Typography>;
 
 const Template: ComponentStory<typeof Typography> = (args) => (

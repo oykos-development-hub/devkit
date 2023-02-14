@@ -10,7 +10,7 @@ export default {
   title: "Components/Button",
   argTypes: {
     content: {
-      defaultValue: () => <span>Button</span>,
+      defaultValue: () => "Testiranje",
     },
     variant: {
       control: {
@@ -30,6 +30,7 @@ export default {
       control: {
         type: "object",
       },
+      defaultValue: Theme,
     },
     style: {
       defaultValue: {
@@ -61,7 +62,6 @@ CustomButton.args = {
   onClick: () => alert("Button clicked!"),
   variant: ButtonVariants.primary,
   size: ButtonSizes.lg,
-  theme: Theme,
 };
 
 export const StyledButton = Template.bind({});
@@ -70,7 +70,6 @@ StyledButton.args = {
   onClick: () => alert("Button clicked!"),
   variant: ButtonVariants.primary,
   size: ButtonSizes.lg,
-  theme: Theme,
   style: {
     backgroundColor: Theme.palette.success500,
     color: Theme.palette.white,

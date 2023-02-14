@@ -19,7 +19,7 @@ export default {
     title: "Components/Button",
     argTypes: {
         content: {
-            defaultValue: function () { return React.createElement("span", null, "Button"); },
+            defaultValue: function () { return "Testiranje"; },
         },
         variant: {
             control: {
@@ -39,6 +39,7 @@ export default {
             control: {
                 type: "object",
             },
+            defaultValue: Theme,
         },
         style: {
             defaultValue: {
@@ -65,7 +66,6 @@ CustomButton.args = {
     onClick: function () { return alert("Button clicked!"); },
     variant: ButtonVariants.primary,
     size: ButtonSizes.lg,
-    theme: Theme,
 };
 export var StyledButton = Template.bind({});
 StyledButton.args = {
@@ -73,7 +73,6 @@ StyledButton.args = {
     onClick: function () { return alert("Button clicked!"); },
     variant: ButtonVariants.primary,
     size: ButtonSizes.lg,
-    theme: Theme,
     style: {
         backgroundColor: Theme.palette.success500,
         color: Theme.palette.white,

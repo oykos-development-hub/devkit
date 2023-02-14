@@ -1,7 +1,8 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { AssignIcon, XIcon, DangerIcon, CircleCheckIcon } from "./";
+import { AssignIcon, CircleCheckIcon, DangerIcon, XIcon } from "./";
+import { IconSizes } from "./types";
 
 export default {
   title: "Components/Icons",
@@ -48,5 +49,5 @@ const Custom: ComponentStory<typeof XIcon> = (args) => (
 
 export const CustomIcons = Custom.bind({});
 CustomIcons.args = {
-  size: "100px",
+  size: IconSizes.sm,
 };
