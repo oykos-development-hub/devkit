@@ -98,7 +98,9 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
       padding: 0.5em 1rem;
     }
     .select__option--is-focused,
-    .select__option--is-selected {
+    .select__option--is-selected,
+    .select__option--is-focused.select__option--is-selected,
+    .select__option:active {
       background-color: ${white};
       color: ${gray900};
     }

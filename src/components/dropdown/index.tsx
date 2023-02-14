@@ -35,7 +35,7 @@ export const Dropdown = ({
       </div>
       {!isMulti && selectedOption?.value === e.value && (
         <div className="option-icon">
-          <XIcon style={{ color: theme.palette.gray700 }} />
+          <XIcon style={{ color: theme.palette.gray700 }} size="1em" />
         </div>
       )}
     </Option>
