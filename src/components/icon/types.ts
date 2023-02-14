@@ -22,7 +22,7 @@ export enum IconSizes {
 }
 
 export interface IconProps {
-  size?: IconSizes;
+  size?: IconSizes | string;
   onClick?: (e?: React.MouseEvent<any>) => any;
   direction?: Directions | keyof typeof Directions;
   position?: Positions | keyof typeof Positions;
