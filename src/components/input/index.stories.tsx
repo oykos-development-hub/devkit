@@ -55,7 +55,7 @@ WithContent.args = {
   label: "Input Label*",
   placeholder: "placeholder...",
   leftContent: (
-    <div style={{ padding: "0 0.75em", display: "flex", alignItems: "center" }}>
+    <div style={{ padding: "0 1em", display: "flex", alignItems: "center" }}>
       <CircleCheckIcon style={{ color: "grey" }} size="24px" />
     </div>
   ),

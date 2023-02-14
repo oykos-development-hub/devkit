@@ -24,6 +24,7 @@ const shared = ({ style, theme, error }: InputProps) => {
 
     &::placeholder {
       color: ${gray600};
+      font-size: 14px;
     }
 
     ${{ ...style }}
