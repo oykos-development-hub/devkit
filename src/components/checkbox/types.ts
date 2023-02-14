@@ -10,7 +10,6 @@ export interface CheckboxProps {
   checked?: boolean;
   size?: CheckboxSize;
   disabled?: boolean;
-  indeterminate?: boolean;
   onClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   style?: React.CSSProperties;
   theme?: DefaultTheme;
