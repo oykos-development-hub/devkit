@@ -80,7 +80,7 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
 
     //menu
     .select__menu {
-      box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+      box-shadow: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
       border: 1px solid ${gray100};
       margin-top: 0.5em;
       border-radius: ${theme.borderRadius.lg || "0.5rem"};
