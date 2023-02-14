@@ -2,7 +2,6 @@ import React from "react";
 import styled, { css } from "styled-components";
 import { ButtonVariants, ButtonSizes } from "../types";
 import { DefaultTheme } from "../../../types";
-import { Theme } from "../../../shared/theme";
 
 export const Content = styled.div<{
   disabled: boolean;
@@ -11,8 +10,7 @@ export const Content = styled.div<{
   theme: DefaultTheme;
   customStyle: React.CSSProperties | undefined;
 }>(({ disabled, theme, size, variant, customStyle }) => {
-  const themeToUse = theme || Theme;
-  const { gray300, gray700, white } = themeToUse.palette;
+  const { gray300, gray700, white } = theme!.palette;
 
   const fontSize = {
     xs: "0.875rem",
