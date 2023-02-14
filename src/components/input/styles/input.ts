@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import { Theme } from "../../../shared/theme";
 import { InputProps } from "../types";
 
 const shared = ({ style, theme, error }: InputProps) => {
@@ -18,7 +17,7 @@ const shared = ({ style, theme, error }: InputProps) => {
     }
 
     &[disabled] {
-      color: ${gray400};
+      color: ${gray600};
       background-color: ${white};
     }
 

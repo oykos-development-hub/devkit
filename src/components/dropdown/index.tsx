@@ -11,6 +11,7 @@ import { ControlIconWrapper } from "./styles/controlIconWrapper";
 export const Dropdown = ({
   options,
   theme = Theme,
+  isDisabled = false,
   isSearchable = false,
   isMulti = false,
   noOptionsText = "No options",
@@ -29,7 +30,7 @@ export const Dropdown = ({
   const controlIconWrapperRef = useRef<HTMLDivElement>(null);
 
   const optionLabel = (e: any) => (
-    <Option>
+    <Option theme={theme} isDisabled={isDisabled}>
       <div>
         {optionIcon && <div className="option-icon">{optionIcon} </div>}
         {e.label}
@@ -57,6 +58,7 @@ export const Dropdown = ({
           theme={theme}
           blurInputOnSelect
           isSearchable={isSearchable}
+          isDisabled={isDisabled}
           noOptionsMessage={() => noOptionsText}
           style={{
             paddingLeft: `${controlIcon ? `calc(${controlIconWidth}px + 1em)` : "1em"}`,
