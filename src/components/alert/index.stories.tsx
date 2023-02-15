@@ -8,7 +8,7 @@ import { DangerIcon } from "../icon";
 
 export default {
   component: Alert,
-  title: "Example/Alert",
+  title: "Components/Alert",
   argTypes: {
     content: {
       control: {
