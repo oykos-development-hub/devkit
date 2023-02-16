@@ -4,4 +4,5 @@ export declare const Loader: (props: import("./types").LoaderProps) => import("r
 export declare const Typography: (props: import("./types").TypographyProps) => import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;
 export declare const Input: ({ name, value, theme, style, disabled, label, textarea, leftContent, rightContent, error, hint, placeholder, onChange, onBlur, onFocus, id, inputRef, ...props }: import("./types").InputProps) => import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;
 export declare const Pin: ({ handleInput, length, type }: import("./types").IPinCode) => JSX.Element;
+export declare const Avatar: import("react").FC<import("./types").AvatarProps>;
 export * from "./components/icon";
