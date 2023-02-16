@@ -6,4 +6,5 @@ export * from "./components/button/types";
 export * from "./components/input/types";
 export * from "./components/pin/types";
 export * from "./components/checkbox/types";
+export * from "./components/radio/types";
 //# sourceMappingURL=types.js.map
