@@ -1,11 +1,11 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Deploy to production server
+name: PR to master
 
 # Controls when the action will run.
 on:
-  # Triggers the workflow on push or pull request events but only for the main branch
-  push:
+  # Triggers the workflow on pull request events
+  pull_request:
     branches: [master]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -29,15 +29,13 @@ jobs:
             password: ${{secrets.SSH_PASSPHRASE}}
             script: |
               cd /var/www/vhosts/oykos.me/devkit.oykos.me
-              [ -d "./github" ] && echo "Existing github directory" || mkdir github
-              cd github
+              [ -d "./pr" ] && echo "Existing pr directory" || mkdir pr
+              cd pr
               rm -rf ./${{secrets.GIT_REPO}}
               git clone https://oykos-development-hub:${{secrets.GIT_ACCESS_TOKEN}}@github.com/oykos-development-hub/${{secrets.GIT_REPO}}.git
               cd ./${{secrets.GIT_REPO}}
               npm install husky
               npm install
-              npm run storybook:production
-              rm -rf ../../storybook-docs
-              cp -R ./storybook-docs/** ../../
-              npm config set _authToken=${{secrets.NPM_TOKEN}}
-              npm publish --access public
+              npm run git:pull-request
+              cd ../../
+              rm -rf pr
