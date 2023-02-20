@@ -1,5 +1,5 @@
 import React from "react";
-import { ModalProps } from "./types";
+import { ModalProps, Variants } from "./types";
 import { Container } from "./styles/container";
 import { Theme } from "../../shared/theme";
 import { ModalBox } from "./styles/modal";
@@ -7,7 +7,15 @@ import { ModalHeader } from "./styles/header";
 import { Typography } from "../typography";
 import { XIcon } from "../icon";
 
-export const Modal = ({ theme = Theme, title, content, open, onClose, variant = "light", style }: ModalProps) => {
+export const Modal = ({
+  theme = Theme,
+  title,
+  content,
+  open,
+  onClose,
+  variant = Variants["light"],
+  style,
+}: ModalProps) => {
   return (
     <Container open={open} onClick={onClose && onClose()}>
       <ModalBox
