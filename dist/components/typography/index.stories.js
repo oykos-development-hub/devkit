@@ -18,11 +18,12 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
     }
     return to.concat(ar || Array.prototype.slice.call(from));
 };
+var _a, _b, _c;
 import React from "react";
 import { Typography } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { TypographyVariants, VariantNames } from "./variants";
+import { TypographyVariants, VariantNames, WeightVariants } from "./variants";
 export default {
     title: "Components/Typography",
     component: Typography,
@@ -47,95 +48,78 @@ export default {
             },
         },
     },
+    variant: {
+        control: {
+            type: "select",
+            options: __spreadArray([], VariantNames, true),
+        },
+    },
+    fontWeight: {
+        options: Object.keys(WeightVariants),
+        mapping: WeightVariants,
+        control: {
+            type: "radio",
+        },
+    },
+    theme: {
+        control: {
+            type: "object",
+        },
+    },
+    style: {
+        defaultValue: {
+            color: "#333",
+        },
+    },
 };
 var Template = function (args) { return (React.createElement(StoryWrapper, null,
     React.createElement(Typography, __assign({}, args), args.content))); };
-export var HeadlineH1 = Template.bind({});
-HeadlineH1.args = {
+export var Headings = Template.bind({});
+Headings.args = {
     variant: TypographyVariants.h1,
-    content: "HeadlineH1",
+    content: "Headline",
     theme: Theme,
 };
-export var HeadlineH1Custom = Template.bind({});
-HeadlineH1Custom.args = {
-    variant: TypographyVariants.h1,
-    content: "Headline H1 Custom Style",
-    style: {
-        color: "#51a322",
-        margin: "5rem 2rem",
-        letterSpacing: "3px",
-    },
-};
-export var HeadlineH2 = Template.bind({});
-HeadlineH2.args = {
-    variant: TypographyVariants.h2,
-    content: "HeadlineH2",
+export var BodyLarge = Template.bind({});
+BodyLarge.args = {
+    variant: TypographyVariants.bodyLarge,
+    fontWeight: WeightVariants.regular,
+    content: "Body Large",
     theme: Theme,
 };
-export var HeadlineH3 = Template.bind({});
-HeadlineH3.args = {
-    variant: TypographyVariants.h3,
-    content: "HeadlineH3",
+export var BodyMedium = Template.bind({});
+BodyMedium.args = {
+    variant: TypographyVariants.bodyMedium,
+    fontWeight: WeightVariants.regular,
+    content: "Body Medium",
     theme: Theme,
 };
-export var HeadlineH4 = Template.bind({});
-HeadlineH4.args = {
-    variant: TypographyVariants.h4,
-    content: "HeadlineH4",
-    theme: Theme,
-};
-export var HeadlineH5 = Template.bind({});
-HeadlineH5.args = {
-    variant: TypographyVariants.h5,
-    content: "HeadlineH5",
-    theme: Theme,
-};
-export var HeadlineH6 = Template.bind({});
-HeadlineH6.args = {
-    variant: TypographyVariants.h6,
-    content: "HeadlineH6",
-    theme: Theme,
-};
-export var Subtitle1 = Template.bind({});
-Subtitle1.args = {
-    variant: TypographyVariants.subtitle1,
-    content: "Subtitle1",
-    theme: Theme,
-};
-export var Subtitle2 = Template.bind({});
-Subtitle2.args = {
-    variant: TypographyVariants.subtitle2,
-    content: "Subtitle2",
-    theme: Theme,
-};
-export var Body1 = Template.bind({});
-Body1.args = {
-    variant: TypographyVariants.body1,
-    content: "Body1",
-    theme: Theme,
-};
-export var Body2 = Template.bind({});
-Body2.args = {
-    variant: TypographyVariants.body2,
-    content: "Body2",
-    theme: Theme,
-};
-export var Button = Template.bind({});
-Button.args = {
-    variant: TypographyVariants.button,
-    content: "Button",
+export var BodySmall = Template.bind({});
+BodySmall.args = {
+    variant: TypographyVariants.bodySmall,
+    fontWeight: WeightVariants.regular,
+    content: "Body Small",
     theme: Theme,
 };
 export var Caption = Template.bind({});
 Caption.args = {
     variant: TypographyVariants.caption,
+    fontSize: (_a = Theme === null || Theme === void 0 ? void 0 : Theme.typographyFontSize) === null || _a === void 0 ? void 0 : _a.caption,
     content: "Caption",
     theme: Theme,
 };
-export var Overline = Template.bind({});
-Overline.args = {
-    variant: TypographyVariants.overline,
-    content: "Overline",
+export var HelperText = Template.bind({});
+HelperText.args = {
+    variant: TypographyVariants.helperText,
+    fontSize: (_b = Theme === null || Theme === void 0 ? void 0 : Theme.typographyFontSize) === null || _b === void 0 ? void 0 : _b.helperText,
+    content: "Helper Text",
+    theme: Theme,
+};
+export var Code = Template.bind({});
+Code.args = {
+    variant: TypographyVariants.code,
+    fontSize: (_c = Theme === null || Theme === void 0 ? void 0 : Theme.typographyFontSize) === null || _c === void 0 ? void 0 : _c.code,
+    content: "Code",
     theme: Theme,
 };
 //# sourceMappingURL=index.stories.js.map

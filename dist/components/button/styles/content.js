@@ -3,11 +3,9 @@ var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cook
     return cooked;
 };
 import styled, { css } from "styled-components";
-import { Theme } from "../../../shared/theme";
 export var Content = styled.div(function (_a) {
     var disabled = _a.disabled, theme = _a.theme, size = _a.size, variant = _a.variant, customStyle = _a.customStyle;
-    var themeToUse = theme || Theme;
-    var _b = themeToUse.palette, gray300 = _b.gray300, gray700 = _b.gray700, white = _b.white;
+    var _b = theme.palette, gray300 = _b.gray300, gray700 = _b.gray700, white = _b.white;
     var fontSize = {
         xs: "0.875rem",
         sm: "0.875rem",
