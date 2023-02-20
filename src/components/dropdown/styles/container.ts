@@ -7,7 +7,7 @@ export const Container = styled.div(({ theme }: { theme: DefaultTheme }) => {
   return css`
     display: flex;
     flex-direction: column;
-    gap: 0.75em;
+    gap: 0.5em;
 
     & *,
     & ${BodyMedium} {

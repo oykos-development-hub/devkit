@@ -5,6 +5,7 @@ import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { InputProps } from "./types";
 import { Theme } from "../../shared/theme";
 import { CircleCheckIcon, XIcon } from "../icon";
+import { Dropdown } from "../dropdown";
 
 export default {
   title: "Components/Input",
@@ -21,7 +22,7 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (args: InputProps) => (
   <StoryWrapper>
-    <div style={{ width: "300px" }}>
+    <div style={{ width: "400px" }}>
       <Input {...args} />
     </div>
   </StoryWrapper>
@@ -54,7 +55,7 @@ WithContent.args = {
   label: "Input Label*",
   placeholder: "placeholder...",
   leftContent: (
-    <div style={{ padding: "0 0.75em", display: "flex", alignItems: "center" }}>
+    <div style={{ padding: "0 1em", display: "flex", alignItems: "center" }}>
       <CircleCheckIcon style={{ color: "grey" }} size="24px" />
     </div>
   ),
@@ -83,4 +84,23 @@ WithHint.args = {
   label: "Input Label*",
   placeholder: "placeholder...",
   hint: "This is hint.",
+};
+
+//
+
+export const WithDropdown = Template.bind({});
+
+const options = [
+  { value: "us", label: "US" },
+  { value: "es", label: "ES" },
+];
+
+WithDropdown.args = {
+  leftContent: (
+    <Dropdown
+      options={options}
+      style={{ border: "none", width: "76px", boxShadow: "none" }}
+      placeholder={options[0].label}
+    />
+  ),
 };

@@ -29,18 +29,18 @@ import { XIcon } from "../icon";
 import { Option } from "./styles/option";
 import { ControlIconWrapper } from "./styles/controlIconWrapper";
 export var Dropdown = function (_a) {
-    var options = _a.options, _b = _a.theme, theme = _b === void 0 ? Theme : _b, _c = _a.isSearchable, isSearchable = _c === void 0 ? false : _c, _d = _a.isMulti, isMulti = _d === void 0 ? false : _d, _e = _a.noOptionsText, noOptionsText = _e === void 0 ? "No options" : _e, label = _a.label, style = _a.style, _f = _a.showArrow, showArrow = _f === void 0 ? true : _f, controlIcon = _a.controlIcon, optionIcon = _a.optionIcon, onChange = _a.onChange, props = __rest(_a, ["options", "theme", "isSearchable", "isMulti", "noOptionsText", "label", "style", "showArrow", "controlIcon", "optionIcon", "onChange"]);
-    var _g = useState(null), selectedOption = _g[0], setSelectedOption = _g[1];
-    var _h = useState(0), controlIconWidth = _h[0], setControlIconWidth = _h[1];
+    var options = _a.options, _b = _a.theme, theme = _b === void 0 ? Theme : _b, _c = _a.isDisabled, isDisabled = _c === void 0 ? false : _c, _d = _a.isSearchable, isSearchable = _d === void 0 ? false : _d, _e = _a.isMulti, isMulti = _e === void 0 ? false : _e, _f = _a.noOptionsText, noOptionsText = _f === void 0 ? "No options" : _f, label = _a.label, style = _a.style, _g = _a.showArrow, showArrow = _g === void 0 ? true : _g, controlIcon = _a.controlIcon, optionIcon = _a.optionIcon, onChange = _a.onChange, _h = _a.placeholder, placeholder = _h === void 0 ? "" : _h, props = __rest(_a, ["options", "theme", "isDisabled", "isSearchable", "isMulti", "noOptionsText", "label", "style", "showArrow", "controlIcon", "optionIcon", "onChange", "placeholder"]);
+    var _j = useState(null), selectedOption = _j[0], setSelectedOption = _j[1];
+    var _k = useState(0), controlIconWidth = _k[0], setControlIconWidth = _k[1];
     var controlIconWrapperRef = useRef(null);
-    var optionLabel = function (e) { return (React.createElement(Option, { theme: theme },
+    var optionLabel = function (e) { return (React.createElement(Option, { theme: theme, isDisabled: isDisabled },
         React.createElement("div", null,
             optionIcon && React.createElement("div", { className: "option-icon" },
                 optionIcon,
                 " "),
             e.label),
         !isMulti && (selectedOption === null || selectedOption === void 0 ? void 0 : selectedOption.value) === e.value && (React.createElement("div", { className: "option-icon" },
-            React.createElement(XIcon, { style: { color: theme.palette.gray700 } }))))); };
+            React.createElement(XIcon, { style: { color: theme.palette.gray700 }, size: "1em" }))))); };
     useEffect(function () {
         var _a;
         if (controlIcon && controlIconWrapperRef.current)
@@ -49,10 +49,10 @@ export var Dropdown = function (_a) {
     return (React.createElement(Container, { theme: theme },
         label && React.createElement(Typography, { content: label, variant: "bodyMedium" }),
         React.createElement("div", null,
-            React.createElement(StyledSelect, __assign({ options: options, classNamePrefix: "select", theme: theme, blurInputOnSelect: true, isSearchable: isSearchable, noOptionsMessage: function () { return noOptionsText; }, style: __assign({ paddingLeft: "".concat(controlIcon ? "calc(".concat(controlIconWidth, "px + 1em)") : "1em") }, style), onChange: function (e) {
+            React.createElement(StyledSelect, __assign({ options: options, classNamePrefix: "select", theme: theme, blurInputOnSelect: true, isSearchable: isSearchable, isDisabled: isDisabled, noOptionsMessage: function () { return noOptionsText; }, style: __assign({ paddingLeft: "".concat(controlIcon ? "calc(".concat(controlIconWidth, "px + 1em)") : "1em") }, style), onChange: function (e) {
                     !isMulti && setSelectedOption(e);
                     onChange && onChange(e);
-                }, controlIcon: controlIcon, showArrow: showArrow, isMulti: isMulti, formatOptionLabel: optionLabel }, props)),
+                }, controlIcon: controlIcon, showArrow: showArrow, isMulti: isMulti, formatOptionLabel: optionLabel, placeholder: placeholder }, props)),
             React.createElement(ControlIconWrapper, { ref: controlIconWrapperRef }, controlIcon))));
 };
 //# sourceMappingURL=index.js.map

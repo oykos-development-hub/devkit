@@ -13,3 +13,4 @@ export const Pin = PinComponent;
 export const Avatar = AvatarComponent;
 
 export * from "./components/icon";
+export * from "./types";

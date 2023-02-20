@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import { ButtonVariants, ButtonSizes } from "../types";
 import { DefaultTheme } from "../../../types";
-import { Theme } from "../../../shared/theme";
 
 export const Content = styled.div<{
   disabled: boolean;

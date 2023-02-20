@@ -4,7 +4,7 @@ import styled, { css } from "styled-components";
 import { DropdownProps } from "../types";
 
 export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, style, controlIcon }) => {
-  const { primary200, gray50, gray100, gray700, gray400, gray600, gray900, white } = theme.palette;
+  const { primary200, gray50, gray100, gray400, gray600, gray900, white } = theme.palette;
 
   const borderColor = style?.borderColor || gray400;
 
@@ -15,12 +15,12 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
     // control
     .select__control {
       height: 100%;
-      background-color: ${white};
+      background-color: transparent;
       border: ${style?.border || `1px solid ${borderColor}`};
       border-radius: ${theme.borderRadius.lg || "0.5rem"};
       padding: 0 1em;
       svg {
-        fill: ${gray700};
+        fill: ${gray600};
       }
       ${{ ...style }}
     }
@@ -60,7 +60,7 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
     .select__control--is-focused,
     .select__control--is-focused:hover {
       border-color: ${primary200};
-      box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #f4ebff;
+      box-shadow: ${style?.boxShadow || "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #f4ebff"};
     }
     .select__control--menu-is-open .select__dropdown-indicator svg {
       transform: rotate(180deg);
@@ -98,7 +98,9 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
       padding: 0.5em 1rem;
     }
     .select__option--is-focused,
-    .select__option--is-selected {
+    .select__option--is-selected,
+    .select__option--is-focused.select__option--is-selected,
+    .select__option:active {
       background-color: ${white};
       color: ${gray900};
     }

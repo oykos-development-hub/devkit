@@ -6,3 +6,4 @@ export declare const Input: ({ name, value, theme, style, disabled, label, texta
 export declare const Pin: ({ handleInput, length, type }: import("./types").IPinCode) => JSX.Element;
 export declare const Avatar: import("react").FC<import("./types").AvatarProps>;
 export * from "./components/icon";
+export * from "./types";

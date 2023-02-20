@@ -11,6 +11,7 @@ import { ControlIconWrapper } from "./styles/controlIconWrapper";
 export const Dropdown = ({
   options,
   theme = Theme,
+  isDisabled = false,
   isSearchable = false,
   isMulti = false,
   noOptionsText = "No options",
@@ -20,6 +21,7 @@ export const Dropdown = ({
   controlIcon,
   optionIcon,
   onChange,
+  placeholder = "",
   ...props
 }: DropdownProps) => {
   const [selectedOption, setSelectedOption] = useState<ValueType | null>(null);
@@ -28,14 +30,14 @@ export const Dropdown = ({
   const controlIconWrapperRef = useRef<HTMLDivElement>(null);
 
   const optionLabel = (e: any) => (
-    <Option theme={theme}>
+    <Option theme={theme} isDisabled={isDisabled}>
       <div>
         {optionIcon && <div className="option-icon">{optionIcon} </div>}
         {e.label}
       </div>
       {!isMulti && selectedOption?.value === e.value && (
         <div className="option-icon">
-          <XIcon style={{ color: theme.palette.gray700 }} />
+          <XIcon style={{ color: theme.palette.gray700 }} size="1em" />
         </div>
       )}
     </Option>
@@ -56,6 +58,7 @@ export const Dropdown = ({
           theme={theme}
           blurInputOnSelect
           isSearchable={isSearchable}
+          isDisabled={isDisabled}
           noOptionsMessage={() => noOptionsText}
           style={{
             paddingLeft: `${controlIcon ? `calc(${controlIconWidth}px + 1em)` : "1em"}`,
@@ -69,6 +72,7 @@ export const Dropdown = ({
           showArrow={showArrow}
           isMulti={isMulti}
           formatOptionLabel={optionLabel}
+          placeholder={placeholder}
           {...props}
         />
 
