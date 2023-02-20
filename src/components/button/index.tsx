@@ -1,18 +1,23 @@
 import React from "react";
-import { ButtonProps } from "./types";
-import { Primary } from "./styles/variants/primary";
-import { Secondary } from "./styles/variants/secondary";
-import { Tertiary } from "./styles/variants/tertiary";
+import { ButtonProps, ButtonSizes, ButtonVariants } from "./types";
+import { Container } from "./styles/container";
+import { Content } from "./styles/content";
+import { Theme } from "../../shared/theme";
 
-export const StyledButton = (props: ButtonProps) => {
-  const variant = props.variant ?? "primary";
-
-  if (variant === "secondary") return <Secondary {...props} type="button" />;
-  if (variant === "tertiary") return <Tertiary {...props} type="button" />;
-
-  return <Primary {...props} type="submit" />;
-};
-
-export const Button = (props: ButtonProps) => {
-  return <StyledButton {...props}>{props.content}</StyledButton>;
+export const Button = ({
+  onClick,
+  content,
+  disabled = false,
+  variant = ButtonVariants.primary,
+  size = ButtonSizes.lg,
+  style,
+  theme,
+}: ButtonProps) => {
+  return (
+    <Container style={style} disabled={disabled} variant={variant} size={size} onClick={onClick} theme={theme || Theme}>
+      <Content size={size} disabled={disabled} variant={variant} theme={theme || Theme} customStyle={style}>
+        {content}
+      </Content>
+    </Container>
+  );
 };

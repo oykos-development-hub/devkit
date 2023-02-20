@@ -1,28 +1,11 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 import React from "react";
-import { Primary } from "./styles/variants/primary";
-import { Secondary } from "./styles/variants/secondary";
-import { Tertiary } from "./styles/variants/tertiary";
-export var StyledButton = function (props) {
-    var _a;
-    var variant = (_a = props.variant) !== null && _a !== void 0 ? _a : "primary";
-    if (variant === "secondary")
-        return React.createElement(Secondary, __assign({}, props, { type: "button" }));
-    if (variant === "tertiary")
-        return React.createElement(Tertiary, __assign({}, props, { type: "button" }));
-    return React.createElement(Primary, __assign({}, props, { type: "submit" }));
-};
-export var Button = function (props) {
-    return React.createElement(StyledButton, __assign({}, props), props.content);
+import { ButtonSizes, ButtonVariants } from "./types";
+import { Container } from "./styles/container";
+import { Content } from "./styles/content";
+import { Theme } from "../../shared/theme";
+export var Button = function (_a) {
+    var onClick = _a.onClick, content = _a.content, _b = _a.disabled, disabled = _b === void 0 ? false : _b, _c = _a.variant, variant = _c === void 0 ? ButtonVariants.primary : _c, _d = _a.size, size = _d === void 0 ? ButtonSizes.lg : _d, style = _a.style, theme = _a.theme;
+    return (React.createElement(Container, { style: style, disabled: disabled, variant: variant, size: size, onClick: onClick, theme: theme || Theme },
+        React.createElement(Content, { size: size, disabled: disabled, variant: variant, theme: theme || Theme, customStyle: style }, content)));
 };
 //# sourceMappingURL=index.js.map

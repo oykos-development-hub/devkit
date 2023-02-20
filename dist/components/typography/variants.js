@@ -6,14 +6,21 @@ export var TypographyVariants;
     TypographyVariants["h4"] = "h4";
     TypographyVariants["h5"] = "h5";
     TypographyVariants["h6"] = "h6";
-    TypographyVariants["subtitle1"] = "subtitle1";
-    TypographyVariants["subtitle2"] = "subtitle2";
-    TypographyVariants["body1"] = "body1";
-    TypographyVariants["body2"] = "body2";
-    TypographyVariants["button"] = "button";
+    TypographyVariants["bodyLarge"] = "bodyLarge";
+    TypographyVariants["bodyMedium"] = "bodyMedium";
+    TypographyVariants["bodySmall"] = "bodySmall";
+    TypographyVariants["linkLarge"] = "linkLarge";
+    TypographyVariants["linkMedium"] = "linkMedium";
+    TypographyVariants["linkSmall"] = "linkSmall";
     TypographyVariants["caption"] = "caption";
-    TypographyVariants["overline"] = "overline";
-    TypographyVariants["error"] = "error";
+    TypographyVariants["helperText"] = "helperText";
+    TypographyVariants["code"] = "code";
 })(TypographyVariants || (TypographyVariants = {}));
+export var WeightVariants;
+(function (WeightVariants) {
+    WeightVariants["regular"] = "400";
+    WeightVariants["semiBold"] = "600";
+    WeightVariants["bold"] = "700";
+})(WeightVariants || (WeightVariants = {}));
 export var VariantNames = Object.keys(TypographyVariants).map(function (key) { return key; });
 //# sourceMappingURL=variants.js.map

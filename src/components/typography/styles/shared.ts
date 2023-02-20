@@ -3,8 +3,11 @@ import { TypographyProps } from "../types";
 import { Theme } from "../../../shared/theme";
 
 export const shared = css<TypographyProps>`
-  color: ${(props) => props.style?.color || props?.theme?.palette?.dark?.one || Theme.palette?.dark?.one};
+  color: ${(props: TypographyProps) => props.style?.color || props?.theme?.palette?.gray900 || Theme.palette?.gray900};
   display: block;
-  font-family: ${(props) => props.style?.fontFamily || props.theme?.fontFamily?.one || Theme.fontFamily?.one};
+  font-family: ${(props: TypographyProps) =>
+    props.style?.fontFamily || props.theme?.fontFamily?.one || Theme.fontFamily?.one};
   margin: ${(props: TypographyProps) => props.style?.margin || "initial"};
 `;
+
+export const fontWeight = (props: TypographyProps) => props.fontWeight || Theme.fontWeight.regular;

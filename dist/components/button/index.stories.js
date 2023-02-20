@@ -10,12 +10,10 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import React from "react";
-import { Button } from "./index";
-import { ButtonVariants } from "./types";
+import { ButtonSizes, ButtonVariants } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { Typography } from "../typography";
-import { TypographyVariants } from "../typography/variants";
+import { Button } from "./index";
 export default {
     component: Button,
     title: "Components/Button",
@@ -41,22 +39,28 @@ export default {
             control: {
                 type: "object",
             },
+            defaultValue: Theme,
         },
         style: {
             defaultValue: {
                 width: "fit-content",
                 height: "fit-content",
-                padding: "1em 2em",
                 margin: "0em",
-                borderRadius: "1em",
                 borderWidth: "1px",
                 gap: "0.5em",
+            },
+        },
+        size: {
+            control: {
+                type: "radio",
+                options: ["xs", "sm", "md", "lg", "xl"],
             },
         },
     },
 };
 var Template = function (args) { return (React.createElement(StoryWrapper, null,
     React.createElement(Button, __assign({}, args)))); };
+<<<<<<< HEAD
 export var PrimaryDefault = Template.bind({});
 PrimaryDefault.args = {
     content: React.createElement(Typography, { content: "Primary Default", variant: TypographyVariants.button, theme: Theme }),
@@ -65,12 +69,26 @@ PrimaryDefault.args = {
 export var PrimaryCustomStyle = Template.bind({});
 PrimaryCustomStyle.args = {
     content: React.createElement(Typography, { content: "Primary Custom Style", variant: TypographyVariants.button }),
+=======
+export var CustomButton = Template.bind({});
+CustomButton.args = {
+    content: "Button CTA",
+    onClick: function () { return alert("Button clicked!"); },
+    variant: ButtonVariants.primary,
+    size: ButtonSizes.lg,
+};
+export var StyledButton = Template.bind({});
+StyledButton.args = {
+    content: "Styled Button",
+    onClick: function () { return alert("Button clicked!"); },
+    variant: ButtonVariants.primary,
+    size: ButtonSizes.lg,
+>>>>>>> development
     style: {
-        width: "150px",
-        boxShadow: "5px 5px 2px #333",
-        backgroundColor: "green",
-        fontWeight: 900,
+        backgroundColor: Theme.palette.success500,
+        color: Theme.palette.white,
     },
+<<<<<<< HEAD
     onClick: function () { return alert("PrimaryCustomStyle clicked!"); },
 };
 export var PrimaryThemed = Template.bind({});
@@ -130,5 +148,7 @@ TertiaryThemed.args = {
     variant: ButtonVariants.tertiary,
     theme: Theme,
     onClick: function () { return alert("TertiaryThemed clicked!"); },
+=======
+>>>>>>> development
 };
 //# sourceMappingURL=index.stories.js.map

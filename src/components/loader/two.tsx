@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${(props: LoaderProps) =>
-    props.wrapperBackgroundColor || props.theme?.palette?.dark?.four || "transparent"};
+    props.wrapperBackgroundColor || props.theme?.palette?.secondary500 || "transparent"};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -18,13 +18,13 @@ const Wrapper = styled.div`
   }
 
   & #loader-ring-1 {
-    stroke: ${(props: LoaderProps) => props.primaryColor || props.theme?.palette?.main?.two || "red"};
+    stroke: ${(props: LoaderProps) => props.primaryColor || props.theme?.palette?.primary500 || "red"};
     animation: ${rotation} 1.5s linear infinite;
     transform-origin: center;
   }
 
   & #loader-ring-2 {
-    stroke: ${(props: LoaderProps) => props.secondaryColor || props.theme?.palette?.important?.two || "green"};
+    stroke: ${(props: LoaderProps) => props.secondaryColor || props.theme?.palette?.error500 || "green"};
     animation: ${rotationBackwards} 1.5s linear infinite;
     transform-origin: center;
   }
