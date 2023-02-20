@@ -13,7 +13,7 @@ export var Modal = function (_a) {
             }, style: style },
             React.createElement(ModalHeader, { theme: theme },
                 title && React.createElement(Typography, { content: title, variant: "h6" }),
-                React.createElement(XIcon, { size: "16px", onClick: onClose && onClose() })),
-            content)));
+                React.createElement(XIcon, { size: "1rem", onClick: onClose && onClose() })),
+            content && content)));
 };
 //# sourceMappingURL=index.js.map

@@ -14,11 +14,11 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import styled, { css } from "styled-components";
-import { H6, Body1, Body2 } from "../../typography/styles/variants";
-export var ModalBox = styled.div(function () { return function (_a) {
+import { BodyLarge, BodyMedium, BodySmall, H1, H2, H3, H4, H5, H6 } from "../../typography/styles/variants";
+export var ModalBox = styled.div(function (_a) {
     var theme = _a.theme, variant = _a.variant, style = _a.style;
     var _b = theme.palette, white = _b.white, black = _b.black;
-    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    background-color: ", ";\n    width: fit-content;\n    min-width: 25%;\n    padding: 1.5em;\n    box-shadow: 0px 4px 8px -2px rgba(33, 33, 33, 0.07), 0px 12px 16px -4px rgba(33, 33, 33, 0.1);\n    border-radius: 0.5em;\n\n    ", ", ", ", ", " {\n      color: ", ";\n    }\n\n    ", "\n  "], ["\n    background-color: ", ";\n    width: fit-content;\n    min-width: 25%;\n    padding: 1.5em;\n    box-shadow: 0px 4px 8px -2px rgba(33, 33, 33, 0.07), 0px 12px 16px -4px rgba(33, 33, 33, 0.1);\n    border-radius: 0.5em;\n\n    ", ", ", ", ", " {\n      color: ", ";\n    }\n\n    ", "\n  "])), variant === "dark" ? black : white, H6, Body1, Body2, variant === "dark" ? white : black, __assign({}, style));
-}; });
+    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    & * {\n      font-family: \"Inter\";\n    }\n\n    background-color: ", ";\n    width: fit-content;\n    min-width: 25%;\n    padding: 1.5em;\n    box-shadow: 0px 4px 8px -2px rgba(33, 33, 33, 0.07), 0px 12px 16px -4px rgba(33, 33, 33, 0.1);\n    border-radius: 0.5em;\n\n    ", ",", ", ", ", ", ", ", ", ", ", ", ",", ", ", " {\n      color: ", ";\n    }\n\n    ", "\n  "], ["\n    & * {\n      font-family: \"Inter\";\n    }\n\n    background-color: ", ";\n    width: fit-content;\n    min-width: 25%;\n    padding: 1.5em;\n    box-shadow: 0px 4px 8px -2px rgba(33, 33, 33, 0.07), 0px 12px 16px -4px rgba(33, 33, 33, 0.1);\n    border-radius: 0.5em;\n\n    ", ",", ", ", ", ", ", ", ", ", ", ", ",", ", ", " {\n      color: ", ";\n    }\n\n    ", "\n  "])), variant === "dark" ? black : white, H1, H2, H3, H4, H5, H6, BodyLarge, BodyMedium, BodySmall, variant === "dark" ? white : black, __assign({}, style));
+});
 var templateObject_1;
 //# sourceMappingURL=modal.js.map
