@@ -10,10 +10,15 @@ export enum Positions {
   topRight = "topRight",
 }
 
+export enum Variants {
+  standard = "standard",
+  filled = "filled",
+}
+
 export interface TooltipProps {
-  variant?: "standard" | "filled";
-  theme?: DefaultTheme;
-  position: Positions | keyof typeof Positions;
+  variant: keyof typeof Variants;
+  theme: DefaultTheme;
+  position: keyof typeof Positions;
   style?: CSSProperties;
   title?: string;
   content: string | ReactElement;

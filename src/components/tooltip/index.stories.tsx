@@ -42,14 +42,33 @@ const Template: ComponentStory<typeof Tooltip> = (args: TooltipProps) => (
     </Tooltip>
   </StoryWrapper>
 );
+
 export const TooltipDefault = Template.bind({});
 
 TooltipDefault.args = {
   content: "This is a tooltip",
 };
 
-export const WithTitle = Template.bind({});
-WithTitle.args = {
+//
+export const TooltipWithTitle = Template.bind({});
+
+TooltipWithTitle.args = {
   title: "Tooltip title",
   content: "This is a tooltip",
+};
+
+//
+export const TooltipVariantFilled = Template.bind({});
+
+TooltipVariantFilled.args = {
+  content: "This is a tooltip",
+  variant: "filled",
+};
+
+//
+export const TooltipWithArrow = Template.bind({});
+
+TooltipWithArrow.args = {
+  content: "This is a tooltip",
+  arrow: true,
 };
