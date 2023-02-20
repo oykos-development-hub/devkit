@@ -1,7 +1,7 @@
 import styled, { css, DefaultTheme } from "styled-components";
 
 export const Container = styled.div<{ theme: DefaultTheme }>(({ theme }) => {
-  const { gray300, gray900 } = theme?.palette;
+  const { gray300, gray900 } = theme.palette;
 
   return css`
     & * {

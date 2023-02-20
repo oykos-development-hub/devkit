@@ -43,8 +43,8 @@ DefaultTable.args = {
 
   headerContent: (
     <tr>
-      {tableHeadings.map((heading) => (
-        <th>
+      {tableHeadings.map((heading, index) => (
+        <th key={index}>
           <div>
             <span>{heading}</span>
             <CircleCheckIcon size="1em" onClick={() => alert("Icon is clicked")} style={{ cursor: "pointer" }} />
@@ -54,8 +54,8 @@ DefaultTable.args = {
     </tr>
   ),
 
-  bodyContent: tableData.map((data) => (
-    <tr>
+  bodyContent: tableData.map((data, index) => (
+    <tr key={index}>
       <td>{data.city}</td>
       <td>{data.code}</td>
       <td>{data.latitude}</td>
@@ -71,8 +71,8 @@ export const NoDataTable = Default.bind({});
 NoDataTable.args = {
   headerContent: (
     <tr>
-      {tableHeadings.map((heading) => (
-        <th>
+      {tableHeadings.map((heading, index) => (
+        <th key={index}>
           <div>
             <span>{heading}</span>
             <CircleCheckIcon size="1em" onClick={() => alert("Icon is clicked")} style={{ cursor: "pointer" }} />

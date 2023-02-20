@@ -1,7 +1,7 @@
 import styled, { css, CSSProperties, DefaultTheme } from "styled-components";
 
 export const StyledTable = styled.table<{ theme: DefaultTheme; style?: CSSProperties }>(({ theme, style }) => {
-  const { gray300 } = theme?.palette;
+  const { gray300 } = theme.palette;
 
   return css`
     width: 100%;
