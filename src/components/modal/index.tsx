@@ -20,9 +20,10 @@ export const Modal = ({ theme = Theme, title, content, open, onClose, variant = 
       >
         <ModalHeader theme={theme}>
           {title && <Typography content={title} variant="h6" />}
-          <XIcon size="16px" onClick={onClose && onClose()} />
+          <XIcon size="1rem" onClick={onClose && onClose()} />
         </ModalHeader>
-        {content}
+
+        {content && content}
       </ModalBox>
     </Container>
   );

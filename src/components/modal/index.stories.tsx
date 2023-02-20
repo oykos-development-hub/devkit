@@ -38,7 +38,7 @@ export const ModalDefault = Template.bind({});
 ModalDefault.args = {
   title: "Modal title",
   content: (
-    <div>
+    <>
       <div style={{ padding: "2em 0.5em", width: "300px" }}>
         <Typography content="This is modal content." variant="body1" />
       </div>
@@ -49,6 +49,26 @@ ModalDefault.args = {
           <button>Cancel</button>
         </div>
       </div>
-    </div>
+    </>
+  ),
+};
+
+export const ModalVariantDark = Template.bind({});
+ModalVariantDark.args = {
+  title: "Modal title",
+  variant: "dark",
+  content: (
+    <>
+      <div style={{ padding: "2em 0.5em", width: "300px" }}>
+        <Typography content="This is modal content." variant="body1" />
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Typography content="This is footer text." variant="body2" />
+        <div style={{ display: "flex", gap: "0.5em" }}>
+          <button>Ok</button>
+          <button>Cancel</button>
+        </div>
+      </div>
+    </>
   ),
 };
