@@ -74,7 +74,7 @@ const Template: ComponentStory<typeof Pagination> = ({ renderContent, ...args }:
   const contentToShow = (data: any) => (
     <div>
       {data.map((country: any) => (
-        <p style={{ textAlign: "center" }}>
+        <p key={country} style={{ textAlign: "center" }}>
           <strong>{country.name}</strong>
         </p>
       ))}
@@ -101,9 +101,9 @@ const paginationArgs = {
         <path
           d="M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667"
           stroke="#616161"
-          stroke-width="1.67"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.67"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
       Previous
@@ -116,9 +116,9 @@ const paginationArgs = {
         <path
           d="M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333"
           stroke="#616161"
-          stroke-width="1.67"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.67"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </p>
@@ -160,9 +160,9 @@ OnlyWithArrows.args = {
         <path
           d="M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667"
           stroke="#616161"
-          stroke-width="1.67"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.67"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </p>
@@ -173,9 +173,9 @@ OnlyWithArrows.args = {
         <path
           d="M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333"
           stroke="#616161"
-          stroke-width="1.67"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.67"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </p>
@@ -197,9 +197,9 @@ WithPaginationText.args = {
         <path
           d="M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667"
           stroke="#616161"
-          stroke-width="1.67"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.67"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </p>
@@ -210,9 +210,9 @@ WithPaginationText.args = {
         <path
           d="M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333"
           stroke="#616161"
-          stroke-width="1.67"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.67"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </svg>
     </p>
