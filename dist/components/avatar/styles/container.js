@@ -31,7 +31,14 @@ export var Container = styled.div(function () { return function (_a) {
         lg: rem("48px"),
         xl: rem("56px"),
     };
-    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    display: flex;\n    flex-wrap: wrap;\n    flex-direction: column;\n    overflow: hidden;\n    justify-content: space-between;\n    width: ", ";\n    height: ", ";\n    padding: ", ";\n    z-index: 1;\n\n    ", "\n  "], ["\n    display: flex;\n    flex-wrap: wrap;\n    flex-direction: column;\n    overflow: hidden;\n    justify-content: space-between;\n    width: ", ";\n    height: ", ";\n    padding: ", ";\n    z-index: 1;\n\n    ", "\n  "])), supportingText && ((style === null || style === void 0 ? void 0 : style.width) || width[size]), (style === null || style === void 0 ? void 0 : style.height) || height[size], (style === null || style === void 0 ? void 0 : style.padding) || "0", __assign({}, style));
+    var widthNoSupportingText = {
+        xs: rem("24px"),
+        sm: rem("36px"),
+        md: rem("40px"),
+        lg: rem("48px"),
+        xl: rem("56px"),
+    };
+    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    display: flex;\n    flex-wrap: wrap;\n    flex-direction: column;\n    overflow: hidden;\n    justify-content: space-between;\n    width: ", ";\n    height: ", ";\n    padding: ", ";\n    z-index: 1;\n\n    ", "\n  "], ["\n    display: flex;\n    flex-wrap: wrap;\n    flex-direction: column;\n    overflow: hidden;\n    justify-content: space-between;\n    width: ", ";\n    height: ", ";\n    padding: ", ";\n    z-index: 1;\n\n    ", "\n  "])), supportingText ? (style === null || style === void 0 ? void 0 : style.width) || width[size] : widthNoSupportingText[size], (style === null || style === void 0 ? void 0 : style.height) || height[size], (style === null || style === void 0 ? void 0 : style.padding) || "0", __assign({}, style));
 }; });
 var templateObject_1;
 //# sourceMappingURL=container.js.map

@@ -23,14 +23,14 @@ export var Column = styled.div(function () { return function (_a) {
         lg: rem("60px"),
         xl: rem("72px"),
     };
-    var height = {
+    var icon = {
         xs: rem("24px"),
         sm: rem("36px"),
         md: rem("40px"),
         lg: rem("48px"),
         xl: rem("56px"),
     };
-    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    position: absolute;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    padding: 0;\n    box-shadow: ", ";\n    height: ", ";\n\n    &:nth-child(2) {\n      margin-left: ", ";\n      height: ", ";\n    }\n\n    ", "\n  "], ["\n    position: absolute;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    padding: 0;\n    box-shadow: ", ";\n    height: ", ";\n\n    &:nth-child(2) {\n      margin-left: ", ";\n      height: ", ";\n    }\n\n    ", "\n  "])), isActive ? "0 0 0 4px #E0E7FF" : "none", (style === null || style === void 0 ? void 0 : style.height) || height[size], (style === null || style === void 0 ? void 0 : style.marginLeft) || left[size], (style === null || style === void 0 ? void 0 : style.height) || height[size], __assign({}, style));
+    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    position: absolute;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    padding: 0;\n    box-shadow: ", ";\n    width: ", ";\n    height: ", ";\n\n    &:nth-child(2) {\n      margin-left: ", ";\n    }\n\n    ", "\n  "], ["\n    position: absolute;\n    display: flex;\n    flex-direction: column;\n    align-items: flex-start;\n    padding: 0;\n    box-shadow: ", ";\n    width: ", ";\n    height: ", ";\n\n    &:nth-child(2) {\n      margin-left: ", ";\n    }\n\n    ", "\n  "])), isActive ? "0 0 0 4px #E0E7FF" : "none", (style === null || style === void 0 ? void 0 : style.width) || icon[size], (style === null || style === void 0 ? void 0 : style.height) || icon[size], (style === null || style === void 0 ? void 0 : style.marginLeft) || left[size], __assign({}, style));
 }; });
 var templateObject_1;
 //# sourceMappingURL=column.js.map

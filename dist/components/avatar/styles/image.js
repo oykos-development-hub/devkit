@@ -16,7 +16,7 @@ var __assign = (this && this.__assign) || function () {
 import styled, { css } from "styled-components";
 import { rem } from "polished";
 export var Image = styled.img(function () { return function (_a) {
-    var size = _a.size, style = _a.style;
+    var isActive = _a.isActive, size = _a.size, style = _a.style;
     var circle = {
         xs: rem("24px"),
         sm: rem("36px"),
