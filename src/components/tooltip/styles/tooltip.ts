@@ -1,13 +1,6 @@
-import styled, { css, DefaultTheme } from "styled-components";
+import styled, { css } from "styled-components";
 import { BodyMedium } from "../../typography/styles/variants";
 import { TooltipProps, Positions, Variants } from "../types";
-
-// colors
-const backgroundColor = (variant: keyof typeof Variants, theme: DefaultTheme) =>
-  variant === "standard" ? theme.palette.white : theme.palette.primary500;
-
-const color = (variant: keyof typeof Variants, theme: DefaultTheme) =>
-  variant === "standard" ? theme.palette.gray900 : theme.palette.white;
 
 // tooltip positions
 const TooltipPositions = {
@@ -59,68 +52,58 @@ const TooltipPositions = {
 const sharedArrowStyles = css`
   content: "";
   position: absolute;
-  border: 6px solid;
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 1px;
 `;
 
 const ArrowPositions = {
   top: css`
     #tooltip-content::after {
       ${sharedArrowStyles}
-      top: 100%;
+      top: calc(100% - 0.5em);
       left: 50%;
-      transform: translateX(-50%);
-      border-color: ${({ variant, theme }: TooltipProps) =>
-        `${backgroundColor(variant, theme)} transparent transparent transparent`};
+      transform: translateX(-50%) rotate(45deg);
     }
   `,
   topLeft: css`
     #tooltip-content::after {
       ${sharedArrowStyles}
-      top: 100%;
+      top: calc(100% - 0.5em);
       left: 100%;
-      transform: translateX(-1.5em);
-      border-color: ${({ variant, theme }: TooltipProps) =>
-        `${backgroundColor(variant, theme)} transparent transparent transparent`};
+      transform: translateX(-1.75em) rotate(45deg);
     }
   `,
   topRight: css`
     #tooltip-content::after {
       ${sharedArrowStyles}
-      top: 100%;
+      top:calc(100% - 0.5em);
       right: 100%;
-      transform: translateX(1.5em);
-      border-color: ${({ variant, theme }: TooltipProps) =>
-        `${backgroundColor(variant, theme)} transparent transparent transparent`};
+      transform: translateX(1.75em) rotate(45deg);
     }
   `,
   left: css`
     #tooltip-content::after {
       ${sharedArrowStyles}
       top: 50%;
-      left: 100%;
-      transform: translateY(-50%);
-      border-color: ${({ variant, theme }: TooltipProps) =>
-        `transparent transparent transparent ${backgroundColor(variant, theme)}`};
+      left: calc(100% - 0.5em);
+      transform: translateY(-50%) rotate(45deg);
     }
   `,
   bottom: css`
     #tooltip-content::after {
       ${sharedArrowStyles}
       left: 50%;
-      bottom: 100%;
-      transform: translateX(-50%);
-      border-color: ${({ variant, theme }: TooltipProps) =>
-        `transparent transparent ${backgroundColor(variant, theme)} transparent`};
+      bottom: calc(100% - 0.5em);
+      transform: translateX(-50%) rotate(45deg);
     }
   `,
   right: css`
     #tooltip-content::after {
       ${sharedArrowStyles}
       top: 50%;
-      right: 100%;
-      transform: translateY(-50%);
-      border-color: ${({ variant, theme }: TooltipProps) =>
-        `transparent ${backgroundColor(variant, theme)} transparent transparent`};
+      right: calc(100% - 0.5em);
+      transform: translateY(-50%) rotate(45deg);
     }
   `,
 };
@@ -137,25 +120,35 @@ export const StyledTooltip = styled.div<TooltipProps>(({ style, position, arrow,
     position: relative;
 
     #tooltip-content {
+      min-width: 100%;
+      max-width: 500px;
       display: flex;
       flex-direction: column;
-      gap: 0.5em;
+      gap: 0.25em;
       visibility: hidden;
-      color: ${color(variant, theme)};
-      background-color: ${backgroundColor(variant, theme)};
+      color: ${variant === Variants["standard"] ? theme.palette.gray900 : theme.palette.white};
+      background-color: ${variant === Variants["standard"] ? theme.palette.white : theme.palette.primary500};
       border-radius: 0.5em;
       white-space: nowrap;
       z-index: 1;
       padding: 0.5em 0.75em;
       position: absolute;
       box-shadow: 0px 8px 14px 3px rgba(0, 0, 0, 0.1);
-      & ${BodyMedium} {
-        color: ${color(variant, theme)};
-      }
+    }
+
+    #tooltip-content::after {
+      background-color: ${style?.backgroundColor ||
+      (variant === Variants["standard"] ? theme.palette.white : theme.palette.primary500)};
     }
 
     &:hover #tooltip-content {
       visibility: visible;
+    }
+
+    & ${BodyMedium} {
+      font-size: 14px;
+      color: ${style?.color || (variant === Variants["standard"] ? theme.palette.gray900 : theme.palette.white)};
+      white-space: pre-line;
     }
 
     ${tooltipPosition(position)}
