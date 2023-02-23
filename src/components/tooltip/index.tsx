@@ -1,6 +1,7 @@
 import React from "react";
 import { Theme } from "../../shared/theme";
 import { Typography } from "../typography";
+import { Container } from "./styles/container";
 import { StyledTooltip } from "./styles/tooltip";
 import { Positions, TooltipProps } from "./types";
 
@@ -17,14 +18,22 @@ const Tooltip: React.FC<TooltipProps> = ({
   const tooltipPosition = Positions[position] || "bottom";
 
   return (
-    <StyledTooltip arrow={arrow} position={tooltipPosition} content={content} variant={variant} theme={theme}>
+    <Container position={tooltipPosition}>
       {children}
 
-      <div id="tooltip-content" style={style}>
-        {title && <Typography content={<strong>{title}</strong>} variant="bodyMedium" />}
+      <StyledTooltip
+        style={style}
+        arrow={arrow}
+        content={content}
+        variant={variant}
+        theme={theme}
+        position={tooltipPosition}
+        title={title}
+      >
+        {title && <Typography content={title} variant="h6" />}
         <Typography content={content} variant="bodyMedium" />
-      </div>
-    </StyledTooltip>
+      </StyledTooltip>
+    </Container>
   );
 };
 
