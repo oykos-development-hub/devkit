@@ -3,13 +3,13 @@ import { BodyMedium } from "../../typography/styles/variants";
 import { Positions, Variants } from "../types";
 
 export const Container = styled.div<{
-  arrowsOnly?: boolean;
+  displayPages?: boolean;
   theme: DefaultTheme;
   style?: CSSProperties;
   variant: keyof typeof Variants;
   position: keyof typeof Positions;
   renderPaginationText?: (selected: number, total: number) => string;
-}>(({ theme, style, variant, position, arrowsOnly, renderPaginationText }) => {
+}>(({ theme, style, variant, position, displayPages, renderPaginationText }) => {
   const { primary50, primary500, gray50, gray500, gray800, gray900, gray700, gray300 } = theme.palette;
 
   const activeBackground = {
@@ -47,9 +47,9 @@ export const Container = styled.div<{
     & ul {
       list-style: none;
       display: flex;
-      justify-content: ${ulPosition[position]};
+      justify-content: ${variant === Variants["outlined"] && !renderPaginationText && ulPosition[position]};
       align-items: center;
-      gap: ${variant === Variants["outlined"] ? 0 : "0.5em"};
+      gap: ${variant === Variants["outlined"] ? 0 : "0.25em"};
       width: 100%;
       padding: 0;
       color: ${color[variant]};
@@ -78,11 +78,11 @@ export const Container = styled.div<{
       }
 
       & li {
-        display: ${arrowsOnly || renderPaginationText ? "none" : "block"};
+        display: ${!displayPages || renderPaginationText ? "none" : "block"};
       }
 
       & li:first-child {
-        margin-right: ${variant === Variants["outlined"] ? "none" : "auto"};
+        margin-right: ${variant === Variants["outlined"] && !renderPaginationText ? "none" : "auto"};
         margin-left: 1.5em;
         border-radius: ${variant === Variants["outlined"] ? "0.5em 0 0 0.5em" : "none"};
       }
@@ -122,7 +122,7 @@ export const Container = styled.div<{
       left: 50%;
       transform: translateX(-50%);
       margin: 0;
-      color: ${color[variant]};
+      color: ${gray900};
     }
 
     ${{ ...style }}

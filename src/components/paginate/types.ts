@@ -26,5 +26,5 @@ export interface PaginationProps {
   previousLabel: string | ReactElement;
   nextLabel: string | ReactElement;
   pageRangeDisplayed: number;
-  arrowsOnly?: boolean;
+  displayPages?: boolean;
 }

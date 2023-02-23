@@ -17,7 +17,7 @@ export const Pagination = ({
   variant = "filled",
   position = "center",
   style,
-  arrowsOnly,
+  displayPages = true,
   pageRangeDisplayed,
 }: PaginationProps) => {
   const [currentItems, setCurrentItems] = useState([]);
@@ -43,7 +43,7 @@ export const Pagination = ({
       theme={theme}
       variant={variant}
       position={position}
-      arrowsOnly={arrowsOnly}
+      displayPages={displayPages}
       renderPaginationText={renderPaginationText}
     >
       <>{currentItems && renderContent(currentItems)}</>
