@@ -71,4 +71,5 @@ export const TooltipWithArrow = Template.bind({});
 TooltipWithArrow.args = {
   content: "This is a tooltip",
   arrow: true,
+  variant: "filled",
 };

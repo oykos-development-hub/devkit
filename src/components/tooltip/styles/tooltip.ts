@@ -1,5 +1,5 @@
 import styled, { css, DefaultTheme } from "styled-components";
-import { BodyMedium, H6 } from "../../typography/styles/variants";
+import { BodyMedium } from "../../typography/styles/variants";
 import { TooltipProps, Positions, Variants } from "../types";
 
 // colors
@@ -141,6 +141,7 @@ export const StyledTooltip = styled.div<TooltipProps>(({ style, position, arrow,
       flex-direction: column;
       gap: 0.5em;
       visibility: hidden;
+      color: ${color(variant, theme)};
       background-color: ${backgroundColor(variant, theme)};
       border-radius: 0.5em;
       white-space: nowrap;
@@ -148,7 +149,7 @@ export const StyledTooltip = styled.div<TooltipProps>(({ style, position, arrow,
       padding: 0.5em 0.75em;
       position: absolute;
       box-shadow: 0px 8px 14px 3px rgba(0, 0, 0, 0.1);
-      & ${BodyMedium} ${H6} {
+      & ${BodyMedium} {
         color: ${color(variant, theme)};
       }
     }

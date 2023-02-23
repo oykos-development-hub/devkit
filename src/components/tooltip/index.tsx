@@ -21,7 +21,7 @@ const Tooltip: React.FC<TooltipProps> = ({
       {children}
 
       <div id="tooltip-content" style={style}>
-        {title && <Typography content={title} variant="h6" />}
+        {title && <Typography content={<strong>{title}</strong>} variant="bodyMedium" />}
         <Typography content={content} variant="bodyMedium" />
       </div>
     </StyledTooltip>
