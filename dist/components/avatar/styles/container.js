@@ -14,13 +14,24 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import styled, { css } from "styled-components";
-import { Theme } from "../../../shared/theme";
 import { rem } from "polished";
 export var Container = styled.div(function () { return function (_a) {
-    var style = _a.style, theme = _a.theme;
-    var themeToUse = theme || Theme;
-    var _b = themeToUse.palette, gray600 = _b.gray600, gray900 = _b.gray900;
-    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n    align-items: center;\n    align-content: center;\n    justify-content: center;\n    width: ", ";\n    height: ", ";\n    padding: ", ";\n\n    & p {\n      color: ", ";\n    }\n\n    & span {\n      color: ", ";\n    }\n\n    ", "\n  "], ["\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n    align-items: center;\n    align-content: center;\n    justify-content: center;\n    width: ", ";\n    height: ", ";\n    padding: ", ";\n\n    & p {\n      color: ", ";\n    }\n\n    & span {\n      color: ", ";\n    }\n\n    ", "\n  "])), (style === null || style === void 0 ? void 0 : style.width) || rem("160px"), (style === null || style === void 0 ? void 0 : style.height) || rem("276px"), (style === null || style === void 0 ? void 0 : style.padding) || "0", (style === null || style === void 0 ? void 0 : style.color) || gray900, (style === null || style === void 0 ? void 0 : style.color) || gray600, __assign({}, style));
+    var supportingText = _a.supportingText, size = _a.size, style = _a.style;
+    var width = {
+        xs: rem("132px"),
+        sm: rem("132px"),
+        md: rem("157px"),
+        lg: rem("180px"),
+        xl: rem("192px"),
+    };
+    var height = {
+        xs: rem("36px"),
+        sm: rem("36px"),
+        md: rem("40px"),
+        lg: rem("48px"),
+        xl: rem("56px"),
+    };
+    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    display: flex;\n    flex-wrap: wrap;\n    flex-direction: column;\n    overflow: hidden;\n    justify-content: space-between;\n    width: ", ";\n    height: ", ";\n    padding: ", ";\n    z-index: 1;\n\n    ", "\n  "], ["\n    display: flex;\n    flex-wrap: wrap;\n    flex-direction: column;\n    overflow: hidden;\n    justify-content: space-between;\n    width: ", ";\n    height: ", ";\n    padding: ", ";\n    z-index: 1;\n\n    ", "\n  "])), supportingText && ((style === null || style === void 0 ? void 0 : style.width) || width[size]), (style === null || style === void 0 ? void 0 : style.height) || height[size], (style === null || style === void 0 ? void 0 : style.padding) || "0", __assign({}, style));
 }; });
 var templateObject_1;
 //# sourceMappingURL=container.js.map

@@ -1,8 +1,3 @@
-export var AvatarVariants;
-(function (AvatarVariants) {
-    AvatarVariants["circle"] = "circle";
-    AvatarVariants["square"] = "square";
-})(AvatarVariants || (AvatarVariants = {}));
 export var AvatarSizes;
 (function (AvatarSizes) {
     AvatarSizes["xs"] = "xs";
