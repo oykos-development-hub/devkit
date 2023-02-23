@@ -4,9 +4,10 @@ import React from "react";
 import { AvatarSizes } from "../types";
 
 export const Image = styled.img<{
+  isActive?: boolean;
   size: AvatarSizes;
   style?: React.CSSProperties;
-}>(() => ({ size, style }) => {
+}>(() => ({ isActive, size, style }) => {
   const circle = {
     xs: rem("24px"),
     sm: rem("36px"),

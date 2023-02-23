@@ -25,13 +25,21 @@ export const Container = styled.div<{
     xl: rem("56px"),
   };
 
+  const widthNoSupportingText = {
+    xs: rem("24px"),
+    sm: rem("36px"),
+    md: rem("40px"),
+    lg: rem("48px"),
+    xl: rem("56px"),
+  };
+
   return css`
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     overflow: hidden;
     justify-content: space-between;
-    width: ${supportingText && (style?.width || width[size])};
+    width: ${supportingText ? style?.width || width[size] : widthNoSupportingText[size]};
     height: ${style?.height || height[size]};
     padding: ${style?.padding || "0"};
     z-index: 1;

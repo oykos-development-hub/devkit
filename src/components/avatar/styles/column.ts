@@ -15,7 +15,7 @@ export const Column = styled.div<{
     xl: rem("72px"),
   };
 
-  const height = {
+  const icon = {
     xs: rem("24px"),
     sm: rem("36px"),
     md: rem("40px"),
@@ -30,11 +30,11 @@ export const Column = styled.div<{
     align-items: flex-start;
     padding: 0;
     box-shadow: ${isActive ? "0 0 0 4px #E0E7FF" : "none"};
-    height: ${style?.height || height[size]};
+    width: ${style?.width || icon[size]};
+    height: ${style?.height || icon[size]};
 
     &:nth-child(2) {
       margin-left: ${style?.marginLeft || left[size]};
-      height: ${style?.height || height[size]};
     }
 
     ${{ ...style }}
