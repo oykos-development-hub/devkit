@@ -1,11 +1,6 @@
 import React, { ReactNode } from "react";
 import { DefaultTheme } from "styled-components";
 
-export enum AvatarVariants {
-  circle = "circle",
-  square = "square",
-}
-
 export enum AvatarSizes {
   xs = "xs",
   sm = "sm",
@@ -15,12 +10,12 @@ export enum AvatarSizes {
 }
 
 export interface AvatarProps {
-  variant: AvatarVariants | string;
   size?: AvatarSizes;
   src?: string;
   alt?: string;
-  name?: string;
-  source?: ReactNode | string;
+  supportingText?: boolean;
+  name?: ReactNode | string;
+  email?: ReactNode | string;
   online?: boolean;
   statusIcon?: boolean;
   theme?: DefaultTheme;

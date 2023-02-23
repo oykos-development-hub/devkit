@@ -1,49 +1,34 @@
 import styled, { css } from "styled-components";
 import { rem } from "polished";
 import React from "react";
-import { AvatarSizes, AvatarVariants } from "../types";
+import { AvatarSizes } from "../types";
 
 export const Image = styled.img<{
-  variant: AvatarVariants | string;
   size: AvatarSizes;
   style?: React.CSSProperties;
-}>(() => ({ variant, size, style }) => {
+}>(() => ({ size, style }) => {
   const circle = {
     xs: rem("24px"),
-    sm: rem("32px"),
+    sm: rem("36px"),
     md: rem("40px"),
     lg: rem("48px"),
     xl: rem("56px"),
   };
 
-  switch (variant) {
-    case AvatarVariants.square:
-      return css`
-        width: ${style?.width || rem("160px")};
-        height: ${style?.height || rem("220px")};
-        object-fit: cover;
+  return css`
+    position: absolute;
+    width: ${style?.width || circle[size]};
+    height: ${style?.height || circle[size]};
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    z-index: 1;
 
-        ${{ ...style }}
-      `;
-    case AvatarVariants.circle:
-      return css`
-        width: ${style?.width || circle[size]};
-        height: ${style?.height || circle[size]};
-        object-fit: cover;
-        border-radius: 50%;
+    &:active,
+    &:focus-within {
+      box-shadow: 0 0 0 4px #e0e7ff !important;
+    }
 
-        &:hover {
-          cursor: pointer;
-        }
-
-        &:active,
-        &:focus-within {
-          border: ${rem("4px")} solid #e0e7ff;
-        }
-
-        ${{ ...style }}
-      `;
-    default:
-      return AvatarVariants.square;
-  }
+    ${{ ...style }}
+  `;
 });

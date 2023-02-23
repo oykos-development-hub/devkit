@@ -3,7 +3,7 @@ import { AvatarSizes } from "../types";
 import React from "react";
 import { rem } from "polished";
 
-export const Indicator = styled.div<{
+export const Indicator = styled.span<{
   size: AvatarSizes;
   online?: boolean;
   style?: React.CSSProperties;
@@ -20,30 +20,23 @@ export const Indicator = styled.div<{
     xl: rem("14px"),
   };
 
-  const top = {
-    xs: rem("9px"),
-    sm: rem("12px"),
-    md: rem("15px"),
-    lg: rem("18.4px"),
-    xl: rem("21px"),
-  };
-
-  const right = {
-    xs: rem("7.4px"),
-    sm: rem("9.4px"),
-    md: rem("11.4px"),
-    lg: rem("13.6px"),
-    xl: rem("15.5px"),
+  const indicatorPosition = {
+    xs: rem("16px"),
+    sm: rem("26px"),
+    md: rem("28px"),
+    lg: rem("34px"),
+    xl: rem("39px"),
   };
 
   return css`
-    position: relative;
+    position: absolute;
     width: ${style?.width || indicatorSize[size]};
     height: ${style?.height || indicatorSize[size]};
-    right: ${right[size]};
-    top: ${top[size]};
+    top: ${indicatorPosition[size]};
+    left: ${indicatorPosition[size]};
     background-color: ${indicatorColor};
     border: ${rem("1.5px")} solid ${style?.borderColor || gray50};
     border-radius: 50%;
+    z-index: 3;
   `;
 });
