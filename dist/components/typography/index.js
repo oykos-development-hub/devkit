@@ -49,9 +49,5 @@ export var Typography = function (props) {
         default:
             return React.createElement(BodyMedium, __assign({}, props), props.content);
     }
-<<<<<<< HEAD
-    return React.createElement(Component, __assign({}, componentProps), props.content);
-=======
->>>>>>> development
 };
 //# sourceMappingURL=index.js.map

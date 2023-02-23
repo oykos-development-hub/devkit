@@ -1,4 +1,3 @@
-import React from "react";
+/// <reference types="react" />
 import { TooltipProps } from "./types";
-declare const Tooltip: React.FC<TooltipProps>;
-export default Tooltip;
+export declare const Tooltip: ({ position, theme, content, children, title, variant, arrow, style, }: TooltipProps) => JSX.Element;

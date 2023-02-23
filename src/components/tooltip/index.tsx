@@ -5,7 +5,7 @@ import { Container } from "./styles/container";
 import { StyledTooltip } from "./styles/tooltip";
 import { Positions, TooltipProps } from "./types";
 
-const Tooltip: React.FC<TooltipProps> = ({
+export const Tooltip = ({
   position,
   theme = Theme,
   content,
@@ -14,7 +14,7 @@ const Tooltip: React.FC<TooltipProps> = ({
   variant = "standard",
   arrow,
   style,
-}) => {
+}: TooltipProps) => {
   const tooltipPosition = Positions[position] || "bottom";
 
   return (
@@ -36,5 +36,3 @@ const Tooltip: React.FC<TooltipProps> = ({
     </Container>
   );
 };
-
-export default Tooltip;

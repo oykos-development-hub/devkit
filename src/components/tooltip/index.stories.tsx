@@ -1,9 +1,8 @@
 import React from "react";
-import Tooltip from "./index";
+import { Tooltip } from "./index";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { TooltipProps } from "./types";
-import { Theme } from "../../shared/theme";
 
 export default {
   title: "Components/Tooltip",
