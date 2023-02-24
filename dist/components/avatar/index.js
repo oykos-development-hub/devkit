@@ -6,19 +6,18 @@ import { Typography } from "../typography";
 import { Indicator } from "./styles/indicator";
 import { Column } from "./styles/column";
 import { Content } from "./styles/content";
-export var Avatar = function (_a) {
-    var src = _a.src, _b = _a.size, size = _b === void 0 ? AvatarSizes.lg : _b, _c = _a.statusIcon, statusIcon = _c === void 0 ? true : _c, _d = _a.online, online = _d === void 0 ? true : _d, _e = _a.supportingText, supportingText = _e === void 0 ? true : _e, style = _a.style, alt = _a.alt, name = _a.name, email = _a.email, theme = _a.theme;
-    var ref = useRef(null);
-    var _f = useState(false), isActive = _f[0], setIsActive = _f[1];
-    var handleClick = function () { return setIsActive(function (prevState) { return !prevState; }); };
-    useEffect(function () {
-        var handleClickOutside = function (e) {
+export const Avatar = ({ src, size = AvatarSizes.lg, statusIcon = true, online = true, supportingText = true, style, alt, name, email, theme, }) => {
+    const ref = useRef(null);
+    const [isActive, setIsActive] = useState(false);
+    const handleClick = () => setIsActive((prevState) => !prevState);
+    useEffect(() => {
+        const handleClickOutside = (e) => {
             if (ref.current && !ref.current.contains(e.target)) {
                 setIsActive(false);
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
-        return function () {
+        return () => {
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [ref]);
