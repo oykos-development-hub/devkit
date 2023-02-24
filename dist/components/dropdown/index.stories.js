@@ -1,25 +1,16 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { Dropdown } from "./index";
 import { CircleCheckIcon } from "../icon";
-var dropdownOptions = [
+const dropdownOptions = [
     { value: "one", label: "One" },
     { value: "two", label: "Two" },
     { value: "three", label: "Three" },
     { value: "four", label: "Four" },
 ];
+const CheckIcon = (React.createElement("svg", { width: "16", height: "11", viewBox: "0 0 16 11", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
+    React.createElement("path", { d: "M14.6663 1L5.49967 10.1667L1.33301 6", stroke: "#004FFF", "stroke-width": "1.66667", "stroke-linecap": "round", "stroke-linejoin": "round" })));
 export default {
     component: Dropdown,
     title: "Components/Dropdown",
@@ -78,35 +69,39 @@ export default {
         },
     },
 };
-var Template = function (args) { return (React.createElement(StoryWrapper, null,
+const Template = (args) => (React.createElement(StoryWrapper, null,
     React.createElement("div", { style: { width: "400px" } },
-        React.createElement(Dropdown, __assign({}, args))))); };
-export var DropdownDefault = Template.bind({});
+        React.createElement(Dropdown, Object.assign({}, args)))));
+export const DropdownDefault = Template.bind({});
 DropdownDefault.args = {
     placeholder: "placeholder...",
+    rightOptionIcon: CheckIcon,
 };
-export var DropdownWithIcons = Template.bind({});
+export const DropdownWithIcons = Template.bind({});
 DropdownWithIcons.args = {
     label: "Dropdown label*",
     placeholder: "placeholder...",
     controlIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
-    optionIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
+    leftOptionIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
+    rightOptionIcon: CheckIcon,
 };
-export var MultipleSelect = Template.bind({});
+export const MultipleSelect = Template.bind({});
 MultipleSelect.args = {
     label: "Dropdown label*",
     placeholder: "placeholder...",
     isMulti: true,
+    rightOptionIcon: CheckIcon,
 };
-export var MultipleSelectWithIcons = Template.bind({});
+export const MultipleSelectWithIcons = Template.bind({});
 MultipleSelectWithIcons.args = {
     label: "Dropdown label*",
     placeholder: "placeholder...",
     isMulti: true,
     controlIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
-    optionIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
+    leftOptionIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
+    rightOptionIcon: CheckIcon,
 };
-export var StyledDropdown = Template.bind({});
+export const StyledDropdown = Template.bind({});
 StyledDropdown.args = {
     label: "Dropdown label*",
     placeholder: "placeholder...",
@@ -114,5 +109,6 @@ StyledDropdown.args = {
         border: "1px solid red",
         borderRadius: "16px",
     },
+    rightOptionIcon: CheckIcon,
 };
 //# sourceMappingURL=index.stories.js.map

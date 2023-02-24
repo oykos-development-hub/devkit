@@ -4,8 +4,8 @@ import { IconProps, Positions } from "../types";
 import { Theme } from "../../../shared/theme";
 
 const sharedPath = css<IconProps>`
-  color: ${(props) => props.style?.color || props.theme?.palette?.black || Theme?.palette?.black} !important;
-  fill: ${(props) => props.style?.color || props.theme?.palette?.black || Theme?.palette?.black} !important;
+  color: ${(props) => props.style?.color || props.theme?.palette?.black || Theme?.palette?.black};
+  fill: ${(props) => props.style?.color || props.theme?.palette?.black || Theme?.palette?.black};
 `;
 
 export const Svg = styled.svg<IconProps>`

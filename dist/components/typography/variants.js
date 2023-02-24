@@ -22,5 +22,5 @@ export var WeightVariants;
     WeightVariants["semiBold"] = "600";
     WeightVariants["bold"] = "700";
 })(WeightVariants || (WeightVariants = {}));
-export var VariantNames = Object.keys(TypographyVariants).map(function (key) { return key; });
+export const VariantNames = Object.keys(TypographyVariants).map((key) => key);
 //# sourceMappingURL=variants.js.map

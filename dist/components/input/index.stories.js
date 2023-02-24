@@ -1,14 +1,3 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 import React from "react";
 import { Input } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
@@ -27,14 +16,14 @@ export default {
         },
     },
 };
-var Template = function (args) { return (React.createElement(StoryWrapper, null,
+const Template = (args) => (React.createElement(StoryWrapper, null,
     React.createElement("div", { style: { width: "400px" } },
-        React.createElement(Input, __assign({}, args))))); };
-export var InputDefault = Template.bind({});
+        React.createElement(Input, Object.assign({}, args)))));
+export const InputDefault = Template.bind({});
 InputDefault.args = {
     placeholder: "placeholder...",
 };
-export var StyledInput = Template.bind({});
+export const StyledInput = Template.bind({});
 StyledInput.args = {
     label: "Input Label*",
     placeholder: "placeholder...",
@@ -43,7 +32,7 @@ StyledInput.args = {
         padding: "2em",
     },
 };
-export var WithContent = Template.bind({});
+export const WithContent = Template.bind({});
 WithContent.args = {
     label: "Input Label*",
     placeholder: "placeholder...",
@@ -52,20 +41,20 @@ WithContent.args = {
     rightContent: (React.createElement("div", { style: { padding: "0 0.75em", display: "flex", alignItems: "center" } },
         React.createElement(XIcon, { style: { color: "grey" }, size: "14px" }))),
 };
-export var WithError = Template.bind({});
+export const WithError = Template.bind({});
 WithError.args = {
     label: "Input Label*",
     placeholder: "placeholder...",
     error: "This is error.",
 };
-export var WithHint = Template.bind({});
+export const WithHint = Template.bind({});
 WithHint.args = {
     label: "Input Label*",
     placeholder: "placeholder...",
     hint: "This is hint.",
 };
-export var WithDropdown = Template.bind({});
-var options = [
+export const WithDropdown = Template.bind({});
+const options = [
     { value: "us", label: "US" },
     { value: "es", label: "ES" },
 ];
