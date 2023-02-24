@@ -1,14 +1,3 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 import React from "react";
 import { ButtonSizes, ButtonVariants } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
@@ -19,7 +8,7 @@ export default {
     title: "Components/Button",
     argTypes: {
         content: {
-            defaultValue: function () { return React.createElement("span", null, "Button"); },
+            defaultValue: () => React.createElement("span", null, "Button"),
         },
         variant: {
             control: {
@@ -33,12 +22,13 @@ export default {
             },
         },
         onClick: {
-            defaultValue: function () { return alert("Button clicked!"); },
+            defaultValue: () => alert("Button clicked!"),
         },
         theme: {
             control: {
                 type: "object",
             },
+            defaultValue: Theme,
         },
         style: {
             defaultValue: {
@@ -57,23 +47,21 @@ export default {
         },
     },
 };
-var Template = function (args) { return (React.createElement(StoryWrapper, null,
-    React.createElement(Button, __assign({}, args)))); };
-export var CustomButton = Template.bind({});
+const Template = (args) => (React.createElement(StoryWrapper, null,
+    React.createElement(Button, Object.assign({}, args))));
+export const CustomButton = Template.bind({});
 CustomButton.args = {
     content: "Button CTA",
-    onClick: function () { return alert("Button clicked!"); },
+    onClick: () => alert("Button clicked!"),
     variant: ButtonVariants.primary,
     size: ButtonSizes.lg,
-    theme: Theme,
 };
-export var StyledButton = Template.bind({});
+export const StyledButton = Template.bind({});
 StyledButton.args = {
     content: "Styled Button",
-    onClick: function () { return alert("Button clicked!"); },
+    onClick: () => alert("Button clicked!"),
     variant: ButtonVariants.primary,
     size: ButtonSizes.lg,
-    theme: Theme,
     style: {
         backgroundColor: Theme.palette.success500,
         color: Theme.palette.white,
