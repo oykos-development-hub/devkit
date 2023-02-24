@@ -1,15 +1,15 @@
 import styled, { css, CSSProperties, DefaultTheme } from "styled-components";
 import { BodyMedium } from "../../typography/styles/variants";
-import { Positions, Variants } from "../types";
+import { Variants } from "../types";
 
 export const Container = styled.div<{
   displayPages?: boolean;
   theme: DefaultTheme;
   style?: CSSProperties;
   variant: keyof typeof Variants;
-  position: keyof typeof Positions;
+  fullWidth?: boolean;
   renderPaginationText?: (selected: number, total: number) => string;
-}>(({ theme, style, variant, position, displayPages, renderPaginationText }) => {
+}>(({ theme, style, variant, displayPages, renderPaginationText, fullWidth }) => {
   const { primary50, primary500, gray50, gray500, gray800, gray900, gray700, gray300 } = theme.palette;
 
   const activeBackground = {
@@ -30,16 +30,11 @@ export const Container = styled.div<{
     underlined: gray700,
   };
 
-  const ulPosition = {
-    left: "flex-start",
-    right: "flex-end",
-    center: "center",
-  };
-
   return css`
     & * {
       font-family: "Inter";
     }
+
     position: relative;
     color: ${gray900};
     width: 100%;
@@ -47,9 +42,9 @@ export const Container = styled.div<{
     & ul {
       list-style: none;
       display: flex;
-      justify-content: ${variant === Variants["outlined"] && !renderPaginationText && ulPosition[position]};
+      justify-content: center;
       align-items: center;
-      gap: ${variant === Variants["outlined"] ? 0 : "0.25em"};
+      gap: ${variant === Variants["outlined"] ? 0 : "0.5em"};
       width: 100%;
       padding: 0;
       color: ${color[variant]};
@@ -82,13 +77,14 @@ export const Container = styled.div<{
       }
 
       & li:first-child {
-        margin-right: ${variant === Variants["outlined"] && !renderPaginationText ? "none" : "auto"};
+        margin-right: ${fullWidth ? "auto" : "none"};
         margin-left: 1.5em;
         border-radius: ${variant === Variants["outlined"] ? "0.5em 0 0 0.5em" : "none"};
       }
+
       & li:last-child {
         margin-right: 1.5em;
-        margin-left: ${variant === Variants["outlined"] ? "none" : "auto"};
+        margin-left: ${fullWidth ? "auto" : "none"};
         border-radius: ${variant === Variants["outlined"] ? "0 0.5em 0.5em 0" : "none"};
       }
 
@@ -118,6 +114,7 @@ export const Container = styled.div<{
 
     & ${BodyMedium} {
       position: absolute;
+      white-space: nowrap;
       bottom: 1.25em;
       left: 50%;
       transform: translateX(-50%);

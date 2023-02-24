@@ -45,6 +45,30 @@ const paginationData = [
   { name: "Canada", code: "CA" },
 ];
 
+const leftIcon = (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667"
+      stroke="#616161"
+      strokeWidth="1.67"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+const rightIcon = (
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333"
+      stroke="#616161"
+      strokeWidth="1.67"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 export default {
   component: Pagination,
   title: "Components/Pagination",
@@ -60,12 +84,6 @@ export default {
         type: "object",
       },
       defaultValue: Theme,
-    },
-    position: {
-      control: {
-        type: "radio",
-        options: ["left", "center", "right"],
-      },
     },
   },
 } as ComponentMeta<typeof Pagination>;
@@ -97,30 +115,14 @@ const paginationArgs = {
   itemsPerPage: 4,
   previousLabel: (
     <p style={{ display: "flex", alignItems: "center", gap: "0.5em", margin: 0 }}>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667"
-          stroke="#616161"
-          strokeWidth="1.67"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      {leftIcon}
       Previous
     </p>
   ),
   nextLabel: (
     <p style={{ display: "flex", alignItems: "center", gap: "0.5em", margin: 0 }}>
       Next
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333"
-          stroke="#616161"
-          strokeWidth="1.67"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
+      {rightIcon}
     </p>
   ),
   pageRangeDisplayed: 3,
@@ -131,11 +133,14 @@ VariantFilled.args = {
   variant: "filled",
 };
 
+//
+
 export const VariantOutlined = Template.bind({});
 
 VariantOutlined.args = {
   ...paginationArgs,
   variant: "outlined",
+  fullWidth: false,
 };
 
 //
@@ -154,34 +159,8 @@ export const OnlyWithArrows = Template.bind({});
 OnlyWithArrows.args = {
   ...paginationArgs,
   displayPages: false,
-  previousLabel: (
-    <p style={{ display: "flex", alignItems: "center", gap: "0.5em", margin: 0 }}>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667"
-          stroke="#616161"
-          strokeWidth="1.67"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </p>
-  ),
-  nextLabel: (
-    <p style={{ display: "flex", alignItems: "center", gap: "0.5em", margin: 0 }}>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333"
-          stroke="#616161"
-          strokeWidth="1.67"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </p>
-  ),
-
-  position: "center",
+  previousLabel: <span style={{ display: "flex", alignItems: "center" }}>{leftIcon}</span>,
+  nextLabel: <span style={{ display: "flex", alignItems: "center" }}>{rightIcon}</span>,
 };
 
 //
@@ -191,32 +170,6 @@ export const WithPaginationText = Template.bind({});
 WithPaginationText.args = {
   ...paginationArgs,
   renderPaginationText: (selected, total) => `Page ${selected} of ${total}`,
-  previousLabel: (
-    <p style={{ display: "flex", alignItems: "center", gap: "0.5em", margin: 0 }}>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667"
-          stroke="#616161"
-          strokeWidth="1.67"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </p>
-  ),
-  nextLabel: (
-    <p style={{ display: "flex", alignItems: "center", gap: "0.5em", margin: 0 }}>
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path
-          d="M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333"
-          stroke="#616161"
-          strokeWidth="1.67"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    </p>
-  ),
+  previousLabel: <span style={{ display: "flex", alignItems: "center" }}>{leftIcon}</span>,
+  nextLabel: <span style={{ display: "flex", alignItems: "center" }}>{rightIcon}</span>,
 };
-
-//

@@ -15,10 +15,10 @@ export const Pagination = ({
   renderPaginationText,
   theme = Theme,
   variant = "filled",
-  position = "center",
   style,
   displayPages = true,
   pageRangeDisplayed,
+  fullWidth = true,
 }: PaginationProps) => {
   const [currentItems, setCurrentItems] = useState([]);
   const [pageCount, setPageCount] = useState(0);
@@ -42,9 +42,9 @@ export const Pagination = ({
       style={style}
       theme={theme}
       variant={variant}
-      position={position}
       displayPages={displayPages}
       renderPaginationText={renderPaginationText}
+      fullWidth={fullWidth}
     >
       <>{currentItems && renderContent(currentItems)}</>
 
