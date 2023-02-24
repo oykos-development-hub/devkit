@@ -5,16 +5,11 @@ export declare enum Variants {
     outlined = "outlined",
     underlined = "underlined"
 }
-export declare enum Positions {
-    left = "left",
-    right = "right",
-    center = "center"
-}
 export interface PaginationProps {
     theme: DefaultTheme;
     variant: keyof typeof Variants;
     style?: CSSProperties;
-    position?: keyof typeof Positions;
+    fullWidth?: boolean;
     data: any;
     renderContent: (data: any) => JSX.Element | JSX.Element[];
     renderPaginationText?: (selected: number, total: number) => string;

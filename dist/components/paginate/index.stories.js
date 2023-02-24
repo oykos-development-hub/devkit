@@ -63,6 +63,10 @@ var paginationData = [
     { name: "Cameroon", code: "CM" },
     { name: "Canada", code: "CA" },
 ];
+var leftIcon = (React.createElement("svg", { width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
+    React.createElement("path", { d: "M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667", stroke: "#616161", strokeWidth: "1.67", strokeLinecap: "round", strokeLinejoin: "round" })));
+var rightIcon = (React.createElement("svg", { width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
+    React.createElement("path", { d: "M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333", stroke: "#616161", strokeWidth: "1.67", strokeLinecap: "round", strokeLinejoin: "round" })));
 export default {
     component: Pagination,
     title: "Components/Pagination",
@@ -79,12 +83,6 @@ export default {
             },
             defaultValue: Theme,
         },
-        position: {
-            control: {
-                type: "radio",
-                options: ["left", "center", "right"],
-            },
-        },
     },
 };
 var Template = function (_a) {
@@ -100,30 +98,20 @@ var paginationArgs = {
     data: paginationData,
     itemsPerPage: 4,
     previousLabel: (React.createElement("p", { style: { display: "flex", alignItems: "center", gap: "0.5em", margin: 0 } },
-        React.createElement("svg", { width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-            React.createElement("path", { d: "M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667", stroke: "#616161", strokeWidth: "1.67", strokeLinecap: "round", strokeLinejoin: "round" })),
+        leftIcon,
         "Previous")),
     nextLabel: (React.createElement("p", { style: { display: "flex", alignItems: "center", gap: "0.5em", margin: 0 } },
         "Next",
-        React.createElement("svg", { width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-            React.createElement("path", { d: "M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333", stroke: "#616161", strokeWidth: "1.67", strokeLinecap: "round", strokeLinejoin: "round" })))),
+        rightIcon)),
     pageRangeDisplayed: 3,
 };
 VariantFilled.args = __assign(__assign({}, paginationArgs), { variant: "filled" });
 export var VariantOutlined = Template.bind({});
-VariantOutlined.args = __assign(__assign({}, paginationArgs), { variant: "outlined" });
+VariantOutlined.args = __assign(__assign({}, paginationArgs), { variant: "outlined", fullWidth: false });
 export var VariantUnderlined = Template.bind({});
 VariantUnderlined.args = __assign(__assign({}, paginationArgs), { variant: "underlined" });
 export var OnlyWithArrows = Template.bind({});
-OnlyWithArrows.args = __assign(__assign({}, paginationArgs), { displayPages: false, previousLabel: (React.createElement("p", { style: { display: "flex", alignItems: "center", gap: "0.5em", margin: 0 } },
-        React.createElement("svg", { width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-            React.createElement("path", { d: "M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667", stroke: "#616161", strokeWidth: "1.67", strokeLinecap: "round", strokeLinejoin: "round" })))), nextLabel: (React.createElement("p", { style: { display: "flex", alignItems: "center", gap: "0.5em", margin: 0 } },
-        React.createElement("svg", { width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-            React.createElement("path", { d: "M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333", stroke: "#616161", strokeWidth: "1.67", strokeLinecap: "round", strokeLinejoin: "round" })))), position: "center" });
+OnlyWithArrows.args = __assign(__assign({}, paginationArgs), { displayPages: false, previousLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, leftIcon), nextLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, rightIcon) });
 export var WithPaginationText = Template.bind({});
-WithPaginationText.args = __assign(__assign({}, paginationArgs), { renderPaginationText: function (selected, total) { return "Page ".concat(selected, " of ").concat(total); }, previousLabel: (React.createElement("p", { style: { display: "flex", alignItems: "center", gap: "0.5em", margin: 0 } },
-        React.createElement("svg", { width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-            React.createElement("path", { d: "M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667", stroke: "#616161", strokeWidth: "1.67", strokeLinecap: "round", strokeLinejoin: "round" })))), nextLabel: (React.createElement("p", { style: { display: "flex", alignItems: "center", gap: "0.5em", margin: 0 } },
-        React.createElement("svg", { width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
-            React.createElement("path", { d: "M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333", stroke: "#616161", strokeWidth: "1.67", strokeLinecap: "round", strokeLinejoin: "round" })))) });
+WithPaginationText.args = __assign(__assign({}, paginationArgs), { renderPaginationText: function (selected, total) { return "Page ".concat(selected, " of ").concat(total); }, previousLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, leftIcon), nextLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, rightIcon) });
 //# sourceMappingURL=index.stories.js.map
