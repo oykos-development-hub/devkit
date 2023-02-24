@@ -1,14 +1,3 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { AssignIcon, CircleCheckIcon, DangerIcon, XIcon } from "./";
@@ -18,7 +7,7 @@ export default {
     component: XIcon,
     argTypes: {
         onClick: {
-            defaultValue: function () { return alert("Icon clicked!"); },
+            defaultValue: () => alert("Icon clicked!"),
         },
         theme: {
             control: {
@@ -34,19 +23,19 @@ export default {
         },
     },
 };
-var Default = function (args) { return (React.createElement(StoryWrapper, null,
-    React.createElement(AssignIcon, __assign({}, args)),
-    React.createElement(XIcon, __assign({}, args)),
-    React.createElement(DangerIcon, __assign({}, args)),
-    React.createElement(CircleCheckIcon, __assign({}, args)))); };
-export var DefaultIcons = Default.bind({});
+const Default = (args) => (React.createElement(StoryWrapper, null,
+    React.createElement(AssignIcon, Object.assign({}, args)),
+    React.createElement(XIcon, Object.assign({}, args)),
+    React.createElement(DangerIcon, Object.assign({}, args)),
+    React.createElement(CircleCheckIcon, Object.assign({}, args))));
+export const DefaultIcons = Default.bind({});
 DefaultIcons.args = {};
-var Custom = function (args) { return (React.createElement(StoryWrapper, null,
-    React.createElement(AssignIcon, __assign({}, args)),
-    React.createElement(XIcon, __assign({}, args)),
-    React.createElement(DangerIcon, __assign({}, args)),
-    React.createElement(CircleCheckIcon, __assign({}, args)))); };
-export var CustomIcons = Custom.bind({});
+const Custom = (args) => (React.createElement(StoryWrapper, null,
+    React.createElement(AssignIcon, Object.assign({}, args)),
+    React.createElement(XIcon, Object.assign({}, args)),
+    React.createElement(DangerIcon, Object.assign({}, args)),
+    React.createElement(CircleCheckIcon, Object.assign({}, args))));
+export const CustomIcons = Custom.bind({});
 CustomIcons.args = {
     size: IconSizes.sm,
 };
