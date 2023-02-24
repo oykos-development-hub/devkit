@@ -1,14 +1,3 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 import React from "react";
 import { Tooltip } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
@@ -41,30 +30,30 @@ export default {
         },
     },
 };
-var Template = function (args) { return (React.createElement(StoryWrapper, null,
-    React.createElement(Tooltip, __assign({}, args),
-        React.createElement("span", null, "Hover over me!")))); };
-export var TooltipDefault = Template.bind({});
+const Template = (args) => (React.createElement(StoryWrapper, null,
+    React.createElement(Tooltip, Object.assign({}, args),
+        React.createElement("span", null, "Hover over me!"))));
+export const TooltipDefault = Template.bind({});
 TooltipDefault.args = {
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
 };
-export var TooltipWithTitle = Template.bind({});
+export const TooltipWithTitle = Template.bind({});
 TooltipWithTitle.args = {
     title: "Tooltip title",
     content: "This is a tooltip",
 };
-export var TooltipVariantFilled = Template.bind({});
+export const TooltipVariantFilled = Template.bind({});
 TooltipVariantFilled.args = {
     content: "This is a tooltip",
     variant: "filled",
 };
-export var TooltipWithArrow = Template.bind({});
+export const TooltipWithArrow = Template.bind({});
 TooltipWithArrow.args = {
     content: "This is a tooltip",
     arrow: true,
     variant: "filled",
 };
-export var StyledTooltip = Template.bind({});
+export const StyledTooltip = Template.bind({});
 StyledTooltip.args = {
     content: "This is a tooltip",
     arrow: true,

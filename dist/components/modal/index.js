@@ -6,10 +6,9 @@ import { ModalBox } from "./styles/modal";
 import { ModalHeader } from "./styles/header";
 import { Typography } from "../typography";
 import { XIcon } from "../icon";
-export var Modal = function (_a) {
-    var _b = _a.theme, theme = _b === void 0 ? Theme : _b, title = _a.title, content = _a.content, open = _a.open, onClose = _a.onClose, _c = _a.variant, variant = _c === void 0 ? Variants["light"] : _c, style = _a.style;
+export const Modal = ({ theme = Theme, title, content, open, onClose, variant = Variants["light"], style, }) => {
     return (React.createElement(Container, { open: open, onClick: onClose && onClose() },
-        React.createElement(ModalBox, { theme: theme, variant: variant, onClick: function (e) {
+        React.createElement(ModalBox, { theme: theme, variant: variant, onClick: (e) => {
                 e.stopPropagation();
             }, style: style },
             React.createElement(ModalHeader, { theme: theme },

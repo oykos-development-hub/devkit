@@ -1,14 +1,3 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 import React from "react";
 import { Modal } from "./index";
 import { Typography } from "../typography";
@@ -35,10 +24,10 @@ export default {
         },
     },
 };
-var Template = function (args) {
-    return React.createElement(Modal, __assign({}, args));
+const Template = (args) => {
+    return React.createElement(Modal, Object.assign({}, args));
 };
-export var ModalDefault = Template.bind({});
+export const ModalDefault = Template.bind({});
 ModalDefault.args = {
     title: "Modal title",
     content: (React.createElement(React.Fragment, null,
@@ -50,7 +39,7 @@ ModalDefault.args = {
                 React.createElement("button", null, "Ok"),
                 React.createElement("button", null, "Cancel"))))),
 };
-export var ModalVariantDark = Template.bind({});
+export const ModalVariantDark = Template.bind({});
 ModalVariantDark.args = {
     title: "Modal title",
     variant: "dark",
