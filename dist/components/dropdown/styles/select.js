@@ -1,25 +1,108 @@
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 import Select from "react-select";
 import styled, { css } from "styled-components";
-export var StyledSelect = styled(Select)(function (_a) {
-    var theme = _a.theme, showArrow = _a.showArrow, style = _a.style, controlIcon = _a.controlIcon;
-    var _b = theme.palette, primary200 = _b.primary200, gray50 = _b.gray50, gray100 = _b.gray100, gray400 = _b.gray400, gray600 = _b.gray600, gray900 = _b.gray900, white = _b.white;
-    var borderColor = (style === null || style === void 0 ? void 0 : style.borderColor) || gray400;
-    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    width: 100%;\n    height: 3em;\n\n    // control\n    .select__control {\n      height: 100%;\n      background-color: transparent;\n      border: ", ";\n      border-radius: ", ";\n      padding: 0 1em;\n      svg {\n        fill: ", ";\n      }\n      ", "\n    }\n    .select__value-container {\n      padding: 0;\n      padding-left: ", ";\n    }\n    .select__placeholder {\n      font-size: 14px;\n      color: ", ";\n      margin: 0;\n    }\n    .select__input-container {\n      margin: 0;\n    }\n    .select__indicator-separator {\n      display: none;\n    }\n    .select__dropdown-indicator {\n      padding: 0;\n      display: ", ";\n      svg {\n        transform: rotate(0deg);\n        transition: transform 0.3s;\n      }\n    }\n    .select__value-container .option-icon {\n      display: none;\n    }\n    .select__control:hover {\n      border: ", ";\n    }\n    .select__control--is-focused {\n      box-shadow: none;\n    }\n    .select__control--menu-is-open.select__control--is-focused,\n    .select__control--is-focused,\n    .select__control--is-focused:hover {\n      border-color: ", ";\n      box-shadow: ", ";\n    }\n    .select__control--menu-is-open .select__dropdown-indicator svg {\n      transform: rotate(180deg);\n    }\n    .select__multi-value {\n      border-radius: ", ";\n      background-color: ", ";\n      & > div {\n        font-size: 1em;\n      }\n      & > div:last-child:hover {\n        border-radius: ", ";\n        background-color: ", ";\n        padding: 0px 0.25em;\n      }\n    }\n\n    //menu\n    .select__menu {\n      box-shadow: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);\n      border: 1px solid ", ";\n      margin-top: 0.5em;\n      border-radius: ", ";\n    }\n    .select__menu-list {\n      margin: 0.5em 0;\n      padding: 0;\n      &::-webkit-scrollbar {\n        width: 0;\n      }\n    }\n    .select__option {\n      font-size: 0.75em;\n      color: ", ";\n      padding: 0.5em 1rem;\n    }\n    .select__option--is-focused,\n    .select__option--is-selected,\n    .select__option--is-focused.select__option--is-selected,\n    .select__option:active {\n      background-color: ", ";\n      color: ", ";\n    }\n    .select__menu-notice--no-options {\n      font-size: 14px;\n      color: ", ";\n    }\n  "], ["\n    width: 100%;\n    height: 3em;\n\n    // control\n    .select__control {\n      height: 100%;\n      background-color: transparent;\n      border: ", ";\n      border-radius: ", ";\n      padding: 0 1em;\n      svg {\n        fill: ", ";\n      }\n      ", "\n    }\n    .select__value-container {\n      padding: 0;\n      padding-left: ", ";\n    }\n    .select__placeholder {\n      font-size: 14px;\n      color: ", ";\n      margin: 0;\n    }\n    .select__input-container {\n      margin: 0;\n    }\n    .select__indicator-separator {\n      display: none;\n    }\n    .select__dropdown-indicator {\n      padding: 0;\n      display: ", ";\n      svg {\n        transform: rotate(0deg);\n        transition: transform 0.3s;\n      }\n    }\n    .select__value-container .option-icon {\n      display: none;\n    }\n    .select__control:hover {\n      border: ", ";\n    }\n    .select__control--is-focused {\n      box-shadow: none;\n    }\n    .select__control--menu-is-open.select__control--is-focused,\n    .select__control--is-focused,\n    .select__control--is-focused:hover {\n      border-color: ", ";\n      box-shadow: ", ";\n    }\n    .select__control--menu-is-open .select__dropdown-indicator svg {\n      transform: rotate(180deg);\n    }\n    .select__multi-value {\n      border-radius: ", ";\n      background-color: ", ";\n      & > div {\n        font-size: 1em;\n      }\n      & > div:last-child:hover {\n        border-radius: ", ";\n        background-color: ", ";\n        padding: 0px 0.25em;\n      }\n    }\n\n    //menu\n    .select__menu {\n      box-shadow: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);\n      border: 1px solid ", ";\n      margin-top: 0.5em;\n      border-radius: ", ";\n    }\n    .select__menu-list {\n      margin: 0.5em 0;\n      padding: 0;\n      &::-webkit-scrollbar {\n        width: 0;\n      }\n    }\n    .select__option {\n      font-size: 0.75em;\n      color: ", ";\n      padding: 0.5em 1rem;\n    }\n    .select__option--is-focused,\n    .select__option--is-selected,\n    .select__option--is-focused.select__option--is-selected,\n    .select__option:active {\n      background-color: ", ";\n      color: ", ";\n    }\n    .select__menu-notice--no-options {\n      font-size: 14px;\n      color: ", ";\n    }\n  "])), (style === null || style === void 0 ? void 0 : style.border) || "1px solid ".concat(borderColor), theme.borderRadius.lg || "0.5rem", gray600, __assign({}, style), controlIcon ? "0.75em" : 0, gray600, showArrow ? "flex" : "none", (style === null || style === void 0 ? void 0 : style.border) || "1px solid ".concat(borderColor), primary200, (style === null || style === void 0 ? void 0 : style.boxShadow) || "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #f4ebff", theme.borderRadius.lg || "0.5rem", gray50, theme.borderRadius.lg || "0.5rem", gray100, gray100, theme.borderRadius.lg || "0.5rem", gray900, white, gray900, gray600);
+export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIcon }) => {
+    const { primary200, gray50, gray100, gray400, gray600, gray900, white } = theme.palette;
+    const borderColor = (style === null || style === void 0 ? void 0 : style.borderColor) || gray400;
+    return css `
+    width: 100%;
+    height: 3em;
+
+    // control
+    .select__control {
+      height: 100%;
+      background-color: transparent;
+      border: ${(style === null || style === void 0 ? void 0 : style.border) || `1px solid ${borderColor}`};
+      border-radius: ${theme.borderRadius.lg || "0.5rem"};
+      padding: 0 1em;
+      svg {
+        fill: ${gray600};
+      }
+      ${Object.assign({}, style)}
+    }
+    .select__value-container {
+      padding: 0;
+      padding-left: ${controlIcon ? "0.75em" : 0};
+    }
+    .select__placeholder {
+      font-size: 14px;
+      color: ${gray600};
+      margin: 0;
+    }
+    .select__input-container {
+      margin: 0;
+    }
+    .select__indicator-separator {
+      display: none;
+    }
+    .select__dropdown-indicator {
+      padding: 0;
+      display: ${showArrow ? "flex" : "none"};
+      svg {
+        transform: rotate(0deg);
+        transition: transform 0.3s;
+      }
+    }
+    .select__value-container .option-icon {
+      display: none;
+    }
+    .select__control:hover {
+      border: ${(style === null || style === void 0 ? void 0 : style.border) || `1px solid ${borderColor}`};
+    }
+    .select__control--is-focused {
+      box-shadow: none;
+    }
+    .select__control--menu-is-open.select__control--is-focused,
+    .select__control--is-focused,
+    .select__control--is-focused:hover {
+      border-color: ${primary200};
+      box-shadow: ${(style === null || style === void 0 ? void 0 : style.boxShadow) || "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #f4ebff"};
+    }
+    .select__control--menu-is-open .select__dropdown-indicator svg {
+      transform: rotate(180deg);
+    }
+    .select__multi-value {
+      border-radius: ${theme.borderRadius.lg || "0.5rem"};
+      background-color: ${gray50};
+      & > div {
+        font-size: 1em;
+      }
+      & > div:last-child:hover {
+        border-radius: ${theme.borderRadius.lg || "0.5rem"};
+        background-color: ${gray100};
+        padding: 0px 0.25em;
+      }
+    }
+
+    //menu
+    .select__menu {
+      box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
+      border: 1px solid ${gray100};
+      margin-top: 0.5em;
+      border-radius: ${theme.borderRadius.lg || "0.5rem"};
+    }
+    .select__menu-list {
+      margin: 0.5em 0;
+      padding: 0;
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+    }
+    .select__option {
+      font-size: 0.75em;
+      color: ${gray900};
+      padding: 0.5em 1rem;
+    }
+    .select__option--is-focused,
+    .select__option--is-selected,
+    .select__option--is-focused.select__option--is-selected,
+    .select__option:active {
+      background-color: ${white};
+      color: ${gray900};
+    }
+    .select__menu-notice--no-options {
+      font-size: 14px;
+      color: ${gray600};
+    }
+  `;
 });
-var templateObject_1;
 //# sourceMappingURL=select.js.map

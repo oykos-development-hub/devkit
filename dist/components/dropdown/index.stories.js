@@ -1,20 +1,9 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { Dropdown } from "./index";
 import { CircleCheckIcon } from "../icon";
-var dropdownOptions = [
+const dropdownOptions = [
     { value: "one", label: "One" },
     { value: "two", label: "Two" },
     { value: "three", label: "Three" },
@@ -78,27 +67,27 @@ export default {
         },
     },
 };
-var Template = function (args) { return (React.createElement(StoryWrapper, null,
+const Template = (args) => (React.createElement(StoryWrapper, null,
     React.createElement("div", { style: { width: "400px" } },
-        React.createElement(Dropdown, __assign({}, args))))); };
-export var DropdownDefault = Template.bind({});
+        React.createElement(Dropdown, Object.assign({}, args)))));
+export const DropdownDefault = Template.bind({});
 DropdownDefault.args = {
     placeholder: "placeholder...",
 };
-export var DropdownWithIcons = Template.bind({});
+export const DropdownWithIcons = Template.bind({});
 DropdownWithIcons.args = {
     label: "Dropdown label*",
     placeholder: "placeholder...",
     controlIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
     optionIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
 };
-export var MultipleSelect = Template.bind({});
+export const MultipleSelect = Template.bind({});
 MultipleSelect.args = {
     label: "Dropdown label*",
     placeholder: "placeholder...",
     isMulti: true,
 };
-export var MultipleSelectWithIcons = Template.bind({});
+export const MultipleSelectWithIcons = Template.bind({});
 MultipleSelectWithIcons.args = {
     label: "Dropdown label*",
     placeholder: "placeholder...",
@@ -106,7 +95,7 @@ MultipleSelectWithIcons.args = {
     controlIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
     optionIcon: React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }),
 };
-export var StyledDropdown = Template.bind({});
+export const StyledDropdown = Template.bind({});
 StyledDropdown.args = {
     label: "Dropdown label*",
     placeholder: "placeholder...",
