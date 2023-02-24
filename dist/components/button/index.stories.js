@@ -8,7 +8,7 @@ export default {
     title: "Components/Button",
     argTypes: {
         content: {
-            defaultValue: () => React.createElement("span", null, "Button"),
+            defaultValue: () => "Testiranje",
         },
         variant: {
             control: {
