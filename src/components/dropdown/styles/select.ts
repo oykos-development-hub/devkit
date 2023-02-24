@@ -74,7 +74,7 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
       & > div:last-child:hover {
         border-radius: ${theme.borderRadius.lg || "0.5rem"};
         background-color: ${gray100};
-        padding: 0px 0.25em;
+        padding: 0 0.25em;
       }
     }
 
