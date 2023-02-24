@@ -9,7 +9,7 @@ export const Container = styled.div<{
   variant: keyof typeof Variants;
   fullWidth?: boolean;
   renderPaginationText?: (selected: number, total: number) => string;
-}>(({ theme, style, variant, displayPages, renderPaginationText, fullWidth }) => {
+}>(({ theme, variant, displayPages, renderPaginationText, fullWidth }) => {
   const { primary50, primary500, gray50, gray500, gray800, gray900, gray700, gray300 } = theme.palette;
 
   const activeBackground = {
@@ -121,7 +121,5 @@ export const Container = styled.div<{
       margin: 0;
       color: ${gray900};
     }
-
-    ${{ ...style }}
   `;
 });
