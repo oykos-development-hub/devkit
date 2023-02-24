@@ -1,6 +1,5 @@
 import React from "react";
-import styled, { css, DefaultTheme } from "styled-components";
-import { Theme } from "../../../shared/theme";
+import styled, { css } from "styled-components";
 import { rem } from "polished";
 import { AvatarSizes } from "../types";
 
