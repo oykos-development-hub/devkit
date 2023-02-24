@@ -1,9 +1,32 @@
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
 import styled from "styled-components";
 import { rotation } from "../../shared/animations/rotation";
-export var One = styled.div(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  width: ", ";\n  height: ", ";\n  border: ", " solid;\n  border-color: ", ";\n  border-radius: ", ";\n  display: inline-block;\n  position: relative;\n  box-sizing: border-box;\n  animation-name: ", ";\n  animation-duration: 1.5s;\n  animation-iteration-count: infinite;\n  animation-timing-function: linear;\n\n  &:after {\n    content: \"\";\n    box-sizing: border-box;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    width: ", ";\n    height: ", ";\n    border-radius: ", ";\n    border: ", " solid;\n    border-color: ", "\n      transparent;\n  }\n"], ["\n  width: ", ";\n  height: ", ";\n  border: ", " solid;\n  border-color: ", ";\n  border-radius: ", ";\n  display: inline-block;\n  position: relative;\n  box-sizing: border-box;\n  animation-name: ", ";\n  animation-duration: 1.5s;\n  animation-iteration-count: infinite;\n  animation-timing-function: linear;\n\n  &:after {\n    content: \"\";\n    box-sizing: border-box;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    transform: translate(-50%, -50%);\n    width: ", ";\n    height: ", ";\n    border-radius: ", ";\n    border: ", " solid;\n    border-color: ", "\n      transparent;\n  }\n"])), function (props) { return props.width || "80px"; }, function (props) { return props.width || "80px"; }, function (props) { var _a, _b; return ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.borderWidth) === null || _b === void 0 ? void 0 : _b.md) || "3px"; }, function (props) { var _a, _b; return props.primaryColor || ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.primary500) || "red"; }, function (props) { var _a, _b; return ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.borderRadius) === null || _b === void 0 ? void 0 : _b.full) || "50%"; }, rotation, function (props) { return props.secondaryWidth || "100px"; }, function (props) { return props.secondaryHeight || "100px"; }, function (props) { var _a, _b; return ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.borderRadius) === null || _b === void 0 ? void 0 : _b.full) || "50%"; }, function (props) { var _a, _b; return ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.borderWidth) === null || _b === void 0 ? void 0 : _b.md) || "3px"; }, function (props) { var _a, _b; return props.secondaryColor || ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.error500) || "green"; });
-var templateObject_1;
+export const One = styled.div `
+  width: ${(props) => props.width || "80px"};
+  height: ${(props) => props.width || "80px"};
+  border: ${(props) => { var _a, _b; return ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.borderWidth) === null || _b === void 0 ? void 0 : _b.md) || "3px"; }} solid;
+  border-color: ${(props) => { var _a, _b; return props.primaryColor || ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.primary500) || "red"; }};
+  border-radius: ${(props) => { var _a, _b; return ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.borderRadius) === null || _b === void 0 ? void 0 : _b.full) || "50%"; }};
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  animation-name: ${rotation};
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  &:after {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: ${(props) => props.secondaryWidth || "100px"};
+    height: ${(props) => props.secondaryHeight || "100px"};
+    border-radius: ${(props) => { var _a, _b; return ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.borderRadius) === null || _b === void 0 ? void 0 : _b.full) || "50%"; }};
+    border: ${(props) => { var _a, _b; return ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.borderWidth) === null || _b === void 0 ? void 0 : _b.md) || "3px"; }} solid;
+    border-color: ${(props) => { var _a, _b; return props.secondaryColor || ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.error500) || "green"; }}
+      transparent;
+  }
+`;
 //# sourceMappingURL=one.js.map
