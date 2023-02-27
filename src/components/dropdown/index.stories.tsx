@@ -13,6 +13,18 @@ const dropdownOptions = [
   { value: "four", label: "Four" },
 ];
 
+const CheckIcon = (
+  <svg width="16" height="11" viewBox="0 0 16 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path
+      d="M14.6663 1L5.49967 10.1667L1.33301 6"
+      stroke="#004FFF"
+      strokeWidth="1.66667"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
 export default {
   component: Dropdown,
   title: "Components/Dropdown",
@@ -84,6 +96,7 @@ export const DropdownDefault = Template.bind({});
 
 DropdownDefault.args = {
   placeholder: "placeholder...",
+  rightOptionIcon: CheckIcon,
 };
 
 export const DropdownWithIcons = Template.bind({});
@@ -91,7 +104,8 @@ DropdownWithIcons.args = {
   label: "Dropdown label*",
   placeholder: "placeholder...",
   controlIcon: <CircleCheckIcon style={{ color: "grey" }} size="24px" />,
-  optionIcon: <CircleCheckIcon style={{ color: "grey" }} size="24px" />,
+  leftOptionIcon: <CircleCheckIcon style={{ color: "grey" }} size="24px" />,
+  rightOptionIcon: CheckIcon,
 };
 
 //
@@ -102,6 +116,7 @@ MultipleSelect.args = {
   label: "Dropdown label*",
   placeholder: "placeholder...",
   isMulti: true,
+  rightOptionIcon: CheckIcon,
 };
 
 export const MultipleSelectWithIcons = Template.bind({});
@@ -110,7 +125,8 @@ MultipleSelectWithIcons.args = {
   placeholder: "placeholder...",
   isMulti: true,
   controlIcon: <CircleCheckIcon style={{ color: "grey" }} size="24px" />,
-  optionIcon: <CircleCheckIcon style={{ color: "grey" }} size="24px" />,
+  leftOptionIcon: <CircleCheckIcon style={{ color: "grey" }} size="24px" />,
+  rightOptionIcon: CheckIcon,
 };
 
 export const StyledDropdown = Template.bind({});
@@ -121,4 +137,5 @@ StyledDropdown.args = {
     border: "1px solid red",
     borderRadius: "16px",
   },
+  rightOptionIcon: CheckIcon,
 };
