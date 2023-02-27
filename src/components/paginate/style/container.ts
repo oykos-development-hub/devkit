@@ -110,6 +110,17 @@ export const Container = styled.div<{
         min-width: 1em;
         height: 1em;
       }
+
+      /* & .disabled {
+        cursor: auto;
+        a {
+          color: ${gray300};
+          & path {
+            fill: ${gray300};
+            stroke: ${gray300};
+          }
+        }
+      } */
     }
 
     & ${BodyMedium} {

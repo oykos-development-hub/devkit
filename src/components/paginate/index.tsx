@@ -17,7 +17,8 @@ export const Pagination = ({
   variant = "filled",
   style,
   displayPages = true,
-  pageRangeDisplayed,
+  pageRangeDisplayed = 3,
+  marginPagesDisplayed = 3,
   fullWidth = true,
 }: PaginationProps) => {
   const [currentItems, setCurrentItems] = useState([]);
@@ -49,13 +50,15 @@ export const Pagination = ({
       <>{currentItems && renderContent(currentItems)}</>
 
       <ReactPaginate
-        breakLabel="..."
-        nextLabel={nextLabel}
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={pageRangeDisplayed}
-        pageCount={pageCount}
-        previousLabel={previousLabel}
         activeClassName="active"
+        disabledClassName="disabled"
+        breakLabel="..."
+        onPageChange={handlePageClick}
+        pageCount={pageCount}
+        nextLabel={nextLabel}
+        previousLabel={previousLabel}
+        pageRangeDisplayed={pageRangeDisplayed}
+        marginPagesDisplayed={marginPagesDisplayed}
       ></ReactPaginate>
 
       <Typography

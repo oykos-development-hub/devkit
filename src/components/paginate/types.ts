@@ -20,5 +20,6 @@ export interface PaginationProps {
   previousLabel: string | ReactElement;
   nextLabel: string | ReactElement;
   pageRangeDisplayed: number;
+  marginPagesDisplayed?: number;
   displayPages?: boolean;
 }
