@@ -19,7 +19,8 @@ export interface DropdownProps {
     placeholder?: string;
     noOptionsText?: string;
     controlIcon?: ReactElement;
-    optionIcon?: ReactElement;
+    leftOptionIcon?: ReactElement;
+    rightOptionIcon?: ReactElement;
     onChange?: (e: ValueType) => void;
     onBlur?: () => void;
     onFocus?: () => void;
