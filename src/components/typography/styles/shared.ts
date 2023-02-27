@@ -7,7 +7,6 @@ export const shared = css<TypographyProps>`
   display: block;
   font-family: ${(props: TypographyProps) =>
     props.style?.fontFamily || props.theme?.fontFamily?.one || Theme.fontFamily?.one};
-  margin: ${(props: TypographyProps) => props.style?.margin || "initial"};
 `;
 
 export const fontWeight = (props: TypographyProps) => props.fontWeight || Theme.fontWeight.regular;
