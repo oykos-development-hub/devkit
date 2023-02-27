@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { rem } from "polished";
-export const Image = styled.img(() => ({ isActive, size, style }) => {
+export const Image = styled.img(() => ({ size, style }) => {
     const circle = {
         xs: rem("24px"),
         sm: rem("36px"),
