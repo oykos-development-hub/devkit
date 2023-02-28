@@ -26,7 +26,7 @@ export const Image = styled.img<{
 
     &:active,
     &:focus-within {
-      box-shadow: 0 0 0 4px #e0e7ff !important;
+      box-shadow: 0 0 0 ${rem("4px")} #e0e7ff;
     }
 
     ${{ ...style }}

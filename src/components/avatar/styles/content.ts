@@ -61,6 +61,7 @@ export const Content = styled.div<{
     & p:nth-child(1) {
       color: ${style?.color || gray900};
       font-size: ${style?.fontSize || name[size]};
+      font-weight: ${style?.fontWeight || "600"};
       line-height: 0;
       margin-top: ${style?.marginTop || marginTopName[size]};
     }
