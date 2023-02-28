@@ -6,7 +6,6 @@ export interface TypographyProps {
     variant?: Variants | string;
     fontWeight?: WeightVariants | string;
     fontSize?: string;
-    disabled?: boolean;
     onClick?: (e?: React.MouseEvent<any>) => any;
     theme?: DefaultTheme;
     style?: React.CSSProperties;

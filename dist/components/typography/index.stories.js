@@ -81,6 +81,27 @@ BodySmall.args = {
     content: "Body Small",
     theme: Theme,
 };
+export const LinkLarge = Template.bind({});
+LinkLarge.args = {
+    variant: TypographyVariants.linkLarge,
+    fontWeight: WeightVariants.regular,
+    content: "Link Large",
+    theme: Theme,
+};
+export const LinkMedium = Template.bind({});
+LinkMedium.args = {
+    variant: TypographyVariants.linkMedium,
+    fontWeight: WeightVariants.regular,
+    content: "Link Medium",
+    theme: Theme,
+};
+export const LinkSmall = Template.bind({});
+LinkSmall.args = {
+    variant: TypographyVariants.linkSmall,
+    fontWeight: WeightVariants.regular,
+    content: "Link Small",
+    theme: Theme,
+};
 export const Caption = Template.bind({});
 Caption.args = {
     variant: TypographyVariants.caption,
