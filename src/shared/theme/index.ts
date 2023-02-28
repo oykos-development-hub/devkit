@@ -1,5 +1,6 @@
 import { DefaultTheme } from "styled-components";
 import colors from "./color-types";
+import { TypographyVariants } from "../../components/typography/variants";
 
 export const Theme: DefaultTheme = {
   mediaScreenBreakpoints: {

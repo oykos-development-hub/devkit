@@ -5,6 +5,7 @@ import { DefaultTheme } from "styled-components";
 export interface TypographyProps {
   content: React.ReactNode | string;
   variant?: Variants | string;
+  fontFamily?: string;
   fontWeight?: WeightVariants | string;
   fontSize?: string;
   onClick?: (e?: React.MouseEvent<any>) => any;
