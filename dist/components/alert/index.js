@@ -4,7 +4,8 @@ import { Content } from "./styles/content";
 import { Container, Row } from "./styles/container";
 import { XIcon } from "../icon";
 import { Typography } from "../typography";
-export const Alert = ({ variant = AlertVariants.success, content, additionalText, icon, closeIcon = true, onClose, size = AlertSizes.md, style, theme, }) => (React.createElement(Container, { variant: variant, style: style, theme: theme },
+import { Theme } from "../../shared/theme";
+export const Alert = ({ variant = AlertVariants.success, content, additionalText, icon, closeIcon = true, onClose, size = AlertSizes.md, style, theme = Theme, }) => (React.createElement(Container, { variant: variant, style: style, theme: theme },
     React.createElement(Row, { size: size },
         React.createElement(Content, { style: style, size: size, theme: theme },
             icon && icon,

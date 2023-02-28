@@ -1,21 +1,22 @@
 import styled, { css } from "styled-components";
 import { Theme } from "../../../shared/theme";
+import { rem } from "polished";
 export const Content = styled.div(() => ({ size, style, theme }) => {
     const themeToUse = theme || Theme;
     const { white } = themeToUse.palette;
     const defaultColor = (style === null || style === void 0 ? void 0 : style.color) || white;
     const textSize = {
-        sm: "0.75rem",
-        md: "0.875rem",
-        lg: "1rem",
+        sm: rem("12px"),
+        md: rem("14px"),
+        lg: rem("16px"),
+    };
+    const descriptionSize = {
+        sm: rem("10px"),
+        md: rem("12px"),
+        lg: rem("14px"),
     };
     const iconSize = {
         sm: "1.25rem",
-        md: "1.25rem",
-        lg: "1.5rem",
-    };
-    const lineHeight = {
-        sm: "1rem",
         md: "1.25rem",
         lg: "1.5rem",
     };
@@ -24,16 +25,17 @@ export const Content = styled.div(() => ({ size, style, theme }) => {
     flex-direction: row;
     padding: 0;
     gap: 0.75rem;
+    align-items: center;
 
     & p {
       font-size: ${(style === null || style === void 0 ? void 0 : style.fontSize) || textSize[size]};
-      line-height: ${(style === null || style === void 0 ? void 0 : style.lineHeight) || lineHeight[size]};
+      line-height: 0;
       color: ${(style === null || style === void 0 ? void 0 : style.color) || defaultColor};
     }
 
     & p:nth-child(1) {
-      font-size: 0.875rem;
-      line-height: 1.25rem;
+      font-size: ${(style === null || style === void 0 ? void 0 : style.fontSize) || descriptionSize[size]};
+      line-height: 0;
       color: ${(style === null || style === void 0 ? void 0 : style.color) || defaultColor};
     }
 

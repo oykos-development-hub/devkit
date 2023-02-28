@@ -3,7 +3,7 @@ import { Theme } from "../../../shared/theme";
 export const Container = styled.div(() => ({ theme, variant, style }) => {
     var _a;
     const themeToUse = theme || Theme;
-    const { primary500, success500, error500, gray600 } = themeToUse.palette || {};
+    const { primary500, success500, error500, gray600 } = theme.palette;
     const background = {
         primary: primary500,
         success: success500,
