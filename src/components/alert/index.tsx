@@ -4,6 +4,7 @@ import { Content } from "./styles/content";
 import { Container, Row } from "./styles/container";
 import { XIcon } from "../icon";
 import { Typography } from "../typography";
+import { Theme } from "../../shared/theme";
 
 export const Alert: React.FC<AlertProps> = ({
   variant = AlertVariants.success,
@@ -14,7 +15,7 @@ export const Alert: React.FC<AlertProps> = ({
   onClose,
   size = AlertSizes.md,
   style,
-  theme,
+  theme = Theme,
 }) => (
   <Container variant={variant} style={style} theme={theme}>
     <Row size={size}>
