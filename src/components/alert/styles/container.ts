@@ -9,7 +9,7 @@ export const Container = styled.div<{
   style: React.CSSProperties | undefined;
 }>(() => ({ theme, variant, style }) => {
   const themeToUse = theme || Theme;
-  const { primary500, success500, error500, gray600 } = themeToUse.palette || {};
+  const { primary500, success500, error500, gray600 } = theme!.palette;
 
   const background = {
     primary: primary500,
