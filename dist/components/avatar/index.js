@@ -6,7 +6,10 @@ import { Typography } from "../typography";
 import { Indicator } from "./styles/indicator";
 import { Column } from "./styles/column";
 import { Content } from "./styles/content";
-export const Avatar = ({ src, size = AvatarSizes.lg, statusIcon = true, online = true, supportingText = true, style, alt, name, email, theme, }) => {
+import { Icon } from "./styles/icon";
+import { UserIcon } from "../icon";
+import { Theme } from "../../shared/theme";
+export const Avatar = ({ src, size = AvatarSizes.lg, statusIcon = true, online = true, supportingText = true, style, alt, name, email, theme = Theme, }) => {
     const ref = useRef(null);
     const [isActive, setIsActive] = useState(false);
     const handleClick = () => setIsActive((prevState) => !prevState);
@@ -23,11 +26,12 @@ export const Avatar = ({ src, size = AvatarSizes.lg, statusIcon = true, online =
     }, [ref]);
     return (React.createElement(Container, { ref: ref, size: size, style: style, supportingText: supportingText },
         React.createElement(Column, { isActive: isActive, size: size, style: { borderRadius: "50%" } },
-            React.createElement(Image, { onClick: handleClick, src: src, alt: alt, size: size, style: style }),
+            src ? (React.createElement(Image, { onClick: handleClick, src: src, alt: alt, size: size, style: style })) : (React.createElement(Icon, { onClick: handleClick, size: size, style: style, theme: theme },
+                React.createElement(UserIcon, null))),
             statusIcon && React.createElement(Indicator, { online: online, size: size, style: style, theme: theme })),
         supportingText && size !== AvatarSizes.xs && (React.createElement(Column, { size: size, style: style },
             React.createElement(Content, { size: size, style: style, theme: theme },
-                React.createElement(Typography, { variant: "bodyMedium", fontWeight: "600", content: name, style: style }),
+                React.createElement(Typography, { variant: "bodyMedium", content: name, style: style }),
                 React.createElement(Typography, { variant: "bodyMedium", content: email, style: style }))))));
 };
 //# sourceMappingURL=index.js.map

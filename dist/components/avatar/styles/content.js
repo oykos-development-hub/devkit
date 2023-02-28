@@ -47,6 +47,7 @@ export const Content = styled.div(() => ({ size, style, theme }) => {
     & p:nth-child(1) {
       color: ${(style === null || style === void 0 ? void 0 : style.color) || gray900};
       font-size: ${(style === null || style === void 0 ? void 0 : style.fontSize) || name[size]};
+      font-weight: ${(style === null || style === void 0 ? void 0 : style.fontWeight) || "600"};
       line-height: 0;
       margin-top: ${(style === null || style === void 0 ? void 0 : style.marginTop) || marginTopName[size]};
     }
