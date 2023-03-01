@@ -16,10 +16,4 @@ export enum TypographyVariants {
   code = "code",
 }
 
-export enum WeightVariants {
-  regular = "400",
-  semiBold = "600",
-  bold = "700",
-}
-
 export const VariantNames = Object.keys(TypographyVariants).map((key: string) => key);
