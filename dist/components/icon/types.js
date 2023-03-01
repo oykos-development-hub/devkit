@@ -1,10 +1,11 @@
-export var Directions;
-(function (Directions) {
-    Directions["bottom"] = "bottom";
-    Directions["left"] = "left";
-    Directions["right"] = "right";
-    Directions["top"] = "top";
-})(Directions || (Directions = {}));
+export var IconSize;
+(function (IconSize) {
+    IconSize["xs"] = "xs";
+    IconSize["sm"] = "sm";
+    IconSize["md"] = "md";
+    IconSize["lg"] = "lg";
+    IconSize["xl"] = "xl";
+})(IconSize || (IconSize = {}));
 export var Positions;
 (function (Positions) {
     Positions["absolute"] = "absolute";
