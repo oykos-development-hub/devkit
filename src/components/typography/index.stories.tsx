@@ -18,13 +18,6 @@ export default {
         options: [...VariantNames],
       },
     },
-    fontWeight: {
-      options: Object.keys(WeightVariants),
-      mapping: WeightVariants,
-      control: {
-        type: "radio",
-      },
-    },
     theme: {
       control: {
         type: "object",
