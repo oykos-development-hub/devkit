@@ -76,7 +76,7 @@ export default {
     variant: {
       control: {
         type: "radio",
-        options: ["filled", "outlined", "underlined"],
+        options: ["filled", "outlined", "underlined", "dotted"],
       },
     },
     theme: {
@@ -172,4 +172,14 @@ WithPaginationText.args = {
   renderPaginationText: (selected, total) => `Page ${selected} of ${total}`,
   previousLabel: <span style={{ display: "flex", alignItems: "center" }}>{leftIcon}</span>,
   nextLabel: <span style={{ display: "flex", alignItems: "center" }}>{rightIcon}</span>,
+};
+
+//
+
+export const VariantDotted = Template.bind({});
+
+VariantDotted.args = {
+  ...paginationArgs,
+  itemsPerPage: 7,
+  variant: "dotted",
 };

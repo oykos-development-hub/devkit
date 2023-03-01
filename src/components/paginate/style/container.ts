@@ -2,6 +2,39 @@ import styled, { css, CSSProperties, DefaultTheme } from "styled-components";
 import { BodyMedium } from "../../typography/styles/variants";
 import { Variants } from "../types";
 
+const displayDots = (variant: keyof typeof Variants, theme: DefaultTheme) => {
+  const { primary500, gray300 } = theme.palette;
+
+  if (variant === Variants["dotted"])
+    return css`
+      & a {
+        position: relative;
+      }
+
+      & li:first-child,
+      & li:last-child {
+        visibility: hidden;
+      }
+
+      & a::after {
+        content: "";
+        height: 1.25em;
+        width: 1.25em;
+        border-radius: 50%;
+        position: absolute;
+        background-color: ${gray300};
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      & li.active a::after {
+        background-color: ${primary500};
+      }
+    `;
+  else return;
+};
+
 export const Container = styled.div<{
   displayPages?: boolean;
   theme: DefaultTheme;
@@ -48,7 +81,6 @@ export const Container = styled.div<{
       width: 100%;
       padding: 0;
       color: ${color[variant]};
-      border-top: 1px solid ${gray300};
       padding: 1em 0;
       margin: 0;
       padding: 1em 0;
@@ -110,17 +142,6 @@ export const Container = styled.div<{
         min-width: 1em;
         height: 1em;
       }
-
-      /* & .disabled {
-        cursor: auto;
-        a {
-          color: ${gray300};
-          & path {
-            fill: ${gray300};
-            stroke: ${gray300};
-          }
-        }
-      } */
     }
 
     & ${BodyMedium} {
@@ -132,5 +153,7 @@ export const Container = styled.div<{
       margin: 0;
       color: ${gray900};
     }
+
+    ${displayDots(variant, theme)}
   `;
 });

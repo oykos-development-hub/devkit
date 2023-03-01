@@ -5,6 +5,7 @@ export enum Variants {
   filled = "filled",
   outlined = "outlined",
   underlined = "underlined",
+  dotted = "dotted",
 }
 
 export interface PaginationProps {
