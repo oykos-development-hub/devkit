@@ -4,14 +4,7 @@ import { Path, Svg } from "../styles/shared";
 
 const CheckIcon = (props: IconProps): React.ReactElement => (
   <Svg viewBox="0 0 12 12" onClick={props.onClick} {...props}>
-    <Path
-      stroke="#fff"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="1.667"
-      d="M10 3L4.5 8.5 2 6"
-      {...props}
-    />
+    <Path d="M10 3L4.5 8.5 2 6" {...props} />
   </Svg>
 );
 
