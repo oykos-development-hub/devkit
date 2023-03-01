@@ -15,9 +15,4 @@ export declare enum TypographyVariants {
     helperText = "helperText",
     code = "code"
 }
-export declare enum WeightVariants {
-    regular = "400",
-    semiBold = "600",
-    bold = "700"
-}
 export declare const VariantNames: string[];

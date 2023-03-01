@@ -15,7 +15,7 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
       border-radius: ${theme.borderRadius.lg || "0.5rem"};
       padding: 0 1em;
       svg {
-        fill: ${gray600};
+        fill: ${(style === null || style === void 0 ? void 0 : style.color) || gray600};
       }
       ${Object.assign({}, style)}
     }
@@ -89,7 +89,6 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
     }
     .select__option {
       font-size: 0.75em;
-      color: ${gray900};
       padding: 0.5em 1rem;
     }
     .select__option--is-focused,
@@ -97,7 +96,6 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
     .select__option--is-focused.select__option--is-selected,
     .select__option:active {
       background-color: ${white};
-      color: ${gray900};
     }
     .select__menu-notice--no-options {
       font-size: 14px;
