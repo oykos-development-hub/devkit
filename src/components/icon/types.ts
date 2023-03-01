@@ -1,11 +1,12 @@
 import React from "react";
 import { DefaultTheme } from "styled-components";
 
-export enum Directions {
-  bottom = "bottom",
-  left = "left",
-  right = "right",
-  top = "top",
+export enum IconSize {
+  xs = "xs",
+  sm = "sm",
+  md = "md",
+  lg = "lg",
+  xl = "xl",
 }
 
 export enum Positions {
@@ -14,9 +15,8 @@ export enum Positions {
 }
 
 export interface IconProps {
-  size?: string;
+  size?: IconSize | string;
   onClick?: (e?: React.MouseEvent<any>) => any;
-  direction?: Directions | keyof typeof Directions;
   position?: Positions | keyof typeof Positions;
   theme?: DefaultTheme;
   style?: React.CSSProperties;
