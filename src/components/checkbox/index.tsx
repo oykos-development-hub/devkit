@@ -3,7 +3,7 @@ import { CheckboxProps, CheckboxSize } from "./types";
 import { Container } from "./styles/container";
 import { Content, HiddenCheckbox, Icon } from "./styles/content";
 import { Theme } from "../../shared/theme";
-import { CheckIcon } from "./checkIcon";
+import { CheckIcon } from "../icon";
 
 export const Checkbox: React.FC<CheckboxProps> = ({
   checked = false,
