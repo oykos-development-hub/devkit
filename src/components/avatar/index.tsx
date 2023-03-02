@@ -4,11 +4,12 @@ import { Container } from "./styles/container";
 import { Image } from "./styles/image";
 import { Typography } from "../typography";
 import { Indicator } from "./styles/indicator";
-import { Column } from "./styles/column";
-import { Content } from "./styles/content";
 import { Icon } from "./styles/icon";
 import { UserIcon } from "../icon";
 import { Theme } from "../../shared/theme";
+import { ImageWrapper } from "./styles/imageWrapper";
+import { TextWrapper } from "./styles/textWrapper";
+import { TypographyVariants } from "../typography/variants";
 
 export const Avatar: React.FC<AvatarProps> = ({
   src,
@@ -25,6 +26,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   const ref = useRef<HTMLDivElement>(null);
   const [isActive, setIsActive] = useState<boolean>(false);
   const handleClick = () => setIsActive((prevState) => !prevState);
+  const [variant, setVariant] = useState(TypographyVariants.bodyMedium);
 
   useEffect(() => {
     const handleClickOutside = (e: any) => {
@@ -39,26 +41,29 @@ export const Avatar: React.FC<AvatarProps> = ({
     };
   }, [ref]);
 
+  useEffect(() => {
+    if (size === AvatarSizes.sm || AvatarSizes.md) setVariant(TypographyVariants.bodySmall);
+    else setVariant(TypographyVariants.bodyMedium);
+  }, [size]);
+
   return (
     <Container ref={ref} size={size} style={style} supportingText={supportingText}>
-      <Column isActive={isActive} size={size} style={{ borderRadius: "50%" }}>
+      <ImageWrapper size={size} style={{ borderRadius: "50%" }}>
         {src ? (
-          <Image onClick={handleClick} src={src} alt={alt} size={size} style={style} />
+          <Image onClick={handleClick} isActive={isActive} src={src} alt={alt} size={size} style={style} />
         ) : (
           <Icon onClick={handleClick} size={size} style={style} theme={theme}>
             <UserIcon />
           </Icon>
         )}
         {statusIcon && <Indicator online={online} size={size} style={style} theme={theme} />}
-      </Column>
+      </ImageWrapper>
 
       {supportingText && size !== AvatarSizes.xs && (
-        <Column size={size} style={style}>
-          <Content size={size} style={style} theme={theme}>
-            <Typography variant={"bodyMedium"} content={name} style={style} />
-            <Typography variant={"bodyMedium"} content={email} style={style} />
-          </Content>
-        </Column>
+        <TextWrapper size={size} style={style} theme={theme}>
+          <Typography variant={variant} content={name} style={{ fontWeight: 600 }} />
+          <Typography variant={variant} content={email} style={{ color: "#757575" }} />
+        </TextWrapper>
       )}
     </Container>
   );

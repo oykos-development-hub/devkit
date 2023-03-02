@@ -36,10 +36,10 @@ export const Container = styled.div<{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    overflow: hidden;
     justify-content: space-between;
+    align-content: space-between;
     width: ${supportingText ? style?.width || width[size] : widthNoSupportingText[size]};
-    height: ${style?.height || height[size]};
+    height: ${supportingText ? style?.height || height[size] : widthNoSupportingText[size]};
     padding: ${style?.padding || "0"};
     z-index: 1;
 
