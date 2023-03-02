@@ -1,11 +1,11 @@
 import styled, { css, CSSProperties, DefaultTheme } from "styled-components";
 import { BodyMedium } from "../../typography/styles/variants";
-import { Variants } from "../types";
+import { PaginationVariants } from "../types";
 
-const displayDots = (variant: keyof typeof Variants, theme: DefaultTheme) => {
+const displayDots = (variant: keyof typeof PaginationVariants, theme: DefaultTheme) => {
   const { primary500, gray300 } = theme.palette;
 
-  if (variant === Variants["dotted"])
+  if (variant === PaginationVariants["dotted"])
     return css`
       & a {
         position: relative;
@@ -39,7 +39,7 @@ export const Container = styled.div<{
   displayPages?: boolean;
   theme: DefaultTheme;
   style?: CSSProperties;
-  variant: keyof typeof Variants;
+  variant: keyof typeof PaginationVariants;
   fullWidth?: boolean;
   renderPaginationText?: (selected: number, total: number) => string;
 }>(({ theme, variant, displayPages, renderPaginationText, fullWidth }) => {
@@ -77,7 +77,7 @@ export const Container = styled.div<{
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: ${variant === Variants["outlined"] ? 0 : "0.5em"};
+      gap: ${variant === PaginationVariants["outlined"] ? 0 : "0.5em"};
       width: 100%;
       padding: 0;
       color: ${color[variant]};
@@ -88,14 +88,14 @@ export const Container = styled.div<{
       & li,
       & li.active {
         cursor: pointer;
-        border-radius: ${variant === Variants["outlined"] ? 0 : "0.5em"};
-        border: ${variant === Variants["outlined"] ? `1px solid ${gray300}` : "none"};
+        border-radius: ${variant === PaginationVariants["outlined"] ? 0 : "0.5em"};
+        border: ${variant === PaginationVariants["outlined"] ? `1px solid ${gray300}` : "none"};
       }
 
       & li:first-child,
       & li:last-child {
         color: ${gray700};
-        border: ${variant === Variants["underlined"] ? "none" : `1px solid ${gray300}`};
+        border: ${variant === PaginationVariants["underlined"] ? "none" : `1px solid ${gray300}`};
         display: block;
 
         & path {
@@ -111,13 +111,13 @@ export const Container = styled.div<{
       & li:first-child {
         margin-right: ${fullWidth ? "auto" : "none"};
         margin-left: 1.5em;
-        border-radius: ${variant === Variants["outlined"] ? "0.5em 0 0 0.5em" : "none"};
+        border-radius: ${variant === PaginationVariants["outlined"] ? "0.5em 0 0 0.5em" : "none"};
       }
 
       & li:last-child {
         margin-right: 1.5em;
         margin-left: ${fullWidth ? "auto" : "none"};
-        border-radius: ${variant === Variants["outlined"] ? "0 0.5em 0.5em 0" : "none"};
+        border-radius: ${variant === PaginationVariants["outlined"] ? "0 0.5em 0.5em 0" : "none"};
       }
 
       & li.active {
@@ -125,7 +125,7 @@ export const Container = styled.div<{
         color: ${activeColor[variant]};
 
         a {
-          text-decoration: ${variant === Variants["underlined"] ? "underline" : "none"};
+          text-decoration: ${variant === PaginationVariants["underlined"] ? "underline" : "none"};
         }
 
         & path {

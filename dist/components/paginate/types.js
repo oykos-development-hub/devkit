@@ -1,8 +1,8 @@
-export var Variants;
-(function (Variants) {
-    Variants["filled"] = "filled";
-    Variants["outlined"] = "outlined";
-    Variants["underlined"] = "underlined";
-    Variants["dotted"] = "dotted";
-})(Variants || (Variants = {}));
+export var PaginationVariants;
+(function (PaginationVariants) {
+    PaginationVariants["filled"] = "filled";
+    PaginationVariants["outlined"] = "outlined";
+    PaginationVariants["underlined"] = "underlined";
+    PaginationVariants["dotted"] = "dotted";
+})(PaginationVariants || (PaginationVariants = {}));
 //# sourceMappingURL=types.js.map

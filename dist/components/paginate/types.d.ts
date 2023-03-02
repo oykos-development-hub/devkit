@@ -1,6 +1,6 @@
 import { ReactElement } from "react";
 import { CSSProperties, DefaultTheme } from "styled-components";
-export declare enum Variants {
+export declare enum PaginationVariants {
     filled = "filled",
     outlined = "outlined",
     underlined = "underlined",
@@ -8,7 +8,7 @@ export declare enum Variants {
 }
 export interface PaginationProps {
     theme: DefaultTheme;
-    variant: keyof typeof Variants;
+    variant: keyof typeof PaginationVariants;
     style?: CSSProperties;
     fullWidth?: boolean;
     data: any;
