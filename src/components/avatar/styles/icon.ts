@@ -43,13 +43,17 @@ export const Icon = styled.div<{
 
       & path {
         color: ${style?.color || primary500};
-        fill: ${style?.color || primary500};
+        fill: ${style?.color || "none"};
+        stroke: ${style?.stroke || primary500};
+        stroke-linecap: ${style?.strokeLinecap || "round"};
+        stroke-linejoin: ${style?.strokeLinejoin || "round"};
+        stroke-width: ${style?.strokeWidth || "2"};
       }
     }
 
     &:active,
     &:focus-within {
-      box-shadow: 0 0 0 ${rem("4px")} #e0e7ff;
+      box-shadow: ${style?.boxShadow || `0 0 0 ${rem("4px")} #e0e7ff`};
     }
 
     ${{ ...style }}
