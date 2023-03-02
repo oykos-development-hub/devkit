@@ -3,7 +3,8 @@ import { CSSProperties, DefaultTheme } from "styled-components";
 export declare enum Variants {
     filled = "filled",
     outlined = "outlined",
-    underlined = "underlined"
+    underlined = "underlined",
+    dotted = "dotted"
 }
 export interface PaginationProps {
     theme: DefaultTheme;
@@ -17,5 +18,6 @@ export interface PaginationProps {
     previousLabel: string | ReactElement;
     nextLabel: string | ReactElement;
     pageRangeDisplayed: number;
+    marginPagesDisplayed?: number;
     displayPages?: boolean;
 }

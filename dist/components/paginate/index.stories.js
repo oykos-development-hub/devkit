@@ -1,14 +1,3 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 var __rest = (this && this.__rest) || function (s, e) {
     var t = {};
     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
@@ -24,7 +13,7 @@ import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Pagination } from "./index";
 import { Theme } from "../../shared/theme";
-var paginationData = [
+const paginationData = [
     { name: "Albania", code: "AL" },
     { name: "Algeria", code: "DZ" },
     { name: "American Samoa", code: "AS" },
@@ -63,9 +52,9 @@ var paginationData = [
     { name: "Cameroon", code: "CM" },
     { name: "Canada", code: "CA" },
 ];
-var leftIcon = (React.createElement("svg", { width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
+const leftIcon = (React.createElement("svg", { width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
     React.createElement("path", { d: "M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667", stroke: "#616161", strokeWidth: "1.67", strokeLinecap: "round", strokeLinejoin: "round" })));
-var rightIcon = (React.createElement("svg", { width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
+const rightIcon = (React.createElement("svg", { width: "14", height: "14", viewBox: "0 0 14 14", fill: "none", xmlns: "http://www.w3.org/2000/svg" },
     React.createElement("path", { d: "M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333", stroke: "#616161", strokeWidth: "1.67", strokeLinecap: "round", strokeLinejoin: "round" })));
 export default {
     component: Pagination,
@@ -74,7 +63,7 @@ export default {
         variant: {
             control: {
                 type: "radio",
-                options: ["filled", "outlined", "underlined"],
+                options: ["filled", "outlined", "underlined", "dotted"],
             },
         },
         theme: {
@@ -85,16 +74,16 @@ export default {
         },
     },
 };
-var Template = function (_a) {
-    var renderContent = _a.renderContent, args = __rest(_a, ["renderContent"]);
-    var contentToShow = function (data) { return (React.createElement("div", null, data.map(function (country) { return (React.createElement("p", { key: country, style: { textAlign: "center" } },
-        React.createElement("strong", null, country.name))); }))); };
+const Template = (_a) => {
+    var { renderContent } = _a, args = __rest(_a, ["renderContent"]);
+    const contentToShow = (data) => (React.createElement("div", null, data.map((country) => (React.createElement("p", { key: country, style: { textAlign: "center" } },
+        React.createElement("strong", null, country.name))))));
     return (React.createElement(StoryWrapper, null,
         React.createElement("div", { style: { width: "70%" } },
-            React.createElement(Pagination, __assign({}, args, { renderContent: contentToShow })))));
+            React.createElement(Pagination, Object.assign({}, args, { renderContent: contentToShow })))));
 };
-export var VariantFilled = Template.bind({});
-var paginationArgs = {
+export const VariantFilled = Template.bind({});
+const paginationArgs = {
     data: paginationData,
     itemsPerPage: 4,
     previousLabel: (React.createElement("p", { style: { display: "flex", alignItems: "center", gap: "0.5em", margin: 0 } },
@@ -105,13 +94,15 @@ var paginationArgs = {
         rightIcon)),
     pageRangeDisplayed: 3,
 };
-VariantFilled.args = __assign(__assign({}, paginationArgs), { variant: "filled" });
-export var VariantOutlined = Template.bind({});
-VariantOutlined.args = __assign(__assign({}, paginationArgs), { variant: "outlined", fullWidth: false });
-export var VariantUnderlined = Template.bind({});
-VariantUnderlined.args = __assign(__assign({}, paginationArgs), { variant: "underlined" });
-export var OnlyWithArrows = Template.bind({});
-OnlyWithArrows.args = __assign(__assign({}, paginationArgs), { displayPages: false, previousLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, leftIcon), nextLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, rightIcon) });
-export var WithPaginationText = Template.bind({});
-WithPaginationText.args = __assign(__assign({}, paginationArgs), { renderPaginationText: function (selected, total) { return "Page ".concat(selected, " of ").concat(total); }, previousLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, leftIcon), nextLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, rightIcon) });
+VariantFilled.args = Object.assign(Object.assign({}, paginationArgs), { variant: "filled" });
+export const VariantOutlined = Template.bind({});
+VariantOutlined.args = Object.assign(Object.assign({}, paginationArgs), { variant: "outlined", fullWidth: false });
+export const VariantUnderlined = Template.bind({});
+VariantUnderlined.args = Object.assign(Object.assign({}, paginationArgs), { variant: "underlined" });
+export const OnlyWithArrows = Template.bind({});
+OnlyWithArrows.args = Object.assign(Object.assign({}, paginationArgs), { displayPages: false, previousLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, leftIcon), nextLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, rightIcon) });
+export const WithPaginationText = Template.bind({});
+WithPaginationText.args = Object.assign(Object.assign({}, paginationArgs), { renderPaginationText: (selected, total) => `Page ${selected} of ${total}`, previousLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, leftIcon), nextLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, rightIcon) });
+export const VariantDotted = Template.bind({});
+VariantDotted.args = Object.assign(Object.assign({}, paginationArgs), { itemsPerPage: 7, variant: "dotted" });
 //# sourceMappingURL=index.stories.js.map

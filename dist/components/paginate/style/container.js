@@ -1,29 +1,147 @@
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
 import styled, { css } from "styled-components";
 import { BodyMedium } from "../../typography/styles/variants";
 import { Variants } from "../types";
-export var Container = styled.div(function (_a) {
-    var theme = _a.theme, variant = _a.variant, displayPages = _a.displayPages, renderPaginationText = _a.renderPaginationText, fullWidth = _a.fullWidth;
-    var _b = theme.palette, primary50 = _b.primary50, primary500 = _b.primary500, gray50 = _b.gray50, gray500 = _b.gray500, gray800 = _b.gray800, gray900 = _b.gray900, gray700 = _b.gray700, gray300 = _b.gray300;
-    var activeBackground = {
+const displayDots = (variant, theme) => {
+    const { primary500, gray300 } = theme.palette;
+    if (variant === Variants["dotted"])
+        return css `
+      & a {
+        position: relative;
+      }
+
+      & li:first-child,
+      & li:last-child {
+        visibility: hidden;
+      }
+
+      & a::after {
+        content: "";
+        height: 1.25em;
+        width: 1.25em;
+        border-radius: 50%;
+        position: absolute;
+        background-color: ${gray300};
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      & li.active a::after {
+        background-color: ${primary500};
+      }
+    `;
+    else
+        return;
+};
+export const Container = styled.div(({ theme, variant, displayPages, renderPaginationText, fullWidth }) => {
+    const { primary50, primary500, gray50, gray500, gray800, gray900, gray700, gray300 } = theme.palette;
+    const activeBackground = {
         filled: primary50,
         outlined: gray50,
         underlined: "transparent",
     };
-    var color = {
+    const color = {
         filled: gray500,
         outlined: gray700,
         underlined: gray700,
     };
-    var activeColor = {
+    const activeColor = {
         filled: primary500,
         outlined: gray800,
         underlined: gray700,
     };
-    return css(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    & * {\n      font-family: \"Inter\";\n    }\n\n    position: relative;\n    color: ", ";\n    width: 100%;\n\n    & ul {\n      list-style: none;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      gap: ", ";\n      width: 100%;\n      padding: 0;\n      color: ", ";\n      border-top: 1px solid ", ";\n      padding: 1em 0;\n      margin: 0;\n      padding: 1em 0;\n\n      & li,\n      & li.active {\n        cursor: pointer;\n        border-radius: ", ";\n        border: ", ";\n      }\n\n      & li:first-child,\n      & li:last-child {\n        color: ", ";\n        border: ", ";\n        display: block;\n\n        & path {\n          stroke: ", ";\n          fill: ", ";\n        }\n      }\n\n      & li {\n        display: ", ";\n      }\n\n      & li:first-child {\n        margin-right: ", ";\n        margin-left: 1.5em;\n        border-radius: ", ";\n      }\n\n      & li:last-child {\n        margin-right: 1.5em;\n        margin-left: ", ";\n        border-radius: ", ";\n      }\n\n      & li.active {\n        background-color: ", ";\n        color: ", ";\n\n        a {\n          text-decoration: ", ";\n        }\n\n        & path {\n          fill: ", ";\n          stroke: ", ";\n        }\n      }\n\n      & a {\n        padding: 0.5em;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        min-width: 1em;\n        height: 1em;\n      }\n    }\n\n    & ", " {\n      position: absolute;\n      white-space: nowrap;\n      bottom: 1.25em;\n      left: 50%;\n      transform: translateX(-50%);\n      margin: 0;\n      color: ", ";\n    }\n  "], ["\n    & * {\n      font-family: \"Inter\";\n    }\n\n    position: relative;\n    color: ", ";\n    width: 100%;\n\n    & ul {\n      list-style: none;\n      display: flex;\n      justify-content: center;\n      align-items: center;\n      gap: ", ";\n      width: 100%;\n      padding: 0;\n      color: ", ";\n      border-top: 1px solid ", ";\n      padding: 1em 0;\n      margin: 0;\n      padding: 1em 0;\n\n      & li,\n      & li.active {\n        cursor: pointer;\n        border-radius: ", ";\n        border: ", ";\n      }\n\n      & li:first-child,\n      & li:last-child {\n        color: ", ";\n        border: ", ";\n        display: block;\n\n        & path {\n          stroke: ", ";\n          fill: ", ";\n        }\n      }\n\n      & li {\n        display: ", ";\n      }\n\n      & li:first-child {\n        margin-right: ", ";\n        margin-left: 1.5em;\n        border-radius: ", ";\n      }\n\n      & li:last-child {\n        margin-right: 1.5em;\n        margin-left: ", ";\n        border-radius: ", ";\n      }\n\n      & li.active {\n        background-color: ", ";\n        color: ", ";\n\n        a {\n          text-decoration: ", ";\n        }\n\n        & path {\n          fill: ", ";\n          stroke: ", ";\n        }\n      }\n\n      & a {\n        padding: 0.5em;\n        display: flex;\n        align-items: center;\n        justify-content: center;\n        min-width: 1em;\n        height: 1em;\n      }\n    }\n\n    & ", " {\n      position: absolute;\n      white-space: nowrap;\n      bottom: 1.25em;\n      left: 50%;\n      transform: translateX(-50%);\n      margin: 0;\n      color: ", ";\n    }\n  "])), gray900, variant === Variants["outlined"] ? 0 : "0.5em", color[variant], gray300, variant === Variants["outlined"] ? 0 : "0.5em", variant === Variants["outlined"] ? "1px solid ".concat(gray300) : "none", gray700, variant === Variants["underlined"] ? "none" : "1px solid ".concat(gray300), gray700, gray700, !displayPages || renderPaginationText ? "none" : "block", fullWidth ? "auto" : "none", variant === Variants["outlined"] ? "0.5em 0 0 0.5em" : "none", fullWidth ? "auto" : "none", variant === Variants["outlined"] ? "0 0.5em 0.5em 0" : "none", activeBackground[variant], activeColor[variant], variant === Variants["underlined"] ? "underline" : "none", primary500, primary500, BodyMedium, gray900);
+    return css `
+    & * {
+      font-family: "Inter";
+    }
+
+    position: relative;
+    color: ${gray900};
+    width: 100%;
+
+    & ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: ${variant === Variants["outlined"] ? 0 : "0.5em"};
+      width: 100%;
+      padding: 0;
+      color: ${color[variant]};
+      padding: 1em 0;
+      margin: 0;
+      padding: 1em 0;
+
+      & li,
+      & li.active {
+        cursor: pointer;
+        border-radius: ${variant === Variants["outlined"] ? 0 : "0.5em"};
+        border: ${variant === Variants["outlined"] ? `1px solid ${gray300}` : "none"};
+      }
+
+      & li:first-child,
+      & li:last-child {
+        color: ${gray700};
+        border: ${variant === Variants["underlined"] ? "none" : `1px solid ${gray300}`};
+        display: block;
+
+        & path {
+          stroke: ${gray700};
+          fill: ${gray700};
+        }
+      }
+
+      & li {
+        display: ${!displayPages || renderPaginationText ? "none" : "block"};
+      }
+
+      & li:first-child {
+        margin-right: ${fullWidth ? "auto" : "none"};
+        margin-left: 1.5em;
+        border-radius: ${variant === Variants["outlined"] ? "0.5em 0 0 0.5em" : "none"};
+      }
+
+      & li:last-child {
+        margin-right: 1.5em;
+        margin-left: ${fullWidth ? "auto" : "none"};
+        border-radius: ${variant === Variants["outlined"] ? "0 0.5em 0.5em 0" : "none"};
+      }
+
+      & li.active {
+        background-color: ${activeBackground[variant]};
+        color: ${activeColor[variant]};
+
+        a {
+          text-decoration: ${variant === Variants["underlined"] ? "underline" : "none"};
+        }
+
+        & path {
+          fill: ${primary500};
+          stroke: ${primary500};
+        }
+      }
+
+      & a {
+        padding: 0.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 1em;
+        height: 1em;
+      }
+    }
+
+    & ${BodyMedium} {
+      position: absolute;
+      white-space: nowrap;
+      bottom: 1.25em;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      color: ${gray900};
+    }
+
+    ${displayDots(variant, theme)}
+  `;
 });
-var templateObject_1;
 //# sourceMappingURL=container.js.map
