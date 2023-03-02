@@ -182,4 +182,6 @@ VariantDotted.args = {
   ...paginationArgs,
   itemsPerPage: 7,
   variant: "dotted",
+  previousLabel: "",
+  nextLabel: "",
 };
