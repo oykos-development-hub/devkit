@@ -104,5 +104,5 @@ OnlyWithArrows.args = Object.assign(Object.assign({}, paginationArgs), { display
 export const WithPaginationText = Template.bind({});
 WithPaginationText.args = Object.assign(Object.assign({}, paginationArgs), { renderPaginationText: (selected, total) => `Page ${selected} of ${total}`, previousLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, leftIcon), nextLabel: React.createElement("span", { style: { display: "flex", alignItems: "center" } }, rightIcon) });
 export const VariantDotted = Template.bind({});
-VariantDotted.args = Object.assign(Object.assign({}, paginationArgs), { itemsPerPage: 7, variant: "dotted" });
+VariantDotted.args = Object.assign(Object.assign({}, paginationArgs), { itemsPerPage: 7, variant: "dotted", previousLabel: "", nextLabel: "" });
 //# sourceMappingURL=index.stories.js.map
