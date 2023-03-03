@@ -16,11 +16,5 @@ export var TypographyVariants;
     TypographyVariants["helperText"] = "helperText";
     TypographyVariants["code"] = "code";
 })(TypographyVariants || (TypographyVariants = {}));
-export var WeightVariants;
-(function (WeightVariants) {
-    WeightVariants["regular"] = "400";
-    WeightVariants["semiBold"] = "600";
-    WeightVariants["bold"] = "700";
-})(WeightVariants || (WeightVariants = {}));
 export const VariantNames = Object.keys(TypographyVariants).map((key) => key);
 //# sourceMappingURL=variants.js.map

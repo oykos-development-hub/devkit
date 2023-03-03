@@ -14,22 +14,20 @@ import { Theme } from "../../shared/theme";
 import { StyledSelect } from "./styles/select";
 import { Container } from "./styles/container";
 import { Typography } from "../typography";
-import { XIcon } from "../icon";
 import { Option } from "./styles/option";
 import { ControlIconWrapper } from "./styles/controlIconWrapper";
 export const Dropdown = (_a) => {
-    var { options, theme = Theme, isDisabled = false, isSearchable = false, isMulti = false, noOptionsText = "No options", label, style, showArrow = true, controlIcon, optionIcon, onChange, placeholder = "" } = _a, props = __rest(_a, ["options", "theme", "isDisabled", "isSearchable", "isMulti", "noOptionsText", "label", "style", "showArrow", "controlIcon", "optionIcon", "onChange", "placeholder"]);
+    var { options, theme = Theme, isDisabled = false, isSearchable = false, isMulti = false, noOptionsText = "No options", label, style, showArrow = true, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder = "" } = _a, props = __rest(_a, ["options", "theme", "isDisabled", "isSearchable", "isMulti", "noOptionsText", "label", "style", "showArrow", "controlIcon", "leftOptionIcon", "rightOptionIcon", "onChange", "placeholder"]);
     const [selectedOption, setSelectedOption] = useState(null);
     const [controlIconWidth, setControlIconWidth] = useState(0);
     const controlIconWrapperRef = useRef(null);
-    const optionLabel = (e) => (React.createElement(Option, { theme: theme, isDisabled: isDisabled },
+    const optionLabel = (e) => (React.createElement(Option, { theme: theme, isDisabled: isDisabled, style: style },
         React.createElement("div", null,
-            optionIcon && React.createElement("div", { className: "option-icon" },
-                optionIcon,
+            leftOptionIcon && React.createElement("div", { className: "option-icon" },
+                leftOptionIcon,
                 " "),
             e.label),
-        !isMulti && (selectedOption === null || selectedOption === void 0 ? void 0 : selectedOption.value) === e.value && (React.createElement("div", { className: "option-icon" },
-            React.createElement(XIcon, { style: { color: theme.palette.gray700 }, size: "1em" })))));
+        !isMulti && (selectedOption === null || selectedOption === void 0 ? void 0 : selectedOption.value) === e.value && (React.createElement("div", { className: "option-icon" }, rightOptionIcon && rightOptionIcon))));
     useEffect(() => {
         var _a;
         if (controlIcon && controlIconWrapperRef.current)

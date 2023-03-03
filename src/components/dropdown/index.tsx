@@ -4,7 +4,6 @@ import { StyledSelect } from "./styles/select";
 import { DropdownProps, ValueType } from "./types";
 import { Container } from "./styles/container";
 import { Typography } from "../typography";
-import { XIcon } from "../icon";
 import { Option } from "./styles/option";
 import { ControlIconWrapper } from "./styles/controlIconWrapper";
 
@@ -19,7 +18,8 @@ export const Dropdown = ({
   style,
   showArrow = true,
   controlIcon,
-  optionIcon,
+  leftOptionIcon,
+  rightOptionIcon,
   onChange,
   placeholder = "",
   ...props
@@ -30,15 +30,13 @@ export const Dropdown = ({
   const controlIconWrapperRef = useRef<HTMLDivElement>(null);
 
   const optionLabel = (e: any) => (
-    <Option theme={theme} isDisabled={isDisabled}>
+    <Option theme={theme} isDisabled={isDisabled} style={style}>
       <div>
-        {optionIcon && <div className="option-icon">{optionIcon} </div>}
+        {leftOptionIcon && <div className="option-icon">{leftOptionIcon} </div>}
         {e.label}
       </div>
       {!isMulti && selectedOption?.value === e.value && (
-        <div className="option-icon">
-          <XIcon style={{ color: theme.palette.gray700 }} size="1em" />
-        </div>
+        <div className="option-icon">{rightOptionIcon && rightOptionIcon}</div>
       )}
     </Option>
   );
