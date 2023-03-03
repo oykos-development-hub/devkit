@@ -32,7 +32,7 @@ export const ImageWrapper = styled.div<{
     z-index: 2;
     border-radius: 50%;
     background-color: ${gray200};
-    box-shadow: ${isActive ? `0 0 0 ${rem("4px")} #E0E7FF` : `none`};
+    box-shadow: ${isActive ? `0 0 0 ${rem("4px")} #E0E7FF` : "none"};
 
     &:active,
     &:focus-within {

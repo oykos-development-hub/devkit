@@ -17,33 +17,28 @@ export const Icon = styled.div(() => ({ size, style, theme }) => {
         xl: rem("32px"),
     };
     return css `
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${(style === null || style === void 0 ? void 0 : style.width) || circle[size]};
-    height: ${(style === null || style === void 0 ? void 0 : style.height) || circle[size]};
+    width: ${circle[size]};
+    height: ${circle[size]};
     border-radius: 50%;
     background-color: ${(style === null || style === void 0 ? void 0 : style.backgroundColor) || gray200};
-    z-index: 1;
+    z-index: 2;
 
     & svg {
-      width: ${(style === null || style === void 0 ? void 0 : style.width) || icon[size]} !important;
-      height: ${(style === null || style === void 0 ? void 0 : style.height) || icon[size]} !important;
+      width: ${icon[size]} !important;
+      height: ${icon[size]} !important;
 
       & path {
-        color: ${(style === null || style === void 0 ? void 0 : style.color) || primary500};
-        fill: ${(style === null || style === void 0 ? void 0 : style.color) || "none"};
+        color: ${primary500};
+        fill: none;
         stroke: ${(style === null || style === void 0 ? void 0 : style.stroke) || primary500};
         stroke-linecap: ${(style === null || style === void 0 ? void 0 : style.strokeLinecap) || "round"};
         stroke-linejoin: ${(style === null || style === void 0 ? void 0 : style.strokeLinejoin) || "round"};
         stroke-width: ${(style === null || style === void 0 ? void 0 : style.strokeWidth) || "2"};
       }
-    }
-
-    &:active,
-    &:focus-within {
-      box-shadow: ${(style === null || style === void 0 ? void 0 : style.boxShadow) || `0 0 0 ${rem("4px")} #e0e7ff`};
     }
 
     ${Object.assign({}, style)}

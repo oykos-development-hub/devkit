@@ -26,23 +26,17 @@ export const TextWrapper = styled.div(() => ({ size, style, theme }) => {
         lg: rem("24px"),
         xl: rem("24px"),
     };
-    const marginLeft = {
-        sm: rem("10px"),
-        md: rem("12px"),
-        lg: rem("12px"),
-        xl: rem("16px"),
-    };
     return css `
     display: flex;
+    flex: 2;
     flex-direction: column;
-    justify-content: center;
     align-items: flex-start;
     padding: 0;
-    width: 100%;
-    height: 100%;
-
+    width: auto;
+    height: auto;
     color: ${gray600};
     font-size: ${email[size]};
+    white-space: nowrap;
 
     & p {
       margin: 0;
@@ -58,8 +52,6 @@ export const TextWrapper = styled.div(() => ({ size, style, theme }) => {
         line-height: ${emailLineHeight[size]};
       }
     }
-
-    margin-left: ${marginLeft[size]};
 
     ${Object.assign({}, style)}
   `;

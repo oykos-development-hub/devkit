@@ -44,7 +44,7 @@ const Template = (args) => (React.createElement(StoryWrapper, null,
     React.createElement(Avatar, Object.assign({}, args))));
 export const Default = Template.bind({});
 Default.args = {
-    size: AvatarSizes.md,
+    size: AvatarSizes.xl,
     name: "Olivia Rhye",
     email: "olivia@test.com",
     supportingText: true,

@@ -19,12 +19,12 @@ export const Indicator = styled.span(({ size, online, style, theme }) => {
     };
     return css `
     position: absolute;
-    width: ${(style === null || style === void 0 ? void 0 : style.width) || indicatorSize[size]};
-    height: ${(style === null || style === void 0 ? void 0 : style.height) || indicatorSize[size]};
+    width: ${indicatorSize[size]};
+    height: ${indicatorSize[size]};
     top: ${indicatorPosition[size]};
     left: ${indicatorPosition[size]};
     background-color: ${indicatorColor};
-    border: ${rem("1.5px")} solid ${(style === null || style === void 0 ? void 0 : style.borderColor) || gray50};
+    border: ${rem("1.5px")} solid ${gray50};
     border-radius: 50%;
     z-index: 3;
   `;
