@@ -8,39 +8,22 @@ export const Container = styled.div<{
   size: AvatarSizes;
   style?: React.CSSProperties;
 }>(() => ({ supportingText, size, style }) => {
-  const width = {
-    xs: rem("132px"),
-    sm: rem("132px"),
-    md: rem("157px"),
-    lg: rem("180px"),
-    xl: rem("192px"),
-  };
-
-  const height = {
-    xs: rem("36px"),
-    sm: rem("36px"),
-    md: rem("40px"),
-    lg: rem("48px"),
-    xl: rem("56px"),
-  };
-
-  const widthNoSupportingText = {
-    xs: rem("24px"),
-    sm: rem("36px"),
-    md: rem("40px"),
-    lg: rem("48px"),
-    xl: rem("56px"),
+  const columnGap = {
+    sm: rem("10px"),
+    md: rem("12px"),
+    lg: rem("12px"),
+    xl: rem("16px"),
   };
 
   return css`
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: space-between;
-    align-content: space-between;
-    width: ${supportingText ? style?.width || width[size] : widthNoSupportingText[size]};
-    height: ${supportingText ? style?.height || height[size] : widthNoSupportingText[size]};
+    display: ${supportingText && "flex"};
+    flex-wrap: ${supportingText && "wrap"};
+    flex-direction: ${supportingText && "row"};
+    align-items: center;
+    width: ${style?.width || "auto"};
+    height: ${style?.height || "auto"};
     padding: ${style?.padding || "0"};
+    column-gap: ${style?.columnGap || columnGap[size]};
     z-index: 1;
 
     ${{ ...style }}

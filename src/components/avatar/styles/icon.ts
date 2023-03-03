@@ -27,33 +27,28 @@ export const Icon = styled.div<{
   };
 
   return css`
-    position: absolute;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${style?.width || circle[size]};
-    height: ${style?.height || circle[size]};
+    width: ${circle[size]};
+    height: ${circle[size]};
     border-radius: 50%;
     background-color: ${style?.backgroundColor || gray200};
-    z-index: 1;
+    z-index: 2;
 
     & svg {
-      width: ${style?.width || icon[size]} !important;
-      height: ${style?.height || icon[size]} !important;
+      width: ${icon[size]} !important;
+      height: ${icon[size]} !important;
 
       & path {
-        color: ${style?.color || primary500};
-        fill: ${style?.color || "none"};
+        color: ${primary500};
+        fill: none;
         stroke: ${style?.stroke || primary500};
         stroke-linecap: ${style?.strokeLinecap || "round"};
         stroke-linejoin: ${style?.strokeLinejoin || "round"};
         stroke-width: ${style?.strokeWidth || "2"};
       }
-    }
-
-    &:active,
-    &:focus-within {
-      box-shadow: ${style?.boxShadow || `0 0 0 ${rem("4px")} #e0e7ff`};
     }
 
     ${{ ...style }}

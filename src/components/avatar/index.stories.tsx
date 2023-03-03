@@ -51,7 +51,7 @@ const Template: ComponentStory<typeof Avatar> = (args: AvatarProps) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  size: AvatarSizes.md,
+  size: AvatarSizes.xl,
   name: "Olivia Rhye",
   email: "olivia@test.com",
   supportingText: true,

@@ -13,7 +13,7 @@ import { TypographyVariants } from "../typography/variants";
 
 export const Avatar: React.FC<AvatarProps> = ({
   src,
-  size = AvatarSizes.lg,
+  size = AvatarSizes.xl,
   statusIcon = true,
   online = true,
   supportingText = true,
@@ -26,7 +26,6 @@ export const Avatar: React.FC<AvatarProps> = ({
   const ref = useRef<HTMLDivElement>(null);
   const [isActive, setIsActive] = useState<boolean>(false);
   const handleClick = () => setIsActive((prevState) => !prevState);
-  const [variant, setVariant] = useState(TypographyVariants.bodyMedium);
 
   useEffect(() => {
     const handleClickOutside = (e: any) => {
@@ -41,18 +40,21 @@ export const Avatar: React.FC<AvatarProps> = ({
     };
   }, [ref]);
 
-  useEffect(() => {
-    if (size === AvatarSizes.sm || AvatarSizes.md) setVariant(TypographyVariants.bodySmall);
-    else setVariant(TypographyVariants.bodyMedium);
-  }, [size]);
+  const variant = () => {
+    if (size === AvatarSizes.sm || AvatarSizes.md) {
+      return TypographyVariants.bodySmall;
+    } else {
+      return TypographyVariants.bodyMedium;
+    }
+  };
 
   return (
-    <Container ref={ref} size={size} style={style} supportingText={supportingText}>
-      <ImageWrapper size={size} style={{ borderRadius: "50%" }}>
+    <Container ref={ref} size={size} style={style} supportingText={size !== AvatarSizes.xs && supportingText}>
+      <ImageWrapper onClick={handleClick} isActive={isActive} size={size} style={style} theme={theme}>
         {src ? (
-          <Image onClick={handleClick} isActive={isActive} src={src} alt={alt} size={size} style={style} />
+          <Image src={src} alt={alt} size={size} style={style} />
         ) : (
-          <Icon onClick={handleClick} size={size} style={style} theme={theme}>
+          <Icon size={size} style={style} theme={theme}>
             <UserIcon />
           </Icon>
         )}
@@ -61,8 +63,8 @@ export const Avatar: React.FC<AvatarProps> = ({
 
       {supportingText && size !== AvatarSizes.xs && (
         <TextWrapper size={size} style={style} theme={theme}>
-          <Typography variant={variant} content={name} style={{ fontWeight: 600 }} />
-          <Typography variant={variant} content={email} style={{ color: "#757575" }} />
+          <Typography variant={variant()} content={name} style={{ fontWeight: 600 }} />
+          <Typography variant={variant()} content={email} style={{ color: "#757575" }} />
         </TextWrapper>
       )}
     </Container>

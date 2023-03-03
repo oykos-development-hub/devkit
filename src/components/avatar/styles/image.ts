@@ -4,26 +4,24 @@ import React from "react";
 import { AvatarSizes } from "../types";
 
 export const Image = styled.img<{
-  isActive?: boolean;
   size: AvatarSizes;
   style?: React.CSSProperties;
-}>(() => ({ isActive, style }) => {
+}>(() => ({ style, size }) => {
+  const avatar = {
+    xs: rem("24px"),
+    sm: rem("36px"),
+    md: rem("40px"),
+    lg: rem("48px"),
+    xl: rem("56px"),
+  };
+
   return css`
-    width: 100%;
-    height: 100%;
+    width: ${avatar[size]};
+    height: ${avatar[size]};
     object-fit: ${style?.objectFit || "cover"};
     object-position: ${style?.objectPosition || "center"};
     border-radius: 50%;
     z-index: 2;
-
-    box-sizing: border-box;
-    border: ${isActive ? rem("4px") + " solid #E0E7FF" : "none"};
-
-    &:active,
-    &:focus-within {
-      box-sizing: border-box;
-      border: ${rem("4px")} solid #e0e7ff;
-    }
 
     ${{ ...style }}
   `;
