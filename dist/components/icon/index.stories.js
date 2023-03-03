@@ -1,7 +1,6 @@
 import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { AssignIcon, CircleCheckIcon, DangerIcon, XIcon } from "./";
-import { IconSizes } from "./types";
+import { AssignIcon, XIcon, DangerIcon, CircleCheckIcon, UserIcon, InstagramIcon, LinkedinIcon, FacebookIcon, GithubIcon, GoogleIcon, } from "./";
 export default {
     title: "Components/Icons",
     component: XIcon,
@@ -27,16 +26,28 @@ const Default = (args) => (React.createElement(StoryWrapper, null,
     React.createElement(AssignIcon, Object.assign({}, args)),
     React.createElement(XIcon, Object.assign({}, args)),
     React.createElement(DangerIcon, Object.assign({}, args)),
-    React.createElement(CircleCheckIcon, Object.assign({}, args))));
+    React.createElement(CircleCheckIcon, Object.assign({}, args)),
+    React.createElement(UserIcon, Object.assign({}, args)),
+    React.createElement(InstagramIcon, Object.assign({}, args)),
+    React.createElement(LinkedinIcon, Object.assign({}, args)),
+    React.createElement(FacebookIcon, Object.assign({}, args)),
+    React.createElement(GithubIcon, Object.assign({}, args)),
+    React.createElement(GoogleIcon, Object.assign({}, args))));
 export const DefaultIcons = Default.bind({});
 DefaultIcons.args = {};
 const Custom = (args) => (React.createElement(StoryWrapper, null,
     React.createElement(AssignIcon, Object.assign({}, args)),
     React.createElement(XIcon, Object.assign({}, args)),
     React.createElement(DangerIcon, Object.assign({}, args)),
-    React.createElement(CircleCheckIcon, Object.assign({}, args))));
+    React.createElement(CircleCheckIcon, Object.assign({}, args)),
+    React.createElement(UserIcon, Object.assign({}, args)),
+    React.createElement(InstagramIcon, Object.assign({}, args)),
+    React.createElement(LinkedinIcon, Object.assign({}, args)),
+    React.createElement(FacebookIcon, Object.assign({}, args)),
+    React.createElement(GithubIcon, Object.assign({}, args)),
+    React.createElement(GoogleIcon, Object.assign({}, args))));
 export const CustomIcons = Custom.bind({});
 CustomIcons.args = {
-    size: IconSizes.sm,
+    size: "100px",
 };
 //# sourceMappingURL=index.stories.js.map
