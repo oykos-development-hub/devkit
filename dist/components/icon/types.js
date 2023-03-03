@@ -11,12 +11,4 @@ export var Positions;
     Positions["absolute"] = "absolute";
     Positions["relative"] = "relative";
 })(Positions || (Positions = {}));
-export var IconSizes;
-(function (IconSizes) {
-    IconSizes["xs"] = "xs";
-    IconSizes["sm"] = "sm";
-    IconSizes["md"] = "md";
-    IconSizes["lg"] = "lg";
-    IconSizes["xl"] = "xl";
-})(IconSizes || (IconSizes = {}));
 //# sourceMappingURL=types.js.map
