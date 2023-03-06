@@ -5,6 +5,7 @@ import { Input as InputComponent } from "./components/input";
 import { Pin as PinComponent } from "./components/pin";
 import { Tooltip as TooltipComponent } from "./components/tooltip";
 import { Dropdown as DropdownComponent } from "./components/dropdown";
+import { Switch as SwitchComponent } from "./components/switch";
 
 export const Button = ButtonComponent;
 export const Loader = LoaderComponent;
@@ -13,6 +14,7 @@ export const Input = InputComponent;
 export const Pin = PinComponent;
 export const Tooltip = TooltipComponent;
 export const Dropdown = DropdownComponent;
+export const Switch = SwitchComponent;
 
 export * from "./components/icon";
 export * from "./types";
