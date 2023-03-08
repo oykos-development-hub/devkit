@@ -8,4 +8,5 @@ export * from "./components/pin/types";
 export * from "./components/tooltip/types";
 export * from "./components/dropdown/types";
 export * from "./components/badge/types";
+export * from "./components/breadcrumbs/types";
 //# sourceMappingURL=types.js.map

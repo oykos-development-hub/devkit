@@ -9,7 +9,7 @@ export const Container = styled.div(({ theme }) => {
 
     & *,
     & ${BodyMedium} {
-      font-family: "Inter";
+      font-family: "Inter", sans-serif;
       color: ${gray900};
     }
 
