@@ -51,5 +51,5 @@ export const StyledBreadcrumbs = Template.bind({});
 StyledBreadcrumbs.args = {
   items: linksWithIcons,
   separator: <span>&gt;</span>,
-  style: { color: "blue" },
+  style: { backgroundColor: "#C0E0FF" },
 };

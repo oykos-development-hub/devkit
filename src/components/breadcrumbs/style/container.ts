@@ -1,30 +1,31 @@
-import styled from "styled-components";
-import { Link } from "./link";
+import styled, { css, CSSProperties, DefaultTheme } from "styled-components";
 
-export const Container = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  align-items: center;
+export const Container = styled.ul<{ theme: DefaultTheme; style?: CSSProperties }>(({ theme, style }) => {
+  const { gray900 } = theme.palette;
 
-  & li {
+  return css`
+    list-style-type: none;
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 0.75em;
-    margin: 0 1em 0 0;
-  }
+    padding: 0.75em;
+    border-radius: 1.5em;
 
-  & li:hover {
-    & ${Link} {
-      text-decoration: underline;
+    & li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75em;
+      margin: 0 1em 0 0;
     }
 
-    & ${Link}.active {
-      text-decoration: none;
+    & li:last-child {
+      margin-right: 0;
     }
-  }
-  & li:last-child {
-    margin-right: 0;
-  }
-`;
+
+    & path {
+      fill: ${gray900};
+    }
+
+    ${{ ...style }}
+  `;
+});

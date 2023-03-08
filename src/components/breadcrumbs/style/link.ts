@@ -1,31 +1,21 @@
-import styled, { css, CSSProperties, DefaultTheme } from "styled-components";
+import styled, { css, DefaultTheme } from "styled-components";
 
-export const Link = styled.a<{ theme: DefaultTheme; style?: CSSProperties }>(({ theme, style }) => {
-  const { gray900, gray500 } = theme.palette;
+export const Link = styled.a<{ theme: DefaultTheme }>(({ theme }) => {
+  const { gray500, primary400 } = theme.palette;
 
   return css`
-    text-decoration: none;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.25em;
     color: ${gray500};
-
-    & path {
-      fill: ${style?.color || gray500};
-    }
+    text-decoration: none;
 
     &.active {
       cursor: auto;
       pointer-events: none;
-      color: ${gray900} !important;
+      color: ${primary400};
       text-decoration: none;
-
-      path {
-        fill: ${gray900};
-      }
     }
-
-    ${{ ...style }}
   `;
 });

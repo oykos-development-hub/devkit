@@ -8,7 +8,7 @@ export const Breadcrumbs = ({ theme = Theme, onClick, items, separator, style }:
   const [links, setLinks] = useState(items);
 
   return (
-    <Container>
+    <Container theme={theme} style={style}>
       {links?.map((item) => {
         const isLastItem = links.indexOf(item) === links.length - 1;
 
@@ -23,13 +23,7 @@ export const Breadcrumbs = ({ theme = Theme, onClick, items, separator, style }:
 
         return (
           <li key={item.name}>
-            <Link
-              style={style}
-              href={item.to}
-              theme={theme}
-              className={isLastItem ? "active" : ""}
-              onClick={handleLinkClick}
-            >
+            <Link href={item.to} theme={theme} className={isLastItem ? "active" : ""} onClick={handleLinkClick}>
               {item.icon}
               {item.name}
             </Link>
