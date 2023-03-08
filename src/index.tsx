@@ -4,6 +4,8 @@ import { Typography as TypographyComponent } from "./components/typography";
 import { Input as InputComponent } from "./components/input";
 import { Pin as PinComponent } from "./components/pin";
 import { Tooltip as TooltipComponent } from "./components/tooltip";
+import { Dropdown as DropdownComponent } from "./components/dropdown";
+import { Badge as BadgeComponent } from "./components/badge";
 import { Breadcrumbs as BreadcrumbsComponent } from "./components/breadcrumbs";
 
 export const Button = ButtonComponent;
@@ -12,6 +14,8 @@ export const Typography = TypographyComponent;
 export const Input = InputComponent;
 export const Pin = PinComponent;
 export const Tooltip = TooltipComponent;
+export const Dropdown = DropdownComponent;
+export const Badge = BadgeComponent;
 export const Breadcrumbs = BreadcrumbsComponent;
 
 export * from "./components/icon";
