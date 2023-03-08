@@ -5,6 +5,6 @@ export declare const Typography: (props: import("./types").TypographyProps) => i
 export declare const Input: ({ name, value, theme, style, disabled, label, textarea, leftContent, rightContent, error, hint, placeholder, onChange, onBlur, onFocus, id, inputRef, ...props }: import("./types").InputProps) => import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;
 export declare const Pin: ({ handleInput, length, type }: import("./types").IPinCode) => JSX.Element;
 export declare const Tooltip: ({ position, theme, content, children, title, variant, arrow, style, }: import("./types").TooltipProps) => JSX.Element;
-export declare const Dropdown: ({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, showArrow, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, ...props }: import("./types").DropdownProps) => JSX.Element;
+export declare const Breadcrumbs: ({ theme, onClick, items, separator, style }: import("./types").BreadcrumbsProps) => JSX.Element;
 export * from "./components/icon";
 export * from "./types";
