@@ -25,29 +25,29 @@ export const Alert: React.FC<AlertProps> = ({
       case "md":
         return "bodyMedium";
       case "lg":
-        return "bodyMedium";
+        return "bodyLarge";
     }
   };
 
   return (
     <Container variant={variant} style={style} theme={theme}>
       <Wrapper size={size}>
-        <Content style={style} size={size} theme={theme}>
+        <Content size={size} theme={theme}>
           {icon && icon}
-          <Typography variant={textVariant()} content={content} theme={theme} style={style} />
+          <Typography variant={textVariant()} content={content} theme={theme} />
         </Content>
 
         {closeIcon && (
-          <Content style={style} size={size} theme={theme}>
+          <Content size={size} theme={theme}>
             <XIcon onClick={onClose} />
           </Content>
         )}
       </Wrapper>
 
       {description && (
-        <Wrapper size={size} style={{ paddingTop: 0 }}>
-          <Content style={style} size={size} theme={theme}>
-            <Typography variant={"bodyMedium"} content={description} theme={theme} style={style} />
+        <Wrapper size={size}>
+          <Content size={size} theme={theme}>
+            <Typography variant={"bodyMedium"} content={description} theme={theme} />
           </Content>
         </Wrapper>
       )}

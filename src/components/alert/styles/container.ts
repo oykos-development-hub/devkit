@@ -28,5 +28,7 @@ export const Container = styled.div<{
     z-index: 999;
     width: ${style?.width || "auto"};
     height: ${style?.height || "auto"};
+
+    ${{ ...style }}
   `;
 });
