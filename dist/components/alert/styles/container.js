@@ -20,6 +20,8 @@ export const Container = styled.div(() => ({ theme, variant, style }) => {
     z-index: 999;
     width: ${(style === null || style === void 0 ? void 0 : style.width) || "auto"};
     height: ${(style === null || style === void 0 ? void 0 : style.height) || "auto"};
+
+    ${Object.assign({}, style)}
   `;
 });
 //# sourceMappingURL=container.js.map

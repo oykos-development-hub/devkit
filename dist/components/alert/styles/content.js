@@ -1,10 +1,9 @@
 import styled, { css } from "styled-components";
 import { Theme } from "../../../shared/theme";
 import { rem } from "polished";
-export const Content = styled.div(() => ({ size, style, theme }) => {
+export const Content = styled.div(() => ({ size, theme }) => {
     const themeToUse = theme || Theme;
     const { white } = themeToUse.palette;
-    const defaultColor = (style === null || style === void 0 ? void 0 : style.color) || white;
     const gap = {
         sm: rem("8px"),
         md: rem("12px"),
@@ -23,12 +22,12 @@ export const Content = styled.div(() => ({ size, style, theme }) => {
 
     & p {
       margin: 0;
-      color: ${(style === null || style === void 0 ? void 0 : style.color) || defaultColor};
+      color: ${white};
     }
 
     // description (if exists)
     & p:nth-child(1) {
-      color: ${(style === null || style === void 0 ? void 0 : style.color) || defaultColor};
+      color: ${white};
     }
 
     & svg {
@@ -37,8 +36,8 @@ export const Content = styled.div(() => ({ size, style, theme }) => {
     }
 
     & svg path {
-      fill: ${(style === null || style === void 0 ? void 0 : style.color) || defaultColor} !important;
-      color: ${(style === null || style === void 0 ? void 0 : style.color) || defaultColor} !important;
+      fill: ${white} !important;
+      color: ${white} !important;
     }
   `;
 });
