@@ -5,15 +5,10 @@ export const Content = styled.div(() => ({ size, style, theme }) => {
     const themeToUse = theme || Theme;
     const { white } = themeToUse.palette;
     const defaultColor = (style === null || style === void 0 ? void 0 : style.color) || white;
-    const textSize = {
-        sm: rem("12px"),
-        md: rem("14px"),
-        lg: rem("16px"),
-    };
-    const descriptionSize = {
-        sm: rem("10px"),
+    const gap = {
+        sm: rem("8px"),
         md: rem("12px"),
-        lg: rem("14px"),
+        lg: rem("16px"),
     };
     const iconSize = {
         sm: "1.25rem",
@@ -23,38 +18,28 @@ export const Content = styled.div(() => ({ size, style, theme }) => {
     return css `
     display: flex;
     flex-direction: row;
-    padding: 0;
-    gap: 0.75rem;
+    gap: ${gap[size]};
     align-items: center;
 
     & p {
-      font-size: ${(style === null || style === void 0 ? void 0 : style.fontSize) || textSize[size]};
-      line-height: 0;
+      margin: 0;
       color: ${(style === null || style === void 0 ? void 0 : style.color) || defaultColor};
     }
 
+    // description (if exists)
     & p:nth-child(1) {
-      font-size: ${(style === null || style === void 0 ? void 0 : style.fontSize) || descriptionSize[size]};
-      line-height: 0;
       color: ${(style === null || style === void 0 ? void 0 : style.color) || defaultColor};
     }
 
-    & svg:first-child {
-      width: ${(style === null || style === void 0 ? void 0 : style.width) || iconSize[size]} !important;
-      height: ${(style === null || style === void 0 ? void 0 : style.height) || iconSize[size]} !important;
-    }
-
-    & svg:last-child {
-      width: ${(style === null || style === void 0 ? void 0 : style.width) || iconSize[size]} !important;
-      height: ${(style === null || style === void 0 ? void 0 : style.height) || iconSize[size]} !important;
+    & svg {
+      width: ${iconSize[size]} !important;
+      height: ${iconSize[size]} !important;
     }
 
     & svg path {
       fill: ${(style === null || style === void 0 ? void 0 : style.color) || defaultColor} !important;
       color: ${(style === null || style === void 0 ? void 0 : style.color) || defaultColor} !important;
     }
-
-    ${Object.assign({}, style)}
   `;
 });
 //# sourceMappingURL=content.js.map

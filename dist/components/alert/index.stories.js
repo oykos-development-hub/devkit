@@ -2,7 +2,6 @@ import React from "react";
 import { AlertSizes, AlertVariants } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Alert } from "./index";
-import { Theme } from "../../shared/theme";
 import { DangerIcon } from "../icon";
 export default {
     component: Alert,
@@ -48,6 +47,7 @@ Custom.args = {
     variant: AlertVariants.success,
     size: AlertSizes.md,
     icon: React.createElement(DangerIcon, null),
-    theme: Theme,
+    description: "",
+    closeIcon: true,
 };
 //# sourceMappingURL=index.stories.js.map
