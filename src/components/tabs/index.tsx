@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Theme } from "../../shared/theme";
 import { Container } from "./style/container";
 
-import { TabContainer } from "./style/tab-container";
+import { TabsContainer } from "./style/tabs-container";
 import { Tab } from "./style/tab";
 import { TabsProps } from "./types";
 
@@ -17,7 +17,7 @@ export const Tabs = ({ style, theme = Theme, disabledTabs, tabs, renderContent }
 
   return (
     <Container>
-      <TabContainer>
+      <TabsContainer>
         {tabs?.map((tab, index) => {
           return (
             <Tab
@@ -32,7 +32,7 @@ export const Tabs = ({ style, theme = Theme, disabledTabs, tabs, renderContent }
             </Tab>
           );
         })}
-      </TabContainer>
+      </TabsContainer>
 
       {renderContent &&
         !disabledTabs?.find((disabledTab) => disabledTab === tabs[activeTab].title) &&

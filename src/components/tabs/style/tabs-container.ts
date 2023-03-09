@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const TabContainer = styled.div(() => {
+export const TabsContainer = styled.div(() => {
   return css`
     display: flex;
     list-style: none;
