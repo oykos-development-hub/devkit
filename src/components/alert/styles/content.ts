@@ -5,7 +5,7 @@ import { Theme } from "../../../shared/theme";
 import { rem } from "polished";
 
 export const Content = styled.div<{
-  size: AlertSizes;
+  size: AlertSizes | string;
   style?: React.CSSProperties | undefined;
   theme?: DefaultTheme;
 }>(() => ({ size, style, theme }) => {
@@ -13,16 +13,10 @@ export const Content = styled.div<{
   const { white } = themeToUse.palette;
   const defaultColor = style?.color || white;
 
-  const textSize = {
-    sm: rem("12px"),
-    md: rem("14px"),
-    lg: rem("16px"),
-  };
-
-  const descriptionSize = {
-    sm: rem("10px"),
+  const gap = {
+    sm: rem("8px"),
     md: rem("12px"),
-    lg: rem("14px"),
+    lg: rem("16px"),
   };
 
   const iconSize = {
@@ -34,37 +28,27 @@ export const Content = styled.div<{
   return css`
     display: flex;
     flex-direction: row;
-    padding: 0;
-    gap: 0.75rem;
+    gap: ${gap[size]};
     align-items: center;
 
     & p {
-      font-size: ${style?.fontSize || textSize[size]};
-      line-height: 0;
+      margin: 0;
       color: ${style?.color || defaultColor};
     }
 
+    // description (if exists)
     & p:nth-child(1) {
-      font-size: ${style?.fontSize || descriptionSize[size]};
-      line-height: 0;
       color: ${style?.color || defaultColor};
     }
 
-    & svg:first-child {
-      width: ${style?.width || iconSize[size]} !important;
-      height: ${style?.height || iconSize[size]} !important;
-    }
-
-    & svg:last-child {
-      width: ${style?.width || iconSize[size]} !important;
-      height: ${style?.height || iconSize[size]} !important;
+    & svg {
+      width: ${iconSize[size]} !important;
+      height: ${iconSize[size]} !important;
     }
 
     & svg path {
       fill: ${style?.color || defaultColor} !important;
       color: ${style?.color || defaultColor} !important;
     }
-
-    ${{ ...style }}
   `;
 });

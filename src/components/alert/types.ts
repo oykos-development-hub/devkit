@@ -16,11 +16,11 @@ export enum AlertSizes {
 
 export interface AlertProps {
   content?: React.ReactNode | string;
-  size?: AlertSizes;
-  variant: AlertVariants;
+  size?: AlertSizes | string;
+  variant: AlertVariants | string;
   icon?: JSX.Element | React.ReactNode;
   closeIcon?: boolean;
-  additionalText?: string;
+  description?: React.ReactNode | string;
   onClose?: (e?: React.MouseEvent<any>) => any;
   theme?: DefaultTheme;
   style?: React.CSSProperties;

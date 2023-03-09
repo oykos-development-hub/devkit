@@ -3,7 +3,6 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { AlertProps, AlertSizes, AlertVariants } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Alert } from "./index";
-import { Theme } from "../../shared/theme";
 import { DangerIcon } from "../icon";
 
 export default {
@@ -55,5 +54,6 @@ Custom.args = {
   variant: AlertVariants.success,
   size: AlertSizes.md,
   icon: <DangerIcon />,
-  theme: Theme,
+  description: "",
+  closeIcon: true,
 };
