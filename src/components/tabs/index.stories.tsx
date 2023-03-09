@@ -38,3 +38,17 @@ WithDisabledTabs.args = {
   renderContent: (content) => <div style={{ padding: "2em 0" }}>{content}</div>,
   disabledTabs: ["Tab 1", "Tab 4"],
 };
+
+//
+
+export const StyledTabs = Template.bind({});
+
+StyledTabs.args = {
+  tabs: tabsArr,
+  renderContent: (content) => <div style={{ padding: "2em 0" }}>{content}</div>,
+  style: {
+    borderColor: "dark",
+    borderWidth: "2px",
+    borderRadius: "0.5em 0.5em 0 0",
+  },
+};

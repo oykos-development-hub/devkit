@@ -6,5 +6,6 @@ export declare const Input: ({ name, value, theme, style, disabled, label, texta
 export declare const Pin: ({ handleInput, length, type }: import("./types").IPinCode) => JSX.Element;
 export declare const Tooltip: ({ position, theme, content, children, title, variant, arrow, style, }: import("./types").TooltipProps) => JSX.Element;
 export declare const Dropdown: ({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, showArrow, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, ...props }: import("./types").DropdownProps) => JSX.Element;
+export declare const Tabs: ({ style, theme, disabledTabs, tabs, renderContent }: import("./types").TabsProps) => JSX.Element;
 export * from "./components/icon";
 export * from "./types";
