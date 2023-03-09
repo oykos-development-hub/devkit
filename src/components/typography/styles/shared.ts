@@ -7,4 +7,5 @@ export const shared = css<TypographyProps>`
   color: ${(props: TypographyProps) => props.style?.color || props.theme?.palette?.gray900 || Theme.palette?.gray900};
   font-family: ${(props: TypographyProps) =>
     props.style?.fontFamily || props.theme?.fontFamily?.one || Theme.fontFamily.one};
+  margin: 0;
 `;
