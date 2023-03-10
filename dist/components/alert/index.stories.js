@@ -1,11 +1,10 @@
 import React from "react";
-import { AlertSizes, AlertVariants } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Alert } from "./index";
 import { DangerIcon } from "../icon";
 export default {
     component: Alert,
-    title: "Example/Alert",
+    title: "Components/Alert",
     argTypes: {
         content: {
             control: {
@@ -44,8 +43,8 @@ const Template = (args) => (React.createElement(StoryWrapper, null,
 export const Custom = Template.bind({});
 Custom.args = {
     content: "Title",
-    variant: AlertVariants.success,
-    size: AlertSizes.md,
+    variant: "primary",
+    size: "md",
     icon: React.createElement(DangerIcon, null),
     description: "",
     closeIcon: true,
