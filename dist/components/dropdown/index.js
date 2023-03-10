@@ -21,7 +21,7 @@ export const Dropdown = (_a) => {
     const [selectedOption, setSelectedOption] = useState(null);
     const [controlIconWidth, setControlIconWidth] = useState(0);
     const controlIconWrapperRef = useRef(null);
-    const optionLabel = (e) => (React.createElement(Option, { theme: theme, isDisabled: isDisabled },
+    const optionLabel = (e) => (React.createElement(Option, { theme: theme, isDisabled: isDisabled, style: style },
         React.createElement("div", null,
             leftOptionIcon && React.createElement("div", { className: "option-icon" },
                 leftOptionIcon,
