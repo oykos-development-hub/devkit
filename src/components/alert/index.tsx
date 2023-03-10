@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { AlertProps } from "./types";
 import { Content } from "./styles/content";
 import { Container } from "./styles/container";
