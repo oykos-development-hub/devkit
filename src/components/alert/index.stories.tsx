@@ -7,7 +7,7 @@ import { DangerIcon } from "../icon";
 
 export default {
   component: Alert,
-  title: "Example/Alert",
+  title: "Components/Alert",
   argTypes: {
     content: {
       control: {
@@ -51,8 +51,8 @@ const Template: ComponentStory<typeof Alert> = (args: AlertProps) => (
 export const Custom = Template.bind({});
 Custom.args = {
   content: "Title",
-  variant: AlertVariants.success,
-  size: AlertSizes.md,
+  variant: "primary",
+  size: "md",
   icon: <DangerIcon />,
   description: "",
   closeIcon: true,
