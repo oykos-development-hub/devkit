@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { AlertProps, AlertSizes, AlertVariants } from "./types";
+import { AlertProps } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Alert } from "./index";
 import { DangerIcon } from "../icon";
