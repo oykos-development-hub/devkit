@@ -1,8 +1,19 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { AssignIcon, CircleCheckIcon, DangerIcon, XIcon } from "./";
-import { IconSizes } from "./types";
+import {
+  AssignIcon,
+  XIcon,
+  DangerIcon,
+  CircleCheckIcon,
+  UserIcon,
+  InstagramIcon,
+  LinkedinIcon,
+  FacebookIcon,
+  GithubIcon,
+  GoogleIcon,
+  CheckIcon,
+} from "./";
 
 export default {
   title: "Components/Icons",
@@ -32,6 +43,13 @@ const Default: ComponentStory<typeof XIcon> = (args) => (
     <XIcon {...args} />
     <DangerIcon {...args} />
     <CircleCheckIcon {...args} />
+    <UserIcon {...args} />
+    <InstagramIcon {...args} />
+    <LinkedinIcon {...args} />
+    <FacebookIcon {...args} />
+    <GithubIcon {...args} />
+    <GoogleIcon {...args} />
+    <CheckIcon {...args} />
   </StoryWrapper>
 );
 
@@ -44,10 +62,17 @@ const Custom: ComponentStory<typeof XIcon> = (args) => (
     <XIcon {...args} />
     <DangerIcon {...args} />
     <CircleCheckIcon {...args} />
+    <UserIcon {...args} />
+    <InstagramIcon {...args} />
+    <LinkedinIcon {...args} />
+    <FacebookIcon {...args} />
+    <GithubIcon {...args} />
+    <GoogleIcon {...args} />
+    <CheckIcon {...args} />
   </StoryWrapper>
 );
 
 export const CustomIcons = Custom.bind({});
 CustomIcons.args = {
-  size: IconSizes.sm,
+  size: "100px",
 };

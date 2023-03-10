@@ -12,15 +12,16 @@ export const Icon = styled.svg.attrs({
   disabled: boolean;
   theme: DefaultTheme;
 }>(({ disabled, theme }) => {
-  const themeToUse = theme || Theme;
-  const { gray300, white } = themeToUse.palette;
+  const { gray300, white } = theme!.palette;
 
   return css`
-    fill: none;
-    stroke: ${disabled ? gray300 : white};
-    stroke-width: 1.6666;
-    stroke-linecap: round;
-    stroke-linejoin: round;
+    & path {
+      fill: none;
+      stroke: ${disabled ? gray300 : white};
+      stroke-width: 1.667;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
   `;
 });
 

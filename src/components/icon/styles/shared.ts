@@ -8,15 +8,17 @@ const sharedPath = css<IconProps>`
   fill: ${(props) => props.style?.color || props.theme?.palette?.black || Theme?.palette?.black};
 `;
 
-export const Svg = styled.svg<IconProps>`
+export const Svg = styled.svg.attrs({
+  xmlns: "http://www.w3.org/2000/svg",
+})<IconProps>`
   ${sharedPath};
   position: ${(props) => props.position || Positions.relative};
   width: ${(props) => props?.size || props.style?.width || "2rem"} !important;
-  height: ${(props) => props?.size || props.style?.height || props.style?.width || "2rem"} !important;
-  top: ${(props) => props.style?.top || "initial"};
-  bottom: ${(props) => props.style?.bottom || "initial"};
-  right: ${(props) => props.style?.right || "initial"};
-  left: ${(props) => props.style?.left || "initial"};
+  height: ${(props) => props?.size || props.style?.height || "2rem"} !important;
+  top: ${(props) => props.style?.top || "unset"};
+  bottom: ${(props) => props.style?.bottom || "unset"};
+  right: ${(props) => props.style?.right || "unset"};
+  left: ${(props) => props.style?.left || "unset"};
 `;
 
 export const Path = styled.path<IconProps>`
