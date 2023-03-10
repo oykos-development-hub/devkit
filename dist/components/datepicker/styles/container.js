@@ -1,28 +1,24 @@
 import styled, { css } from "styled-components";
 import { rem } from "polished";
 export const Container = styled.div(({ style, theme }) => {
-    const { white, primary500, gray50, gray300, gray400, gray700, gray800 } = theme.palette;
+    const { white, primary500, gray50, gray200, gray300, gray400, gray700, gray800 } = theme.palette;
     const { one } = theme.fontFamily;
     const fontFamily = (style === null || style === void 0 ? void 0 : style.fontFamily) || one;
     const borderRadius = (style === null || style === void 0 ? void 0 : style.borderRadius) || rem("8px");
     return css `
-    .react-datepicker__input-container input {
+    input {
       font-family: ${fontFamily};
       background-color: ${(style === null || style === void 0 ? void 0 : style.color) || white};
       border-radius: ${borderRadius};
       border: ${rem("1px")} solid ${gray300};
-      width: ${rem("280px")};
-      height: ${rem("32px")};
-      min-height: ${rem("32px")};
-      padding: ${rem("4px")} ${rem("8px")};
+      width: 100%;
       font-style: normal;
       font-weight: ${(style === null || style === void 0 ? void 0 : style.fontWeight) || "400"};
       font-size: ${(style === null || style === void 0 ? void 0 : style.fontSize) || rem("16px")};
-      line-height: ${rem("24px")};
       color: ${gray400};
 
-      &.react-datepicker-ignore-onclickoutside:active,
-      &.react-datepicker-ignore-onclickoutside:focus-within {
+      &:active,
+      &:focus-within {
         border: ${rem("1px")} solid ${primary500};
         box-shadow: 0 0 0 ${rem("3.2px")} rgba(0, 79, 255, 0.25);
         outline: none;
@@ -31,6 +27,18 @@ export const Container = styled.div(({ style, theme }) => {
         font-size: ${(style === null || style === void 0 ? void 0 : style.fontSize) || rem("16px")};
         line-height: ${rem("24px")};
         color: ${gray400};
+      }
+    }
+
+    & svg {
+      width: ${rem("16px")} !important;
+      top: ${rem("1px")};
+      right: ${rem("16px")};
+
+      & path {
+        stroke: ${gray700};
+        fill: white;
+        stroke-width: 2;
       }
     }
 
@@ -45,9 +53,8 @@ export const Container = styled.div(({ style, theme }) => {
       color: #000;
       border-radius: ${rem("8px")};
       display: inline-block;
-      position: relative;
-      width: ${rem("297px")};
-      border: 1px solid #eeeeee;
+      position: absolute;
+      border: 1px solid ${gray200};
       box-shadow: 0 ${rem("12px")} ${rem("16px")} ${rem("-4px")} rgba(16, 24, 40, 0.08),
         0px ${rem("4px")} ${rem("6px")} ${rem("-2px")} rgba(16, 24, 40, 0.03);
 
@@ -86,14 +93,16 @@ export const Container = styled.div(({ style, theme }) => {
       &__day {
         display: flex;
         justify-content: center;
-        width: 40px;
-        height: 48px;
         align-items: center;
-        border-radius: 0.5rem;
+        border-radius: ${rem("8px")};
         font-size: ${rem("14px")};
 
-        $--outside-month {
-          color: green;
+        &:hover {
+          border-radius: ${rem("8px")};
+        }
+
+        &--outside-month {
+          color: ${gray400};
         }
 
         &-name {
@@ -101,8 +110,13 @@ export const Container = styled.div(({ style, theme }) => {
           color: ${gray800};
         }
 
+        &--today {
+          color: ${primary500};
+        }
+
         &--selected {
           background-color: ${primary500};
+          color: ${white};
         }
       }
 
@@ -111,15 +125,12 @@ export const Container = styled.div(({ style, theme }) => {
         margin-bottom: ${rem("14px")};
         color: ${gray700};
         font-weight: 400;
-        font-size: 0.944rem;
         height: ${rem("24px")};
       }
     }
 
     .react-datepicker__navigation {
-      top: ${rem("23px")};
-      height: ${rem("21px")};
-      width: ${rem("21px")};
+      top: ${rem("17px")};
 
       &--previous {
         left: ${rem("9px")};
@@ -131,8 +142,8 @@ export const Container = styled.div(({ style, theme }) => {
 
       &-icon::before {
         border-color: #000;
-        width: ${"6.49px"};
-        height: ${"6.49px"};
+        width: ${rem("6.49px")};
+        height: ${rem("6.49px")};
         border-width: ${"2px"} ${"2px"} 0 0;
 
         &:hover {
