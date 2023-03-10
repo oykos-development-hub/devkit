@@ -3,14 +3,26 @@ import { DatepickerTypes } from "./types";
 import { Container } from "./styles/container";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { Input } from "../input";
+import { rem } from "polished";
+import CalendarIcon from "../icon/variations/CalendarIcon";
 
-export const Datepicker: React.FC<DatepickerTypes> = ({ style, theme }) => {
+export const Datepicker: React.FC<DatepickerTypes> = ({ style, theme, calendarIcon, onChange, ...rest }) => {
   const [date, setDate] = useState(new Date());
-  const handleDateChange = (date: Date) => setDate(date);
+  const handleDateChange = (date: Date) => {
+    setDate(date);
+    onChange && onChange(date);
+  };
 
   return (
     <Container style={style} theme={theme}>
-      <DatePicker selected={date} onChange={handleDateChange} dateFormat={"dd/MM/yyyy"} />
+      <DatePicker
+        selected={date}
+        onChange={handleDateChange}
+        dateFormat={rest.dateFormat}
+        customInput={rest.customInput ? rest.customInput : <Input rightContent={calendarIcon} />}
+        {...rest}
+      />
     </Container>
   );
 };

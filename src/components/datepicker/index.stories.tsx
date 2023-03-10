@@ -4,6 +4,7 @@ import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { DatepickerTypes } from "./types";
 import { Theme } from "../../shared/theme";
 import { Datepicker } from "./index";
+import CalendarIcon from "../icon/variations/CalendarIcon";
 
 export default {
   title: "Components/Datepicker",
@@ -15,6 +16,12 @@ export default {
       },
       defaultValue: Theme,
     },
+    dateFormat: {
+      control: {
+        type: "select",
+        options: ["dd/MM/yyyy", "MM/dd/yyyy", "yyyy/MM/dd", "yyyy/dd/MM"],
+      },
+    },
   },
 } as ComponentMeta<typeof Datepicker>;
 
@@ -24,5 +31,8 @@ const Template: ComponentStory<typeof Datepicker> = (args: DatepickerTypes) => (
   </StoryWrapper>
 );
 
-export const DatepickerDefault = Template.bind({});
-DatepickerDefault.args = {};
+export const Default = Template.bind({});
+Default.args = {
+  dateFormat: "dd/MM/yyyy",
+  calendarIcon: <CalendarIcon />,
+};
