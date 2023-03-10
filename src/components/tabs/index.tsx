@@ -6,9 +6,9 @@ import { TabsContainer } from "./style/tabs-container";
 import { Tab } from "./style/tab";
 import { TabsProps } from "./types";
 
-export const Tabs = ({ style, theme = Theme, disabledTabs, tabs, renderContent }: TabsProps) => {
+export const Tabs = ({ style, theme = Theme, tabs, renderContent }: TabsProps) => {
   const indexOFFirstEnabledTab = () => {
-    const enabledTabs = tabs.filter((tab) => !disabledTabs?.find((disabledTab) => disabledTab === tab.title));
+    const enabledTabs = tabs.filter((tab) => !tab.disabled);
 
     return tabs.findIndex((tab) => tab.title === enabledTabs[0].title);
   };
@@ -23,7 +23,7 @@ export const Tabs = ({ style, theme = Theme, disabledTabs, tabs, renderContent }
             <Tab
               key={tab.title}
               theme={theme}
-              disabled={!!disabledTabs?.find((disabledTab) => disabledTab === tab.title)}
+              disabled={tab.disabled}
               style={style}
               active={activeTab === index}
               onClick={() => setActiveTab(index)}
@@ -34,9 +34,7 @@ export const Tabs = ({ style, theme = Theme, disabledTabs, tabs, renderContent }
         })}
       </TabsContainer>
 
-      {renderContent &&
-        !disabledTabs?.find((disabledTab) => disabledTab === tabs[activeTab].title) &&
-        renderContent(tabs[activeTab].content)}
+      {renderContent && !tabs[activeTab].disabled && renderContent(tabs[activeTab].content)}
     </Container>
   );
 };

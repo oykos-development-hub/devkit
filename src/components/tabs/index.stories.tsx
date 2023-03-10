@@ -11,6 +11,13 @@ const tabsArr = [
   { title: "Tab 4", content: "Tab 4 content" },
 ];
 
+const disabledTabs = [
+  { title: "Tab 1", content: "Tab 1 content", disabled: true },
+  { title: "Tab 2", content: "Tab 2 content" },
+  { title: "Tab 3", content: "Tab 3 content", disabled: true },
+  { title: "Tab 4", content: "Tab 4 content" },
+];
+
 export default {
   component: Tabs,
   title: "Components/Tabs",
@@ -34,9 +41,8 @@ DefaultTabs.args = {
 export const WithDisabledTabs = Template.bind({});
 
 WithDisabledTabs.args = {
-  tabs: tabsArr,
+  tabs: disabledTabs,
   renderContent: (content) => <div style={{ padding: "2em 0" }}>{content}</div>,
-  disabledTabs: ["Tab 1", "Tab 4"],
 };
 
 //
