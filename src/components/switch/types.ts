@@ -7,10 +7,10 @@ export enum SwitchSizes {
 }
 
 export interface SwitchProps {
-  text?: ReactNode | string;
-  supportingText?: ReactNode | string;
+  content?: ReactNode | string;
   disabled?: boolean;
   size?: SwitchSizes | string;
   style?: React.CSSProperties;
   theme?: DefaultTheme;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }

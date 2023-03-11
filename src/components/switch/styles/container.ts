@@ -4,19 +4,19 @@ import { SwitchSizes } from "../types";
 import { rem } from "polished";
 
 export const Container = styled.div<{
-  withContent?: boolean;
+  hasContent?: boolean;
   size: SwitchSizes | string;
   style?: React.CSSProperties;
-}>(() => ({ withContent, size, style }) => {
+}>(() => ({ hasContent, size, style }) => {
   const columnGap = {
     sm: rem("8px"),
     md: rem("12px"),
   };
 
   return css`
-    display: ${withContent && "flex"};
-    flex-direction: ${withContent && "row"};
-    align-items: ${withContent && "flex-start"};
+    display: ${hasContent && "flex"};
+    flex-direction: ${hasContent && "row"};
+    align-items: ${hasContent && "flex-start"};
     width: ${style?.width || "auto"};
     height: ${style?.height || "auto"};
     padding: ${style?.padding || "0"};

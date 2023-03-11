@@ -1,9 +1,10 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { SwitchProps, SwitchSizes } from "./types";
+import { SwitchProps } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { Switch } from "./index";
+import { Typography } from "../typography";
 
 export default {
   component: Switch,
@@ -13,19 +14,6 @@ export default {
       control: {
         type: "boolean",
       },
-    },
-    text: {
-      control: {
-        type: "text",
-      },
-    },
-    supportingText: {
-      control: {
-        type: "text",
-      },
-    },
-    onClick: {
-      defaultValue: () => alert("Button clicked!"),
     },
     theme: {
       control: {
@@ -48,10 +36,20 @@ const Template: ComponentStory<typeof Switch> = (args: SwitchProps) => (
   </StoryWrapper>
 );
 
-export const Default = Template.bind({});
-Default.args = {
-  text: "Remember me",
-  supportingText: "Save my login details for next time.",
-  size: SwitchSizes.md,
+export const NoContent = Template.bind({});
+NoContent.args = {
+  size: "md",
+  disabled: false,
+};
+
+export const WithContent = Template.bind({});
+WithContent.args = {
+  content: (
+    <>
+      <Typography content={"Remember me"} />
+      <Typography content={"Save my login details for next time."} />
+    </>
+  ),
+  size: "md",
   disabled: false,
 };
