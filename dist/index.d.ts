@@ -6,6 +6,7 @@ export declare const Input: ({ name, value, theme, style, disabled, label, texta
 export declare const Pin: ({ handleInput, length, type }: import("./types").IPinCode) => JSX.Element;
 export declare const Tooltip: ({ position, theme, content, children, title, variant, arrow, style, }: import("./types").TooltipProps) => JSX.Element;
 export declare const Dropdown: ({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, showArrow, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, ...props }: import("./types").DropdownProps) => JSX.Element;
-export declare const Switch: import("react").FC<import("./types").SwitchProps>;
+export declare const Badge: import("react").FC<import("./types").BadgeProps>;
+export declare const Breadcrumbs: ({ theme, onClick, items, separator, style }: import("./types").BreadcrumbsProps) => JSX.Element;
 export * from "./components/icon";
 export * from "./types";

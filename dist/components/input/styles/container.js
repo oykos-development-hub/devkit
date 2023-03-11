@@ -10,7 +10,7 @@ export const Container = styled.div(({ label, error, theme, hint }) => {
 
     & * {
       font-size: 1em;
-      font-family: "Inter";
+      font-family: "Inter", sans-serif;
       color: ${gray900};
     }
 
