@@ -1,7 +1,6 @@
 import styled, { css, DefaultTheme } from "styled-components";
 import { rem } from "polished";
 import React from "react";
-import DatePicker from "react-datepicker";
 
 export const Container = styled.div<{
   style?: React.CSSProperties;
@@ -15,14 +14,14 @@ export const Container = styled.div<{
   return css`
     input {
       font-family: ${fontFamily};
-      background-color: ${style?.color || white};
+      background-color: ${style?.backgroundColor || white};
       border-radius: ${borderRadius};
       border: ${rem("1px")} solid ${gray300};
-      width: 100%;
       font-style: normal;
       font-weight: ${style?.fontWeight || "400"};
       font-size: ${style?.fontSize || rem("16px")};
       color: ${gray400};
+      width: 100%;
 
       &:active,
       &:focus-within {
@@ -57,16 +56,19 @@ export const Container = styled.div<{
     .react-datepicker {
       font-family: ${fontFamily};
       background-color: ${white};
-      color: #000;
       border-radius: ${rem("8px")};
       display: inline-block;
-      position: absolute;
-      border: 1px solid ${gray200};
+      border: ${rem("1px")} solid ${gray200};
       box-shadow: 0 ${rem("12px")} ${rem("16px")} ${rem("-4px")} rgba(16, 24, 40, 0.08),
         0px ${rem("4px")} ${rem("6px")} ${rem("-2px")} rgba(16, 24, 40, 0.03);
 
+      &__tab-loop {
+        position: absolute;
+        top: 0;
+      }
+
       &__triangle {
-        display: none;
+        display: none !important;
       }
 
       &__month-container {
@@ -88,8 +90,9 @@ export const Container = styled.div<{
         display: flex;
         justify-content: space-around;
         align-items: center;
-        height: ${rem("41.06px")};
         background-color: ${gray50};
+        margin-bottom: ${rem("6px")};
+        height: ${rem("41px")};
       }
 
       &__week {
@@ -103,6 +106,7 @@ export const Container = styled.div<{
         align-items: center;
         border-radius: ${rem("8px")};
         font-size: ${rem("14px")};
+        padding: 0;
 
         &:hover {
           border-radius: ${rem("8px")};
@@ -124,6 +128,19 @@ export const Container = styled.div<{
         &--selected {
           background-color: ${primary500};
           color: ${white};
+
+          &:hover {
+            background-color: ${primary500};
+          }
+        }
+
+        &--keyboard-selected {
+          background-color: ${primary500};
+          color: ${white};
+
+          &:hover {
+            background-color: ${primary500};
+          }
         }
       }
 
@@ -137,21 +154,21 @@ export const Container = styled.div<{
     }
 
     .react-datepicker__navigation {
-      top: ${rem("17px")};
+      top: ${rem("16px")};
 
       &--previous {
-        left: ${rem("9px")};
+        left: 0;
       }
 
       &--next {
-        right: ${rem("9px")};
+        right: 0;
       }
 
       &-icon::before {
         border-color: #000;
         width: ${rem("6.49px")};
         height: ${rem("6.49px")};
-        border-width: ${"2px"} ${"2px"} 0 0;
+        border-width: ${rem("2px")} ${rem("2px")} 0 0;
 
         &:hover {
           border-color: #000;

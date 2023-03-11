@@ -4,8 +4,6 @@ import { Container } from "./styles/container";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Input } from "../input";
-import { rem } from "polished";
-import CalendarIcon from "../icon/variations/CalendarIcon";
 
 export const Datepicker: React.FC<DatepickerTypes> = ({ style, theme, calendarIcon, onChange, ...rest }) => {
   const [date, setDate] = useState(new Date());
@@ -17,6 +15,7 @@ export const Datepicker: React.FC<DatepickerTypes> = ({ style, theme, calendarIc
   return (
     <Container style={style} theme={theme}>
       <DatePicker
+        className="myDatePicker"
         selected={date}
         onChange={handleDateChange}
         dateFormat={rest.dateFormat}
