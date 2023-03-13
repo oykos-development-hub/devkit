@@ -1,41 +1,56 @@
 import React from "react";
-import { AlertProps, AlertSizes, AlertVariants } from "./types";
+import { AlertProps } from "./types";
 import { Content } from "./styles/content";
-import { Container, Row } from "./styles/container";
+import { Container } from "./styles/container";
+import { Wrapper } from "./styles/wrapper";
 import { XIcon } from "../icon";
 import { Typography } from "../typography";
+import { Theme } from "../../shared/theme";
 
 export const Alert: React.FC<AlertProps> = ({
-  variant = AlertVariants.success,
+  variant = "success",
   content,
-  additionalText,
+  description,
   icon,
   closeIcon = true,
   onClose,
-  size = AlertSizes.md,
+  size = "md",
   style,
-  theme,
-}) => (
-  <Container variant={variant} style={style} theme={theme}>
-    <Row size={size}>
-      <Content style={style} size={size} theme={theme}>
-        {icon && icon}
-        <Typography content={content} theme={theme} style={style} />
-      </Content>
+  theme = Theme,
+}) => {
+  const textVariant = () => {
+    switch (size) {
+      case "sm":
+        return "bodySmall";
+      case "md":
+        return "bodyMedium";
+      case "lg":
+        return "bodyLarge";
+    }
+  };
 
-      {closeIcon && (
-        <Content style={style} size={size} theme={theme}>
-          <XIcon onClick={onClose} />
+  return (
+    <Container variant={variant} style={style} theme={theme}>
+      <Wrapper size={size}>
+        <Content size={size} theme={theme}>
+          {icon && icon}
+          <Typography variant={textVariant()} content={content} theme={theme} />
         </Content>
+
+        {closeIcon && (
+          <Content size={size} theme={theme}>
+            <XIcon onClick={onClose} />
+          </Content>
+        )}
+      </Wrapper>
+
+      {description && (
+        <Wrapper size={size}>
+          <Content size={size} theme={theme}>
+            <Typography variant={"bodyMedium"} content={description} theme={theme} />
+          </Content>
+        </Wrapper>
       )}
-    </Row>
-
-    {additionalText && (
-      <Row size={size}>
-        <Content style={style} size={size} theme={theme}>
-          <Typography content={additionalText} theme={theme} style={style} />
-        </Content>
-      </Row>
-    )}
-  </Container>
-);
+    </Container>
+  );
+};

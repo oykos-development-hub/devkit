@@ -1,9 +1,8 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { AlertProps, AlertSizes, AlertVariants } from "./types";
+import { AlertProps } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Alert } from "./index";
-import { Theme } from "../../shared/theme";
 import { DangerIcon } from "../icon";
 
 export default {
@@ -52,8 +51,9 @@ const Template: ComponentStory<typeof Alert> = (args: AlertProps) => (
 export const Custom = Template.bind({});
 Custom.args = {
   content: "Title",
-  variant: AlertVariants.success,
-  size: AlertSizes.md,
+  variant: "primary",
+  size: "md",
   icon: <DangerIcon />,
-  theme: Theme,
+  description: "",
+  closeIcon: true,
 };
