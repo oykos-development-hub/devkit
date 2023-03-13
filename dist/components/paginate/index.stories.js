@@ -72,19 +72,22 @@ export default {
             },
             defaultValue: Theme,
         },
+        pageCount: {
+            control: {
+                type: "number",
+            },
+            defaultValue: 10,
+        },
     },
 };
 const Template = (_a) => {
-    var { renderContent } = _a, args = __rest(_a, ["renderContent"]);
-    const contentToShow = (data) => (React.createElement("div", null, data.map((country) => (React.createElement("p", { key: country, style: { textAlign: "center" } },
-        React.createElement("strong", null, country.name))))));
+    var args = __rest(_a, []);
     return (React.createElement(StoryWrapper, null,
         React.createElement("div", { style: { width: "70%" } },
-            React.createElement(Pagination, Object.assign({}, args, { renderContent: contentToShow })))));
+            React.createElement(Pagination, Object.assign({}, args)))));
 };
 export const VariantFilled = Template.bind({});
 const paginationArgs = {
-    data: paginationData,
     itemsPerPage: 4,
     previousLabel: (React.createElement("p", { style: { display: "flex", alignItems: "center", gap: "0.5em", margin: 0 } },
         leftIcon,

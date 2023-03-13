@@ -1,26 +1,16 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Theme } from "../../shared/theme";
 import { Typography } from "../typography";
 import { Container } from "./style/container";
-export const Pagination = ({ data, itemsPerPage, previousLabel, nextLabel, renderContent, renderPaginationText, theme = Theme, variant = "filled", style, displayPages = true, pageRangeDisplayed = 3, marginPagesDisplayed = 3, fullWidth = true, }) => {
-    const [currentItems, setCurrentItems] = useState([]);
-    const [pageCount, setPageCount] = useState(0);
-    const [itemOffset, setItemOffset] = useState(0);
+export const Pagination = ({ previousLabel, nextLabel, renderPaginationText, onChange, theme = Theme, variant = "filled", style, displayPages = true, pageRangeDisplayed = 3, marginPagesDisplayed = 3, fullWidth = true, pageCount, }) => {
     const [selectedPage, setSelectedPage] = useState(0);
-    useEffect(() => {
-        const endOffset = itemOffset + itemsPerPage;
-        setCurrentItems(data.slice(itemOffset, endOffset));
-        setPageCount(Math.ceil(data.length / itemsPerPage));
-    }, [itemOffset, itemsPerPage, data]);
     const handlePageClick = ({ selected }) => {
-        const newOffset = (selected * itemsPerPage) % data.length;
-        setItemOffset(newOffset);
         setSelectedPage(selected);
+        onChange(selected);
     };
     return (React.createElement(Container, { style: style, theme: theme, variant: variant, displayPages: displayPages, renderPaginationText: renderPaginationText, fullWidth: fullWidth },
-        React.createElement(React.Fragment, null, currentItems && renderContent(currentItems)),
         React.createElement(ReactPaginate, { activeClassName: "active", disabledClassName: "disabled", breakLabel: "...", onPageChange: handlePageClick, pageCount: pageCount, nextLabel: nextLabel, previousLabel: previousLabel, pageRangeDisplayed: pageRangeDisplayed, marginPagesDisplayed: marginPagesDisplayed }),
         React.createElement(Typography, { content: renderPaginationText && renderPaginationText(selectedPage + 1, pageCount), variant: "bodyMedium" })));
 };
