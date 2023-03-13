@@ -7,9 +7,10 @@ import { rem } from "polished";
 export const Content = styled.div<{
   size: AlertSizes | string;
   style?: React.CSSProperties | undefined;
-}>(() => ({ size, theme }) => {
+  theme: DefaultTheme;
+}>(() => ({ size, theme, style }) => {
   const themeToUse = theme || Theme;
-  const { white } = themeToUse.palette;
+  const { white } = themeToUse!.palette;
 
   const gap = {
     sm: rem("8px"),
@@ -31,12 +32,12 @@ export const Content = styled.div<{
 
     & p {
       margin: 0;
-      color: ${white};
+      color: ${style?.color || white};
     }
 
     // description (if exists)
     & p:nth-child(1) {
-      color: ${white};
+      color: ${style?.color || white};
     }
 
     & svg {
@@ -45,8 +46,8 @@ export const Content = styled.div<{
     }
 
     & svg path {
-      fill: ${white} !important;
-      color: ${white} !important;
+      fill: ${style?.color || white} !important;
+      color: ${style?.color || white} !important;
     }
   `;
 });
