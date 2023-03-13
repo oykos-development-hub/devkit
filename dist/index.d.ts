@@ -7,5 +7,8 @@ export declare const Pin: ({ handleInput, length, type }: import("./types").IPin
 export declare const Pagination: ({ previousLabel, nextLabel, renderPaginationText, onChange, theme, variant, style, displayPages, pageRangeDisplayed, marginPagesDisplayed, fullWidth, pageCount, }: import("./types").PaginationProps) => JSX.Element;
 export declare const Tooltip: ({ position, theme, content, children, title, variant, arrow, style, }: import("./types").TooltipProps) => JSX.Element;
 export declare const Dropdown: ({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, showArrow, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, ...props }: import("./types").DropdownProps) => JSX.Element;
+export declare const Badge: import("react").FC<import("./types").BadgeProps>;
+export declare const Breadcrumbs: ({ theme, onClick, items, separator, style }: import("./types").BreadcrumbsProps) => JSX.Element;
+export declare const Tabs: ({ style, theme, tabs, onChange }: import("./types").TabsProps) => JSX.Element;
 export * from "./components/icon";
 export * from "./types";
