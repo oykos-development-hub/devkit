@@ -7,6 +7,7 @@ import { Tooltip as TooltipComponent } from "./components/tooltip";
 import { Dropdown as DropdownComponent } from "./components/dropdown";
 import { Badge as BadgeComponent } from "./components/badge";
 import { Breadcrumbs as BreadcrumbsComponent } from "./components/breadcrumbs";
+import { Tabs as TabsComponent } from "./components/tabs";
 
 export const Button = ButtonComponent;
 export const Loader = LoaderComponent;
@@ -17,6 +18,7 @@ export const Tooltip = TooltipComponent;
 export const Dropdown = DropdownComponent;
 export const Badge = BadgeComponent;
 export const Breadcrumbs = BreadcrumbsComponent;
+export const Tabs = TabsComponent;
 
 export * from "./components/icon";
 export * from "./types";
