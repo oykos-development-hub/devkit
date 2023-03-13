@@ -85,24 +85,20 @@ export default {
       },
       defaultValue: Theme,
     },
+    pageCount: {
+      control: {
+        type: "number",
+      },
+      defaultValue: 10,
+    },
   },
 } as ComponentMeta<typeof Pagination>;
 
-const Template: ComponentStory<typeof Pagination> = ({ renderContent, ...args }: PaginationProps) => {
-  const contentToShow = (data: any) => (
-    <div>
-      {data.map((country: any) => (
-        <p key={country} style={{ textAlign: "center" }}>
-          <strong>{country.name}</strong>
-        </p>
-      ))}
-    </div>
-  );
-
+const Template: ComponentStory<typeof Pagination> = ({ ...args }: PaginationProps) => {
   return (
     <StoryWrapper>
       <div style={{ width: "70%" }}>
-        <Pagination {...args} renderContent={contentToShow} />
+        <Pagination {...args} />
       </div>
     </StoryWrapper>
   );
@@ -111,7 +107,6 @@ const Template: ComponentStory<typeof Pagination> = ({ renderContent, ...args }:
 export const VariantFilled = Template.bind({});
 
 const paginationArgs = {
-  data: paginationData,
   itemsPerPage: 4,
   previousLabel: (
     <p style={{ display: "flex", alignItems: "center", gap: "0.5em", margin: 0 }}>

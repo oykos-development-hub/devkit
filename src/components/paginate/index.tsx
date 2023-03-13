@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Theme } from "../../shared/theme";
 import { Typography } from "../typography";
@@ -7,12 +7,10 @@ import { Container } from "./style/container";
 import { PaginationProps } from "./types";
 
 export const Pagination = ({
-  data,
-  itemsPerPage,
   previousLabel,
   nextLabel,
-  renderContent,
   renderPaginationText,
+  onChange,
   theme = Theme,
   variant = "filled",
   style,
@@ -20,22 +18,13 @@ export const Pagination = ({
   pageRangeDisplayed = 3,
   marginPagesDisplayed = 3,
   fullWidth = true,
+  pageCount,
 }: PaginationProps) => {
-  const [currentItems, setCurrentItems] = useState([]);
-  const [pageCount, setPageCount] = useState(0);
-  const [itemOffset, setItemOffset] = useState(0);
   const [selectedPage, setSelectedPage] = useState(0);
 
-  useEffect(() => {
-    const endOffset = itemOffset + itemsPerPage;
-    setCurrentItems(data.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(data.length / itemsPerPage));
-  }, [itemOffset, itemsPerPage, data]);
-
   const handlePageClick = ({ selected }: { selected: number }) => {
-    const newOffset = (selected * itemsPerPage) % data.length;
-    setItemOffset(newOffset);
     setSelectedPage(selected);
+    onChange(selected);
   };
 
   return (
@@ -47,8 +36,6 @@ export const Pagination = ({
       renderPaginationText={renderPaginationText}
       fullWidth={fullWidth}
     >
-      <>{currentItems && renderContent(currentItems)}</>
-
       <ReactPaginate
         activeClassName="active"
         disabledClassName="disabled"

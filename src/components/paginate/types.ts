@@ -13,10 +13,9 @@ export interface PaginationProps {
   variant: keyof typeof PaginationVariants;
   style?: CSSProperties;
   fullWidth?: boolean;
-
-  data: any;
-  renderContent: (data: any) => JSX.Element | JSX.Element[];
+  pageCount: number;
   renderPaginationText?: (selected: number, total: number) => string;
+  onChange: (page: number) => void;
   itemsPerPage: number;
   previousLabel: string | ReactElement;
   nextLabel: string | ReactElement;
