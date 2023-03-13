@@ -3,38 +3,41 @@ import { Theme } from "../../shared/theme";
 import { Container } from "./style/container";
 
 import { TabsContainer } from "./style/tabs-container";
-import { Tab } from "./style/tab";
-import { TabsProps } from "./types";
+import { StyledTab } from "./style/tab";
+import { Tab, TabsProps } from "./types";
 
-export const Tabs = ({ style, theme = Theme, tabs, renderContent }: TabsProps) => {
-  const indexOFFirstEnabledTab = () => {
+export const Tabs = ({ style, theme = Theme, tabs, onChange }: TabsProps) => {
+  const firstEnabledTab = () => {
     const enabledTabs = tabs.filter((tab) => !tab.disabled);
 
-    return tabs.findIndex((tab) => tab.title === enabledTabs[0].title);
+    return tabs.find((tab) => tab.id === enabledTabs[0].id);
   };
 
-  const [activeTab, setActiveTab] = useState(indexOFFirstEnabledTab());
+  const [activeTab, setActiveTab] = useState(firstEnabledTab);
+
+  const handleChange = (tab: Tab) => {
+    onChange && onChange(tab);
+    setActiveTab(tab);
+  };
 
   return (
     <Container>
       <TabsContainer>
-        {tabs?.map((tab, index) => {
+        {tabs?.map((tab) => {
           return (
-            <Tab
-              key={tab.title}
+            <StyledTab
+              key={tab.id}
               theme={theme}
               disabled={tab.disabled}
               style={style}
-              active={activeTab === index}
-              onClick={() => setActiveTab(index)}
+              active={activeTab?.id === tab.id}
+              onClick={() => handleChange(tab)}
             >
               {tab.title}
-            </Tab>
+            </StyledTab>
           );
         })}
       </TabsContainer>
-
-      {renderContent && !tabs[activeTab].disabled && renderContent(tabs[activeTab].content)}
     </Container>
   );
 };

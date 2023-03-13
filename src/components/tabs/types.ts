@@ -1,10 +1,8 @@
-import { ReactJSXElement } from "@emotion/react/types/jsx-namespace";
-import { ReactElement } from "react";
 import { CSSProperties, DefaultTheme } from "styled-components";
 
 export interface Tab {
+  id: number | string;
   title: string;
-  content: any;
   disabled?: boolean;
 }
 
@@ -12,5 +10,5 @@ export interface TabsProps {
   theme: DefaultTheme;
   style?: CSSProperties;
   tabs: Tab[];
-  renderContent?: (content: string) => ReactJSXElement;
+  onChange?: (tab: Tab) => void;
 }

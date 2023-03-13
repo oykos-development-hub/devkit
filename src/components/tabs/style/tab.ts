@@ -1,6 +1,6 @@
 import styled, { css, CSSProperties, DefaultTheme } from "styled-components";
 
-export const Tab = styled.button(
+export const StyledTab = styled.button(
   ({
     disabled,
     theme,

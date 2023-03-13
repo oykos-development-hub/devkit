@@ -5,17 +5,17 @@ import { Tabs } from "./index";
 import { TabsProps } from "./types";
 
 const tabsArr = [
-  { title: "Tab 1", content: "Tab 1 content" },
-  { title: "Tab 2", content: "Tab 2 content" },
-  { title: "Tab 3", content: "Tab 3 content" },
-  { title: "Tab 4", content: "Tab 4 content" },
+  { id: 1, title: "Tab 1" },
+  { id: 2, title: "Tab 2" },
+  { id: 3, title: "Tab 3" },
+  { id: 4, title: "Tab 4" },
 ];
 
 const disabledTabs = [
-  { title: "Tab 1", content: "Tab 1 content", disabled: true },
-  { title: "Tab 2", content: "Tab 2 content" },
-  { title: "Tab 3", content: "Tab 3 content", disabled: true },
-  { title: "Tab 4", content: "Tab 4 content" },
+  { id: 1, title: "Tab 1", disabled: true },
+  { id: 2, title: "Tab 2" },
+  { id: 3, title: "Tab 3", disabled: true },
+  { id: 4, title: "Tab 4" },
 ];
 
 export default {
@@ -33,7 +33,6 @@ export const DefaultTabs = Template.bind({});
 
 DefaultTabs.args = {
   tabs: tabsArr,
-  renderContent: (content) => <div style={{ padding: "2em 0" }}>{content}</div>,
 };
 
 //
@@ -42,7 +41,6 @@ export const WithDisabledTabs = Template.bind({});
 
 WithDisabledTabs.args = {
   tabs: disabledTabs,
-  renderContent: (content) => <div style={{ padding: "2em 0" }}>{content}</div>,
 };
 
 //
@@ -51,7 +49,6 @@ export const StyledTabs = Template.bind({});
 
 StyledTabs.args = {
   tabs: tabsArr,
-  renderContent: (content) => <div style={{ padding: "2em 0" }}>{content}</div>,
   style: {
     borderColor: "dark",
     borderWidth: "2px",
