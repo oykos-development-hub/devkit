@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-export const Tab = styled.button(({ disabled, theme, style, active, }) => {
+export const StyledTab = styled.button(({ disabled, theme, style, active, }) => {
     const { primary500, gray400, gray900, primary200 } = theme.palette;
     return css `
       padding: 0.5em 2em;

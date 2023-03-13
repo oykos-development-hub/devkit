@@ -2,19 +2,20 @@ import React, { useState } from "react";
 import { Theme } from "../../shared/theme";
 import { Container } from "./style/container";
 import { TabsContainer } from "./style/tabs-container";
-import { Tab } from "./style/tab";
-export const Tabs = ({ style, theme = Theme, disabledTabs, tabs, renderContent }) => {
-    const indexOFFirstEnabledTab = () => {
-        const enabledTabs = tabs.filter((tab) => !(disabledTabs === null || disabledTabs === void 0 ? void 0 : disabledTabs.find((disabledTab) => disabledTab === tab.title)));
-        return tabs.findIndex((tab) => tab.title === enabledTabs[0].title);
+import { StyledTab } from "./style/tab";
+export const Tabs = ({ style, theme = Theme, tabs, onChange }) => {
+    const firstEnabledTab = () => {
+        const enabledTabs = tabs.filter((tab) => !tab.disabled);
+        return tabs.find((tab) => tab.id === enabledTabs[0].id);
     };
-    const [activeTab, setActiveTab] = useState(indexOFFirstEnabledTab());
+    const [activeTab, setActiveTab] = useState(firstEnabledTab);
+    const handleChange = (tab) => {
+        onChange && onChange(tab);
+        setActiveTab(tab);
+    };
     return (React.createElement(Container, null,
-        React.createElement(TabsContainer, null, tabs === null || tabs === void 0 ? void 0 : tabs.map((tab, index) => {
-            return (React.createElement(Tab, { key: tab.title, theme: theme, disabled: !!(disabledTabs === null || disabledTabs === void 0 ? void 0 : disabledTabs.find((disabledTab) => disabledTab === tab.title)), style: style, active: activeTab === index, onClick: () => setActiveTab(index) }, tab.title));
-        })),
-        renderContent &&
-            !(disabledTabs === null || disabledTabs === void 0 ? void 0 : disabledTabs.find((disabledTab) => disabledTab === tabs[activeTab].title)) &&
-            renderContent(tabs[activeTab].content)));
+        React.createElement(TabsContainer, null, tabs === null || tabs === void 0 ? void 0 : tabs.map((tab) => {
+            return (React.createElement(StyledTab, { key: tab.id, theme: theme, disabled: tab.disabled, style: style, active: (activeTab === null || activeTab === void 0 ? void 0 : activeTab.id) === tab.id, onClick: () => handleChange(tab) }, tab.title));
+        }))));
 };
 //# sourceMappingURL=index.js.map
