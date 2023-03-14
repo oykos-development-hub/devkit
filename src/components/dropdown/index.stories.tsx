@@ -99,10 +99,7 @@ DropdownDefault.args = {
   rightOptionIcon: CheckIcon,
 };
 
-//
-
 export const DropdownWithIcons = Template.bind({});
-
 DropdownWithIcons.args = {
   label: "Dropdown label*",
   placeholder: "placeholder...",
@@ -122,10 +119,7 @@ MultipleSelect.args = {
   rightOptionIcon: CheckIcon,
 };
 
-//
-
 export const MultipleSelectWithIcons = Template.bind({});
-
 MultipleSelectWithIcons.args = {
   label: "Dropdown label*",
   placeholder: "placeholder...",
@@ -135,10 +129,7 @@ MultipleSelectWithIcons.args = {
   rightOptionIcon: CheckIcon,
 };
 
-//
-
 export const StyledDropdown = Template.bind({});
-
 StyledDropdown.args = {
   label: "Dropdown label*",
   placeholder: "placeholder...",
