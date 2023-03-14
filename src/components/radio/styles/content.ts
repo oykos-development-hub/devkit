@@ -25,7 +25,7 @@ export const Content = styled.div<{
   style: React.CSSProperties | undefined;
 }>(({ checked, disabled, theme, size, style }) => {
   const themeToUse = theme || Theme;
-  const { primary500, gray50, gray300 } = themeToUse.palette;
+  const { primary500, gray50, gray300 } = themeToUse!.palette;
 
   const widthHeight = {
     sm: "1rem",
