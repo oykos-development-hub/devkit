@@ -4,28 +4,6 @@ import { RadioSize } from "../types";
 import { DefaultTheme } from "../../../shared/theme/types";
 import { Theme } from "../../../shared/theme";
 
-export const Icon = styled.svg<{ children: React.ReactNode }>(({ children }: any) => children);
-
-export const Circle = styled.circle.attrs({
-  cx: 12,
-  cy: 12,
-  r: 5,
-})<{
-  disabled: boolean;
-  style: React.CSSProperties | undefined;
-  theme: DefaultTheme;
-}>(({ disabled, style, theme }) => {
-  const themeToUse = theme || Theme;
-  const { primary500, gray300 } = themeToUse.palette;
-
-  return css`
-    fill: ${disabled ? style?.color || gray300 : primary500};
-    stroke: ${disabled ? style?.color || gray300 : primary500};
-
-    ${{ ...style }}
-  `;
-});
-
 export const HiddenRadio = styled.input.attrs({ type: "radio" })`
   border: 0;
   clip: rect(0 0 0 0);
@@ -42,7 +20,7 @@ export const HiddenRadio = styled.input.attrs({ type: "radio" })`
 export const Content = styled.div<{
   checked: boolean;
   disabled: boolean;
-  size: RadioSize;
+  size: RadioSize | string;
   theme: DefaultTheme;
   style: React.CSSProperties | undefined;
 }>(({ checked, disabled, theme, size, style }) => {
@@ -55,7 +33,8 @@ export const Content = styled.div<{
   };
 
   return css`
-    display: inline-block;
+    display: flex;
+    align-items: center;
     width: ${style?.width || widthHeight[size]};
     height: ${style?.height || widthHeight[size]};
     background: ${gray50};
@@ -75,8 +54,13 @@ export const Content = styled.div<{
       border: 0.063rem solid ${gray300};
     }
 
-    ${Icon} {
+    & svg {
       visibility: ${checked ? "visible" : "hidden"};
+
+      & circle {
+        fill: ${disabled ? style?.color || gray300 : primary500};
+        stroke: ${disabled ? style?.color || gray300 : primary500};
+      }
     }
 
     ${{ ...style }}
