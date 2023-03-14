@@ -7,9 +7,9 @@ export var Positions;
     Positions["topLeft"] = "topLeft";
     Positions["topRight"] = "topRight";
 })(Positions || (Positions = {}));
-export var Variants;
-(function (Variants) {
-    Variants["standard"] = "standard";
-    Variants["filled"] = "filled";
-})(Variants || (Variants = {}));
+export var TooltipVariants;
+(function (TooltipVariants) {
+    TooltipVariants["standard"] = "standard";
+    TooltipVariants["filled"] = "filled";
+})(TooltipVariants || (TooltipVariants = {}));
 //# sourceMappingURL=types.js.map

@@ -1,8 +1,8 @@
 import React from "react";
 import { DefaultTheme } from "styled-components";
-import { AvatarSizes } from "../types";
+import { AlertSizes } from "../types";
 export declare const Content: import("styled-components").StyledComponent<"div", DefaultTheme, {
-    size: AvatarSizes;
-    theme?: DefaultTheme | undefined;
+    size: AlertSizes | string;
     style?: React.CSSProperties | undefined;
+    theme: DefaultTheme;
 }, never>;

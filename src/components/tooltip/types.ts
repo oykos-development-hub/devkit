@@ -10,13 +10,13 @@ export enum Positions {
   topRight = "topRight",
 }
 
-export enum Variants {
+export enum TooltipVariants {
   standard = "standard",
   filled = "filled",
 }
 
 export interface TooltipProps {
-  variant: keyof typeof Variants;
+  variant: keyof typeof TooltipVariants;
   theme: DefaultTheme;
   position: keyof typeof Positions;
   style?: CSSProperties;
