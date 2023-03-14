@@ -4,7 +4,6 @@ import { Container } from "./styles/container";
 import { SwitchWrapper } from "./styles/switchWrapper";
 import { Slider } from "./styles/slider";
 import { Input } from "./styles/input";
-import { TextWrapper } from "./styles/textWrapper";
 import { Label } from "./styles/label";
 
 export const Switch: React.FC<SwitchProps> = ({ content, size = "md", disabled = false, style, theme, onChange }) => {
@@ -38,15 +37,10 @@ export const Switch: React.FC<SwitchProps> = ({ content, size = "md", disabled =
       <SwitchWrapper>
         <Label ref={ref} size={size} theme={theme} disabled={disabled} isChecked={isChecked} isActive={isActive}>
           <Input defaultChecked={isChecked} checked={isChecked} inputSize={size} disabled={disabled} />
-          <Slider size={size} style={style} theme={theme} />
+          <Slider size={size} theme={theme} />
         </Label>
       </SwitchWrapper>
-
-      {content && (
-        <TextWrapper size={size} style={style} theme={theme}>
-          {content}
-        </TextWrapper>
-      )}
+      {content && content}
     </Container>
   );
 };

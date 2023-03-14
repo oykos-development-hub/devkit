@@ -1,14 +1,12 @@
 import styled, { css, DefaultTheme } from "styled-components";
-import React from "react";
 import { SwitchSizes } from "../types";
 import { rem } from "polished";
 
 export const Slider = styled.span<{
   checked?: boolean;
   size: SwitchSizes | string;
-  style?: React.CSSProperties;
   theme?: DefaultTheme;
-}>(({ checked, size, style, theme }) => {
+}>(({ checked, size, theme }) => {
   const { gray50 } = theme!.palette;
 
   const circle = {

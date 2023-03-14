@@ -44,12 +44,7 @@ NoContent.args = {
 
 export const WithContent = Template.bind({});
 WithContent.args = {
-  content: (
-    <>
-      <Typography content={"Remember me"} />
-      <Typography content={"Save my login details for next time."} />
-    </>
-  ),
   size: "md",
   disabled: false,
+  content: <Typography content={"Remember me"} />,
 };

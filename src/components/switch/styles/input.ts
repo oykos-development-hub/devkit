@@ -3,9 +3,7 @@ import { SwitchSizes } from "../types";
 import { Slider } from "./slider";
 import { rem } from "polished";
 
-export const Input = styled.input.attrs({
-  type: "checkbox",
-})<{
+export const Input = styled.input.attrs({ type: "checkbox" })<{
   disabled?: boolean;
   inputSize: SwitchSizes | string;
 }>(({ inputSize }) => {
