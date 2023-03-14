@@ -1,20 +1,5 @@
 import styled, { css } from "styled-components";
 import { Theme } from "../../../shared/theme";
-export const Icon = styled.svg(({ children }) => children);
-export const Circle = styled.circle.attrs({
-    cx: 12,
-    cy: 12,
-    r: 5,
-})(({ disabled, style, theme }) => {
-    const themeToUse = theme || Theme;
-    const { primary500, gray300 } = themeToUse.palette;
-    return css `
-    fill: ${disabled ? (style === null || style === void 0 ? void 0 : style.color) || gray300 : primary500};
-    stroke: ${disabled ? (style === null || style === void 0 ? void 0 : style.color) || gray300 : primary500};
-
-    ${Object.assign({}, style)}
-  `;
-});
 export const HiddenRadio = styled.input.attrs({ type: "radio" }) `
   border: 0;
   clip: rect(0 0 0 0);
@@ -35,7 +20,8 @@ export const Content = styled.div(({ checked, disabled, theme, size, style }) =>
         md: "1.25rem",
     };
     return css `
-    display: inline-block;
+    display: flex;
+    align-items: center;
     width: ${(style === null || style === void 0 ? void 0 : style.width) || widthHeight[size]};
     height: ${(style === null || style === void 0 ? void 0 : style.height) || widthHeight[size]};
     background: ${gray50};
@@ -55,8 +41,13 @@ export const Content = styled.div(({ checked, disabled, theme, size, style }) =>
       border: 0.063rem solid ${gray300};
     }
 
-    ${Icon} {
+    & svg {
       visibility: ${checked ? "visible" : "hidden"};
+
+      & circle {
+        fill: ${disabled ? (style === null || style === void 0 ? void 0 : style.color) || gray300 : primary500};
+        stroke: ${disabled ? (style === null || style === void 0 ? void 0 : style.color) || gray300 : primary500};
+      }
     }
 
     ${Object.assign({}, style)}
