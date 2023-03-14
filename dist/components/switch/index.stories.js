@@ -35,10 +35,8 @@ NoContent.args = {
 };
 export const WithContent = Template.bind({});
 WithContent.args = {
-    content: (React.createElement(React.Fragment, null,
-        React.createElement(Typography, { content: "Remember me" }),
-        React.createElement(Typography, { content: "Save my login details for next time." }))),
     size: "md",
     disabled: false,
+    content: React.createElement(Typography, { content: "Remember me" }),
 };
 //# sourceMappingURL=index.stories.js.map

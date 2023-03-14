@@ -1,9 +1,7 @@
 import styled, { css } from "styled-components";
 import { Slider } from "./slider";
 import { rem } from "polished";
-export const Input = styled.input.attrs({
-    type: "checkbox",
-})(({ inputSize }) => {
+export const Input = styled.input.attrs({ type: "checkbox" })(({ inputSize }) => {
     const translate = {
         sm: rem("16px"),
         md: rem("20px"),

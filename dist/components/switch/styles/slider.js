@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { rem } from "polished";
-export const Slider = styled.span(({ checked, size, style, theme }) => {
+export const Slider = styled.span(({ checked, size, theme }) => {
     const { gray50 } = theme.palette;
     const circle = {
         sm: rem("16px"),

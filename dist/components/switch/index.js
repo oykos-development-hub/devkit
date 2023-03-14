@@ -3,7 +3,6 @@ import { Container } from "./styles/container";
 import { SwitchWrapper } from "./styles/switchWrapper";
 import { Slider } from "./styles/slider";
 import { Input } from "./styles/input";
-import { TextWrapper } from "./styles/textWrapper";
 import { Label } from "./styles/label";
 export const Switch = ({ content, size = "md", disabled = false, style, theme, onChange }) => {
     const ref = useRef(null);
@@ -31,7 +30,7 @@ export const Switch = ({ content, size = "md", disabled = false, style, theme, o
         React.createElement(SwitchWrapper, null,
             React.createElement(Label, { ref: ref, size: size, theme: theme, disabled: disabled, isChecked: isChecked, isActive: isActive },
                 React.createElement(Input, { defaultChecked: isChecked, checked: isChecked, inputSize: size, disabled: disabled }),
-                React.createElement(Slider, { size: size, style: style, theme: theme }))),
-        content && (React.createElement(TextWrapper, { size: size, style: style, theme: theme }, content))));
+                React.createElement(Slider, { size: size, theme: theme }))),
+        content && content));
 };
 //# sourceMappingURL=index.js.map
