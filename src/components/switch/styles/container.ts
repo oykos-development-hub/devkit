@@ -8,8 +8,8 @@ export const Container = styled.div<{
   style?: React.CSSProperties;
 }>(() => ({ hasContent, style }) => {
   return css`
-    display: ${hasContent && "flex"};
-    flex-direction: ${hasContent && "row"};
+    display: flex;
+    flex-direction: row;
     align-items: ${hasContent && "flex-start"};
     padding: ${style?.padding || "0"};
     z-index: 1;

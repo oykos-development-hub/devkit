@@ -33,10 +33,10 @@ export const Switch: React.FC<SwitchProps> = ({ content, size = "md", disabled =
   }, [ref]);
 
   return (
-    <Container size={size} style={style} theme={theme} hasContent={!!content} onChange={handleChange}>
+    <Container size={size} style={style} theme={theme} hasContent={!!content}>
       <SwitchWrapper>
         <Label ref={ref} size={size} theme={theme} disabled={disabled} isChecked={isChecked} isActive={isActive}>
-          <Input defaultChecked={isChecked} checked={isChecked} inputSize={size} disabled={disabled} />
+          <Input checked={isChecked} inputSize={size} disabled={disabled} onChange={handleChange} />
           <Slider size={size} theme={theme} />
         </Label>
       </SwitchWrapper>
