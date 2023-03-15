@@ -46,6 +46,7 @@ export const ButtonContainer = styled.button<{
   };
 
   return css`
+    cursor: pointer;
     align-items: center;
     justify-content: center;
     background-color: ${background[variant]};
