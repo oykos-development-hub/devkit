@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-export const Content = styled.div(({ disabled, theme, size, variant, customStyle }) => {
+export const ButtonContent = styled.div(({ disabled, theme, size, variant, customStyle }) => {
     const { gray300, gray700, white } = theme.palette;
     const fontSize = {
         xs: "0.875rem",
