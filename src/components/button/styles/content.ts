@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 import { ButtonVariants, ButtonSizes } from "../types";
 import { DefaultTheme } from "../../../types";
 
-export const Content = styled.div<{
+export const ButtonContent = styled.div<{
   disabled: boolean;
   variant: ButtonVariants;
   size: ButtonSizes;

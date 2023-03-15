@@ -17,6 +17,7 @@ export enum ButtonSizes {
 
 export interface ButtonProps {
   content: React.ReactNode | string;
+  customContent?: React.ReactNode | string;
   variant?: ButtonVariants;
   disabled?: boolean;
   onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;

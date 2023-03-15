@@ -1,12 +1,12 @@
 import React from "react";
 import { ButtonProps, ButtonSizes, ButtonVariants } from "./types";
-import { Container } from "./styles/container";
-import { Content } from "./styles/content";
 import { Theme } from "../../shared/theme";
+import { ButtonContainer, ButtonContent } from "./styles";
 
 export const Button = ({
   onClick,
   content,
+  customContent,
   disabled = false,
   variant = ButtonVariants.primary,
   size = ButtonSizes.lg,
@@ -14,10 +14,21 @@ export const Button = ({
   theme,
 }: ButtonProps) => {
   return (
-    <Container style={style} disabled={disabled} variant={variant} size={size} onClick={onClick} theme={theme || Theme}>
-      <Content size={size} disabled={disabled} variant={variant} theme={theme || Theme} customStyle={style}>
-        {content}
-      </Content>
-    </Container>
+    <ButtonContainer
+      style={style}
+      disabled={disabled}
+      variant={variant}
+      size={size}
+      onClick={onClick}
+      theme={theme || Theme}
+    >
+      {customContent ? (
+        customContent
+      ) : (
+        <ButtonContent size={size} disabled={disabled} variant={variant} theme={theme || Theme} customStyle={style}>
+          {content}
+        </ButtonContent>
+      )}
+    </ButtonContainer>
   );
 };

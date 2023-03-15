@@ -3,7 +3,7 @@ import { ButtonVariants, ButtonSizes } from "../types";
 import { DefaultTheme } from "../../../types";
 import React from "react";
 
-export const Container = styled.button<{
+export const ButtonContainer = styled.button<{
   disabled: boolean;
   variant: ButtonVariants;
   size: ButtonSizes;
