@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { BodyMedium, H6 } from "../../typography/styles/variants";
-import { TooltipProps, Variants } from "../types";
+import { TooltipProps, TooltipVariants } from "../types";
 import { arrowPosition } from "./positions/arrowPositions";
 
 export const StyledTooltip = styled.div<TooltipProps>(({ style, position, arrow, variant, theme, title }) => {
@@ -13,8 +13,8 @@ export const StyledTooltip = styled.div<TooltipProps>(({ style, position, arrow,
     align-items: ${title ? "flex-start" : "center"};
     gap: 0.25em;
     visibility: hidden;
-    color: ${variant === Variants["standard"] ? gray900 : white};
-    background-color: ${variant === Variants["standard"] ? white : primary500};
+    color: ${variant === TooltipVariants["standard"] ? gray900 : white};
+    background-color: ${variant === TooltipVariants["standard"] ? white : primary500};
     border-radius: 0.5em;
     white-space: nowrap;
     z-index: 1;
@@ -23,11 +23,11 @@ export const StyledTooltip = styled.div<TooltipProps>(({ style, position, arrow,
     box-shadow: 0px 8px 14px 3px rgba(0, 0, 0, 0.1);
 
     &::after {
-      background-color: ${style?.backgroundColor || (variant === Variants["standard"] ? white : primary500)};
+      background-color: ${style?.backgroundColor || (variant === TooltipVariants["standard"] ? white : primary500)};
     }
 
     & ${BodyMedium}, ${H6} {
-      color: ${style?.color || (variant === Variants["standard"] ? gray900 : white)};
+      color: ${style?.color || (variant === TooltipVariants["standard"] ? gray900 : white)};
       white-space: normal;
       font-family: "Inter";
     }

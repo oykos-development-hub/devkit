@@ -9,3 +9,4 @@ export { default as FacebookIcon } from "./variations/FacebookIcon";
 export { default as GithubIcon } from "./variations/GithubIcon";
 export { default as GoogleIcon } from "./variations/GoogleIcon";
 export { default as CheckIcon } from "./variations/CheckIcon";
+export { default as CircleIcon } from "./variations/CircleIcon";
