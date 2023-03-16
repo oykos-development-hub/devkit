@@ -18,7 +18,9 @@ export const Datepicker: React.FC<DatepickerTypes> = ({ style, theme, calendarIc
         selected={date}
         onChange={handleDateChange}
         dateFormat={rest.dateFormat}
-        customInput={rest.customInput ? rest.customInput : <Input rightContent={calendarIcon} />}
+        customInput={
+          rest.customInput ? rest.customInput : <Input rightContent={calendarIcon} error={"Error message here"} />
+        }
         {...rest}
       />
     </Container>
