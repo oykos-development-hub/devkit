@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { AlertProps } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Alert } from "./index";
-import { DangerIcon } from "../icon";
+import { DangerAlertIcon } from "../icon";
 
 export default {
   component: Alert,
@@ -53,7 +53,7 @@ Custom.args = {
   content: "Title",
   variant: "primary",
   size: "md",
-  icon: <DangerIcon />,
+  icon: <DangerAlertIcon />,
   description: "",
   closeIcon: true,
 };
