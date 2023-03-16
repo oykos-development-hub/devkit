@@ -63,9 +63,9 @@ export const Input = ({
 
   return (
     <Container theme={theme} label={label} error={error} hint={hint}>
-      <div>
-        {label && <Typography variant="bodyMedium" content={label} />}
+      {label && <Typography variant="bodyMedium" content={label} />}
 
+      <div>
         {textarea ? (
           <Textarea {...fieldProps} theme={theme || Theme} />
         ) : (
@@ -75,11 +75,10 @@ export const Input = ({
         {leftContent && <LeftElement ref={leftElementRef}>{leftContent}</LeftElement>}
 
         {rightContent && <RightElement ref={rightElementRef}>{rightContent}</RightElement>}
-
-        {error && !disabled && <Typography variant="bodyMedium" content={error} />}
-
-        {hint && !error && <Typography variant="bodyMedium" content={hint} />}
       </div>
+      {error && !disabled && <Typography variant="bodyMedium" content={error} />}
+
+      {hint && !error && <Typography variant="bodyMedium" content={hint} />}
     </Container>
   );
 };
