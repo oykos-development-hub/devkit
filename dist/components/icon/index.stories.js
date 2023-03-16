@@ -1,6 +1,6 @@
 import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { AssignIcon, XIcon, DangerIcon, CircleCheckIcon, UserIcon, InstagramIcon, LinkedinIcon, FacebookIcon, GithubIcon, GoogleIcon, CheckIcon, } from "./";
+import { AssignIcon, XIcon, DangerIcon, CircleCheckIcon, UserIcon, InstagramIcon, LinkedinIcon, FacebookIcon, GithubIcon, GoogleIcon, } from "./";
 export default {
     title: "Components/Icons",
     component: XIcon,
@@ -32,8 +32,7 @@ const Default = (args) => (React.createElement(StoryWrapper, null,
     React.createElement(LinkedinIcon, Object.assign({}, args)),
     React.createElement(FacebookIcon, Object.assign({}, args)),
     React.createElement(GithubIcon, Object.assign({}, args)),
-    React.createElement(GoogleIcon, Object.assign({}, args)),
-    React.createElement(CheckIcon, Object.assign({}, args))));
+    React.createElement(GoogleIcon, Object.assign({}, args))));
 export const DefaultIcons = Default.bind({});
 DefaultIcons.args = {};
 const Custom = (args) => (React.createElement(StoryWrapper, null,
@@ -46,8 +45,7 @@ const Custom = (args) => (React.createElement(StoryWrapper, null,
     React.createElement(LinkedinIcon, Object.assign({}, args)),
     React.createElement(FacebookIcon, Object.assign({}, args)),
     React.createElement(GithubIcon, Object.assign({}, args)),
-    React.createElement(GoogleIcon, Object.assign({}, args)),
-    React.createElement(CheckIcon, Object.assign({}, args))));
+    React.createElement(GoogleIcon, Object.assign({}, args))));
 export const CustomIcons = Custom.bind({});
 CustomIcons.args = {
     size: "100px",
