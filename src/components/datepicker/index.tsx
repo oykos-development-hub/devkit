@@ -15,7 +15,6 @@ export const Datepicker: React.FC<DatepickerTypes> = ({ style, theme, calendarIc
   return (
     <Container style={style} theme={theme}>
       <DatePicker
-        className="myDatePicker"
         selected={date}
         onChange={handleDateChange}
         dateFormat={rest.dateFormat}
