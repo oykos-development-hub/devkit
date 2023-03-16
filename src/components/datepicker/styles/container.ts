@@ -5,8 +5,9 @@ import React from "react";
 export const Container = styled.div<{
   style?: React.CSSProperties;
   theme?: DefaultTheme;
-}>(({ style, theme }) => {
-  const { white, primary500, gray50, gray200, gray300, gray400, gray700, gray800 } = theme!.palette;
+  error?: string;
+}>(({ style, theme, error }) => {
+  const { white, primary500, gray50, gray200, gray300, gray400, gray700, gray800, error600 } = theme!.palette;
   const { one } = theme!.fontFamily;
   const fontFamily = style?.fontFamily || one;
   const borderRadius = style?.borderRadius || rem("8px");
@@ -16,35 +17,39 @@ export const Container = styled.div<{
       font-family: ${fontFamily};
       background-color: ${style?.backgroundColor || white};
       border-radius: ${borderRadius};
-      border: ${rem("1px")} solid ${gray300};
+      border: ${rem("1px")} solid ${error ? error600 : gray300};
       font-style: normal;
       font-weight: ${style?.fontWeight || "400"};
       font-size: ${style?.fontSize || rem("16px")};
-      color: ${gray400};
+      color: ${gray800};
       width: 100%;
 
       &:active,
       &:focus-within {
-        border: ${rem("1px")} solid ${primary500};
-        box-shadow: 0 0 0 ${rem("3.2px")} rgba(0, 79, 255, 0.25);
+        border: ${rem("1px")} solid ${error ? error600 : primary500};
+        box-shadow: ${error
+          ? `0 0 0 ${rem("3.2px")} rgb(229, 57, 53, 0.25)`
+          : `0 0 0 ${rem("3.2px")} rgba(0, 79, 255, 0.25)`};
         outline: none;
         font-style: normal;
         font-weight: ${style?.fontWeight || "400"};
         font-size: ${style?.fontSize || rem("16px")};
         line-height: ${rem("24px")};
-        color: ${gray400};
+        color: ${gray800};
       }
     }
 
     & svg {
-      width: ${rem("16px")} !important;
-      top: ${rem("1px")};
+      width: ${rem("21px")} !important;
+      top: ${rem("2px")};
       right: ${rem("16px")};
 
       & path {
-        stroke: ${gray700};
-        fill: white;
+        stroke: ${error ? error600 : gray800};
         stroke-width: 2;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
       }
     }
 
