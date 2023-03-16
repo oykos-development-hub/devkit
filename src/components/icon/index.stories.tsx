@@ -12,7 +12,6 @@ import {
   FacebookIcon,
   GithubIcon,
   GoogleIcon,
-  CheckIcon,
 } from "./";
 
 export default {
@@ -49,7 +48,6 @@ const Default: ComponentStory<typeof XIcon> = (args) => (
     <FacebookIcon {...args} />
     <GithubIcon {...args} />
     <GoogleIcon {...args} />
-    <CheckIcon {...args} />
   </StoryWrapper>
 );
 
@@ -68,7 +66,6 @@ const Custom: ComponentStory<typeof XIcon> = (args) => (
     <FacebookIcon {...args} />
     <GithubIcon {...args} />
     <GoogleIcon {...args} />
-    <CheckIcon {...args} />
   </StoryWrapper>
 );
 
