@@ -5,8 +5,9 @@ export const Container = styled.div(({ label, error, theme, hint }) => {
     return css `
     width: 100%;
     min-width: ${label ? "200px" : "3em"};
-    padding: ${label ? "1.75em" : 0} 0 ${error || hint ? "1.75em" : 0} 0;
-    font-size: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
 
     & * {
       font-size: 1em;
@@ -18,16 +19,8 @@ export const Container = styled.div(({ label, error, theme, hint }) => {
       position: relative;
     }
 
-    ${BodyMedium}:first-child {
-      position: absolute;
-      top: -2em;
-      left: 0;
-    }
-
     ${BodyMedium}:last-child {
-      position: absolute;
-      bottom: -2em;
-      left: 0;
+      font-size: 0.75em;
       color: ${error ? error500 : gray700};
     }
   `;
