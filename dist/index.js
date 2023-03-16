@@ -20,6 +20,7 @@ export const Dropdown = DropdownComponent;
 export const Badge = BadgeComponent;
 export const Breadcrumbs = BreadcrumbsComponent;
 export const Tabs = TabsComponent;
+export * from "./components/button/styles";
 export * from "./components/icon";
 export * from "./types";
 //# sourceMappingURL=index.js.map
