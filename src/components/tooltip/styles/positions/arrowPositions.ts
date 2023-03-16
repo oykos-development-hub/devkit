@@ -61,5 +61,5 @@ const ArrowPositions = {
 };
 
 // styles based on current position
-export const arrowPosition = (position: keyof typeof Positions, arrow?: boolean) =>
+export const arrowPosition = (position: Positions | `${Positions}`, arrow?: boolean) =>
   arrow ? ArrowPositions[Positions[position]] : null;

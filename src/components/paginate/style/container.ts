@@ -2,7 +2,7 @@ import styled, { css, CSSProperties, DefaultTheme } from "styled-components";
 import { BodyMedium } from "../../typography/styles/variants";
 import { PaginationVariants } from "../types";
 
-const displayDots = (variant: keyof typeof PaginationVariants, theme: DefaultTheme) => {
+const displayDots = (variant: PaginationVariants | string, theme: DefaultTheme) => {
   const { primary500, gray300 } = theme.palette;
 
   if (variant === PaginationVariants["dotted"])
@@ -39,7 +39,7 @@ export const Container = styled.div<{
   displayPages?: boolean;
   theme: DefaultTheme;
   style?: CSSProperties;
-  variant: keyof typeof PaginationVariants;
+  variant: PaginationVariants | string;
   fullWidth?: boolean;
   renderPaginationText?: (selected: number, total: number) => string;
 }>(({ theme, variant, displayPages, renderPaginationText, fullWidth }) => {
