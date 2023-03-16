@@ -29,7 +29,7 @@ export const ButtonContainer = styled.button(() => ({ theme, disabled, variant, 
         tertiary: white,
     };
     return css `
-    cursor: pointer;
+    cursor: ${disabled ? "auto" : "pointer"};
     align-items: center;
     justify-content: center;
     background-color: ${background[variant]};
