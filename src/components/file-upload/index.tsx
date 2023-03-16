@@ -1,42 +1,32 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import Dropzone from "react-dropzone";
+import React, { useCallback, useState } from "react";
+import { useDropzone } from "react-dropzone";
 import { FileUploadProps } from "./types";
+import { Container } from "./styles/container";
 
-const UploadWrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px dashed #ccc;
-  padding: 30px;
-`;
+export const FileUpload: React.FC<FileUploadProps> = ({ multiple, onFileUpload, content, icon, style, theme }) => {
+  const [isDragging, setIsDragging] = useState(false);
 
-const UploadLabel = styled.p`
-  font-size: 18px;
-  color: #555;
-`;
+  const onDrop = useCallback(
+    (acceptedFiles: File[]) => {
+      onFileUpload(acceptedFiles);
+      setIsDragging(false);
+    },
+    [onFileUpload],
+  );
 
-export const FileUpload: React.FC<FileUploadProps> = ({ multiple, style, theme, ...rest }) => {
-  const [file, setFile] = useState<any>([]);
-
-  const handleDrop = (acceptedFiles: React.SetStateAction<null>[] | any) => {
-    setFile(acceptedFiles[0]);
-  };
+  const { getRootProps, getInputProps } = useDropzone({
+    onDrop,
+    multiple: multiple,
+    onDragEnter: () => setIsDragging(true),
+    onDragLeave: () => setIsDragging(false),
+    onDropRejected: () => setIsDragging(false),
+  });
 
   return (
-    <Dropzone onDrop={handleDrop} multiple={multiple} {...rest}>
-      {({ getRootProps, getInputProps }) => (
-        <UploadWrapper {...getRootProps()}>
-          <input {...getInputProps()} />
-          {file ? (
-            <UploadLabel>File uploaded: {file?.name}</UploadLabel>
-          ) : (
-            <UploadLabel>Drag and drop your file here, or click to select a file</UploadLabel>
-          )}
-        </UploadWrapper>
-      )}
-    </Dropzone>
+    <Container {...getRootProps()} isDragging={isDragging} icon={!!icon} style={style} theme={theme}>
+      <input {...getInputProps()} />
+      {icon && icon}
+      {content && content}
+    </Container>
   );
 };

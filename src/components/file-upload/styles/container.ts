@@ -1,28 +1,25 @@
-import styled from "styled-components";
+import React from "react";
+import styled, { css, DefaultTheme } from "styled-components";
 
-export const Container = styled.input.attrs({ type: "file" })`
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 0.25rem;
-  background-color: #f2f2f2;
-  box-shadow: 0 0 0 2px #fff inset;
-  cursor: pointer;
+export const Container = styled.div<{
+  isDragging: boolean;
+  icon?: React.ReactElement;
+  style?: React.CSSProperties;
+  theme?: DefaultTheme;
+}>(({ isDragging, icon, style, theme }) => {
+  const { gray600 } = theme!.palette;
 
-  &:hover {
-    background-color: #e6e6e6;
-  }
+  return css`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 56px;
+    gap: 24px;
 
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px #0077ff inset;
-  }
+    background: ${isDragging ? "#eee" : "#fff"};
 
-  & svg path {
-    stroke: #212121;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-    stroke-width: 2;
-  }
-`;
+    border: 1px dashed ${gray600};
+    border-radius: 10px;
+  `;
+});
