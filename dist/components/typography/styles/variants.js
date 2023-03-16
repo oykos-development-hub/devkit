@@ -26,7 +26,7 @@ export const H4 = styled.h4 `
   ${shared};
   font-weight: ${(props) => { var _a; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.fontWeight) || "700"; }};
   font-size: ${(props) => { var _a, _b, _c, _d; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.fontSize) || ((_c = (_b = props.theme) === null || _b === void 0 ? void 0 : _b.typographyFontSize) === null || _c === void 0 ? void 0 : _c.h4) || ((_d = Theme.typographyFontSize) === null || _d === void 0 ? void 0 : _d.h4); }};
-  line-height: ${(props) => { var _a, _b, _c, _d; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.lineHeight) || ((_c = (_b = props.theme) === null || _b === void 0 ? void 0 : _b.typographyLineHeight) === null || _c === void 0 ? void 0 : _c.h2) || ((_d = Theme.typographyLineHeight) === null || _d === void 0 ? void 0 : _d.h4); }};
+  line-height: ${(props) => { var _a, _b, _c, _d; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.lineHeight) || ((_c = (_b = props.theme) === null || _b === void 0 ? void 0 : _b.typographyLineHeight) === null || _c === void 0 ? void 0 : _c.h4) || ((_d = Theme.typographyLineHeight) === null || _d === void 0 ? void 0 : _d.h4); }};
 `;
 export const H5 = styled.h5 `
   ${shared};
@@ -85,7 +85,7 @@ export const Caption = styled.label `
   letter-spacing: ${(props) => { var _a; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.letterSpacing) || "0.025rem"; }};
   text-transform: ${(props) => { var _a; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.textTransform) || "uppercase"; }};
   font-size: ${(props) => { var _a, _b, _c, _d; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.fontSize) || ((_c = (_b = props.theme) === null || _b === void 0 ? void 0 : _b.typographyFontSize) === null || _c === void 0 ? void 0 : _c.caption) || ((_d = Theme.typographyFontSize) === null || _d === void 0 ? void 0 : _d.caption); }};
-  line-height: ${(props) => { var _a, _b, _c, _d; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.fontSize) || ((_c = (_b = props.theme) === null || _b === void 0 ? void 0 : _b.typographyLineHeight) === null || _c === void 0 ? void 0 : _c.h2) || ((_d = Theme.typographyLineHeight) === null || _d === void 0 ? void 0 : _d.caption); }};
+  line-height: ${(props) => { var _a, _b, _c, _d; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.fontSize) || ((_c = (_b = props.theme) === null || _b === void 0 ? void 0 : _b.typographyLineHeight) === null || _c === void 0 ? void 0 : _c.caption) || ((_d = Theme.typographyLineHeight) === null || _d === void 0 ? void 0 : _d.caption); }};
 `;
 export const HelperText = styled.span `
   ${shared};
