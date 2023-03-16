@@ -4,3 +4,4 @@ import { DatepickerTypes } from "./types";
 declare const _default: ComponentMeta<React.FC<DatepickerTypes>>;
 export default _default;
 export declare const Default: ComponentStory<React.FC<DatepickerTypes>>;
+export declare const WithError: ComponentStory<React.FC<DatepickerTypes>>;

@@ -15,13 +15,13 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Input } from "../input";
 export const Datepicker = (_a) => {
-    var { style, theme, calendarIcon, onChange } = _a, rest = __rest(_a, ["style", "theme", "calendarIcon", "onChange"]);
+    var { style, theme, error, disabled = false, calendarIcon, errorIcon, onChange } = _a, rest = __rest(_a, ["style", "theme", "error", "disabled", "calendarIcon", "errorIcon", "onChange"]);
     const [date, setDate] = useState(new Date());
     const handleDateChange = (date) => {
         setDate(date);
         onChange && onChange(date);
     };
-    return (React.createElement(Container, { style: style, theme: theme },
-        React.createElement(DatePicker, Object.assign({ className: "myDatePicker", selected: date, onChange: handleDateChange, dateFormat: rest.dateFormat, customInput: rest.customInput ? rest.customInput : React.createElement(Input, { rightContent: calendarIcon }) }, rest))));
+    return (React.createElement(Container, { style: style, theme: theme, error: error },
+        React.createElement(DatePicker, Object.assign({ disabled: disabled, selected: date, onChange: handleDateChange, dateFormat: rest.dateFormat, customInput: rest.customInput ? rest.customInput : React.createElement(Input, { rightContent: error ? errorIcon : calendarIcon, error: error }) }, rest))));
 };
 //# sourceMappingURL=index.js.map
