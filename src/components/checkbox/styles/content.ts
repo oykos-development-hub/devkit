@@ -41,7 +41,7 @@ export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
 export const Content = styled.div<{
   checked: boolean;
   disabled: boolean;
-  size: CheckboxSize;
+  size: CheckboxSize | string;
   theme: DefaultTheme;
   style: React.CSSProperties | undefined;
 }>(({ checked, disabled, theme, size, style }) => {

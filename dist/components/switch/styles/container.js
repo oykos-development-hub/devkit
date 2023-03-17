@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 export const Container = styled.div(() => ({ hasContent, style }) => {
     return css `
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     align-items: ${hasContent && "flex-start"};

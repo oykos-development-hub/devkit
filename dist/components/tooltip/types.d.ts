@@ -13,9 +13,9 @@ export declare enum TooltipVariants {
     filled = "filled"
 }
 export interface TooltipProps {
-    variant: keyof typeof TooltipVariants;
+    variant: TooltipVariants | `${TooltipVariants}`;
     theme: DefaultTheme;
-    position: keyof typeof Positions;
+    position: Positions | `${Positions}`;
     style?: CSSProperties;
     title?: string;
     content: string | ReactElement;

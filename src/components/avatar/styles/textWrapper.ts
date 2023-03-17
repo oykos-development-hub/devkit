@@ -4,7 +4,7 @@ import { rem } from "polished";
 import { AvatarSizes } from "../types";
 
 export const TextWrapper = styled.div<{
-  size: AvatarSizes;
+  size: AvatarSizes | string;
   style?: React.CSSProperties;
   theme?: DefaultTheme;
 }>(() => ({ size, style, theme }) => {

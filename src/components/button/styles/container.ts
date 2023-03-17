@@ -5,8 +5,8 @@ import React from "react";
 
 export const ButtonContainer = styled.button<{
   disabled: boolean;
-  variant: ButtonVariants;
-  size: ButtonSizes;
+  variant: ButtonVariants | string;
+  size: ButtonSizes | string;
   theme: DefaultTheme;
   style: React.CSSProperties | undefined;
 }>(() => ({ theme, disabled, variant, size, style }) => {
@@ -46,7 +46,7 @@ export const ButtonContainer = styled.button<{
   };
 
   return css`
-    cursor: pointer;
+    cursor: ${disabled ? "auto" : "pointer"};
     align-items: center;
     justify-content: center;
     background-color: ${background[variant]};

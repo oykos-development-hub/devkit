@@ -16,11 +16,11 @@ export declare enum LeadingBadgeSizes {
     lg = "lg"
 }
 export interface LeadingBadgeProps {
-    variant?: LeadingBadgeVariants | string;
+    variant?: LeadingBadgeVariants | `${LeadingBadgeVariants}`;
     content?: ReactNode | string;
     badgeContent?: ReactNode | string;
-    leadingBadgeTheme?: LeadingBadgeTheme | string;
-    size?: LeadingBadgeSizes | string;
+    leadingBadgeTheme?: LeadingBadgeTheme | `${LeadingBadgeTheme}`;
+    size?: LeadingBadgeSizes | `${LeadingBadgeSizes}`;
     style?: React.CSSProperties;
     theme?: DefaultTheme;
 }

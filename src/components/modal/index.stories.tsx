@@ -40,10 +40,10 @@ ModalDefault.args = {
   content: (
     <>
       <div style={{ padding: "2em 0.5em", width: "300px" }}>
-        <Typography content="This is modal content." variant="body1" />
+        <Typography content="This is modal content." variant="bodyLarge" />
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <Typography content="This is footer text." variant="body2" />
+        <Typography content="This is footer text." variant="bodyMedium" />
         <div style={{ display: "flex", gap: "0.5em" }}>
           <button>Ok</button>
           <button>Cancel</button>
@@ -60,10 +60,10 @@ ModalVariantDark.args = {
   content: (
     <>
       <div style={{ padding: "2em 0.5em", width: "300px" }}>
-        <Typography content="This is modal content." variant="body1" />
+        <Typography content="This is modal content." variant="bodyMedium" />
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <Typography content="This is footer text." variant="body2" />
+        <Typography content="This is footer text." variant="bodyMedium" />
         <div style={{ display: "flex", gap: "0.5em" }}>
           <button>Ok</button>
           <button>Cancel</button>

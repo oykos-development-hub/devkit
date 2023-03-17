@@ -45,12 +45,12 @@ export const Input = (_a) => {
         style: Object.assign({ paddingTop: 0, paddingBottom: 0, paddingLeft: `${leftContent ? `${leftElementWidth}px` : "1em"}`, paddingRight: `${rightContent ? `${rightElementWidth}px` : "1em"}` }, style),
     };
     return (React.createElement(Container, { theme: theme, label: label, error: error, hint: hint },
+        label && React.createElement(Typography, { variant: "bodyMedium", content: label }),
         React.createElement("div", null,
-            label && React.createElement(Typography, { variant: "bodyMedium", content: label }),
             textarea ? (React.createElement(Textarea, Object.assign({}, fieldProps, { theme: theme || Theme }))) : (React.createElement(StyledInput, Object.assign({}, fieldProps, props, { theme: theme || Theme, ref: inputRef }))),
             leftContent && React.createElement(LeftElement, { ref: leftElementRef }, leftContent),
-            rightContent && React.createElement(RightElement, { ref: rightElementRef }, rightContent),
-            error && !disabled && React.createElement(Typography, { variant: "bodyMedium", content: error }),
-            hint && !error && React.createElement(Typography, { variant: "bodyMedium", content: hint }))));
+            rightContent && React.createElement(RightElement, { ref: rightElementRef }, rightContent)),
+        error && !disabled && React.createElement(Typography, { variant: "bodyMedium", content: error }),
+        hint && !error && React.createElement(Typography, { variant: "bodyMedium", content: hint })));
 };
 //# sourceMappingURL=index.js.map
