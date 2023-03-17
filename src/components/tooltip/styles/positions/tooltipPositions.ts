@@ -47,4 +47,4 @@ const TooltipPositions = {
 };
 
 // styles based on current position
-export const tooltipPosition = (position: keyof typeof Positions) => TooltipPositions[Positions[position]];
+export const tooltipPosition = (position: Positions | `${Positions}`) => TooltipPositions[Positions[position]];

@@ -5,7 +5,7 @@ import { AvatarSizes } from "../types";
 
 export const ImageWrapper = styled.div<{
   isActive?: boolean;
-  size: AvatarSizes;
+  size: AvatarSizes | string;
   style?: React.CSSProperties;
   theme?: DefaultTheme;
 }>(() => ({ isActive, size, style, theme }) => {

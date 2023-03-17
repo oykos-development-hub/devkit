@@ -4,7 +4,7 @@ import React from "react";
 import { rem } from "polished";
 
 export const Indicator = styled.span<{
-  size: AvatarSizes;
+  size: AvatarSizes | string;
   online?: boolean;
   style?: React.CSSProperties;
   theme?: DefaultTheme;

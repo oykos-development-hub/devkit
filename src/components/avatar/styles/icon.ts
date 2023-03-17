@@ -4,7 +4,7 @@ import React from "react";
 import { AvatarSizes } from "../types";
 
 export const Icon = styled.div<{
-  size: AvatarSizes;
+  size: AvatarSizes | string;
   style?: React.CSSProperties;
   theme?: DefaultTheme;
 }>(() => ({ size, style, theme }) => {

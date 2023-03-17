@@ -8,7 +8,7 @@ export declare enum PaginationVariants {
 }
 export interface PaginationProps {
     theme: DefaultTheme;
-    variant: keyof typeof PaginationVariants;
+    variant: PaginationVariants | `${PaginationVariants}`;
     style?: CSSProperties;
     fullWidth?: boolean;
     pageCount: number;

@@ -4,7 +4,7 @@ export declare const Container: import("styled-components").StyledComponent<"div
     displayPages?: boolean | undefined;
     theme: DefaultTheme;
     style?: CSSProperties | undefined;
-    variant: keyof typeof PaginationVariants;
+    variant: PaginationVariants | string;
     fullWidth?: boolean | undefined;
     renderPaginationText?: ((selected: number, total: number) => string) | undefined;
 }, never>;

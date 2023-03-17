@@ -16,12 +16,12 @@ export enum ButtonSizes {
 }
 
 export interface ButtonProps {
-  content: React.ReactNode | string;
+  content?: React.ReactNode | string;
   customContent?: React.ReactNode | string;
-  variant?: ButtonVariants;
+  variant?: ButtonVariants | `${ButtonVariants}`;
   disabled?: boolean;
   onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void;
   theme?: DefaultTheme;
   style?: React.CSSProperties;
-  size?: ButtonSizes;
+  size?: ButtonSizes | `${ButtonSizes}`;
 }
