@@ -4,17 +4,10 @@ import { Container } from "./styles/container";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { Input } from "../input";
+import CalendarIcon from "../icon/variations/CalendarIcon";
+import { DangerIcon } from "../icon";
 
-export const Datepicker: React.FC<DatepickerTypes> = ({
-  style,
-  theme,
-  error,
-  disabled = false,
-  calendarIcon,
-  errorIcon,
-  onChange,
-  ...rest
-}) => {
+export const Datepicker: React.FC<DatepickerTypes> = ({ style, theme, error, disabled = false, onChange, ...rest }) => {
   const [date, setDate] = useState(new Date());
   const handleDateChange = (date: Date) => {
     setDate(date);
@@ -29,7 +22,11 @@ export const Datepicker: React.FC<DatepickerTypes> = ({
         onChange={handleDateChange}
         dateFormat={rest.dateFormat}
         customInput={
-          rest.customInput ? rest.customInput : <Input rightContent={error ? errorIcon : calendarIcon} error={error} />
+          rest.customInput ? (
+            rest.customInput
+          ) : (
+            <Input rightContent={error ? <DangerIcon /> : <CalendarIcon />} error={error} />
+          )
         }
         {...rest}
       />

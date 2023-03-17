@@ -42,6 +42,4 @@ export const WithError = Template.bind({});
 WithError.args = {
   dateFormat: "dd/MM/yyyy",
   error: "Error message here",
-  errorIcon: <DangerIcon />,
-  calendarIcon: <CalendarIcon />,
 };
