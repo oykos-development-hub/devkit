@@ -3,7 +3,6 @@ import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { Datepicker } from "./index";
 import CalendarIcon from "../icon/variations/CalendarIcon";
-import { DangerIcon } from "../icon";
 export default {
     title: "Components/Datepicker",
     component: Datepicker,
@@ -33,7 +32,5 @@ export const WithError = Template.bind({});
 WithError.args = {
     dateFormat: "dd/MM/yyyy",
     error: "Error message here",
-    errorIcon: React.createElement(DangerIcon, null),
-    calendarIcon: React.createElement(CalendarIcon, null),
 };
 //# sourceMappingURL=index.stories.js.map
