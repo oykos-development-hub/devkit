@@ -1,11 +1,11 @@
-import React, { ReactElement, ReactNode } from "react";
+import { ReactNode, ReactElement, CSSProperties } from "react";
 import { DefaultTheme } from "styled-components";
 
 export interface FileUploadProps {
-  onFileUpload: (files: File[]) => void;
+  onUpload: (files: FileList) => void;
   content?: ReactNode | string;
-  icon?: ReactElement;
+  icon?: JSX.Element | ReactElement;
   multiple?: boolean;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
   theme?: DefaultTheme;
 }

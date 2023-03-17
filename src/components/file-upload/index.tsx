@@ -1,32 +1,53 @@
-import React, { useCallback, useState } from "react";
-import { useDropzone } from "react-dropzone";
+import React, { ChangeEvent, DragEvent, useState } from "react";
 import { FileUploadProps } from "./types";
 import { Container } from "./styles/container";
+import { rem } from "polished";
+import { Content } from "../datepicker/styles/content";
 
-export const FileUpload: React.FC<FileUploadProps> = ({ multiple, onFileUpload, content, icon, style, theme }) => {
+export const FileUpload: React.FC<FileUploadProps> = ({ multiple = false, onUpload, content, icon, style, theme }) => {
   const [isDragging, setIsDragging] = useState(false);
 
-  const onDrop = useCallback(
-    (acceptedFiles: File[]) => {
-      onFileUpload(acceptedFiles);
-      setIsDragging(false);
-    },
-    [onFileUpload],
-  );
+  const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragging(true);
+  };
 
-  const { getRootProps, getInputProps } = useDropzone({
-    onDrop,
-    multiple: multiple,
-    onDragEnter: () => setIsDragging(true),
-    onDragLeave: () => setIsDragging(false),
-    onDropRejected: () => setIsDragging(false),
-  });
+  const handleDragLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleDrop = (e: DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    setIsDragging(false);
+
+    if (e.dataTransfer.files) {
+      onUpload(e.dataTransfer.files);
+    }
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      onUpload(e.target.files);
+    }
+  };
 
   return (
-    <Container {...getRootProps()} isDragging={isDragging} icon={!!icon} style={style} theme={theme}>
-      <input {...getInputProps()} />
-      {icon && icon}
-      {content && content}
+    <Container
+      icon={!!icon}
+      style={style}
+      theme={theme}
+      isDragging={isDragging}
+      onDragOver={handleDragOver}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+    >
+      <label htmlFor="upload">
+        <Content>
+          <input type="file" onChange={handleChange} multiple={multiple} id="upload" />
+          {icon && icon}
+          {content && content}
+        </Content>
+      </label>
     </Container>
   );
 };

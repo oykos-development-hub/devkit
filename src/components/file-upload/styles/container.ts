@@ -1,25 +1,26 @@
-import React from "react";
+import { CSSProperties } from "react";
 import styled, { css, DefaultTheme } from "styled-components";
+import { rem } from "polished";
 
 export const Container = styled.div<{
-  isDragging: boolean;
-  icon?: React.ReactElement;
-  style?: React.CSSProperties;
+  isDragging?: boolean;
+  icon?: boolean;
+  style?: CSSProperties;
   theme?: DefaultTheme;
 }>(({ isDragging, icon, style, theme }) => {
-  const { gray600 } = theme!.palette;
+  const { gray600, primary500 } = theme!.palette;
 
   return css`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 56px;
-    gap: 24px;
+    border-radius: ${rem("10px")};
+    border: ${isDragging ? `2px dashed ${primary500}` : `1px dashed ${gray600}`};
 
-    background: ${isDragging ? "#eee" : "#fff"};
+    & input {
+      display: none;
+    }
 
-    border: 1px dashed ${gray600};
-    border-radius: 10px;
+    & svg {
+      width: ${rem("52px")};
+      height: ${rem("52px")};
+    }
   `;
 });

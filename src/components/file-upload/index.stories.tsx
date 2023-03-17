@@ -1,10 +1,10 @@
-import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { FileUpload } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { UploadIcon } from "../icon";
 import { Button, ButtonVariants, Typography } from "../../index";
+import React, { useRef } from "react";
 
 export default {
   title: "Components/FileUpload",
@@ -19,14 +19,14 @@ export default {
   },
 } as ComponentMeta<typeof FileUpload>;
 
-const onFileUpload = (acceptedFiles: File[]) => {
-  console.log("Files uploaded:", acceptedFiles);
+const onFileUpload = (acceptedFiles: FileList) => {
+  console.log("File(s) uploaded:", acceptedFiles);
   // Handle the uploaded files here.
 };
 
 const Template: ComponentStory<typeof FileUpload> = (args) => (
   <StoryWrapper>
-    <FileUpload {...args} onFileUpload={onFileUpload} />
+    <FileUpload {...args} onUpload={onFileUpload} />
   </StoryWrapper>
 );
 
@@ -74,7 +74,14 @@ Default.args = {
       </div>
 
       <div style={{ display: "flex", flexDirection: "row", alignItems: "flex-start", padding: 0 }}>
-        <Button variant={ButtonVariants.primary} content={"SELECT FILE"} />
+        <Button
+          variant={"primary"}
+          content={"SELECT FILE"}
+          onClick={() => {
+            const upload = document.getElementById("upload") as HTMLInputElement;
+            upload.click();
+          }}
+        />
       </div>
     </div>
   ),
