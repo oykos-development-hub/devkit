@@ -12,5 +12,5 @@ export interface ModalProps {
   open?: boolean;
   onClose?: any;
   style?: CSSProperties;
-  variant: keyof typeof Variants;
+  variant: Variants | `${Variants}`;
 }

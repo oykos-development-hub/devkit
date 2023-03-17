@@ -39,7 +39,7 @@ export const H4 = styled.h4<TypographyProps>`
   font-size: ${(props: TypographyProps) =>
     props.style?.fontSize || props.theme?.typographyFontSize?.h4 || Theme.typographyFontSize?.h4};
   line-height: ${(props: TypographyProps) =>
-    props.style?.lineHeight || props.theme?.typographyLineHeight?.h2 || Theme.typographyLineHeight?.h4};
+    props.style?.lineHeight || props.theme?.typographyLineHeight?.h4 || Theme.typographyLineHeight?.h4};
 `;
 
 export const H5 = styled.h5<TypographyProps>`
@@ -125,7 +125,7 @@ export const Caption = styled.label<TypographyProps>`
   font-size: ${(props: TypographyProps) =>
     props.style?.fontSize || props.theme?.typographyFontSize?.caption || Theme.typographyFontSize?.caption};
   line-height: ${(props: TypographyProps) =>
-    props.style?.fontSize || props.theme?.typographyLineHeight?.h2 || Theme.typographyLineHeight?.caption};
+    props.style?.fontSize || props.theme?.typographyLineHeight?.caption || Theme.typographyLineHeight?.caption};
 `;
 
 export const HelperText = styled.span<TypographyProps>`

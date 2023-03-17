@@ -5,7 +5,7 @@ import { AvatarSizes } from "../types";
 
 export const Container = styled.div<{
   supportingText: boolean;
-  size: AvatarSizes;
+  size: AvatarSizes | string;
   style?: React.CSSProperties;
 }>(() => ({ supportingText, size, style }) => {
   const columnGap = {

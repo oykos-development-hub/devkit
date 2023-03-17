@@ -13,8 +13,8 @@ export declare enum AlertSizes {
 }
 export interface AlertProps {
     content?: React.ReactNode | string;
-    size?: AlertSizes | string;
-    variant: AlertVariants | string;
+    size?: AlertSizes | `${AlertSizes}`;
+    variant: AlertVariants | `${AlertVariants}`;
     icon?: JSX.Element | React.ReactNode;
     closeIcon?: boolean;
     description?: React.ReactNode | string;

@@ -1,7 +1,7 @@
 import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Alert } from "./index";
-import { DangerIcon } from "../icon";
+import { DangerAlertIcon } from "../icon";
 export default {
     component: Alert,
     title: "Components/Alert",
@@ -45,7 +45,7 @@ Custom.args = {
     content: "Title",
     variant: "primary",
     size: "md",
-    icon: React.createElement(DangerIcon, null),
+    icon: React.createElement(DangerAlertIcon, null),
     description: "",
     closeIcon: true,
 };

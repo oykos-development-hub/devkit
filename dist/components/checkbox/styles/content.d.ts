@@ -15,7 +15,7 @@ export declare const HiddenCheckbox: import("styled-components").StyledComponent
 export declare const Content: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
     checked: boolean;
     disabled: boolean;
-    size: CheckboxSize;
+    size: CheckboxSize | string;
     theme: DefaultTheme;
     style: React.CSSProperties | undefined;
 }, never>;

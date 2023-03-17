@@ -8,7 +8,7 @@ export declare enum AvatarSizes {
     xl = "xl"
 }
 export interface AvatarProps {
-    size?: AvatarSizes;
+    size?: AvatarSizes | `${AvatarSizes}`;
     src?: string;
     alt?: string;
     supportingText?: boolean;

@@ -4,7 +4,7 @@ import React from "react";
 import { AvatarSizes } from "../types";
 
 export const Image = styled.img<{
-  size: AvatarSizes;
+  size: AvatarSizes | string;
   style?: React.CSSProperties;
 }>(() => ({ style, size }) => {
   const avatar = {

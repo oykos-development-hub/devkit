@@ -8,6 +8,7 @@ export const Container = styled.div<{
   style?: React.CSSProperties;
 }>(() => ({ hasContent, style }) => {
   return css`
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     align-items: ${hasContent && "flex-start"};

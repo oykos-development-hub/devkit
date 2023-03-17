@@ -8,7 +8,7 @@ export enum RadioSize {
 
 export interface RadioProps {
   checked?: boolean;
-  size?: RadioSize;
+  size?: RadioSize | `${RadioSize}`;
   disabled?: boolean;
   onClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   style?: React.CSSProperties;
