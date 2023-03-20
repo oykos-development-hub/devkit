@@ -16,5 +16,5 @@ export const Svg = styled.svg.attrs({
 `;
 
 export const Path = styled.path<IconProps>`
-  stroke: ${(props: IconProps) => props.style?.stroke || props.stroke || "none"};
+  stroke: ${(props: IconProps) => props.style?.stroke || props.stroke};
 `;

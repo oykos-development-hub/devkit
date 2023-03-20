@@ -14,7 +14,11 @@ import {
   GoogleIcon,
   DangerAlertIcon,
   ChevronUpIcon,
+  ChevronDownIcon,
+  ChevronLeftIcon,
+  ChevronRightIcon,
 } from "./";
+import { IconProps } from "./types";
 
 export default {
   title: "Components/Icons",
@@ -36,7 +40,7 @@ export default {
   },
 } as ComponentMeta<typeof XIcon>;
 
-const Default: ComponentStory<typeof XIcon> = (args) => (
+const Default: ComponentStory<typeof XIcon> = (args: IconProps) => (
   <StoryWrapper>
     <AssignIcon {...args} />
     <XIcon {...args} />
@@ -50,34 +54,14 @@ const Default: ComponentStory<typeof XIcon> = (args) => (
     <GoogleIcon {...args} />
     <DangerAlertIcon {...args} />
     <ChevronUpIcon {...args} />
+    <ChevronDownIcon {...args} />
+    <ChevronLeftIcon {...args} />
+    <ChevronRightIcon {...args} />
   </StoryWrapper>
 );
 
 export const DefaultIcons = Default.bind({});
 DefaultIcons.args = {
-  width: "100px",
-  height: "100px",
-};
-
-const Custom: ComponentStory<typeof XIcon> = (args) => (
-  <StoryWrapper>
-    <AssignIcon {...args} />
-    <XIcon {...args} />
-    <DangerIcon {...args} />
-    <CircleCheckIcon {...args} />
-    <UserIcon {...args} />
-    <InstagramIcon {...args} />
-    <LinkedinIcon {...args} />
-    <FacebookIcon {...args} />
-    <GithubIcon {...args} />
-    <GoogleIcon {...args} />
-    <DangerAlertIcon {...args} />
-    <ChevronUpIcon {...args} />
-  </StoryWrapper>
-);
-
-export const CustomIcons = Custom.bind({});
-CustomIcons.args = {
   width: "100px",
   height: "100px",
 };
