@@ -55,10 +55,10 @@ export const Input = ({
     value,
     error,
     style: {
-      paddingTop: "1em",
-      paddingBottom: "1em",
-      paddingLeft: `${leftContent ? `${leftElementWidth}px` : "1em"}`,
-      paddingRight: `${rightContent ? `${rightElementWidth}px` : "1em"}`,
+      paddingTop: "0.625em",
+      paddingBottom: "0.625em",
+      paddingLeft: `${leftContent ? `${leftElementWidth}px` : "0.875em"}`,
+      paddingRight: `${rightContent ? `${rightElementWidth}px` : "0.875em"}`,
       ...style,
     },
   };

@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { BodyMedium } from "../../typography/styles/variants";
 import { InputProps } from "../types";
 
-export const Container = styled.div(({ label, error, theme, hint }: InputProps) => {
+export const Container = styled.div(({ label, error, theme }: InputProps) => {
   const { error500, gray700, gray900 } = theme!.palette;
 
   return css`
