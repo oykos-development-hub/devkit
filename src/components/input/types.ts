@@ -23,4 +23,6 @@ export interface InputProps {
   inputMode?: "text" | "numeric" | "none" | "tel" | "url" | "email" | "decimal";
   maxLength?: number;
   pattern?: string;
+  rows?: number;
+  cols?: number;
 }
