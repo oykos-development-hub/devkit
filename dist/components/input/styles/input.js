@@ -8,6 +8,7 @@ const shared = ({ style, theme, error }) => {
     border: ${`${((_b = theme.borderWidth) === null || _b === void 0 ? void 0 : _b.xs) || "1px"} solid ${error ? error200 : gray400}`};
     box-sizing: border-box;
     outline: none;
+    font-family: ${(style === null || style === void 0 ? void 0 : style.fontFamily) || "Inter"};
 
     &:focus {
       border-color: ${error ? error200 : primary200};
@@ -31,7 +32,7 @@ export const StyledInput = styled.input(({ style, theme, error, maxLength }) => 
     return css `
     ${shared({ style, theme, error, maxLength })}
     text-align: ${maxLength === 1 ? "center" : "left"};
-    height: 3em;
+    height: 40px;
   `;
 });
 export const Textarea = styled.textarea(({ style, theme, error }) => {

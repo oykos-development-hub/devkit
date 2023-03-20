@@ -43,6 +43,6 @@ export const Textarea = styled.textarea(({ style, theme, error }: InputProps) =>
   return css`
     ${shared({ style, theme, error })}
     resize: none;
-    height: 6em;
+    height: 100%;
   `;
 });

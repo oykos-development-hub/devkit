@@ -17,7 +17,7 @@ import { LeftElement } from "./styles/leftElement";
 import { RightElement } from "./styles/rightElement";
 import { Theme } from "../../shared/theme";
 export const Input = (_a) => {
-    var { name, value, theme = Theme, style, disabled, label, textarea, leftContent, rightContent, error, hint, placeholder, onChange, onBlur, onFocus, id, inputRef } = _a, props = __rest(_a, ["name", "value", "theme", "style", "disabled", "label", "textarea", "leftContent", "rightContent", "error", "hint", "placeholder", "onChange", "onBlur", "onFocus", "id", "inputRef"]);
+    var { name, value, theme = Theme, style, disabled, label, textarea, leftContent, rightContent, error, hint, placeholder, onChange, onBlur, onFocus, id, inputRef, cols, rows } = _a, props = __rest(_a, ["name", "value", "theme", "style", "disabled", "label", "textarea", "leftContent", "rightContent", "error", "hint", "placeholder", "onChange", "onBlur", "onFocus", "id", "inputRef", "cols", "rows"]);
     const [leftElementWidth, setLeftElementWidth] = useState(0);
     const [rightElementWidth, setRightElementWidth] = useState(0);
     const leftElementRef = useRef(null);
@@ -42,12 +42,12 @@ export const Input = (_a) => {
         placeholder,
         value,
         error,
-        style: Object.assign({ paddingTop: 0, paddingBottom: 0, paddingLeft: `${leftContent ? `${leftElementWidth}px` : "1em"}`, paddingRight: `${rightContent ? `${rightElementWidth}px` : "1em"}` }, style),
+        style: Object.assign({ paddingTop: "0.625em", paddingBottom: "0.625em", paddingLeft: `${leftContent ? `${leftElementWidth}px` : "0.875em"}`, paddingRight: `${rightContent ? `${rightElementWidth}px` : "0.875em"}` }, style),
     };
     return (React.createElement(Container, { theme: theme, label: label, error: error, hint: hint },
         label && React.createElement(Typography, { variant: "bodyMedium", content: label }),
         React.createElement("div", null,
-            textarea ? (React.createElement(Textarea, Object.assign({}, fieldProps, { theme: theme || Theme }))) : (React.createElement(StyledInput, Object.assign({}, fieldProps, props, { theme: theme || Theme, ref: inputRef }))),
+            textarea ? (React.createElement(Textarea, Object.assign({}, fieldProps, { theme: theme || Theme, rows: rows, cols: cols }))) : (React.createElement(StyledInput, Object.assign({}, fieldProps, props, { theme: theme || Theme, ref: inputRef }))),
             leftContent && React.createElement(LeftElement, { ref: leftElementRef }, leftContent),
             rightContent && React.createElement(RightElement, { ref: rightElementRef }, rightContent)),
         error && !disabled && React.createElement(Typography, { variant: "bodyMedium", content: error }),

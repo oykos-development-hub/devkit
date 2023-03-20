@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { BodyMedium } from "../../typography/styles/variants";
+import { BodyMedium, HelperText } from "../../typography/styles/variants";
 import { InputProps } from "../types";
 
 export const Container = styled.div(({ label, error, theme }: InputProps) => {
@@ -11,6 +11,8 @@ export const Container = styled.div(({ label, error, theme }: InputProps) => {
     display: flex;
     flex-direction: column;
     gap: 0.25em;
+    position: relative;
+    height: 100%;
 
     & * {
       font-size: 1em;
@@ -22,8 +24,9 @@ export const Container = styled.div(({ label, error, theme }: InputProps) => {
       position: relative;
     }
 
-    ${BodyMedium}:last-child {
-      font-size: 0.75em;
+    ${HelperText}:last-child {
+      position: absolute;
+      bottom: -20px;
       color: ${error ? error500 : gray700};
     }
   `;

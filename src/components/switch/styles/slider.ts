@@ -35,7 +35,7 @@ export const Slider = styled.span<{
       background-color: ${gray50};
       transition: 0.3s;
       box-shadow: 0 ${rem("1px")} ${rem("3px")} rgba(16, 24, 40, 0.1), 0 ${rem("1px")} ${rem(
-  "2px",
-)} rgba(16, 24, 40, 0.06);
+    "2px",
+  )} rgba(16, 24, 40, 0.06);
   `;
 });

@@ -2,7 +2,6 @@ import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { Datepicker } from "./index";
-import CalendarIcon from "../icon/variations/CalendarIcon";
 export default {
     title: "Components/Datepicker",
     component: Datepicker,
@@ -26,7 +25,6 @@ const Template = (args) => (React.createElement(StoryWrapper, null,
 export const Default = Template.bind({});
 Default.args = {
     dateFormat: "dd/MM/yyyy",
-    calendarIcon: React.createElement(CalendarIcon, null),
 };
 export const WithError = Template.bind({});
 WithError.args = {

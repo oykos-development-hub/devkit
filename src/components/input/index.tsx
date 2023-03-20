@@ -69,7 +69,7 @@ export const Input = ({
 
       <div>
         {textarea ? (
-          <Textarea {...fieldProps} theme={theme || Theme} rows={rows} cols={cols} />
+          <Textarea {...fieldProps} theme={theme || Theme} rows={rows || 5} cols={cols} />
         ) : (
           <StyledInput {...fieldProps} {...props} theme={theme || Theme} ref={inputRef} />
         )}
@@ -78,7 +78,7 @@ export const Input = ({
 
         {rightContent && <RightElement ref={rightElementRef}>{rightContent}</RightElement>}
       </div>
-      {error && !disabled && <Typography variant="bodyMedium" content={error} />}
+      {error && !disabled && <Typography variant="helperText" content={error} />}
 
       {hint && !error && <Typography variant="bodyMedium" content={hint} />}
     </Container>
