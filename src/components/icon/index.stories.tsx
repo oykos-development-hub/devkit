@@ -13,6 +13,7 @@ import {
   GithubIcon,
   GoogleIcon,
   DangerAlertIcon,
+  ChevronUpIcon,
 } from "./";
 
 export default {
@@ -29,8 +30,6 @@ export default {
     },
     style: {
       defaultValue: {
-        width: "40px",
-        height: "40px",
         padding: "0.2rem",
       },
     },
@@ -50,11 +49,15 @@ const Default: ComponentStory<typeof XIcon> = (args) => (
     <GithubIcon {...args} />
     <GoogleIcon {...args} />
     <DangerAlertIcon {...args} />
+    <ChevronUpIcon {...args} />
   </StoryWrapper>
 );
 
 export const DefaultIcons = Default.bind({});
-DefaultIcons.args = {};
+DefaultIcons.args = {
+  width: "100px",
+  height: "100px",
+};
 
 const Custom: ComponentStory<typeof XIcon> = (args) => (
   <StoryWrapper>
@@ -69,10 +72,12 @@ const Custom: ComponentStory<typeof XIcon> = (args) => (
     <GithubIcon {...args} />
     <GoogleIcon {...args} />
     <DangerAlertIcon {...args} />
+    <ChevronUpIcon {...args} />
   </StoryWrapper>
 );
 
 export const CustomIcons = Custom.bind({});
 CustomIcons.args = {
-  size: "100px",
+  width: "100px",
+  height: "100px",
 };
