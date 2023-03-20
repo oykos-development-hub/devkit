@@ -1,10 +1,18 @@
 import React, { ChangeEvent, DragEvent, useState } from "react";
 import { FileUploadProps } from "./types";
 import { Container } from "./styles/container";
-import { rem } from "polished";
-import { Content } from "../datepicker/styles/content";
+import { ContentWrapper, IconWrapper, ButtonWrapper, TextWrapper } from "./styles/content";
+import { Button, Typography } from "../../index";
 
-export const FileUpload: React.FC<FileUploadProps> = ({ multiple = false, onUpload, content, icon, style, theme }) => {
+export const FileUpload: React.FC<FileUploadProps> = ({
+  variant = "primary",
+  multiple = false,
+  onUpload,
+  customContent,
+  icon,
+  style,
+  theme,
+}) => {
   const [isDragging, setIsDragging] = useState(false);
 
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
@@ -33,6 +41,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({ multiple = false, onUplo
 
   return (
     <Container
+      variant={variant}
       icon={!!icon}
       style={style}
       theme={theme}
@@ -41,13 +50,29 @@ export const FileUpload: React.FC<FileUploadProps> = ({ multiple = false, onUplo
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
-      <label htmlFor="upload">
-        <Content>
-          <input type="file" onChange={handleChange} multiple={multiple} id="upload" />
-          {icon && icon}
-          {content && content}
-        </Content>
-      </label>
+      <input type="file" id="upload" onChange={handleChange} multiple={multiple} />
+      {icon && <IconWrapper>{icon}</IconWrapper>}
+      {customContent ? (
+        customContent
+      ) : (
+        <ContentWrapper variant={variant}>
+          <TextWrapper variant={variant}>
+            <Typography variant={"bodySmall"} content={"Select a file or drag and drop here"} />
+            <Typography variant={"helperText"} content={"JPG, PNG or PDF, file size no more than 10MB"} />
+          </TextWrapper>
+
+          <ButtonWrapper variant={variant}>
+            <Button
+              variant={"primary"}
+              content={"SELECT FILE"}
+              onClick={() => {
+                const upload = document.getElementById("upload") as HTMLInputElement;
+                upload.click();
+              }}
+            />
+          </ButtonWrapper>
+        </ContentWrapper>
+      )}
     </Container>
   );
 };
