@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 import { BodyMedium } from "../../typography/styles/variants";
-export const Container = styled.div(({ label, error, theme, hint }) => {
+export const Container = styled.div(({ label, error, theme }) => {
     const { error500, gray700, gray900 } = theme.palette;
     return css `
     width: 100%;

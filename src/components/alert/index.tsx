@@ -20,12 +20,12 @@ export const Alert: React.FC<AlertProps> = ({
 }) => {
   const textVariant = () => {
     switch (size) {
-    case "sm":
-      return "bodySmall";
-    case "md":
-      return "bodyMedium";
-    case "lg":
-      return "bodyLarge";
+      case "sm":
+        return "bodySmall";
+      case "md":
+        return "bodyMedium";
+      case "lg":
+        return "bodyLarge";
     }
   };
 
