@@ -13,3 +13,4 @@ export { default as ChevronUpIcon } from "./variations/ChevronUpIcon";
 export { default as ChevronDownIcon } from "./variations/ChevronDownIcon";
 export { default as CheckIcon } from "./variations/CheckIcon";
 export { default as UploadIcon } from "./variations/UploadIcon";
+export { default as CircleIcon } from "./variations/CircleIcon";
