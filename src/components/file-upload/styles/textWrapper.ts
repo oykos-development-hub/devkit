@@ -12,7 +12,7 @@ export const TextWrapper = styled.div<{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    ${variant === "primary" && `align-items:center`};
+    ${variant === "primary" && "align-items:center"};
     padding: 0;
     gap: ${rem("12px")};
 
