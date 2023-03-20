@@ -1,10 +1,20 @@
-import React, { ReactElement, ReactNode } from "react";
+import { ReactNode, ReactElement, CSSProperties } from "react";
 import { DefaultTheme } from "styled-components";
+import { ButtonVariants } from "../button/types";
+export declare enum FileUploadVariants {
+    primary = "primary",
+    secondary = "secondary"
+}
 export interface FileUploadProps {
-    onFileUpload: (files: File[]) => void;
-    content?: ReactNode | string;
-    icon?: ReactElement;
+    variant: FileUploadVariants | string;
+    onUpload: (files: FileList) => void;
+    customContent?: JSX.Element | ReactNode | string;
+    buttonVariant?: ButtonVariants | `${ButtonVariants}`;
+    buttonText?: string;
+    hint?: JSX.Element | ReactNode | string;
+    note?: JSX.Element | ReactNode | string;
+    icon?: JSX.Element | ReactElement;
     multiple?: boolean;
-    style?: React.CSSProperties;
+    style?: CSSProperties;
     theme?: DefaultTheme;
 }

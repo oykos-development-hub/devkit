@@ -1,18 +1,22 @@
 import styled, { css } from "styled-components";
-export const Container = styled.div(({ isDragging, icon, style, theme }) => {
-    const { gray600 } = theme.palette;
+import { rem } from "polished";
+export const Container = styled.div(({ variant, isDragging, style, theme }) => {
+    const { gray600, primary500 } = theme.palette;
     return css `
     display: flex;
-    flex-direction: column;
+    flex-direction: ${variant === "primary" ? "column" : "row"};
     justify-content: center;
     align-items: center;
-    padding: 56px;
-    gap: 24px;
+    padding: ${variant === "primary"
+        ? `${rem("56px")}`
+        : `${rem("16px")} ${rem("24px")} ${rem("16px")} ${rem("32px")}`};
+    border-radius: ${rem("10px")};
+    border: ${isDragging ? `2px dashed ${primary500}` : `1px dashed ${gray600}`};
+    gap: ${variant === "primary" ? `${rem("24px")}` : `${rem("12.5px")}`};
 
-    background: ${isDragging ? "#eee" : "#fff"};
-
-    border: 1px dashed ${gray600};
-    border-radius: 10px;
+    & input {
+      display: none;
+    }
   `;
 });
 //# sourceMappingURL=container.js.map
