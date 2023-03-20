@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { css } from "styled-components";
 import { IconProps, Positions } from "../types";
 import { Theme } from "../../../shared/theme";
 
