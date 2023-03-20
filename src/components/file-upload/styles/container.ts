@@ -6,10 +6,9 @@ import { FileUploadVariants } from "../types";
 export const Container = styled.div<{
   variant: FileUploadVariants | string;
   isDragging?: boolean;
-  icon?: boolean;
   style?: CSSProperties;
   theme?: DefaultTheme;
-}>(({ variant, isDragging, icon, style, theme }) => {
+}>(({ variant, isDragging, style, theme }) => {
   const { gray600, primary500 } = theme!.palette;
 
   return css`

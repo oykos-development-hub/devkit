@@ -35,23 +35,20 @@ const Template: ComponentStory<typeof FileUpload> = (args) => (
   </StoryWrapper>
 );
 
-const customIcon = (size: string, color: string) => (
-  <UploadIcon
-    style={{
-      width: size,
-      height: size,
-      fill: "none",
-      stroke: color,
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      strokeWidth: 2,
-    }}
-  />
-);
-
 export const Default = Template.bind({});
 Default.args = {
   variant: "primary",
   multiple: false,
-  icon: customIcon("52px", "#212121"),
+  note: "Select a file or drag and drop here",
+  hint: "JPG, PNG or PDF, file size no more than 10MB",
+};
+
+export const Multiple = Template.bind({});
+Multiple.args = {
+  variant: "secondary",
+  buttonVariant: "secondary",
+  buttonText: "SELECT FILES",
+  multiple: true,
+  note: "Select a files or drag and drop here",
+  hint: "JPG, PNG or PDF, file size no more than 10MB",
 };

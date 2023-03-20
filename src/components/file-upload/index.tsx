@@ -2,16 +2,21 @@ import React, { ChangeEvent, DragEvent, useState } from "react";
 import { FileUploadProps } from "./types";
 import { Container } from "./styles/container";
 import { ContentWrapper, IconWrapper, ButtonWrapper, TextWrapper } from "./styles/content";
-import { Button, Typography } from "../../index";
+import { Button, ButtonVariants, Typography, UploadIcon } from "../../index";
+import { Theme } from "../../shared/theme";
 
 export const FileUpload: React.FC<FileUploadProps> = ({
   variant = "primary",
+  buttonVariant,
   multiple = false,
   onUpload,
   customContent,
+  buttonText,
+  note,
+  hint,
   icon,
   style,
-  theme,
+  theme = Theme,
 }) => {
   const [isDragging, setIsDragging] = useState(false);
 
@@ -33,6 +38,11 @@ export const FileUpload: React.FC<FileUploadProps> = ({
     }
   };
 
+  const handleClick = () => {
+    const upload = document.getElementById("upload") as HTMLInputElement;
+    upload.click();
+  };
+
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       onUpload(e.target.files);
@@ -42,7 +52,6 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   return (
     <Container
       variant={variant}
-      icon={!!icon}
       style={style}
       theme={theme}
       isDragging={isDragging}
@@ -51,24 +60,27 @@ export const FileUpload: React.FC<FileUploadProps> = ({
       onDrop={handleDrop}
     >
       <input type="file" id="upload" onChange={handleChange} multiple={multiple} />
-      {icon && <IconWrapper>{icon}</IconWrapper>}
+      {icon ? (
+        icon
+      ) : (
+        <IconWrapper customIcon={!!icon}>
+          <UploadIcon />
+        </IconWrapper>
+      )}
       {customContent ? (
         customContent
       ) : (
         <ContentWrapper variant={variant}>
-          <TextWrapper variant={variant}>
-            <Typography variant={"bodySmall"} content={"Select a file or drag and drop here"} />
-            <Typography variant={"helperText"} content={"JPG, PNG or PDF, file size no more than 10MB"} />
+          <TextWrapper variant={variant} theme={theme}>
+            {note && <Typography variant={"bodySmall"} content={note} />}
+            {hint && <Typography variant={"helperText"} content={hint} />}
           </TextWrapper>
 
           <ButtonWrapper variant={variant}>
             <Button
-              variant={"primary"}
-              content={"SELECT FILE"}
-              onClick={() => {
-                const upload = document.getElementById("upload") as HTMLInputElement;
-                upload.click();
-              }}
+              variant={buttonVariant ? buttonVariant : "primary"}
+              content={buttonText ? buttonText : "SELECT FILE"}
+              onClick={handleClick}
             />
           </ButtonWrapper>
         </ContentWrapper>
