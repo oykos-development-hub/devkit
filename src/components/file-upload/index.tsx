@@ -1,8 +1,11 @@
 import React, { ChangeEvent, DragEvent, useState } from "react";
 import { FileUploadProps } from "./types";
 import { Container } from "./styles/container";
-import { ContentWrapper, IconWrapper, ButtonWrapper, TextWrapper } from "./styles/content";
-import { Button, ButtonVariants, Typography, UploadIcon } from "../../index";
+import { Content } from "./styles/content";
+import { IconWrapper } from "./styles/iconWrapper";
+import { TextWrapper } from "./styles/textWrapper";
+import { ButtonWrapper } from "./styles/buttonWrapper";
+import { Button, Typography, UploadIcon } from "../../index";
 import { Theme } from "../../shared/theme";
 
 export const FileUpload: React.FC<FileUploadProps> = ({
@@ -70,7 +73,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
       {customContent ? (
         customContent
       ) : (
-        <ContentWrapper variant={variant}>
+        <Content variant={variant}>
           <TextWrapper variant={variant} theme={theme}>
             {note && <Typography variant={"bodySmall"} content={note} />}
             {hint && <Typography variant={"helperText"} content={hint} />}
@@ -83,7 +86,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
               onClick={handleClick}
             />
           </ButtonWrapper>
-        </ContentWrapper>
+        </Content>
       )}
     </Container>
   );

@@ -3,7 +3,6 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { FileUpload } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { UploadIcon } from "../icon";
 
 export default {
   title: "Components/FileUpload",
@@ -13,6 +12,12 @@ export default {
       control: {
         type: "radio",
         options: ["primary", "secondary"],
+      },
+    },
+    buttonVariant: {
+      control: {
+        type: "select",
+        options: ["primary", "secondary", "tertiary"],
       },
     },
     theme: {
