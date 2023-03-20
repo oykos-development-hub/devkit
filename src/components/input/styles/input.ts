@@ -43,5 +43,6 @@ export const Textarea = styled.textarea(({ style, theme, error }: InputProps) =>
     ${shared({ style, theme, error })}
     resize: none;
     height: 6em;
+    font-family: ${style?.fontFamily || "Inter"};
   `;
 });
