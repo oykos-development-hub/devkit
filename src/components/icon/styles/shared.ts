@@ -7,12 +7,8 @@ export const Svg = styled.svg.attrs({
 })<IconProps>`
   fill: ${(props: IconProps) => props.fill || props.theme?.palette?.black || Theme?.palette?.black};
   position: ${(props: IconProps) => props.position || Positions.relative};
-  width: ${(props: IconProps) => props.style?.width || props?.width || "1rem"};
-  height: ${(props: IconProps) => props.style?.height || props?.height || "1rem"};
-  top: ${(props: IconProps) => props.style?.top || "unset"};
-  bottom: ${(props: IconProps) => props.style?.bottom || "unset"};
-  right: ${(props: IconProps) => props.style?.right || "unset"};
-  left: ${(props: IconProps) => props.style?.left || "unset"};
+  width: ${(props: IconProps) => props.width || "1rem"};
+  height: ${(props: IconProps) => props.height || "1rem"};
 `;
 
 export const Path = styled.path<IconProps>`
