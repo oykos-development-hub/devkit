@@ -3,7 +3,9 @@ import { ButtonVariants, ButtonSizes } from "../types";
 import { DefaultTheme } from "../../../types";
 import React from "react";
 
-export const ButtonContainer = styled.button<{
+export const ButtonContainer = styled.button.attrs((props) => ({
+  disabled: props.disabled,
+}))<{
   disabled: boolean;
   variant: ButtonVariants | string;
   size: ButtonSizes | string;
@@ -54,12 +56,13 @@ export const ButtonContainer = styled.button<{
     border-radius: ${theme!.borderRadius.lg || "0.5rem"};
     padding: ${padding[size]};
     box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
-    &:hover {
+    &:hover:enabled {
       background-color: ${hoverBackground[variant]};
       div {
         color: ${hoverTextColor[variant]};
       }
     }
+
     ${{ ...style }}
   `;
 });
