@@ -6,12 +6,8 @@ export const Svg = styled.svg.attrs({
 }) `
   fill: ${(props) => { var _a, _b, _c; return props.fill || ((_b = (_a = props.theme) === null || _a === void 0 ? void 0 : _a.palette) === null || _b === void 0 ? void 0 : _b.black) || ((_c = Theme === null || Theme === void 0 ? void 0 : Theme.palette) === null || _c === void 0 ? void 0 : _c.black); }};
   position: ${(props) => props.position || Positions.relative};
-  width: ${(props) => { var _a; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.width) || (props === null || props === void 0 ? void 0 : props.width) || "1rem"; }};
-  height: ${(props) => { var _a; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.height) || (props === null || props === void 0 ? void 0 : props.height) || "1rem"; }};
-  top: ${(props) => { var _a; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.top) || "unset"; }};
-  bottom: ${(props) => { var _a; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.bottom) || "unset"; }};
-  right: ${(props) => { var _a; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.right) || "unset"; }};
-  left: ${(props) => { var _a; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.left) || "unset"; }};
+  width: ${(props) => props.width || "1rem"};
+  height: ${(props) => props.height || "1rem"};
 `;
 export const Path = styled.path `
   stroke: ${(props) => { var _a; return ((_a = props.style) === null || _a === void 0 ? void 0 : _a.stroke) || props.stroke; }};
