@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Container } from "./styles/container";
 import { Content } from "./styles/content";
 import { IconWrapper } from "./styles/iconWrapper";
@@ -8,6 +8,7 @@ import { Button, Typography, UploadIcon } from "../../index";
 import { Theme } from "../../shared/theme";
 export const FileUpload = ({ variant = "primary", buttonVariant, multiple = false, onUpload, customContent, buttonText, note, hint, icon, style, theme = Theme, }) => {
     const [isDragging, setIsDragging] = useState(false);
+    const uploadInputRef = useRef(null);
     const handleDragOver = (e) => {
         e.preventDefault();
         setIsDragging(true);
@@ -23,8 +24,8 @@ export const FileUpload = ({ variant = "primary", buttonVariant, multiple = fals
         }
     };
     const handleClick = () => {
-        const upload = document.getElementById("upload");
-        upload.click();
+        var _a;
+        (_a = uploadInputRef.current) === null || _a === void 0 ? void 0 : _a.click();
     };
     const handleChange = (e) => {
         if (e.target.files) {
@@ -32,7 +33,7 @@ export const FileUpload = ({ variant = "primary", buttonVariant, multiple = fals
         }
     };
     return (React.createElement(Container, { variant: variant, style: style, theme: theme, isDragging: isDragging, onDragOver: handleDragOver, onDragLeave: handleDragLeave, onDrop: handleDrop },
-        React.createElement("input", { type: "file", id: "upload", onChange: handleChange, multiple: multiple }),
+        React.createElement("input", { type: "file", ref: uploadInputRef, onChange: handleChange, multiple: multiple }),
         icon ? (icon) : (React.createElement(IconWrapper, { customIcon: !!icon },
             React.createElement(UploadIcon, null))),
         customContent ? (customContent) : (React.createElement(Content, { variant: variant },
