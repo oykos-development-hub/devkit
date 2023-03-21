@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
-export const ButtonContainer = styled.button(() => ({ theme, disabled, variant, size, style }) => {
+export const ButtonContainer = styled.button.attrs((props) => ({
+    disabled: props.disabled,
+}))(() => ({ theme, disabled, variant, size, style }) => {
     const { gray50, white, primary500, secondary500, gray200, error500, error100, primary800, secondary800, error800 } = theme.palette;
     const background = {
         primary: disabled ? gray200 : primary500,
@@ -37,12 +39,13 @@ export const ButtonContainer = styled.button(() => ({ theme, disabled, variant, 
     border-radius: ${theme.borderRadius.lg || "0.5rem"};
     padding: ${padding[size]};
     box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
-    &:hover {
+    &:hover:enabled {
       background-color: ${hoverBackground[variant]};
       div {
         color: ${hoverTextColor[variant]};
       }
     }
+
     ${Object.assign({}, style)}
   `;
 });
