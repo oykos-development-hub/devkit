@@ -11,5 +11,8 @@ export { default as GithubIcon } from "./variations/GithubIcon";
 export { default as GoogleIcon } from "./variations/GoogleIcon";
 export { default as ChevronUpIcon } from "./variations/ChevronUpIcon";
 export { default as ChevronDownIcon } from "./variations/ChevronDownIcon";
+export { default as ChevronLeftIcon } from "./variations/ChevronLeftIcon";
+export { default as ChevronRightIcon } from "./variations/ChevronRightIcon";
 export { default as CheckIcon } from "./variations/CheckIcon";
+export { default as UploadIcon } from "./variations/UploadIcon";
 export { default as CircleIcon } from "./variations/CircleIcon";
