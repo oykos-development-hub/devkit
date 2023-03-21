@@ -6,7 +6,7 @@ export declare enum FileUploadVariants {
     secondary = "secondary"
 }
 export interface FileUploadProps {
-    variant: FileUploadVariants | string;
+    variant: FileUploadVariants | `${FileUploadVariants}`;
     onUpload: (files: FileList) => void;
     customContent?: JSX.Element | ReactNode | string;
     buttonVariant?: ButtonVariants | `${ButtonVariants}`;
