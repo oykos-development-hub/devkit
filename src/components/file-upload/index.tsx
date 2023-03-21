@@ -1,4 +1,4 @@
-import React, { ChangeEvent, DragEvent, useState } from "react";
+import React, { ChangeEvent, DragEvent, useRef, useState } from "react";
 import { FileUploadProps } from "./types";
 import { Container } from "./styles/container";
 import { Content } from "./styles/content";
@@ -22,6 +22,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   theme = Theme,
 }) => {
   const [isDragging, setIsDragging] = useState(false);
+  const uploadInputRef = useRef<HTMLInputElement>(null);
 
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -42,8 +43,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   };
 
   const handleClick = () => {
-    const upload = document.getElementById("upload") as HTMLInputElement;
-    upload.click();
+    uploadInputRef.current?.click();
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -62,7 +62,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
     >
-      <input type="file" id="upload" onChange={handleChange} multiple={multiple} />
+      <input type="file" ref={uploadInputRef} onChange={handleChange} multiple={multiple} />
       {icon ? (
         icon
       ) : (
