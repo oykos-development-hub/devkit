@@ -16,6 +16,10 @@ export enum Positions {
 
 export interface IconProps {
   size?: IconSize | string;
+  width?: string;
+  height?: string;
+  fill?: string;
+  stroke?: string;
   onClick?: (e?: React.MouseEvent<any>) => any;
   position?: Positions | keyof typeof Positions;
   theme?: DefaultTheme;

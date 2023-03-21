@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
-import { BodyMedium } from "../../typography/styles/variants";
-export const Container = styled.div(({ label, error, theme, hint }) => {
+import { HelperText } from "../../typography/styles/variants";
+export const Container = styled.div(({ label, error, theme }) => {
     const { error500, gray700, gray900 } = theme.palette;
     return css `
     width: 100%;
@@ -8,6 +8,8 @@ export const Container = styled.div(({ label, error, theme, hint }) => {
     display: flex;
     flex-direction: column;
     gap: 0.25em;
+    position: relative;
+    height: 100%;
 
     & * {
       font-size: 1em;
@@ -19,8 +21,9 @@ export const Container = styled.div(({ label, error, theme, hint }) => {
       position: relative;
     }
 
-    ${BodyMedium}:last-child {
-      font-size: 0.75em;
+    ${HelperText}:last-child {
+      position: absolute;
+      bottom: -20px;
       color: ${error ? error500 : gray700};
     }
   `;

@@ -26,6 +26,8 @@ export const Input = ({
   onFocus,
   id,
   inputRef,
+  cols,
+  rows,
   ...props
 }: InputProps): React.ReactElement => {
   const [leftElementWidth, setLeftElementWidth] = useState(0);
@@ -53,10 +55,10 @@ export const Input = ({
     value,
     error,
     style: {
-      paddingTop: 0,
-      paddingBottom: 0,
-      paddingLeft: `${leftContent ? `${leftElementWidth}px` : "1em"}`,
-      paddingRight: `${rightContent ? `${rightElementWidth}px` : "1em"}`,
+      paddingTop: "0.625em",
+      paddingBottom: "0.625em",
+      paddingLeft: `${leftContent ? `${leftElementWidth}px` : "0.875em"}`,
+      paddingRight: `${rightContent ? `${rightElementWidth}px` : "0.875em"}`,
       ...style,
     },
   };
@@ -67,7 +69,7 @@ export const Input = ({
 
       <div>
         {textarea ? (
-          <Textarea {...fieldProps} theme={theme || Theme} />
+          <Textarea {...fieldProps} theme={theme || Theme} rows={rows || 5} cols={cols} />
         ) : (
           <StyledInput {...fieldProps} {...props} theme={theme || Theme} ref={inputRef} />
         )}
@@ -76,7 +78,7 @@ export const Input = ({
 
         {rightContent && <RightElement ref={rightElementRef}>{rightContent}</RightElement>}
       </div>
-      {error && !disabled && <Typography variant="bodyMedium" content={error} />}
+      {error && !disabled && <Typography variant="helperText" content={error} />}
 
       {hint && !error && <Typography variant="bodyMedium" content={hint} />}
     </Container>
