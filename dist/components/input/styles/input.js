@@ -39,7 +39,7 @@ export const Textarea = styled.textarea(({ style, theme, error }) => {
     return css `
     ${shared({ style, theme, error })}
     resize: none;
-    height: 6em;
+    height: 100%;
   `;
 });
 //# sourceMappingURL=input.js.map
