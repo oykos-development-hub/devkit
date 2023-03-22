@@ -1,4 +1,5 @@
 import { DefaultTheme } from "styled-components";
+import colors from "./color-types";
 
 export const Theme: DefaultTheme = {
   mediaScreenBreakpoints: {
@@ -31,39 +32,67 @@ export const Theme: DefaultTheme = {
     xl: "4rem",
     xxl: "7rem",
   },
+  fontWeight: {
+    regular: "400",
+    semiBold: "600",
+    bold: "700",
+  },
+  typographyFontSize: {
+    h1: "3.375rem",
+    h2: "2.625rem",
+    h3: "2rem",
+    h4: "1.75rem",
+    h5: "1.25rem",
+    h6: "1.125rem",
+    body: {
+      sm: "0.875rem",
+      md: "1rem",
+      lg: "1.125rem",
+    },
+    link: {
+      sm: "0.875rem",
+      md: "1rem",
+      lg: "1.125rem",
+    },
+    caption: "0.75rem",
+    helperText: "0.75rem",
+    code: "0.875rem",
+  },
+  typographyLineHeight: {
+    h1: "4rem",
+    h2: "3.125rem",
+    h3: "2.5rem",
+    h4: "2.25rem",
+    h5: "1.75rem",
+    h6: "1.625rem",
+    body: {
+      sm: "1.25rem",
+      md: "1.5rem",
+      lg: "1.625rem",
+    },
+    link: {
+      sm: "1.25rem",
+      md: "1.5rem",
+      lg: "1.625rem",
+    },
+    caption: "1rem",
+    helperText: "1rem",
+    code: "1.25rem",
+  },
+  lineHeight: {
+    xs: "0.85rem",
+    sm: "1.2rem",
+    md: "2rem",
+    lg: "3.4rem",
+    xl: "5rem",
+    xxl: "8.5rem",
+  },
+  fontFamily: {
+    one: "Rubik, sans-serif",
+    two: "Inter, sans-serif",
+    three: "JetBrains Mono",
+  },
   palette: {
-    main: {
-      one: "#0068B6FF",
-      two: "#00A1E0FF",
-      three: "#00a1e0",
-      four: "#d5f1ff",
-    },
-    dark: {
-      one: "#181818",
-      two: "#212121",
-      three: "#424242",
-      four: "#616161",
-    },
-    light: {
-      one: "#fafafa",
-      two: "#f2f2f2",
-      three: "#d9d9d9",
-      four: "#9e9e9e",
-      five: "#7f7f7f",
-    },
-    important: {
-      one: "#ff0000",
-      two: "#f44336",
-      three: "#ff5722",
-      four: "#fcae53",
-      five: "#ffc107",
-    },
-    info: {
-      one: "#00b300",
-      two: "#00c47b",
-      three: "#74b560",
-      four: "#598d82",
-      five: "#31b3e5",
-    },
+    ...colors,
   },
 };

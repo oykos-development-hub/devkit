@@ -1,20 +1,9 @@
-var __assign = (this && this.__assign) || function () {
-    __assign = Object.assign || function(t) {
-        for (var s, i = 1, n = arguments.length; i < n; i++) {
-            s = arguments[i];
-            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
-                t[p] = s[p];
-        }
-        return t;
-    };
-    return __assign.apply(this, arguments);
-};
 import React from "react";
 import { Loader } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 export default {
-    title: "Example/Loader",
+    title: "Components/Loader",
     component: Loader,
     argTypes: {
         variant: {
@@ -59,9 +48,9 @@ export default {
         },
     },
 };
-var Template = function (args) { return (React.createElement(StoryWrapper, null,
-    React.createElement(Loader, __assign({}, args)))); };
-export var VariantOneDefault = Template.bind({});
+const Template = (args) => (React.createElement(StoryWrapper, null,
+    React.createElement(Loader, Object.assign({}, args))));
+export const VariantOneDefault = Template.bind({});
 VariantOneDefault.args = {
     width: "100px",
     height: "100px",
@@ -69,12 +58,12 @@ VariantOneDefault.args = {
     primaryColor: "#b2a422",
     secondaryColor: "#7199aa",
 };
-export var VariantOneThemed = Template.bind({});
+export const VariantOneThemed = Template.bind({});
 VariantOneThemed.args = {
     testId: "VariantOneThemed",
     theme: Theme,
 };
-export var VariantTwoDefault = Template.bind({});
+export const VariantTwoDefault = Template.bind({});
 VariantTwoDefault.args = {
     variant: "two",
     width: "100px",
@@ -83,7 +72,7 @@ VariantTwoDefault.args = {
     primaryColor: "#b2a422",
     secondaryColor: "#7199aa",
 };
-export var VariantTwoThemed = Template.bind({});
+export const VariantTwoThemed = Template.bind({});
 VariantTwoThemed.args = {
     variant: "two",
     testId: "VariantTwoThemed",
