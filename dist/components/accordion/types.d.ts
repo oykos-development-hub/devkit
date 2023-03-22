@@ -1,8 +1,8 @@
-import { ReactElement, ReactSVGElement } from "react";
+import React, { ReactElement, ReactSVGElement } from "react";
 import { DefaultTheme } from "styled-components";
 export interface AccordionProps {
     width?: string;
-    variant: "standard" | "filled";
+    variant?: "standard" | "filled";
     collapsed?: boolean;
     title: string;
     contentText?: string;
@@ -15,4 +15,5 @@ export interface AccordionProps {
     backgroundColor?: string;
     hoverBackground?: string;
     collapsedColor?: string;
+    children?: React.ReactNode;
 }

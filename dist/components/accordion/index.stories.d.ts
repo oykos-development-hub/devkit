@@ -1,11 +1,11 @@
-import React from "react";
+/// <reference types="react" />
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { AccordionProps } from "./types";
-declare const _default: ComponentMeta<(props: AccordionProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
+declare const _default: ComponentMeta<({ variant, collapsed, scrollHeight, ...props }: AccordionProps) => JSX.Element>;
 export default _default;
-export declare const StandardDefault: ComponentStory<(props: AccordionProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const StandardTheme: ComponentStory<(props: AccordionProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const FilledDefault: ComponentStory<(props: AccordionProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const FilledThemed: ComponentStory<(props: AccordionProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const WithContentElement: ComponentStory<(props: AccordionProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const WithIconLeft: ComponentStory<(props: AccordionProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
+export declare const StandardDefault: ComponentStory<({ variant, collapsed, scrollHeight, ...props }: AccordionProps) => JSX.Element>;
+export declare const StandardTheme: ComponentStory<({ variant, collapsed, scrollHeight, ...props }: AccordionProps) => JSX.Element>;
+export declare const FilledDefault: ComponentStory<({ variant, collapsed, scrollHeight, ...props }: AccordionProps) => JSX.Element>;
+export declare const FilledThemed: ComponentStory<({ variant, collapsed, scrollHeight, ...props }: AccordionProps) => JSX.Element>;
+export declare const WithContentElement: ComponentStory<({ variant, collapsed, scrollHeight, ...props }: AccordionProps) => JSX.Element>;
+export declare const WithIconLeft: ComponentStory<({ variant, collapsed, scrollHeight, ...props }: AccordionProps) => JSX.Element>;
