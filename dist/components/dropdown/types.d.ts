@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { CSSProperties, DefaultTheme } from "styled-components";
 export type ValueType = {
-    value: string;
+    value: string | number;
     label: string;
 };
 export interface DropdownProps {
