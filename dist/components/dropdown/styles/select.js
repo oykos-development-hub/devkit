@@ -79,6 +79,7 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
       border: 1px solid ${gray100};
       margin-top: 0.5em;
       border-radius: ${theme.borderRadius.lg || "0.5rem"};
+      width: ${(style === null || style === void 0 ? void 0 : style.width) || "100%"};
     }
     .select__menu-list {
       margin: 0.5em 0;

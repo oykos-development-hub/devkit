@@ -84,6 +84,7 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
       border: 1px solid ${gray100};
       margin-top: 0.5em;
       border-radius: ${theme.borderRadius.lg || "0.5rem"};
+      width: ${style?.width || "100%"};
     }
     .select__menu-list {
       margin: 0.5em 0;
