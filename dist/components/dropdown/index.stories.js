@@ -70,7 +70,7 @@ export default {
     },
 };
 const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement("div", { style: { width: "400px" } },
+    React.createElement("div", { style: { width: "300px" } },
         React.createElement(Dropdown, Object.assign({}, args)))));
 export const DropdownDefault = Template.bind({});
 DropdownDefault.args = {
