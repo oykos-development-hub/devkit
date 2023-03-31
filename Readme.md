@@ -112,13 +112,13 @@ The `Badge` component is a versatile element that can be used to display notific
 
 The `Badge` component is a versatile element that can be used to display notifications, provide additional information, highlight content, and customize visual styles within an application. It has the following props:
 
-| Name      | Type                                                          | Default | Description                                                                 |
-|-----------|---------------------------------------------------------------|---------|-----------------------------------------------------------------------------|
-| items     | Array<{ name: string; to: string; icon?: ReactElement }>     |         | An array of objects representing the menu items.                            |
-| separator | ReactElement<any, string \| JSXElementConstructor<any>> \| null |         | A custom separator element to be rendered between menu items.               |
-| onClick   | ((e?: MouseEvent<HTMLAnchorElement, MouseEvent>) => any)     |         | A callback function to be called when a menu item is clicked.               |
-| theme     | DefaultTheme                                                  | object  | An object representing the custom theme to be applied to the menu component. |
-| style     | CSSProperties                                                 | object  | A system prop that allows defining additional CSS styles for the menu.      |
+| Name      | Type                                                         | Default | Description                                                                |
+|-----------|--------------------------------------------------------------|---------|----------------------------------------------------------------------------|
+| items     | Array<{ name: string; to: string; icon?: ReactElement }>    |         | An array of objects representing the menu items.                           |
+| separator | `ReactElement<any, string \| JSXElementConstructor<any>> \| null` |         | A custom separator element to be rendered between menu items.               |
+| onClick   | ((e?: MouseEvent<HTMLAnchorElement, MouseEvent>) => any)    |         | A callback function to be called when a menu item is clicked.              |
+| theme     | DefaultTheme                                                 | object  | An object representing the custom theme to be applied to the menu component. |
+| style     | CSSProperties                                                | object  | A system prop that allows defining additional CSS styles for the menu.     |
 
 
 #### Example usage:
