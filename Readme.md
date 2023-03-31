@@ -122,7 +122,7 @@ The `Badge` component is a versatile element that can be used to display notific
 
 
 #### Example usage:
-    import { Badge } from '@oykos-development/devkit-react-ts-styled-components';
+    import { Breadcrumbs } from '@oykos-development/devkit-react-ts-styled-components';
 
     function MyComponent() {
       const links = [  
@@ -236,27 +236,27 @@ The `Divider` component is a simple yet versatile UI element that can be used to
 
 A reusable `Dropdown` component allows you to create a customizable and flexible dropdown menu that can be used throughout your application. This component has the following props:
 
-| Name            | Type                       | Default                                                                 | Description                                                                             |
-|-----------------|----------------------------|-------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| options         | `Array<{value: string      | number, label: string}>`                                                |                                                                                         | Array of dropdown items.    |
-| defaultValue    | `Object<{value: string     | number, label: string}>`                                                |                                                                                         |The default value. Use when the component is not controlled.|
-| value           | `Object<{value: string     | number, label: string}>`                                                |                                                                                         |The value of the `input` element.|
-| label           | `string`                   || The short hint displayed in the `input` before the user enters a value. |
-| noOptionsText   | `string`                   | 'No options'                                                            | No items message displayed on menu.                                                     |
-| placeholder     | `string`                   || The short hint displayed in the `input` before the user enters a value. |
-| leftOptionIcon  | `ReactElement<any, string  | JSXElementConstructor<any>>`                                            |                                                                                         | The `icon` element rendered within the dropdown on left side. |
-| rightOptionIcon | `ReactElement<any, string  | JSXElementConstructor<any>>`                                            |                                                                                         | The `icon` element rendered within the dropdown on right side. |
-| controlIcon     | `ReactElement<any, string  | JSXElementConstructor<any>>`                                            |                                                                                         | The `icon` element rendered within the dropdown. |
-| menuIsOpen      | `boolean`                  |                                                                         | If `true`, menu is open.                                                                |
-| isMulti         | `boolean`                  | false                                                                   | If `true`, dropdown becomes multi select menu.                                          |
-| isSearchable    | `boolean`                  | false                                                                   | If `true`, you can search items from menu.                                              |
-| showArrow       | `boolean`                  | true                                                                    | If `false`, arrow icon is removed.                                                      |
-| isDisabled      | `boolean`                  | false                                                                   | If `true`, the component is disabled.                                                   |
-| onChange        | `((e: ValueType) => void)` |                                                                         | `onChange` event.                                                                       |
-| onBlur          | `() => void`               |                                                                         | `onBlur` event.                                                                         |
-| onFocus         | `() => void`               |                                                                         | `onFocus` event.                                                                        |
-| theme           | `DefaultTheme`             | object                                                                  | If applied, custom theme is used                                                        |
-| style           | `CSSProperties`            | object                                                                  | The system prop that allows defining system overrides as well as additional CSS styles. |
+| Name         | Type                               | Default  | Description                                                   |
+|--------------|------------------------------------|----------|---------------------------------------------------------------|
+| options      | `Array<{value: string | number, label: string}>`| | Array of dropdown items.    |
+| defaultValue | `Object<{value: string | number, label: string}>`| |The default value. Use when the component is not controlled.|
+| value | `Object<{value: string | number, label: string}>`| |The value of the `input` element.|
+| label| `string` || The short hint displayed in the `input` before the user enters a value.|
+| noOptionsText| `string` |'No options'| No items message displayed on menu.|
+| placeholder         | `string` || The short hint displayed in the `input` before the user enters a value.|
+| leftOptionIcon|`ReactElement<any, string | JSXElementConstructor<any>>`  | | The `icon` element rendered within the dropdown on left side. |
+| rightOptionIcon|`ReactElement<any, string | JSXElementConstructor<any>>`  | | The `icon` element rendered within the dropdown on right side. |
+| controlIcon|`ReactElement<any, string | JSXElementConstructor<any>>`  | | The `icon` element rendered within the dropdown. |
+| menuIsOpen      | `boolean`  |  | If `true`, menu is open.|
+| isMulti      | `boolean`  | false | If `true`, dropdown becomes multi select menu.|
+| isSearchable      | `boolean`  |false  | If `true`, you can search items from menu.|
+| showArrow      | `boolean`  |  true   | If `false`, arrow icon is removed.|
+| isDisabled      | `boolean`  |  false   | If `true`, the component is disabled.|
+| onChange      | `((e: ValueType) => void)` |  |  `onChange` event. |
+| onBlur| `() => void` |  |  `onBlur` event. |
+| onFocus| `() => void` |  |  `onFocus` event. |
+| theme        | `DefaultTheme`                       | object | If applied, custom theme is used                              |
+| style        | `CSSProperties`                      | object | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 #### Example usage:
     import { Dropdown } from '@oykos-development/devkit-react-ts-styled-components';
