@@ -1,0 +1,76 @@
+{
+  "name": "@oykos-development/devkit-react-ts-styled-components",
+  "version": "1.2.6",
+  "type": "module",
+  "description": "Devkit module for development of React + Typescript + StyledComponents projects, built with Storybook framework.",
+  "main": "./dist/index.js",
+  "types": "./dist/types.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/oykos-development-hub/devkit.git"
+  },
+  "author": "Oykos Development",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/oykos-development-hub/devkit/issues"
+  },
+  "homepage": "https://github.com/oykos-development-hub/devkit#readme",
+  "scripts": {
+    "vite": "vite",
+    "vite:build": "npm run ts:build && vite build",
+    "vite:dev": "vite preview",
+    "ts:build": "npx tsc -b",
+    "ts:declarations": "npx tsc --declaration",
+    "lint": "eslint ./src --ext .ts,.tsx",
+    "lint:fix": "eslint ./src --fix --ext .ts,.tsx",
+    "format": "npx prettier --write ./src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
+    "storybook:dev": "start-storybook -p 6006",
+    "storybook:production": "build-storybook -o ./storybook-docs",
+    "git:commit": "npm run ts:declarations && npm run lint:fix && npm run format",
+    "git:pull-request": "npm run production",
+    "production": "npm run git:commit && npm run storybook:production",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "polished": "^4.2.2",
+    "react": "^18.2.0",
+    "react-datepicker": "^4.10.0",
+    "react-dom": "^18.2.0",
+    "react-paginate": "^8.1.4",
+    "react-select": "^5.7.0",
+    "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.7",
+    "@storybook/addon-actions": "^6.5.15",
+    "@storybook/addon-essentials": "^6.5.15",
+    "@storybook/addon-interactions": "^6.5.15",
+    "@storybook/addon-links": "^6.5.15",
+    "@storybook/builder-vite": "^0.2.6",
+    "@storybook/react": "^6.5.15",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/react": "^18.0.26",
+    "@types/react-datepicker": "^4.8.0",
+    "@types/react-dom": "^18.0.9",
+    "@types/styled-components": "^5.1.26",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "@vitejs/plugin-react-swc": "^3.0.0",
+    "babel-loader": "^8.3.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.31.11",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.2",
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.3",
+    "vite": "^4.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run git:commit",
+      "pre-push": "npm run git:pull-request"
+    }
+  }
+}
