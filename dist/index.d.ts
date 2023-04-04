@@ -10,6 +10,14 @@ export declare const Dropdown: ({ options, theme, isDisabled, isSearchable, isMu
 export declare const Badge: import("react").FC<import("./types").BadgeProps>;
 export declare const Breadcrumbs: ({ theme, onClick, items, separator, style }: import("./types").BreadcrumbsProps) => JSX.Element;
 export declare const Tabs: ({ style, theme, tabs, onChange }: import("./types").TabsProps) => JSX.Element;
+export declare const Alert: import("react").FC<import("./components/alert/types").AlertProps>;
+export declare const FileUpload: import("react").FC<import("./components/file-upload/types").FileUploadProps>;
+export declare const Checkbox: import("react").FC<import("./components/checkbox/types").CheckboxProps>;
+export declare const Datepicker: import("react").FC<import("./components/datepicker/types").DatepickerTypes>;
+export declare const Divider: import("react").FC<import("./components/divider/types").DividerProps>;
+export declare const Modal: ({ theme, title, content, open, onClose, variant, style, }: import("./components/modal/types").ModalProps) => JSX.Element;
+export declare const Table: ({ theme, style, headerContent, bodyContent, titleElement, noDataMessage, }: import("./components/table/types").TableProps) => JSX.Element;
+export declare const Switch: import("react").FC<import("./components/switch/types").SwitchProps>;
 export * from "./components/button/styles";
 export * from "./components/icon";
 export * from "./types";
