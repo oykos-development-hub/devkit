@@ -17,34 +17,22 @@ npm install @oykos-development/devkit-react-ts-styled-components
 yarn add @oykos-development/devkit-react-ts-styled-components
 ```
 
-## Usage
-
-To use a some component from devkit, you can import it and render it in your project. This is an example:
-```jsx
-import { Typography } from '@oykos-development/devkit-react-ts-styled-components';
-
-function MyComponent() {
-  return (
-    <Typography content="Some content" variant="primary" size="md" />
-  );
-}
-```
 
 ## Alert
 
 The `Alert` component is a super cool component that can be used for notification purpose. It has the following props:
 
-| Name        | Type(s)                                      | Default   | Description                                                                             |
-|-------------|----------------------------------------------|-----------|-----------------------------------------------------------------------------------------|
-| content     | `ReactNode`                                  |           | The content of the component. Can be DOM element or string                              |
-| variant     | `'primary'` `'error'` `'success'` `'info'`   | 'success' | The variant to use. Default value is success                                            |
-| size        | `'sm'`  `'md'`  `'lg'`                       | `'md'`    | There are three variants to use.                                                        |
-| icon        | `ReactNode`, `Element`                       |           | DOM element                                                                             |
-| description | `ReactNode`                                  |           | Some description text aligned below the content                                         |
-| closeIcon   | `boolean`                                    | true      | If `false`, close icon is removed                                                       |
-| onClose     | `((e?: MouseEvent<any, MouseEvent>) => any)` |           | Callback fired when the component requests to be closed (closeIcon is clicked)          |
-| theme       | `DefaultTheme`                               | object    | If applied, custom theme is used                                                        |
-| style       | `CSSProperties`                              | object    | The system prop that allows defining system overrides as well as additional CSS styles. |
+| Name        | Type(s)                                    | Default   | Description                                                                             |
+|-------------|--------------------------------------------|-----------|-----------------------------------------------------------------------------------------|
+| content     | `ReactNode`                                |           | The content of the component. Can be DOM element or string                              |
+| variant     | `'primary'` `'error'` `'success'` `'info'` | 'success' | The variant to use. Default value is success                                            |
+| size        | `'sm'`  `'md'`  `'lg'`                     | `'md'`    | The size of the component.                                                              |
+| icon        | `JSX.Element` or `React.ReactNode`         |           | DOM element                                                                             |
+| description | `ReactNode`                                |           | Some description text aligned below the content                                         |
+| closeIcon   | `boolean`                                  | true      | If `false`, close icon is removed                                                       |
+| onClose     | `(e?: React.MouseEvent<any>) => any`       |           | Callback fired when the component requests to be closed (closeIcon is clicked)          |
+| theme       | `DefaultTheme`                             | object    | If applied, custom theme is used                                                        |
+| style       | `CSSProperties`                            | object    | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 
 
@@ -62,12 +50,12 @@ function MyComponent() {
 
 ## Avatar
 
-`Avatar` component are commonly used to show circular user profile pictures in applications, providing a visually appealing way to represent users. These avatars use images as their content, typically user profile pictures or object image which can represent actions, statuses, or objects in the user interface. It has the following props:
+`Avatar` component is commonly used to show circular user profile pictures in applications, providing a visually appealing way to represent users. These avatars use images as their content, typically user profile pictures or object image which can represent actions, statuses, or objects in the user interface. It has the following props:
 
 | Name           | Type(s)                            | Default | Description                                                                             |
 |----------------|------------------------------------|---------|-----------------------------------------------------------------------------------------|
-| name           | `ReactNode`                        |         | The display `name` of user in component. Can be DOM element or string.                  |
-| email          | `ReactNode`                        |         | The display `email` of user in component. Can be DOM element or string.                 |
+| name           | `ReactNode` or `string`            |         | The display `name` of user in component. Can be DOM element or string.                  |
+| email          | `ReactNode` or `string`            |         | The display `email` of user in component. Can be DOM element or string.                 |
 | size           | `'xs'` `'sm'` `'md'` `'lg'` `'xl'` | 'xl'    | The size of the component.                                                              |
 | src            | `string`                           |         | The  `src`  attribute for the  `img`  element.                                          |
 | alt            | `string`                           |         | The  `alt`  attribute for the  `img`  element.                                          |
@@ -97,7 +85,7 @@ The `Badge` component is a versatile element that can be used to display notific
 
 | Name    | Type(s)                                                              | Default   | Description                                                                             |
 |---------|----------------------------------------------------------------------|-----------|-----------------------------------------------------------------------------------------|
-| content | `ReactNode`                                                          |           | The content rendered within the badge.                                                  |
+| content | `ReactNode` or `string`                                              |           | The content rendered within the badge.                                                  |
 | variant | `'primary'` `'error'` `'success'` `'info'` `'warning'` `'secondary'` | 'primary' | The variant to use.                                                                     |
 | size    | `'sm'` `'md'` `'lg'`                                                 | 'md'      | The size of the component.                                                              |
 | theme   | `DefaultTheme`                                                       | object    | If applied, custom theme is used                                                        |
@@ -117,30 +105,40 @@ function MyComponent() {
 
 ## Breadcrumbs
 
-The `Badge` component is a versatile element that can be used to display notifications, provide additional information, highlight content, and customize visual styles within an application. It has the following props:
+The `Breadcrumbs` component that helps users visualize a page's location within the hierarchical structure of a website or web application.
 
-| Name      | Type(s)                                                    | Default | Description                                                                             |
-|-----------|------------------------------------------------------------|---------|-----------------------------------------------------------------------------------------|
-| items     | `Array<{name: string, to: string, icon?: ReactElement}>`   |         | Array of items.                                                                         |
-| separator | `ReactElement<any, string or JSXElementConstructor<any>>`  |         | Custom separator element.                                                               |
-| onClick   | `((e?: MouseEvent<HTMLAnchorElement, MouseEvent>) => any)` |         | `onClick` event.                                                                        |
-| theme     | `DefaultTheme`                                             | object  | If applied, custom theme is used.                                                       |
-| style     | `CSSProperties`                                            | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
+```typescript
+interface Item {
+  name: string;
+  to: string;
+  icon?: ReactElement;
+}
+```
+
+This component has the following props:
+
+| Name      | Type(s)                                      | Default | Description                                                                             |
+|-----------|----------------------------------------------|---------|-----------------------------------------------------------------------------------------|
+| items     | `Item[]`                                     |         | Array of items.                                                                         |
+| separator | `ReactElement`                               |         | Custom separator element.                                                               |
+| onClick   | `(e?: MouseEvent<HTMLAnchorElement>) => any` |         | `onClick` event.                                                                        |
+| theme     | `DefaultTheme`                               | object  | If applied, custom theme is used.                                                       |
+| style     | `CSSProperties`                              | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 #### Example usage:
 ```jsx
 import { Breadcrumbs } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
-  
-  const links = [  
-    { name: "link1", to: "" },  
-    { name: "link2", to: "" },  
-    { name: "link3", to: "" },  
-    { name: "link4", to: "" },  
-    { name: "link5", to: "" },  
+
+  const links = [
+    { name: "link1", to: "" },
+    { name: "link2", to: "" },
+    { name: "link3", to: "" },
+    { name: "link4", to: "" },
+    { name: "link5", to: "" },
   ];
-        
+
   return (
     <Breadcumbs items={links} separator={<span>&gt;</span>} />
   );
@@ -151,16 +149,16 @@ function MyComponent() {
 
 The `Button` is a reusable component with customizable properties, making it easier to maintain a consistent look and feel across your application. Also you can pass event handlers, attributes, and styles through props. This component has the following props:
 
-| Name          | Type(s)                                                     | Default   | Description                                                                             |
-|---------------|-------------------------------------------------------------|-----------|-----------------------------------------------------------------------------------------|
-| content       | `ReactNode`                                                 |           | The content rendered within the button.                                                 |
-| variant       | `'primary'` `'secondary'` `'tertiary'`                      | 'primary' | The variant to use.                                                                     |
-| size          | `'xs'` `'sm'` `'md'` `'lg'` `'xl'`                          | 'lg'      | The size of the component.                                                              |
-| onClick       | `((e?: MouseEvent<HTMLButtonElement, MouseEvent>) => void)` |           | `onClick` event.                                                                        |
-| customContent | `ReactNode`                                                 |           | If is set, ****content**** will be overwritten.                                         |
-| disabled      | `boolean`                                                   | false     | If `true`, the component is disabled.                                                   |
-| theme         | `DefaultTheme`                                              | object    | If applied, custom theme is used                                                        |
-| style         | `CSSProperties`                                             | object    | The system prop that allows defining system overrides as well as additional CSS styles. |
+| Name          | Type(s)                                       | Default   | Description                                                                             |
+|---------------|-----------------------------------------------|-----------|-----------------------------------------------------------------------------------------|
+| content       | `ReactNode` or `string`                       |           | The `content` rendered within the button.                                               |
+| variant       | `'primary'` `'secondary'` `'tertiary'`        | 'primary' | The variant to use.                                                                     |
+| size          | `'xs'` `'sm'` `'md'` `'lg'` `'xl'`            | 'lg'      | The size of the component.                                                              |
+| onClick       | `(e?: MouseEvent<HTMLButtonElement>) => void` |           | `onClick` event.                                                                        |
+| customContent | `ReactNode` or `string`                       |           | If is set, ****content**** will be overwritten.                                         |
+| disabled      | `boolean`                                     | false     | If `true`, the component is disabled.                                                   |
+| theme         | `DefaultTheme`                                | object    | If applied, custom theme is used                                                        |
+| style         | `CSSProperties`                               | object    | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 
 #### Example usage:
@@ -212,10 +210,10 @@ A simple and reusable `Datepicker` component for React. In this table will be sh
 | theme      | `DefaultTheme`                                              | object  | If applied, custom theme is used                                                        |
 | style      | `CSSProperties`                                             | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
 
->Note: This component is essentially 'react-datepicker' module, but additionaly customized and optimized for our devkit. If you want to explore the other features(props, events etc.) go [here](https://github.com/Hacker0x01/react-datepicker).
+>Note: This component is essentially 'react-datepicker' module, but additionally customized and optimized for our devkit. If you want to explore the other features(props, events etc.) go [here](https://github.com/Hacker0x01/react-datepicker).
 
 #### Example usage:
-```jsx
+```typescript jsx
 import { Checkbox } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -238,7 +236,7 @@ The `Divider` component is a simple yet versatile UI element that can be used to
 | style  | `CSSProperties` | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 #### Example usage:
-```jsx
+```typescript jsx
 import { Divider } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -251,29 +249,35 @@ function MyComponent() {
 
 ## Dropdown
 
-A reusable `Dropdown` component allows you to create a customizable and flexible dropdown menu that can be used throughout your application. This component has the following props:
+A reusable `Dropdown` component allows you to create a customizable and flexible dropdown menu that can be used throughout your application. 
 
-| Name            | Type(s)                                                   | Default | Description                                                                             |
-|-----------------|-----------------------------------------------------------|---------|-----------------------------------------------------------------------------------------|
-| options         | `Array<{ value: string or number; label: string }>`       |         | Array of dropdown items.                                                                |
-| defaultValue    | `Object<{ value: string or number; label: string }>`      |         | The default value. Use when the component is not controlled.                            |
-| value           | `Object<{ value: string or number; label: string }>`      |         | The value of the `input` element.                                                       |
-| label           | `string`                                                  |         | The text displayed above the `input`.                                                   |
-| noOptionsText   | `string`                                                  |         | No items message displayed on menu.                                                     |
-| placeholder     | `string`                                                  |         | The short hint displayed in the `input` before the user enters a value.                 |
-| leftOptionIcon  | `ReactElement<any, string or JSXElementConstructor<any>>` |         | The `icon` element rendered within the dropdown on left side.                           |
-| rightOptionIcon | `ReactElement<any, string or JSXElementConstructor<any>>` |         | The icon element rendered within the dropdown on the right side.                        |
-| controlIcon     | `ReactElement<any, string or JSXElementConstructor<any>>` |         | The icon element rendered within the dropdown.                                          |
-| menuIsOpen      | `boolean`                                                 |         | If true, menu is open.                                                                  |
-| isMulti         | `boolean`                                                 | false   | If true, dropdown becomes a multi-select menu.                                          |
-| isSearchable    | `boolean`                                                 | false   | If true, you can search items from the menu.                                            |
-| showArrow       | `boolean`                                                 | true    | If false, arrow icon is removed.                                                        |
-| isDisabled      | `boolean`                                                 | false   | If true, the component is disabled.                                                     |
-| onChange        | `(e: ValueType) => void`                                  |         | onChange event.                                                                         |
-| onBlur          | `() => void`                                              |         | onBlur event.                                                                           |
-| onFocus         | `() => void`                                              |         | onFocus event.                                                                          |
-| theme           | `DefaultTheme`                                            | object  | If applied, custom theme is used.                                                       |
-| style           | `CSSProperties`                                           | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
+```typescript jsx
+type ValueType = { value: string | number; label: string };
+```
+
+This component has the following props:
+
+| Name            | Type(s)                  | Default | Description                                                                             |
+|-----------------|--------------------------|---------|-----------------------------------------------------------------------------------------|
+| options         | `ValueType[]`            |         | Array of dropdown items.                                                                |
+| defaultValue    | `ValueType`              |         | The default value. Use when the component is not controlled.                            |
+| value           | `ValueType`              |         | The value of the `input` element.                                                       |
+| label           | `string`                 |         | The text displayed above the `input`.                                                   |
+| noOptionsText   | `string`                 |         | No items message displayed on menu.                                                     |
+| placeholder     | `string`                 |         | The short hint displayed in the `input` before the user enters a value.                 |
+| leftOptionIcon  | `ReactElement`           |         | The `icon` element rendered within the dropdown on left side.                           |
+| rightOptionIcon | `ReactElement`           |         | The icon element rendered within the dropdown on the right side.                        |
+| controlIcon     | `ReactElement`           |         | The icon element rendered within the dropdown.                                          |
+| menuIsOpen      | `boolean`                |         | If true, menu is open.                                                                  |
+| isMulti         | `boolean`                | false   | If true, dropdown becomes a multi-select menu.                                          |
+| isSearchable    | `boolean`                | false   | If true, you can search items from the menu.                                            |
+| showArrow       | `boolean`                | true    | If false, arrow icon is removed.                                                        |
+| isDisabled      | `boolean`                | false   | If true, the component is disabled.                                                     |
+| onChange        | `(e: ValueType) => void` |         | onChange event.                                                                         |
+| onBlur          | `() => void`             |         | onBlur event.                                                                           |
+| onFocus         | `() => void`             |         | onFocus event.                                                                          |
+| theme           | `DefaultTheme`           | object  | If applied, custom theme is used.                                                       |
+| style           | `CSSProperties`          | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 
 #### Example usage:
@@ -281,8 +285,11 @@ A reusable `Dropdown` component allows you to create a customizable and flexible
 import { Dropdown, CircleCheckIcon } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
+  
+  const icon = <CircleCheckIcon fill="grey" size="24px" />;
+  
   return (
-    <Dropdown label="Dropdown label" leftOptionIcon={<CircleCheckIcon fill="grey" size="24px" />} controlIcon={<CircleCheckIcon fill="grey" size="24px" />} placeholder="Select item" />
+    <Dropdown label="Dropdown label" leftOptionIcon={icon} controlIcon={icon} placeholder="Select item" />
   );
 }
 ```
@@ -292,18 +299,18 @@ function MyComponent() {
 
 `FileUpload` component allows you to create a customizable and flexible file upload feature that can be used throughout your application. This component has the following props:
 
-| Name          | Type(s)                                                              | Default   | Description                                                                                |
-|---------------|----------------------------------------------------------------------|-----------|--------------------------------------------------------------------------------------------|
-| variant       | `'primary'` `'secondary'`                                            | 'primary' | The variant to use.                                                                        |
-| multiple      | `boolean`                                                            | false     | If `true`, you can select multiple files.                                                  |
-| note          | `ReactNode` `Element`                                                |           | The `note` is content on drop zone. ****Example:**** "Select a file or drag and drop here" |
-| hint          | `ReactNode` `Element`                                                |           | The `hint` is content on drop zone positioned below the `note`.                            |
-| onUpload      | `(files: FileList) => void`                                          |           | `onUpload` event.                                                                          |
-| customContent | `ReactNode` `Element`                                                |           | Custom content of drop zone.                                                               |
-| buttonVariant | `'primary'` `'secondary'` `'tertiary'`                               |           | `Button` variant to use.                                                                   |
-| icon          | `Element or ReactElement<any, string or JSXElementConstructor<any>>` |           | DOM element                                                                                |
-| theme         | `DefaultTheme`                                                       | object    | If applied, custom theme is used                                                           |
-| style         | `CSSProperties`                                                      | object    | The system prop that allows defining system overrides as well as additional CSS styles.    |
+| Name          | Type(s)                                  | Default   | Description                                                                                |
+|---------------|------------------------------------------|-----------|--------------------------------------------------------------------------------------------|
+| variant       | `'primary'` `'secondary'`                | 'primary' | The variant to use.                                                                        |
+| multiple      | `boolean`                                | false     | If `true`, you can select multiple files.                                                  |
+| note          | `ReactNode` or `JSX.Element` or `string` |           | The `note` is content on drop zone. ****Example:**** "Select a file or drag and drop here" |
+| hint          | `ReactNode` or `JSX.Element` or `string` |           | The `hint` is content on drop zone positioned below the `note`.                            |
+| onUpload      | `(files: FileList) => void`              |           | `onUpload` event.                                                                          |
+| customContent | `ReactNode` or `JSX.Element` or `string` |           | Custom content of drop zone.                                                               |
+| buttonVariant | `'primary'` `'secondary'` `'tertiary'`   |           | `Button` variant to use.                                                                   |
+| icon          | `JSX.Element` or `ReactElement`          |           | DOM element                                                                                |
+| theme         | `DefaultTheme`                           | object    | If applied, custom theme is used                                                           |
+| style         | `CSSProperties`                          | object    | The system prop that allows defining system overrides as well as additional CSS styles.    |
 
 
 #### Example usage:
@@ -315,7 +322,7 @@ function MyComponent() {
   const onFileUpload = (acceptedFiles) => {
     console.log("File(s) uploaded:", acceptedFiles);
   };
-  
+
   return (
     <FileUpload onUpload={onFileUpload} note="Select a file or drag and drop here" hint="JPG, PNG or PDF, file size no more than 10MB" />
   );
@@ -343,8 +350,8 @@ Standardized `icons` exported as React components. This component has the follow
 ```jsx
 import { ChevronUpIcon } from '@oykos-development/devkit-react-ts-styled-components';
 
-function MyComponent() {  
-  
+function MyComponent() {
+
   return (
     <ChevronUpIcon width="100px" height="100px" />
   );
@@ -365,8 +372,8 @@ This component streamlines the implementation of various input types, styles, ev
 | hint         | `string`                                                            |         | Message below the `input` field.                                                        |
 | id           | `string`                                                            |         | The id of the `input` element.                                                          |
 | type         | `string`                                                            |         | Type of the `input` element.                                                            |
-| leftContent  | `ReactElement<any, string or JSXElementConstructor<any>>`           |         | The `content` rendered within the dropdown on left side.                                |
-| rightContent | `ReactElement<any, string or JSXElementConstructor<any>>`           |         | The `content` rendered within the dropdown on right side.                               |
+| leftContent  | `ReactElement`                                                      |         | The `content` rendered within the dropdown on left side.                                |
+| rightContent | `ReactElement`                                                      |         | The `content` rendered within the dropdown on right side.                               |
 | textarea     | `boolean`                                                           | false   | If true, the `input` is transforming to textarea.                                       |
 | disabled     | `boolean`                                                           | false   | If true, the component is disabled.                                                     |
 | inputRef     | `Ref<HTMLInputElement>`                                             |         | Pass a ref to the `input` element.                                                      |
@@ -375,15 +382,15 @@ This component streamlines the implementation of various input types, styles, ev
 | rows         | `number'`                                                           |         | Number of rows to display when **textarea** option is set to true.                      |
 | cols         | `number'`                                                           |         | Number of cols to display when **textarea** option is set to true.                      |
 | pattern      | `string'`                                                           |         |                                                                                         |
-| onChange     | `ChangeEventHandler<any>`                                           |         | onChange event.                                                                         |
-| onBlur       | `FocusEventHandler<Element>`                                        |         | onBlur event.                                                                           |
-| onFocus      | `FocusEventHandler<Element>`                                        |         | onFocus event.                                                                          |
+| onChange     | `ChangeEventHandler<any>`                                           |         | `onChange` event.                                                                       |
+| onBlur       | `FocusEventHandler`                                                 |         | `onBlur` event.                                                                         |
+| onFocus      | `FocusEventHandler`                                                 |         | `onFocus` event.                                                                        |
 | theme        | `DefaultTheme`                                                      | object  | If applied, custom theme is used.                                                       |
 | style        | `CSSProperties`                                                     | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 
 #### Example usage:
-```jsx
+```typescript jsx
 import { Input } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -397,18 +404,19 @@ function MyComponent() {
 
 This component is additional kind of badge component. It has the following props:
 
-| Name         | Type(s)                                       | Default   | Description                                                                             |
-|--------------|-----------------------------------------------|-----------|-----------------------------------------------------------------------------------------|
-| content      | `ReactNode`                                   |           | The content rendered within the leading badge.                                          |
-| badgeContent | `ReactNode`                                   |           | The badge content rendered within the badge.                                            |
-| variant      | `'primary'` `'error'` `'success'` `'warning'` | 'primary' | The variant to use.                                                                     |
-| size         | `'md'` `'lg'`                          | 'md'      | The size of the component.                                                              |
-| theme        | `DefaultTheme`                                | object    | If applied, custom theme is used                                                        |
-| style        | `CSSProperties`                               | object    | The system prop that allows defining system overrides as well as additional CSS styles. |
+| Name              | Type(s)                                       | Default   | Description                                                                             |
+|-------------------|-----------------------------------------------|-----------|-----------------------------------------------------------------------------------------|
+| content           | `ReactNode` or `string`                       |           | The content rendered within the leading badge.                                          |
+| badgeContent      | `ReactNode` or `string`                       |           | The badge content rendered within the badge.                                            |
+| variant           | `'primary'` `'error'` `'success'` `'warning'` | 'primary' | The variant to use.                                                                     |
+| leadingBadgeTheme | `'medium'` `'dark'` `'light'`                 | 'light'   | The theme variant to use.                                                               |
+| size              | `'md'` `'lg'`                                 | 'md'      | The size of the component.                                                              |
+| theme             | `DefaultTheme`                                | object    | If applied, custom theme is used                                                        |
+| style             | `CSSProperties`                               | object    | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 
 #### Example usage:
-```jsx
+```typescript jsx
 import { LeadingBadge } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -436,7 +444,7 @@ function MyComponent() {
 
 
 #### Example usage:
-```jsx
+```typescript jsx
 import { Loader } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -451,34 +459,34 @@ function MyComponent() {
 
 `Modal` component is a self-contained, customizable, and reusable piece of devkit that can be used to display information or require user interaction. It has the following props:
 
-| Name    | Type(s)                                                             | Default | Description                                                                             |
-|---------|---------------------------------------------------------------------|---------|-----------------------------------------------------------------------------------------|
-| variant | `'light'` `'dark'`                                                  | 'light' | The variant to use.                                                                     |
-| title   | `string`                                                            |         | Modal title.                                                                            |
-| content | `string or ReactElement<any, string or JSXElementConstructor<any>>` |         | The content rendered within the modal.                                                  |
-| open    | `boolean`                                                           |         | If true, the component will be shown.                                                   |
-| onClose | `any`                                                               |         | onClose event.                                                                          |
-| theme   | `DefaultTheme`                                                      | object  | If applied, custom theme is used.                                                       |
-| style   | `CSSProperties`                                                     | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
+| Name    | Type(s)                    | Default | Description                                                                             |
+|---------|----------------------------|---------|-----------------------------------------------------------------------------------------|
+| variant | `'light'` `'dark'`         | 'light' | The variant to use.                                                                     |
+| title   | `string`                   |         | Modal title.                                                                            |
+| content | `string` or `ReactElement` |         | The `content` rendered within the modal.                                                |
+| open    | `boolean`                  |         | If `true`, the component will be shown.                                                   |
+| onClose | `any`                      |         | `onClose` event.                                                                        |
+| theme   | `DefaultTheme`             | object  | If applied, custom theme is used.                                                       |
+| style   | `CSSProperties`            | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 #### Example usage:
-```jsx
+```typescript jsx
 import { Modal, Typography } from '@oykos-development/devkit-react-ts-styled-components';
 
 const customContent = (
-    <>
-      <div style={{ padding: "2em 0.5em", width: "300px" }}>
-        <Typography content="This is modal content." variant="bodyLarge" />
+  <>
+    <div style={{ padding: "2em 0.5em", width: "300px" }}>
+      <Typography content="This is modal content." variant="bodyLarge" />
+    </div>
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <Typography content="This is footer text." variant="bodyMedium" />
+      <div style={{ display: "flex", gap: "0.5em" }}>
+        <button>Ok</button>
+        <button>Cancel</button>
       </div>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <Typography content="This is footer text." variant="bodyMedium" />
-        <div style={{ display: "flex", gap: "0.5em" }}>
-          <button>Ok</button>
-          <button>Cancel</button>
-        </div>
-      </div>
-    </>
-  );
+    </div>
+  </>
+);
 
 function MyComponent() {
   return (
@@ -493,25 +501,25 @@ function MyComponent() {
 
 A good reusable pagination component should allow users to navigate between pages easily, either by going to the next or previous page or jumping to a specific page. It has the following props:
 
-| Name                 | Type(s)                                                             | Default  | Description                                                                             |
-|----------------------|---------------------------------------------------------------------|----------|-----------------------------------------------------------------------------------------|
-| variant              | `'dotted'` `'filled'` `'outlined'` `'underlined'`                   | 'filled' | The variant to use.                                                                     |
-| itemsPerPage         | `number`                                                            |          | The total items per pages.                                                              |
-| pageCount            | `number`                                                            |          | The total number of pages.                                                              |
-| pageRangeDisplayed   | `number`                                                            | 3        |                                                                                         |
-| displayPages         | `boolean`                                                           | true     |                                                                                         |
-| marginPagesDisplayed | `number`                                                            | 3        |                                                                                         |
-| previousLabel        | `string or ReactElement<any, string or JSXElementConstructor<any>>` |          | The previous label content rendered within the component.                               |
-| nextLabel            | `string or ReactElement<any, string or JSXElementConstructor<any>>` |          | The next label content rendered within the component.                                   |
-| fullWidth            | `boolean`                                                           | true     | If true component width will be 100%.                                                   |
-| renderPaginationText | `((selected: number, total: number) => string)`                     |          | Render the pagination text.                                                             |
-| onChange             | `(page: number) => void`                                            |          | onChange event.                                                                         |
-| theme                | `DefaultTheme`                                                      | object   | If applied, custom theme is used.                                                       |
-| style                | `CSSProperties`                                                     | object   | The system prop that allows defining system overrides as well as additional CSS styles. |
+| Name                 | Type(s)                                           | Default  | Description                                                                             |
+|----------------------|---------------------------------------------------|----------|-----------------------------------------------------------------------------------------|
+| variant              | `'dotted'` `'filled'` `'outlined'` `'underlined'` | 'filled' | The variant to use.                                                                     |
+| itemsPerPage         | `number`                                          |          | The total items per pages.                                                              |
+| pageCount            | `number`                                          |          | The total number of pages.                                                              |
+| pageRangeDisplayed   | `number`                                          | 3        |                                                                                         |
+| displayPages         | `boolean`                                         | true     |                                                                                         |
+| marginPagesDisplayed | `number`                                          | 3        |                                                                                         |
+| previousLabel        | `string` or `ReactElement`                        |          | The previous label content rendered within the component.                               |
+| nextLabel            | `string` or `ReactElement`                        |          | The next label content rendered within the component.                                   |
+| fullWidth            | `boolean`                                         | true     | If true component width will be 100%.                                                   |
+| renderPaginationText | `((selected: number, total: number) => string)`   |          | Render the pagination text.                                                             |
+| onChange             | `(page: number) => void`                          |          | `onChange` event.                                                                       |
+| theme                | `DefaultTheme`                                    | object   | If applied, custom theme is used.                                                       |
+| style                | `CSSProperties`                                   | object   | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 
 #### Example usage:
-```jsx
+```typescript jsx
 import { Pagination } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -538,21 +546,21 @@ function MyComponent() {
       />
     </svg>
   );
-  
+
   const customPreviousLabel = (
     <p style={{ display: "flex", alignItems: "center", gap: "0.5em", margin: 0 }}>
       {leftIcon}
       Previous
     </p>
   );
-  
+
   const customNextLabel = (
     <p style={{ display: "flex", alignItems: "center", gap: "0.5em", margin: 0 }}>
       {rightIcon}
       Next
     </p>
   );
-  
+
   return (
     <Pagination itemsPerPage={4} pageRangeDisplayed={3} previousLabel={customPreviousLabel} nextLabel={customNextLabel} />
   );
@@ -565,15 +573,15 @@ function MyComponent() {
 
 A user interface component that is specifically designed to handle input of PIN (Personal Identification Number) or OTP (One-Time Password) codes. It has the following props:
 
-| Name        | Type(s)                   | Default    | Description              |
-|-------------|---------------------------|------------|--------------------------|
-| type        | `'numeric'` `'password'`  | 'password' | The input type to use.   |
-| handleInput | `(value: string) => void` |            | Handle `input` function. |
-| length      | `number`                  | 4          | A length of characters.  |
+| Name        | Type(s)                   | Default    | Description             |
+|-------------|---------------------------|------------|-------------------------|
+| type        | `'numeric'` `'password'`  | 'password' | The input type to use.  |
+| handleInput | `(value: string) => void` |            | Handle input function.  |
+| length      | `number`                  | 4          | A length of characters. |
 
 
 #### Example usage:
-```jsx
+```typescript jsx
 import { Pin } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -589,25 +597,211 @@ function MyComponent() {
 
 This component allows to manage radio button inputs, enabling users to make single-option selections from a list. It has the following props:
 
-| Name            | Type(s)         | Default | Description                                                                             |
-|-----------------|-----------------|---------|-----------------------------------------------------------------------------------------|
-| variant         | `'one'` `'two'` |         | The variant to use.                                                                     |
-| width           | `string`        |         | The width of the primary circle spinner.                                                |
-| height          | `string`        |         | The height of the primary circle spinner.                                               |
-| primaryColor    | `string`        |         | The primary color of the component.                                                     |
-| secondaryColor  | `string`        |         | The secondary color of the component.                                                   |
-| primaryWidth    | `string`        |         | The width of the secondary circle spinner.                                              |
-| secondaryHeight | `string`        |         | The height of the secondary circle spinner.                                             |
-| theme           | `DefaultTheme`  | object  | If applied, custom theme is used.                                                       |
-
+| Name     | Type(s)                                                | Default | Description                                                                             |
+|----------|--------------------------------------------------------|---------|-----------------------------------------------------------------------------------------|
+| size     | `'sm'` `'md'`                                          | 'sm'    | The size of the component.                                                              |
+| onClick  | `(event: MouseEvent<HTMLElement, MouseEvent>) => void` |         | `onClick` event.                                                                        |
+| disabled | `boolean`                                              | false   | If true, the component is disabled.                                                     |
+| theme    | `DefaultTheme`                                         | object  | If applied, custom theme is used.                                                       |
+| style    | `CSSProperties`                                        | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 #### Example usage:
-```jsx
+```typescript jsx
 import { Radio } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
   return (
-    <Loader variant="one" width="100px" height="100px" primaryColor="#b2a422" secondaryColor="#7199aa" />
+    <Radio size="md" />
+  );
+}
+```
+
+
+## Switch
+
+Component that enables toggling between two states, such as on and off. It has the following props:
+
+| Name     | Type(s)                                        | Default | Description                                                                             |
+|----------|------------------------------------------------|---------|-----------------------------------------------------------------------------------------|
+| size     | `'sm'` `'md'`                                  | 'md'    | The size of the component.                                                              |
+| content  | `ReactNode` or `string`                        |         | The `content` rendered within the switch button.                                        |
+| onChange | `((e: ChangeEvent<HTMLInputElement>) => void)` |         | `onChange` event.                                                                       |
+| disabled | `boolean`                                      | false   | If `true`, the component is disabled.                                                   |
+| theme    | `DefaultTheme`                                 | object  | If applied, custom theme is used.                                                       |
+| style    | `CSSProperties`                                | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
+
+#### Example usage:
+```typescript jsx
+import { Switch, Typography } from '@oykos-development/devkit-react-ts-styled-components';
+
+function MyComponent() {  
+  
+  const customText = <Typography content={"Remember me"} style={{ marginLeft: "0.7rem" }} />;
+  
+  return (
+    <Switch content={customText} />
+  );
+}
+```
+
+
+## Table
+
+Component designed to display data in a tabular format, making it easy for users to scan and find patterns or insights. It has the following props:
+
+| Name          | Type(s)                          | Default | Description                                                                             |
+|---------------|----------------------------------|---------|-----------------------------------------------------------------------------------------|
+| titleElement  | `ReactElement`                   |         | The `titleElement` rendered within the table.                                           |
+| headerContent | `JSX.Element` or `JSX.Element[]` |         | The `headerContent` rendered within the table.                                          |
+| bodyContent   | `JSX.Element` or `JSX.Element[]` |         | The `bodyContent` rendered within the table.                                            |
+| noDataMessage | `string`                         |         | Custom message if there is no data in table.                                            |
+| theme         | `DefaultTheme`                   | object  | If applied, custom theme is used.                                                       |
+| style         | `CSSProperties`                  | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
+
+#### Example usage:
+```typescript jsx
+import { Table, CircleCheckIcon } from '@oykos-development/devkit-react-ts-styled-components';
+
+function MyComponent() {
+
+  const tableHeadings = ["City", "Code", "Latitude", "Longitude"];
+
+  const tableData = [
+    { city: "London", code: "UK", latitude: 51.5285578, longitude: -0.2420242 },
+    { city: "Manchester", code: "UK", latitude: 53.4722249, longitude: -2.2936739 },
+  ];
+
+  const titleElement = (
+    <div>
+      <h3 style={{ margin: 0, marginBottom: "0.25em" }}>This is table title</h3>
+      <p style={{ margin: 0 }}>Additional content...</p>
+    </div>
+  );
+
+  const headerContent = (
+    <tr>
+      {tableHeadings.map((heading, index) => (
+        <th key={index}>
+          <div>
+            <span>{heading}</span>
+            <CircleCheckIcon size="1em" onClick={() => alert("Icon is clicked")} style={{ cursor: "pointer" }} />
+          </div>
+        </th>
+      ))}
+    </tr>
+  );
+
+  const bodyContent = tableData.map((data, index) => (
+    <tr key={index}>
+      <td>{data.city}</td>
+      <td>{data.code}</td>
+      <td>{data.latitude}</td>
+      <td>{data.longitude}</td>
+    </tr>
+  ));
+  
+  return (
+    <Table titleElement={titleElement} headerContent={headerContent} bodyContent={bodyContent} />
+  );
+}
+```
+
+
+
+## Tabs
+
+Component designed to break up complex interfaces into manageable subsections, allowing users to quickly switch between different categories of content.
+
+```typescript jsx
+interface Tab {
+  id: number | string;
+  title: string;
+  disabled?: boolean;
+}
+```
+
+This component has the following props:
+
+| Name     | Type(s)                | Default | Description                                                                             |
+|----------|------------------------|---------|-----------------------------------------------------------------------------------------|
+| tabs     | `Tab[]`                |         | Array of dropdown items.                                                                |
+| onChange | `((tab: Tab) => void)` |         | `onChange` event.                                                                         |
+| theme    | `DefaultTheme`         | object  | If applied, custom theme is used.                                                       |
+| style    | `CSSProperties`        | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
+
+#### Example usage:
+```typescript jsx
+import { Tabs } from '@oykos-development/devkit-react-ts-styled-components';
+
+function MyComponent() {
+
+  const tabsArr = [
+    { id: 1, title: "Tab 1" },
+    { id: 2, title: "Tab 2" },
+    { id: 3, title: "Tab 3" },
+    { id: 4, title: "Tab 4" },
+  ];
+  
+  return (
+    <Tabs tabs={tabsArr} />
+  );
+}
+```
+
+
+
+## Tooltip
+
+Component that displays informative text when users hover over, focus on, or tap an element. It has the following props:
+
+| Name     | Type(s)                                                        | Default    | Description                                                                             |
+|----------|----------------------------------------------------------------|------------|-----------------------------------------------------------------------------------------|
+| content  | `string` or `ReactElement`                                     |            | The `content` rendered within the tooltip.                                              |
+| variant  | `'standard'` `'filled'`                                        | 'standard' | The tooltip variant to use.                                                             |
+| position | `'bottom'` `'left'` `'right'` `'top'` `'topLeft'` `'topRight'` |            | Tooltip placement.                                                                      |
+| title    | `string`                                                       |            | Tooltip title.                                                                          |
+| arrow    | `boolean`                                                      |            | If true, adds an arrow to the tooltip.                                                  |
+| theme    | `DefaultTheme`                                                 | object     | If applied, custom theme is used.                                                       |
+| style    | `CSSProperties`                                                | object     | The system prop that allows defining system overrides as well as additional CSS styles. |
+
+#### Example usage:
+```typescript jsx
+import { Tooltip } from '@oykos-development/devkit-react-ts-styled-components';
+
+function MyComponent() {
+
+ const customTitle = "Tooltip title";
+ const customContent = "This is a tooltip";
+  
+  return (
+    <Tooltip title={customTitle} content={customContent}>
+      <span>Hover over me!</span>
+    </Tooltip>
+  );
+}
+```
+
+
+
+## Typography
+
+Component that helps present design and content as clearly and efficiently as possible by providing a consistent set of text styles and sizes across the application. It has the following props:
+
+| Name    | Type(s)                                                                                                                                                             | Default      | Description                                                                             |
+|---------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------|-----------------------------------------------------------------------------------------|
+| content | `ReactNode` or `string`                                                                                                                                             |              | The `content` rendered within the typography.                                           |
+| variant | `'h1'` `'h2'` `'h3'` `'h4'` `'h5'` `'h6'` `'bodyLarge'` `'bodyMedium'` `'bodySmall'` `'linkLarge'` `'linkMedium'` `'linkSmall'` `'caption'` `'code'` `'helperText'` | 'bodyMedium' | The `typography` variant to use.                                                        |
+| onClick | `((e?: MouseEvent<any, MouseEvent>) => any)`                                                                                                                        |              | `onClick` event.                                                                        |
+| theme   | `DefaultTheme`                                                                                                                                                      | object       | If applied, custom theme is used.                                                       |
+| style   | `CSSProperties`                                                                                                                                                     | object       | The system prop that allows defining system overrides as well as additional CSS styles. |
+
+#### Example usage:
+```typescript jsx
+import { Typography } from '@oykos-development/devkit-react-ts-styled-components';
+
+function MyComponent() {    
+  return (
+    <Typography variant="h1" content="Headline" />
   );
 }
 ```
