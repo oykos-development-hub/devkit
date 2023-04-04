@@ -236,7 +236,7 @@ The `Divider` component is a simple yet versatile UI element that can be used to
 | style  | `CSSProperties` | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { Divider } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
