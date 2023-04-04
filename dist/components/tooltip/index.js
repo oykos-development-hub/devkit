@@ -3,9 +3,9 @@ import { Theme } from "../../shared/theme";
 import { Typography } from "../typography";
 import { Container } from "./styles/container";
 import { StyledTooltip } from "./styles/tooltip";
-import { Positions } from "./types";
+import { TooltipPositions } from "./types";
 export const Tooltip = ({ position, theme = Theme, content, children, title, variant = "standard", arrow, style, }) => {
-    const tooltipPosition = Positions[position] || "bottom";
+    const tooltipPosition = TooltipPositions[position] || "bottom";
     return (React.createElement(Container, { position: tooltipPosition },
         children,
         React.createElement(StyledTooltip, { style: style, arrow: arrow, content: content, variant: variant, theme: theme, position: tooltipPosition, title: title },
