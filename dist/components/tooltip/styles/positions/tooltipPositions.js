@@ -1,6 +1,6 @@
 import { css } from "styled-components";
-import { Positions } from "../../types";
-const TooltipPositions = {
+import { TooltipPositions } from "../../types";
+const Positions = {
     top: css `
     & > div {
       left: 50%;
@@ -44,5 +44,5 @@ const TooltipPositions = {
     }
   `,
 };
-export const tooltipPosition = (position) => TooltipPositions[Positions[position]];
+export const tooltipPosition = (position) => Positions[TooltipPositions[position]];
 //# sourceMappingURL=tooltipPositions.js.map
