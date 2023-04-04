@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import { IconProps, Positions } from "../types";
+import { IconPositions, IconProps } from "../types";
 import { Theme } from "../../../shared/theme";
 
 export const Svg = styled.svg.attrs({
   xmlns: "http://www.w3.org/2000/svg",
 })<IconProps>`
   fill: ${(props: IconProps) => props.fill || props.theme?.palette?.black || Theme?.palette?.black};
-  position: ${(props: IconProps) => props.position || Positions.relative};
+  position: ${(props: IconProps) => props.position || IconPositions.relative};
   width: ${(props: IconProps) => props.width || "1rem"};
   height: ${(props: IconProps) => props.height || "1rem"};
 `;
