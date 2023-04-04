@@ -213,7 +213,7 @@ A simple and reusable `Datepicker` component for React. In this table will be sh
 >Note: This component is essentially 'react-datepicker' module, but additionally customized and optimized for our devkit. If you want to explore the other features(props, events etc.) go [here](https://github.com/Hacker0x01/react-datepicker).
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { Datepicker } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -390,7 +390,7 @@ This component streamlines the implementation of various input types, styles, ev
 
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { Input } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -416,7 +416,7 @@ This component is additional kind of badge component. It has the following props
 
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { LeadingBadge } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -444,7 +444,7 @@ function MyComponent() {
 
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { Loader } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -464,13 +464,13 @@ function MyComponent() {
 | variant | `'light'` `'dark'`         | 'light' | The variant to use.                                                                     |
 | title   | `string`                   |         | Modal title.                                                                            |
 | content | `string` or `ReactElement` |         | The `content` rendered within the modal.                                                |
-| open    | `boolean`                  |         | If `true`, the component will be shown.                                                   |
+| open    | `boolean`                  |         | If `true`, the component will be shown.                                                 |
 | onClose | `any`                      |         | `onClose` event.                                                                        |
 | theme   | `DefaultTheme`             | object  | If applied, custom theme is used.                                                       |
 | style   | `CSSProperties`            | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { Modal, Typography } from '@oykos-development/devkit-react-ts-styled-components';
 
 const customContent = (
@@ -519,7 +519,7 @@ A good reusable pagination component should allow users to navigate between page
 
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { Pagination } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -581,7 +581,7 @@ A user interface component that is specifically designed to handle input of PIN 
 
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { Pin } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -606,7 +606,7 @@ This component allows to manage radio button inputs, enabling users to make sing
 | style    | `CSSProperties`                                        | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { Radio } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -631,7 +631,7 @@ Component that enables toggling between two states, such as on and off. It has t
 | style    | `CSSProperties`                                | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { Switch, Typography } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {  
@@ -659,7 +659,7 @@ Component designed to display data in a tabular format, making it easy for users
 | style         | `CSSProperties`                  | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { Table, CircleCheckIcon } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -712,7 +712,7 @@ function MyComponent() {
 
 Component designed to break up complex interfaces into manageable subsections, allowing users to quickly switch between different categories of content.
 
-```typescript jsx
+```typescript
 interface Tab {
   id: number | string;
   title: string;
@@ -725,12 +725,12 @@ This component has the following props:
 | Name     | Type(s)                | Default | Description                                                                             |
 |----------|------------------------|---------|-----------------------------------------------------------------------------------------|
 | tabs     | `Tab[]`                |         | Array of dropdown items.                                                                |
-| onChange | `((tab: Tab) => void)` |         | `onChange` event.                                                                         |
+| onChange | `((tab: Tab) => void)` |         | `onChange` event.                                                                       |
 | theme    | `DefaultTheme`         | object  | If applied, custom theme is used.                                                       |
 | style    | `CSSProperties`        | object  | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { Tabs } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -765,7 +765,7 @@ Component that displays informative text when users hover over, focus on, or tap
 | style    | `CSSProperties`                                                | object     | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { Tooltip } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
@@ -796,7 +796,7 @@ Component that helps present design and content as clearly and efficiently as po
 | style   | `CSSProperties`                                                                                                                                                     | object       | The system prop that allows defining system overrides as well as additional CSS styles. |
 
 #### Example usage:
-```typescript jsx
+```jsx
 import { Typography } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {    
