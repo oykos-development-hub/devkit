@@ -214,7 +214,7 @@ A simple and reusable `Datepicker` component for React. In this table will be sh
 
 #### Example usage:
 ```typescript jsx
-import { Checkbox } from '@oykos-development/devkit-react-ts-styled-components';
+import { Datepicker } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
   return (
