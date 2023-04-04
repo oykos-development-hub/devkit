@@ -6,9 +6,9 @@ export var IconSize;
     IconSize["lg"] = "lg";
     IconSize["xl"] = "xl";
 })(IconSize || (IconSize = {}));
-export var Positions;
-(function (Positions) {
-    Positions["absolute"] = "absolute";
-    Positions["relative"] = "relative";
-})(Positions || (Positions = {}));
+export var IconPositions;
+(function (IconPositions) {
+    IconPositions["absolute"] = "absolute";
+    IconPositions["relative"] = "relative";
+})(IconPositions || (IconPositions = {}));
 //# sourceMappingURL=types.js.map
