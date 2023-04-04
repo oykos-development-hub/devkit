@@ -1,8 +1,8 @@
 import styled, { css } from "styled-components";
-import { Positions } from "../types";
+import { TooltipPositions } from "../types";
 import { tooltipPosition } from "./positions/tooltipPositions";
 
-export const Container = styled.div<{ position: Positions | `${Positions}` }>(({ position }) => {
+export const Container = styled.div<{ position: TooltipPositions | `${TooltipPositions}` }>(({ position }) => {
   return css`
     position: relative;
 

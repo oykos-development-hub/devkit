@@ -3,7 +3,7 @@ import { Theme } from "../../shared/theme";
 import { Typography } from "../typography";
 import { Container } from "./styles/container";
 import { StyledTooltip } from "./styles/tooltip";
-import { Positions, TooltipProps } from "./types";
+import { TooltipPositions, TooltipProps } from "./types";
 
 export const Tooltip = ({
   position,
@@ -15,7 +15,7 @@ export const Tooltip = ({
   arrow,
   style,
 }: TooltipProps) => {
-  const tooltipPosition = Positions[position] || "bottom";
+  const tooltipPosition = TooltipPositions[position] || "bottom";
 
   return (
     <Container position={tooltipPosition}>

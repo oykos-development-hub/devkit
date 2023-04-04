@@ -1,12 +1,12 @@
-export var Positions;
-(function (Positions) {
-    Positions["bottom"] = "bottom";
-    Positions["left"] = "left";
-    Positions["right"] = "right";
-    Positions["top"] = "top";
-    Positions["topLeft"] = "topLeft";
-    Positions["topRight"] = "topRight";
-})(Positions || (Positions = {}));
+export var TooltipPositions;
+(function (TooltipPositions) {
+    TooltipPositions["bottom"] = "bottom";
+    TooltipPositions["left"] = "left";
+    TooltipPositions["right"] = "right";
+    TooltipPositions["top"] = "top";
+    TooltipPositions["topLeft"] = "topLeft";
+    TooltipPositions["topRight"] = "topRight";
+})(TooltipPositions || (TooltipPositions = {}));
 export var TooltipVariants;
 (function (TooltipVariants) {
     TooltipVariants["standard"] = "standard";
