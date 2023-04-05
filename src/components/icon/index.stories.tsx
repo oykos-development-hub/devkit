@@ -17,8 +17,14 @@ import {
   ChevronDownIcon,
   ChevronLeftIcon,
   ChevronRightIcon,
+  CalendarIcon,
+  CircleIcon,
+  ClockIcon,
 } from "./";
 import { IconProps } from "./types";
+import LinkedinIconTwo from "./variations/LinkedinIconTwo";
+import InstagramIconTwo from "./variations/InstagramIconTwo";
+import DownloadIcon from "./variations/DownloadIcon";
 
 export default {
   title: "Components/Icons",
@@ -45,23 +51,29 @@ const Default: ComponentStory<typeof XIcon> = (args: IconProps) => (
     <AssignIcon {...args} />
     <XIcon {...args} />
     <DangerIcon {...args} />
+    <DangerAlertIcon {...args} />
     <CircleCheckIcon {...args} />
+    <CircleIcon {...args} />
+    <DownloadIcon {...args} />
     <UserIcon {...args} />
     <InstagramIcon {...args} />
+    <InstagramIconTwo {...args} />
     <LinkedinIcon {...args} />
+    <LinkedinIconTwo {...args} />
     <FacebookIcon {...args} />
     <GithubIcon {...args} />
     <GoogleIcon {...args} />
-    <DangerAlertIcon {...args} />
     <ChevronUpIcon {...args} />
     <ChevronDownIcon {...args} />
     <ChevronLeftIcon {...args} />
     <ChevronRightIcon {...args} />
+    <CalendarIcon {...args} />
+    <ClockIcon {...args} />
   </StoryWrapper>
 );
 
 export const DefaultIcons = Default.bind({});
 DefaultIcons.args = {
-  width: "100px",
-  height: "100px",
+  width: "50px",
+  height: "50px",
 };

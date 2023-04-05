@@ -9,7 +9,7 @@ export enum IconSize {
   xl = "xl",
 }
 
-export enum Positions {
+export enum IconPositions {
   absolute = "absolute",
   relative = "relative",
 }
@@ -21,7 +21,7 @@ export interface IconProps {
   fill?: string;
   stroke?: string;
   onClick?: (e?: React.MouseEvent<any>) => any;
-  position?: Positions | keyof typeof Positions;
+  position?: IconPositions | `${IconPositions}`;
   theme?: DefaultTheme;
   style?: React.CSSProperties;
 }

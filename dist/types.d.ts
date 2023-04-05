@@ -11,3 +11,4 @@ export * from "./components/paginate/types";
 export * from "./components/tabs/types";
 export * from "./components/badge/types";
 export * from "./components/breadcrumbs/types";
+export * from "./components/icon/types";
