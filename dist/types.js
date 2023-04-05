@@ -23,4 +23,5 @@ export * from "./components/table/types";
 export * from "./components/tabs/types";
 export * from "./components/tooltip/types";
 export * from "./components/typography/types";
+export * from "./components/icon/types";
 //# sourceMappingURL=types.js.map
