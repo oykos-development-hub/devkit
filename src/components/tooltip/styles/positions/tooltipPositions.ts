@@ -1,7 +1,7 @@
 import { css } from "styled-components";
-import { Positions } from "../../types";
+import { TooltipPositions } from "../../types";
 
-const TooltipPositions = {
+const Positions = {
   top: css`
     & > div {
       left: 50%;
@@ -47,4 +47,5 @@ const TooltipPositions = {
 };
 
 // styles based on current position
-export const tooltipPosition = (position: Positions | `${Positions}`) => TooltipPositions[Positions[position]];
+export const tooltipPosition = (position: TooltipPositions | `${TooltipPositions}`) =>
+  Positions[TooltipPositions[position]];

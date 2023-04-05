@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { Positions } from "../../types";
+import { TooltipPositions } from "../../types";
 
 const sharedArrowStyles = css`
   content: "";
@@ -61,5 +61,5 @@ const ArrowPositions = {
 };
 
 // styles based on current position
-export const arrowPosition = (position: Positions | `${Positions}`, arrow?: boolean) =>
-  arrow ? ArrowPositions[Positions[position]] : null;
+export const arrowPosition = (position: TooltipPositions | `${TooltipPositions}`, arrow?: boolean) =>
+  arrow ? ArrowPositions[TooltipPositions[position]] : null;
