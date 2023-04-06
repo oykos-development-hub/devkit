@@ -43,6 +43,8 @@ export const Content = styled.div(({ checked, disabled, theme, size, style }) =>
 
     & svg {
       visibility: ${checked ? "visible" : "hidden"};
+      width: ${widthHeight[size]};
+      height: ${widthHeight[size]};
 
       & circle {
         fill: ${disabled ? (style === null || style === void 0 ? void 0 : style.color) || gray300 : primary500};
