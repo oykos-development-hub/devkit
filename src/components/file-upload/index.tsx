@@ -5,7 +5,7 @@ import { Content } from "./styles/content";
 import { IconWrapper } from "./styles/iconWrapper";
 import { TextWrapper } from "./styles/textWrapper";
 import { ButtonWrapper } from "./styles/buttonWrapper";
-import { Button, Typography, UploadIcon } from "../../index";
+import { Button, Typography, UploadCloudIcon } from "../../index";
 import { Theme } from "../../shared/theme";
 
 export const FileUpload: React.FC<FileUploadProps> = ({
@@ -67,7 +67,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
         icon
       ) : (
         <IconWrapper customIcon={!!icon}>
-          <UploadIcon />
+          <UploadCloudIcon />
         </IconWrapper>
       )}
       {customContent ? (
