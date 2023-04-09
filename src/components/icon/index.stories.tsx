@@ -12,7 +12,6 @@ import {
   FacebookIcon,
   GithubIcon,
   GoogleIcon,
-  DangerAlertIcon,
   ChevronUpIcon,
   ChevronDownIcon,
   ChevronLeftIcon,
@@ -129,7 +128,6 @@ const Default: ComponentStory<typeof XIcon> = (args: IconProps) => (
     <XIcon {...args} />
     <CloseIcon {...args} />
     <DangerIcon {...args} />
-    <DangerAlertIcon {...args} />
     <CircleCheckIcon {...args} />
     <CircleIcon {...args} />
     <UploadIconTwo {...args} />

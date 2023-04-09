@@ -41,13 +41,8 @@ export const Content = styled.div<{
     }
 
     & svg {
-      width: ${iconSize[size]} !important;
-      height: ${iconSize[size]} !important;
-    }
-
-    & svg path {
-      fill: ${style?.color || white} !important;
-      color: ${style?.color || white} !important;
+      width: ${iconSize[size]};
+      height: ${iconSize[size]};
     }
   `;
 });
