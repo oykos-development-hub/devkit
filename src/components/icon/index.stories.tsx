@@ -20,11 +20,56 @@ import {
   CalendarIcon,
   CircleIcon,
   ClockIcon,
+  LinkedinIconTwo,
+  InstagramIconTwo,
+  DownloadIcon,
+  MapIcon,
+  GithubIconTwo,
+  UploadIconTwo,
+  StarIcon,
+  LoginIcon,
+  LogoutIcon,
+  FrownIcon,
+  DownloadCloudIcon,
+  TrashIcon,
+  TrashIconTwo,
+  UploadCloudIcon,
+  SlashDividerIcon,
+  CloseIcon,
+  WifiIcon,
+  WifiOffIcon,
+  UserPlusIcon,
+  UserMinusIcon,
+  UserXIcon,
+  UsersIcon,
+  SidebarIcon,
+  SettingsIcon,
+  PlusIcon,
+  MinusIcon,
+  PowerIcon,
+  MoreHorizontalIcon,
+  MoreVerticalIcon,
+  MenuIcon,
+  FilePlusIcon,
+  FileIcon,
+  CloudIcon,
+  PrinterIcon,
+  RefreshCCWIcon,
+  RefreshCWIcon,
+  LoaderIcon,
+  RSSIcon,
+  SmileIcon,
+  HeartIcon,
+  EditIcon,
+  EyeOffIcon,
+  MailIcon,
+  ArrowRightIcon,
+  ArrowLeftIcon,
+  EyeIcon,
+  ArrowDownIcon,
+  ArrowUpIcon,
 } from "./";
 import { IconProps } from "./types";
-import LinkedinIconTwo from "./variations/LinkedinIconTwo";
-import InstagramIconTwo from "./variations/InstagramIconTwo";
-import DownloadIcon from "./variations/DownloadIcon";
 
 export default {
   title: "Components/Icons",
@@ -48,13 +93,51 @@ export default {
 
 const Default: ComponentStory<typeof XIcon> = (args: IconProps) => (
   <StoryWrapper>
+    <ArrowUpIcon {...args} />
+    <ArrowDownIcon {...args} />
+    <ArrowLeftIcon {...args} />
+    <ArrowRightIcon {...args} />
+    <MailIcon {...args} />
+    <EyeIcon {...args} />
+    <EyeOffIcon {...args} />
+    <EditIcon {...args} />
+    <HeartIcon {...args} />
+    <RSSIcon {...args} />
+    <LoaderIcon {...args} />
+    <RefreshCCWIcon {...args} />
+    <RefreshCWIcon {...args} />
+    <PrinterIcon {...args} />
+    <CloudIcon {...args} />
+    <FileIcon {...args} />
+    <FilePlusIcon {...args} />
+    <MenuIcon {...args} />
+    <MoreHorizontalIcon {...args} />
+    <MoreVerticalIcon {...args} />
+    <PlusIcon {...args} />
+    <MinusIcon {...args} />
+    <PowerIcon {...args} />
+    <SettingsIcon {...args} />
+    <UserPlusIcon {...args} />
+    <UserMinusIcon {...args} />
+    <UserXIcon {...args} />
+    <UsersIcon {...args} />
+    <SidebarIcon {...args} />
+    <WifiIcon {...args} />
+    <WifiOffIcon {...args} />
+    <MapIcon {...args} />
     <AssignIcon {...args} />
     <XIcon {...args} />
+    <CloseIcon {...args} />
     <DangerIcon {...args} />
     <DangerAlertIcon {...args} />
     <CircleCheckIcon {...args} />
     <CircleIcon {...args} />
+    <UploadIconTwo {...args} />
+    <UploadCloudIcon {...args} />
     <DownloadIcon {...args} />
+    <DownloadCloudIcon {...args} />
+    <LoginIcon {...args} />
+    <LogoutIcon {...args} />
     <UserIcon {...args} />
     <InstagramIcon {...args} />
     <InstagramIconTwo {...args} />
@@ -62,6 +145,7 @@ const Default: ComponentStory<typeof XIcon> = (args: IconProps) => (
     <LinkedinIconTwo {...args} />
     <FacebookIcon {...args} />
     <GithubIcon {...args} />
+    <GithubIconTwo {...args} />
     <GoogleIcon {...args} />
     <ChevronUpIcon {...args} />
     <ChevronDownIcon {...args} />
@@ -69,6 +153,12 @@ const Default: ComponentStory<typeof XIcon> = (args: IconProps) => (
     <ChevronRightIcon {...args} />
     <CalendarIcon {...args} />
     <ClockIcon {...args} />
+    <StarIcon {...args} />
+    <SmileIcon {...args} />
+    <FrownIcon {...args} />
+    <TrashIcon {...args} />
+    <TrashIconTwo {...args} />
+    <SlashDividerIcon {...args} />
   </StoryWrapper>
 );
 
