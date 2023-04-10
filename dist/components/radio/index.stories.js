@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Radio } from "./";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { RadioSize } from "./types";
@@ -36,13 +36,8 @@ export default {
     },
 };
 const Template = (args) => {
-    const [value, setValue] = useState(false);
     return (React.createElement(StoryWrapper, null,
-        React.createElement(Radio, Object.assign({}, args, { checked: value, onClick: () => {
-                if (args.disabled)
-                    return;
-                setValue(!value);
-            } }))));
+        React.createElement(Radio, Object.assign({}, args))));
 };
 export const Default = Template.bind({});
 Default.args = {

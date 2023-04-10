@@ -12,7 +12,6 @@ export const Container = styled.div(({ label, error, theme }: InputProps) => {
     flex-direction: column;
     gap: 0.25em;
     position: relative;
-    height: 100%;
 
     & * {
       font-size: 1em;

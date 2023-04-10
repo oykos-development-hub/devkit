@@ -9,7 +9,6 @@ export const Container = styled.div(({ label, error, theme }) => {
     flex-direction: column;
     gap: 0.25em;
     position: relative;
-    height: 100%;
 
     & * {
       font-size: 1em;
