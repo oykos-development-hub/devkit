@@ -11,7 +11,6 @@ export declare const Badge: import("react").FC<import("./types").BadgeProps>;
 export declare const Breadcrumbs: ({ theme, onClick, items, separator, style }: import("./types").BreadcrumbsProps) => JSX.Element;
 export declare const Tabs: ({ style, theme, tabs, onChange }: import("./types").TabsProps) => JSX.Element;
 export declare const Alert: import("react").FC<import("./components/alert/types").AlertProps>;
-export declare const FileUpload: import("react").FC<import("./components/file-upload/types").FileUploadProps>;
 export declare const Checkbox: import("react").FC<import("./components/checkbox/types").CheckboxProps>;
 export declare const Datepicker: import("react").FC<import("./components/datepicker/types").DatepickerTypes>;
 export declare const Divider: import("react").FC<import("./components/divider/types").DividerProps>;
