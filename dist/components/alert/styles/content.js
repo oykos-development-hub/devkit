@@ -31,13 +31,8 @@ export const Content = styled.div(() => ({ size, theme, style }) => {
     }
 
     & svg {
-      width: ${iconSize[size]} !important;
-      height: ${iconSize[size]} !important;
-    }
-
-    & svg path {
-      fill: ${(style === null || style === void 0 ? void 0 : style.color) || white} !important;
-      color: ${(style === null || style === void 0 ? void 0 : style.color) || white} !important;
+      width: ${iconSize[size]};
+      height: ${iconSize[size]};
     }
   `;
 });
