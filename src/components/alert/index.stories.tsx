@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { AlertProps } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Alert } from "./index";
-import { DangerAlertIcon } from "../icon";
+import { CircleCheckIcon, DangerIcon } from "../icon";
 
 export default {
   component: Alert,
@@ -48,12 +48,22 @@ const Template: ComponentStory<typeof Alert> = (args: AlertProps) => (
   </StoryWrapper>
 );
 
-export const Custom = Template.bind({});
-Custom.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   content: "Title",
   variant: "primary",
   size: "md",
-  icon: <DangerAlertIcon />,
+  icon: <DangerIcon fill={"none"} stroke={"white"} />,
+  description: "",
+  closeIcon: true,
+};
+
+export const Success = Template.bind({});
+Success.args = {
+  content: "Title",
+  variant: "success",
+  size: "md",
+  icon: <CircleCheckIcon fill={"none"} stroke={"white"} />,
   description: "",
   closeIcon: true,
 };

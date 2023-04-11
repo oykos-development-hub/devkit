@@ -1,5 +1,5 @@
 import { css } from "styled-components";
-import { Positions } from "../../types";
+import { TooltipPositions } from "../../types";
 const sharedArrowStyles = css `
   content: "";
   position: absolute;
@@ -57,5 +57,5 @@ const ArrowPositions = {
     }
   `,
 };
-export const arrowPosition = (position, arrow) => arrow ? ArrowPositions[Positions[position]] : null;
+export const arrowPosition = (position, arrow) => arrow ? ArrowPositions[TooltipPositions[position]] : null;
 //# sourceMappingURL=arrowPositions.js.map

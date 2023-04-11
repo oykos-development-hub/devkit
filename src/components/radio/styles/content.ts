@@ -56,6 +56,8 @@ export const Content = styled.div<{
 
     & svg {
       visibility: ${checked ? "visible" : "hidden"};
+      width: ${widthHeight[size]};
+      height: ${widthHeight[size]};
 
       & circle {
         fill: ${disabled ? style?.color || gray300 : primary500};

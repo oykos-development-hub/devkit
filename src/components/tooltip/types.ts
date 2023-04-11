@@ -1,7 +1,7 @@
 import React, { ReactElement } from "react";
 import { CSSProperties, DefaultTheme } from "styled-components";
 
-export enum Positions {
+export enum TooltipPositions {
   bottom = "bottom",
   left = "left",
   right = "right",
@@ -18,7 +18,7 @@ export enum TooltipVariants {
 export interface TooltipProps {
   variant: TooltipVariants | `${TooltipVariants}`;
   theme: DefaultTheme;
-  position: Positions | `${Positions}`;
+  position: TooltipPositions | `${TooltipPositions}`;
   style?: CSSProperties;
   title?: string;
   content: string | ReactElement;

@@ -3,7 +3,7 @@ import { AlertProps } from "./types";
 import { Content } from "./styles/content";
 import { Container } from "./styles/container";
 import { Wrapper } from "./styles/wrapper";
-import { XIcon } from "../icon";
+import { CloseIcon } from "../icon";
 import { Typography } from "../typography";
 import { Theme } from "../../shared/theme";
 
@@ -39,7 +39,7 @@ export const Alert: React.FC<AlertProps> = ({
 
         {closeIcon && (
           <Content size={size} theme={theme}>
-            <XIcon onClick={onClose} />
+            <CloseIcon stroke={"white"} onClick={onClose} />
           </Content>
         )}
       </Wrapper>

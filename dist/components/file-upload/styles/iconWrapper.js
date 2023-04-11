@@ -11,15 +11,12 @@ export const IconWrapper = styled.div(({ customIcon }) => {
 
     ${!customIcon &&
         `& svg {
-       width: ${rem("52px")} !important;
-       height: ${rem("52px")} !important;
+       width: ${rem("52px")};
+       height: ${rem("52px")};
       
       & path {      
-        fill: none;
         stroke: #212121;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-width: 2;
+        stroke-width: 1;
       }
     `}
   `;

@@ -3,7 +3,7 @@ import { IconProps } from "../types";
 import { Svg } from "../styles/shared";
 
 export const CircleIcon = (props: IconProps): React.ReactElement => (
-  <Svg viewBox="0 0 24 24" onClick={props.onClick} {...props}>
+  <Svg viewBox="0 0 24 24" onClick={props.onClick} fill={props.fill || "#000"} {...props}>
     <circle cx="12" cy="12" r="5"></circle>
   </Svg>
 );
