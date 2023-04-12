@@ -2,7 +2,7 @@ import React from "react";
 import { Content } from "./styles/content";
 import { Container } from "./styles/container";
 import { Wrapper } from "./styles/wrapper";
-import { XIcon } from "../icon";
+import { CloseIcon } from "../icon";
 import { Typography } from "../typography";
 import { Theme } from "../../shared/theme";
 export const Alert = ({ variant = "success", content, description, icon, closeIcon = true, onClose, size = "md", style, theme = Theme, }) => {
@@ -22,7 +22,7 @@ export const Alert = ({ variant = "success", content, description, icon, closeIc
                 icon && icon,
                 React.createElement(Typography, { variant: textVariant(), content: content, theme: theme })),
             closeIcon && (React.createElement(Content, { size: size, theme: theme },
-                React.createElement(XIcon, { onClick: onClose })))),
+                React.createElement(CloseIcon, { stroke: "white", onClick: onClose })))),
         description && (React.createElement(Wrapper, { size: size },
             React.createElement(Content, { size: size, theme: theme },
                 React.createElement(Typography, { variant: "bodyMedium", content: description, theme: theme }))))));

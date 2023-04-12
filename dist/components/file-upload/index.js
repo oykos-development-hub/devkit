@@ -4,7 +4,7 @@ import { Content } from "./styles/content";
 import { IconWrapper } from "./styles/iconWrapper";
 import { TextWrapper } from "./styles/textWrapper";
 import { ButtonWrapper } from "./styles/buttonWrapper";
-import { Button, Typography, UploadIcon } from "../../index";
+import { Button, Typography, UploadCloudIcon } from "../../index";
 import { Theme } from "../../shared/theme";
 export const FileUpload = ({ variant = "primary", buttonVariant, multiple = false, onUpload, customContent, buttonText, note, hint, icon, style, theme = Theme, }) => {
     const [isDragging, setIsDragging] = useState(false);
@@ -35,7 +35,7 @@ export const FileUpload = ({ variant = "primary", buttonVariant, multiple = fals
     return (React.createElement(Container, { variant: variant, style: style, theme: theme, isDragging: isDragging, onDragOver: handleDragOver, onDragLeave: handleDragLeave, onDrop: handleDrop },
         React.createElement("input", { type: "file", ref: uploadInputRef, onChange: handleChange, multiple: multiple }),
         icon ? (icon) : (React.createElement(IconWrapper, { customIcon: !!icon },
-            React.createElement(UploadIcon, null))),
+            React.createElement(UploadCloudIcon, null))),
         customContent ? (customContent) : (React.createElement(Content, { variant: variant },
             React.createElement(TextWrapper, { variant: variant, theme: theme },
                 note && React.createElement(Typography, { variant: "bodySmall", content: note }),
