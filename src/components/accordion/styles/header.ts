@@ -32,7 +32,7 @@ export const Header = styled.div<{
     }
 
     & > svg {
-      transform: ${isOpen && `rotate(180deg)`};
+      transform: ${isOpen && "rotate(180deg)"};
       transition: 0.3s all;
 
       & > path {
