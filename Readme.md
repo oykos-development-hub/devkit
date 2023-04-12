@@ -55,6 +55,53 @@ yarn add @oykos-development/devkit-react-ts-styled-components
 ```
 
 
+## Accordion
+
+The `Accordion` element that allows the user to toggle between hiding and displaying content in a vertical list or panel format. 
+
+```jsx
+interface AccordionData {
+  title: ReactNode | JSX.Element | string;
+  content?: ReactNode | JSX.Element | string;
+  customIcon?: ReactElement;
+  style?: CSSProperties;
+  theme?: DefaultTheme;
+}
+```
+
+It has the following props:
+
+| Name       | Type(s)              | Default            | Description                                                                             |
+|------------|----------------------|--------------------|-----------------------------------------------------------------------------------------|
+| data       | `AccordionData[]`    |                    | Array of ```AccordionData``` object.                                                    |
+| customIcon | `ReactElement`       | `<ChevronUpIcon/>` | SVG element                                                                             |
+| theme      | `DefaultTheme`       | object             | If applied, custom theme is used                                                        |
+| style      | `CSSProperties`      | object             | The system prop that allows defining system overrides as well as additional CSS styles. |
+
+
+#### Example usage:
+```jsx
+import { Accordion } from '@oykos-development/devkit-react-ts-styled-components';
+
+function MyComponent() {
+    const accordionData = [
+        {
+            title: <Typography variant={"bodySmall"} content={"Accordion Title"} />,
+            content:  <Typography variant={"bodySmall"} content={"Lorem ipsum dolor sit amet consequuntur a culpa itaque!"} style={{ color: "#616161" }} />
+        },
+        {
+            title: <Typography variant={"bodySmall"} content={"Accordion 1"} />,
+            content: <Typography variant={"bodySmall"} content={"Accordion 1 content."} style={{ color: "#616161" }} />,
+        },
+    ];    
+    
+  return (
+    <Accordion data={accordionData} />
+  );
+}
+```
+
+
 ## Alert
 
 The `Alert` component is a super cool component that can be used for notification purpose. It has the following props:
