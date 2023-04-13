@@ -5,7 +5,6 @@ export declare enum CheckboxSize {
     md = "md"
 }
 export interface CheckboxProps {
-    checked?: boolean;
     size?: CheckboxSize | `${CheckboxSize}`;
     disabled?: boolean;
     onClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
