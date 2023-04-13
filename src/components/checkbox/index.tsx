@@ -1,7 +1,7 @@
 import React from "react";
 import { CheckboxProps, CheckboxSize } from "./types";
 import { Container } from "./styles/container";
-import { Content, HiddenCheckbox, Icon } from "./styles/content";
+import { Content, HiddenCheckbox } from "./styles/content";
 import { Theme } from "../../shared/theme";
 import { CheckIcon } from "../icon";
 
@@ -17,9 +17,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
     <Container>
       <HiddenCheckbox checked={checked} />
       <Content checked={checked} onClick={onClick} size={size} style={style} theme={theme} disabled={disabled}>
-        <Icon theme={theme} disabled={disabled}>
-          <CheckIcon />
-        </Icon>
+        {checked && <CheckIcon stroke={disabled ? theme.palette.gray300 : theme.palette.white} />}
       </Content>
     </Container>
   );

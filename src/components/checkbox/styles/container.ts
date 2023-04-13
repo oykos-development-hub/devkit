@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  display: inline-block;
+  display: flex;
   vertical-align: middle;
   cursor: pointer;
 `;
