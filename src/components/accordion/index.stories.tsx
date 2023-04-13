@@ -4,7 +4,7 @@ import { AccordionProps } from "./types";
 import { Accordion } from "./index";
 import { Typography } from "../../index";
 import { Theme } from "../../shared/theme";
-import { PlusIcon } from "../icon";
+import { MenuIcon } from "../icon";
 
 export default {
   component: Accordion,
@@ -50,9 +50,6 @@ const Template: ComponentStory<typeof Accordion> = (args: AccordionProps) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
-
-export const WithCustomIcon = Template.bind({});
-WithCustomIcon.args = {
-  customIcon: <PlusIcon />,
+Default.args = {
+  customIcon: <MenuIcon />,
 };
