@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { CheckboxSize } from "./types";
 import { Container } from "./styles/container";
-import { Content, HiddenCheckbox, Icon } from "./styles/content";
+import { Content, HiddenCheckbox } from "./styles/content";
 import { Theme } from "../../shared/theme";
 import { CheckIcon } from "../icon";
-export const Checkbox = ({ checked = false, size = CheckboxSize.sm, onClick, style, theme = Theme, disabled = false, }) => {
+export const Checkbox = ({ size = CheckboxSize.sm, onClick, style, theme = Theme, disabled = false, }) => {
+    const [isChecked, setIsChecked] = useState(false);
+    const handleClick = (e) => {
+        if (disabled)
+            return;
+        setIsChecked(!isChecked);
+        onClick && onClick(e);
+    };
     return (React.createElement(Container, null,
-        React.createElement(HiddenCheckbox, { checked: checked }),
-        React.createElement(Content, { checked: checked, onClick: onClick, size: size, style: style, theme: theme, disabled: disabled },
-            React.createElement(Icon, { theme: theme, disabled: disabled },
-                React.createElement(CheckIcon, null)))));
+        React.createElement(HiddenCheckbox, { checked: isChecked }),
+        React.createElement(Content, { checked: isChecked, onClick: handleClick, size: size, style: style, theme: theme, disabled: disabled }, isChecked && React.createElement(CheckIcon, { stroke: disabled ? theme.palette.gray300 : theme.palette.white }))));
 };
 //# sourceMappingURL=index.js.map

@@ -5,8 +5,10 @@ import { Content } from "./styles/content";
 import { IconWrapper } from "./styles/iconWrapper";
 import { TextWrapper } from "./styles/textWrapper";
 import { ButtonWrapper } from "./styles/buttonWrapper";
-import { Button, Typography, UploadCloudIcon } from "../../index";
 import { Theme } from "../../shared/theme";
+import { UploadCloudIcon } from "../icon";
+import { Typography } from "../typography";
+import { Button } from "../button";
 
 export const FileUpload: React.FC<FileUploadProps> = ({
   variant = "primary",
