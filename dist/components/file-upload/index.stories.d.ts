@@ -1,6 +1,7 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-declare const _default: ComponentMeta<React.FC<import("./types").FileUploadProps>>;
+import { FileUploadProps } from "./types";
+declare const _default: ComponentMeta<React.FC<FileUploadProps>>;
 export default _default;
-export declare const Default: ComponentStory<React.FC<import("./types").FileUploadProps>>;
-export declare const Multiple: ComponentStory<React.FC<import("./types").FileUploadProps>>;
+export declare const Default: ComponentStory<React.FC<FileUploadProps>>;
+export declare const Multiple: ComponentStory<React.FC<FileUploadProps>>;
