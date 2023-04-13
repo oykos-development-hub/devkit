@@ -1,27 +1,10 @@
 import styled, { css } from "styled-components";
-import { Theme } from "../../../shared/theme";
-export const Icon = styled.svg.attrs({
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 12 12",
-    fill: "none",
-})(({ disabled, theme }) => {
-    const { gray300, white } = theme.palette;
-    return css `
-    & path {
-      fill: none;
-      stroke: ${disabled ? gray300 : white};
-      stroke-width: 1.667;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-  `;
-});
 export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" }) `
   border: 0;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
-  width: 0.063rem;
-  height: 0.063rem;
+  width: 1px;
+  height: 1px;
   margin: -1px;
   overflow: hidden;
   padding: 0;
@@ -29,8 +12,7 @@ export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" }) `
   white-space: nowrap;
 `;
 export const Content = styled.div(({ checked, disabled, theme, size, style }) => {
-    const themeToUse = theme || Theme;
-    const { primary500, gray50, gray300 } = themeToUse.palette;
+    const { primary500, gray50, gray300 } = theme.palette;
     const borderRadius = {
         sm: "0.25rem",
         md: "0.375rem",
@@ -39,8 +21,14 @@ export const Content = styled.div(({ checked, disabled, theme, size, style }) =>
         sm: "1rem",
         md: "1.25rem",
     };
+    const icon = {
+        sm: "0.75rem",
+        md: "0.875rem",
+    };
     return css `
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: ${(style === null || style === void 0 ? void 0 : style.width) || widthHeight[size]};
     height: ${(style === null || style === void 0 ? void 0 : style.height) || widthHeight[size]};
     background: ${checked ? primary500 : gray50};
@@ -63,8 +51,9 @@ export const Content = styled.div(({ checked, disabled, theme, size, style }) =>
       border-radius: ${(style === null || style === void 0 ? void 0 : style.borderRadius) || borderRadius[size]};
     }
 
-    ${Icon} {
-      visibility: ${checked ? "visible" : "hidden"};
+    & svg {
+      width: ${icon[size]};
+      height: ${icon[size]};
     }
 
     ${Object.assign({}, style)}

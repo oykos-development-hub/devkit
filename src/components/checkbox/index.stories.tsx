@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Checkbox } from "./";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
@@ -39,18 +39,9 @@ export default {
 } as ComponentMeta<typeof Checkbox>;
 
 const Template: ComponentStory<typeof Checkbox> = (args) => {
-  const [value, setValue] = useState<boolean>(false);
   return (
     <StoryWrapper>
-      <Checkbox
-        {...args}
-        checked={value}
-        onClick={() => {
-          if (args.disabled) return;
-
-          setValue(!value);
-        }}
-      />
+      <Checkbox {...args} />
     </StoryWrapper>
   );
 };
