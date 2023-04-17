@@ -16,6 +16,7 @@ export const Header = styled.div<{
     padding: ${rem("8px")} ${rem("16px")};
     gap: ${rem("8px")};
     background-color: ${style?.backgroundColor || (isOpen ? primary500 : white)};
+    transition: background-color 0.3s ease-in-out;
     cursor: ${style?.cursor || "pointer"};
     border-radius: ${style?.borderRadius || "0"};
     overflow: hidden;
