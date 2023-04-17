@@ -9,6 +9,7 @@ export const Header = styled.div(({ isOpen, style, theme }) => {
     padding: ${rem("8px")} ${rem("16px")};
     gap: ${rem("8px")};
     background-color: ${(style === null || style === void 0 ? void 0 : style.backgroundColor) || (isOpen ? primary500 : white)};
+    transition: background-color 0.3s ease-in-out;
     cursor: ${(style === null || style === void 0 ? void 0 : style.cursor) || "pointer"};
     border-radius: ${(style === null || style === void 0 ? void 0 : style.borderRadius) || "0"};
     overflow: hidden;
