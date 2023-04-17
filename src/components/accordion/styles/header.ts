@@ -34,8 +34,8 @@ export const Header = styled.div<{
 
     & > svg {
       width: ${rem("14px")};
-      transform: ${isOpen && "rotate(-180deg)"};
-      transition: 0.3s all;
+      transform: ${isOpen && "rotate(180deg)"};
+      transition: opacity 0.3s linear, transform 0.3s linear;
 
       & path {
         stroke: ${style?.stroke || (isOpen ? white : gray900)};

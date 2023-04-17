@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { AccordionData, AccordionProps } from "./types";
 import { Container } from "./styles/container";
 import { Header } from "./styles/header";
-import { Content } from "./styles/content";
-import { ChevronUpIcon } from "../icon";
+import { Content, ContentWrapper } from "./styles/content";
+import { ChevronDownIcon } from "../icon";
 import { Theme } from "../../shared/theme";
 import { IconWrapper } from "./styles/iconWrapper";
 
@@ -22,12 +22,14 @@ const AccordionItem: React.FC<AccordionData> = ({ title, content, customIcon, st
         ) : (
           title
         )}
-        <ChevronUpIcon />
+        <ChevronDownIcon />
       </Header>
 
-      <Content isOpen={isOpen} style={style} theme={theme}>
-        {content}
-      </Content>
+      <ContentWrapper isOpen={isOpen}>
+        <Content style={style} theme={theme}>
+          {content}
+        </Content>
+      </ContentWrapper>
     </Container>
   );
 };

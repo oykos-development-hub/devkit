@@ -2,24 +2,25 @@ import styled, { css, DefaultTheme } from "styled-components";
 import { CSSProperties } from "react";
 import { rem } from "polished";
 
+export const ContentWrapper = styled.div<{ isOpen: boolean }>(({ isOpen }) => {
+  return css`
+    max-height: ${isOpen ? "1000px" : "0"};
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+  `;
+});
+
 export const Content = styled.div<{
-  isOpen: boolean;
   style?: CSSProperties;
   theme?: DefaultTheme;
-}>(({ style, theme, isOpen }) => {
+}>(({ style, theme }) => {
   const { gray100 } = theme!.palette;
 
   return css`
+    display: flex;
     align-items: flex-start;
     padding: ${rem("4px")} ${rem("16px")} ${rem("16px")};
     gap: ${rem("8px")};
     background-color: ${style?.backgroundColor || gray100};
-    overflow: hidden;
-
-    visibility: ${isOpen ? `visible` : "hidden"};
-    height: ${isOpen ? `auto` : "0"};
-    opacity: ${isOpen ? 1 : 0};
-    transform: ${isOpen ? `translateY(0)` : `translateY(-6px)`};
-    transition: 0.2s all;
   `;
 });
