@@ -2,7 +2,7 @@ import React from "react";
 import { Accordion } from "./index";
 import { Typography } from "../../index";
 import { Theme } from "../../shared/theme";
-import { PlusIcon } from "../icon";
+import { MenuIcon } from "../icon";
 export default {
     component: Accordion,
     title: "Components/Accordion",
@@ -33,9 +33,7 @@ const accordionData = [
 const Template = (args) => (React.createElement("div", { style: { width: "400px" } },
     React.createElement(Accordion, Object.assign({}, args, { data: accordionData }))));
 export const Default = Template.bind({});
-Default.args = {};
-export const WithCustomIcon = Template.bind({});
-WithCustomIcon.args = {
-    customIcon: React.createElement(PlusIcon, null),
+Default.args = {
+    customIcon: React.createElement(MenuIcon, null),
 };
 //# sourceMappingURL=index.stories.js.map
