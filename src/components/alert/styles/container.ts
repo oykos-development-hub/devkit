@@ -3,9 +3,9 @@ import styled, { css, DefaultTheme } from "styled-components";
 import { AlertVariants } from "../types";
 
 export const Container = styled.div<{
-  variant: AlertVariants | string;
-  theme: DefaultTheme;
-  style: React.CSSProperties | undefined;
+  variant: AlertVariants | `${AlertVariants}`;
+  theme?: DefaultTheme;
+  style?: React.CSSProperties;
 }>(() => ({ theme, variant, style }) => {
   const { primary500, success500, error500, gray600 } = theme!.palette;
 
