@@ -9,12 +9,12 @@ export const Wrapper = styled.div(() => ({ size }) => {
     return css `
     display: flex;
     justify-content: space-between;
-    flex-direction: row;
     align-content: flex-start;
     align-items: center;
     align-self: stretch;
     word-wrap: break-word;
     padding: ${padding[size]};
+    width: 100%;
   `;
 });
 //# sourceMappingURL=wrapper.js.map
