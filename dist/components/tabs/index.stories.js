@@ -31,8 +31,6 @@ export const StyledTabs = Template.bind({});
 StyledTabs.args = {
     tabs: tabsArr,
     style: {
-        borderColor: "dark",
-        borderWidth: "2px",
         borderRadius: "0.5em 0.5em 0 0",
     },
 };
