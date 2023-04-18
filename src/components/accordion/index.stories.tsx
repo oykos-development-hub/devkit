@@ -5,6 +5,7 @@ import { Accordion } from "./index";
 import { Typography } from "../../index";
 import { Theme } from "../../shared/theme";
 import { MenuIcon } from "../icon";
+import { StoryWrapper } from "../../shared/components/story-wrapper";
 
 export default {
   component: Accordion,
@@ -44,9 +45,9 @@ const accordionData = [
 ];
 
 const Template: ComponentStory<typeof Accordion> = (args: AccordionProps) => (
-  <div style={{ width: "400px" }}>
-    <Accordion {...args} data={accordionData} />
-  </div>
+  <StoryWrapper style={{ display: "grid", alignContent: "center" }}>
+    <Accordion style={{ width: "400px" }} {...args} data={accordionData} />
+  </StoryWrapper>
 );
 
 export const Default = Template.bind({});
