@@ -6,7 +6,7 @@ export const IconWrapper = styled.div(({ isOpen, style, theme }) => {
     display: flex;
     gap: ${rem("9px")};
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     overflow: hidden;
 
     & > svg {
