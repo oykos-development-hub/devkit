@@ -86,6 +86,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
               variant={buttonVariant ? buttonVariant : "primary"}
               content={buttonText ? buttonText : "SELECT FILE"}
               onClick={handleClick}
+              theme={theme}
             />
           </ButtonWrapper>
         </Content>
