@@ -11,7 +11,7 @@ export default {
   argTypes: {
     variant: {
       control: {
-        type: "text",
+        type: "radio",
       },
     },
     width: {
@@ -58,11 +58,15 @@ const Template: ComponentStory<typeof Loader> = (args: LoaderProps) => (
   </StoryWrapper>
 );
 
-export const VariantOneDefault = Template.bind({});
+export const Three = Template.bind({});
+Three.args = {
+  variant: "three",
+};
 
+export const VariantOneDefault = Template.bind({});
 VariantOneDefault.args = {
-  width: "100px",
-  height: "100px",
+  width: "48px",
+  height: "48px",
   testId: "VariantOneDefault",
   primaryColor: "#b2a422",
   secondaryColor: "#7199aa",
