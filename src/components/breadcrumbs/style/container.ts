@@ -22,10 +22,6 @@ export const Container = styled.ul<{ theme: DefaultTheme; style?: CSSProperties 
       margin-right: 0;
     }
 
-    & path {
-      fill: ${gray900};
-    }
-
     ${{ ...style }}
   `;
 });
