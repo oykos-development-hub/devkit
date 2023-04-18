@@ -1,12 +1,13 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { FileUpload } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
+import { FileUpload } from "./index";
+import { FileUploadProps } from "./types";
 
 export default {
-  title: "Components/FileUpload",
   component: FileUpload,
+  title: "Components/FileUpload",
   argTypes: {
     variant: {
       control: {
@@ -34,7 +35,7 @@ const onFileUpload = (acceptedFiles: FileList) => {
   // Handle the uploaded files here.
 };
 
-const Template: ComponentStory<typeof FileUpload> = (args) => (
+const Template: ComponentStory<typeof FileUpload> = (args: FileUploadProps) => (
   <StoryWrapper>
     <FileUpload {...args} onUpload={onFileUpload} />
   </StoryWrapper>

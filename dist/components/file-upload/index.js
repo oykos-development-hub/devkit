@@ -4,8 +4,10 @@ import { Content } from "./styles/content";
 import { IconWrapper } from "./styles/iconWrapper";
 import { TextWrapper } from "./styles/textWrapper";
 import { ButtonWrapper } from "./styles/buttonWrapper";
-import { Button, Typography, UploadCloudIcon } from "../../index";
 import { Theme } from "../../shared/theme";
+import { UploadCloudIcon } from "../icon";
+import { Typography } from "../typography";
+import { Button } from "../button";
 export const FileUpload = ({ variant = "primary", buttonVariant, multiple = false, onUpload, customContent, buttonText, note, hint, icon, style, theme = Theme, }) => {
     const [isDragging, setIsDragging] = useState(false);
     const uploadInputRef = useRef(null);
