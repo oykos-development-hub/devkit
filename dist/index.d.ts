@@ -22,5 +22,6 @@ export declare const Tabs: ({ style, theme, tabs, onChange }: import("./types").
 export declare const Tooltip: ({ position, theme, content, children, title, variant, arrow, style, }: import("./types").TooltipProps) => JSX.Element;
 export declare const Typography: (props: import("./types").TypographyProps) => import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;
 export * from "./components/button/styles";
+export * from "./components/modal/styles";
 export * from "./components/icon";
 export * from "./types";
