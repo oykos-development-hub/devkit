@@ -11,7 +11,7 @@ export const StyledTab = styled.button(({ disabled, theme, style, active, }) => 
 
       &:hover {
         color: ${white};
-        border: 0.25em solid ${primary500};
+        border: 0.25em solid ${!disabled ? primary500 : gray400};
         background-color: ${disabled ? gray400 : primary500};
       }
 
