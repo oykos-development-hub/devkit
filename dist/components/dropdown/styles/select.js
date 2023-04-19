@@ -1,11 +1,11 @@
 import Select from "react-select";
 import styled, { css } from "styled-components";
 export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIcon }) => {
-    const { primary200, gray50, gray100, gray400, gray600, gray900, white } = theme.palette;
+    const { primary50, primary200, gray50, gray100, gray400, gray600, gray900, white } = theme.palette;
     const borderColor = (style === null || style === void 0 ? void 0 : style.borderColor) || gray400;
     return css `
     width: 100%;
-    height: 3em;
+    height: auto;
 
     // control
     .select__control {
@@ -55,7 +55,7 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
     .select__control--is-focused,
     .select__control--is-focused:hover {
       border-color: ${primary200};
-      box-shadow: ${(style === null || style === void 0 ? void 0 : style.boxShadow) || "0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #f4ebff"};
+      box-shadow: ${(style === null || style === void 0 ? void 0 : style.boxShadow) || `0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px ${primary50}`};
     }
     .select__control--menu-is-open .select__dropdown-indicator svg {
       transform: rotate(180deg);
