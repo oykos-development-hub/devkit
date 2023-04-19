@@ -17,8 +17,6 @@ export const Container = styled.div<{
   };
 
   return css`
-    display: flex;
-    align-items: center;
     font-family: ${theme.fontFamily?.one || "sans-serif"};
     background-color: ${background[variant]};
     border-radius: 0.125rem;

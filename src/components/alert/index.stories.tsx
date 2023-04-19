@@ -73,3 +73,13 @@ Success.args = {
   description: "",
   closeIcon: true,
 };
+
+export const Info = Template.bind({});
+Info.args = {
+  content: "Info message!",
+  variant: "info",
+  size: "md",
+  icon: <CircleCheckIcon stroke={"white"} />,
+  description: "This is the description",
+  closeIcon: true,
+};

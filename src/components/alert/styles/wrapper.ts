@@ -14,11 +14,11 @@ export const Wrapper = styled.div<{
     lg: rem("16px"),
   };
 
-  const { primary600, success600, secondary600, warning600, error600 } = theme!.palette;
+  const { primary600, gray700, warning600, success600, error600 } = theme!.palette;
 
   const bgColor = {
     primary: primary600,
-    info: secondary600,
+    info: gray700,
     success: success600,
     warning: warning600,
     error: error600,
