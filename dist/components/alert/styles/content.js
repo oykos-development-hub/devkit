@@ -1,9 +1,7 @@
 import styled, { css } from "styled-components";
-import { Theme } from "../../../shared/theme";
 import { rem } from "polished";
 export const Content = styled.div(() => ({ size, theme, style }) => {
-    const themeToUse = theme || Theme;
-    const { white } = themeToUse.palette;
+    const { white } = theme.palette;
     const gap = {
         sm: rem("8px"),
         md: rem("12px"),
@@ -16,9 +14,9 @@ export const Content = styled.div(() => ({ size, theme, style }) => {
     };
     return css `
     display: flex;
-    flex-direction: row;
     gap: ${gap[size]};
     align-items: center;
+    justify-content: flex-start;
 
     & p {
       margin: 0;
@@ -33,6 +31,7 @@ export const Content = styled.div(() => ({ size, theme, style }) => {
     & svg {
       width: ${iconSize[size]};
       height: ${iconSize[size]};
+      cursor: pointer;
     }
   `;
 });

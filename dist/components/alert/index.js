@@ -17,7 +17,7 @@ export const Alert = ({ variant = "success", content, description, icon, closeIc
         }
     };
     return (React.createElement(Container, { variant: variant, style: style, theme: theme },
-        React.createElement(Wrapper, { size: size },
+        React.createElement(Wrapper, { size: size, theme: theme, variant: variant },
             React.createElement(Content, { size: size, theme: theme },
                 icon && icon,
                 React.createElement(Typography, { variant: textVariant(), content: content, theme: theme })),
