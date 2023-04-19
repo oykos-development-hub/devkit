@@ -1,7 +1,7 @@
 import Select from "react-select";
 import styled, { css } from "styled-components";
 export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIcon }) => {
-    const { primary50, primary200, gray50, gray100, gray400, gray600, gray900, white } = theme.palette;
+    const { primary50, primary200, gray50, gray100, gray400, gray600, white } = theme.palette;
     const borderColor = (style === null || style === void 0 ? void 0 : style.borderColor) || gray400;
     return css `
     width: 100%;
