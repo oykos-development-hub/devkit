@@ -43,6 +43,6 @@ export const FileUpload = ({ variant = "primary", buttonVariant, multiple = fals
                 note && React.createElement(Typography, { variant: "bodySmall", content: note }),
                 hint && React.createElement(Typography, { variant: "helperText", content: hint })),
             React.createElement(ButtonWrapper, { variant: variant },
-                React.createElement(Button, { variant: buttonVariant ? buttonVariant : "primary", content: buttonText ? buttonText : "SELECT FILE", onClick: handleClick }))))));
+                React.createElement(Button, { variant: buttonVariant ? buttonVariant : "primary", content: buttonText ? buttonText : "SELECT FILE", onClick: handleClick, theme: theme }))))));
 };
 //# sourceMappingURL=index.js.map

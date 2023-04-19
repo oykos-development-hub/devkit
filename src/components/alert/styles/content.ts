@@ -1,16 +1,14 @@
 import React from "react";
 import styled, { css, DefaultTheme } from "styled-components";
 import { AlertSizes } from "../types";
-import { Theme } from "../../../shared/theme";
 import { rem } from "polished";
 
 export const Content = styled.div<{
-  size: AlertSizes | string;
-  style?: React.CSSProperties | undefined;
+  size: AlertSizes | `${AlertSizes}`;
+  style?: React.CSSProperties;
   theme: DefaultTheme;
 }>(() => ({ size, theme, style }) => {
-  const themeToUse = theme || Theme;
-  const { white } = themeToUse!.palette;
+  const { white } = theme!.palette;
 
   const gap = {
     sm: rem("8px"),
@@ -26,9 +24,9 @@ export const Content = styled.div<{
 
   return css`
     display: flex;
-    flex-direction: row;
     gap: ${gap[size]};
     align-items: center;
+    justify-content: flex-start;
 
     & p {
       margin: 0;
@@ -43,6 +41,7 @@ export const Content = styled.div<{
     & svg {
       width: ${iconSize[size]};
       height: ${iconSize[size]};
+      cursor: pointer;
     }
   `;
 });

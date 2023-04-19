@@ -5,7 +5,7 @@ export const ButtonWrapper = styled.div<{
   variant: FileUploadVariants | string;
 }>(({ variant }) => {
   return css`
-    display: ${variant === "primary" ? "block" : "flex"};
+    display: flex;
     flex-direction: ${variant === "primary" ? "column" : "row"};
     justify-content: center;
     align-items: center;

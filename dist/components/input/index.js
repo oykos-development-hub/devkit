@@ -47,7 +47,7 @@ export const Input = (_a) => {
     return (React.createElement(Container, { theme: theme, label: label, error: error, hint: hint },
         label && React.createElement(Typography, { variant: "bodyMedium", content: label }),
         React.createElement("div", null,
-            textarea ? (React.createElement(Textarea, Object.assign({}, fieldProps, { theme: theme || Theme, rows: rows || 5, cols: cols }))) : (React.createElement(StyledInput, Object.assign({}, fieldProps, props, { theme: theme || Theme, ref: inputRef }))),
+            textarea ? (React.createElement(Textarea, Object.assign({}, fieldProps, props, { theme: theme || Theme, rows: rows || 5, cols: cols }))) : (React.createElement(StyledInput, Object.assign({}, fieldProps, props, { theme: theme || Theme, ref: inputRef }))),
             leftContent && React.createElement(LeftElement, { ref: leftElementRef }, leftContent),
             rightContent && React.createElement(RightElement, { ref: rightElementRef }, rightContent)),
         error && !disabled && React.createElement(Typography, { variant: "helperText", content: error }),

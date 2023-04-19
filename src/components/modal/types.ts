@@ -6,7 +6,7 @@ export enum Variants {
   dark = "dark",
 }
 export interface ModalProps {
-  theme: DefaultTheme;
+  theme?: DefaultTheme;
   title?: string;
   content?: ReactElement | string;
   open?: boolean;
