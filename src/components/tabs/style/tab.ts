@@ -12,7 +12,7 @@ export const StyledTab = styled.button(
     style?: CSSProperties;
     active?: boolean;
   }) => {
-    const { white, gray900, primary500 } = theme.palette;
+    const { white, gray400, gray900, primary500 } = theme.palette;
 
     return css`
       padding: 1em 1.625em;
@@ -21,6 +21,12 @@ export const StyledTab = styled.button(
       background-color: ${active && !disabled ? primary500 : "transparent"};
       transition: all 0.1s ease-in-out;
       cursor: ${disabled ? "auto" : "pointer"};
+
+      &:hover {
+        color: ${white};
+        border: 0.25em solid ${!disabled ? primary500 : gray400};
+        background-color: ${disabled ? gray400 : primary500};
+      }
 
       ${{ ...style }}
     `;
