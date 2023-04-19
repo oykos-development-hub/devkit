@@ -67,6 +67,12 @@ import {
   EyeIcon,
   ArrowDownIcon,
   ArrowUpIcon,
+  HomeIcon,
+  AlertTriangleIcon,
+  AlignCenterIcon,
+  AlignJustifyIcon,
+  AlignLeftIcon,
+  AlignRightIcon,
 } from "./";
 import { IconProps } from "./types";
 
@@ -92,6 +98,11 @@ export default {
 
 const Default: ComponentStory<typeof XIcon> = (args: IconProps) => (
   <StoryWrapper>
+    <AlignRightIcon {...args} />
+    <AlignLeftIcon {...args} />
+    <AlignJustifyIcon {...args} />
+    <AlignCenterIcon {...args} />
+    <AlertTriangleIcon {...args} />
     <ArrowUpIcon {...args} />
     <ArrowDownIcon {...args} />
     <ArrowLeftIcon {...args} />
@@ -157,6 +168,7 @@ const Default: ComponentStory<typeof XIcon> = (args: IconProps) => (
     <TrashIcon {...args} />
     <TrashIconTwo {...args} />
     <SlashDividerIcon {...args} />
+    <HomeIcon {...args} />
   </StoryWrapper>
 );
 
