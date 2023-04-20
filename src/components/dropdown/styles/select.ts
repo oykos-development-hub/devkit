@@ -2,15 +2,17 @@ import Select from "react-select";
 import styled, { css } from "styled-components";
 
 import { DropdownProps } from "../types";
+import { rem } from "polished";
 
 export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, style, controlIcon }) => {
-  const { primary50, primary200, gray50, gray100, gray400, gray600, white } = theme.palette;
+  const { error700, primary100, primary50, primary200, gray200, gray400, gray600, gray700 } = theme.palette;
 
   const borderColor = style?.borderColor || gray400;
 
   return css`
     width: 100%;
     height: auto;
+    font-family: ${style?.fontFamily || theme?.fontFamily.one};
 
     // control
     .select__control {
@@ -18,19 +20,21 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
       background-color: transparent;
       border: ${style?.border || `1px solid ${borderColor}`};
       border-radius: ${theme.borderRadius.lg || "0.5rem"};
-      padding: 0 1em;
+      padding: ${rem("10px")} ${rem("14px")};
       svg {
-        fill: ${style?.color || gray600};
+        fill: ${style?.color || gray700};
       }
       ${{ ...style }}
     }
     .select__value-container {
       padding: 0;
-      padding-left: ${controlIcon ? "0.75em" : 0};
+      padding-left: ${controlIcon ? `${rem("8px")}` : 0};
     }
     .select__placeholder {
-      font-size: 14px;
-      color: ${gray600};
+      font-size: ${rem("14px")};
+      font-weight: 400;
+      line-height: ${rem("20px")};
+      color: ${gray700};
       margin: 0;
     }
     .select__input-container {
@@ -50,38 +54,46 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
     .select__value-container .option-icon {
       display: none;
     }
+    .select__control {
+      display: flex;
+      align-items: center;
+      align-content: center;
+    }
     .select__control:hover {
       border: ${style?.border || `1px solid ${borderColor}`};
     }
     .select__control--is-focused {
-      box-shadow: none;
+      border: 1px solid ${primary200};
     }
     .select__control--menu-is-open.select__control--is-focused,
     .select__control--is-focused,
     .select__control--is-focused:hover {
-      border-color: ${primary200};
+      border: 1px solid ${primary200};
       box-shadow: ${style?.boxShadow || `0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px ${primary50}`};
     }
     .select__control--menu-is-open .select__dropdown-indicator svg {
       transform: rotate(180deg);
     }
     .select__multi-value {
-      border-radius: ${theme.borderRadius.lg || "0.5rem"};
-      background-color: ${gray50};
+      border-radius: ${theme.borderRadius.md || "0.5rem"};
+      background-color: ${gray200};
       & > div {
-        font-size: 1em;
+        font-size: ${rem("14px")};
       }
       & > div:last-child:hover {
-        border-radius: ${theme.borderRadius.lg || "0.5rem"};
-        background-color: ${gray100};
+        border-radius: ${theme.borderRadius.md || "0.5rem"};
         padding: 0 0.25em;
+        cursor: pointer;
+        & > svg {
+          fill: ${error700};
+        }
       }
     }
 
     //menu
     .select__menu {
-      box-shadow: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
-      border: 1px solid ${gray100};
+      box-shadow: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0 4px 6px -2px rgba(16, 24, 40, 0.03);
+      border: 1px solid #dfd7d6;
       margin-top: 0.5em;
       border-radius: ${theme.borderRadius.lg || "0.5rem"};
       width: ${style?.width || "100%"};
@@ -94,17 +106,22 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
       }
     }
     .select__option {
-      font-size: 0.75em;
+      font-size: ${rem("14px")};
+      line-height: ${rem("20px")};
       padding: 0.5em 1rem;
+
+      &:hover {
+        background-color: ${primary50};
+      }
     }
     .select__option--is-focused,
     .select__option--is-selected,
     .select__option--is-focused.select__option--is-selected,
     .select__option:active {
-      background-color: ${white};
+      background-color: ${primary100};
     }
     .select__menu-notice--no-options {
-      font-size: 14px;
+      font-size: ${rem("14px")};
       color: ${gray600};
     }
   `;
