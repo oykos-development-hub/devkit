@@ -1,6 +1,6 @@
 import React from "react";
 import { ModalProps, Variants } from "./types";
-import { Container } from "./styles/container";
+import { ModalContainer } from "./styles/container";
 import { Theme } from "../../shared/theme";
 import { ModalBox } from "./styles/modal";
 import { ModalHeader } from "./styles/header";
@@ -17,7 +17,7 @@ export const Modal = ({
   style,
 }: ModalProps) => {
   return (
-    <Container open={open} onClick={onClose && onClose()}>
+    <ModalContainer open={open} onClick={onClose && onClose()}>
       <ModalBox
         theme={theme}
         variant={variant}
@@ -33,6 +33,6 @@ export const Modal = ({
 
         {content && content}
       </ModalBox>
-    </Container>
+    </ModalContainer>
   );
 };

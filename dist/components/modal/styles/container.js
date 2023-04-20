@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-export const Container = styled.div(({ open }) => {
+export const ModalContainer = styled.div(({ open }) => {
     return css `
     display: ${open ? "flex" : "none"};
     align-items: center;
