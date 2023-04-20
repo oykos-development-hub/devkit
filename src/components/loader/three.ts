@@ -4,14 +4,16 @@ import { rem } from "polished";
 
 export const Three = styled.div<{
   variant?: "one" | "two" | "three";
+  primaryColor?: string;
+  secondaryColor?: string;
   style?: React.CSSProperties;
   theme?: DefaultTheme;
-}>(({ style, theme }) => {
-  const { gray300, primary500 } = theme!.palette;
+}>(({ style, primaryColor, secondaryColor, theme }) => {
+  const { gray200, primary500 } = theme!.palette;
 
   return css`
-    border: ${rem("8px")} solid ${gray300};
-    border-top: ${rem("8px")} ${primary500} solid;
+    border: ${rem("8px")} solid ${primaryColor || gray200};
+    border-top: ${rem("8px")} ${secondaryColor || primary500} solid;
     border-radius: 50%;
     height: ${rem("48px")};
     width: ${rem("48px")};

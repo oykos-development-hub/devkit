@@ -43,6 +43,7 @@ export default {
       control: {
         type: "object",
       },
+      defaultValue: Theme,
     },
     testId: {
       control: {
@@ -58,42 +59,34 @@ const Template: ComponentStory<typeof Loader> = (args: LoaderProps) => (
   </StoryWrapper>
 );
 
-export const Three = Template.bind({});
-Three.args = {
-  variant: "three",
-};
-
-export const VariantOneDefault = Template.bind({});
-VariantOneDefault.args = {
+export const One = Template.bind({});
+One.args = {
+  variant: "one",
   width: "48px",
   height: "48px",
-  testId: "VariantOneDefault",
-  primaryColor: "#b2a422",
-  secondaryColor: "#7199aa",
+  primaryColor: Theme.palette.gray200,
+  secondaryColor: Theme.palette.gray300,
+  wrapperBackgroundColor: Theme.palette.gray900,
 };
 
-export const VariantOneThemed = Template.bind({});
-
-VariantOneThemed.args = {
-  testId: "VariantOneThemed",
-  theme: Theme,
-};
-
-export const VariantTwoDefault = Template.bind({});
-
-VariantTwoDefault.args = {
+export const Two = Template.bind({});
+Two.args = {
   variant: "two",
   width: "100px",
   height: "100px",
-  testId: "VariantTwoDefault",
-  primaryColor: "#b2a422",
-  secondaryColor: "#7199aa",
+  primaryColor: Theme.palette.gray200,
+  secondaryColor: Theme.palette.gray300,
+  wrapperBackgroundColor: Theme.palette.gray900,
+};
+
+export const Three = Template.bind({});
+Three.args = {
+  variant: "three",
+  wrapperBackgroundColor: Theme.palette.gray900,
 };
 
 export const VariantTwoThemed = Template.bind({});
-
 VariantTwoThemed.args = {
   variant: "two",
-  testId: "VariantTwoThemed",
-  theme: Theme,
+  wrapperBackgroundColor: Theme.palette.gray900,
 };

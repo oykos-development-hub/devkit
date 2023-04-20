@@ -2,7 +2,6 @@ import { DefaultTheme } from "styled-components";
 
 export interface LoaderProps {
   variant?: "one" | "two" | "three";
-  testId?: string;
   width?: string;
   height?: string;
   secondaryWidth?: string;
