@@ -34,7 +34,6 @@ export const Input = InputComponent;
 export const LeadingBadge = LeadingBadgeComponent;
 export const Loader = LoaderComponent;
 export const Modal = ModalComponent;
-export const Pagination = PaginationComponent;
 export const Pin = PinComponent;
 export const Radio = RadioComponent;
 export const Switch = SwitchComponent;
@@ -42,8 +41,10 @@ export const Table = TableComponent;
 export const Tabs = TabsComponent;
 export const Tooltip = TooltipComponent;
 export const Typography = TypographyComponent;
+export default PaginationComponent;
 export * from "./components/button/styles";
 export * from "./components/modal/styles";
+export * from "./components/tooltip/styles";
 export * from "./components/icon";
 export * from "./types";
 //# sourceMappingURL=index.js.map
