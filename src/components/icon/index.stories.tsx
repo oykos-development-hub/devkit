@@ -24,7 +24,7 @@ import {
   DownloadIcon,
   MapIcon,
   GithubIconTwo,
-  UploadIconTwo,
+  UploadIcon,
   StarIcon,
   LoginIcon,
   LogoutIcon,
@@ -67,6 +67,63 @@ import {
   EyeIcon,
   ArrowDownIcon,
   ArrowUpIcon,
+  HomeIcon,
+  AlertTriangleIcon,
+  AlignCenterIcon,
+  AlignJustifyIcon,
+  AlignLeftIcon,
+  AlignRightIcon,
+  ArchiveIcon,
+  ArrowDownCircleIcon,
+  ImageIcon,
+  ArrowLeftCircleIcon,
+  BellIcon,
+  BarChartTwo,
+  BarChart,
+  ArrowRightCircleIcon,
+  CheckSquareIcon,
+  BellOffIcon,
+  CloudOffIcon,
+  CopyIcon,
+  DatabaseIcon,
+  ClipboardIcon,
+  FileMinusIcon,
+  EditIconTwo,
+  EditIconThree,
+  ExternalIcon,
+  CornerUpIcon,
+  FilterIcon,
+  FileTextIcon,
+  FolderMinusIcon,
+  FolderPlusIcon,
+  GlobeIcon,
+  InfoIcon,
+  HelpCircleIcon,
+  InboxIcon,
+  MenuIconTwo,
+  LockIcon,
+  FolderIcon,
+  LinkIcon,
+  MinusCircleIcon,
+  MinusSquareIcon,
+  PaperclipIcon,
+  SearchIcon,
+  SendIcon,
+  RepeatIcon,
+  RotateCCWIcon,
+  RotateCWIcon,
+  ShareIcon,
+  SlidersIcon,
+  SaveIcon,
+  UnlockIcon,
+  UserCheckIcon,
+  CloseCircleIcon,
+  ZoomInIcon,
+  ZoomOutIcon,
+  TwoLayersIcon,
+  ThreeLayersIcon,
+  FiltersLinesIcon,
+  FiltersLinesTwo,
 } from "./";
 import { IconProps } from "./types";
 
@@ -90,8 +147,43 @@ export default {
   },
 } as ComponentMeta<typeof XIcon>;
 
-const Default: ComponentStory<typeof XIcon> = (args: IconProps) => (
+const First: ComponentStory<typeof XIcon> = (args: IconProps) => (
   <StoryWrapper>
+    <LinkIcon {...args} />
+    <FolderIcon {...args} />
+    <LockIcon {...args} />
+    <MenuIconTwo {...args} />
+    <InboxIcon {...args} />
+    <HelpCircleIcon {...args} />
+    <InfoIcon {...args} />
+    <GlobeIcon {...args} />
+    <FolderPlusIcon {...args} />
+    <FolderMinusIcon {...args} />
+    <FileTextIcon {...args} />
+    <FilterIcon {...args} />
+    <CornerUpIcon {...args} />
+    <ExternalIcon {...args} />
+    <EditIconThree {...args} />
+    <EditIconTwo {...args} />
+    <ClipboardIcon {...args} />
+    <DatabaseIcon {...args} />
+    <CopyIcon {...args} />
+    <CloudOffIcon {...args} />
+    <CheckSquareIcon {...args} />
+    <BarChart {...args} />
+    <BarChartTwo {...args} />
+    <BellIcon {...args} />
+    <BellOffIcon {...args} />
+    <ImageIcon {...args} />
+    <ArrowLeftCircleIcon {...args} />
+    <ArrowDownCircleIcon {...args} />
+    <ArrowRightCircleIcon {...args} />
+    <ArchiveIcon {...args} />
+    <AlignRightIcon {...args} />
+    <AlignLeftIcon {...args} />
+    <AlignJustifyIcon {...args} />
+    <AlignCenterIcon {...args} />
+    <AlertTriangleIcon {...args} />
     <ArrowUpIcon {...args} />
     <ArrowDownIcon {...args} />
     <ArrowLeftIcon {...args} />
@@ -109,6 +201,7 @@ const Default: ComponentStory<typeof XIcon> = (args: IconProps) => (
     <CloudIcon {...args} />
     <FileIcon {...args} />
     <FilePlusIcon {...args} />
+    <FileMinusIcon {...args} />
     <MenuIcon {...args} />
     <MoreHorizontalIcon {...args} />
     <MoreVerticalIcon {...args} />
@@ -130,8 +223,33 @@ const Default: ComponentStory<typeof XIcon> = (args: IconProps) => (
     <DangerIcon {...args} />
     <CircleCheckIcon {...args} />
     <CircleIcon {...args} />
-    <UploadIconTwo {...args} />
+    <UploadIcon {...args} />
     <UploadCloudIcon {...args} />
+  </StoryWrapper>
+);
+
+const Second: ComponentStory<typeof XIcon> = (args: IconProps) => (
+  <StoryWrapper>
+    <FiltersLinesTwo {...args} />
+    <FiltersLinesIcon {...args} />
+    <ThreeLayersIcon {...args} />
+    <TwoLayersIcon {...args} />
+    <ZoomInIcon {...args} />
+    <ZoomOutIcon {...args} />
+    <CloseCircleIcon {...args} />
+    <UserCheckIcon {...args} />
+    <UnlockIcon {...args} />
+    <SaveIcon {...args} />
+    <SlidersIcon {...args} />
+    <ShareIcon {...args} />
+    <RotateCWIcon {...args} />
+    <RotateCCWIcon {...args} />
+    <RepeatIcon {...args} />
+    <SendIcon {...args} />
+    <SearchIcon {...args} />
+    <PaperclipIcon {...args} />
+    <MinusSquareIcon {...args} />
+    <MinusCircleIcon {...args} />
     <DownloadIcon {...args} />
     <DownloadCloudIcon {...args} />
     <LoginIcon {...args} />
@@ -157,11 +275,18 @@ const Default: ComponentStory<typeof XIcon> = (args: IconProps) => (
     <TrashIcon {...args} />
     <TrashIconTwo {...args} />
     <SlashDividerIcon {...args} />
+    <HomeIcon {...args} />
   </StoryWrapper>
 );
 
-export const DefaultIcons = Default.bind({});
-DefaultIcons.args = {
+export const FirstPack = First.bind({});
+FirstPack.args = {
+  width: "50px",
+  height: "50px",
+};
+
+export const SecondPack = Second.bind({});
+SecondPack.args = {
   width: "50px",
   height: "50px",
 };

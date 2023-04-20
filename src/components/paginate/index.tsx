@@ -19,6 +19,7 @@ export const Pagination = ({
   marginPagesDisplayed = 3,
   fullWidth = true,
   pageCount,
+  ...rest
 }: PaginationProps) => {
   const [selectedPage, setSelectedPage] = useState(0);
 
@@ -46,6 +47,7 @@ export const Pagination = ({
         previousLabel={previousLabel}
         pageRangeDisplayed={pageRangeDisplayed}
         marginPagesDisplayed={marginPagesDisplayed}
+        {...rest}
       ></ReactPaginate>
 
       <Typography
