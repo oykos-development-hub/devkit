@@ -1,0 +1,11 @@
+import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { PaginationProps } from "./types";
+declare const _default: ComponentMeta<React.FC<PaginationProps>>;
+export default _default;
+export declare const VariantFilled: ComponentStory<React.FC<PaginationProps>>;
+export declare const VariantOutlined: ComponentStory<React.FC<PaginationProps>>;
+export declare const VariantUnderlined: ComponentStory<React.FC<PaginationProps>>;
+export declare const OnlyWithArrows: ComponentStory<React.FC<PaginationProps>>;
+export declare const WithPaginationText: ComponentStory<React.FC<PaginationProps>>;
+export declare const VariantDotted: ComponentStory<React.FC<PaginationProps>>;
