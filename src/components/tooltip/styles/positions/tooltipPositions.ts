@@ -1,47 +1,48 @@
 import { css } from "styled-components";
 import { TooltipPositions } from "../../types";
+import { StyledTooltip } from "../tooltip";
 
 const Positions = {
   top: css`
-    & > div {
+    & + ${StyledTooltip} {
       left: 50%;
       bottom: 100%;
-      transform: translate(-50%, -0.75em);
+      transform: translate(-50%, 1em);
     }
   `,
   topLeft: css`
-    & > div {
+    & + ${StyledTooltip} {
       right: 100%;
       bottom: 100%;
-      transform: translate(1.5em, -0.75em);
+      transform: translate(1.5em, 1em);
     }
   `,
   topRight: css`
-    & > div {
+    & + ${StyledTooltip} {
       left: 100%;
       bottom: 100%;
-      transform: translate(-1.5em, -0.75em);
+      transform: translate(-1.5em, 1em);
     }
   `,
   left: css`
-    & > div {
+    & + ${StyledTooltip} {
       top: 50%;
       right: 100%;
-      transform: translate(-0.75em, -50%);
+      transform: translate(1em, -50%);
     }
   `,
   bottom: css`
-    & > div {
-      top: 100%;
+    & + ${StyledTooltip} {
+      top: 50%;
       left: 50%;
-      transform: translate(-50%, 0.75em);
+      transform: translate(-50%, 1em);
     }
   `,
   right: css`
-    & > div {
+    & + ${StyledTooltip} {
       top: 50%;
       left: 100%;
-      transform: translate(0.75em, -50%);
+      transform: translate(1em, -50%);
     }
   `,
 };
