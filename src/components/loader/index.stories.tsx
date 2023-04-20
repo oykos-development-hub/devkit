@@ -1,6 +1,6 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Loader } from "./index";
+import { Loader } from "./";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { LoaderProps } from "./types";
 import { Theme } from "../../shared/theme";
