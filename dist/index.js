@@ -20,7 +20,6 @@ import { Table as TableComponent } from "./components/table";
 import { Tabs as TabsComponent } from "./components/tabs";
 import { Tooltip as TooltipComponent } from "./components/tooltip";
 import { Typography as TypographyComponent } from "./components/typography";
-
 export const Alert = AlertComponent;
 export const Avatar = AvatarComponent;
 export const Badge = BadgeComponent;
@@ -43,9 +42,9 @@ export const Tabs = TabsComponent;
 export const Tooltip = TooltipComponent;
 export const Typography = TypographyComponent;
 export default PaginationComponent;
-
 export * from "./components/button/styles";
 export * from "./components/modal/styles";
 export * from "./components/tooltip/styles";
 export * from "./components/icon";
 export * from "./types";
+//# sourceMappingURL=index.js.map

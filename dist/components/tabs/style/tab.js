@@ -1,20 +1,7 @@
-import styled, { css, CSSProperties, DefaultTheme } from "styled-components";
-
-export const StyledTab = styled.button(
-  ({
-    disabled,
-    theme,
-    style,
-    active,
-  }: {
-    disabled?: boolean;
-    theme: DefaultTheme;
-    style?: CSSProperties;
-    active?: boolean;
-  }) => {
+import styled, { css } from "styled-components";
+export const StyledTab = styled.button(({ disabled, theme, style, active, }) => {
     const { white, gray200, gray400, gray600, gray900, primary500 } = theme.palette;
-
-    return css`
+    return css `
       padding: 1em 1.625em;
       border: 0.0625em solid ${active ? primary500 : disabled ? gray200 : gray600};
       color: ${active ? white : disabled ? gray200 : gray900};
@@ -28,7 +15,7 @@ export const StyledTab = styled.button(
         background-color: ${disabled ? gray400 : primary500};
       }
 
-      ${{ ...style }}
+      ${Object.assign({}, style)}
     `;
-  },
-);
+});
+//# sourceMappingURL=tab.js.map

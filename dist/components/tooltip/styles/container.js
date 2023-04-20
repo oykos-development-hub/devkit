@@ -1,10 +1,8 @@
 import styled, { css } from "styled-components";
-import { TooltipPositions } from "../types";
 import { tooltipPosition } from "./positions/tooltipPositions";
 import { StyledTooltip } from "./tooltip";
-
-export const Container = styled.div<{ position: TooltipPositions | `${TooltipPositions}` }>(({ position }) => {
-  return css`
+export const Container = styled.div(({ position }) => {
+    return css `
     position: relative;
 
     &:hover + ${StyledTooltip} {
@@ -14,3 +12,4 @@ export const Container = styled.div<{ position: TooltipPositions | `${TooltipPos
     ${tooltipPosition(position)}
   `;
 });
+//# sourceMappingURL=container.js.map

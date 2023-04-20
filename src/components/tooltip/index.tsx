@@ -18,9 +18,8 @@ export const Tooltip = ({
   const tooltipPosition = TooltipPositions[position] || "bottom";
 
   return (
-    <Container position={tooltipPosition}>
-      {children}
-
+    <div>
+      <Container position={tooltipPosition}>{children}</Container>
       <StyledTooltip
         style={style}
         arrow={arrow}
@@ -33,6 +32,6 @@ export const Tooltip = ({
         {title && <Typography content={title} variant="h6" />}
         <Typography content={content} variant="bodyMedium" />
       </StyledTooltip>
-    </Container>
+    </div>
   );
 };
