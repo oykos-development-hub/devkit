@@ -1,8 +1,8 @@
 import React from "react";
 import { Theme } from "../../shared/theme";
 import { Typography } from "../typography";
-import { Container } from "./styles/container";
-import { StyledTooltip } from "./styles/tooltip";
+import { Container } from "./styles";
+import { StyledTooltip } from "./styles";
 import { TooltipPositions, TooltipProps } from "./types";
 
 export const Tooltip = ({

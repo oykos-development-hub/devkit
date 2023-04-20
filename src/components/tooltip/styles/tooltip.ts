@@ -20,7 +20,7 @@ export const StyledTooltip = styled.div<TooltipProps>(({ style, position, arrow,
     z-index: 1;
     padding: 0.5em 0.75em;
     position: absolute;
-    box-shadow: 0px 8px 14px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 14px 3px rgba(0, 0, 0, 0.1);
 
     &::after {
       background-color: ${style?.backgroundColor || (variant === TooltipVariants["standard"] ? white : primary500)};
@@ -29,7 +29,7 @@ export const StyledTooltip = styled.div<TooltipProps>(({ style, position, arrow,
     & ${BodyMedium}, ${H6} {
       color: ${style?.color || (variant === TooltipVariants["standard"] ? gray900 : white)};
       white-space: normal;
-      font-family: "Inter";
+      font-family: ${style?.fontFamily || theme.fontFamily.one};
     }
 
     ${arrowPosition(position, arrow)}
