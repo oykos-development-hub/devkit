@@ -13,7 +13,7 @@ export declare const Input: ({ name, value, theme, style, disabled, label, texta
 export declare const LeadingBadge: import("react").FC<import("./types").LeadingBadgeProps>;
 export declare const Loader: (props: import("./types").LoaderProps) => import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;
 export declare const Modal: ({ theme, title, content, open, onClose, variant, style, }: import("./types").ModalProps) => JSX.Element;
-export declare const Pagination: ({ previousLabel, nextLabel, renderPaginationText, onChange, theme, variant, style, displayPages, pageRangeDisplayed, marginPagesDisplayed, fullWidth, pageCount, }: import("./types").PaginationProps) => JSX.Element;
+export declare const Pagination: ({ previousLabel, nextLabel, renderPaginationText, onChange, theme, variant, style, displayPages, pageRangeDisplayed, marginPagesDisplayed, fullWidth, pageCount, ...rest }: import("./types").PaginationProps) => JSX.Element;
 export declare const Pin: ({ handleInput, length, type }: import("./types").IPinCode) => JSX.Element;
 export declare const Radio: import("react").FC<import("./types").RadioProps>;
 export declare const Switch: import("react").FC<import("./types").SwitchProps>;
