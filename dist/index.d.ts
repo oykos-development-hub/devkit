@@ -1,4 +1,5 @@
 /// <reference types="react" />
+import { Pagination } from "./components/paginate";
 export declare const Alert: import("react").FC<import("./types").AlertProps>;
 export declare const Avatar: import("react").FC<import("./types").AvatarProps>;
 export declare const Badge: import("react").FC<import("./types").BadgeProps>;
@@ -13,7 +14,6 @@ export declare const Input: ({ name, value, theme, style, disabled, label, texta
 export declare const LeadingBadge: import("react").FC<import("./types").LeadingBadgeProps>;
 export declare const Loader: (props: import("./types").LoaderProps) => import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;
 export declare const Modal: ({ theme, title, content, open, onClose, variant, style, }: import("./types").ModalProps) => JSX.Element;
-export declare const Pagination: ({ previousLabel, nextLabel, renderPaginationText, onChange, theme, variant, style, displayPages, pageRangeDisplayed, marginPagesDisplayed, fullWidth, pageCount, ...rest }: import("./types").PaginationProps) => JSX.Element;
 export declare const Pin: ({ handleInput, length, type }: import("./types").IPinCode) => JSX.Element;
 export declare const Radio: import("react").FC<import("./types").RadioProps>;
 export declare const Switch: import("react").FC<import("./types").SwitchProps>;
@@ -21,6 +21,7 @@ export declare const Table: ({ theme, style, headerContent, bodyContent, titleEl
 export declare const Tabs: ({ style, theme, tabs, onChange }: import("./types").TabsProps) => JSX.Element;
 export declare const Tooltip: ({ position, theme, content, children, title, variant, arrow, style, }: import("./types").TooltipProps) => JSX.Element;
 export declare const Typography: (props: import("./types").TypographyProps) => import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;
+export default Pagination;
 export * from "./components/button/styles";
 export * from "./components/modal/styles";
 export * from "./components/icon";
