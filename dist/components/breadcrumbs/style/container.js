@@ -20,10 +20,6 @@ export const Container = styled.ul(({ theme, style }) => {
       margin-right: 0;
     }
 
-    & path {
-      fill: ${gray900};
-    }
-
     ${Object.assign({}, style)}
   `;
 });

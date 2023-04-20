@@ -2,6 +2,7 @@ import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Alert } from "./index";
 import { CircleCheckIcon, DangerIcon } from "../icon";
+import { Theme } from "../../shared/theme";
 export default {
     component: Alert,
     title: "Components/Alert",
@@ -24,10 +25,15 @@ export default {
             control: {
                 type: "object",
             },
+            defaultValue: Theme,
         },
         style: {
             control: {
                 type: "object",
+            },
+            defaultValue: {
+                width: "600px",
+                height: "60px",
             },
         },
         size: {

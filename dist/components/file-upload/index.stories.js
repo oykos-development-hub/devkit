@@ -1,10 +1,10 @@
 import React from "react";
-import { FileUpload } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
+import { FileUpload } from "./index";
 export default {
-    title: "Components/FileUpload",
     component: FileUpload,
+    title: "Components/FileUpload",
     argTypes: {
         variant: {
             control: {

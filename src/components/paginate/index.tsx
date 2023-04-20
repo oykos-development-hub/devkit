@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC } from "react";
 import { useState } from "react";
 import ReactPaginate from "react-paginate";
 import { Theme } from "../../shared/theme";
@@ -6,7 +6,7 @@ import { Typography } from "../typography";
 import { Container } from "./style/container";
 import { PaginationProps } from "./types";
 
-export const Pagination = ({
+export const Pagination: FC<PaginationProps> = ({
   previousLabel,
   nextLabel,
   renderPaginationText,
@@ -19,7 +19,8 @@ export const Pagination = ({
   marginPagesDisplayed = 3,
   fullWidth = true,
   pageCount,
-}: PaginationProps) => {
+  ...rest
+}) => {
   const [selectedPage, setSelectedPage] = useState(0);
 
   const handlePageClick = ({ selected }: { selected: number }) => {
@@ -46,6 +47,7 @@ export const Pagination = ({
         previousLabel={previousLabel}
         pageRangeDisplayed={pageRangeDisplayed}
         marginPagesDisplayed={marginPagesDisplayed}
+        {...rest}
       ></ReactPaginate>
 
       <Typography

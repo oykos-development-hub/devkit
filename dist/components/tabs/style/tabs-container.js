@@ -4,7 +4,7 @@ export const TabsContainer = styled.div(() => {
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 2.75em;
+    gap: 0.1875em;
   `;
 });
 //# sourceMappingURL=tabs-container.js.map

@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import { ReactPaginateProps } from "react-paginate";
 import { CSSProperties, DefaultTheme } from "styled-components";
 
 export enum PaginationVariants {
@@ -8,7 +9,7 @@ export enum PaginationVariants {
   dotted = "dotted",
 }
 
-export interface PaginationProps {
+export interface PaginationProps extends ReactPaginateProps {
   theme: DefaultTheme;
   variant: PaginationVariants | `${PaginationVariants}`;
   style?: CSSProperties;

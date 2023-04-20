@@ -31,7 +31,7 @@ export const Alert: React.FC<AlertProps> = ({
 
   return (
     <Container variant={variant} style={style} theme={theme}>
-      <Wrapper size={size}>
+      <Wrapper size={size} theme={theme} variant={variant}>
         <Content size={size} theme={theme}>
           {icon && icon}
           <Typography variant={textVariant()} content={content} theme={theme} />
