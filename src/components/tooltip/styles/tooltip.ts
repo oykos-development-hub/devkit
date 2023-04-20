@@ -7,7 +7,7 @@ export const StyledTooltip = styled.div<TooltipProps>(({ style, position, arrow,
   const { white, primary500, gray900 } = theme.palette;
 
   return css`
-    min-width: 100%;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: ${title ? "flex-start" : "center"};

@@ -1,10 +1,11 @@
 import styled, { css } from "styled-components";
 import { tooltipPosition } from "./positions/tooltipPositions";
+import { StyledTooltip } from "./tooltip";
 export const Container = styled.div(({ position }) => {
     return css `
     position: relative;
 
-    &:hover > div {
+    &:hover + ${StyledTooltip} {
       visibility: visible;
     }
 
