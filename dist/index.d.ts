@@ -1,5 +1,5 @@
 /// <reference types="react" />
-import { Pagination } from "./components/paginate";
+import { Pagination as PaginationComponent } from "./components/paginate";
 export declare const Alert: import("react").FC<import("./types").AlertProps>;
 export declare const Avatar: import("react").FC<import("./types").AvatarProps>;
 export declare const Badge: import("react").FC<import("./types").BadgeProps>;
@@ -21,8 +21,9 @@ export declare const Table: ({ theme, style, headerContent, bodyContent, titleEl
 export declare const Tabs: ({ style, theme, tabs, onChange }: import("./types").TabsProps) => JSX.Element;
 export declare const Tooltip: ({ position, theme, content, children, title, variant, arrow, style, }: import("./types").TooltipProps) => JSX.Element;
 export declare const Typography: (props: import("./types").TypographyProps) => import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;
-export default Pagination;
+export default PaginationComponent;
 export * from "./components/button/styles";
 export * from "./components/modal/styles";
+export * from "./components/tooltip/styles";
 export * from "./components/icon";
 export * from "./types";
