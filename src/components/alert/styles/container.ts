@@ -24,7 +24,6 @@ export const Container = styled.div<{
     background-color: ${background[variant]};
     border-radius: 0.125rem;
     z-index: 999;
-
     ${{ ...style }}
   `;
 });
