@@ -1,5 +1,5 @@
 import React from "react";
-import { Loader } from "./index";
+import { Loader } from "./";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 export default {
@@ -8,7 +8,7 @@ export default {
     argTypes: {
         variant: {
             control: {
-                type: "text",
+                type: "radio",
             },
         },
         width: {
@@ -40,6 +40,7 @@ export default {
             control: {
                 type: "object",
             },
+            defaultValue: Theme,
         },
         testId: {
             control: {
@@ -50,32 +51,32 @@ export default {
 };
 const Template = (args) => (React.createElement(StoryWrapper, null,
     React.createElement(Loader, Object.assign({}, args))));
-export const VariantOneDefault = Template.bind({});
-VariantOneDefault.args = {
-    width: "100px",
-    height: "100px",
-    testId: "VariantOneDefault",
-    primaryColor: "#b2a422",
-    secondaryColor: "#7199aa",
+export const One = Template.bind({});
+One.args = {
+    variant: "one",
+    width: "48px",
+    height: "48px",
+    primaryColor: Theme.palette.gray200,
+    secondaryColor: Theme.palette.gray300,
+    wrapperBackgroundColor: Theme.palette.gray900,
 };
-export const VariantOneThemed = Template.bind({});
-VariantOneThemed.args = {
-    testId: "VariantOneThemed",
-    theme: Theme,
-};
-export const VariantTwoDefault = Template.bind({});
-VariantTwoDefault.args = {
+export const Two = Template.bind({});
+Two.args = {
     variant: "two",
     width: "100px",
     height: "100px",
-    testId: "VariantTwoDefault",
-    primaryColor: "#b2a422",
-    secondaryColor: "#7199aa",
+    primaryColor: Theme.palette.gray200,
+    secondaryColor: Theme.palette.gray300,
+    wrapperBackgroundColor: Theme.palette.gray900,
+};
+export const Three = Template.bind({});
+Three.args = {
+    variant: "three",
+    wrapperBackgroundColor: Theme.palette.gray900,
 };
 export const VariantTwoThemed = Template.bind({});
 VariantTwoThemed.args = {
     variant: "two",
-    testId: "VariantTwoThemed",
-    theme: Theme,
+    wrapperBackgroundColor: Theme.palette.gray900,
 };
 //# sourceMappingURL=index.stories.js.map
