@@ -5,3 +5,5 @@ declare const _default: ComponentMeta<React.FC<AlertProps>>;
 export default _default;
 export declare const Primary: ComponentStory<React.FC<AlertProps>>;
 export declare const Success: ComponentStory<React.FC<AlertProps>>;
+export declare const Info: ComponentStory<React.FC<AlertProps>>;
+export declare const Warning: ComponentStory<React.FC<AlertProps>>;

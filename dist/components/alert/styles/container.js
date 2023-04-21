@@ -1,12 +1,13 @@
 import styled, { css } from "styled-components";
 export const Container = styled.div(() => ({ theme, variant, style }) => {
     var _a;
-    const { primary500, success500, error500, gray600 } = theme.palette;
+    const { primary500, success500, error500, gray600, warning500 } = theme.palette;
     const background = {
         primary: primary500,
         success: success500,
         error: error500,
         info: gray600,
+        warning: warning500,
     };
     return css `
     display: flex;
