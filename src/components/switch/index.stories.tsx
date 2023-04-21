@@ -21,6 +21,7 @@ export default {
       },
       defaultValue: Theme,
     },
+
     size: {
       control: {
         type: "radio",
@@ -34,7 +35,7 @@ const Template: ComponentStory<typeof Switch> = (args: SwitchProps) => {
   const [checked, setIsChecked] = useState<boolean>(false);
   return (
     <StoryWrapper>
-      <Switch {...args} onChange={() => setIsChecked(!checked)} checked={checked} />
+      <Switch {...args} onChange={() => setIsChecked((prev) => !prev)} checked={checked} />
     </StoryWrapper>
   );
 };
