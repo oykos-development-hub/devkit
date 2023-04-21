@@ -23,9 +23,7 @@ export const Dropdown = (_a) => {
     const controlIconWrapperRef = useRef(null);
     const optionLabel = (e) => (React.createElement(Option, { theme: theme, isDisabled: isDisabled, style: style },
         React.createElement("div", null,
-            leftOptionIcon && React.createElement("div", { className: "option-icon" },
-                leftOptionIcon,
-                " "),
+            leftOptionIcon && React.createElement("div", { className: "option-icon" }, leftOptionIcon),
             e.label),
         !isMulti && (selectedOption === null || selectedOption === void 0 ? void 0 : selectedOption.value) === e.value && (React.createElement("div", { className: "option-icon" }, rightOptionIcon && rightOptionIcon))));
     useEffect(() => {

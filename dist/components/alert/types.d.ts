@@ -4,7 +4,8 @@ export declare enum AlertVariants {
     primary = "primary",
     error = "error",
     success = "success",
-    info = "info"
+    info = "info",
+    warning = "warning"
 }
 export declare enum AlertSizes {
     sm = "sm",

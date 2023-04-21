@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Checkbox } from "./";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { CheckboxSize } from "./types";
@@ -36,8 +36,9 @@ export default {
     },
 };
 const Template = (args) => {
+    const [checked, setIsChecked] = useState(false);
     return (React.createElement(StoryWrapper, null,
-        React.createElement(Checkbox, Object.assign({}, args))));
+        React.createElement(Checkbox, Object.assign({}, args, { onClick: () => setIsChecked((prev) => !prev), checked: checked }))));
 };
 export const Default = Template.bind({});
 Default.args = {

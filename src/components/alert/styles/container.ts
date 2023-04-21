@@ -7,18 +7,17 @@ export const Container = styled.div<{
   theme?: DefaultTheme;
   style?: React.CSSProperties;
 }>(() => ({ theme, variant, style }) => {
-  const { primary500, success500, error500, gray600 } = theme!.palette;
+  const { primary500, success500, error500, gray600, warning500 } = theme!.palette;
 
   const background = {
     primary: primary500,
     success: success500,
     error: error500,
     info: gray600,
+    warning: warning500,
   };
 
   return css`
-    display: flex;
-    align-items: center;
     font-family: ${theme.fontFamily?.one || "sans-serif"};
     background-color: ${background[variant]};
     border-radius: 0.125rem;

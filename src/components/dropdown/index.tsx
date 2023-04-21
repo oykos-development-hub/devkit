@@ -32,7 +32,7 @@ export const Dropdown = ({
   const optionLabel = (e: any) => (
     <Option theme={theme} isDisabled={isDisabled} style={style}>
       <div>
-        {leftOptionIcon && <div className="option-icon">{leftOptionIcon} </div>}
+        {leftOptionIcon && <div className="option-icon">{leftOptionIcon}</div>}
         {e.label}
       </div>
       {!isMulti && selectedOption?.value === e.value && (
