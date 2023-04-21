@@ -16,7 +16,6 @@ export const Container = styled.div(() => ({ theme, variant, style }) => {
     background-color: ${background[variant]};
     border-radius: 0.125rem;
     z-index: 999;
-
     ${Object.assign({}, style)}
   `;
 });
