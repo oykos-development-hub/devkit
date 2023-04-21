@@ -76,12 +76,12 @@ Success.args = {
   closeIcon: true,
 };
 
-export const Info = Template.bind({});
-Info.args = {
-  content: "Info message",
-  variant: "info",
+export const Error = Template.bind({});
+Error.args = {
+  content: "Error message",
+  variant: "error",
   size: "md",
-  icon: <InfoIcon fill={"none"} stroke={"white"} />,
+  icon: <DangerIcon fill={"none"} stroke={"white"} />,
   closeIcon: true,
 };
 
@@ -99,7 +99,7 @@ Info.args = {
   content: "Info message!",
   variant: "info",
   size: "md",
-  icon: <CircleCheckIcon stroke={"white"} />,
+  icon: <InfoIcon stroke={"white"} />,
   description: "This is the description",
   closeIcon: true,
 };
