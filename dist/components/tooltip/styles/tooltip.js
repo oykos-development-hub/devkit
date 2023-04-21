@@ -5,12 +5,12 @@ import { arrowPosition } from "./positions/arrowPositions";
 export const StyledTooltip = styled.div(({ style, position, arrow, variant, theme, title }) => {
     const { white, primary500, gray900 } = theme.palette;
     return css `
-    width: auto;
+    width: max-content;
     display: flex;
     flex-direction: column;
     align-items: ${title ? "flex-start" : "center"};
     gap: 0.25em;
-    visibility: hidden;
+    visibility: visible;
     color: ${variant === TooltipVariants["standard"] ? gray900 : white};
     background-color: ${variant === TooltipVariants["standard"] ? white : primary500};
     border-radius: 0.5em;
