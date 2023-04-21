@@ -29,7 +29,7 @@ export default {
 const Template = (args) => {
     const [checked, setIsChecked] = useState(false);
     return (React.createElement(StoryWrapper, null,
-        React.createElement(Switch, Object.assign({}, args, { onChange: () => setIsChecked(!checked), checked: checked }))));
+        React.createElement(Switch, Object.assign({}, args, { onChange: () => setIsChecked((prev) => !prev), checked: checked }))));
 };
 export const NoContent = Template.bind({});
 NoContent.args = {
