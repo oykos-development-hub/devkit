@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
-import { CSSProperties, DefaultTheme } from "styled-components";
+import { ReactElement, CSSProperties } from "react";
+import { DefaultTheme } from "styled-components";
 export type ValueType = {
     value: string | number;
     label: string;

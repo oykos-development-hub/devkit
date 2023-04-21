@@ -12,4 +12,5 @@ export interface CheckboxProps {
   onClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
   style?: React.CSSProperties;
   theme?: DefaultTheme;
+  checked: boolean;
 }

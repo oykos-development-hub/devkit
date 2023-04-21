@@ -10,8 +10,6 @@ export const Container = styled.div(() => ({ theme, variant, style }) => {
         warning: warning500,
     };
     return css `
-    display: flex;
-    align-items: center;
     font-family: ${((_a = theme.fontFamily) === null || _a === void 0 ? void 0 : _a.one) || "sans-serif"};
     background-color: ${background[variant]};
     border-radius: 0.125rem;
