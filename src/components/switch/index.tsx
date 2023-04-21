@@ -6,16 +6,22 @@ import { Slider } from "./styles/slider";
 import { Input } from "./styles/input";
 import { Label } from "./styles/label";
 
-export const Switch: React.FC<SwitchProps> = ({ content, size = "md", disabled = false, style, theme, onChange }) => {
+export const Switch: React.FC<SwitchProps> = ({
+  checked,
+  content,
+  size = "md",
+  disabled = false,
+  style,
+  theme,
+  onChange,
+}) => {
   const ref = useRef<HTMLLabelElement>(null);
   const [isActive, setIsActive] = useState<boolean>(false);
-  const [isChecked, setIsChecked] = useState<boolean>(false);
 
   const handleChange = (e: any) => {
     if (disabled) return;
 
     setIsActive(true);
-    setIsChecked((prev) => !prev);
     onChange && onChange(e);
   };
 
@@ -35,8 +41,8 @@ export const Switch: React.FC<SwitchProps> = ({ content, size = "md", disabled =
   return (
     <Container size={size} style={style} theme={theme} hasContent={!!content}>
       <SwitchWrapper>
-        <Label ref={ref} size={size} theme={theme} disabled={disabled} isChecked={isChecked} isActive={isActive}>
-          <Input checked={isChecked} inputSize={size} disabled={disabled} onChange={handleChange} />
+        <Label ref={ref} size={size} theme={theme} disabled={disabled} isChecked={checked} isActive={isActive}>
+          <Input checked={checked} inputSize={size} disabled={disabled} onChange={handleChange} />
           <Slider size={size} theme={theme} />
         </Label>
       </SwitchWrapper>
