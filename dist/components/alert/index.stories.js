@@ -1,7 +1,7 @@
 import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Alert } from "./index";
-import { CircleCheckIcon, DangerIcon } from "../icon";
+import { CircleCheckIcon, DangerIcon, InfoIcon } from "../icon";
 import { Theme } from "../../shared/theme";
 export default {
     component: Alert,
@@ -16,6 +16,11 @@ export default {
             control: {
                 type: "radio",
                 options: ["primary", "success", "error", "info"],
+            },
+        },
+        icon: {
+            control: {
+                type: "object",
             },
         },
         onClose: {
@@ -33,7 +38,7 @@ export default {
             },
             defaultValue: {
                 width: "600px",
-                height: "60px",
+                height: "auto",
             },
         },
         size: {
@@ -48,20 +53,42 @@ const Template = (args) => (React.createElement(StoryWrapper, null,
     React.createElement(Alert, Object.assign({}, args))));
 export const Primary = Template.bind({});
 Primary.args = {
-    content: "Title",
+    content: "Primary message",
     variant: "primary",
     size: "md",
-    icon: React.createElement(DangerIcon, { fill: "none", stroke: "white" }),
-    description: "",
     closeIcon: true,
 };
 export const Success = Template.bind({});
 Success.args = {
-    content: "Title",
+    content: "Success message",
     variant: "success",
     size: "md",
     icon: React.createElement(CircleCheckIcon, { fill: "none", stroke: "white" }),
-    description: "",
+    closeIcon: true,
+};
+export const Error = Template.bind({});
+Error.args = {
+    content: "Error message",
+    variant: "error",
+    size: "md",
+    icon: React.createElement(DangerIcon, { fill: "none", stroke: "white" }),
+    closeIcon: true,
+};
+export const Warning = Template.bind({});
+Warning.args = {
+    content: "Warning message",
+    variant: "warning",
+    size: "md",
+    icon: React.createElement(DangerIcon, { fill: "none", stroke: "white" }),
+    closeIcon: true,
+};
+export const Info = Template.bind({});
+Info.args = {
+    content: "Info message!",
+    variant: "info",
+    size: "md",
+    icon: React.createElement(InfoIcon, { stroke: "white" }),
+    description: "This is the description",
     closeIcon: true,
 };
 //# sourceMappingURL=index.stories.js.map

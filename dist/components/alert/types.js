@@ -4,6 +4,7 @@ export var AlertVariants;
     AlertVariants["error"] = "error";
     AlertVariants["success"] = "success";
     AlertVariants["info"] = "info";
+    AlertVariants["warning"] = "warning";
 })(AlertVariants || (AlertVariants = {}));
 export var AlertSizes;
 (function (AlertSizes) {

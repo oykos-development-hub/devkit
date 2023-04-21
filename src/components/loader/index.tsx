@@ -2,6 +2,8 @@ import React, { useMemo } from "react";
 import { LoaderProps } from "./types";
 import { One } from "./one";
 import { Two } from "./two";
+import { Theme } from "../../shared/theme";
+import { Three } from "./three";
 
 const resolveSecondaryValue = (value?: string): string => {
   if (!value) return "";
@@ -19,6 +21,7 @@ export const Loader = (props: LoaderProps): React.ReactElement => {
 
   if (variant === "one") return <One {...props} secondaryWidth={secondaryWidth} secondaryHeight={secondaryHeight} />;
   if (variant === "two") return <Two {...props} secondaryWidth={secondaryWidth} secondaryHeight={secondaryHeight} />;
+  if (variant === "three") return <Three {...props} variant={props.variant} theme={props.theme || Theme} />;
 
   return <One {...props} />;
 };
