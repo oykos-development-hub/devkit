@@ -3,7 +3,7 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { AlertProps } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Alert } from "./index";
-import { CircleCheckIcon, DangerIcon } from "../icon";
+import { CircleCheckIcon, DangerIcon, InfoIcon } from "../icon";
 import { Theme } from "../../shared/theme";
 
 export default {
@@ -21,6 +21,11 @@ export default {
         options: ["primary", "success", "error", "info"],
       },
     },
+    icon: {
+      control: {
+        type: "object",
+      },
+    },
     onClose: {
       defaultValue: () => alert("Closed!"),
     },
@@ -36,7 +41,7 @@ export default {
       },
       defaultValue: {
         width: "600px",
-        height: "60px",
+        height: "auto",
       },
     },
     size: {
@@ -56,20 +61,35 @@ const Template: ComponentStory<typeof Alert> = (args: AlertProps) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  content: "Title",
+  content: "Primary message",
   variant: "primary",
   size: "md",
-  icon: <DangerIcon fill={"none"} stroke={"white"} />,
-  description: "",
   closeIcon: true,
 };
 
 export const Success = Template.bind({});
 Success.args = {
-  content: "Title",
+  content: "Success message",
   variant: "success",
   size: "md",
   icon: <CircleCheckIcon fill={"none"} stroke={"white"} />,
-  description: "",
+  closeIcon: true,
+};
+
+export const Info = Template.bind({});
+Info.args = {
+  content: "Info message",
+  variant: "info",
+  size: "md",
+  icon: <InfoIcon fill={"none"} stroke={"white"} />,
+  closeIcon: true,
+};
+
+export const Warning = Template.bind({});
+Warning.args = {
+  content: "Warning message",
+  variant: "warning",
+  size: "md",
+  icon: <DangerIcon fill={"none"} stroke={"white"} />,
   closeIcon: true,
 };
