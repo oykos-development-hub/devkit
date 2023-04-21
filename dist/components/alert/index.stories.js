@@ -66,12 +66,12 @@ Success.args = {
     icon: React.createElement(CircleCheckIcon, { fill: "none", stroke: "white" }),
     closeIcon: true,
 };
-export const Info = Template.bind({});
-Info.args = {
-    content: "Info message",
-    variant: "info",
+export const Error = Template.bind({});
+Error.args = {
+    content: "Error message",
+    variant: "error",
     size: "md",
-    icon: React.createElement(InfoIcon, { fill: "none", stroke: "white" }),
+    icon: React.createElement(DangerIcon, { fill: "none", stroke: "white" }),
     closeIcon: true,
 };
 export const Warning = Template.bind({});
@@ -80,6 +80,15 @@ Warning.args = {
     variant: "warning",
     size: "md",
     icon: React.createElement(DangerIcon, { fill: "none", stroke: "white" }),
+    closeIcon: true,
+};
+export const Info = Template.bind({});
+Info.args = {
+    content: "Info message!",
+    variant: "info",
+    size: "md",
+    icon: React.createElement(InfoIcon, { stroke: "white" }),
+    description: "This is the description",
     closeIcon: true,
 };
 //# sourceMappingURL=index.stories.js.map
