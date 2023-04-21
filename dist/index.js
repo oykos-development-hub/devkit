@@ -41,7 +41,7 @@ export const Table = TableComponent;
 export const Tabs = TabsComponent;
 export const Tooltip = TooltipComponent;
 export const Typography = TypographyComponent;
-export default PaginationComponent;
+export const Pagination = PaginationComponent;
 export * from "./components/button/styles";
 export * from "./components/modal/styles";
 export * from "./components/tooltip/styles";

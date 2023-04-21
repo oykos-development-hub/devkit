@@ -11,21 +11,19 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   style,
   theme = Theme,
   disabled = false,
+  checked,
 }) => {
-  const [isChecked, setIsChecked] = useState(false);
-
   const handleClick = (e: any) => {
     if (disabled) return;
 
-    setIsChecked(!isChecked);
     onClick && onClick(e);
   };
 
   return (
     <Container>
-      <HiddenCheckbox defaultChecked={isChecked} />
-      <Content checked={isChecked} onClick={handleClick} size={size} style={style} theme={theme} disabled={disabled}>
-        {isChecked && <CheckIcon stroke={disabled ? theme.palette.gray300 : theme.palette.white} />}
+      <HiddenCheckbox defaultChecked={checked} />
+      <Content checked={checked} onClick={handleClick} size={size} style={style} theme={theme} disabled={disabled}>
+        {checked && <CheckIcon stroke={disabled ? theme.palette.gray300 : theme.palette.white} />}
       </Content>
     </Container>
   );
