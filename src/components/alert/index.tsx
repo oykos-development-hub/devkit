@@ -31,22 +31,20 @@ export const Alert: React.FC<AlertProps> = ({
 
   return (
     <Container variant={variant} style={style} theme={theme}>
-      <div style={{ display: "flex", justifyContent: "flex-start" }}>
-        <Wrapper size={size} theme={theme} variant={variant}>
-          <Content size={size} theme={theme}>
-            {icon && icon}
-            <Typography variant={textVariant()} content={content} theme={theme} />
+      <Wrapper size={size} theme={theme} variant={variant}>
+        <Content theme={theme}>
+          {icon && icon}
+          <Typography variant={textVariant()} content={content} theme={theme} />
+        </Content>
+
+        {closeIcon && (
+          <Content theme={theme}>
+            <CloseIcon stroke={"white"} onClick={onClose} />
           </Content>
+        )}
+      </Wrapper>
 
-          {closeIcon && (
-            <Content size={size} theme={theme}>
-              <CloseIcon stroke={"white"} onClick={onClose} />
-            </Content>
-          )}
-        </Wrapper>
-      </div>
-
-      {description && <div style={{ display: "flex" }}>{description}</div>}
+      {description && description}
     </Container>
   );
 };

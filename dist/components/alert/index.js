@@ -17,13 +17,12 @@ export const Alert = ({ variant = "success", content, description, icon, closeIc
         }
     };
     return (React.createElement(Container, { variant: variant, style: style, theme: theme },
-        React.createElement("div", { style: { display: "flex", justifyContent: "flex-start" } },
-            React.createElement(Wrapper, { size: size, theme: theme, variant: variant },
-                React.createElement(Content, { size: size, theme: theme },
-                    icon && icon,
-                    React.createElement(Typography, { variant: textVariant(), content: content, theme: theme })),
-                closeIcon && (React.createElement(Content, { size: size, theme: theme },
-                    React.createElement(CloseIcon, { stroke: "white", onClick: onClose }))))),
-        description && React.createElement("div", { style: { display: "flex" } }, description)));
+        React.createElement(Wrapper, { size: size, theme: theme, variant: variant },
+            React.createElement(Content, { theme: theme },
+                icon && icon,
+                React.createElement(Typography, { variant: textVariant(), content: content, theme: theme })),
+            closeIcon && (React.createElement(Content, { theme: theme },
+                React.createElement(CloseIcon, { stroke: "white", onClick: onClose })))),
+        description && description));
 };
 //# sourceMappingURL=index.js.map

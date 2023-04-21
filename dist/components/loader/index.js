@@ -1,6 +1,8 @@
 import React, { useMemo } from "react";
 import { One } from "./one";
 import { Two } from "./two";
+import { Theme } from "../../shared/theme";
+import { Three } from "./three";
 const resolveSecondaryValue = (value) => {
     if (!value)
         return "";
@@ -17,6 +19,8 @@ export const Loader = (props) => {
         return React.createElement(One, Object.assign({}, props, { secondaryWidth: secondaryWidth, secondaryHeight: secondaryHeight }));
     if (variant === "two")
         return React.createElement(Two, Object.assign({}, props, { secondaryWidth: secondaryWidth, secondaryHeight: secondaryHeight }));
+    if (variant === "three")
+        return React.createElement(Three, Object.assign({}, props, { variant: props.variant, theme: props.theme || Theme }));
     return React.createElement(One, Object.assign({}, props));
 };
 //# sourceMappingURL=index.js.map

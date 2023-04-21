@@ -6,6 +6,7 @@ export enum AlertVariants {
   error = "error",
   success = "success",
   info = "info",
+  warning = "warning",
 }
 
 export enum AlertSizes {
