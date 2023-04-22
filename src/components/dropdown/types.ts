@@ -9,6 +9,7 @@ export interface DropdownProps {
   isClearable?: boolean;
   isSearchable?: boolean;
   isDisabled?: boolean;
+  backspaceRemovesValue?: boolean;
   menuIsOpen?: boolean;
   isMulti?: boolean;
   showArrow?: boolean;

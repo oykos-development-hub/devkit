@@ -44,13 +44,18 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
     }
 
     // x icon on multi select
-    .select__indicator.select__clear-indicator svg {
-      cursor: pointer;
-      border-radius: 50%;
+    .select__indicator {
+      padding: 0;
+      margin-right: ${rem("8px")};
 
-      &:hover {
-        fill: ${error700};
-        background-color: ${error50};
+      &.select__clear-indicator svg {
+        cursor: pointer;
+        border-radius: 50%;
+
+        &:hover {
+          fill: ${error700};
+          background-color: ${error50};
+        }
       }
     }
 
@@ -98,6 +103,7 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
       background-color: ${gray200};
       & > div {
         font-size: ${rem("14px")};
+        padding: 0 ${rem("3px")} 0 ${rem("3px")};
       }
       & > div:last-child:hover {
         border-radius: ${theme.borderRadius.md || "0.5rem"};

@@ -21,7 +21,8 @@ export const Dropdown = ({
   noOptionsText = "No options",
   label,
   style,
-  isClearable = false,
+  isClearable,
+  backspaceRemovesValue = true,
   showArrow = true,
   closeMenuOnSelect = true,
   dropdownIndicator,
@@ -65,6 +66,7 @@ export const Dropdown = ({
 
       <Wrapper>
         <StyledSelect
+          backspaceRemovesValue={backspaceRemovesValue}
           options={options}
           classNamePrefix="select"
           theme={theme}
