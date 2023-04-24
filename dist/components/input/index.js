@@ -34,8 +34,6 @@ export const Input = (_a) => {
         if (rightContent && rightElementRef.current)
             setRightElementWidth((_a = rightElementRef.current) === null || _a === void 0 ? void 0 : _a.offsetWidth);
     }, [rightContent]);
-    console.log("leftElementWidth");
-    console.log(leftElementWidth);
     const fieldProps = {
         onChange,
         onBlur,
@@ -46,7 +44,7 @@ export const Input = (_a) => {
         placeholder,
         value,
         error,
-        style: Object.assign({ paddingTop: "0.625em", paddingBottom: "0.625em", paddingLeft: `${leftContent ? `${leftElementWidth - 6}px` : rem("14px")}`, paddingRight: `${rightContent ? `${rightElementWidth + 6}px` : rem("14px")}` }, style),
+        style: Object.assign({ paddingTop: "0.625em", paddingBottom: "0.625em", paddingLeft: `${leftContent ? `${leftElementWidth}px` : rem("14px")}`, paddingRight: `${rightContent ? `${rightElementWidth}px` : rem("14px")}` }, style),
     };
     return (React.createElement(Container, { style: style, theme: theme, label: label, error: error, hint: hint },
         label && React.createElement(Typography, { variant: "bodyMedium", content: label }),
