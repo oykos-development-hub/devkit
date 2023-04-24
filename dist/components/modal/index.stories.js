@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Modal } from "./index";
 import { Typography } from "../typography";
+import { Button } from "../button";
 export default {
     component: Modal,
     title: "Components/Modal",
@@ -25,7 +26,10 @@ export default {
     },
 };
 const Template = (args) => {
-    return React.createElement(Modal, Object.assign({}, args));
+    const [open, setOpen] = useState(true);
+    return (React.createElement("div", { style: { display: "flex", alignItems: "center", justifyContent: "center" } },
+        !open && React.createElement(Button, { content: "Open Modal", onClick: () => setOpen(true) }),
+        React.createElement(Modal, Object.assign({}, args, { open: open, onClose: () => setOpen(false) }))));
 };
 export const ModalDefault = Template.bind({});
 ModalDefault.args = {

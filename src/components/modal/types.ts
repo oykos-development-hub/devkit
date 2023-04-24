@@ -10,7 +10,7 @@ export interface ModalProps {
   title?: string;
   content?: ReactElement | string;
   open?: boolean;
-  onClose?: any;
+  onClose: () => void;
   style?: CSSProperties;
   variant: Variants | `${Variants}`;
 }
