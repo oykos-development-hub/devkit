@@ -1,15 +1,6 @@
-import styled, { css } from "styled-components";
-import { tooltipPosition } from "./positions/tooltipPositions";
-import { StyledTooltip } from "./tooltip";
-export const Container = styled.div(({ position }) => {
-    return css `
-    position: relative;
-
-    &:hover + ${StyledTooltip} {
-      visibility: visible;
-    }
-
-    ${tooltipPosition(position)}
-  `;
-});
+import styled from "styled-components";
+export const Container = styled.div `
+  position: relative;
+  overflow: visible;
+`;
 //# sourceMappingURL=container.js.map

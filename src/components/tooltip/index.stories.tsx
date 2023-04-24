@@ -37,7 +37,7 @@ export default {
 const Template: ComponentStory<typeof Tooltip> = (args: TooltipProps) => (
   <StoryWrapper>
     <Tooltip {...args}>
-      <span>Hover over me!</span>
+      <span>Hover over me! </span>
     </Tooltip>
   </StoryWrapper>
 );
