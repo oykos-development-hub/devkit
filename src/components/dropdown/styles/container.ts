@@ -11,11 +11,10 @@ export const Container = styled.div<{
     display: flex;
     flex-direction: column;
     gap: ${rem("6px")};
-      
+
     & *,
     & ${BodyMedium} {
-      font-family: ${theme.fontFamily.one || "sans-serif"}
-      font-size: ${rem("14px")};      
+      font-size: ${rem("14px")};
       color: ${gray900};
     }
 

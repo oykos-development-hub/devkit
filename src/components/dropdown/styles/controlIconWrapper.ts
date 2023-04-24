@@ -1,12 +1,10 @@
 import styled from "styled-components";
+import { rem } from "polished";
 
 export const ControlIconWrapper = styled.div`
+  display: flex;
+  align-self: center;
   position: absolute;
-  left: 1em;
-  top: 50%;
-  height: 1rem;
-
-  & > * {
-    transform: translateY(-50%);
-  }
+  left: ${rem("14px")};
+  height: auto;
 `;

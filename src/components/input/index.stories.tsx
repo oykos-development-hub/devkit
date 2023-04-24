@@ -4,8 +4,9 @@ import { Input } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { InputProps } from "./types";
 import { Theme } from "../../shared/theme";
-import { CircleCheckIcon, XIcon } from "../icon";
+import { CircleCheckIcon, CircleIcon, DangerIcon, HelpCircleIcon, MailIcon, XIcon } from "../icon";
 import { Dropdown } from "../dropdown";
+import { Typography } from "../typography";
 
 export default {
   title: "Components/Input",
@@ -29,78 +30,51 @@ const Template: ComponentStory<typeof Input> = (args: InputProps) => (
 );
 
 export const InputDefault = Template.bind({});
-
 InputDefault.args = {
   placeholder: "placeholder...",
 };
 
-//
-
-export const StyledInput = Template.bind({});
-
-StyledInput.args = {
-  label: "Input Label*",
-  placeholder: "placeholder...",
-  style: {
-    border: "2px solid blue",
-    padding: "2em",
-  },
+export const Amounts = Template.bind({});
+Amounts.args = {
+  label: "Sale amount",
+  placeholder: "1,000.00",
+  leftContent: <div style={{ color: Theme.palette.gray700, paddingTop: "3px" }}>&euro;</div>,
+  rightContent: <HelpCircleIcon stroke={Theme.palette.gray700} width="14px" />,
 };
 
-//
-
-export const WithContent = Template.bind({});
-
-WithContent.args = {
-  label: "Input Label*",
-  placeholder: "placeholder...",
-  leftContent: (
-    <div style={{ padding: "0 1em", display: "flex", alignItems: "center" }}>
-      <CircleCheckIcon style={{ color: "grey" }} size="24px" />
-    </div>
-  ),
-  rightContent: (
-    <div style={{ padding: "0 0.75em", display: "flex", alignItems: "center" }}>
-      <XIcon style={{ color: "grey" }} size="14px" />
-    </div>
-  ),
-};
-
-//
-
-export const WithError = Template.bind({});
-
-WithError.args = {
-  label: "Input Label*",
-  placeholder: "placeholder...",
-  error: "This is error.",
-};
-
-//
-
-export const WithHint = Template.bind({});
-
-WithHint.args = {
-  label: "Input Label*",
-  placeholder: "placeholder...",
-  hint: "This is hint.",
-};
-
-//
-
-export const WithDropdown = Template.bind({});
-
+export const PhoneNumber = Template.bind({});
 const options = [
   { value: "us", label: "US" },
   { value: "es", label: "ES" },
 ];
 
-WithDropdown.args = {
+PhoneNumber.args = {
+  label: "Phone number",
   leftContent: (
     <Dropdown
       options={options}
-      style={{ border: "none", width: "76px", boxShadow: "none" }}
+      style={{ border: "0 !important", padding: 0, boxShadow: "none" }}
       placeholder={options[0].label}
     />
   ),
+  rightContent: <HelpCircleIcon stroke={Theme.palette.gray400} width={"16px"} />,
+};
+
+export const Error = Template.bind({});
+Error.args = {
+  label: "Email",
+  placeholder: "Email here...",
+  error: "This is error.",
+  leftContent: <MailIcon stroke={Theme.palette.gray700} width={"20px"} />,
+  rightContent: <DangerIcon stroke={Theme.palette.error500} size="16px" />,
+};
+
+//
+
+export const WithHint = Template.bind({});
+WithHint.args = {
+  label: "Input Label*",
+  placeholder: "placeholder...",
+  hint: "This is hint.",
+  rightContent: <DangerIcon stroke={Theme.palette.error500} size="16px" />,
 };
