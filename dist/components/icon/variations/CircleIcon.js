@@ -1,6 +1,6 @@
 import React from "react";
-import { Svg } from "../styles/shared";
-export const CircleIcon = (props) => (React.createElement(Svg, Object.assign({ viewBox: "0 0 24 24", onClick: props.onClick, fill: props.fill || "#000" }, props),
-    React.createElement("circle", { cx: "12", cy: "12", r: "5" })));
+import { Path, Svg } from "../styles/shared";
+export const CircleIcon = (props) => (React.createElement(Svg, Object.assign({ viewBox: "0 0 22 22", onClick: props.onClick, fill: props.fill || "#000" }, props),
+    React.createElement(Path, { stroke: props.stroke || "#FFF", strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: "2", d: "M11 21c5.523 0 10-4.477 10-10S16.523 1 11 1 1 5.477 1 11s4.477 10 10 10z" })));
 export default CircleIcon;
 //# sourceMappingURL=CircleIcon.js.map
