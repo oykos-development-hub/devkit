@@ -48,7 +48,7 @@ export const Content = styled.div<{
     border-radius: 50%;
 
     &:hover {
-      box-shadow: ${disabled ? `none` : `0 0 0 ${rem("4px")} ${primary100}`};
+      box-shadow: ${disabled ? "none" : `0 0 0 ${rem("4px")} ${primary100}`};
     }
 
     &[disabled] {

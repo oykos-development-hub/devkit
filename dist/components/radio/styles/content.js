@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
-import { Theme } from "../../../shared/theme";
+import { Svg } from "../../icon/styles/shared";
+import { rem } from "polished";
 export const HiddenRadio = styled.input.attrs({ type: "radio" }) `
   border: 0;
   clip: rect(0 0 0 0);
@@ -13,27 +14,27 @@ export const HiddenRadio = styled.input.attrs({ type: "radio" }) `
   white-space: nowrap;
 `;
 export const Content = styled.div(({ checked, disabled, theme, size, style }) => {
-    const themeToUse = theme || Theme;
-    const { primary500, gray50, gray300 } = themeToUse.palette;
+    const { primary100, primary500, gray50, gray300 } = theme.palette;
     const widthHeight = {
-        sm: "1rem",
-        md: "1.25rem",
+        sm: rem("16px"),
+        md: rem("20px"),
+    };
+    const icon = {
+        sm: rem("6px"),
+        md: rem("8px"),
     };
     return css `
     display: flex;
     align-items: center;
+    justify-content: center;
     width: ${(style === null || style === void 0 ? void 0 : style.width) || widthHeight[size]};
     height: ${(style === null || style === void 0 ? void 0 : style.height) || widthHeight[size]};
-    background: ${gray50};
-    border: 1px solid ${primary500};
+    background-color: ${(style === null || style === void 0 ? void 0 : style.backgroundColor) || gray50};
+    border: ${rem("1px")} solid ${primary500};
     border-radius: 50%;
 
-    ${HiddenRadio}:focus + & {
-      box-shadow: ${disabled ? "none" : "0 0 0 0.063rem #f4ebff"};
-    }
-
     &:hover {
-      box-shadow: ${disabled ? "none" : "0 0 0 0.25rem #f4ebff"};
+      box-shadow: ${disabled ? `none` : `0 0 0 ${rem("4px")} ${primary100}`};
     }
 
     &[disabled] {
@@ -41,15 +42,10 @@ export const Content = styled.div(({ checked, disabled, theme, size, style }) =>
       border: 0.063rem solid ${gray300};
     }
 
-    & svg {
+    & ${Svg} {
       visibility: ${checked ? "visible" : "hidden"};
-      width: ${widthHeight[size]};
-      height: ${widthHeight[size]};
-
-      & circle {
-        fill: ${disabled ? (style === null || style === void 0 ? void 0 : style.color) || gray300 : primary500};
-        stroke: ${disabled ? (style === null || style === void 0 ? void 0 : style.color) || gray300 : primary500};
-      }
+      width: ${icon[size]};
+      height: ${icon[size]};
     }
 
     ${Object.assign({}, style)}
