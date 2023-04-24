@@ -55,6 +55,6 @@ export const WithDot = Template.bind({});
 WithDot.args = {
   variant: "success",
   content: <span>Label</span>,
-  extraContent: <DotIcon />,
+  leftSlot: <DotIcon />,
   size: BadgeSizes.md,
 };
