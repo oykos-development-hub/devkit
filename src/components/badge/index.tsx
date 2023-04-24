@@ -2,9 +2,16 @@ import React from "react";
 import { BadgeProps } from "./types";
 import { Container } from "./styles/container";
 
-export const Badge: React.FC<BadgeProps> = ({ variant = "primary", content, extraContent, size = "md", style, theme }) => (
+export const Badge: React.FC<BadgeProps> = ({
+  variant = "primary",
+  content,
+  extraContent,
+  size = "md",
+  style,
+  theme,
+}) => (
   <Container variant={variant} size={size} style={style} theme={theme}>
-    <div 
+    <div
       style={{
         display: "flex",
         justifyContent: "center",
@@ -12,6 +19,9 @@ export const Badge: React.FC<BadgeProps> = ({ variant = "primary", content, extr
         alignItems: "center",
         columnGap: "7px",
       }}
-    >{extraContent}{content}</div> 
+    >
+      {extraContent}
+      {content}
+    </div>
   </Container>
 );

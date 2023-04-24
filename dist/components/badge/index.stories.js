@@ -45,15 +45,8 @@ WithHtmlContent.args = {
 export const WithDot = Template.bind({});
 WithDot.args = {
     variant: "success",
-    content: (React.createElement("div", { style: {
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "row",
-            alignItems: "center",
-            columnGap: "7px",
-        } },
-        React.createElement(DotIcon, null),
-        React.createElement("span", null, "Label"))),
+    content: React.createElement("span", null, "Label"),
+    extraContent: React.createElement(DotIcon, null),
     size: BadgeSizes.md,
 };
 //# sourceMappingURL=index.stories.js.map
