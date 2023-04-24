@@ -20,9 +20,9 @@ export const Badge: React.FC<BadgeProps> = ({
         alignItems: "center",
       }}
     >
-      {leftSlot && <div style={{marginRight: "7px", display: "flex"}}>{leftSlot}</div>}
+      {leftSlot && <div style={{ marginRight: "7px", display: "flex" }}>{leftSlot}</div>}
       <div>{content}</div>
-      {rightSlot && <div style={{marginLeft: "7px", display: "flex"}}>{rightSlot}</div>}
+      {rightSlot && <div style={{ marginLeft: "7px", display: "flex" }}>{rightSlot}</div>}
     </div>
   </Container>
 );

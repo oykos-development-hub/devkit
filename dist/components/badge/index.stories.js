@@ -46,7 +46,7 @@ export const WithDot = Template.bind({});
 WithDot.args = {
     variant: "success",
     content: React.createElement("span", null, "Label"),
-    extraContent: React.createElement(DotIcon, null),
+    leftSlot: React.createElement(DotIcon, null),
     size: BadgeSizes.md,
 };
 //# sourceMappingURL=index.stories.js.map
