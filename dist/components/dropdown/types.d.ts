@@ -7,11 +7,14 @@ export type ValueType = {
 export interface DropdownProps {
     theme?: DefaultTheme;
     style?: CSSProperties;
+    isClearable?: boolean;
     isSearchable?: boolean;
     isDisabled?: boolean;
+    backspaceRemovesValue?: boolean;
     menuIsOpen?: boolean;
     isMulti?: boolean;
     showArrow?: boolean;
+    closeMenuOnSelect?: boolean;
     options?: ValueType[];
     defaultValue?: ValueType;
     value?: ValueType;
@@ -21,6 +24,7 @@ export interface DropdownProps {
     controlIcon?: ReactElement;
     leftOptionIcon?: ReactElement;
     rightOptionIcon?: ReactElement;
+    dropdownIndicator?: ReactElement;
     onChange?: (e: ValueType) => void;
     onBlur?: () => void;
     onFocus?: () => void;

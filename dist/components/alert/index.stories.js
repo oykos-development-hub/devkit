@@ -88,7 +88,6 @@ Info.args = {
     variant: "info",
     size: "md",
     icon: React.createElement(InfoIcon, { stroke: "white" }),
-    description: "This is the description",
     closeIcon: true,
 };
 //# sourceMappingURL=index.stories.js.map

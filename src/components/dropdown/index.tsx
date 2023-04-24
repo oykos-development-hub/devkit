@@ -4,8 +4,13 @@ import { StyledSelect } from "./styles/select";
 import { DropdownProps, ValueType } from "./types";
 import { Container } from "./styles/container";
 import { Typography } from "../typography";
-import { Option } from "./styles/option";
+import { Option, OptionContent } from "./styles/option";
 import { ControlIconWrapper } from "./styles/controlIconWrapper";
+import { rem } from "polished";
+import { Wrapper } from "./styles/wrapper";
+import { DropdownIndicatorProps } from "react-select/dist/declarations/src/components/indicators";
+import { components } from "react-select";
+import { SearchIcon } from "../icon";
 
 export const Dropdown = ({
   options,
@@ -16,7 +21,11 @@ export const Dropdown = ({
   noOptionsText = "No options",
   label,
   style,
+  isClearable,
+  backspaceRemovesValue = true,
   showArrow = true,
+  closeMenuOnSelect = true,
+  dropdownIndicator,
   controlIcon,
   leftOptionIcon,
   rightOptionIcon,
@@ -31,12 +40,12 @@ export const Dropdown = ({
 
   const optionLabel = (e: any) => (
     <Option theme={theme} isDisabled={isDisabled} style={style}>
-      <div>
-        {leftOptionIcon && <div className="option-icon">{leftOptionIcon}</div>}
+      <OptionContent>
+        {leftOptionIcon && leftOptionIcon}
         {e.label}
-      </div>
+      </OptionContent>
       {!isMulti && selectedOption?.value === e.value && (
-        <div className="option-icon">{rightOptionIcon && rightOptionIcon}</div>
+        <OptionContent>{rightOptionIcon && rightOptionIcon}</OptionContent>
       )}
     </Option>
   );
@@ -45,12 +54,19 @@ export const Dropdown = ({
     if (controlIcon && controlIconWrapperRef.current) setControlIconWidth(controlIconWrapperRef.current?.offsetWidth);
   }, []);
 
+  const DropdownIndicator = (props: DropdownIndicatorProps) => (
+    <components.DropdownIndicator {...props}>
+      {!dropdownIndicator ? <SearchIcon stroke={theme.palette.gray700} fill={"none"} /> : dropdownIndicator}
+    </components.DropdownIndicator>
+  );
+
   return (
     <Container theme={theme}>
-      {label && <Typography content={label} variant="bodyMedium" />}
+      {label && <Typography content={label} variant={"bodyMedium"} />}
 
-      <div>
+      <Wrapper>
         <StyledSelect
+          backspaceRemovesValue={backspaceRemovesValue}
           options={options}
           classNamePrefix="select"
           theme={theme}
@@ -59,7 +75,7 @@ export const Dropdown = ({
           isDisabled={isDisabled}
           noOptionsMessage={() => noOptionsText}
           style={{
-            paddingLeft: `${controlIcon ? `calc(${controlIconWidth}px + 1em)` : "1em"}`,
+            paddingLeft: `${controlIcon && `calc(${controlIconWidth}px + ${rem("8px")})`}`,
             ...style,
           }}
           onChange={(e) => {
@@ -71,11 +87,13 @@ export const Dropdown = ({
           isMulti={isMulti}
           formatOptionLabel={optionLabel}
           placeholder={placeholder}
+          closeMenuOnSelect={closeMenuOnSelect}
+          isClearable={isClearable}
           {...props}
+          components={isSearchable ? { DropdownIndicator } : {}}
         />
-
         <ControlIconWrapper ref={controlIconWrapperRef}>{controlIcon}</ControlIconWrapper>
-      </div>
+      </Wrapper>
     </Container>
   );
 };

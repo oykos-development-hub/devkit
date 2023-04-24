@@ -1,2 +1,2 @@
 import { TooltipPositions } from "../../types";
-export declare const tooltipPosition: (position: TooltipPositions | `${TooltipPositions}`) => import("styled-components").FlattenSimpleInterpolation;
+export declare const tooltipPosition: (position: TooltipPositions | `${TooltipPositions}`, tooltipWidth: number) => import("styled-components").FlattenSimpleInterpolation;

@@ -50,5 +50,5 @@ export const WithContent = Template.bind({});
 WithContent.args = {
   size: "md",
   disabled: false,
-  content: <Typography content={"Remember me"} />,
+  content: <Typography content={"Remember me"} style={{ marginLeft: "1rem" }} />,
 };
