@@ -100,6 +100,5 @@ Info.args = {
   variant: "info",
   size: "md",
   icon: <InfoIcon stroke={"white"} />,
-  description: "This is the description",
   closeIcon: true,
 };
