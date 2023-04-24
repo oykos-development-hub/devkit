@@ -40,7 +40,7 @@ export const Container = styled.div(({ label, error, style, theme }: InputProps)
 
     ${HelperText} {
       position: absolute;
-      bottom: -20px;
+      bottom: ${rem("-25px")};
       color: ${error ? error500 : gray700};
       font-weight: 400;
       font-size: ${rem("12px")};
