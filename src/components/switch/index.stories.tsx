@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { SwitchProps } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
@@ -21,6 +21,7 @@ export default {
       },
       defaultValue: Theme,
     },
+
     size: {
       control: {
         type: "radio",
@@ -30,11 +31,14 @@ export default {
   },
 } as ComponentMeta<typeof Switch>;
 
-const Template: ComponentStory<typeof Switch> = (args: SwitchProps) => (
-  <StoryWrapper>
-    <Switch {...args} />
-  </StoryWrapper>
-);
+const Template: ComponentStory<typeof Switch> = (args: SwitchProps) => {
+  const [checked, setIsChecked] = useState<boolean>(false);
+  return (
+    <StoryWrapper>
+      <Switch {...args} onChange={() => setIsChecked((prev) => !prev)} checked={checked} />
+    </StoryWrapper>
+  );
+};
 
 export const NoContent = Template.bind({});
 NoContent.args = {

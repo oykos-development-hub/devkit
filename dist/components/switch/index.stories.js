@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { Switch } from "./index";
@@ -26,8 +26,11 @@ export default {
         },
     },
 };
-const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement(Switch, Object.assign({}, args))));
+const Template = (args) => {
+    const [checked, setIsChecked] = useState(false);
+    return (React.createElement(StoryWrapper, null,
+        React.createElement(Switch, Object.assign({}, args, { onChange: () => setIsChecked((prev) => !prev), checked: checked }))));
+};
 export const NoContent = Template.bind({});
 NoContent.args = {
     size: "md",

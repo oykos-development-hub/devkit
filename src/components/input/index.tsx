@@ -7,6 +7,8 @@ import { Typography } from "../typography";
 import { LeftElement } from "./styles/leftElement";
 import { RightElement } from "./styles/rightElement";
 import { Theme } from "../../shared/theme";
+import { IconWrapper } from "./styles/iconWrapper";
+import { rem } from "polished";
 
 export const Input = ({
   name,
@@ -57,29 +59,36 @@ export const Input = ({
     style: {
       paddingTop: "0.625em",
       paddingBottom: "0.625em",
-      paddingLeft: `${leftContent ? `${leftElementWidth}px` : "0.875em"}`,
-      paddingRight: `${rightContent ? `${rightElementWidth}px` : "0.875em"}`,
+      paddingLeft: `${leftContent ? `${leftElementWidth}px` : rem("14px")}`,
+      paddingRight: `${rightContent ? `${rightElementWidth}px` : rem("14px")}`,
       ...style,
     },
   };
 
   return (
-    <Container theme={theme} label={label} error={error} hint={hint}>
+    <Container style={style} theme={theme} label={label} error={error} hint={hint}>
       {label && <Typography variant="bodyMedium" content={label} />}
 
       <div>
         {textarea ? (
-          <Textarea {...fieldProps} {...props} theme={theme || Theme} rows={rows || 5} cols={cols} />
+          <Textarea {...fieldProps} {...props} theme={theme} rows={rows || 5} cols={cols} />
         ) : (
-          <StyledInput {...fieldProps} {...props} theme={theme || Theme} ref={inputRef} />
+          <StyledInput {...fieldProps} {...props} theme={theme} ref={inputRef} />
         )}
 
-        {leftContent && <LeftElement ref={leftElementRef}>{leftContent}</LeftElement>}
-
-        {rightContent && <RightElement ref={rightElementRef}>{rightContent}</RightElement>}
+        {leftContent && (
+          <LeftElement ref={leftElementRef}>
+            <IconWrapper>{leftContent}</IconWrapper>
+          </LeftElement>
+        )}
+        {rightContent && (
+          <RightElement ref={rightElementRef}>
+            <IconWrapper>{rightContent}</IconWrapper>
+          </RightElement>
+        )}
       </div>
-      {error && !disabled && <Typography variant="helperText" content={error} />}
 
+      {error && !disabled && <Typography variant="helperText" content={error} />}
       {hint && !error && <Typography variant="bodyMedium" content={hint} />}
     </Container>
   );
