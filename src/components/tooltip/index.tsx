@@ -1,9 +1,10 @@
 import React from "react";
 import { Theme } from "../../shared/theme";
 import { Typography } from "../typography";
-import { Container } from "./styles/container";
+import { HoverContents } from "./styles/hoverContents";
 import { StyledTooltip } from "./styles/tooltip";
 import { TooltipPositions, TooltipProps } from "./types";
+import { Container } from "./styles/container";
 
 export const Tooltip = ({
   position,
@@ -16,10 +17,9 @@ export const Tooltip = ({
   style,
 }: TooltipProps) => {
   const tooltipPosition = TooltipPositions[position] || "bottom";
-
   return (
-    <div>
-      <Container position={tooltipPosition}>{children}</Container>
+    <Container>
+      <HoverContents position={tooltipPosition}>{children}</HoverContents>
       <StyledTooltip
         style={style}
         arrow={arrow}
@@ -32,6 +32,6 @@ export const Tooltip = ({
         {title && <Typography content={title} variant="h6" />}
         <Typography content={content} variant="bodyMedium" />
       </StyledTooltip>
-    </div>
+    </Container>
   );
 };
