@@ -37,6 +37,6 @@ export const WithContent = Template.bind({});
 WithContent.args = {
     size: "md",
     disabled: false,
-    content: React.createElement(Typography, { content: "Remember me" }),
+    content: React.createElement(Typography, { content: "Remember me", style: { marginLeft: "1rem" } }),
 };
 //# sourceMappingURL=index.stories.js.map
