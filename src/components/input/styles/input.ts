@@ -3,18 +3,18 @@ import { InputProps } from "../types";
 import { rem } from "polished";
 
 const shared = ({ style, theme, error }: InputProps) => {
-  const { gray400, gray600, error50, error200, primary50, primary200, white } = theme!.palette;
+  const { gray400, gray600, error50, error100, primary50, primary100, white } = theme!.palette;
 
   return css`
     width: 100%;
     border-radius: ${theme!.borderRadius?.lg || rem("8px")};
-    border: ${`${theme!.borderWidth?.xs || rem("1px")} solid ${error ? error200 : gray400}`};
+    border: ${`${theme!.borderWidth?.xs || rem("1px")} solid ${error ? error100 : gray400}`};
     box-sizing: border-box;
     outline: none;
     font-family: ${style?.fontFamily || theme!.fontFamily.one};
 
     &:focus {
-      border-color: ${error ? error200 : primary200};
+      border-color: ${error ? error100 : primary100};
       box-shadow: ${style?.boxShadow ||
       `0 ${rem("1px")} ${rem("2px")} rgba(16, 24, 40, 0.05), 0 0 0 ${rem("4px")} ${error ? error50 : primary50}`};
     }

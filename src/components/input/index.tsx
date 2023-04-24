@@ -46,9 +46,6 @@ export const Input = ({
     if (rightContent && rightElementRef.current) setRightElementWidth(rightElementRef.current?.offsetWidth);
   }, [rightContent]);
 
-  console.log("leftElementWidth");
-  console.log(leftElementWidth);
-
   const fieldProps = {
     onChange,
     onBlur,
@@ -62,8 +59,8 @@ export const Input = ({
     style: {
       paddingTop: "0.625em",
       paddingBottom: "0.625em",
-      paddingLeft: `${leftContent ? `${leftElementWidth - 6}px` : rem("14px")}`,
-      paddingRight: `${rightContent ? `${rightElementWidth + 6}px` : rem("14px")}`,
+      paddingLeft: `${leftContent ? `${leftElementWidth}px` : rem("14px")}`,
+      paddingRight: `${rightContent ? `${rightElementWidth}px` : rem("14px")}`,
       ...style,
     },
   };
