@@ -8,6 +8,7 @@ export enum SwitchSizes {
 
 export interface SwitchProps {
   content?: ReactNode | string;
+  checked: boolean;
   disabled?: boolean;
   size?: SwitchSizes | `${SwitchSizes}`;
   style?: React.CSSProperties;

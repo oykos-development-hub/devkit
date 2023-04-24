@@ -4,15 +4,13 @@ import { SwitchWrapper } from "./styles/switchWrapper";
 import { Slider } from "./styles/slider";
 import { Input } from "./styles/input";
 import { Label } from "./styles/label";
-export const Switch = ({ content, size = "md", disabled = false, style, theme, onChange }) => {
+export const Switch = ({ checked, content, size = "md", disabled = false, style, theme, onChange, }) => {
     const ref = useRef(null);
     const [isActive, setIsActive] = useState(false);
-    const [isChecked, setIsChecked] = useState(false);
     const handleChange = (e) => {
         if (disabled)
             return;
         setIsActive(true);
-        setIsChecked((prev) => !prev);
         onChange && onChange(e);
     };
     useEffect(() => {
@@ -28,8 +26,8 @@ export const Switch = ({ content, size = "md", disabled = false, style, theme, o
     }, [ref]);
     return (React.createElement(Container, { style: style, theme: theme, hasContent: !!content, disabled: disabled },
         React.createElement(SwitchWrapper, null,
-            React.createElement(Label, { ref: ref, size: size, theme: theme, disabled: disabled, isChecked: isChecked, isActive: isActive },
-                React.createElement(Input, { checked: isChecked, inputSize: size, disabled: disabled, onChange: handleChange }),
+            React.createElement(Label, { ref: ref, size: size, theme: theme, disabled: disabled, isChecked: checked, isActive: isActive },
+                React.createElement(Input, { checked: checked, inputSize: size, disabled: disabled, onChange: handleChange }),
                 React.createElement(Slider, { size: size, theme: theme }))),
         content && content));
 };

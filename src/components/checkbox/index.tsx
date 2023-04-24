@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { CheckboxProps, CheckboxSize } from "./types";
 import { Container } from "./styles/container";
 import { Content, HiddenCheckbox } from "./styles/content";
