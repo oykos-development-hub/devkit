@@ -25,7 +25,7 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
       ${{ ...style }}
     }
     .select__value-container {
-      padding-left: ${controlIcon ? `0.7rem` : 0};
+      padding-left: ${controlIcon ? "0.7rem" : 0};
     }
     .select__placeholder {
       font-family: ${style?.fontFamily || theme?.fontFamily.one};
@@ -81,6 +81,7 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
     }
     .select__control--is-focused {
       border: 1px solid ${primary200};
+      box-shadow: ${style?.boxShadow || `0 1px 2px rgba(16, 24, 40, 0.05), 0 0 0 4px ${primary50}`};
     }
     .select__control--menu-is-open.select__control--is-focused,
     .select__control--is-focused,
