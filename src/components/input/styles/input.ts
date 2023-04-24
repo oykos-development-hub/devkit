@@ -37,7 +37,7 @@ export const StyledInput = styled.input(({ style, theme, error, maxLength }: Inp
   return css`
     ${shared({ style, theme, error, maxLength })}
     text-align: ${maxLength === 1 ? "center" : "left"};
-    min-height: ${rem("44px")};
+    height: ${rem("44px")};
   `;
 });
 
