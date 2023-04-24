@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { ModalProps } from "../types";
 import { BodyLarge, BodyMedium, BodySmall, H1, H2, H3, H4, H5, H6 } from "../../typography/styles/variants";
 
-export const ModalBox = styled.div<ModalProps>(({ theme, variant, style }) => {
+export const ModalBox = styled.div<Partial<ModalProps>>(({ theme, variant, style }) => {
   const { white, black } = theme.palette;
 
   return css`
