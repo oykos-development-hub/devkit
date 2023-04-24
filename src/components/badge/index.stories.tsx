@@ -54,19 +54,7 @@ WithHtmlContent.args = {
 export const WithDot = Template.bind({});
 WithDot.args = {
   variant: "success",
-  content: (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "row",
-        alignItems: "center",
-        columnGap: "7px",
-      }}
-    >
-      <DotIcon />
-      <span>Label</span>
-    </div>
-  ),
+  content: <span>Label</span>,
+  extraContent: <DotIcon />,
   size: BadgeSizes.md,
 };

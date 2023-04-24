@@ -18,6 +18,7 @@ export enum BadgeSizes {
 export interface BadgeProps {
   variant?: BadgeVariants | `${BadgeVariants}`;
   content?: ReactNode | string;
+  extraContent?: JSX.Element | React.ReactNode;
   size?: BadgeSizes | `${BadgeSizes}`;
   style?: React.CSSProperties;
   theme?: DefaultTheme;
