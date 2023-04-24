@@ -6,6 +6,7 @@ import { ModalBox } from "./styles/modal";
 import { ModalHeader } from "./styles/header";
 import { Typography } from "../typography";
 import { XIcon } from "../icon";
+import { CloseButtonContainer } from "./styles/closeContainer";
 
 export const Modal = ({
   theme = Theme,
@@ -17,7 +18,7 @@ export const Modal = ({
   style,
 }: ModalProps) => {
   return (
-    <ModalContainer open={open} onClick={onClose && onClose()}>
+    <ModalContainer open={open} onClick={onClose}>
       <ModalBox
         theme={theme}
         variant={variant}
@@ -28,7 +29,9 @@ export const Modal = ({
       >
         <ModalHeader theme={theme}>
           {title && <Typography content={title} variant="h6" />}
-          <XIcon size="1rem" onClick={onClose && onClose()} />
+          <CloseButtonContainer>
+            <XIcon size="1rem" onClick={onClose} />
+          </CloseButtonContainer>
         </ModalHeader>
 
         {content && content}
