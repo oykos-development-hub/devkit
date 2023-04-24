@@ -1,12 +1,14 @@
-import styled, { css } from "styled-components";
-import React from "react";
-import { SwitchSizes } from "../types";
+import styled, { css, DefaultTheme } from "styled-components";
+import { CSSProperties } from "react";
 
 export const Container = styled.div<{
   hasContent?: boolean;
-  size: SwitchSizes | string;
-  style?: React.CSSProperties;
-}>(() => ({ hasContent, style }) => {
+  disabled?: boolean;
+  theme?: DefaultTheme;
+  style?: CSSProperties;
+}>(() => ({ hasContent, disabled, theme, style }) => {
+  const { gray300 } = theme!.palette;
+
   return css`
     cursor: pointer;
     display: flex;
@@ -14,6 +16,17 @@ export const Container = styled.div<{
     align-items: ${hasContent && "flex-start"};
     padding: ${style?.padding || "0"};
     z-index: 1;
+
+    & p,
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: ${disabled && gray300};
+    }
 
     ${{ ...style }}
   `;

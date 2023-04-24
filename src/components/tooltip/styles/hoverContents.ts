@@ -5,7 +5,8 @@ import { StyledTooltip } from "./tooltip";
 
 export const HoverContents = styled.div<{
   position: TooltipPositions | `${TooltipPositions}`;
-}>(({ position }) => {
+  tooltipWidth: number;
+}>(({ position, tooltipWidth }) => {
   return css`
     position: relative;
 
@@ -13,6 +14,6 @@ export const HoverContents = styled.div<{
       visibility: visible;
     }
 
-    ${tooltipPosition(position)}
+    ${tooltipPosition(position, tooltipWidth)}
   `;
 });

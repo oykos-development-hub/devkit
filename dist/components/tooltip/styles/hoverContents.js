@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { tooltipPosition } from "./positions/tooltipPositions";
 import { StyledTooltip } from "./tooltip";
-export const HoverContents = styled.div(({ position }) => {
+export const HoverContents = styled.div(({ position, tooltipWidth }) => {
     return css `
     position: relative;
 
@@ -9,7 +9,7 @@ export const HoverContents = styled.div(({ position }) => {
       visibility: visible;
     }
 
-    ${tooltipPosition(position)}
+    ${tooltipPosition(position, tooltipWidth)}
   `;
 });
 //# sourceMappingURL=hoverContents.js.map

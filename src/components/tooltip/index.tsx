@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import { Theme } from "../../shared/theme";
 import { Typography } from "../typography";
 import { HoverContents } from "./styles/hoverContents";
@@ -16,10 +16,19 @@ export const Tooltip = ({
   arrow,
   style,
 }: TooltipProps) => {
+  const [tooltipWidth, setTooltipWidth] = useState(0);
   const tooltipPosition = TooltipPositions[position] || "bottom";
+
+  const tooltipRef = useCallback((node: HTMLDivElement) => {
+    if (node !== null) {
+      setTooltipWidth(node.offsetWidth);
+    }
+  }, []);
   return (
     <Container>
-      <HoverContents position={tooltipPosition}>{children}</HoverContents>
+      <HoverContents tooltipWidth={tooltipWidth} position={tooltipPosition}>
+        {children}
+      </HoverContents>
       <StyledTooltip
         style={style}
         arrow={arrow}
@@ -28,6 +37,7 @@ export const Tooltip = ({
         theme={theme}
         position={tooltipPosition}
         title={title}
+        ref={tooltipRef}
       >
         {title && <Typography content={title} variant="h6" />}
         <Typography content={content} variant="bodyMedium" />
