@@ -26,7 +26,7 @@ export const Switch = ({ content, size = "md", disabled = false, style, theme, o
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [ref]);
-    return (React.createElement(Container, { size: size, style: style, theme: theme, hasContent: !!content },
+    return (React.createElement(Container, { style: style, theme: theme, hasContent: !!content, disabled: disabled },
         React.createElement(SwitchWrapper, null,
             React.createElement(Label, { ref: ref, size: size, theme: theme, disabled: disabled, isChecked: isChecked, isActive: isActive },
                 React.createElement(Input, { checked: isChecked, inputSize: size, disabled: disabled, onChange: handleChange }),
