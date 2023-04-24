@@ -2,7 +2,7 @@ import React from "react";
 import { Input } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { CircleCheckIcon, XIcon } from "../icon";
+import { DangerIcon, HelpCircleIcon, MailIcon } from "../icon";
 import { Dropdown } from "../dropdown";
 export default {
     title: "Components/Input",
@@ -23,42 +23,36 @@ export const InputDefault = Template.bind({});
 InputDefault.args = {
     placeholder: "placeholder...",
 };
-export const StyledInput = Template.bind({});
-StyledInput.args = {
-    label: "Input Label*",
-    placeholder: "placeholder...",
-    style: {
-        border: "2px solid blue",
-        padding: "2em",
-    },
+export const Amounts = Template.bind({});
+Amounts.args = {
+    label: "Sale amount",
+    placeholder: "1,000.00",
+    leftContent: React.createElement("div", { style: { color: Theme.palette.gray700, paddingTop: "3px" } }, "\u20AC"),
+    rightContent: React.createElement(HelpCircleIcon, { stroke: Theme.palette.gray700, width: "14px" }),
 };
-export const WithContent = Template.bind({});
-WithContent.args = {
-    label: "Input Label*",
-    placeholder: "placeholder...",
-    leftContent: (React.createElement("div", { style: { padding: "0 1em", display: "flex", alignItems: "center" } },
-        React.createElement(CircleCheckIcon, { style: { color: "grey" }, size: "24px" }))),
-    rightContent: (React.createElement("div", { style: { padding: "0 0.75em", display: "flex", alignItems: "center" } },
-        React.createElement(XIcon, { style: { color: "grey" }, size: "14px" }))),
+export const PhoneNumber = Template.bind({});
+const options = [
+    { value: "us", label: "US" },
+    { value: "es", label: "ES" },
+];
+PhoneNumber.args = {
+    label: "Phone number",
+    leftContent: (React.createElement(Dropdown, { options: options, style: { border: "0 !important", padding: 0, boxShadow: "none" }, placeholder: options[0].label })),
+    rightContent: React.createElement(HelpCircleIcon, { stroke: Theme.palette.gray400, width: "16px" }),
 };
-export const WithError = Template.bind({});
-WithError.args = {
-    label: "Input Label*",
-    placeholder: "placeholder...",
+export const Error = Template.bind({});
+Error.args = {
+    label: "Email",
+    placeholder: "Email here...",
     error: "This is error.",
+    leftContent: React.createElement(MailIcon, { stroke: Theme.palette.gray700, width: "20px" }),
+    rightContent: React.createElement(DangerIcon, { stroke: Theme.palette.error500, size: "16px" }),
 };
 export const WithHint = Template.bind({});
 WithHint.args = {
     label: "Input Label*",
     placeholder: "placeholder...",
     hint: "This is hint.",
-};
-export const WithDropdown = Template.bind({});
-const options = [
-    { value: "us", label: "US" },
-    { value: "es", label: "ES" },
-];
-WithDropdown.args = {
-    leftContent: (React.createElement(Dropdown, { options: options, style: { border: "none", width: "76px", boxShadow: "none" }, placeholder: options[0].label })),
+    rightContent: React.createElement(DangerIcon, { stroke: Theme.palette.error500, size: "16px" }),
 };
 //# sourceMappingURL=index.stories.js.map
