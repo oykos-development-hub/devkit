@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 import { Modal } from "./index";
 import { ModalProps } from "./types";
 import { Typography } from "../typography";
+import { Button } from "../button";
 
 export default {
   component: Modal,
@@ -31,7 +32,13 @@ export default {
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
-  return <Modal {...args} />;
+  const [open, setOpen] = useState(true);
+  return (
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+      {!open && <Button content="Open Modal" onClick={() => setOpen(true)} />}
+      <Modal {...args} open={open} onClose={() => setOpen(false)} />
+    </div>
+  );
 };
 
 export const ModalDefault = Template.bind({});
