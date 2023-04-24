@@ -32,7 +32,7 @@ export default {
 };
 const Template = (args) => (React.createElement(StoryWrapper, null,
     React.createElement(Tooltip, Object.assign({}, args),
-        React.createElement("span", null, "Hover over me! "))));
+        React.createElement("span", null, "Hover over me!"))));
 export const TooltipDefault = Template.bind({});
 TooltipDefault.args = {
     content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
