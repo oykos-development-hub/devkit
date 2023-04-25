@@ -54,7 +54,7 @@ export const Content = styled.div<{
 
     &:hover {
       border: ${disabled ? `1px solid ${gray300}` : `${rem("1px")} solid ${primary500}`};
-      box-shadow: ${disabled ? `none` : `0 0 0 0.25rem ${primary500}`};
+      box-shadow: ${disabled ? "none" : `0 0 0 0.25rem ${primary500}`};
     }
 
     &[disabled] {
