@@ -4,7 +4,7 @@ import { AccordionProps } from "./types";
 import { Accordion } from "./index";
 import { Typography } from "../../index";
 import { Theme } from "../../shared/theme";
-import { MenuIcon } from "../icon";
+import { MenuIcon, MoreVerticalIcon } from "../icon";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 
 export default {
@@ -46,11 +46,20 @@ const accordionData = [
 
 const Template: ComponentStory<typeof Accordion> = (args: AccordionProps) => (
   <StoryWrapper style={{ display: "grid", alignContent: "center" }}>
-    <Accordion style={{ width: "400px" }} {...args} data={accordionData} />
+    <div style={{ width: "400px" }}>
+      <Accordion {...args} data={accordionData} />
+    </div>
   </StoryWrapper>
 );
 
 export const Default = Template.bind({});
-Default.args = {
+
+export const WithCustomIcon = Template.bind({});
+WithCustomIcon.args = {
   customIcon: <MenuIcon />,
+};
+
+export const WithContextIcon = Template.bind({});
+WithContextIcon.args = {
+  rightCustomIcon: <MoreVerticalIcon />,
 };

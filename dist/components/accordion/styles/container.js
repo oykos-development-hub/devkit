@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const Container = styled.div `
+export const AccordionContainer = styled.div `
   align-items: center;
   width: 100%;
 `;

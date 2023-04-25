@@ -1,7 +1,6 @@
 import styled from "styled-components";
-import { rem } from "polished";
 
-export const Container = styled.div`
+export const AccordionContainer = styled.div`
   align-items: center;
   width: 100%;
 `;
