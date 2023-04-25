@@ -4,7 +4,7 @@ import { AccordionProps } from "./types";
 import { Accordion } from "./index";
 import { Typography } from "../../index";
 import { Theme } from "../../shared/theme";
-import { MenuIcon, MoreVerticalIcon } from "../icon";
+import { ChevronDownIcon, MenuIcon, MoreVerticalIcon } from "../icon";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 
 export default {
@@ -25,41 +25,48 @@ export default {
   },
 } as ComponentMeta<typeof Accordion>;
 
-const accordionData = [
-  {
-    title: <Typography variant={"bodySmall"} content={"Accordion Title"} />,
-    content: (
-      <Typography
-        variant={"bodySmall"}
-        content={
-          "Lorem ipsum dolor sit amet. Aut internos autem et dolorem consequuntur a culpa itaque! Lorem ipsum dolor sit amet. Aut internos autem et dolorem consequuntur a culpa itaque!"
-        }
-        style={{ color: "#616161" }}
-      />
-    ),
-  },
-  {
-    title: <Typography variant={"bodySmall"} content={"Accordion 1"} />,
-    content: <Typography variant={"bodySmall"} content={"Accordion 1 content."} style={{ color: "#616161" }} />,
-  },
-];
-
 const Template: ComponentStory<typeof Accordion> = (args: AccordionProps) => (
   <StoryWrapper style={{ display: "grid", alignContent: "center" }}>
     <div style={{ width: "400px" }}>
-      <Accordion {...args} data={accordionData} />
+      <Accordion {...args} />
     </div>
   </StoryWrapper>
 );
 
 export const Default = Template.bind({});
-
-export const WithCustomIcon = Template.bind({});
-WithCustomIcon.args = {
-  customIcon: <MenuIcon />,
+Default.args = {
+  data: [
+    {
+      title: <Typography variant={"bodySmall"} content={"Accordion Title"} />,
+      content: (
+        <Typography
+          variant={"bodySmall"}
+          content={
+            "Lorem ipsum dolor sit amet. Aut internos autem et dolorem consequuntur a culpa itaque! Lorem ipsum dolor sit amet. Aut internos autem et dolorem consequuntur a culpa itaque!"
+          }
+          style={{ color: "#616161" }}
+        />
+      ),
+    },
+    {
+      title: <Typography variant={"bodySmall"} content={"Accordion 1"} />,
+      content: <Typography variant={"bodySmall"} content={"Accordion 1 content."} style={{ color: "#616161" }} />,
+    },
+  ],
 };
 
-export const WithContextIcon = Template.bind({});
-WithContextIcon.args = {
-  rightCustomIcon: <MoreVerticalIcon />,
+export const CustomHeaderAndContentAccordion = Template.bind({});
+CustomHeaderAndContentAccordion.args = {
+  data: [
+    {
+      customHeader: (
+        <div style={{ width: "100%" }}>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            Custom Accordion 1 <ChevronDownIcon />
+          </div>
+        </div>
+      ),
+      customContent: <div style={{ padding: "4px 16px 16px" }}>test custom content</div>,
+    },
+  ],
 };

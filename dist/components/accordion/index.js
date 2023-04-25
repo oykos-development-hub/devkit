@@ -5,7 +5,7 @@ import { Content, ContentWrapper } from "./styles/content";
 import { ChevronDownIcon } from "../icon";
 import { Theme } from "../../shared/theme";
 import { IconWrapper } from "./styles/iconWrapper";
-const AccordionItem = ({ title, content, customIcon, rightCustomIcon, style, theme = Theme, }) => {
+export const AccordionItem = ({ title, content, customHeader, customContent, style, theme = Theme, }) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggleAccordion = () => setIsOpen(!isOpen);
     const openMenu = () => {
@@ -13,17 +13,13 @@ const AccordionItem = ({ title, content, customIcon, rightCustomIcon, style, the
     };
     return (React.createElement(AccordionContainer, null,
         React.createElement(Header, { isOpen: isOpen, style: style, theme: theme },
-            React.createElement("div", { onClick: toggleAccordion, style: { display: "flex", justifyContent: "space-between", flexGrow: "1" } },
-                customIcon ? (React.createElement(IconWrapper, { isOpen: isOpen, style: style, theme: theme },
-                    customIcon,
-                    title)) : (title),
+            React.createElement("div", { onClick: toggleAccordion, style: { width: "100%" } }, customHeader ? (customHeader) : (React.createElement("div", { style: { display: "flex", justifyContent: "space-between" } },
+                title,
                 React.createElement(IconWrapper, { isOpen: isOpen, style: style, theme: theme },
-                    React.createElement(ChevronDownIcon, null))),
-            React.createElement("div", { onClick: openMenu }, rightCustomIcon && rightCustomIcon)),
-        React.createElement(ContentWrapper, { isOpen: isOpen },
-            React.createElement(Content, { style: style, theme: theme }, content))));
+                    React.createElement(ChevronDownIcon, null)))))),
+        React.createElement(ContentWrapper, { isOpen: isOpen }, customContent ? (customContent) : (React.createElement(Content, { style: style, theme: theme }, content)))));
 };
-export const Accordion = ({ data, customIcon, rightCustomIcon, style, theme }) => {
-    return (React.createElement(React.Fragment, null, data.map((item, index) => (React.createElement(AccordionItem, { key: index, content: item.content, title: item.title, customIcon: customIcon, rightCustomIcon: rightCustomIcon, theme: theme, style: style })))));
+export const Accordion = ({ data, style, theme }) => {
+    return (React.createElement(React.Fragment, null, data.map((item, index) => (React.createElement(AccordionItem, { key: index, content: item.content, customHeader: item.customHeader, customContent: item.customContent, title: item.title, theme: theme, style: style })))));
 };
 //# sourceMappingURL=index.js.map

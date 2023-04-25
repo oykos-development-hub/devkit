@@ -89,7 +89,7 @@ export const Input = ({
       </div>
 
       {error && !disabled && <Typography variant="helperText" content={error} />}
-      {hint && !error && <Typography variant="bodyMedium" content={hint} />}
+      {hint && !error && <Typography variant="helperText" content={hint} />}
     </Container>
   );
 };

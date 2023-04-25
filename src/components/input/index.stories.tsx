@@ -1,12 +1,11 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Input } from "./index";
+import { Input } from "./";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { InputProps } from "./types";
 import { Theme } from "../../shared/theme";
-import { CircleCheckIcon, CircleIcon, DangerIcon, HelpCircleIcon, MailIcon, XIcon } from "../icon";
+import { DangerIcon, HelpCircleIcon, MailIcon } from "../icon";
 import { Dropdown } from "../dropdown";
-import { Typography } from "../typography";
 
 export default {
   title: "Components/Input",
@@ -73,8 +72,9 @@ Error.args = {
 
 export const WithHint = Template.bind({});
 WithHint.args = {
-  label: "Input Label*",
-  placeholder: "placeholder...",
+  label: "Email",
+  placeholder: "Email here...",
   hint: "This is hint.",
-  rightContent: <DangerIcon stroke={Theme.palette.error500} size="16px" />,
+  leftContent: <MailIcon stroke={Theme.palette.gray700} width={"20px"} />,
+  rightContent: <HelpCircleIcon stroke={Theme.palette.gray400} width={"16px"} />,
 };

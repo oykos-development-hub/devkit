@@ -55,6 +55,6 @@ export const Input = (_a) => {
             rightContent && (React.createElement(RightElement, { ref: rightElementRef },
                 React.createElement(IconWrapper, null, rightContent)))),
         error && !disabled && React.createElement(Typography, { variant: "helperText", content: error }),
-        hint && !error && React.createElement(Typography, { variant: "bodyMedium", content: hint })));
+        hint && !error && React.createElement(Typography, { variant: "helperText", content: hint })));
 };
 //# sourceMappingURL=index.js.map
