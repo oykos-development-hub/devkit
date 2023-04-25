@@ -8,16 +8,14 @@ import { Theme } from "../../shared/theme";
 import { UploadCloudIcon } from "../icon";
 import { Typography } from "../typography";
 import { Button } from "../button";
-export const FileUpload = ({ variant = "primary", buttonVariant, multiple = false, onUpload, customContent, buttonText, note, hint, icon, style, theme = Theme, }) => {
+export const FileUpload = ({ variant = "primary", buttonVariant = "primary", buttonSize = "sm", multiple = false, onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme = Theme, }) => {
     const [isDragging, setIsDragging] = useState(false);
     const uploadInputRef = useRef(null);
     const handleDragOver = (e) => {
         e.preventDefault();
         setIsDragging(true);
     };
-    const handleDragLeave = () => {
-        setIsDragging(false);
-    };
+    const handleDragLeave = () => setIsDragging(false);
     const handleDrop = (e) => {
         e.preventDefault();
         setIsDragging(false);
@@ -25,10 +23,7 @@ export const FileUpload = ({ variant = "primary", buttonVariant, multiple = fals
             onUpload(e.dataTransfer.files);
         }
     };
-    const handleClick = () => {
-        var _a;
-        (_a = uploadInputRef.current) === null || _a === void 0 ? void 0 : _a.click();
-    };
+    const handleClick = () => { var _a; return (_a = uploadInputRef.current) === null || _a === void 0 ? void 0 : _a.click(); };
     const handleChange = (e) => {
         if (e.target.files) {
             onUpload(e.target.files);
@@ -42,7 +37,6 @@ export const FileUpload = ({ variant = "primary", buttonVariant, multiple = fals
             React.createElement(TextWrapper, { variant: variant, theme: theme },
                 note && React.createElement(Typography, { variant: "bodySmall", content: note }),
                 hint && React.createElement(Typography, { variant: "helperText", content: hint })),
-            React.createElement(ButtonWrapper, { variant: variant },
-                React.createElement(Button, { variant: buttonVariant ? buttonVariant : "primary", content: buttonText ? buttonText : "SELECT FILE", onClick: handleClick, theme: theme }))))));
+            React.createElement(ButtonWrapper, { variant: variant }, customButton ? (customButton) : (React.createElement(Button, { size: buttonSize, variant: buttonVariant, content: buttonText ? buttonText : "SELECT FILE", onClick: handleClick, theme: theme })))))));
 };
 //# sourceMappingURL=index.js.map

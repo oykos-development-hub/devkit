@@ -5,7 +5,7 @@ export const Content = styled.div(({ variant }) => {
     display: flex;
     flex-direction: ${variant === "primary" ? "column" : "row"};
     justify-content: center;
-    align-items: center;
+    align-items: ${variant === "tertiary" ? "flex-start" : "center"};
     padding: 0;
     gap: ${variant === "primary" ? `${rem("24px")}` : `${rem("56px")}`};
   `;
