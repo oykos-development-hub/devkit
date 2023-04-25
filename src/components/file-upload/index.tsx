@@ -12,10 +12,12 @@ import { Button } from "../button";
 
 export const FileUpload: React.FC<FileUploadProps> = ({
   variant = "primary",
-  buttonVariant,
+  buttonVariant = "primary",
+  buttonSize = "sm",
   multiple = false,
   onUpload,
   customContent,
+  customButtonContent,
   buttonText,
   note,
   hint,
@@ -31,9 +33,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
     setIsDragging(true);
   };
 
-  const handleDragLeave = () => {
-    setIsDragging(false);
-  };
+  const handleDragLeave = () => setIsDragging(false);
 
   const handleDrop = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -44,9 +44,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
     }
   };
 
-  const handleClick = () => {
-    uploadInputRef.current?.click();
-  };
+  const handleClick = () => uploadInputRef.current?.click();
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -82,12 +80,17 @@ export const FileUpload: React.FC<FileUploadProps> = ({
           </TextWrapper>
 
           <ButtonWrapper variant={variant}>
-            <Button
-              variant={buttonVariant ? buttonVariant : "primary"}
-              content={buttonText ? buttonText : "SELECT FILE"}
-              onClick={handleClick}
-              theme={theme}
-            />
+            {customButtonContent ? (
+              customButtonContent
+            ) : (
+              <Button
+                size={buttonSize}
+                variant={buttonVariant}
+                content={buttonText ? buttonText : "SELECT FILE"}
+                onClick={handleClick}
+                theme={theme}
+              />
+            )}
           </ButtonWrapper>
         </Content>
       )}
