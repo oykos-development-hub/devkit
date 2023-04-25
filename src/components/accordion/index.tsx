@@ -1,28 +1,43 @@
 import React, { useState } from "react";
 import { AccordionData, AccordionProps } from "./types";
-import { Container } from "./styles/container";
+import { AccordionContainer } from "./styles/container";
 import { Header } from "./styles/header";
 import { Content, ContentWrapper } from "./styles/content";
 import { ChevronDownIcon } from "../icon";
 import { Theme } from "../../shared/theme";
 import { IconWrapper } from "./styles/iconWrapper";
 
-const AccordionItem: React.FC<AccordionData> = ({ title, content, customIcon, style, theme = Theme }) => {
+const AccordionItem: React.FC<AccordionData> = ({
+  title,
+  content,
+  customIcon,
+  rightCustomIcon,
+  style,
+  theme = Theme,
+}) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggleAccordion = () => setIsOpen(!isOpen);
+  const openMenu = () => {
+    console.log("Clicked additional icon on right side.");
+  };
 
   return (
-    <Container>
-      <Header onClick={toggleAccordion} isOpen={isOpen} style={style} theme={theme}>
-        {customIcon ? (
+    <AccordionContainer>
+      <Header isOpen={isOpen} style={style} theme={theme}>
+        <div onClick={toggleAccordion} style={{ display: "flex", justifyContent: "space-between", flexGrow: "1" }}>
+          {customIcon ? (
+            <IconWrapper isOpen={isOpen} style={style} theme={theme}>
+              {customIcon}
+              {title}
+            </IconWrapper>
+          ) : (
+            title
+          )}
           <IconWrapper isOpen={isOpen} style={style} theme={theme}>
-            {customIcon}
-            {title}
+            <ChevronDownIcon />
           </IconWrapper>
-        ) : (
-          title
-        )}
-        <ChevronDownIcon />
+        </div>
+        <div onClick={openMenu}>{rightCustomIcon && rightCustomIcon}</div>
       </Header>
 
       <ContentWrapper isOpen={isOpen}>
@@ -30,11 +45,11 @@ const AccordionItem: React.FC<AccordionData> = ({ title, content, customIcon, st
           {content}
         </Content>
       </ContentWrapper>
-    </Container>
+    </AccordionContainer>
   );
 };
 
-export const Accordion: React.FC<AccordionProps> = ({ data, customIcon, style, theme }) => {
+export const Accordion: React.FC<AccordionProps> = ({ data, customIcon, rightCustomIcon, style, theme }) => {
   return (
     <>
       {data.map((item: AccordionData, index) => (
@@ -43,6 +58,7 @@ export const Accordion: React.FC<AccordionProps> = ({ data, customIcon, style, t
           content={item.content}
           title={item.title}
           customIcon={customIcon}
+          rightCustomIcon={rightCustomIcon}
           theme={theme}
           style={style}
         />

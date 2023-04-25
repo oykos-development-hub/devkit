@@ -51,3 +51,4 @@ export * from "./components/modal/styles";
 export * from "./components/tooltip/styles";
 export * from "./components/icon";
 export * from "./types";
+export * from "./components/accordion/styles";
