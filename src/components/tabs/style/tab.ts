@@ -23,11 +23,10 @@ export const StyledTab = styled.button(
       cursor: ${disabled ? "auto" : "pointer"};
 
       &:hover {
-        color: ${white};
-        border: 0.0625em solid ${!disabled ? primary500 : gray400};
-        background-color: ${disabled ? gray400 : primary500};
+        color: ${!disabled ? white : gray200};
+        border: 0.0625em solid ${!disabled ? primary500 : gray200};
+        background-color: ${!disabled ? primary500 : white};
       }
-
       ${{ ...style }}
     `;
   },
