@@ -1,2 +1,2 @@
 export default PaginationBoxView;
-import PaginationBoxView from "./PaginationBoxView.jsx";
+import PaginationBoxView from "./PaginationBoxView";

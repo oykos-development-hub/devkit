@@ -1,8 +1,8 @@
 "use strict";
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import PageView from "./PageView.jsx";
-import BreakView from "./BreakView.jsx";
+import PageView from "./PageView";
+import BreakView from "./BreakView";
 import { classNameIfDefined } from "./utils";
 export default class PaginationBoxView extends Component {
     constructor(props) {
