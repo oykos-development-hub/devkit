@@ -1,3 +1,3 @@
-import PaginationBoxView from "./PaginationBoxView.jsx";
+import PaginationBoxView from "./PaginationBoxView";
 export default PaginationBoxView;
 //# sourceMappingURL=index.js.map
