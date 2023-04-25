@@ -9,7 +9,7 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
 
   return css`
     width: 100%;
-    max-height: ${rem("44px")};
+    height: ${rem("44px")};
 
     // control
     .select__control {
