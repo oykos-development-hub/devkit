@@ -5,7 +5,7 @@ import { Path, Svg } from "../styles/shared";
 export const CircleIcon = (props: IconProps): React.ReactElement => (
   <Svg viewBox="0 0 22 22" onClick={props.onClick} fill={props.fill || "#000"} {...props}>
     <Path
-      stroke={props.stroke || "#FFF"}
+      stroke={props.stroke || "#000"}
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth="2"

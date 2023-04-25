@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { rem } from "polished";
 export const HiddenCheckbox = styled.input.attrs({ type: "checkbox" }) `
   border: 0;
   clip: rect(0 0 0 0);
@@ -36,18 +37,14 @@ export const Content = styled.div(({ checked, disabled, theme, size, style }) =>
     border-radius: ${(style === null || style === void 0 ? void 0 : style.borderRadius) || borderRadius[size]};
     cursor: ${disabled ? "auto" : "pointer"};
 
-    ${HiddenCheckbox}:focus + & {
-      box-shadow: ${disabled ? "none" : "0 0 0 0.063rem #f4ebff"};
-    }
-
     &:hover {
-      border: ${disabled ? "1px solid #e0e0e0" : "1px solid " + primary500};
-      box-shadow: ${disabled ? "none" : "0 0 0 0.25rem #f4ebff"};
+      border: ${disabled ? `1px solid ${gray300}` : `${rem("1px")} solid ${primary500}`};
+      box-shadow: ${disabled ? "none" : `0 0 0 0.25rem ${primary500}`};
     }
 
     &[disabled] {
       background: ${gray50};
-      border: 1px solid ${gray300};
+      border: ${rem("1px")} solid ${gray300};
       border-radius: ${(style === null || style === void 0 ? void 0 : style.borderRadius) || borderRadius[size]};
     }
 
