@@ -5,10 +5,12 @@ import { Content, ContentWrapper } from "./styles/content";
 import { ChevronDownIcon } from "../icon";
 import { Theme } from "../../shared/theme";
 import { IconWrapper } from "./styles/iconWrapper";
-const AccordionItem = ({ title, content, customIcon, rightCustomIcon, style, theme = Theme }) => {
+const AccordionItem = ({ title, content, customIcon, rightCustomIcon, style, theme = Theme, }) => {
     const [isOpen, setIsOpen] = useState(false);
     const toggleAccordion = () => setIsOpen(!isOpen);
-    const openMenu = () => { console.log('Clicked additional icon on right side.'); };
+    const openMenu = () => {
+        console.log("Clicked additional icon on right side.");
+    };
     return (React.createElement(AccordionContainer, null,
         React.createElement(Header, { isOpen: isOpen, style: style, theme: theme },
             React.createElement("div", { onClick: toggleAccordion, style: { display: "flex", justifyContent: "space-between", flexGrow: "1" } },
