@@ -8,7 +8,7 @@ import { Theme } from "../../shared/theme";
 import { UploadCloudIcon } from "../icon";
 import { Typography } from "../typography";
 import { Button } from "../button";
-export const FileUpload = ({ variant = "primary", buttonVariant = "primary", buttonSize = "sm", multiple = false, onUpload, customContent, customButtonContent, buttonText, note, hint, icon, style, theme = Theme, }) => {
+export const FileUpload = ({ variant = "primary", buttonVariant = "primary", buttonSize = "sm", multiple = false, onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme = Theme, }) => {
     const [isDragging, setIsDragging] = useState(false);
     const uploadInputRef = useRef(null);
     const handleDragOver = (e) => {
@@ -37,6 +37,6 @@ export const FileUpload = ({ variant = "primary", buttonVariant = "primary", but
             React.createElement(TextWrapper, { variant: variant, theme: theme },
                 note && React.createElement(Typography, { variant: "bodySmall", content: note }),
                 hint && React.createElement(Typography, { variant: "helperText", content: hint })),
-            React.createElement(ButtonWrapper, { variant: variant }, customButtonContent ? (customButtonContent) : (React.createElement(Button, { size: buttonSize, variant: buttonVariant, content: buttonText ? buttonText : "SELECT FILE", onClick: handleClick, theme: theme })))))));
+            React.createElement(ButtonWrapper, { variant: variant }, customButton ? (customButton) : (React.createElement(Button, { size: buttonSize, variant: buttonVariant, content: buttonText ? buttonText : "SELECT FILE", onClick: handleClick, theme: theme })))))));
 };
 //# sourceMappingURL=index.js.map

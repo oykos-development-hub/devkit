@@ -65,7 +65,7 @@ TertiaryWithCustomButton.args = {
     variant: "tertiary",
     multiple: false,
     note: "Title",
-    customButtonContent: (React.createElement(Button, { size: "sm", variant: "primary", content: React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "8px" } },
+    customButton: (React.createElement(Button, { size: "sm", variant: "primary", content: React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "8px" } },
             React.createElement(UploadCloudIcon, { stroke: "white", width: "20px" }),
             React.createElement(Typography, { variant: "bodyMedium", content: "Ucitaj", style: { color: "white" } })), onClick: () => alert("Success!"), theme: Theme })),
     hint: (React.createElement(Typography, { variant: "helperText", style: { marginTop: "2rem", textDecoration: "underline", fontWeight: 600 }, content: "Passport.png" })),

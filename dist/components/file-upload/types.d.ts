@@ -10,7 +10,7 @@ export interface FileUploadProps {
     variant: FileUploadVariants | `${FileUploadVariants}`;
     onUpload: (files: FileList) => void;
     customContent?: JSX.Element | ReactNode | string;
-    customButtonContent?: JSX.Element | ReactNode;
+    customButton?: JSX.Element | ReactNode;
     buttonVariant?: ButtonVariants | `${ButtonVariants}`;
     buttonSize?: ButtonSizes | `${ButtonSizes}`;
     buttonText?: string;
