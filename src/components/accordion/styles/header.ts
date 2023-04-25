@@ -3,11 +3,11 @@ import { CSSProperties } from "react";
 import { rem } from "polished";
 
 export const Header = styled.div<{
-  isOpen: boolean;
+  isOpen?: boolean;
   style?: CSSProperties;
   theme?: DefaultTheme;
 }>(({ isOpen, style, theme }) => {
-  const { white, primary500, gray900 } = theme!.palette;
+  const { white, gray200, gray900 } = theme!.palette;
 
   return css`
     display: flex;
@@ -15,9 +15,10 @@ export const Header = styled.div<{
     align-items: center;
     padding: ${rem("8px")} ${rem("16px")};
     gap: ${rem("8px")};
-    background-color: ${style?.backgroundColor || (isOpen ? primary500 : white)};
+    background-color: ${style?.backgroundColor || white};
     transition: background-color 0.3s ease-in-out;
     cursor: ${style?.cursor || "pointer"};
+    border-bottom: 1px solid ${gray200};
     border-radius: ${style?.borderRadius || "0"};
     overflow: hidden;
 
@@ -30,7 +31,7 @@ export const Header = styled.div<{
     h5,
     h6,
     svg {
-      color: ${style?.color || (isOpen ? white : gray900)};
+      color: ${style?.color || gray900};
     }
 
     & > svg {
@@ -39,7 +40,7 @@ export const Header = styled.div<{
       transition: opacity 0.3s linear, transform 0.3s linear;
 
       & path {
-        stroke: ${style?.stroke || (isOpen ? white : gray900)};
+        stroke: ${style?.stroke || gray900};
       }
     }
   `;

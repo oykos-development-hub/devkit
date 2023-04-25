@@ -2,7 +2,7 @@ import React from "react";
 import { Accordion } from "./index";
 import { Typography } from "../../index";
 import { Theme } from "../../shared/theme";
-import { MenuIcon } from "../icon";
+import { MenuIcon, MoreVerticalIcon } from "../icon";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 export default {
     component: Accordion,
@@ -32,9 +32,15 @@ const accordionData = [
     },
 ];
 const Template = (args) => (React.createElement(StoryWrapper, { style: { display: "grid", alignContent: "center" } },
-    React.createElement(Accordion, Object.assign({ style: { width: "400px" } }, args, { data: accordionData }))));
+    React.createElement("div", { style: { width: "400px" } },
+        React.createElement(Accordion, Object.assign({}, args, { data: accordionData })))));
 export const Default = Template.bind({});
-Default.args = {
+export const WithCustomIcon = Template.bind({});
+WithCustomIcon.args = {
     customIcon: React.createElement(MenuIcon, null),
+};
+export const WithContextIcon = Template.bind({});
+WithContextIcon.args = {
+    rightCustomIcon: React.createElement(MoreVerticalIcon, null),
 };
 //# sourceMappingURL=index.stories.js.map
