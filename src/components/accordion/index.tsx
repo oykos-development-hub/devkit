@@ -7,11 +7,11 @@ import { ChevronDownIcon } from "../icon";
 import { Theme } from "../../shared/theme";
 import { IconWrapper } from "./styles/iconWrapper";
 
-const AccordionItem: React.FC<AccordionData> = ({
+export const AccordionItem: React.FC<AccordionData> = ({
   title,
   content,
-  customIcon,
-  rightCustomIcon,
+  customHeader,
+  customContent,
   style,
   theme = Theme,
 }) => {
@@ -24,41 +24,43 @@ const AccordionItem: React.FC<AccordionData> = ({
   return (
     <AccordionContainer>
       <Header isOpen={isOpen} style={style} theme={theme}>
-        <div onClick={toggleAccordion} style={{ display: "flex", justifyContent: "space-between", flexGrow: "1" }}>
-          {customIcon ? (
-            <IconWrapper isOpen={isOpen} style={style} theme={theme}>
-              {customIcon}
-              {title}
-            </IconWrapper>
+        <div onClick={toggleAccordion} style={{ width: "100%" }}>
+          {customHeader ? (
+            customHeader
           ) : (
-            title
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              {title}
+              <IconWrapper isOpen={isOpen} style={style} theme={theme}>
+                <ChevronDownIcon />
+              </IconWrapper>
+            </div>
           )}
-          <IconWrapper isOpen={isOpen} style={style} theme={theme}>
-            <ChevronDownIcon />
-          </IconWrapper>
         </div>
-        <div onClick={openMenu}>{rightCustomIcon && rightCustomIcon}</div>
       </Header>
 
       <ContentWrapper isOpen={isOpen}>
-        <Content style={style} theme={theme}>
-          {content}
-        </Content>
+        {customContent ? (
+          customContent
+        ) : (
+          <Content style={style} theme={theme}>
+            {content}
+          </Content>
+        )}
       </ContentWrapper>
     </AccordionContainer>
   );
 };
 
-export const Accordion: React.FC<AccordionProps> = ({ data, customIcon, rightCustomIcon, style, theme }) => {
+export const Accordion: React.FC<AccordionProps> = ({ data, style, theme }) => {
   return (
     <>
       {data.map((item: AccordionData, index) => (
         <AccordionItem
           key={index}
           content={item.content}
+          customHeader={item.customHeader}
+          customContent={item.customContent}
           title={item.title}
-          customIcon={customIcon}
-          rightCustomIcon={rightCustomIcon}
           theme={theme}
           style={style}
         />
