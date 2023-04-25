@@ -5,7 +5,7 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
     const { error50, error700, primary50, primary200, primary100, gray100, gray200, gray300, gray400, gray600, gray700 } = theme.palette;
     return css `
     width: 100%;
-    max-height: ${rem("44px")};
+    height: ${rem("44px")};
 
     // control
     .select__control {
