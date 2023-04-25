@@ -84,7 +84,7 @@ TertiaryWithCustomButton.args = {
   variant: "tertiary",
   multiple: false,
   note: "Title",
-  customButtonContent: (
+  customButton: (
     <Button
       size={"sm"}
       variant={"primary"}

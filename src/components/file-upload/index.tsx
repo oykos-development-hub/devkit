@@ -17,7 +17,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   multiple = false,
   onUpload,
   customContent,
-  customButtonContent,
+  customButton,
   buttonText,
   note,
   hint,
@@ -80,8 +80,8 @@ export const FileUpload: React.FC<FileUploadProps> = ({
           </TextWrapper>
 
           <ButtonWrapper variant={variant}>
-            {customButtonContent ? (
-              customButtonContent
+            {customButton ? (
+              customButton
             ) : (
               <Button
                 size={buttonSize}
