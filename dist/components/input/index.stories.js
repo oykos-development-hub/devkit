@@ -1,5 +1,5 @@
 import React from "react";
-import { Input } from "./index";
+import { Input } from "./";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { DangerIcon, HelpCircleIcon, MailIcon } from "../icon";
@@ -50,9 +50,10 @@ Error.args = {
 };
 export const WithHint = Template.bind({});
 WithHint.args = {
-    label: "Input Label*",
-    placeholder: "placeholder...",
+    label: "Email",
+    placeholder: "Email here...",
     hint: "This is hint.",
-    rightContent: React.createElement(DangerIcon, { stroke: Theme.palette.error500, size: "16px" }),
+    leftContent: React.createElement(MailIcon, { stroke: Theme.palette.gray700, width: "20px" }),
+    rightContent: React.createElement(HelpCircleIcon, { stroke: Theme.palette.gray400, width: "16px" }),
 };
 //# sourceMappingURL=index.stories.js.map

@@ -7,7 +7,7 @@ export declare const HiddenRadio: import("styled-components").StyledComponent<"i
 export declare const Content: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
     checked: boolean;
     disabled: boolean;
-    size: RadioSize | string;
+    size: RadioSize | `${RadioSize}`;
     theme: DefaultTheme;
     style: React.CSSProperties | undefined;
 }, never>;

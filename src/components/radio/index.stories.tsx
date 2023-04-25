@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { Radio } from "./";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
@@ -39,9 +39,11 @@ export default {
 } as ComponentMeta<typeof Radio>;
 
 const Template: ComponentStory<typeof Radio> = (args) => {
+  const [checked, setIsChecked] = useState<boolean>(false);
+
   return (
     <StoryWrapper>
-      <Radio {...args} />
+      <Radio {...args} onClick={() => setIsChecked(!checked)} checked={checked} />
     </StoryWrapper>
   );
 };

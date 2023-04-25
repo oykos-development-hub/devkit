@@ -17,7 +17,7 @@ export const AccordionItem = ({ title, content, customHeader, customContent, sty
                 title,
                 React.createElement(IconWrapper, { isOpen: isOpen, style: style, theme: theme },
                     React.createElement(ChevronDownIcon, null)))))),
-        React.createElement(ContentWrapper, { isOpen: isOpen }, customContent ? (customContent) : React.createElement(Content, { style: style, theme: theme }, content))));
+        React.createElement(ContentWrapper, { isOpen: isOpen }, customContent ? (customContent) : (React.createElement(Content, { style: style, theme: theme }, content)))));
 };
 export const Accordion = ({ data, style, theme }) => {
     return (React.createElement(React.Fragment, null, data.map((item, index) => (React.createElement(AccordionItem, { key: index, content: item.content, customHeader: item.customHeader, customContent: item.customContent, title: item.title, theme: theme, style: style })))));

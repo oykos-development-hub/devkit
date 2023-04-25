@@ -7,10 +7,10 @@ export const Label = styled.label<{
   isActive?: boolean;
   isChecked?: boolean;
   disabled?: boolean;
-  size: SwitchSizes | string;
+  size: SwitchSizes | `${SwitchSizes}`;
   theme?: DefaultTheme;
 }>(({ isChecked, isActive, disabled, size, theme }) => {
-  const { primary500, gray300, gray400 } = theme!.palette;
+  const { primary50, primary500, gray300, gray400 } = theme!.palette;
 
   const width = {
     sm: rem("36px"),
@@ -28,7 +28,7 @@ export const Label = styled.label<{
     height: ${height[size]};
     background-color: ${isChecked && !disabled ? primary500 : gray300};
     border-radius: ${rem("12px")};
-    box-shadow: ${isActive && !disabled && `0 0 0 ${rem("4px")} #F4EBFF`};
+    box-shadow: ${isActive && !disabled && `0 0 0 ${rem("4px")} ${primary50}`};
 
     & ${Input} {
       display: none;
