@@ -2,8 +2,7 @@ import Select from "react-select";
 import styled, { css } from "styled-components";
 import { rem } from "polished";
 export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIcon, isSearchable }) => {
-    const { error50, error700, primary50, primary200, primary100, gray200, gray300, gray400, gray600, gray700 } = theme.palette;
-    const borderColor = (style === null || style === void 0 ? void 0 : style.borderColor) || gray400;
+    const { error50, error700, primary50, primary200, primary100, gray100, gray200, gray300, gray400, gray600, gray700 } = theme.palette;
     return css `
     width: 100%;
     max-height: ${rem("44px")};
@@ -13,7 +12,7 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
       cursor: ${isSearchable ? "text" : "pointer"};
       height: 100%;
       background-color: #fff;
-      border: ${(style === null || style === void 0 ? void 0 : style.border) || `1px solid ${borderColor}`};
+      border: ${(style === null || style === void 0 ? void 0 : style.border) || `1px solid ${gray400}`};
       border-radius: ${theme.borderRadius.lg || rem("8px")};
       padding: ${rem("12px")} ${rem("14px")};
 
@@ -72,17 +71,13 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
       align-content: center;
     }
     .select__control:hover {
-      border: ${(style === null || style === void 0 ? void 0 : style.border) || `1px solid ${borderColor}`};
-    }
-    .select__control--is-focused {
-      border: 1px solid ${primary200};
-      box-shadow: ${(style === null || style === void 0 ? void 0 : style.boxShadow) || `0 1px 2px rgba(16, 24, 40, 0.05), 0 0 0 4px ${primary50}`};
+      border: ${rem("1px")} solid ${gray400};
     }
     .select__control--menu-is-open.select__control--is-focused,
     .select__control--is-focused,
     .select__control--is-focused:hover {
       border: 1px solid ${primary200};
-      box-shadow: ${(style === null || style === void 0 ? void 0 : style.boxShadow) || `0 1px 2px rgba(16, 24, 40, 0.05), 0 0 0 4px ${primary50}`};
+      box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05), 0 0 0 4px ${primary50};
     }
 
     .select__value-container {
@@ -112,22 +107,22 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
       }
     }
 
-    //menu
+    //dropdown menu
     .select__menu {
+      flex-grow: 1;
       box-shadow: 0 12px 16px -4px rgba(16, 24, 40, 0.08), 0 4px 6px -2px rgba(16, 24, 40, 0.03);
-      border: 1px solid #dfd7d6;
+      border: 1px solid ${gray100};
       margin-top: ${rem("8px")};
-      padding: ${rem("4px")} 0;
+      padding: 0;
       border-radius: ${theme.borderRadius.lg || "0.5rem"};
       width: ${(style === null || style === void 0 ? void 0 : style.width) || "100%"};
     }
     .select__menu-list {
-      margin: 0;
-      padding: 0;
+      padding: ${rem("4px")} 0;
 
       &::-webkit-scrollbar {
         width: ${rem("8px")};
-        background-color: transparent; /* Change this color for the scrollbar track background */
+        background-color: transparent;
 
         &-track {
           border-radius: ${rem("8px")};

@@ -22,6 +22,7 @@ export const Container = styled.div(({ label, error, style, theme }) => {
       position: relative;
     }
 
+    // label
     ${BodyMedium}:first-child {
       color: ${gray900};
       font-size: ${rem("14px")};
@@ -29,12 +30,7 @@ export const Container = styled.div(({ label, error, style, theme }) => {
       line-height: ${rem("20px")};
     }
 
-    ${BodyMedium}:last-child {
-      font-size: ${rem("14px")};
-      font-weight: 400;
-      line-height: ${rem("16px")};
-    }
-
+    // hint & error
     ${HelperText} {
       position: absolute;
       bottom: ${rem("-25px")};
