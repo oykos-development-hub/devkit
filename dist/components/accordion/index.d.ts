@@ -1,3 +1,4 @@
 import React from "react";
-import { AccordionProps } from "./types";
+import { AccordionData, AccordionProps } from "./types";
+export declare const AccordionItem: React.FC<AccordionData>;
 export declare const Accordion: React.FC<AccordionProps>;

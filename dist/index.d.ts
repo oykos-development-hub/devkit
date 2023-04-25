@@ -22,6 +22,7 @@ export declare const Tooltip: ({ position, theme, content, children, title, vari
 export declare const Typography: (props: import("./types").TypographyProps) => import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;
 export declare const Pagination: import("react").FC<import("./types").PaginationProps>;
 export declare const Accordion: import("react").FC<import("./types").AccordionProps>;
+export declare const AccordionItem: import("react").FC<import("./types").AccordionData>;
 export * from "./components/button/styles";
 export * from "./components/modal/styles";
 export * from "./components/tooltip/styles";
