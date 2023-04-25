@@ -12,6 +12,6 @@ export const Radio = ({ checked = false, size = "sm", onClick, style, theme = Th
     return (React.createElement(Container, null,
         React.createElement(HiddenRadio, { checked: checked }),
         React.createElement(Content, { checked: checked, onClick: handleClick, size: size, style: style, theme: theme, disabled: disabled },
-            React.createElement(CircleIcon, { fill: disabled ? (style === null || style === void 0 ? void 0 : style.fill) || theme.palette.gray300 : theme.palette.primary500, stroke: disabled ? (style === null || style === void 0 ? void 0 : style.stroke) || theme.palette.gray300 : theme.palette.primary500 }))));
+            React.createElement(CircleIcon, { fill: disabled ? theme.palette.gray300 : theme.palette.primary500, stroke: disabled ? theme.palette.gray300 : theme.palette.primary500 }))));
 };
 //# sourceMappingURL=index.js.map
