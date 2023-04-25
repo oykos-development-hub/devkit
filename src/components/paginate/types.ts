@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { ReactPaginateProps } from "react-paginate";
+import { ReactPaginateProps } from "./react-paginate/types";
 import { CSSProperties, DefaultTheme } from "styled-components";
 
 export enum PaginationVariants {
