@@ -24,8 +24,8 @@ export const Radio: React.FC<RadioProps> = ({
       <HiddenRadio checked={checked} />
       <Content checked={checked} onClick={handleClick} size={size} style={style} theme={theme} disabled={disabled}>
         <CircleIcon
-          fill={disabled ? style?.fill || theme!.palette.gray300 : theme!.palette.primary500}
-          stroke={disabled ? style?.stroke || theme!.palette.gray300 : theme!.palette.primary500}
+          fill={disabled ? theme!.palette.gray300 : theme!.palette.primary500}
+          stroke={disabled ? theme!.palette.gray300 : theme!.palette.primary500}
         />
       </Content>
     </Container>
