@@ -8,10 +8,10 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
     theme.palette;
 
   return css`
-    width: 100%;
+    width: ${style?.width || "100%"};
     height: auto;
 
-    // control
+    // control (input field)
     .select__control {
       cursor: ${isSearchable ? "text" : "pointer"};
       background-color: #fff;
@@ -25,11 +25,6 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
       padding-left: ${controlIcon ? "0.7rem" : 0};
     }
     .select__placeholder {
-      font-family: ${style?.fontFamily || theme?.fontFamily.one};
-      font-size: ${rem("14px")};
-      font-weight: 400;
-      line-height: ${rem("20px")};
-      color: ${gray700};
       margin: 0;
       padding: 0;
     }
@@ -96,7 +91,6 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
       border-radius: ${theme.borderRadius.md || "0.5rem"};
       background-color: ${gray200};
       & > div {
-        font-size: ${rem("14px")};
         padding: 0 ${rem("3px")} 0 ${rem("3px")};
       }
       & > div:last-child:hover {
@@ -142,10 +136,9 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
         }
       }
     }
+    // option items
     .select__option {
       cursor: pointer;
-      font-size: ${rem("14px")};
-      line-height: ${rem("20px")};
       padding: ${"12px"} ${rem("14px")};
 
       &:hover {
@@ -159,8 +152,7 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
       background-color: ${primary100};
     }
     .select__menu-notice--no-options {
-      font-size: ${rem("14px")};
-      color: ${gray600};
+      //
     }
   `;
 });

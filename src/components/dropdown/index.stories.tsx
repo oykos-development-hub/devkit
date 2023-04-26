@@ -5,21 +5,17 @@ import { Theme } from "../../shared/theme";
 import { Dropdown } from "./index";
 import { CheckIcon, UserIcon } from "../icon";
 import { DropdownProps } from "./types";
+import { Typography } from "../typography";
 
 const dropdownOptions = [
-  { value: "one", label: "One" },
-  { value: "two", label: "Two" },
-  { value: "three", label: "Three" },
-  { value: "four", label: "Four" },
-  { value: "five", label: "Five" },
-  { value: "six", label: "Six" },
-  { value: "seven", label: "Seven" },
-  { value: "eight", label: "Eight" },
-  { value: "nine", label: "Nine" },
-  { value: "ten", label: "Ten" },
-  { value: "twelve", label: "Twelve" },
-  { value: "thirteen", label: "Thirteen" },
-  { value: "fourteen", label: "Fourteen" },
+  { value: "one", label: <Typography content={"One"} variant={"bodySmall"} /> },
+  { value: "two", label: <Typography content={"Two"} variant={"bodySmall"} /> },
+  {
+    value: "three",
+    label: <Typography variant={"bodySmall"} content={"Three"} />,
+  },
+  { value: "four", label: <Typography content={"Four"} variant={"bodySmall"} /> },
+  { value: "five", label: <Typography content={"Five"} variant={"bodySmall"} /> },
 ];
 
 const avatar = (
@@ -87,21 +83,6 @@ export default {
         type: "boolean",
       },
     },
-    placeholder: {
-      control: {
-        type: "text",
-      },
-    },
-    label: {
-      control: {
-        type: "text",
-      },
-    },
-    noOptionsText: {
-      control: {
-        type: "text",
-      },
-    },
   },
 } as ComponentMeta<typeof Dropdown>;
 
@@ -114,17 +95,17 @@ const Template: ComponentStory<typeof Dropdown> = (args: DropdownProps) => (
 );
 
 export const DropdownDefault = Template.bind({});
-
 DropdownDefault.args = {
-  placeholder: "Select team member",
+  label: <Typography content={"Team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  placeholder: <Typography content={"Select team member"} variant={"bodySmall"} />,
   rightOptionIcon: <CheckIcon stroke={Theme.palette.primary500} />,
   showArrow: true,
 };
 
 export const DropdownWithIcons = Template.bind({});
 DropdownWithIcons.args = {
-  label: "Team member",
-  placeholder: "Select team member",
+  label: <Typography content={"Team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  placeholder: <Typography content={"Select team member"} variant={"bodySmall"} />,
   leftOptionIcon: <UserIcon stroke={Theme.palette.primary900} width="24px" />,
   rightOptionIcon: <CheckIcon stroke={Theme.palette.primary500} />,
   showArrow: true,
@@ -133,20 +114,21 @@ DropdownWithIcons.args = {
 
 export const DropdownSearch = Template.bind({});
 DropdownSearch.args = {
-  label: "Team member",
-  placeholder: "Select team member",
+  label: <Typography content={"Team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  placeholder: <Typography content={"Select team member"} variant={"bodySmall"} />,
   isSearchable: true,
   isClearable: true,
   backspaceRemovesValue: true,
   rightOptionIcon: <CheckIcon stroke={Theme.palette.primary500} />,
   showArrow: true,
   closeMenuOnSelect: true,
+  noOptionsText: <Typography content={"No data"} variant={"h6"} />,
 };
 
 export const MultipleSelect = Template.bind({});
 MultipleSelect.args = {
-  label: "Team member",
-  placeholder: "Select team member",
+  label: <Typography content={"Team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  placeholder: <Typography content={"Select team member"} variant={"bodySmall"} />,
   isMulti: true,
   isSearchable: true,
   rightOptionIcon: <CheckIcon stroke={Theme.palette.primary500} />,
@@ -156,8 +138,8 @@ MultipleSelect.args = {
 
 export const MultipleSelectSearch = Template.bind({});
 MultipleSelectSearch.args = {
-  label: "Team member",
-  placeholder: "Select team member",
+  label: <Typography content={"Team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  placeholder: <Typography content={"Select team member"} variant={"bodySmall"} />,
   isMulti: true,
   isSearchable: true,
   rightOptionIcon: <CheckIcon stroke={Theme.palette.primary500} />,
@@ -167,8 +149,8 @@ MultipleSelectSearch.args = {
 
 export const DropdownWithAvatars = Template.bind({});
 DropdownWithAvatars.args = {
-  label: "Team member",
-  placeholder: "Select team member",
+  label: <Typography content={"Team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  placeholder: <Typography content={"Select team member"} variant={"helperText"} />,
   leftOptionIcon: avatar,
   rightOptionIcon: <CheckIcon stroke={Theme.palette.primary500} />,
   showArrow: false,
