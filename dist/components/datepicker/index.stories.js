@@ -40,7 +40,7 @@ Default.args = {
     dateFormat: "dd/MM/yyyy",
 };
 export const WithLabel = Template.bind({});
-Default.args = {
+WithLabel.args = {
     dateFormat: "dd/MM/yyyy",
     label: "Date label",
 };
