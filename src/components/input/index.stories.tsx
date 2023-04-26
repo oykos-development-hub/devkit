@@ -6,6 +6,7 @@ import { InputProps } from "./types";
 import { Theme } from "../../shared/theme";
 import { DangerIcon, HelpCircleIcon, MailIcon } from "../icon";
 import { Dropdown } from "../dropdown";
+import { Typography } from "../typography";
 
 export default {
   title: "Components/Input",
@@ -35,20 +36,20 @@ InputDefault.args = {
 
 export const Amounts = Template.bind({});
 Amounts.args = {
-  label: "Sale amount",
+  label: <Typography content={"Select team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
   placeholder: "1,000.00",
-  leftContent: <div style={{ color: Theme.palette.gray700, paddingTop: "3px" }}>&euro;</div>,
+  leftContent: <Typography content={<div>&euro;</div>} style={{ color: Theme.palette.gray700 }} />,
   rightContent: <HelpCircleIcon stroke={Theme.palette.gray700} width="14px" />,
 };
 
 export const PhoneNumber = Template.bind({});
 const options = [
-  { value: "us", label: "US" },
-  { value: "es", label: "ES" },
+  { value: "us", label: <Typography content={"US"} variant={"bodySmall"} /> },
+  { value: "es", label: <Typography content={"ES"} variant={"bodySmall"} /> },
 ];
 
 PhoneNumber.args = {
-  label: "Phone number",
+  label: <Typography content={"Phone number"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
   leftContent: (
     <Dropdown
       options={options}
@@ -61,7 +62,7 @@ PhoneNumber.args = {
 
 export const Error = Template.bind({});
 Error.args = {
-  label: "Email",
+  label: <Typography content={"Email"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
   placeholder: "Email here...",
   error: "This is error.",
   leftContent: <MailIcon stroke={Theme.palette.gray700} width={"20px"} />,
@@ -72,7 +73,7 @@ Error.args = {
 
 export const WithHint = Template.bind({});
 WithHint.args = {
-  label: "Email",
+  label: <Typography content={"Email"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
   placeholder: "Email here...",
   hint: "This is hint.",
   leftContent: <MailIcon stroke={Theme.palette.gray700} width={"20px"} />,

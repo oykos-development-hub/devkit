@@ -3,15 +3,14 @@ import { InputProps } from "../types";
 import { rem } from "polished";
 
 const shared = ({ style, theme, error }: InputProps) => {
-  const { gray400, gray600, error50, error200, primary50, primary200, white } = theme!.palette;
+  const { gray300, gray700, error50, error200, primary50, primary200, white } = theme!.palette;
 
   return css`
     width: 100%;
     border-radius: ${theme!.borderRadius?.lg || rem("8px")};
-    border: ${`${theme!.borderWidth?.xs || rem("1px")} solid ${error ? error200 : gray400}`};
+    border: ${rem("1px")} solid ${error ? error200 : gray300};
     box-sizing: border-box;
     outline: none;
-    font-family: ${style?.fontFamily || theme!.fontFamily.one};
 
     &:focus {
       border-color: ${error ? error200 : primary200};
@@ -20,13 +19,18 @@ const shared = ({ style, theme, error }: InputProps) => {
     }
 
     &[disabled] {
-      color: ${gray600};
+      color: ${gray700};
       background-color: ${white};
     }
 
     &::placeholder {
-      color: ${gray600};
-      font-size: ${rem("14px")};
+      display: block;
+      color: ${gray700};
+      font-family: ${theme?.fontFamily?.one || "sans-serif"};
+      margin: 0;
+      font-weight: 400;
+      font-size: 0.85rem;
+      line-height: 1.5rem;
     }
 
     ${{ ...style }}

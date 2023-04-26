@@ -19,7 +19,7 @@ import { Theme } from "../../shared/theme";
 import { IconWrapper } from "./styles/iconWrapper";
 import { rem } from "polished";
 export const Input = (_a) => {
-    var { name, value, theme = Theme, style, disabled, label, textarea, leftContent, rightContent, error, hint, placeholder, onChange, onBlur, onFocus, id, inputRef, cols, rows } = _a, props = __rest(_a, ["name", "value", "theme", "style", "disabled", "label", "textarea", "leftContent", "rightContent", "error", "hint", "placeholder", "onChange", "onBlur", "onFocus", "id", "inputRef", "cols", "rows"]);
+    var { name, value, theme = Theme, style, disabled, label, textarea, leftContent, rightContent, error = "", hint = "", placeholder = "", onChange, onBlur, onFocus, id, inputRef, cols, rows } = _a, props = __rest(_a, ["name", "value", "theme", "style", "disabled", "label", "textarea", "leftContent", "rightContent", "error", "hint", "placeholder", "onChange", "onBlur", "onFocus", "id", "inputRef", "cols", "rows"]);
     const [leftElementWidth, setLeftElementWidth] = useState(0);
     const [rightElementWidth, setRightElementWidth] = useState(0);
     const leftElementRef = useRef(null);
@@ -46,15 +46,15 @@ export const Input = (_a) => {
         error,
         style: Object.assign({ paddingTop: "0.625em", paddingBottom: "0.625em", paddingLeft: `${leftContent ? `${leftElementWidth}px` : rem("14px")}`, paddingRight: `${rightContent ? `${rightElementWidth}px` : rem("14px")}` }, style),
     };
-    return (React.createElement(Container, { style: style, theme: theme, label: label, error: error, hint: hint },
-        label && React.createElement(Typography, { variant: "bodyMedium", content: label }),
+    return (React.createElement(Container, { style: style },
+        label && label,
         React.createElement("div", null,
             textarea ? (React.createElement(Textarea, Object.assign({}, fieldProps, props, { theme: theme, rows: rows || 5, cols: cols }))) : (React.createElement(StyledInput, Object.assign({}, fieldProps, props, { theme: theme, ref: inputRef }))),
             leftContent && (React.createElement(LeftElement, { ref: leftElementRef },
                 React.createElement(IconWrapper, null, leftContent))),
             rightContent && (React.createElement(RightElement, { ref: rightElementRef },
                 React.createElement(IconWrapper, null, rightContent)))),
-        error && !disabled && React.createElement(Typography, { variant: "helperText", content: error }),
-        hint && !error && React.createElement(Typography, { variant: "helperText", content: hint })));
+        error && !disabled && (React.createElement(Typography, { content: error, variant: "helperText", style: { color: theme.palette.error500 } })),
+        hint && !error && React.createElement(Typography, { content: hint, variant: "helperText", style: { color: theme.palette.gray700 } })));
 };
 //# sourceMappingURL=index.js.map
