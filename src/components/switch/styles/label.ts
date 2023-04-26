@@ -34,13 +34,13 @@ export const Label = styled.label<{
       display: none;
     }
 
-    & :hover {
+    &:hover {
       background-color: ${!disabled && !isChecked && gray400};
     }
 
-    & :active,
-    & :focus-within {
-      box-shadow: ${!isActive && !disabled && `0 0 0 ${rem("4px")} #F4EBFF`};
+    &:active,
+    &:focus-within {
+      box-shadow: ${!isActive && !disabled && `0 0 0 ${rem("4px")} ${primary50}`};
     }
   `;
 });
