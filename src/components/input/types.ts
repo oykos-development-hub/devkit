@@ -1,4 +1,4 @@
-import { ChangeEventHandler, FocusEventHandler, ReactElement } from "react";
+import { ChangeEventHandler, FocusEventHandler, ReactElement, ReactNode, Ref } from "react";
 import { CSSProperties, DefaultTheme } from "styled-components";
 
 export interface InputProps {
@@ -7,19 +7,19 @@ export interface InputProps {
   theme?: DefaultTheme;
   style?: CSSProperties;
   disabled?: boolean;
-  label?: string;
+  label?: ReactNode | string;
   textarea?: boolean;
   leftContent?: ReactElement;
   rightContent?: ReactElement;
-  error?: string;
-  hint?: string;
-  placeholder?: string;
+  error?: ReactNode | string;
+  hint?: ReactNode | string;
+  placeholder?: ReactNode | string;
   onChange?: ChangeEventHandler<any>;
   onFocus?: FocusEventHandler;
   onBlur?: FocusEventHandler;
   id?: string;
   type?: string;
-  inputRef?: React.Ref<HTMLInputElement>;
+  inputRef?: Ref<HTMLInputElement>;
   inputMode?: "text" | "numeric" | "none" | "tel" | "url" | "email" | "decimal";
   maxLength?: number;
   pattern?: string;

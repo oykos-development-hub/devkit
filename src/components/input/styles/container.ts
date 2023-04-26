@@ -15,9 +15,6 @@ export const Container = styled.div(({ label, error, style, theme }: InputProps)
     position: relative;
 
     & * {
-      font-family: ${style?.fontFamily || theme!.fontFamily.one};
-      font-size: ${rem("16px")};
-      line-height: ${rem("24px")};
       color: ${gray700};
     }
 

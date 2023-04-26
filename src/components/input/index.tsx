@@ -9,6 +9,8 @@ import { RightElement } from "./styles/rightElement";
 import { Theme } from "../../shared/theme";
 import { IconWrapper } from "./styles/iconWrapper";
 import { rem } from "polished";
+import { ErrorContent } from "./styles/errorContent";
+import { HintContent } from "./styles/hintContent";
 
 export const Input = ({
   name,
@@ -20,9 +22,9 @@ export const Input = ({
   textarea,
   leftContent,
   rightContent,
-  error,
-  hint,
-  placeholder,
+  error = "",
+  hint = "",
+  placeholder = "",
   onChange,
   onBlur,
   onFocus,
@@ -67,13 +69,13 @@ export const Input = ({
 
   return (
     <Container style={style} theme={theme} label={label} error={error} hint={hint}>
-      {label && <Typography variant="bodyMedium" content={label} />}
+      {label && label}
 
       <div>
         {textarea ? (
-          <Textarea {...fieldProps} {...props} theme={theme} rows={rows || 5} cols={cols} />
+          <Textarea {...(fieldProps as any)} {...props} theme={theme} rows={rows || 5} cols={cols} />
         ) : (
-          <StyledInput {...fieldProps} {...props} theme={theme} ref={inputRef} />
+          <StyledInput {...(fieldProps as any)} {...props} theme={theme} ref={inputRef} />
         )}
 
         {leftContent && (
@@ -88,8 +90,8 @@ export const Input = ({
         )}
       </div>
 
-      {error && !disabled && <Typography variant="helperText" content={error} />}
-      {hint && !error && <Typography variant="helperText" content={hint} />}
+      {error && !disabled && <ErrorContent theme={theme}>{error}</ErrorContent>}
+      {hint && !error && <HintContent theme={theme}>{hint}</HintContent>}
     </Container>
   );
 };
