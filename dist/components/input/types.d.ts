@@ -10,9 +10,9 @@ export interface InputProps {
     textarea?: boolean;
     leftContent?: ReactElement;
     rightContent?: ReactElement;
-    error?: ReactNode | string;
-    hint?: ReactNode | string;
-    placeholder?: ReactNode | string;
+    error?: string;
+    hint?: string;
+    placeholder?: string;
     onChange?: ChangeEventHandler<any>;
     onFocus?: FocusEventHandler;
     onBlur?: FocusEventHandler;
