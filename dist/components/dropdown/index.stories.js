@@ -3,20 +3,16 @@ import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { Dropdown } from "./index";
 import { CheckIcon, UserIcon } from "../icon";
+import { Typography } from "../typography";
 const dropdownOptions = [
-    { value: "one", label: "One" },
-    { value: "two", label: "Two" },
-    { value: "three", label: "Three" },
-    { value: "four", label: "Four" },
-    { value: "five", label: "Five" },
-    { value: "six", label: "Six" },
-    { value: "seven", label: "Seven" },
-    { value: "eight", label: "Eight" },
-    { value: "nine", label: "Nine" },
-    { value: "ten", label: "Ten" },
-    { value: "twelve", label: "Twelve" },
-    { value: "thirteen", label: "Thirteen" },
-    { value: "fourteen", label: "Fourteen" },
+    { value: "one", label: React.createElement(Typography, { content: "One", variant: "bodySmall" }) },
+    { value: "two", label: React.createElement(Typography, { content: "Two", variant: "bodySmall" }) },
+    {
+        value: "three",
+        label: React.createElement(Typography, { variant: "bodySmall", content: "Three" }),
+    },
+    { value: "four", label: React.createElement(Typography, { content: "Four", variant: "bodySmall" }) },
+    { value: "five", label: React.createElement(Typography, { content: "Five", variant: "bodySmall" }) },
 ];
 const avatar = (React.createElement("svg", { xmlns: "http://www.w3.org/2000/svg", xmlnsXlink: "http://www.w3.org/1999/xlink", width: "24", height: "24", fill: "none", viewBox: "0 0 24 24" },
     React.createElement("rect", { width: "24", height: "24", fill: "url(#pattern0)", rx: "12" }),
@@ -65,21 +61,6 @@ export default {
                 type: "boolean",
             },
         },
-        placeholder: {
-            control: {
-                type: "text",
-            },
-        },
-        label: {
-            control: {
-                type: "text",
-            },
-        },
-        noOptionsText: {
-            control: {
-                type: "text",
-            },
-        },
     },
 };
 const Template = (args) => (React.createElement(StoryWrapper, null,
@@ -87,14 +68,15 @@ const Template = (args) => (React.createElement(StoryWrapper, null,
         React.createElement(Dropdown, Object.assign({}, args)))));
 export const DropdownDefault = Template.bind({});
 DropdownDefault.args = {
-    placeholder: "Select team member",
+    label: React.createElement(Typography, { content: "Team member", variant: "bodySmall", style: { fontWeight: 600 } }),
+    placeholder: React.createElement(Typography, { content: "Select team member", variant: "bodySmall" }),
     rightOptionIcon: React.createElement(CheckIcon, { stroke: Theme.palette.primary500 }),
     showArrow: true,
 };
 export const DropdownWithIcons = Template.bind({});
 DropdownWithIcons.args = {
-    label: "Team member",
-    placeholder: "Select team member",
+    label: React.createElement(Typography, { content: "Team member", variant: "bodySmall", style: { fontWeight: 600 } }),
+    placeholder: React.createElement(Typography, { content: "Select team member", variant: "bodySmall" }),
     leftOptionIcon: React.createElement(UserIcon, { stroke: Theme.palette.primary900, width: "24px" }),
     rightOptionIcon: React.createElement(CheckIcon, { stroke: Theme.palette.primary500 }),
     showArrow: true,
@@ -102,19 +84,20 @@ DropdownWithIcons.args = {
 };
 export const DropdownSearch = Template.bind({});
 DropdownSearch.args = {
-    label: "Team member",
-    placeholder: "Select team member",
+    label: React.createElement(Typography, { content: "Team member", variant: "bodySmall", style: { fontWeight: 600 } }),
+    placeholder: React.createElement(Typography, { content: "Select team member", variant: "bodySmall" }),
     isSearchable: true,
     isClearable: true,
     backspaceRemovesValue: true,
     rightOptionIcon: React.createElement(CheckIcon, { stroke: Theme.palette.primary500 }),
     showArrow: true,
     closeMenuOnSelect: true,
+    noOptionsText: React.createElement(Typography, { content: "No data", variant: "h6" }),
 };
 export const MultipleSelect = Template.bind({});
 MultipleSelect.args = {
-    label: "Team member",
-    placeholder: "Select team member",
+    label: React.createElement(Typography, { content: "Team member", variant: "bodySmall", style: { fontWeight: 600 } }),
+    placeholder: React.createElement(Typography, { content: "Select team member", variant: "bodySmall" }),
     isMulti: true,
     isSearchable: true,
     rightOptionIcon: React.createElement(CheckIcon, { stroke: Theme.palette.primary500 }),
@@ -123,8 +106,8 @@ MultipleSelect.args = {
 };
 export const MultipleSelectSearch = Template.bind({});
 MultipleSelectSearch.args = {
-    label: "Team member",
-    placeholder: "Select team member",
+    label: React.createElement(Typography, { content: "Team member", variant: "bodySmall", style: { fontWeight: 600 } }),
+    placeholder: React.createElement(Typography, { content: "Select team member", variant: "bodySmall" }),
     isMulti: true,
     isSearchable: true,
     rightOptionIcon: React.createElement(CheckIcon, { stroke: Theme.palette.primary500 }),
@@ -133,8 +116,8 @@ MultipleSelectSearch.args = {
 };
 export const DropdownWithAvatars = Template.bind({});
 DropdownWithAvatars.args = {
-    label: "Team member",
-    placeholder: "Select team member",
+    label: React.createElement(Typography, { content: "Team member", variant: "bodySmall", style: { fontWeight: 600 } }),
+    placeholder: React.createElement(Typography, { content: "Select team member", variant: "helperText" }),
     leftOptionIcon: avatar,
     rightOptionIcon: React.createElement(CheckIcon, { stroke: Theme.palette.primary500 }),
     showArrow: false,
