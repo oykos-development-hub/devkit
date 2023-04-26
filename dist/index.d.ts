@@ -5,7 +5,7 @@ export declare const Badge: import("react").FC<import("./types").BadgeProps>;
 export declare const Breadcrumbs: ({ theme, onClick, items, separator, style }: import("./types").BreadcrumbsProps) => JSX.Element;
 export declare const Button: ({ onClick, content, customContent, disabled, variant, size, style, theme, }: import("./types").ButtonProps) => JSX.Element;
 export declare const Checkbox: import("react").FC<import("./types").CheckboxProps>;
-export declare const Datepicker: import("react").FC<import("./types").DatepickerTypes>;
+export declare const Datepicker: import("react").FC<import("./types").CustomDatePickerProps>;
 export declare const Divider: import("react").FC<import("./types").DividerProps>;
 export declare const Dropdown: ({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, isClearable, backspaceRemovesValue, showArrow, closeMenuOnSelect, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, ...props }: import("./types").DropdownProps) => JSX.Element;
 export declare const FileUpload: import("react").FC<import("./types").FileUploadProps>;

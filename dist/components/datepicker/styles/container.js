@@ -32,18 +32,12 @@ export const Container = styled.div(({ style, theme, error }) => {
       }
     }
 
-    & svg {
-      width: ${rem("21px")} !important;
-      top: ${rem("2px")};
-      right: ${rem("16px")};
-
-      & path {
-        stroke: ${error ? error600 : gray800};
-        stroke-width: 2;
-        fill: none;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-      }
+    & svg > path {
+      stroke: ${error ? error600 : gray800};
+      stroke-width: 2;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
 
     .react-datepicker-popper {

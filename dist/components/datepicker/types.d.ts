@@ -1,10 +1,11 @@
 import React from "react";
-import { DefaultTheme } from "styled-components";
 import { ReactDatePickerProps } from "react-datepicker";
-export interface DatepickerTypes extends ReactDatePickerProps {
-    onChange: (date: Date) => void;
+import { DefaultTheme } from "styled-components";
+export interface CustomDatePickerProps extends Omit<ReactDatePickerProps, "onChange" | "selectsRange"> {
+    onChange: (date: Date | [Date, Date]) => void;
     error?: string;
-    disabled?: boolean;
     style?: React.CSSProperties;
     theme?: DefaultTheme;
+    label?: string;
+    selectsRange?: boolean;
 }
