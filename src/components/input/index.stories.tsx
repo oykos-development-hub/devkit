@@ -52,7 +52,7 @@ PhoneNumber.args = {
   leftContent: (
     <Dropdown
       options={options}
-      style={{ border: "0 !important", padding: 0, boxShadow: "none" }}
+      style={{ border: "0 !important", padding: 0, boxShadow: "none !important" }}
       placeholder={options[0].label}
     />
   ),

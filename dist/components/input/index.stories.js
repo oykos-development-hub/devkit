@@ -37,7 +37,7 @@ const options = [
 ];
 PhoneNumber.args = {
     label: "Phone number",
-    leftContent: (React.createElement(Dropdown, { options: options, style: { border: "0 !important", padding: 0, boxShadow: "none" }, placeholder: options[0].label })),
+    leftContent: (React.createElement(Dropdown, { options: options, style: { border: "0 !important", padding: 0, boxShadow: "none !important" }, placeholder: options[0].label })),
     rightContent: React.createElement(HelpCircleIcon, { stroke: Theme.palette.gray400, width: "16px" }),
 };
 export const Error = Template.bind({});
