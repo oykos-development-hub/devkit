@@ -1,7 +1,8 @@
+/// <reference types="react" />
 import { CSSProperties, DefaultTheme } from "styled-components";
 export interface Tab {
     id: number | string;
-    title: string;
+    title: string | React.ReactNode;
     disabled?: boolean;
 }
 export interface TabsProps {

@@ -9,7 +9,7 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "./styles/container";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -17,13 +17,8 @@ import { Input } from "../input";
 import CalendarIcon from "../icon/variations/CalendarIcon";
 import { DangerIcon } from "../icon";
 export const Datepicker = (_a) => {
-    var { style, theme, error, disabled = false, onChange } = _a, rest = __rest(_a, ["style", "theme", "error", "disabled", "onChange"]);
-    const [date, setDate] = useState(new Date());
-    const handleDateChange = (date) => {
-        setDate(date);
-        onChange && onChange(date);
-    };
+    var { style, theme, error, label, onChange, selectsRange } = _a, rest = __rest(_a, ["style", "theme", "error", "label", "onChange", "selectsRange"]);
     return (React.createElement(Container, { style: style, theme: theme, error: error },
-        React.createElement(DatePicker, Object.assign({ disabled: disabled, selected: date, onChange: handleDateChange, dateFormat: rest.dateFormat, customInput: rest.customInput ? (rest.customInput) : (React.createElement(Input, { rightContent: error ? React.createElement(DangerIcon, null) : React.createElement(CalendarIcon, null), error: error })) }, rest))));
+        React.createElement(DatePicker, Object.assign({ onChange: onChange, selectsRange: selectsRange, customInput: rest.customInput ? (rest.customInput) : (React.createElement(Input, { rightContent: error ? React.createElement(DangerIcon, null) : React.createElement(CalendarIcon, null), error: error, label: label })) }, rest))));
 };
 //# sourceMappingURL=index.js.map

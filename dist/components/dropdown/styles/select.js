@@ -5,12 +5,11 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
     const { error50, error700, primary50, primary200, primary100, gray100, gray200, gray300, gray400, gray600, gray700 } = theme.palette;
     return css `
     width: 100%;
-    height: ${rem("44px")};
+    height: auto;
 
     // control
     .select__control {
       cursor: ${isSearchable ? "text" : "pointer"};
-      height: 100%;
       background-color: #fff;
       border: ${(style === null || style === void 0 ? void 0 : style.border) || `1px solid ${gray400}`};
       border-radius: ${theme.borderRadius.lg || rem("8px")};

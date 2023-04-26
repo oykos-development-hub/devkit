@@ -9,12 +9,11 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
 
   return css`
     width: 100%;
-    height: ${rem("44px")};
+    height: auto;
 
     // control
     .select__control {
       cursor: ${isSearchable ? "text" : "pointer"};
-      height: 100%;
       background-color: #fff;
       border: ${style?.border || `1px solid ${gray400}`};
       border-radius: ${theme.borderRadius.lg || rem("8px")};
