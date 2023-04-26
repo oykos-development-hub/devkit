@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { useState } from "react";
-import ReactPaginate from "react-paginate";
+import ReactPaginate from "./react-paginate";
 import { Theme } from "../../shared/theme";
 import { Typography } from "../typography";
 import { Container } from "./style/container";

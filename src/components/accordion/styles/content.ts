@@ -14,13 +14,13 @@ export const Content = styled.div<{
   style?: CSSProperties;
   theme?: DefaultTheme;
 }>(({ style, theme }) => {
-  const { gray100 } = theme!.palette;
+  const { white } = theme!.palette;
 
   return css`
     display: flex;
     align-items: flex-start;
     padding: ${rem("4px")} ${rem("16px")} ${rem("16px")};
     gap: ${rem("8px")};
-    background-color: ${style?.backgroundColor || gray100};
+    background-color: ${style?.backgroundColor || white};
   `;
 });

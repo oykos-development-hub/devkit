@@ -8,13 +8,13 @@ export const ContentWrapper = styled.div(({ isOpen }) => {
   `;
 });
 export const Content = styled.div(({ style, theme }) => {
-    const { gray100 } = theme.palette;
+    const { white } = theme.palette;
     return css `
     display: flex;
     align-items: flex-start;
     padding: ${rem("4px")} ${rem("16px")} ${rem("16px")};
     gap: ${rem("8px")};
-    background-color: ${(style === null || style === void 0 ? void 0 : style.backgroundColor) || gray100};
+    background-color: ${(style === null || style === void 0 ? void 0 : style.backgroundColor) || white};
   `;
 });
 //# sourceMappingURL=content.js.map

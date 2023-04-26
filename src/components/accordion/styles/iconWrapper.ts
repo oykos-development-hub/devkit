@@ -3,11 +3,11 @@ import { rem } from "polished";
 import { CSSProperties } from "react";
 
 export const IconWrapper = styled.div<{
-  isOpen: boolean;
+  isOpen?: boolean;
   style?: CSSProperties;
   theme?: DefaultTheme;
 }>(({ isOpen, style, theme }) => {
-  const { white, gray900 } = theme!.palette;
+  const { gray900 } = theme!.palette;
 
   return css`
     display: flex;
@@ -20,7 +20,7 @@ export const IconWrapper = styled.div<{
       width: ${rem("14px")};
 
       & path {
-        stroke: ${style?.stroke || (isOpen ? white : gray900)};
+        stroke: ${style?.stroke || gray900};
       }
     }
   `;

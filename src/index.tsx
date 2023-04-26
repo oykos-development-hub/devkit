@@ -21,6 +21,7 @@ import { Tabs as TabsComponent } from "./components/tabs";
 import { Tooltip as TooltipComponent } from "./components/tooltip";
 import { Typography as TypographyComponent } from "./components/typography";
 import { Accordion as AccordionComponent } from "./components/accordion";
+import { AccordionItem as AccordionItemComponent } from "./components/accordion";
 
 export const Alert = AlertComponent;
 export const Avatar = AvatarComponent;
@@ -45,9 +46,11 @@ export const Tooltip = TooltipComponent;
 export const Typography = TypographyComponent;
 export const Pagination = PaginationComponent;
 export const Accordion = AccordionComponent;
+export const AccordionItem = AccordionItemComponent;
 
 export * from "./components/button/styles";
 export * from "./components/modal/styles";
 export * from "./components/tooltip/styles";
 export * from "./components/icon";
 export * from "./types";
+export * from "./components/accordion/styles";

@@ -1,16 +1,17 @@
 import styled, { css } from "styled-components";
 import { rem } from "polished";
 export const Header = styled.div(({ isOpen, style, theme }) => {
-    const { white, primary500, gray900 } = theme.palette;
+    const { white, gray200, gray900 } = theme.palette;
     return css `
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: ${rem("8px")} ${rem("16px")};
     gap: ${rem("8px")};
-    background-color: ${(style === null || style === void 0 ? void 0 : style.backgroundColor) || (isOpen ? primary500 : white)};
+    background-color: ${(style === null || style === void 0 ? void 0 : style.backgroundColor) || white};
     transition: background-color 0.3s ease-in-out;
     cursor: ${(style === null || style === void 0 ? void 0 : style.cursor) || "pointer"};
+    border-bottom: 1px solid ${gray200};
     border-radius: ${(style === null || style === void 0 ? void 0 : style.borderRadius) || "0"};
     overflow: hidden;
 
@@ -23,7 +24,7 @@ export const Header = styled.div(({ isOpen, style, theme }) => {
     h5,
     h6,
     svg {
-      color: ${(style === null || style === void 0 ? void 0 : style.color) || (isOpen ? white : gray900)};
+      color: ${(style === null || style === void 0 ? void 0 : style.color) || gray900};
     }
 
     & > svg {
@@ -32,7 +33,7 @@ export const Header = styled.div(({ isOpen, style, theme }) => {
       transition: opacity 0.3s linear, transform 0.3s linear;
 
       & path {
-        stroke: ${(style === null || style === void 0 ? void 0 : style.stroke) || (isOpen ? white : gray900)};
+        stroke: ${(style === null || style === void 0 ? void 0 : style.stroke) || gray900};
       }
     }
   `;
