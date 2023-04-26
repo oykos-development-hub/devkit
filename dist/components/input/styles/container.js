@@ -1,42 +1,14 @@
 import styled, { css } from "styled-components";
-import { BodyMedium, HelperText } from "../../typography/styles/variants";
-import { rem } from "polished";
-export const Container = styled.div(({ label, error, style, theme }) => {
-    const { error500, gray700, gray900 } = theme.palette;
+export const Container = styled.div(({ style }) => {
     return css `
-    width: 100%;
-    min-width: ${label ? rem("200px") : rem("48px")};
+    width: ${(style === null || style === void 0 ? void 0 : style.width) || "100%"};
     display: flex;
     flex-direction: column;
     gap: 0.25em;
     position: relative;
 
-    & * {
-      font-family: ${(style === null || style === void 0 ? void 0 : style.fontFamily) || theme.fontFamily.one};
-      font-size: ${rem("16px")};
-      line-height: ${rem("24px")};
-      color: ${gray700};
-    }
-
     & > div {
       position: relative;
-    }
-
-    // label
-    ${BodyMedium}:first-child {
-      color: ${gray900};
-      font-size: ${rem("14px")};
-      font-weight: 600;
-      line-height: ${rem("20px")};
-    }
-
-    // hint & error
-    ${HelperText} {
-      position: absolute;
-      bottom: ${rem("-25px")};
-      color: ${error ? error500 : gray700};
-      font-weight: 400;
-      font-size: ${rem("12px")};
     }
   `;
 });

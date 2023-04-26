@@ -2,14 +2,13 @@ import styled, { css } from "styled-components";
 import { rem } from "polished";
 const shared = ({ style, theme, error }) => {
     var _a, _b;
-    const { gray400, gray600, error50, error200, primary50, primary200, white } = theme.palette;
+    const { gray300, gray700, error50, error200, primary50, primary200, white } = theme.palette;
     return css `
     width: 100%;
     border-radius: ${((_a = theme.borderRadius) === null || _a === void 0 ? void 0 : _a.lg) || rem("8px")};
-    border: ${`${((_b = theme.borderWidth) === null || _b === void 0 ? void 0 : _b.xs) || rem("1px")} solid ${error ? error200 : gray400}`};
+    border: ${rem("1px")} solid ${error ? error200 : gray300};
     box-sizing: border-box;
     outline: none;
-    font-family: ${(style === null || style === void 0 ? void 0 : style.fontFamily) || theme.fontFamily.one};
 
     &:focus {
       border-color: ${error ? error200 : primary200};
@@ -18,13 +17,18 @@ const shared = ({ style, theme, error }) => {
     }
 
     &[disabled] {
-      color: ${gray600};
+      color: ${gray700};
       background-color: ${white};
     }
 
     &::placeholder {
-      color: ${gray600};
-      font-size: ${rem("14px")};
+      display: block;
+      color: ${gray700};
+      font-family: ${((_b = theme === null || theme === void 0 ? void 0 : theme.fontFamily) === null || _b === void 0 ? void 0 : _b.one) || "sans-serif"};
+      margin: 0;
+      font-weight: 400;
+      font-size: 0.85rem;
+      line-height: 1.5rem;
     }
 
     ${Object.assign({}, style)}

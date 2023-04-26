@@ -20,9 +20,9 @@ export const Input = ({
   textarea,
   leftContent,
   rightContent,
-  error,
-  hint,
-  placeholder,
+  error = "",
+  hint = "",
+  placeholder = "",
   onChange,
   onBlur,
   onFocus,
@@ -66,8 +66,8 @@ export const Input = ({
   };
 
   return (
-    <Container style={style} theme={theme} label={label} error={error} hint={hint}>
-      {label && <Typography variant="bodyMedium" content={label} />}
+    <Container style={style}>
+      {label && label}
 
       <div>
         {textarea ? (
@@ -88,8 +88,10 @@ export const Input = ({
         )}
       </div>
 
-      {error && !disabled && <Typography variant="helperText" content={error} />}
-      {hint && !error && <Typography variant="helperText" content={hint} />}
+      {error && !disabled && (
+        <Typography content={error} variant={"helperText"} style={{ color: theme.palette.error500 }} />
+      )}
+      {hint && !error && <Typography content={hint} variant={"helperText"} style={{ color: theme.palette.gray700 }} />}
     </Container>
   );
 };
