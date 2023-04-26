@@ -4,10 +4,10 @@ import { rem } from "polished";
 export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIcon, isSearchable }) => {
     const { error50, error700, primary50, primary200, primary100, gray100, gray200, gray300, gray400, gray600, gray700 } = theme.palette;
     return css `
-    width: 100%;
+    width: ${(style === null || style === void 0 ? void 0 : style.width) || "100%"};
     height: auto;
 
-    // control
+    // control (input field)
     .select__control {
       cursor: ${isSearchable ? "text" : "pointer"};
       background-color: #fff;
@@ -21,11 +21,6 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
       padding-left: ${controlIcon ? "0.7rem" : 0};
     }
     .select__placeholder {
-      font-family: ${(style === null || style === void 0 ? void 0 : style.fontFamily) || (theme === null || theme === void 0 ? void 0 : theme.fontFamily.one)};
-      font-size: ${rem("14px")};
-      font-weight: 400;
-      line-height: ${rem("20px")};
-      color: ${gray700};
       margin: 0;
       padding: 0;
     }
@@ -92,7 +87,6 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
       border-radius: ${theme.borderRadius.md || "0.5rem"};
       background-color: ${gray200};
       & > div {
-        font-size: ${rem("14px")};
         padding: 0 ${rem("3px")} 0 ${rem("3px")};
       }
       & > div:last-child:hover {
@@ -138,10 +132,9 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
         }
       }
     }
+    // option items
     .select__option {
       cursor: pointer;
-      font-size: ${rem("14px")};
-      line-height: ${rem("20px")};
       padding: ${"12px"} ${rem("14px")};
 
       &:hover {
@@ -155,8 +148,7 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
       background-color: ${primary100};
     }
     .select__menu-notice--no-options {
-      font-size: ${rem("14px")};
-      color: ${gray600};
+      //
     }
   `;
 });

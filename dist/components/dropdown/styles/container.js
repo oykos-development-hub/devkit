@@ -1,22 +1,12 @@
-import styled, { css } from "styled-components";
-import { BodyMedium } from "../../typography/styles/variants";
+import styled from "styled-components";
 import { rem } from "polished";
-export const Container = styled.div(() => ({ theme }) => {
-    const { gray900 } = theme.palette;
-    return css `
-    display: flex;
-    flex-direction: column;
-    gap: ${rem("6px")};
+export const Container = styled.div `
+  display: flex;
+  flex-direction: column;
+  gap: ${rem("6px")};
 
-    & *,
-    & ${BodyMedium} {
-      font-size: ${rem("14px")};
-      color: ${gray900};
-    }
-
-    & > div {
-      position: relative;
-    }
-  `;
-});
+  & > div {
+    position: relative;
+  }
+`;
 //# sourceMappingURL=container.js.map
