@@ -24,7 +24,13 @@ const shared = ({ style, theme, error }: InputProps) => {
     }
 
     &::placeholder {
+      display: block;
       color: ${gray700};
+      font-family: ${theme?.fontFamily?.one || "sans-serif"};
+      margin: 0;
+      font-weight: 400;
+      font-size: 0.85rem;
+      line-height: 1.5rem;
     }
 
     ${{ ...style }}

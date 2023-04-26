@@ -9,8 +9,6 @@ import { RightElement } from "./styles/rightElement";
 import { Theme } from "../../shared/theme";
 import { IconWrapper } from "./styles/iconWrapper";
 import { rem } from "polished";
-import { ErrorContent } from "./styles/errorContent";
-import { HintContent } from "./styles/hintContent";
 
 export const Input = ({
   name,
@@ -68,7 +66,7 @@ export const Input = ({
   };
 
   return (
-    <Container style={style} theme={theme} label={label} error={error} hint={hint}>
+    <Container style={style}>
       {label && label}
 
       <div>
@@ -90,8 +88,10 @@ export const Input = ({
         )}
       </div>
 
-      {error && !disabled && <ErrorContent theme={theme}>{error}</ErrorContent>}
-      {hint && !error && <HintContent theme={theme}>{hint}</HintContent>}
+      {error && !disabled && (
+        <Typography content={error} variant={"helperText"} style={{ color: theme.palette.error500 }} />
+      )}
+      {hint && !error && <Typography content={hint} variant={"helperText"} style={{ color: theme.palette.gray700 }} />}
     </Container>
   );
 };
