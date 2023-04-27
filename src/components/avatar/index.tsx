@@ -1,14 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AvatarProps, AvatarSizes } from "./types";
-import { Container } from "./styles/container";
-import { Image } from "./styles/image";
+import { Container, Image, Icon, Indicator, ImageWrapper, TextWrapper } from "./styles";
 import { Typography } from "../typography";
-import { Indicator } from "./styles/indicator";
-import { Icon } from "./styles/icon";
 import { UserIcon } from "../icon";
 import { Theme } from "../../shared/theme";
-import { ImageWrapper } from "./styles/imageWrapper";
-import { TextWrapper } from "./styles/textWrapper";
+
 import { TypographyVariants } from "../typography/variants";
 
 export const Avatar: React.FC<AvatarProps> = ({
@@ -55,7 +51,7 @@ export const Avatar: React.FC<AvatarProps> = ({
           <Image src={src} alt={alt} size={size} style={style} />
         ) : (
           <Icon size={size} style={style} theme={theme}>
-            <UserIcon />
+            <UserIcon stroke={theme.palette.primary500} />
           </Icon>
         )}
         {statusIcon && <Indicator online={online} size={size} style={style} theme={theme} />}

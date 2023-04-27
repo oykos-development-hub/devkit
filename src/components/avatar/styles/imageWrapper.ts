@@ -5,11 +5,11 @@ import { AvatarSizes } from "../types";
 
 export const ImageWrapper = styled.div<{
   isActive?: boolean;
-  size: AvatarSizes | string;
+  size: AvatarSizes | `${AvatarSizes}`;
   style?: React.CSSProperties;
   theme?: DefaultTheme;
 }>(() => ({ isActive, size, style, theme }) => {
-  const { primary500, gray200 } = theme!.palette;
+  const { primary50, primary500, gray200 } = theme!.palette;
 
   const icon = {
     xs: rem("16px"),
@@ -32,11 +32,11 @@ export const ImageWrapper = styled.div<{
     z-index: 2;
     border-radius: 50%;
     background-color: ${gray200};
-    box-shadow: ${isActive ? `0 0 0 ${rem("4px")} #E0E7FF` : "none"};
+    box-shadow: ${isActive ? `0 0 0 ${rem("4px")} ${primary50}` : "none"};
 
     &:active,
     &:focus-within {
-      box-shadow: 0 0 0 ${rem("4px")} #e0e7ff;
+      box-shadow: 0 0 0 ${rem("4px")} ${primary50};
     }
     
     & svg {
