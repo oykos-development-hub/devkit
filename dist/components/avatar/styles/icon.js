@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { rem } from "polished";
 export const Icon = styled.div(() => ({ size, style, theme }) => {
-    const { gray200, primary500 } = theme.palette;
+    const { gray200 } = theme.palette;
     const circle = {
         xs: rem("24px"),
         sm: rem("36px"),
@@ -28,17 +28,8 @@ export const Icon = styled.div(() => ({ size, style, theme }) => {
     z-index: 2;
 
     & svg {
-      width: ${icon[size]} !important;
-      height: ${icon[size]} !important;
-
-      & path {
-        color: ${primary500};
-        fill: none;
-        stroke: ${(style === null || style === void 0 ? void 0 : style.stroke) || primary500};
-        stroke-linecap: ${(style === null || style === void 0 ? void 0 : style.strokeLinecap) || "round"};
-        stroke-linejoin: ${(style === null || style === void 0 ? void 0 : style.strokeLinejoin) || "round"};
-        stroke-width: ${(style === null || style === void 0 ? void 0 : style.strokeWidth) || "2"};
-      }
+      width: ${icon[size]};
+      height: ${icon[size]};
     }
 
     ${Object.assign({}, style)}
