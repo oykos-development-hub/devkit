@@ -23,6 +23,7 @@ export declare const Typography: (props: import("./types").TypographyProps) => i
 export declare const Pagination: import("react").FC<import("./types").PaginationProps>;
 export declare const Accordion: import("react").FC<import("./types").AccordionProps>;
 export declare const AccordionItem: import("react").FC<import("./types").AccordionData>;
+export declare const Theme: import("styled-components").DefaultTheme;
 export * from "./components/button/styles";
 export * from "./components/modal/styles";
 export * from "./components/tooltip/styles";

@@ -25,4 +25,5 @@ export * from "./components/tooltip/types";
 export * from "./components/typography/types";
 export * from "./components/icon/types";
 export * from "./components/accordion/types";
+export * from "./shared/theme/types";
 //# sourceMappingURL=types.js.map

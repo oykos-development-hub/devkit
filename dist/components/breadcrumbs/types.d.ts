@@ -6,7 +6,7 @@ export interface Item {
     icon?: ReactElement;
 }
 export interface BreadcrumbsProps {
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
     style?: CSSProperties;
     items?: Item[];
     onClick?: (e?: MouseEvent<HTMLAnchorElement>) => any;
