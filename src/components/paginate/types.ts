@@ -10,7 +10,7 @@ export enum PaginationVariants {
 }
 
 export interface PaginationProps extends ReactPaginateProps {
-  theme: DefaultTheme;
+  theme?: DefaultTheme;
   variant: PaginationVariants | `${PaginationVariants}`;
   style?: CSSProperties;
   fullWidth?: boolean;

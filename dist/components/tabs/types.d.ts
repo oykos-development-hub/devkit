@@ -6,7 +6,7 @@ export interface Tab {
     disabled?: boolean;
 }
 export interface TabsProps {
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
     style?: CSSProperties;
     tabs: Tab[];
     onChange?: (tab: Tab) => void;

@@ -8,7 +8,7 @@ export declare enum PaginationVariants {
     dotted = "dotted"
 }
 export interface PaginationProps extends ReactPaginateProps {
-    theme: DefaultTheme;
+    theme?: DefaultTheme;
     variant: PaginationVariants | `${PaginationVariants}`;
     style?: CSSProperties;
     fullWidth?: boolean;

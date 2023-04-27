@@ -7,6 +7,6 @@ export interface TableProps {
   bodyContent?: JSX.Element | JSX.Element[];
   titleElement?: ReactElement;
   noDataMessage?: ReactNode;
-  theme: DefaultTheme;
+  theme?: DefaultTheme;
   style?: CSSProperties;
 }

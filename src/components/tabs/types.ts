@@ -7,7 +7,7 @@ export interface Tab {
 }
 
 export interface TabsProps {
-  theme: DefaultTheme;
+  theme?: DefaultTheme;
   style?: CSSProperties;
   tabs: Tab[];
   onChange?: (tab: Tab) => void;
