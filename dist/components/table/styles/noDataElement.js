@@ -5,7 +5,7 @@ export const NoDataElement = styled.div `
   }
 
   box-sizing: border-box;
-  height: 4.5rem;
+  min-height: 4.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
