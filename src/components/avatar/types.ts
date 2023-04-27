@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react";
 import { DefaultTheme } from "styled-components";
 
 export enum AvatarSizes {
@@ -19,5 +19,5 @@ export interface AvatarProps {
   online?: boolean;
   statusIcon?: boolean;
   theme?: DefaultTheme;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 }

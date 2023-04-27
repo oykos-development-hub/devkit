@@ -3,7 +3,7 @@ import { DefaultTheme } from "styled-components";
 import { AvatarSizes } from "../types";
 export declare const ImageWrapper: import("styled-components").StyledComponent<"div", DefaultTheme, {
     isActive?: boolean | undefined;
-    size: AvatarSizes | string;
+    size: AvatarSizes | `${AvatarSizes}`;
     style?: React.CSSProperties | undefined;
     theme?: DefaultTheme | undefined;
 }, never>;

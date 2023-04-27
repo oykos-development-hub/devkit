@@ -8,7 +8,7 @@ export const Icon = styled.div<{
   style?: React.CSSProperties;
   theme?: DefaultTheme;
 }>(() => ({ size, style, theme }) => {
-  const { gray200, primary500 } = theme!.palette;
+  const { gray200 } = theme!.palette;
 
   const circle = {
     xs: rem("24px"),
@@ -38,17 +38,8 @@ export const Icon = styled.div<{
     z-index: 2;
 
     & svg {
-      width: ${icon[size]} !important;
-      height: ${icon[size]} !important;
-
-      & path {
-        color: ${primary500};
-        fill: none;
-        stroke: ${style?.stroke || primary500};
-        stroke-linecap: ${style?.strokeLinecap || "round"};
-        stroke-linejoin: ${style?.strokeLinejoin || "round"};
-        stroke-width: ${style?.strokeWidth || "2"};
-      }
+      width: ${icon[size]};
+      height: ${icon[size]};
     }
 
     ${{ ...style }}
