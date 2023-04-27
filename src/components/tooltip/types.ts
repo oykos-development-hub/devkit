@@ -17,7 +17,7 @@ export enum TooltipVariants {
 
 export interface TooltipProps {
   variant: TooltipVariants | `${TooltipVariants}`;
-  theme: DefaultTheme;
+  theme?: DefaultTheme;
   position: TooltipPositions | `${TooltipPositions}`;
   style?: CSSProperties;
   title?: string;
