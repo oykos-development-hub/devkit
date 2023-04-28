@@ -17,9 +17,6 @@ export const AccordionItem: React.FC<AccordionData> = ({
 }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const toggleAccordion = () => setIsOpen(!isOpen);
-  const openMenu = () => {
-    console.log("Clicked additional icon on right side.");
-  };
 
   return (
     <AccordionContainer>
@@ -51,9 +48,9 @@ export const AccordionItem: React.FC<AccordionData> = ({
   );
 };
 
-export const Accordion: React.FC<AccordionProps> = ({ data, style, theme }) => {
+export const Accordion: React.FC<AccordionProps> = ({ data, style, theme, className }) => {
   return (
-    <>
+    <div className={className}>
       {data.map((item: AccordionData, index) => (
         <AccordionItem
           key={index}
@@ -65,6 +62,6 @@ export const Accordion: React.FC<AccordionProps> = ({ data, style, theme }) => {
           style={style}
         />
       ))}
-    </>
+    </div>
   );
 };

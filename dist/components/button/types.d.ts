@@ -21,4 +21,5 @@ export interface ButtonProps {
     theme?: DefaultTheme;
     style?: React.CSSProperties;
     size?: ButtonSizes | `${ButtonSizes}`;
+    className?: string;
 }

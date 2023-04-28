@@ -14,10 +14,11 @@ export const Datepicker: React.FC<CustomDatePickerProps> = ({
   label,
   onChange,
   selectsRange,
+  className,
   ...rest
 }) => {
   return (
-    <Container style={style} theme={theme} error={error}>
+    <Container style={style} theme={theme} error={error} className={className}>
       <DatePicker
         onChange={onChange}
         selectsRange={selectsRange}

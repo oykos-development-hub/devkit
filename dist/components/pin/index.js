@@ -4,7 +4,7 @@ import { Container } from "./styles/container";
 const pinRefs = {};
 const pinPrefix = "pinRef-";
 const re = /^(\d*\.)?\d+$/;
-export const Pin = ({ handleInput, length = 4, type = "password" }) => {
+export const Pin = ({ handleInput, length = 4, type = "password", className }) => {
     const [value, setValue] = useState([]);
     value.forEach((e, i) => {
         pinRefs[`${pinPrefix}${i}`] = React.createRef();
@@ -62,6 +62,6 @@ export const Pin = ({ handleInput, length = 4, type = "password" }) => {
             setValue(startValue);
         }
     }, []);
-    return (React.createElement(Container, null, value.map((e, i) => (React.createElement(Input, { type: type, id: `${i}`, key: i, value: e, onChange: (ev) => handleOnChange(ev.target.value, i), disabled: (!!i && !value[i - 1]) || !!value[i + 1], maxLength: length, inputRef: pinRefs[`${pinPrefix}${i}`], inputMode: "numeric", pattern: "[0-9]*" })))));
+    return (React.createElement(Container, { className: className }, value.map((e, i) => (React.createElement(Input, { type: type, id: `${i}`, key: i, value: e, onChange: (ev) => handleOnChange(ev.target.value, i), disabled: (!!i && !value[i - 1]) || !!value[i + 1], maxLength: length, inputRef: pinRefs[`${pinPrefix}${i}`], inputMode: "numeric", pattern: "[0-9]*" })))));
 };
 //# sourceMappingURL=index.js.map

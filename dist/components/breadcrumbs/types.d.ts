@@ -11,4 +11,5 @@ export interface BreadcrumbsProps {
     items?: Item[];
     onClick?: (e?: MouseEvent<HTMLAnchorElement>) => any;
     separator?: ReactElement;
+    className?: string;
 }

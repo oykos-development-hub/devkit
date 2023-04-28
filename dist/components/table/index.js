@@ -3,8 +3,8 @@ import { Theme } from "../../shared/theme";
 import { Container } from "./styles/container";
 import { NoDataElement } from "./styles/noDataElement";
 import { StyledTable } from "./styles/table";
-export const Table = ({ theme = Theme, style, headerContent, bodyContent, titleElement, noDataMessage, }) => {
-    return (React.createElement(Container, { theme: theme },
+export const Table = ({ theme = Theme, style, headerContent, bodyContent, titleElement, noDataMessage, className, }) => {
+    return (React.createElement(Container, { theme: theme, className: className },
         titleElement && titleElement,
         React.createElement(StyledTable, { theme: theme, style: style },
             React.createElement("thead", null, headerContent && headerContent),

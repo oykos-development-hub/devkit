@@ -12,9 +12,10 @@ export const Table = ({
   bodyContent,
   titleElement,
   noDataMessage,
+  className,
 }: TableProps) => {
   return (
-    <Container theme={theme}>
+    <Container theme={theme} className={className}>
       {titleElement && titleElement}
 
       <StyledTable theme={theme} style={style}>

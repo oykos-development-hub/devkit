@@ -8,4 +8,5 @@ export interface CustomDatePickerProps extends Omit<ReactDatePickerProps, "onCha
     theme?: DefaultTheme;
     label?: string;
     selectsRange?: boolean;
+    className?: string;
 }

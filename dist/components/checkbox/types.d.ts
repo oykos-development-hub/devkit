@@ -11,4 +11,5 @@ export interface CheckboxProps {
     style?: React.CSSProperties;
     theme?: DefaultTheme;
     checked: boolean;
+    className?: string;
 }

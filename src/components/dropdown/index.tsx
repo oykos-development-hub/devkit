@@ -31,6 +31,7 @@ export const Dropdown = ({
   rightOptionIcon,
   onChange,
   placeholder = "",
+  className,
   ...props
 }: DropdownProps) => {
   const [selectedOption, setSelectedOption] = useState<ValueType | null>(null);
@@ -61,7 +62,7 @@ export const Dropdown = ({
   );
 
   return (
-    <Container>
+    <Container className={className}>
       {label && label}
 
       <Wrapper>

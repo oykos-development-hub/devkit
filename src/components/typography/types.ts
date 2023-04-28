@@ -8,6 +8,7 @@ export interface TypographyProps {
   onClick?: (e?: React.MouseEvent<any>) => any;
   theme?: DefaultTheme;
   style?: React.CSSProperties;
+  className?: string;
 }
 
 export * from "./variants";

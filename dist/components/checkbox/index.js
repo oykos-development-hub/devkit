@@ -4,13 +4,13 @@ import { Container } from "./styles/container";
 import { Content, HiddenCheckbox } from "./styles/content";
 import { Theme } from "../../shared/theme";
 import { CheckIcon } from "../icon";
-export const Checkbox = ({ size = CheckboxSize.sm, onClick, style, theme = Theme, disabled = false, checked, }) => {
+export const Checkbox = ({ size = CheckboxSize.sm, onClick, style, theme = Theme, disabled = false, checked, className, }) => {
     const handleClick = (e) => {
         if (disabled)
             return;
         onClick && onClick(e);
     };
-    return (React.createElement(Container, null,
+    return (React.createElement(Container, { className: className },
         React.createElement(HiddenCheckbox, { defaultChecked: checked }),
         React.createElement(Content, { checked: checked, onClick: handleClick, size: size, style: style, theme: theme, disabled: disabled }, checked && (React.createElement(CheckIcon, { fill: disabled ? theme.palette.gray300 : theme.palette.primary500, stroke: disabled ? theme.palette.gray300 : theme.palette.primary500 })))));
 };

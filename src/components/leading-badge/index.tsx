@@ -11,8 +11,16 @@ export const LeadingBadge: React.FC<LeadingBadgeProps> = ({
   style,
   leadingBadgeTheme = "light",
   theme,
+  className,
 }) => (
-  <Container variant={variant} size={size} style={style} leadingBadgeTheme={leadingBadgeTheme} theme={theme}>
+  <Container
+    variant={variant}
+    size={size}
+    style={style}
+    leadingBadgeTheme={leadingBadgeTheme}
+    theme={theme}
+    className={className}
+  >
     <Badge variant={variant} size={size} content={badgeContent} style={style} theme={theme} />
     {content}
   </Container>

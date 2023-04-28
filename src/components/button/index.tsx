@@ -12,6 +12,7 @@ export const Button = ({
   size = ButtonSizes.lg,
   style,
   theme,
+  className,
 }: ButtonProps) => {
   return (
     <ButtonContainer
@@ -21,6 +22,7 @@ export const Button = ({
       size={size}
       onClick={onClick}
       theme={theme || Theme}
+      className={className}
     >
       {customContent ? (
         customContent

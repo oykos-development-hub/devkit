@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "./styles/container";
-export const Badge = ({ variant = "primary", content, leftSlot, rightSlot, size = "md", style, theme, }) => (React.createElement(Container, { variant: variant, size: size, style: style, theme: theme },
+export const Badge = ({ variant = "primary", content, leftSlot, rightSlot, size = "md", style, theme, className, }) => (React.createElement(Container, { variant: variant, size: size, style: style, theme: theme, className: className },
     React.createElement("div", { style: {
             display: "flex",
             justifyContent: "center",

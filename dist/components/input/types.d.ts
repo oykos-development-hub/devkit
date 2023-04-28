@@ -24,4 +24,5 @@ export interface InputProps {
     pattern?: string;
     rows?: number;
     cols?: number;
+    className?: string;
 }

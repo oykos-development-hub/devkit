@@ -16,9 +16,10 @@ export const Modal = ({
   onClose,
   variant = Variants["light"],
   style,
+  className,
 }: ModalProps) => {
   return (
-    <ModalContainer open={open} onClick={onClose}>
+    <ModalContainer open={open} onClick={onClose} className={className}>
       <ModalBox
         theme={theme}
         variant={variant}

@@ -4,11 +4,11 @@ import { Theme } from "../../shared/theme";
 import { Container } from "./style/container";
 import { Link } from "./style/link";
 
-export const Breadcrumbs = ({ theme = Theme, onClick, items, separator, style }: BreadcrumbsProps) => {
+export const Breadcrumbs = ({ theme = Theme, onClick, items, separator, style, className }: BreadcrumbsProps) => {
   const [links, setLinks] = useState(items);
 
   return (
-    <Container theme={theme} style={style}>
+    <Container theme={theme} style={style} className={className}>
       {links?.map((item) => {
         const isLastItem = links.indexOf(item) === links.length - 1;
 

@@ -11,4 +11,5 @@ export interface RadioProps {
     onClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
     style?: React.CSSProperties;
     theme?: DefaultTheme;
+    className?: string;
 }

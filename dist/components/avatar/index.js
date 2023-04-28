@@ -5,7 +5,7 @@ import { Typography } from "../typography";
 import { UserIcon } from "../icon";
 import { Theme } from "../../shared/theme";
 import { TypographyVariants } from "../typography/variants";
-export const Avatar = ({ src, size = AvatarSizes.xl, statusIcon = true, online = true, supportingText = true, style, alt, name, email, theme = Theme, }) => {
+export const Avatar = ({ src, size = AvatarSizes.xl, statusIcon = true, online = true, supportingText = true, style, alt, name, email, theme = Theme, className, }) => {
     const ref = useRef(null);
     const [isActive, setIsActive] = useState(false);
     const handleClick = () => setIsActive((prevState) => !prevState);
@@ -28,7 +28,7 @@ export const Avatar = ({ src, size = AvatarSizes.xl, statusIcon = true, online =
             return TypographyVariants.bodyMedium;
         }
     };
-    return (React.createElement(Container, { ref: ref, size: size, style: style, supportingText: size !== AvatarSizes.xs && supportingText },
+    return (React.createElement(Container, { ref: ref, size: size, style: style, supportingText: size !== AvatarSizes.xs && supportingText, className: className },
         React.createElement(ImageWrapper, { onClick: handleClick, isActive: isActive, size: size, style: style, theme: theme },
             src ? (React.createElement(Image, { src: src, alt: alt, size: size, style: style })) : (React.createElement(Icon, { size: size, style: style, theme: theme },
                 React.createElement(UserIcon, { stroke: theme.palette.primary500 }))),

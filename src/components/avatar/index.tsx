@@ -18,6 +18,7 @@ export const Avatar: React.FC<AvatarProps> = ({
   name,
   email,
   theme = Theme,
+  className,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -45,7 +46,13 @@ export const Avatar: React.FC<AvatarProps> = ({
   };
 
   return (
-    <Container ref={ref} size={size} style={style} supportingText={size !== AvatarSizes.xs && supportingText}>
+    <Container
+      ref={ref}
+      size={size}
+      style={style}
+      supportingText={size !== AvatarSizes.xs && supportingText}
+      className={className}
+    >
       <ImageWrapper onClick={handleClick} isActive={isActive} size={size} style={style} theme={theme}>
         {src ? (
           <Image src={src} alt={alt} size={size} style={style} />

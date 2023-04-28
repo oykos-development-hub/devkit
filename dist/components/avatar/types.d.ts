@@ -18,4 +18,5 @@ export interface AvatarProps {
     statusIcon?: boolean;
     theme?: DefaultTheme;
     style?: CSSProperties;
+    className?: string;
 }

@@ -23,4 +23,5 @@ export interface BadgeProps {
   size?: BadgeSizes | `${BadgeSizes}`;
   style?: React.CSSProperties;
   theme?: DefaultTheme;
+  className?: string;
 }

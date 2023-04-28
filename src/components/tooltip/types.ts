@@ -24,4 +24,5 @@ export interface TooltipProps {
   content: string | ReactElement;
   arrow?: boolean;
   children?: React.ReactNode;
+  className?: string;
 }

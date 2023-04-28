@@ -5,7 +5,7 @@ import { HoverContents } from "./styles/hoverContents";
 import { StyledTooltip } from "./styles/tooltip";
 import { TooltipPositions } from "./types";
 import { Container } from "./styles/container";
-export const Tooltip = ({ position, theme = Theme, content, children, title, variant = "standard", arrow, style, }) => {
+export const Tooltip = ({ position, theme = Theme, content, children, title, variant = "standard", arrow, style, className, }) => {
     const [tooltipWidth, setTooltipWidth] = useState(0);
     const tooltipPosition = TooltipPositions[position] || "bottom";
     const tooltipRef = useCallback((node) => {
@@ -13,7 +13,7 @@ export const Tooltip = ({ position, theme = Theme, content, children, title, var
             setTooltipWidth(node.offsetWidth);
         }
     }, []);
-    return (React.createElement(Container, null,
+    return (React.createElement(Container, { className: className },
         React.createElement(HoverContents, { tooltipWidth: tooltipWidth, position: tooltipPosition }, children),
         React.createElement(StyledTooltip, { style: style, arrow: arrow, content: content, variant: variant, theme: theme, position: tooltipPosition, title: title, ref: tooltipRef },
             title && React.createElement(Typography, { content: title, variant: "h6" }),

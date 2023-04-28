@@ -24,6 +24,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   icon,
   style,
   theme = Theme,
+  className,
 }) => {
   const [isDragging, setIsDragging] = useState(false);
   const uploadInputRef = useRef<HTMLInputElement>(null);
@@ -61,6 +62,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
+      className={className}
     >
       <input type="file" ref={uploadInputRef} onChange={handleChange} multiple={multiple} />
       {icon ? (

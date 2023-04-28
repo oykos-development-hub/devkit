@@ -23,4 +23,5 @@ export interface LeadingBadgeProps {
     size?: LeadingBadgeSizes | `${LeadingBadgeSizes}`;
     style?: React.CSSProperties;
     theme?: DefaultTheme;
+    className?: string;
 }
