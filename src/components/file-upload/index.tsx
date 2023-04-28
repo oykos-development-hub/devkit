@@ -25,31 +25,39 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   style,
   theme = Theme,
   className,
+  disabled = false,
 }) => {
   const [isDragging, setIsDragging] = useState(false);
   const uploadInputRef = useRef<HTMLInputElement>(null);
 
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
-    setIsDragging(true);
+    !disabled && setIsDragging(true);
   };
 
-  const handleDragLeave = () => setIsDragging(false);
+  const handleDragLeave = (e: DragEvent<HTMLDivElement> | any) => {
+    e.preventDefault();
+    !disabled && setIsDragging(false);
+  };
 
   const handleDrop = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setIsDragging(false);
 
     if (e.dataTransfer.files) {
-      onUpload(e.dataTransfer.files);
+      !disabled && onUpload(e.dataTransfer.files);
     }
   };
 
-  const handleClick = () => uploadInputRef.current?.click();
+  const handleClick = (e: any) => {
+    e.preventDefault();
+    !disabled && uploadInputRef.current?.click();
+  };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
     if (e.target.files) {
-      onUpload(e.target.files);
+      !disabled && onUpload(e.target.files);
     }
   };
 
@@ -59,6 +67,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
       style={style}
       theme={theme}
       isDragging={isDragging}
+      disabled={disabled}
       onDragOver={handleDragOver}
       onDragLeave={handleDragLeave}
       onDrop={handleDrop}
@@ -91,6 +100,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
                 content={buttonText ? buttonText : "SELECT FILE"}
                 onClick={handleClick}
                 theme={theme}
+                disabled={disabled}
               />
             )}
           </ButtonWrapper>
