@@ -2,7 +2,6 @@ import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Breadcrumbs } from "./index";
 import { XIcon } from "../icon";
-import styled from "styled-components";
 const links = [
     { name: "link1", to: "" },
     { name: "link2", to: "" },
@@ -16,13 +15,8 @@ export default {
     component: Breadcrumbs,
     title: "Components/Breadcrumbs",
 };
-const StyledBreadcrumbss = styled(Breadcrumbs) `
-  padding: 0;
-  margin: 0;
-`;
 const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement(Breadcrumbs, Object.assign({}, args)),
-    React.createElement(StyledBreadcrumbss, Object.assign({}, args))));
+    React.createElement(Breadcrumbs, Object.assign({}, args))));
 export const BreadcrumbsDefault = Template.bind({});
 BreadcrumbsDefault.args = {
     items: links,

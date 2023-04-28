@@ -40,6 +40,7 @@ Primary.args = {
     multiple: false,
     note: "Select a file or drag and drop here",
     hint: "JPG, PNG or PDF, file size no more than 10MB",
+    disabled: false,
 };
 export const Secondary = Template.bind({});
 Secondary.args = {
@@ -49,6 +50,7 @@ Secondary.args = {
     multiple: true,
     note: "Select a files or drag and drop here",
     hint: "JPG, PNG or PDF, file size no more than 10MB",
+    disabled: false,
 };
 export const Tertiary = Template.bind({});
 Tertiary.args = {
@@ -59,6 +61,7 @@ Tertiary.args = {
     note: "Title",
     hint: (React.createElement(Typography, { variant: "helperText", style: { marginTop: "2rem", textDecoration: "underline" }, content: "Passport.png" })),
     icon: React.createElement(React.Fragment, null),
+    disabled: false,
 };
 export const TertiaryWithCustomButton = Template.bind({});
 TertiaryWithCustomButton.args = {
@@ -70,5 +73,6 @@ TertiaryWithCustomButton.args = {
             React.createElement(Typography, { variant: "bodyMedium", content: "Ucitaj", style: { color: "white" } })), onClick: () => alert("Success!"), theme: Theme })),
     hint: (React.createElement(Typography, { variant: "helperText", style: { marginTop: "2rem", textDecoration: "underline", fontWeight: 600 }, content: "Passport.png" })),
     icon: React.createElement(React.Fragment, null),
+    disabled: false,
 };
 //# sourceMappingURL=index.stories.js.map
