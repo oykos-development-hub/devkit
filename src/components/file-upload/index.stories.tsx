@@ -50,6 +50,7 @@ Primary.args = {
   multiple: false,
   note: "Select a file or drag and drop here",
   hint: "JPG, PNG or PDF, file size no more than 10MB",
+  disabled: false,
 };
 
 export const Secondary = Template.bind({});
@@ -60,6 +61,7 @@ Secondary.args = {
   multiple: true,
   note: "Select a files or drag and drop here",
   hint: "JPG, PNG or PDF, file size no more than 10MB",
+  disabled: false,
 };
 
 export const Tertiary = Template.bind({});
@@ -77,6 +79,7 @@ Tertiary.args = {
     />
   ),
   icon: <></>,
+  disabled: false,
 };
 
 export const TertiaryWithCustomButton = Template.bind({});
@@ -106,4 +109,5 @@ TertiaryWithCustomButton.args = {
     />
   ),
   icon: <></>,
+  disabled: false,
 };
