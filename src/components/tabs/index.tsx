@@ -1,25 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Theme } from "../../shared/theme";
 import { Container } from "./style/container";
 
 import { TabsContainer } from "./style/tabs-container";
 import { StyledTab } from "./style/tab";
-import { Tab, TabsProps } from "./types";
+import { TabsProps } from "./types";
 
-export const Tabs = ({ style, theme = Theme, tabs, onChange, className }: TabsProps) => {
-  const firstEnabledTab = () => {
-    const enabledTabs = tabs.filter((tab) => !tab.disabled);
-
-    return tabs.find((tab) => tab.id === enabledTabs[0].id);
-  };
-
-  const [activeTab, setActiveTab] = useState(firstEnabledTab);
-
-  const handleChange = (tab: Tab) => {
-    onChange && onChange(tab);
-    setActiveTab(tab);
-  };
-
+export const Tabs = ({ style, theme = Theme, tabs, onChange, className, activeTab }: TabsProps) => {
   return (
     <Container className={className}>
       <TabsContainer>
@@ -30,8 +17,8 @@ export const Tabs = ({ style, theme = Theme, tabs, onChange, className }: TabsPr
               theme={theme}
               disabled={tab.disabled}
               style={style}
-              active={activeTab?.id === tab.id}
-              onClick={() => handleChange(tab)}
+              active={activeTab === tab.id}
+              onClick={() => onChange(tab)}
             >
               {tab.title}
             </StyledTab>

@@ -9,6 +9,7 @@ export interface TabsProps {
     theme?: DefaultTheme;
     style?: CSSProperties;
     tabs: Tab[];
-    onChange?: (tab: Tab) => void;
+    onChange: (tab: Tab) => void;
     className?: string;
+    activeTab: string | number;
 }
