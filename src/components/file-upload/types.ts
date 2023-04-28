@@ -1,4 +1,4 @@
-import { ReactNode, ReactElement, CSSProperties } from "react";
+import { ReactElement, CSSProperties } from "react";
 import { DefaultTheme } from "styled-components";
 import { ButtonSizes, ButtonVariants } from "../button/types";
 
@@ -11,16 +11,17 @@ export enum FileUploadVariants {
 export interface FileUploadProps {
   variant: FileUploadVariants | `${FileUploadVariants}`;
   onUpload: (files: FileList) => void;
-  customContent?: JSX.Element | ReactNode | string;
-  customButton?: JSX.Element | ReactNode;
+  customContent?: JSX.Element | ReactElement | string;
+  customButton?: JSX.Element | ReactElement;
   buttonVariant?: ButtonVariants | `${ButtonVariants}`;
   buttonSize?: ButtonSizes | `${ButtonSizes}`;
   buttonText?: string;
-  hint?: JSX.Element | ReactNode | string;
-  note?: JSX.Element | ReactNode | string;
+  hint?: JSX.Element | ReactElement | string;
+  note?: JSX.Element | ReactElement | string;
   icon?: JSX.Element | ReactElement;
   multiple?: boolean;
   style?: CSSProperties;
   theme?: DefaultTheme;
   className?: string;
+  disabled?: boolean;
 }
