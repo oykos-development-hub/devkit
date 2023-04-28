@@ -17,7 +17,7 @@ export declare const Pin: ({ handleInput, length, type, className }: import("./t
 export declare const Radio: import("react").FC<import("./types").RadioProps>;
 export declare const Switch: import("react").FC<import("./types").SwitchProps>;
 export declare const Table: ({ theme, style, headerContent, bodyContent, titleElement, noDataMessage, className, }: import("./types").TableProps) => JSX.Element;
-export declare const Tabs: ({ style, theme, tabs, onChange, className }: import("./types").TabsProps) => JSX.Element;
+export declare const Tabs: ({ style, theme, tabs, onChange, className, activeTab }: import("./types").TabsProps) => JSX.Element;
 export declare const Tooltip: ({ position, theme, content, children, title, variant, arrow, style, className, }: import("./types").TooltipProps) => JSX.Element;
 export declare const Typography: (props: import("./types").TypographyProps) => import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;
 export declare const Pagination: import("react").FC<import("./types").PaginationProps>;

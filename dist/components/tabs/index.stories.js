@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Tabs } from "./index";
 const tabsArr = [
@@ -17,8 +17,14 @@ export default {
     component: Tabs,
     title: "Components/Tabs",
 };
-const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement(Tabs, Object.assign({}, args))));
+const Template = (args) => {
+    const [activeTab, setActiveTab] = useState(1);
+    const onChange = (tab) => {
+        setActiveTab(tab.id);
+    };
+    return (React.createElement(StoryWrapper, null,
+        React.createElement(Tabs, Object.assign({}, args, { activeTab: activeTab, onChange: onChange }))));
+};
 export const DefaultTabs = Template.bind({});
 DefaultTabs.args = {
     tabs: tabsArr,

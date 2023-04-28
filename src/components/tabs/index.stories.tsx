@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Tabs } from "./index";
-import { TabsProps } from "./types";
+import { Tab, TabsProps } from "./types";
 
 const tabsArr = [
   { id: 1, title: "Tab 1" },
@@ -23,30 +23,31 @@ export default {
   title: "Components/Tabs",
 } as ComponentMeta<typeof Tabs>;
 
-const Template: ComponentStory<typeof Tabs> = (args: TabsProps) => (
-  <StoryWrapper>
-    <Tabs {...args} />
-  </StoryWrapper>
-);
+const Template: ComponentStory<typeof Tabs> = (args: TabsProps) => {
+  const [activeTab, setActiveTab] = useState<string | number>(1);
+
+  const onChange = (tab: Tab) => {
+    setActiveTab(tab.id);
+  };
+
+  return (
+    <StoryWrapper>
+      <Tabs {...args} activeTab={activeTab} onChange={onChange} />
+    </StoryWrapper>
+  );
+};
 
 export const DefaultTabs = Template.bind({});
-
 DefaultTabs.args = {
   tabs: tabsArr,
 };
 
-//
-
 export const WithDisabledTabs = Template.bind({});
-
 WithDisabledTabs.args = {
   tabs: disabledTabs,
 };
 
-//
-
 export const StyledTabs = Template.bind({});
-
 StyledTabs.args = {
   tabs: tabsArr,
   style: {
