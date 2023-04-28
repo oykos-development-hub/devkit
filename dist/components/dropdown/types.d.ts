@@ -28,4 +28,5 @@ export interface DropdownProps {
     onChange?: (e: ValueType) => void;
     onBlur?: () => void;
     onFocus?: () => void;
+    className?: string;
 }

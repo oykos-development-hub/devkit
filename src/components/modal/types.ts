@@ -13,4 +13,5 @@ export interface ModalProps {
   onClose: () => void;
   style?: CSSProperties;
   variant: Variants | `${Variants}`;
+  className?: string;
 }

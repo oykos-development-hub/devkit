@@ -11,4 +11,5 @@ export interface TabsProps {
   style?: CSSProperties;
   tabs: Tab[];
   onChange?: (tab: Tab) => void;
+  className?: string;
 }

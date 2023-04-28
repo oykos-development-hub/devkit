@@ -7,4 +7,5 @@ export interface DividerProps {
   height?: string;
   style?: React.CSSProperties;
   theme?: DefaultTheme;
+  className?: string;
 }

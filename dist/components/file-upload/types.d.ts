@@ -20,4 +20,5 @@ export interface FileUploadProps {
     multiple?: boolean;
     style?: CSSProperties;
     theme?: DefaultTheme;
+    className?: string;
 }

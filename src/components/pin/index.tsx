@@ -8,7 +8,7 @@ const pinRefs: any = {};
 const pinPrefix = "pinRef-";
 const re = /^(\d*\.)?\d+$/;
 
-export const Pin = ({ handleInput, length = 4, type = "password" }: IPinCode) => {
+export const Pin = ({ handleInput, length = 4, type = "password", className }: IPinCode) => {
   const [value, setValue] = useState<string[]>([]);
 
   value.forEach((e, i) => {
@@ -89,7 +89,7 @@ export const Pin = ({ handleInput, length = 4, type = "password" }: IPinCode) =>
   }, []);
 
   return (
-    <Container>
+    <Container className={className}>
       {value.map((e, i) => (
         <Input
           type={type}

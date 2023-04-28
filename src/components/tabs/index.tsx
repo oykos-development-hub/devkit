@@ -6,7 +6,7 @@ import { TabsContainer } from "./style/tabs-container";
 import { StyledTab } from "./style/tab";
 import { Tab, TabsProps } from "./types";
 
-export const Tabs = ({ style, theme = Theme, tabs, onChange }: TabsProps) => {
+export const Tabs = ({ style, theme = Theme, tabs, onChange, className }: TabsProps) => {
   const firstEnabledTab = () => {
     const enabledTabs = tabs.filter((tab) => !tab.disabled);
 
@@ -21,7 +21,7 @@ export const Tabs = ({ style, theme = Theme, tabs, onChange }: TabsProps) => {
   };
 
   return (
-    <Container>
+    <Container className={className}>
       <TabsContainer>
         {tabs?.map((tab) => {
           return (

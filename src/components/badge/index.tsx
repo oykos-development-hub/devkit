@@ -10,8 +10,9 @@ export const Badge: React.FC<BadgeProps> = ({
   size = "md",
   style,
   theme,
+  className,
 }) => (
-  <Container variant={variant} size={size} style={style} theme={theme}>
+  <Container variant={variant} size={size} style={style} theme={theme} className={className}>
     <div
       style={{
         display: "flex",

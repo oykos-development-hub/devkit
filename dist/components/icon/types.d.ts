@@ -21,4 +21,5 @@ export interface IconProps {
     position?: IconPositions | `${IconPositions}`;
     theme?: DefaultTheme;
     style?: React.CSSProperties;
+    className?: string;
 }

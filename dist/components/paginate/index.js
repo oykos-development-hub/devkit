@@ -16,13 +16,13 @@ import { Theme } from "../../shared/theme";
 import { Typography } from "../typography";
 import { Container } from "./style/container";
 export const Pagination = (_a) => {
-    var { previousLabel, nextLabel, renderPaginationText, onChange, theme = Theme, variant = "filled", style, displayPages = true, pageRangeDisplayed = 3, marginPagesDisplayed = 3, fullWidth = true, pageCount } = _a, rest = __rest(_a, ["previousLabel", "nextLabel", "renderPaginationText", "onChange", "theme", "variant", "style", "displayPages", "pageRangeDisplayed", "marginPagesDisplayed", "fullWidth", "pageCount"]);
+    var { previousLabel, nextLabel, renderPaginationText, onChange, theme = Theme, variant = "filled", style, displayPages = true, pageRangeDisplayed = 3, marginPagesDisplayed = 3, fullWidth = true, pageCount, className } = _a, rest = __rest(_a, ["previousLabel", "nextLabel", "renderPaginationText", "onChange", "theme", "variant", "style", "displayPages", "pageRangeDisplayed", "marginPagesDisplayed", "fullWidth", "pageCount", "className"]);
     const [selectedPage, setSelectedPage] = useState(0);
     const handlePageClick = ({ selected }) => {
         setSelectedPage(selected);
         onChange(selected);
     };
-    return (React.createElement(Container, { style: style, theme: theme, variant: variant, displayPages: displayPages, renderPaginationText: renderPaginationText, fullWidth: fullWidth },
+    return (React.createElement(Container, { style: style, theme: theme, variant: variant, displayPages: displayPages, renderPaginationText: renderPaginationText, fullWidth: fullWidth, className: className },
         React.createElement(ReactPaginate, Object.assign({ activeClassName: "active", disabledClassName: "disabled", breakLabel: "...", onPageChange: handlePageClick, pageCount: pageCount, nextLabel: nextLabel, previousLabel: previousLabel, pageRangeDisplayed: pageRangeDisplayed, marginPagesDisplayed: marginPagesDisplayed }, rest)),
         React.createElement(Typography, { content: renderPaginationText && renderPaginationText(selectedPage + 1, pageCount), variant: "bodyMedium" })));
 };

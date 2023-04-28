@@ -9,4 +9,5 @@ export interface TableProps {
   noDataMessage?: ReactNode;
   theme?: DefaultTheme;
   style?: CSSProperties;
+  className?: string;
 }

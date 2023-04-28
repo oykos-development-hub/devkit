@@ -17,6 +17,7 @@ export const Alert: React.FC<AlertProps> = ({
   size = "md",
   style,
   theme = Theme,
+  className,
 }) => {
   const textVariant = () => {
     switch (size) {
@@ -30,7 +31,7 @@ export const Alert: React.FC<AlertProps> = ({
   };
 
   return (
-    <Container variant={variant} style={style} theme={theme}>
+    <Container variant={variant} style={style} theme={theme} className={className}>
       <Wrapper size={size} theme={theme} variant={variant}>
         <Content theme={theme}>
           {icon && icon}

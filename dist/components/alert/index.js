@@ -5,7 +5,7 @@ import { Wrapper } from "./styles/wrapper";
 import { CloseIcon } from "../icon";
 import { Typography } from "../typography";
 import { Theme } from "../../shared/theme";
-export const Alert = ({ variant = "success", content, description, icon, closeIcon = true, onClose, size = "md", style, theme = Theme, }) => {
+export const Alert = ({ variant = "success", content, description, icon, closeIcon = true, onClose, size = "md", style, theme = Theme, className, }) => {
     const textVariant = () => {
         switch (size) {
             case "sm":
@@ -16,7 +16,7 @@ export const Alert = ({ variant = "success", content, description, icon, closeIc
                 return "bodyLarge";
         }
     };
-    return (React.createElement(Container, { variant: variant, style: style, theme: theme },
+    return (React.createElement(Container, { variant: variant, style: style, theme: theme, className: className },
         React.createElement(Wrapper, { size: size, theme: theme, variant: variant },
             React.createElement(Content, { theme: theme },
                 icon && icon,

@@ -19,7 +19,7 @@ import { Theme } from "../../shared/theme";
 import { IconWrapper } from "./styles/iconWrapper";
 import { rem } from "polished";
 export const Input = (_a) => {
-    var { name, value, theme = Theme, style, disabled, label, textarea, leftContent, rightContent, error = "", hint = "", placeholder = "", onChange, onBlur, onFocus, id, inputRef, cols, rows } = _a, props = __rest(_a, ["name", "value", "theme", "style", "disabled", "label", "textarea", "leftContent", "rightContent", "error", "hint", "placeholder", "onChange", "onBlur", "onFocus", "id", "inputRef", "cols", "rows"]);
+    var { name, value, theme = Theme, style, disabled, label, textarea, leftContent, rightContent, error = "", hint = "", placeholder = "", onChange, onBlur, onFocus, id, inputRef, cols, rows, className } = _a, props = __rest(_a, ["name", "value", "theme", "style", "disabled", "label", "textarea", "leftContent", "rightContent", "error", "hint", "placeholder", "onChange", "onBlur", "onFocus", "id", "inputRef", "cols", "rows", "className"]);
     const [leftElementWidth, setLeftElementWidth] = useState(0);
     const [rightElementWidth, setRightElementWidth] = useState(0);
     const leftElementRef = useRef(null);
@@ -46,7 +46,7 @@ export const Input = (_a) => {
         error,
         style: Object.assign({ paddingTop: "0.625em", paddingBottom: "0.625em", paddingLeft: `${leftContent ? `${leftElementWidth}px` : rem("14px")}`, paddingRight: `${rightContent ? `${rightElementWidth}px` : rem("14px")}` }, style),
     };
-    return (React.createElement(Container, { style: style },
+    return (React.createElement(Container, { style: style, className: className },
         label && label,
         React.createElement("div", null,
             textarea ? (React.createElement(Textarea, Object.assign({}, fieldProps, props, { theme: theme, rows: rows || 5, cols: cols }))) : (React.createElement(StyledInput, Object.assign({}, fieldProps, props, { theme: theme, ref: inputRef }))),

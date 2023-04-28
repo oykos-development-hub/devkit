@@ -12,6 +12,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   theme = Theme,
   disabled = false,
   checked,
+  className,
 }) => {
   const handleClick = (e: any) => {
     if (disabled) return;
@@ -20,7 +21,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   };
 
   return (
-    <Container>
+    <Container className={className}>
       <HiddenCheckbox defaultChecked={checked} />
       <Content checked={checked} onClick={handleClick} size={size} style={style} theme={theme} disabled={disabled}>
         {checked && (

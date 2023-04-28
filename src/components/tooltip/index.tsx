@@ -15,6 +15,7 @@ export const Tooltip = ({
   variant = "standard",
   arrow,
   style,
+  className,
 }: TooltipProps) => {
   const [tooltipWidth, setTooltipWidth] = useState(0);
   const tooltipPosition = TooltipPositions[position] || "bottom";
@@ -25,7 +26,7 @@ export const Tooltip = ({
     }
   }, []);
   return (
-    <Container>
+    <Container className={className}>
       <HoverContents tooltipWidth={tooltipWidth} position={tooltipPosition}>
         {children}
       </HoverContents>

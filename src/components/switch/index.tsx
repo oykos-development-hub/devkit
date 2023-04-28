@@ -14,6 +14,7 @@ export const Switch: React.FC<SwitchProps> = ({
   style,
   theme,
   onChange,
+  className,
 }) => {
   const ref = useRef<HTMLLabelElement>(null);
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -39,7 +40,7 @@ export const Switch: React.FC<SwitchProps> = ({
   }, [ref]);
 
   return (
-    <Container style={style} theme={theme} hasContent={!!content} disabled={disabled}>
+    <Container style={style} theme={theme} hasContent={!!content} disabled={disabled} className={className}>
       <SwitchWrapper>
         <Label ref={ref} size={size} theme={theme} disabled={disabled} isChecked={checked} isActive={isActive}>
           <Input checked={checked} inputSize={size} disabled={disabled} onChange={handleChange} />

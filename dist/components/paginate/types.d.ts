@@ -21,4 +21,5 @@ export interface PaginationProps extends ReactPaginateProps {
     pageRangeDisplayed: number;
     marginPagesDisplayed?: number;
     displayPages?: boolean;
+    className?: string;
 }

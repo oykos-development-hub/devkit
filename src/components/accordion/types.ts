@@ -14,4 +14,5 @@ export interface AccordionProps {
   data: AccordionData[];
   style?: CSSProperties;
   theme?: DefaultTheme;
+  className?: string;
 }

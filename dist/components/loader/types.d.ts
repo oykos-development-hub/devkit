@@ -9,4 +9,5 @@ export interface LoaderProps {
     secondaryColor?: string;
     wrapperBackgroundColor?: string;
     theme?: DefaultTheme;
+    className?: string;
 }

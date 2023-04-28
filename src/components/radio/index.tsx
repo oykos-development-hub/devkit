@@ -12,6 +12,7 @@ export const Radio: React.FC<RadioProps> = ({
   style,
   theme = Theme,
   disabled = false,
+  className,
 }) => {
   const handleClick = (e: any) => {
     if (disabled) return;
@@ -20,7 +21,7 @@ export const Radio: React.FC<RadioProps> = ({
   };
 
   return (
-    <Container>
+    <Container className={className}>
       <HiddenRadio checked={checked} />
       <Content checked={checked} onClick={handleClick} size={size} style={style} theme={theme} disabled={disabled}>
         <CircleIcon

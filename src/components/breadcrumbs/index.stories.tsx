@@ -5,6 +5,7 @@ import { BreadcrumbsProps } from "./types";
 import { Breadcrumbs } from "./index";
 import { XIcon } from "../icon";
 import { Item } from "./types";
+import styled from "styled-components";
 
 const links: Item[] = [
   { name: "link1", to: "" },

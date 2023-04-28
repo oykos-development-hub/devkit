@@ -25,4 +25,5 @@ export interface AlertProps {
   onClose?: (e?: React.MouseEvent<any>) => any;
   theme?: DefaultTheme;
   style?: React.CSSProperties;
+  className?: string;
 }

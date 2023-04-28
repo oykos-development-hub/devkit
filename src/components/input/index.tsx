@@ -30,6 +30,7 @@ export const Input = ({
   inputRef,
   cols,
   rows,
+  className,
   ...props
 }: InputProps): React.ReactElement => {
   const [leftElementWidth, setLeftElementWidth] = useState(0);
@@ -66,7 +67,7 @@ export const Input = ({
   };
 
   return (
-    <Container style={style}>
+    <Container style={style} className={className}>
       {label && label}
 
       <div>
