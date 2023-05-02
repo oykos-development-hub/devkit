@@ -1,5 +1,4 @@
 import React from "react";
-import { Variants } from "./types";
 import { ModalContainer } from "./styles/container";
 import { Theme } from "../../shared/theme";
 import { ModalBox } from "./styles/modal";
@@ -7,7 +6,7 @@ import { ModalHeader } from "./styles/header";
 import { Typography } from "../typography";
 import { XIcon } from "../icon";
 import { CloseButtonContainer } from "./styles/closeContainer";
-export const Modal = ({ theme = Theme, title, content, open, onClose, variant = Variants["light"], style, className, }) => {
+export const Modal = ({ theme = Theme, title, content, open, onClose, variant, style, className }) => {
     return (React.createElement(ModalContainer, { open: open, onClick: onClose, className: className },
         React.createElement(ModalBox, { theme: theme, variant: variant, onClick: (e) => {
                 e.stopPropagation();

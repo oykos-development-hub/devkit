@@ -12,7 +12,7 @@ export declare const FileUpload: import("react").FC<import("./types").FileUpload
 export declare const Input: ({ name, value, theme, style, disabled, label, textarea, leftContent, rightContent, error, hint, placeholder, onChange, onBlur, onFocus, id, inputRef, cols, rows, className, ...props }: import("./types").InputProps) => import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;
 export declare const LeadingBadge: import("react").FC<import("./types").LeadingBadgeProps>;
 export declare const Loader: (props: import("./types").LoaderProps) => import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;
-export declare const Modal: ({ theme, title, content, open, onClose, variant, style, className, }: import("./types").ModalProps) => JSX.Element;
+export declare const Modal: ({ theme, title, content, open, onClose, variant, style, className }: import("./types").ModalProps) => JSX.Element;
 export declare const Pin: ({ handleInput, length, type, className }: import("./types").IPinCode) => JSX.Element;
 export declare const Radio: import("react").FC<import("./types").RadioProps>;
 export declare const Switch: import("react").FC<import("./types").SwitchProps>;
