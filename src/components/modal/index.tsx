@@ -8,16 +8,7 @@ import { Typography } from "../typography";
 import { XIcon } from "../icon";
 import { CloseButtonContainer } from "./styles/closeContainer";
 
-export const Modal = ({
-  theme = Theme,
-  title,
-  content,
-  open,
-  onClose,
-  variant = Variants["light"],
-  style,
-  className,
-}: ModalProps) => {
+export const Modal = ({ theme = Theme, title, content, open, onClose, variant, style, className }: ModalProps) => {
   return (
     <ModalContainer open={open} onClick={onClose} className={className}>
       <ModalBox

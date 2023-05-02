@@ -27,7 +27,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
         {checked && (
           <CheckIcon
             fill={disabled ? theme!.palette.gray300 : theme!.palette.primary500}
-            stroke={disabled ? theme!.palette.gray300 : theme!.palette.primary500}
+            stroke={disabled ? theme!.palette.gray300 : theme!.palette.white}
           />
         )}
       </Content>
