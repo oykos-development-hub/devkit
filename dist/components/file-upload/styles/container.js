@@ -7,6 +7,7 @@ export const Container = styled.div(({ variant, isDragging, disabled, style, the
     flex-direction: ${variant === "primary" ? "column" : "row"};
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
     padding: ${variant === "primary"
         ? `${rem("56px")}`
         : `${rem("16px")} ${rem("12.5px")} ${rem("16px")} ${rem("12.5px")}`};
