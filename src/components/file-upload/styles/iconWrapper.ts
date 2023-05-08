@@ -17,8 +17,7 @@ export const IconWrapper = styled.div<{
        width: ${rem("52px")};
        height: ${rem("52px")};
       
-      & path {      
-        stroke: #212121;
+      & path {         
         stroke-width: 1;
       }
     `}

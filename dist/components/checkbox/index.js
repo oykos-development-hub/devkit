@@ -12,6 +12,6 @@ export const Checkbox = ({ size = CheckboxSize.sm, onClick, style, theme = Theme
     };
     return (React.createElement(Container, { className: className },
         React.createElement(HiddenCheckbox, { defaultChecked: checked }),
-        React.createElement(Content, { checked: checked, onClick: handleClick, size: size, style: style, theme: theme, disabled: disabled }, checked && (React.createElement(CheckIcon, { fill: disabled ? theme.palette.gray300 : theme.palette.primary500, stroke: disabled ? theme.palette.gray300 : theme.palette.primary500 })))));
+        React.createElement(Content, { checked: checked, onClick: handleClick, size: size, style: style, theme: theme, disabled: disabled }, checked && React.createElement(CheckIcon, { stroke: disabled ? theme.palette.gray300 : "white" }))));
 };
 //# sourceMappingURL=index.js.map

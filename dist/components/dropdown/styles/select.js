@@ -4,7 +4,7 @@ import { rem } from "polished";
 export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIcon, isSearchable }) => {
     const { error50, error700, primary50, primary200, primary100, gray100, gray200, gray300, gray400, gray600, gray700 } = theme.palette;
     return css `
-    width: ${(style === null || style === void 0 ? void 0 : style.width) || "100%"};
+    width: 100%;
     height: auto;
 
     // control (input field)

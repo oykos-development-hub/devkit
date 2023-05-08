@@ -1,17 +1,22 @@
 import styled, { css } from "styled-components";
 import { rem } from "polished";
 export const Container = styled.div(({ variant, isDragging, disabled, style, theme }) => {
-    const { gray600, primary500 } = theme.palette;
+    const { gray300, gray600, primary500 } = theme.palette;
     return css `
     display: flex;
     flex-direction: ${variant === "primary" ? "column" : "row"};
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
     padding: ${variant === "primary"
         ? `${rem("56px")}`
-        : `${rem("16px")} ${rem("24px")} ${rem("16px")} ${rem("32px")}`};
+        : `${rem("16px")} ${rem("12.5px")} ${rem("16px")} ${rem("12.5px")}`};
     border-radius: ${rem("10px")};
-    border: ${isDragging && !disabled ? `2px dashed ${primary500}` : !disabled && `1px dashed ${gray600}`};
+    border: ${isDragging && !disabled
+        ? `2px dashed ${primary500}`
+        : disabled
+            ? `1px dashed ${gray300}`
+            : `1px dashed ${gray600}`};
     gap: ${variant === "primary" ? `${rem("24px")}` : `${rem("12.5px")}`};
 
     & input {

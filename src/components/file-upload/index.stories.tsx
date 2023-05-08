@@ -64,6 +64,18 @@ Secondary.args = {
   disabled: false,
 };
 
+export const SecondaryWithoutIcon = Template.bind({});
+SecondaryWithoutIcon.args = {
+  variant: "secondary",
+  buttonVariant: "secondary",
+  buttonText: "SELECT FILES",
+  multiple: true,
+  note: <Typography variant={"bodySmall"} content={"Select a files or drag and drop here"} />,
+  hint: "",
+  disabled: false,
+  icon: <></>,
+};
+
 export const Tertiary = Template.bind({});
 Tertiary.args = {
   variant: "tertiary",

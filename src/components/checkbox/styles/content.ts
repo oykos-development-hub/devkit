@@ -24,7 +24,7 @@ export const Content = styled.div<{
   theme?: DefaultTheme;
   style?: React.CSSProperties;
 }>(({ checked, disabled, theme, size, style }) => {
-  const { primary500, gray50, gray300 } = theme!.palette;
+  const { primary50, primary500, gray50, gray300 } = theme!.palette;
 
   const borderRadius = {
     sm: "0.25rem",
@@ -53,8 +53,7 @@ export const Content = styled.div<{
     cursor: ${disabled ? "auto" : "pointer"};
 
     &:hover {
-      border: ${disabled ? `1px solid ${gray300}` : `${rem("1px")} solid ${primary500}`};
-      box-shadow: ${disabled ? "none" : `0 0 0 0.25rem ${primary500}`};
+      box-shadow: ${disabled ? "none" : `0 0 0 0.25rem ${primary50}`};
     }
 
     &[disabled] {

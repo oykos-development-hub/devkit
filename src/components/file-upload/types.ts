@@ -18,7 +18,7 @@ export interface FileUploadProps {
   buttonText?: string;
   hint?: JSX.Element | ReactElement | string;
   note?: JSX.Element | ReactElement | string;
-  icon?: JSX.Element | ReactElement;
+  icon?: JSX.Element | ReactElement | null;
   multiple?: boolean;
   style?: CSSProperties;
   theme?: DefaultTheme;
