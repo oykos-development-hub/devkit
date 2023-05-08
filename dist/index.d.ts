@@ -35,5 +35,5 @@ export declare const Label: import("styled-components").StyledComponent<"label",
     isChecked?: boolean | undefined;
     disabled?: boolean | undefined;
     size: "sm" | "md" | import("./types").SwitchSizes;
-    theme: import("styled-components").DefaultTheme;
+    theme?: import("styled-components").DefaultTheme | undefined;
 }, never>;
