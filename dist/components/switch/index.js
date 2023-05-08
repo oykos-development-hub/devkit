@@ -4,7 +4,8 @@ import { SwitchWrapper } from "./styles/switchWrapper";
 import { Slider } from "./styles/slider";
 import { Input } from "./styles/input";
 import { Label } from "./styles/label";
-export const Switch = ({ checked, content, size = "md", disabled = false, style, theme, onChange, className, }) => {
+import { Theme } from "../../shared/theme";
+export const Switch = ({ checked, content, size = "md", disabled = false, style, theme = Theme, onChange, className, }) => {
     const ref = useRef(null);
     const [isActive, setIsActive] = useState(false);
     const handleChange = (e) => {
