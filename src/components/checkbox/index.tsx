@@ -24,7 +24,12 @@ export const Checkbox: React.FC<CheckboxProps> = ({
     <Container className={className}>
       <HiddenCheckbox defaultChecked={checked} />
       <Content checked={checked} onClick={handleClick} size={size} style={style} theme={theme} disabled={disabled}>
-        {checked && <CheckIcon stroke={disabled ? theme!.palette.gray300 : "white"} />}
+        {checked && (
+          <CheckIcon
+            fill={disabled ? theme!.palette.gray300 : theme!.palette.primary500}
+            stroke={disabled ? theme!.palette.gray300 : theme!.palette.white}
+          />
+        )}
       </Content>
     </Container>
   );
