@@ -4,7 +4,7 @@ import { rem } from "polished";
 import { FileUploadVariants } from "../types";
 
 export const Container = styled.div<{
-  variant: FileUploadVariants | string;
+  variant: FileUploadVariants | `${FileUploadVariants}`;
   isDragging?: boolean;
   disabled?: boolean;
   style?: CSSProperties;
@@ -19,7 +19,7 @@ export const Container = styled.div<{
     align-items: center;
     padding: ${variant === "primary"
       ? `${rem("56px")}`
-      : `${rem("16px")} ${rem("24px")} ${rem("16px")} ${rem("32px")}`};
+      : `${rem("16px")} ${rem("12.5px")} ${rem("16px")} ${rem("12.5px")}`};
     border-radius: ${rem("10px")};
     border: ${isDragging && !disabled
       ? `2px dashed ${primary500}`

@@ -78,7 +78,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
         icon
       ) : (
         <IconWrapper customIcon={!!icon}>
-          <UploadCloudIcon />
+          <UploadCloudIcon stroke={theme.palette.gray900} />
         </IconWrapper>
       )}
       {customContent ? (

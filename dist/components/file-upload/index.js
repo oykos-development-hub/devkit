@@ -40,7 +40,7 @@ export const FileUpload = ({ variant = "primary", buttonVariant = "primary", but
     return (React.createElement(Container, { variant: variant, style: style, theme: theme, isDragging: isDragging, disabled: disabled, onDragOver: handleDragOver, onDragLeave: handleDragLeave, onDrop: handleDrop, className: className },
         React.createElement("input", { type: "file", ref: uploadInputRef, onChange: handleChange, multiple: multiple }),
         icon ? (icon) : (React.createElement(IconWrapper, { customIcon: !!icon },
-            React.createElement(UploadCloudIcon, null))),
+            React.createElement(UploadCloudIcon, { stroke: theme.palette.gray900 }))),
         customContent ? (customContent) : (React.createElement(Content, { variant: variant },
             React.createElement(TextWrapper, { variant: variant, theme: theme },
                 note && React.createElement(Typography, { variant: "bodySmall", content: note }),
