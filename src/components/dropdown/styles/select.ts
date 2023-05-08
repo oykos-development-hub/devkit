@@ -8,7 +8,7 @@ export const StyledSelect = styled(Select)<DropdownProps>(({ theme, showArrow, s
     theme.palette;
 
   return css`
-    width: ${style?.width || "100%"};
+    width: 100%;
     height: auto;
 
     // control (input field)
