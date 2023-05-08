@@ -5,6 +5,7 @@ import { SwitchWrapper } from "./styles/switchWrapper";
 import { Slider } from "./styles/slider";
 import { Input } from "./styles/input";
 import { Label } from "./styles/label";
+import { Theme } from "../../shared/theme";
 
 export const Switch: React.FC<SwitchProps> = ({
   checked,
@@ -12,7 +13,7 @@ export const Switch: React.FC<SwitchProps> = ({
   size = "md",
   disabled = false,
   style,
-  theme,
+  theme = Theme,
   onChange,
   className,
 }) => {
