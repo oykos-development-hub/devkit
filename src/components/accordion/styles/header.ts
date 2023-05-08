@@ -7,18 +7,16 @@ export const Header = styled.div<{
   style?: CSSProperties;
   theme?: DefaultTheme;
 }>(({ isOpen, style, theme }) => {
-  const { white, gray200, gray900 } = theme!.palette;
-
   return css`
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: ${rem("8px")} ${rem("16px")};
     gap: ${rem("8px")};
-    background-color: ${style?.backgroundColor || white};
+    background-color: ${style?.backgroundColor || theme?.palette?.white};
     transition: background-color 0.3s ease-in-out;
     cursor: ${style?.cursor || "pointer"};
-    border-bottom: 1px solid ${gray200};
+    border-bottom: 1px solid ${theme?.palette?.gray200};
     border-radius: ${style?.borderRadius || "0"};
     overflow: hidden;
 
@@ -31,7 +29,7 @@ export const Header = styled.div<{
     h5,
     h6,
     svg {
-      color: ${style?.color || gray900};
+      color: ${style?.color || theme?.palette?.gray900};
     }
 
     & > svg {
@@ -40,7 +38,7 @@ export const Header = styled.div<{
       transition: opacity 0.3s linear, transform 0.3s linear;
 
       & path {
-        stroke: ${style?.stroke || gray900};
+        stroke: ${style?.stroke || theme?.palette?.gray900};
       }
     }
   `;
