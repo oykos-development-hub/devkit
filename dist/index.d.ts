@@ -30,3 +30,10 @@ export * from "./components/tooltip/styles";
 export * from "./components/icon";
 export * from "./types";
 export * from "./components/accordion/styles";
+export declare const Label: import("styled-components").StyledComponent<"label", import("styled-components").DefaultTheme, {
+    isActive?: boolean | undefined;
+    isChecked?: boolean | undefined;
+    disabled?: boolean | undefined;
+    size: "sm" | "md" | import("./types").SwitchSizes;
+    theme: import("styled-components").DefaultTheme;
+}, never>;

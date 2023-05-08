@@ -23,6 +23,7 @@ import { Typography as TypographyComponent } from "./components/typography";
 import { Accordion as AccordionComponent } from "./components/accordion";
 import { AccordionItem as AccordionItemComponent } from "./components/accordion";
 import { Theme as SSSTheme } from "./shared/theme";
+import { Label as SwitchLabel } from "./components/switch/styles/label";
 export const Alert = AlertComponent;
 export const Avatar = AvatarComponent;
 export const Badge = BadgeComponent;
@@ -54,4 +55,5 @@ export * from "./components/tooltip/styles";
 export * from "./components/icon";
 export * from "./types";
 export * from "./components/accordion/styles";
+export const Label = SwitchLabel;
 //# sourceMappingURL=index.js.map

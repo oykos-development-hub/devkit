@@ -8,7 +8,7 @@ import { Label } from "./styles/label";
 import { Theme } from "../../shared/theme";
 
 export const Switch: React.FC<SwitchProps> = ({
-  checked,
+  checked = false,
   content,
   size = "md",
   disabled = false,

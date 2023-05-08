@@ -8,7 +8,7 @@ export const Label = styled.label<{
   isChecked?: boolean;
   disabled?: boolean;
   size: SwitchSizes | `${SwitchSizes}`;
-  theme: DefaultTheme;
+  theme?: DefaultTheme;
 }>(({ isChecked, isActive, disabled, size, theme }) => {
   const { primary50, primary500, gray300, gray400 } = theme!.palette;
 

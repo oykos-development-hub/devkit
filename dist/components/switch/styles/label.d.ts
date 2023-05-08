@@ -5,5 +5,5 @@ export declare const Label: import("styled-components").StyledComponent<"label",
     isChecked?: boolean | undefined;
     disabled?: boolean | undefined;
     size: SwitchSizes | `${SwitchSizes}`;
-    theme?: DefaultTheme | undefined;
+    theme: DefaultTheme;
 }, never>;
