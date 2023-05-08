@@ -52,6 +52,17 @@ Secondary.args = {
     hint: "JPG, PNG or PDF, file size no more than 10MB",
     disabled: false,
 };
+export const SecondaryWithoutIcon = Template.bind({});
+SecondaryWithoutIcon.args = {
+    variant: "secondary",
+    buttonVariant: "secondary",
+    buttonText: "SELECT FILES",
+    multiple: true,
+    note: React.createElement(Typography, { variant: "bodySmall", content: "Select a files or drag and drop here" }),
+    hint: "",
+    disabled: false,
+    icon: React.createElement(React.Fragment, null),
+};
 export const Tertiary = Template.bind({});
 Tertiary.args = {
     variant: "tertiary",
