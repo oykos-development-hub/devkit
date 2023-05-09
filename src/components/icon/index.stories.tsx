@@ -153,7 +153,7 @@ const Template: ComponentStory<typeof XIcon> = (args: IconProps) => (
       style={{
         display: "grid",
         gridTemplateColumns: "repeat(10, 5rem)",
-        gridGap: "2rem",
+        gridGap: "1rem",
       }}
     >
       <LinkIcon {...args} />
@@ -282,10 +282,8 @@ const Template: ComponentStory<typeof XIcon> = (args: IconProps) => (
   </StoryWrapper>
 );
 
-const Second: ComponentStory<typeof XIcon> = (args: IconProps) => <StoryWrapper></StoryWrapper>;
-
 export const Default = Template.bind({});
 Default.args = {
-  width: "50px",
-  height: "50px",
+  width: "30px",
+  height: "30px",
 };
