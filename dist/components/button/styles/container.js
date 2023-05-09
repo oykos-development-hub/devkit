@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 export const ButtonContainer = styled.button.attrs((props) => ({
     disabled: props.disabled,
+    type: props.type,
 }))(() => ({ theme, disabled, variant, size, style }) => {
     const { gray50, white, primary500, secondary500, gray200, error500, error100, primary800, secondary800, error800 } = theme.palette;
     const background = {
