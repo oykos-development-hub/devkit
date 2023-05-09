@@ -1,15 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Theme } from "../../shared/theme";
 import { Container } from "./style/container";
 import { Link } from "./style/link";
 export const Breadcrumbs = ({ theme = Theme, onClick, items, separator, style, className }) => {
-    const [links, setLinks] = useState(items);
-    return (React.createElement(Container, { theme: theme, style: style, className: className }, links === null || links === void 0 ? void 0 : links.map((item) => {
-        const isLastItem = links.indexOf(item) === links.length - 1;
+    return (React.createElement(Container, { style: style, className: className }, items === null || items === void 0 ? void 0 : items.map((item) => {
+        const isLastItem = items.indexOf(item) === items.length - 1;
         const handleLinkClick = (e) => {
             e.preventDefault();
-            const newLinks = links === null || links === void 0 ? void 0 : links.splice(0, links.indexOf(item) + 1);
-            setLinks(newLinks);
             if (onClick)
                 onClick(e);
         };

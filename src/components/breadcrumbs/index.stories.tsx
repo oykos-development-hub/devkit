@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { BreadcrumbsProps } from "./types";
 import { Breadcrumbs } from "./index";
 import { XIcon } from "../icon";
 import { Item } from "./types";
-import styled from "styled-components";
 
 const links: Item[] = [
   { name: "link1", to: "" },
@@ -15,7 +14,7 @@ const links: Item[] = [
   { name: "link5", to: "" },
 ];
 
-const linksWithIcons = links.map((link) => ({ ...link, icon: <XIcon size="1em" /> }));
+const linksWithIcons = links.map((link) => ({ ...link, icon: <XIcon width="1em" /> }));
 console.log(linksWithIcons);
 
 export default {
@@ -23,11 +22,13 @@ export default {
   title: "Components/Breadcrumbs",
 } as ComponentMeta<typeof Breadcrumbs>;
 
-const Template: ComponentStory<typeof Breadcrumbs> = (args: BreadcrumbsProps) => (
-  <StoryWrapper>
-    <Breadcrumbs {...args} />
-  </StoryWrapper>
-);
+const Template: ComponentStory<typeof Breadcrumbs> = (args: BreadcrumbsProps) => {
+  return (
+    <StoryWrapper>
+      <Breadcrumbs {...args} />
+    </StoryWrapper>
+  );
+};
 
 export const BreadcrumbsDefault = Template.bind({});
 

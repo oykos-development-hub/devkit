@@ -25,4 +25,5 @@ export interface ButtonProps {
   style?: React.CSSProperties;
   size?: ButtonSizes | `${ButtonSizes}`;
   className?: string;
+  type?: string;
 }

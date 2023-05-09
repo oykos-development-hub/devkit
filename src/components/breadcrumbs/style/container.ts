@@ -1,8 +1,6 @@
-import styled, { css, CSSProperties, DefaultTheme } from "styled-components";
+import styled, { css, CSSProperties } from "styled-components";
 
-export const Container = styled.ul<{ theme: DefaultTheme; style?: CSSProperties }>(({ theme, style }) => {
-  const { gray900 } = theme.palette;
-
+export const Container = styled.ul<{ style?: CSSProperties }>(({ style }) => {
   return css`
     list-style-type: none;
     display: flex;
