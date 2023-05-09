@@ -1,10 +1,11 @@
 import styled, { css } from "styled-components";
-import { ButtonVariants, ButtonSizes } from "../types";
+import { ButtonVariants, ButtonSizes, ButtonProps } from "../types";
 import { DefaultTheme } from "../../../types";
 import React from "react";
 
-export const ButtonContainer = styled.button.attrs((props) => ({
+export const ButtonContainer = styled.button.attrs((props: ButtonProps) => ({
   disabled: props.disabled,
+  type: props.type,
 }))<{
   disabled: boolean;
   variant: ButtonVariants | string;

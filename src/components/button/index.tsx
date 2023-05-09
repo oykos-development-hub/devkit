@@ -13,6 +13,7 @@ export const Button = ({
   style,
   theme,
   className,
+  type = "button",
 }: ButtonProps) => {
   return (
     <ButtonContainer
@@ -23,6 +24,7 @@ export const Button = ({
       onClick={onClick}
       theme={theme || Theme}
       className={className}
+      type={type}
     >
       {customContent ? (
         customContent
