@@ -1,6 +1,5 @@
 import styled, { css } from "styled-components";
-export const Container = styled.ul(({ theme, style }) => {
-    const { gray900 } = theme.palette;
+export const Container = styled.ul(({ style }) => {
     return css `
     list-style-type: none;
     display: flex;

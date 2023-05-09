@@ -9,14 +9,16 @@ const links = [
     { name: "link4", to: "" },
     { name: "link5", to: "" },
 ];
-const linksWithIcons = links.map((link) => (Object.assign(Object.assign({}, link), { icon: React.createElement(XIcon, { size: "1em" }) })));
+const linksWithIcons = links.map((link) => (Object.assign(Object.assign({}, link), { icon: React.createElement(XIcon, { width: "1em" }) })));
 console.log(linksWithIcons);
 export default {
     component: Breadcrumbs,
     title: "Components/Breadcrumbs",
 };
-const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement(Breadcrumbs, Object.assign({}, args))));
+const Template = (args) => {
+    return (React.createElement(StoryWrapper, null,
+        React.createElement(Breadcrumbs, Object.assign({}, args))));
+};
 export const BreadcrumbsDefault = Template.bind({});
 BreadcrumbsDefault.args = {
     items: links,
