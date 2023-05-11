@@ -25,8 +25,9 @@ export interface DropdownProps {
     leftOptionIcon?: ReactElement;
     rightOptionIcon?: ReactElement;
     dropdownIndicator?: ReactElement;
-    onChange?: (e: ValueType) => void;
+    onChange?: (value: ValueType, e?: React.ChangeEvent) => void;
     onBlur?: () => void;
     onFocus?: () => void;
     className?: string;
+    name?: string;
 }

@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 import { InputProps } from "../types";
 
-export const Container = styled.div(({ style }: InputProps) => {
+export const Container = styled.div(({ style }: Partial<InputProps>) => {
   return css`
     width: ${style?.width || "100%"};
     display: flex;

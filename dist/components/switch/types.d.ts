@@ -13,4 +13,5 @@ export interface SwitchProps {
     theme?: DefaultTheme;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     className?: string;
+    name?: string;
 }
