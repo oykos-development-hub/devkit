@@ -12,4 +12,5 @@ export interface CheckboxProps {
     theme?: DefaultTheme;
     checked: boolean;
     className?: string;
+    name?: string;
 }
