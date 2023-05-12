@@ -89,7 +89,7 @@ export default {
 const Template: ComponentStory<typeof Dropdown> = (args: DropdownProps) => (
   <StoryWrapper>
     <div style={{ width: "300px" }}>
-      <Dropdown {...args} />
+      <Dropdown {...args} error="Error" />
     </div>
   </StoryWrapper>
 );

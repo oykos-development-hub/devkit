@@ -11,6 +11,8 @@ import { Wrapper } from "./styles/wrapper";
 import { DropdownIndicatorProps } from "react-select/dist/declarations/src/components/indicators";
 import { components } from "react-select";
 import { SearchIcon } from "../icon";
+import { ErrorContainer } from "./styles/errorContainer";
+import { ErrorText } from "./styles/errorText";
 
 export const Dropdown = ({
   options,
@@ -95,6 +97,13 @@ export const Dropdown = ({
         />
         <ControlIconWrapper ref={controlIconWrapperRef}>{controlIcon}</ControlIconWrapper>
       </Wrapper>
+      <ErrorContainer theme={theme}>
+        {typeof props.error === "string" ? (
+          <ErrorText theme={theme} variant="bodySmall" content={props.error} />
+        ) : (
+          props.error
+        )}
+      </ErrorContainer>
     </Container>
   );
 };

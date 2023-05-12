@@ -29,4 +29,5 @@ export interface DropdownProps {
   onFocus?: () => void;
   className?: string;
   name?: string;
+  error?: string;
 }

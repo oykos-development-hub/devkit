@@ -6,6 +6,7 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
     return css `
     width: 100%;
     height: auto;
+    margin-top: rem("6px");
 
     // control (input field)
     .select__control {
