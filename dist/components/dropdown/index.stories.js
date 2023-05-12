@@ -65,7 +65,7 @@ export default {
 };
 const Template = (args) => (React.createElement(StoryWrapper, null,
     React.createElement("div", { style: { width: "300px" } },
-        React.createElement(Dropdown, Object.assign({}, args)))));
+        React.createElement(Dropdown, Object.assign({}, args, { error: "Error" })))));
 export const DropdownDefault = Template.bind({});
 DropdownDefault.args = {
     label: React.createElement(Typography, { content: "Team member", variant: "bodySmall", style: { fontWeight: 600 } }),
