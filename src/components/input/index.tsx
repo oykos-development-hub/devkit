@@ -74,7 +74,7 @@ export const Input = ({
         {textarea ? (
           <Textarea {...fieldProps} {...props} theme={theme} rows={rows || 5} cols={cols} />
         ) : (
-          <StyledInput {...fieldProps} {...props} theme={theme} ref={inputRef} />
+          <StyledInput ref={inputRef} {...fieldProps} {...props} theme={theme} />
         )}
 
         {leftContent && (
