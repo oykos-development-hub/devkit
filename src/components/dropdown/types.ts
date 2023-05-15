@@ -1,7 +1,7 @@
 import { ReactElement, CSSProperties, ReactNode } from "react";
 import { DefaultTheme } from "styled-components";
 
-export type ValueType = { value: string | number; label: ReactNode | string };
+export type ValueType = { value: string | number | boolean; label: ReactNode | string };
 
 export interface DropdownProps {
   theme?: DefaultTheme;

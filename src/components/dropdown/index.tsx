@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Theme } from "../../shared/theme";
 import { StyledSelect } from "./styles/select";
 import { DropdownProps, ValueType } from "./types";
-import { Container } from "./styles/container";
+import { DropdownContainer } from "./styles/container";
 import { Typography } from "../typography";
 import { Option, OptionContent } from "./styles/option";
 import { ControlIconWrapper } from "./styles/controlIconWrapper";
@@ -64,7 +64,7 @@ export const Dropdown = ({
   );
 
   return (
-    <Container className={className}>
+    <DropdownContainer className={className}>
       {label && label}
 
       <Wrapper>
@@ -104,6 +104,6 @@ export const Dropdown = ({
           props.error
         )}
       </ErrorContainer>
-    </Container>
+    </DropdownContainer>
   );
 };
