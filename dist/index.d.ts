@@ -27,6 +27,7 @@ export declare const Theme: import("styled-components").DefaultTheme;
 export * from "./components/button/styles";
 export * from "./components/modal/styles";
 export * from "./components/tooltip/styles";
+export * from "./components/dropdown/styles";
 export * from "./components/icon";
 export * from "./types";
 export * from "./components/accordion/styles";

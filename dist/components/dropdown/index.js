@@ -12,7 +12,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 import React, { useEffect, useRef, useState } from "react";
 import { Theme } from "../../shared/theme";
 import { StyledSelect } from "./styles/select";
-import { Container } from "./styles/container";
+import { DropdownContainer } from "./styles/container";
 import { Option, OptionContent } from "./styles/option";
 import { ControlIconWrapper } from "./styles/controlIconWrapper";
 import { rem } from "polished";
@@ -37,7 +37,7 @@ export const Dropdown = (_a) => {
             setControlIconWidth((_a = controlIconWrapperRef.current) === null || _a === void 0 ? void 0 : _a.offsetWidth);
     }, []);
     const DropdownIndicator = (props) => (React.createElement(components.DropdownIndicator, Object.assign({}, props), !dropdownIndicator ? React.createElement(SearchIcon, { stroke: theme.palette.gray700, fill: "none" }) : dropdownIndicator));
-    return (React.createElement(Container, { className: className },
+    return (React.createElement(DropdownContainer, { className: className },
         label && label,
         React.createElement(Wrapper, null,
             React.createElement(StyledSelect, Object.assign({ backspaceRemovesValue: backspaceRemovesValue, options: options, classNamePrefix: "select", theme: theme, blurInputOnSelect: true, isSearchable: isSearchable, isDisabled: isDisabled, noOptionsMessage: () => noOptionsText, style: Object.assign({ paddingLeft: `${controlIcon && `calc(${controlIconWidth}px + ${rem("8px")})`}` }, style), onChange: (e) => {
