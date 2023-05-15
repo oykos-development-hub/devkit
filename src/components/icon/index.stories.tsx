@@ -124,6 +124,7 @@ import {
   ThreeLayersIcon,
   FiltersLinesIcon,
   FiltersLinesTwo,
+  AwardIcon,
 } from "./";
 import { IconProps } from "./types";
 
@@ -156,6 +157,7 @@ const Template: ComponentStory<typeof XIcon> = (args: IconProps) => (
         gridGap: "1rem",
       }}
     >
+      <AwardIcon {...args} />
       <LinkIcon {...args} />
       <FolderIcon {...args} />
       <LockIcon {...args} />
