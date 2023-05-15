@@ -9,7 +9,7 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import React, { useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 import { Container } from "./styles/container";
 import { StyledInput, Textarea } from "./styles/input";
 import { Typography } from "../typography";
@@ -18,7 +18,7 @@ import { RightElement } from "./styles/rightElement";
 import { Theme } from "../../shared/theme";
 import { IconWrapper } from "./styles/iconWrapper";
 import { rem } from "polished";
-export const Input = (_a) => {
+export const Input = forwardRef((_a, ref) => {
     var { name, value, theme = Theme, style, disabled, label, textarea, leftContent, rightContent, error = "", hint = "", placeholder = "", onChange, onBlur, onFocus, id, inputRef, cols, rows, className } = _a, props = __rest(_a, ["name", "value", "theme", "style", "disabled", "label", "textarea", "leftContent", "rightContent", "error", "hint", "placeholder", "onChange", "onBlur", "onFocus", "id", "inputRef", "cols", "rows", "className"]);
     const [leftElementWidth, setLeftElementWidth] = useState(0);
     const [rightElementWidth, setRightElementWidth] = useState(0);
@@ -49,12 +49,13 @@ export const Input = (_a) => {
     return (React.createElement(Container, { style: style, className: className },
         label && label,
         React.createElement("div", null,
-            textarea ? (React.createElement(Textarea, Object.assign({}, fieldProps, props, { theme: theme, rows: rows || 5, cols: cols }))) : (React.createElement(StyledInput, Object.assign({}, fieldProps, props, { theme: theme, ref: inputRef }))),
+            textarea ? (React.createElement(Textarea, Object.assign({}, fieldProps, props, { theme: theme, rows: rows || 5, cols: cols }))) : (React.createElement(StyledInput, Object.assign({ ref: ref || inputRef }, fieldProps, props, { theme: theme }))),
             leftContent && (React.createElement(LeftElement, { ref: leftElementRef },
                 React.createElement(IconWrapper, null, leftContent))),
             rightContent && (React.createElement(RightElement, { ref: rightElementRef },
                 React.createElement(IconWrapper, null, rightContent)))),
         error && !disabled && (React.createElement(Typography, { content: error, variant: "helperText", style: { color: theme.palette.error500 } })),
-        hint && !error && React.createElement(Typography, { content: hint, variant: "helperText", style: { color: theme.palette.gray700 } })));
-};
+        hint && !error && (React.createElement(Typography, { content: hint, variant: "helperText", style: { color: theme.palette.gray700 } }))));
+});
+Input.displayName = "Input";
 //# sourceMappingURL=index.js.map
