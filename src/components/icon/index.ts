@@ -121,3 +121,4 @@ export { default as TwoLayersIcon } from "./variations/TwoLayersIcon";
 export { default as ThreeLayersIcon } from "./variations/ThreeLayersIcon";
 export { default as FiltersLinesIcon } from "./variations/FiltersLinesIcon";
 export { default as FiltersLinesTwo } from "./variations/FiltersLinesTwo";
+export { default as AwardIcon } from "./variations/AwardIcon";
