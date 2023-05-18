@@ -35,7 +35,7 @@ export const Input = forwardRef(
       className,
       ...props
     }: InputProps,
-    ref: Ref<HTMLInputElement>,
+    ref: any,
   ): React.ReactElement => {
     const [leftElementWidth, setLeftElementWidth] = useState(0);
     const [rightElementWidth, setRightElementWidth] = useState(0);
@@ -76,7 +76,7 @@ export const Input = forwardRef(
 
         <div>
           {textarea ? (
-            <Textarea {...fieldProps} {...props} theme={theme} rows={rows || 5} cols={cols} />
+            <Textarea ref={ref || inputRef} {...fieldProps} {...props} theme={theme} rows={rows || 5} cols={cols} />
           ) : (
             <StyledInput ref={ref || inputRef} {...fieldProps} {...props} theme={theme} />
           )}
