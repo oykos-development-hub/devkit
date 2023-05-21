@@ -7,7 +7,7 @@ export const ModalBox = styled.div<Partial<ModalProps>>(({ theme, variant, style
 
   return css`
     & * {
-      font-family: ${theme?.fontFamily?.two || "sans-serif"};
+      font-family: ${theme?.fontFamily?.two || theme?.fontFamily?.one || "sans-serif"};
     }
 
     background-color: ${variant === "dark" ? black : white};
