@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components";
 import { BodyLarge, BodyMedium, BodySmall, H1, H2, H3, H4, H5, H6 } from "../../typography/styles/variants";
 export const ModalBox = styled.div(({ theme, variant, style }) => {
-    var _a;
+    var _a, _b;
     const { white, black } = theme.palette;
     return css `
     & * {
-      font-family: ${((_a = theme === null || theme === void 0 ? void 0 : theme.fontFamily) === null || _a === void 0 ? void 0 : _a.two) || "sans-serif"};
+      font-family: ${((_a = theme === null || theme === void 0 ? void 0 : theme.fontFamily) === null || _a === void 0 ? void 0 : _a.two) || ((_b = theme === null || theme === void 0 ? void 0 : theme.fontFamily) === null || _b === void 0 ? void 0 : _b.one) || "sans-serif"};
     }
 
     background-color: ${variant === "dark" ? black : white};
