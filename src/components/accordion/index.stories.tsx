@@ -1,7 +1,7 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { AccordionProps } from "./types";
-import { Accordion } from "./index";
+import { Accordion, AccordionItem } from "./index";
 import { Typography } from "../../index";
 import { Theme } from "../../shared/theme";
 import { ChevronDownIcon, MenuIcon, MoreVerticalIcon } from "../icon";
@@ -25,13 +25,16 @@ export default {
   },
 } as ComponentMeta<typeof Accordion>;
 
-const Template: ComponentStory<typeof Accordion> = (args: AccordionProps) => (
-  <StoryWrapper style={{ display: "grid", alignContent: "center" }}>
-    <div style={{ width: "400px" }}>
-      <Accordion {...args} />
-    </div>
-  </StoryWrapper>
-);
+const Template: ComponentStory<typeof Accordion> = (args: AccordionProps) => {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <StoryWrapper style={{ display: "grid", alignContent: "center" }}>
+      <div style={{ width: "400px" }}>
+        <AccordionItem isOpen={open} toggle={() => setOpen(!open)} content="test" title="title" />
+      </div>
+    </StoryWrapper>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {

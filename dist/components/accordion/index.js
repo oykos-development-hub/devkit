@@ -1,16 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { AccordionContainer } from "./styles/container";
 import { Header } from "./styles/header";
 import { Content, ContentWrapper } from "./styles/content";
 import { ChevronDownIcon } from "../icon";
 import { Theme } from "../../shared/theme";
 import { IconWrapper } from "./styles/iconWrapper";
-export const AccordionItem = ({ title, content, customHeader, customContent, style, theme = Theme, }) => {
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleAccordion = () => setIsOpen(!isOpen);
+export const AccordionItem = ({ title, content, customHeader, customContent, style, theme = Theme, isOpen = false, toggle, }) => {
     return (React.createElement(AccordionContainer, null,
         React.createElement(Header, { isOpen: isOpen, style: style, theme: theme },
-            React.createElement("div", { onClick: toggleAccordion, style: { width: "100%" } }, customHeader ? (customHeader) : (React.createElement("div", { style: { display: "flex", justifyContent: "space-between" } },
+            React.createElement("div", { onClick: toggle, style: { width: "100%" } }, customHeader ? (customHeader) : (React.createElement("div", { style: { display: "flex", justifyContent: "space-between" } },
                 title,
                 React.createElement(IconWrapper, { isOpen: isOpen, style: style, theme: theme },
                     React.createElement(ChevronDownIcon, null)))))),

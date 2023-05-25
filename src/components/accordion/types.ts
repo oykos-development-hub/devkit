@@ -8,6 +8,8 @@ export interface AccordionData {
   customContent?: ReactElement;
   style?: CSSProperties;
   theme?: DefaultTheme;
+  isOpen?: boolean;
+  toggle?: (e: any) => void;
 }
 
 export interface AccordionProps {

@@ -1,5 +1,5 @@
 import React from "react";
-import { Accordion } from "./index";
+import { Accordion, AccordionItem } from "./index";
 import { Typography } from "../../index";
 import { Theme } from "../../shared/theme";
 import { ChevronDownIcon } from "../icon";
@@ -21,9 +21,12 @@ export default {
         },
     },
 };
-const Template = (args) => (React.createElement(StoryWrapper, { style: { display: "grid", alignContent: "center" } },
-    React.createElement("div", { style: { width: "400px" } },
-        React.createElement(Accordion, Object.assign({}, args)))));
+const Template = (args) => {
+    const [open, setOpen] = React.useState(false);
+    return (React.createElement(StoryWrapper, { style: { display: "grid", alignContent: "center" } },
+        React.createElement("div", { style: { width: "400px" } },
+            React.createElement(AccordionItem, { isOpen: open, toggle: () => setOpen(!open), content: "test", title: "title" }))));
+};
 export const Default = Template.bind({});
 Default.args = {
     data: [
