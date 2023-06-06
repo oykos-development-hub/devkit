@@ -12,7 +12,7 @@ export const Container = styled.hr<{
 
   return css`
     width: ${style?.width || width};
-    height: ${style?.height || height};
+    height: ${style?.height || height || "1px"};
     background-color: ${style?.backgroundColor || color || gray200};
     border: none;
   `;

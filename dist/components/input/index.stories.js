@@ -19,7 +19,7 @@ export default {
 };
 const Template = (args) => (React.createElement(StoryWrapper, null,
     React.createElement("div", { style: { width: "400px" } },
-        React.createElement(Input, Object.assign({}, args)))));
+        React.createElement(Input, Object.assign({ label: "input" }, args)))));
 export const InputDefault = Template.bind({});
 InputDefault.args = {
     placeholder: "placeholder...",

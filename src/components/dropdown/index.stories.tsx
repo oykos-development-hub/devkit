@@ -6,6 +6,8 @@ import { Dropdown } from "./index";
 import { CheckIcon, UserIcon } from "../icon";
 import { DropdownProps } from "./types";
 import { Typography } from "../typography";
+import { Datepicker } from "../datepicker";
+import { Input } from "../input";
 
 const dropdownOptions = [
   { value: "one", label: <Typography content={"One"} variant={"bodySmall"} /> },
@@ -88,16 +90,16 @@ export default {
 
 const Template: ComponentStory<typeof Dropdown> = (args: DropdownProps) => (
   <StoryWrapper>
-    <div style={{ width: "300px" }}>
-      <Dropdown {...args} error="Error" />
+    <div style={{ width: "300px", display: "flex" }}>
+      <Dropdown {...args} />
     </div>
   </StoryWrapper>
 );
 
 export const DropdownDefault = Template.bind({});
 DropdownDefault.args = {
-  label: <Typography content={"Team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
-  placeholder: <Typography content={"Select team member"} variant={"bodySmall"} />,
+  label: "Team member",
+  placeholder: "Select team member",
   rightOptionIcon: <CheckIcon stroke={Theme.palette.primary500} />,
   showArrow: true,
 };

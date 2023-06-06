@@ -1,4 +1,4 @@
-import React, { Ref, forwardRef, useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 
 import { InputProps } from "./types";
 import { Container } from "./styles/container";
@@ -96,6 +96,7 @@ export const Input = forwardRef(
         {error && !disabled && (
           <Typography content={error} variant={"helperText"} style={{ color: theme.palette.error500 }} />
         )}
+
         {hint && !error && (
           <Typography content={hint} variant={"helperText"} style={{ color: theme.palette.gray700 }} />
         )}
