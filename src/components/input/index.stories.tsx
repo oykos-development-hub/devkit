@@ -24,7 +24,7 @@ export default {
 const Template: ComponentStory<typeof Input> = (args: InputProps) => (
   <StoryWrapper>
     <div style={{ width: "400px" }}>
-      <Input {...args} />
+      <Input label="input" {...args} />
     </div>
   </StoryWrapper>
 );

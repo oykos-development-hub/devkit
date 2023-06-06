@@ -6,10 +6,11 @@ import "react-datepicker/dist/react-datepicker.css";
 import { Input } from "../input";
 import CalendarIcon from "../icon/variations/CalendarIcon";
 import { DangerIcon } from "../icon";
+import { Theme } from "../../shared/theme";
 
 export const Datepicker: React.FC<CustomDatePickerProps> = ({
   style,
-  theme,
+  theme = Theme,
   error,
   label,
   onChange,
