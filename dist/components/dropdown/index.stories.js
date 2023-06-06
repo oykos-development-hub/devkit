@@ -64,12 +64,12 @@ export default {
     },
 };
 const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement("div", { style: { width: "300px" } },
-        React.createElement(Dropdown, Object.assign({}, args, { error: "Error" })))));
+    React.createElement("div", { style: { width: "300px", display: "flex" } },
+        React.createElement(Dropdown, Object.assign({}, args)))));
 export const DropdownDefault = Template.bind({});
 DropdownDefault.args = {
-    label: React.createElement(Typography, { content: "Team member", variant: "bodySmall", style: { fontWeight: 600 } }),
-    placeholder: React.createElement(Typography, { content: "Select team member", variant: "bodySmall" }),
+    label: "Team member",
+    placeholder: "Select team member",
     rightOptionIcon: React.createElement(CheckIcon, { stroke: Theme.palette.primary500 }),
     showArrow: true,
 };
