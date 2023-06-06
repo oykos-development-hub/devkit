@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { forwardRef, useEffect, useRef, useState } from "react";
 
 import { InputProps } from "./types";
 import { Container } from "./styles/container";
@@ -10,89 +10,97 @@ import { Theme } from "../../shared/theme";
 import { IconWrapper } from "./styles/iconWrapper";
 import { rem } from "polished";
 
-export const Input = ({
-  name,
-  value,
-  theme = Theme,
-  style,
-  disabled,
-  label,
-  textarea,
-  leftContent,
-  rightContent,
-  error = "",
-  hint = "",
-  placeholder = "",
-  onChange,
-  onBlur,
-  onFocus,
-  id,
-  inputRef,
-  cols,
-  rows,
-  className,
-  ...props
-}: InputProps): React.ReactElement => {
-  const [leftElementWidth, setLeftElementWidth] = useState(0);
-  const [rightElementWidth, setRightElementWidth] = useState(0);
+export const Input = forwardRef(
+  (
+    {
+      name,
+      value,
+      theme = Theme,
+      style,
+      disabled,
+      label,
+      textarea,
+      leftContent,
+      rightContent,
+      error = "",
+      hint = "",
+      placeholder = "",
+      onChange,
+      onBlur,
+      onFocus,
+      id,
+      inputRef,
+      cols,
+      rows,
+      className,
+      ...props
+    }: InputProps,
+    ref: any,
+  ): React.ReactElement => {
+    const [leftElementWidth, setLeftElementWidth] = useState(0);
+    const [rightElementWidth, setRightElementWidth] = useState(0);
 
-  const leftElementRef = useRef<HTMLDivElement>(null);
-  const rightElementRef = useRef<HTMLDivElement>(null);
+    const leftElementRef = useRef<HTMLDivElement>(null);
+    const rightElementRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    if (leftContent && leftElementRef.current) setLeftElementWidth(leftElementRef.current?.offsetWidth);
-  }, [leftContent]);
+    useEffect(() => {
+      if (leftContent && leftElementRef.current) setLeftElementWidth(leftElementRef.current?.offsetWidth);
+    }, [leftContent]);
 
-  useEffect(() => {
-    if (rightContent && rightElementRef.current) setRightElementWidth(rightElementRef.current?.offsetWidth);
-  }, [rightContent]);
+    useEffect(() => {
+      if (rightContent && rightElementRef.current) setRightElementWidth(rightElementRef.current?.offsetWidth);
+    }, [rightContent]);
 
-  const fieldProps = {
-    onChange,
-    onBlur,
-    onFocus,
-    name,
-    id,
-    disabled,
-    placeholder,
-    value,
-    error,
-    style: {
-      paddingTop: "0.625em",
-      paddingBottom: "0.625em",
-      paddingLeft: `${leftContent ? `${leftElementWidth}px` : rem("14px")}`,
-      paddingRight: `${rightContent ? `${rightElementWidth}px` : rem("14px")}`,
-      ...style,
-    },
-  };
+    const fieldProps = {
+      onChange,
+      onBlur,
+      onFocus,
+      name,
+      id,
+      disabled,
+      placeholder,
+      value,
+      error,
+      style: {
+        paddingTop: "0.625em",
+        paddingBottom: "0.625em",
+        paddingLeft: `${leftContent ? `${leftElementWidth}px` : rem("14px")}`,
+        paddingRight: `${rightContent ? `${rightElementWidth}px` : rem("14px")}`,
+        ...style,
+      },
+    };
 
-  return (
-    <Container style={style} className={className}>
-      {label && label}
+    return (
+      <Container style={style} className={className}>
+        {label && label}
 
-      <div>
-        {textarea ? (
-          <Textarea {...fieldProps} {...props} theme={theme} rows={rows || 5} cols={cols} />
-        ) : (
-          <StyledInput {...fieldProps} {...props} theme={theme} ref={inputRef} />
+        <div>
+          {textarea ? (
+            <Textarea ref={ref || inputRef} {...fieldProps} {...props} theme={theme} rows={rows || 5} cols={cols} />
+          ) : (
+            <StyledInput ref={ref || inputRef} {...fieldProps} {...props} theme={theme} />
+          )}
+
+          {leftContent && (
+            <LeftElement ref={leftElementRef}>
+              <IconWrapper>{leftContent}</IconWrapper>
+            </LeftElement>
+          )}
+          {rightContent && (
+            <RightElement ref={rightElementRef}>
+              <IconWrapper>{rightContent}</IconWrapper>
+            </RightElement>
+          )}
+        </div>
+
+        {error && !disabled && (
+          <Typography content={error} variant={"helperText"} style={{ color: theme.palette.error500 }} />
         )}
 
-        {leftContent && (
-          <LeftElement ref={leftElementRef}>
-            <IconWrapper>{leftContent}</IconWrapper>
-          </LeftElement>
+        {hint && !error && (
+          <Typography content={hint} variant={"helperText"} style={{ color: theme.palette.gray700 }} />
         )}
-        {rightContent && (
-          <RightElement ref={rightElementRef}>
-            <IconWrapper>{rightContent}</IconWrapper>
-          </RightElement>
-        )}
-      </div>
-
-      {error && !disabled && (
-        <Typography content={error} variant={"helperText"} style={{ color: theme.palette.error500 }} />
-      )}
-      {hint && !error && <Typography content={hint} variant={"helperText"} style={{ color: theme.palette.gray700 }} />}
-    </Container>
-  );
-};
+      </Container>
+    );
+  },
+);

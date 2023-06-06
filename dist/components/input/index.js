@@ -49,7 +49,7 @@ export const Input = forwardRef((_a, ref) => {
     return (React.createElement(Container, { style: style, className: className },
         label && label,
         React.createElement("div", null,
-            textarea ? (React.createElement(Textarea, Object.assign({}, fieldProps, props, { theme: theme, rows: rows || 5, cols: cols }))) : (React.createElement(StyledInput, Object.assign({ ref: ref || inputRef }, fieldProps, props, { theme: theme }))),
+            textarea ? (React.createElement(Textarea, Object.assign({ ref: ref || inputRef }, fieldProps, props, { theme: theme, rows: rows || 5, cols: cols }))) : (React.createElement(StyledInput, Object.assign({ ref: ref || inputRef }, fieldProps, props, { theme: theme }))),
             leftContent && (React.createElement(LeftElement, { ref: leftElementRef },
                 React.createElement(IconWrapper, null, leftContent))),
             rightContent && (React.createElement(RightElement, { ref: rightElementRef },

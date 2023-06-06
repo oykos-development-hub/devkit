@@ -14,14 +14,13 @@ export const AccordionItem: React.FC<AccordionData> = ({
   customContent,
   style,
   theme = Theme,
+  isOpen = false,
+  toggle,
 }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const toggleAccordion = () => setIsOpen(!isOpen);
-
   return (
     <AccordionContainer>
       <Header isOpen={isOpen} style={style} theme={theme}>
-        <div onClick={toggleAccordion} style={{ width: "100%" }}>
+        <div onClick={toggle} style={{ width: "100%" }}>
           {customHeader ? (
             customHeader
           ) : (
