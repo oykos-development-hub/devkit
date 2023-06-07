@@ -20,6 +20,7 @@ export const Pagination: FC<PaginationProps> = ({
   fullWidth = true,
   pageCount,
   className,
+  itemsPerPage,
   ...rest
 }) => {
   const [selectedPage, setSelectedPage] = useState(0);
@@ -49,6 +50,7 @@ export const Pagination: FC<PaginationProps> = ({
         previousLabel={previousLabel}
         pageRangeDisplayed={pageRangeDisplayed}
         marginPagesDisplayed={marginPagesDisplayed}
+        itemsPerPage={itemsPerPage}
         {...rest}
       ></ReactPaginate>
 

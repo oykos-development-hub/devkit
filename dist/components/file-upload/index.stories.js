@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { FileUpload } from "./index";
@@ -15,6 +15,11 @@ export default {
                 options: ["primary", "secondary", "tertiary"],
             },
         },
+        accept: {
+            control: {
+                type: "text",
+            },
+        },
         buttonVariant: {
             control: {
                 type: "select",
@@ -29,16 +34,26 @@ export default {
         },
     },
 };
-const onFileUpload = (acceptedFiles) => {
-    console.log("File(s) uploaded:", acceptedFiles);
+const Template = (args) => {
+    const [_, setFiles] = useState(null);
+    const onUpload = (acceptedFiles) => {
+        setFiles(acceptedFiles);
+        console.log("File(s) uploaded:", acceptedFiles);
+    };
+    return (React.createElement(StoryWrapper, null,
+        React.createElement(FileUpload, Object.assign({}, args, { onUpload: onUpload }))));
 };
-const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement(FileUpload, Object.assign({}, args, { onUpload: onFileUpload }))));
 export const Primary = Template.bind({});
 Primary.args = {
     variant: "primary",
     multiple: false,
-    note: "Select a file or drag and drop here",
+    hint: "JPG, PNG or PDF, file size no more than 10MB",
+    disabled: false,
+};
+export const PrimaryMultiple = Template.bind({});
+PrimaryMultiple.args = {
+    variant: "primary",
+    multiple: true,
     hint: "JPG, PNG or PDF, file size no more than 10MB",
     disabled: false,
 };

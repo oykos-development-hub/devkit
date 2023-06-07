@@ -6,7 +6,7 @@ export declare enum FileUploadVariants {
     secondary = "secondary",
     tertiary = "tertiary"
 }
-export interface FileUploadProps {
+export interface FileUploadProps extends React.ComponentPropsWithRef<"input"> {
     variant: FileUploadVariants | `${FileUploadVariants}`;
     onUpload: (files: FileList) => void;
     customContent?: JSX.Element | ReactElement | string;
@@ -17,9 +17,7 @@ export interface FileUploadProps {
     hint?: JSX.Element | ReactElement | string;
     note?: JSX.Element | ReactElement | string;
     icon?: JSX.Element | ReactElement | null;
-    multiple?: boolean;
     style?: CSSProperties;
     theme?: DefaultTheme;
     className?: string;
-    disabled?: boolean;
 }

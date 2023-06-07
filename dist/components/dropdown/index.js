@@ -22,15 +22,14 @@ import { SearchIcon } from "../icon";
 import { ErrorContainer } from "./styles/errorContainer";
 import { ErrorText } from "./styles/errorText";
 export const Dropdown = (_a) => {
-    var { options, theme = Theme, isDisabled = false, isSearchable = false, isMulti = false, noOptionsText = "No options", label, style, isClearable, backspaceRemovesValue = true, showArrow = true, closeMenuOnSelect = true, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder = "", className } = _a, props = __rest(_a, ["options", "theme", "isDisabled", "isSearchable", "isMulti", "noOptionsText", "label", "style", "isClearable", "backspaceRemovesValue", "showArrow", "closeMenuOnSelect", "dropdownIndicator", "controlIcon", "leftOptionIcon", "rightOptionIcon", "onChange", "placeholder", "className"]);
-    const [selectedOption, setSelectedOption] = useState(null);
+    var { options, theme = Theme, isDisabled = false, isSearchable = false, isMulti = false, noOptionsText = "No options", label, style, isClearable, backspaceRemovesValue = true, showArrow = true, closeMenuOnSelect = true, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder = "", className, value } = _a, props = __rest(_a, ["options", "theme", "isDisabled", "isSearchable", "isMulti", "noOptionsText", "label", "style", "isClearable", "backspaceRemovesValue", "showArrow", "closeMenuOnSelect", "dropdownIndicator", "controlIcon", "leftOptionIcon", "rightOptionIcon", "onChange", "placeholder", "className", "value"]);
     const [controlIconWidth, setControlIconWidth] = useState(0);
     const controlIconWrapperRef = useRef(null);
     const optionLabel = (e) => (React.createElement(Option, { theme: theme, isDisabled: isDisabled, style: style },
         React.createElement(OptionContent, null,
             leftOptionIcon && leftOptionIcon,
             e.label),
-        !isMulti && (selectedOption === null || selectedOption === void 0 ? void 0 : selectedOption.value) === e.value && (React.createElement(OptionContent, null, rightOptionIcon && rightOptionIcon))));
+        !isMulti && (value === null || value === void 0 ? void 0 : value.value) === e.value && React.createElement(OptionContent, null, rightOptionIcon && rightOptionIcon)));
     useEffect(() => {
         var _a;
         if (controlIcon && controlIconWrapperRef.current)
@@ -38,12 +37,9 @@ export const Dropdown = (_a) => {
     }, []);
     const DropdownIndicator = (props) => (React.createElement(components.DropdownIndicator, Object.assign({}, props), !dropdownIndicator ? React.createElement(SearchIcon, { stroke: theme.palette.gray700, fill: "none" }) : dropdownIndicator));
     return (React.createElement(DropdownContainer, { className: className },
-        label && label,
         React.createElement(Wrapper, null,
-            React.createElement(StyledSelect, Object.assign({ backspaceRemovesValue: backspaceRemovesValue, options: options, classNamePrefix: "select", theme: theme, blurInputOnSelect: true, isSearchable: isSearchable, isDisabled: isDisabled, noOptionsMessage: () => noOptionsText, style: Object.assign({ paddingLeft: `${controlIcon && `calc(${controlIconWidth}px + ${rem("8px")})`}` }, style), onChange: (e) => {
-                    !isMulti && setSelectedOption(e);
-                    onChange && onChange(e);
-                }, controlIcon: controlIcon, showArrow: showArrow, isMulti: isMulti, formatOptionLabel: optionLabel, placeholder: placeholder, closeMenuOnSelect: closeMenuOnSelect, isClearable: isClearable }, props, { components: isSearchable ? { DropdownIndicator } : {} })),
+            label && label,
+            React.createElement(StyledSelect, Object.assign({ backspaceRemovesValue: backspaceRemovesValue, options: options, classNamePrefix: "select", theme: theme, blurInputOnSelect: true, isSearchable: isSearchable, isDisabled: isDisabled, noOptionsMessage: () => noOptionsText, style: Object.assign({ paddingLeft: `${controlIcon && `calc(${controlIconWidth}px + ${rem("8px")})`}` }, style), onChange: onChange, controlIcon: controlIcon, showArrow: showArrow, isMulti: isMulti, formatOptionLabel: optionLabel, placeholder: placeholder, closeMenuOnSelect: closeMenuOnSelect, isClearable: isClearable, value: value }, props, { components: isSearchable ? { DropdownIndicator } : {} })),
             React.createElement(ControlIconWrapper, { ref: controlIconWrapperRef }, controlIcon)),
         React.createElement(ErrorContainer, { theme: theme }, typeof props.error === "string" ? (React.createElement(ErrorText, { theme: theme, variant: "bodySmall", content: props.error })) : (props.error))));
 };
