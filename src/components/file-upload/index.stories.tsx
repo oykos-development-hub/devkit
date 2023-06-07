@@ -103,7 +103,7 @@ Tertiary.args = {
     <Typography
       variant={"helperText"}
       style={{ marginTop: "2rem", textDecoration: "underline" }}
-      content={"Passport.png"}
+      content={"JPG or PNG, file size no more than 10MB"}
     />
   ),
   icon: <></>,
@@ -122,10 +122,9 @@ TertiaryWithCustomButton.args = {
       content={
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <UploadCloudIcon stroke={"white"} width={"20px"} />
-          <Typography variant={"bodyMedium"} content={"Ucitaj"} style={{ color: "white" }} />
+          <Typography variant={"bodyMedium"} content={"Učitaj"} style={{ color: "white" }} />
         </div>
       }
-      onClick={() => alert("Success!")}
       theme={Theme}
     />
   ),
@@ -133,7 +132,7 @@ TertiaryWithCustomButton.args = {
     <Typography
       variant={"helperText"}
       style={{ marginTop: "2rem", textDecoration: "underline", fontWeight: 600 }}
-      content={"Passport.png"}
+      content={"JPG or PNG, file size no more than 10MB"}
     />
   ),
   icon: <></>,

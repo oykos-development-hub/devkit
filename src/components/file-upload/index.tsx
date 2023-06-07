@@ -113,7 +113,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 
             <ButtonWrapper variant={variant}>
               {customButton ? (
-                customButton
+                React.cloneElement(customButton, { onClick: handleClick, disabled })
               ) : (
                 <Button
                   size={buttonSize}
