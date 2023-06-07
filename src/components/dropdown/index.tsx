@@ -1,9 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Theme } from "../../shared/theme";
 import { StyledSelect } from "./styles/select";
-import { DropdownProps, ValueType } from "./types";
+import { DropdownProps } from "./types";
 import { DropdownContainer } from "./styles/container";
-import { Typography } from "../typography";
 import { Option, OptionContent } from "./styles/option";
 import { ControlIconWrapper } from "./styles/controlIconWrapper";
 import { rem } from "polished";
@@ -34,10 +33,9 @@ export const Dropdown = ({
   onChange,
   placeholder = "",
   className,
+  value,
   ...props
 }: DropdownProps) => {
-  const [selectedOption, setSelectedOption] = useState<ValueType | null>(null);
-
   const [controlIconWidth, setControlIconWidth] = useState(0);
   const controlIconWrapperRef = useRef<HTMLDivElement>(null);
 
@@ -47,9 +45,7 @@ export const Dropdown = ({
         {leftOptionIcon && leftOptionIcon}
         {e.label}
       </OptionContent>
-      {!isMulti && selectedOption?.value === e.value && (
-        <OptionContent>{rightOptionIcon && rightOptionIcon}</OptionContent>
-      )}
+      {!isMulti && value?.value === e.value && <OptionContent>{rightOptionIcon && rightOptionIcon}</OptionContent>}
     </Option>
   );
 
@@ -65,9 +61,8 @@ export const Dropdown = ({
 
   return (
     <DropdownContainer className={className}>
-      {label && label}
-
       <Wrapper>
+        {label && label}
         <StyledSelect
           backspaceRemovesValue={backspaceRemovesValue}
           options={options}
@@ -81,10 +76,7 @@ export const Dropdown = ({
             paddingLeft: `${controlIcon && `calc(${controlIconWidth}px + ${rem("8px")})`}`,
             ...style,
           }}
-          onChange={(e) => {
-            !isMulti && setSelectedOption(e as ValueType);
-            onChange && onChange(e as ValueType);
-          }}
+          onChange={onChange as any}
           controlIcon={controlIcon}
           showArrow={showArrow}
           isMulti={isMulti}
@@ -92,6 +84,7 @@ export const Dropdown = ({
           placeholder={placeholder}
           closeMenuOnSelect={closeMenuOnSelect}
           isClearable={isClearable}
+          value={value}
           {...props}
           components={isSearchable ? { DropdownIndicator } : {}}
         />

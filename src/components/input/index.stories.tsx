@@ -7,6 +7,7 @@ import { Theme } from "../../shared/theme";
 import { DangerIcon, HelpCircleIcon, MailIcon } from "../icon";
 import { Dropdown } from "../dropdown";
 import { Typography } from "../typography";
+import { Datepicker } from "../datepicker";
 
 export default {
   title: "Components/Input",
@@ -23,8 +24,8 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (args: InputProps) => (
   <StoryWrapper>
-    <div style={{ width: "400px" }}>
-      <Input label="input" {...args} />
+    <div style={{ width: "300px" }}>
+      <Input label="Input label" {...args} />
     </div>
   </StoryWrapper>
 );

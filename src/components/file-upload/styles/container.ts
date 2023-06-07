@@ -13,11 +13,6 @@ export const Container = styled.div<{
   const { gray300, gray600, primary500 } = theme!.palette;
 
   return css`
-    display: flex;
-    flex-direction: ${variant === "primary" ? "column" : "row"};
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
     padding: ${variant === "primary"
       ? `${rem("56px")}`
       : `${rem("16px")} ${rem("12.5px")} ${rem("16px")} ${rem("12.5px")}`};
