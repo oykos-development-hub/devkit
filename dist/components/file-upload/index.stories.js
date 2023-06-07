@@ -15,6 +15,11 @@ export default {
                 options: ["primary", "secondary", "tertiary"],
             },
         },
+        accept: {
+            control: {
+                type: "text",
+            },
+        },
         buttonVariant: {
             control: {
                 type: "select",

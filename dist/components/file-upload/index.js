@@ -1,3 +1,14 @@
+var __rest = (this && this.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
 import React, { useRef, useState } from "react";
 import { Container } from "./styles/container";
 import { Content } from "./styles/content";
@@ -10,7 +21,8 @@ import { Typography } from "../typography";
 import { Button } from "../button";
 import { ControlWrapper } from "./styles/controlWrapper";
 import { FileItem, FileList } from "./styles/fileList";
-export const FileUpload = ({ variant = "primary", buttonVariant = "primary", buttonSize = "sm", multiple = false, onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme = Theme, className, disabled = false, }) => {
+export const FileUpload = (_a) => {
+    var { variant = "primary", buttonVariant = "primary", buttonSize = "sm", onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme = Theme, className, disabled = false } = _a, props = __rest(_a, ["variant", "buttonVariant", "buttonSize", "onUpload", "customContent", "customButton", "buttonText", "note", "hint", "icon", "style", "theme", "className", "disabled"]);
     const [isDragging, setIsDragging] = useState(false);
     const [files, setFiles] = useState(null);
     const uploadInputRef = useRef(null);
@@ -53,10 +65,10 @@ export const FileUpload = ({ variant = "primary", buttonVariant = "primary", but
         setFiles(dt.files);
         !disabled && onUpload(dt.files);
     };
-    const defaultNote = `Select file${multiple ? "s" : ""} or drag and drop here`;
+    const defaultNote = `Select file${props.multiple ? "s" : ""} or drag and drop here`;
     return (React.createElement(Container, { variant: variant, style: style, theme: theme, isDragging: isDragging, disabled: disabled, onDragOver: handleDragOver, onDragLeave: handleDragLeave, onDrop: handleDrop, className: className },
         React.createElement(ControlWrapper, { variant: variant },
-            React.createElement("input", { type: "file", ref: uploadInputRef, onChange: handleChange, multiple: multiple }),
+            React.createElement("input", Object.assign({ type: "file", ref: uploadInputRef, onChange: handleChange }, props)),
             icon ? (icon) : (React.createElement(IconWrapper, { customIcon: !!icon },
                 React.createElement(UploadCloudIcon, { stroke: theme.palette.gray900 }))),
             customContent ? (customContent) : (React.createElement(Content, { variant: variant },

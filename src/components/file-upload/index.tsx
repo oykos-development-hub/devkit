@@ -16,7 +16,6 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   variant = "primary",
   buttonVariant = "primary",
   buttonSize = "sm",
-  multiple = false,
   onUpload,
   customContent,
   customButton,
@@ -28,6 +27,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   theme = Theme,
   className,
   disabled = false,
+  ...props
 }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [files, setFiles] = useState<FileList | null>(null);
@@ -79,7 +79,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
     !disabled && onUpload(dt.files);
   };
 
-  const defaultNote = `Select file${multiple ? "s" : ""} or drag and drop here`;
+  const defaultNote = `Select file${props.multiple ? "s" : ""} or drag and drop here`;
 
   return (
     <Container
@@ -94,7 +94,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
       className={className}
     >
       <ControlWrapper variant={variant}>
-        <input type="file" ref={uploadInputRef} onChange={handleChange} multiple={multiple} />
+        <input type="file" ref={uploadInputRef} onChange={handleChange} {...props} />
         {icon ? (
           icon
         ) : (
