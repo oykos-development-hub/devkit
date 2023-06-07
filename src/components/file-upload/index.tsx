@@ -132,8 +132,8 @@ export const FileUpload: React.FC<FileUploadProps> = ({
       {files && (
         <FileList>
           {Array.from(files).map((file, index) => (
-            <FileItem theme={theme}>
-              <Typography key={`${file.name}-${index}`} variant={"bodySmall"} content={file.name} />
+            <FileItem theme={theme} key={`${file.name}-${index}`}>
+              <Typography variant={"bodySmall"} content={file.name} />
               <XIcon width="10px" height="10px" onClick={() => deleteFile(index)} />
             </FileItem>
           ))}

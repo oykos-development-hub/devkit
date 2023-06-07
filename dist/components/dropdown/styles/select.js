@@ -1,24 +1,23 @@
 import Select from "react-select";
 import styled, { css } from "styled-components";
 import { rem } from "polished";
-export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIcon, isSearchable, error }) => {
+export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIcon, isSearchable, error, isMulti }) => {
     const { error50, error200, error700, primary50, primary200, primary100, gray100, gray200, gray300, gray400, gray700, } = theme.palette;
     return css `
       width: 100%;
-      margin-top: rem("6px");
 
       // control (input field)
       .select__control {
-        margin-top: ${rem("4px")};
-        height: ${rem("44px")};
+        height: ${isMulti ? "auto" : rem("44px")};
         cursor: ${isSearchable ? "text" : "pointer"};
         background-color: #fff;
         border: ${(style === null || style === void 0 ? void 0 : style.border) || `1px solid ${error ? error200 : gray300}`};
         border-radius: ${theme.borderRadius.lg || rem("8px")};
-        padding: ${rem("12px")} ${rem("14px")};
+        padding: 0.625em 0.875rem;
 
         ${Object.assign({}, style)}
       }
+
       .select__value-container {
         padding-left: ${controlIcon ? "0.7rem" : 0};
       }
@@ -88,9 +87,11 @@ export const StyledSelect = styled(Select)(({ theme, showArrow, style, controlIc
       .select__multi-value {
         border-radius: ${theme.borderRadius.md || "0.5rem"};
         background-color: ${gray200};
+
         & > div {
           padding: 0 ${rem("3px")} 0 ${rem("3px")};
         }
+
         & > div:last-child:hover {
           border-radius: ${theme.borderRadius.md || "0.5rem"};
           padding: 0 0.25em;
