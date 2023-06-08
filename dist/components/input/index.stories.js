@@ -57,4 +57,10 @@ WithHint.args = {
     leftContent: React.createElement(MailIcon, { stroke: Theme.palette.gray700, width: "20px" }),
     rightContent: React.createElement(HelpCircleIcon, { stroke: Theme.palette.gray400, width: "16px" }),
 };
+export const Textarea = Template.bind({});
+Textarea.args = {
+    label: React.createElement(Typography, { content: "Email", variant: "bodySmall", style: { fontWeight: 600 } }),
+    placeholder: "Text here...",
+    textarea: true,
+};
 //# sourceMappingURL=index.stories.js.map

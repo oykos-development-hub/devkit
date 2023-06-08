@@ -47,7 +47,7 @@ export const Input = forwardRef((_a, ref) => {
         style: Object.assign({ paddingTop: "0.625em", paddingBottom: "0.625em", paddingLeft: `${leftContent ? `${leftElementWidth}px` : rem("14px")}`, paddingRight: `${rightContent ? `${rightElementWidth}px` : rem("14px")}` }, style),
     };
     return (React.createElement(Container, { style: style, className: className },
-        label && label,
+        typeof label === "string" ? React.createElement(Typography, { variant: "bodySmall", content: label }) : label,
         React.createElement("div", null,
             textarea ? (React.createElement(Textarea, Object.assign({ ref: ref || inputRef }, fieldProps, props, { theme: theme, rows: rows || 5, cols: cols }))) : (React.createElement(StyledInput, Object.assign({ ref: ref || inputRef }, fieldProps, props, { theme: theme }))),
             leftContent && (React.createElement(LeftElement, { ref: leftElementRef },

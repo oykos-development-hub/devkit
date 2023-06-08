@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { Switch } from "./index";
-import { Typography } from "../typography";
 export default {
     component: Switch,
     title: "Components/Switch",
@@ -24,6 +23,11 @@ export default {
                 options: ["sm", "md"],
             },
         },
+        rtl: {
+            control: {
+                type: "boolean",
+            },
+        },
     },
 };
 const Template = (args) => {
@@ -40,6 +44,6 @@ export const WithContent = Template.bind({});
 WithContent.args = {
     size: "md",
     disabled: false,
-    content: React.createElement(Typography, { content: "Remember me", style: { marginLeft: "1rem" } }),
+    label: "Switch Label",
 };
 //# sourceMappingURL=index.stories.js.map

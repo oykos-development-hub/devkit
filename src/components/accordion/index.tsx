@@ -19,8 +19,8 @@ export const AccordionItem: React.FC<AccordionData> = ({
 }) => {
   return (
     <AccordionContainer>
-      <Header isOpen={isOpen} style={style} theme={theme}>
-        <div onClick={toggle} style={{ width: "100%" }}>
+      <Header isOpen={isOpen} style={style} theme={theme} onClick={toggle}>
+        <div style={{ width: "100%" }}>
           {customHeader ? (
             customHeader
           ) : (

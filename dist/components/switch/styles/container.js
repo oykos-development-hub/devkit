@@ -1,11 +1,12 @@
 import styled, { css } from "styled-components";
-export const Container = styled.div(() => ({ hasContent, disabled, theme, style }) => {
+export const Container = styled.div(() => ({ hasLabel, disabled, theme, style, rtl }) => {
     const { gray300 } = theme.palette;
     return css `
-    cursor: pointer;
     display: flex;
-    flex-direction: row;
-    align-items: ${hasContent && "flex-start"};
+    flex-direction: ${rtl ? "row" : "row-reverse"};
+    align-items: center;
+    justify-content: ${hasLabel && "space-between"};
+    gap: ${hasLabel && "0.5rem"};
     padding: ${(style === null || style === void 0 ? void 0 : style.padding) || "0"};
     z-index: 1;
 

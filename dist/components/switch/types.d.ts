@@ -5,7 +5,7 @@ export declare enum SwitchSizes {
     md = "md"
 }
 export interface SwitchProps {
-    content?: ReactNode | string;
+    label?: ReactNode;
     checked: boolean;
     disabled?: boolean;
     size?: SwitchSizes | `${SwitchSizes}`;
@@ -14,4 +14,5 @@ export interface SwitchProps {
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     className?: string;
     name?: string;
+    rtl?: boolean;
 }

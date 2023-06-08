@@ -2,18 +2,20 @@ import styled, { css, DefaultTheme } from "styled-components";
 import { CSSProperties } from "react";
 
 export const Container = styled.div<{
-  hasContent?: boolean;
+  hasLabel?: boolean;
   disabled?: boolean;
   theme?: DefaultTheme;
   style?: CSSProperties;
-}>(() => ({ hasContent, disabled, theme, style }) => {
+  rtl?: boolean;
+}>(() => ({ hasLabel, disabled, theme, style, rtl }) => {
   const { gray300 } = theme!.palette;
 
   return css`
-    cursor: pointer;
     display: flex;
-    flex-direction: row;
-    align-items: ${hasContent && "flex-start"};
+    flex-direction: ${rtl ? "row" : "row-reverse"};
+    align-items: center;
+    justify-content: ${hasLabel && "space-between"};
+    gap: ${hasLabel && "0.5rem"};
     padding: ${style?.padding || "0"};
     z-index: 1;
 

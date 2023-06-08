@@ -4,4 +4,5 @@ export declare const Slider: import("styled-components").StyledComponent<"span",
     checked?: boolean | undefined;
     size: SwitchSizes | string;
     theme?: DefaultTheme | undefined;
+    disabled?: boolean | undefined;
 }, never>;
