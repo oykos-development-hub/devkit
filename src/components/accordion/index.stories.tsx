@@ -1,11 +1,12 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { AccordionProps } from "./types";
+import { AccordionData, AccordionProps } from "./types";
 import { Accordion, AccordionItem } from "./index";
-import { Typography } from "../../index";
+import { Button, Typography } from "../../index";
 import { Theme } from "../../shared/theme";
-import { ChevronDownIcon, MenuIcon, MoreVerticalIcon } from "../icon";
+import { BellIcon, ChevronDownIcon, InfoIcon, MenuIcon, MoreVerticalIcon } from "../icon";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
+import { Input } from "../input";
 
 export default {
   component: Accordion,
@@ -23,14 +24,14 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Accordion>;
+} as ComponentMeta<typeof AccordionItem>;
 
-const Template: ComponentStory<typeof Accordion> = (args: AccordionProps) => {
+const Template: ComponentStory<typeof AccordionItem> = (args: AccordionData) => {
   const [open, setOpen] = React.useState(false);
   return (
     <StoryWrapper style={{ display: "grid", alignContent: "center" }}>
       <div style={{ width: "400px" }}>
-        <AccordionItem isOpen={open} toggle={() => setOpen(!open)} content="test" title="title" />
+        <AccordionItem isOpen={open} toggle={() => setOpen(!open)} {...args} />
       </div>
     </StoryWrapper>
   );
@@ -38,38 +39,32 @@ const Template: ComponentStory<typeof Accordion> = (args: AccordionProps) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  data: [
-    {
-      title: <Typography variant={"bodySmall"} content={"Accordion Title"} />,
-      content: (
-        <Typography
-          variant={"bodySmall"}
-          content={
-            "Lorem ipsum dolor sit amet. Aut internos autem et dolorem consequuntur a culpa itaque! Lorem ipsum dolor sit amet. Aut internos autem et dolorem consequuntur a culpa itaque!"
-          }
-          style={{ color: "#616161" }}
-        />
-      ),
-    },
-    {
-      title: <Typography variant={"bodySmall"} content={"Accordion 1"} />,
-      content: <Typography variant={"bodySmall"} content={"Accordion 1 content."} style={{ color: "#616161" }} />,
-    },
-  ],
+  title: <Typography variant="bodySmall" content="Accordion Title" />,
+  content: <Typography variant="bodySmall" content="Accordion Content" />,
 };
 
 export const CustomHeaderAndContentAccordion = Template.bind({});
 CustomHeaderAndContentAccordion.args = {
-  data: [
-    {
-      customHeader: (
-        <div style={{ width: "100%" }}>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            Custom Accordion 1 <ChevronDownIcon />
-          </div>
+  customHeader: (
+    <div style={{ width: "100%" }}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <InfoIcon style={{ marginRight: "0.5rem" }} width="20px" height="20px" />
+          <Typography variant="bodySmall" content="Custom Accordion" />
         </div>
-      ),
-      customContent: <div style={{ padding: "4px 16px 16px" }}>test custom content</div>,
-    },
-  ],
+        <ChevronDownIcon />
+      </div>
+    </div>
+  ),
+  customContent: (
+    <div style={{ padding: "4px 16px 16px" }}>
+      <Typography
+        content="This is an example accordion with custom content. It has some text with an Input and a Button below it."
+        variant="bodySmall"
+        style={{ marginBottom: "0.25rem" }}
+      />
+      <Input style={{ marginBottom: "0.25rem" }} />
+      <Button content="Button" />
+    </div>
+  ),
 };
