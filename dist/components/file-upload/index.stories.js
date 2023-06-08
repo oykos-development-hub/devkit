@@ -85,7 +85,7 @@ Tertiary.args = {
     buttonText: "SELECT FILE",
     multiple: false,
     note: "Title",
-    hint: (React.createElement(Typography, { variant: "helperText", style: { marginTop: "2rem", textDecoration: "underline" }, content: "Passport.png" })),
+    hint: (React.createElement(Typography, { variant: "helperText", style: { marginTop: "2rem", textDecoration: "underline" }, content: "JPG or PNG, file size no more than 10MB" })),
     icon: React.createElement(React.Fragment, null),
     disabled: false,
 };
@@ -96,8 +96,8 @@ TertiaryWithCustomButton.args = {
     note: "Title",
     customButton: (React.createElement(Button, { size: "sm", variant: "primary", content: React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "8px" } },
             React.createElement(UploadCloudIcon, { stroke: "white", width: "20px" }),
-            React.createElement(Typography, { variant: "bodyMedium", content: "Ucitaj", style: { color: "white" } })), onClick: () => alert("Success!"), theme: Theme })),
-    hint: (React.createElement(Typography, { variant: "helperText", style: { marginTop: "2rem", textDecoration: "underline", fontWeight: 600 }, content: "Passport.png" })),
+            React.createElement(Typography, { variant: "bodyMedium", content: "Učitaj", style: { color: "white" } })), theme: Theme })),
+    hint: (React.createElement(Typography, { variant: "helperText", style: { marginTop: "2rem", textDecoration: "underline", fontWeight: 600 }, content: "JPG or PNG, file size no more than 10MB" })),
     icon: React.createElement(React.Fragment, null),
     disabled: false,
 };

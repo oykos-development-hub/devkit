@@ -75,7 +75,7 @@ export const FileUpload = (_a) => {
                 React.createElement(TextWrapper, { variant: variant, theme: theme },
                     React.createElement(Typography, { variant: "bodySmall", content: note !== null && note !== void 0 ? note : defaultNote }),
                     hint && React.createElement(Typography, { variant: "helperText", content: hint })),
-                React.createElement(ButtonWrapper, { variant: variant }, customButton ? (customButton) : (React.createElement(Button, { size: buttonSize, variant: buttonVariant, content: buttonText ? buttonText : "SELECT FILE", onClick: handleClick, theme: theme, disabled: disabled })))))),
+                React.createElement(ButtonWrapper, { variant: variant }, customButton ? (React.cloneElement(customButton, { onClick: handleClick, disabled })) : (React.createElement(Button, { size: buttonSize, variant: buttonVariant, content: buttonText ? buttonText : "SELECT FILE", onClick: handleClick, theme: theme, disabled: disabled })))))),
         files && (React.createElement(FileList, null, Array.from(files).map((file, index) => (React.createElement(FileItem, { theme: theme, key: `${file.name}-${index}` },
             React.createElement(Typography, { variant: "bodySmall", content: file.name }),
             React.createElement(XIcon, { width: "10px", height: "10px", onClick: () => deleteFile(index) }))))))));

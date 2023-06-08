@@ -6,6 +6,7 @@ const shared = ({ style, theme, error }: InputProps) => {
   const { gray300, gray700, error50, error200, primary50, primary200, white } = theme!.palette;
 
   return css`
+    font-family: ${({ theme }) => theme.fontFamily.one || "sans-serif"};
     width: 100%;
     border-radius: ${theme!.borderRadius?.lg || rem("8px")};
     border: ${rem("1px")} solid ${error ? error200 : gray300};
@@ -29,8 +30,6 @@ const shared = ({ style, theme, error }: InputProps) => {
       font-family: ${theme?.fontFamily?.one || "sans-serif"};
       margin: 0;
       font-weight: 400;
-      font-size: 0.85rem;
-      line-height: 1.5rem;
     }
 
     ${{ ...style }}
@@ -48,6 +47,7 @@ export const StyledInput = styled.input(({ style, theme, error, maxLength }: Inp
 export const Textarea = styled.textarea(({ style, theme, error }: InputProps) => {
   return css`
     ${shared({ style, theme, error })}
+    font-family: ${({ theme }) => theme.fontFamily.one || "sans-serif"};
     resize: none;
     height: 100%;
   `;

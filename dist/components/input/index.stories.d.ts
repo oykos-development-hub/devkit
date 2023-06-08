@@ -8,3 +8,4 @@ export declare const Amounts: ComponentStory<React.ForwardRefExoticComponent<Inp
 export declare const PhoneNumber: ComponentStory<React.ForwardRefExoticComponent<InputProps & React.RefAttributes<unknown>>>;
 export declare const Error: ComponentStory<React.ForwardRefExoticComponent<InputProps & React.RefAttributes<unknown>>>;
 export declare const WithHint: ComponentStory<React.ForwardRefExoticComponent<InputProps & React.RefAttributes<unknown>>>;
+export declare const Textarea: ComponentStory<React.ForwardRefExoticComponent<InputProps & React.RefAttributes<unknown>>>;

@@ -72,7 +72,7 @@ export const Input = forwardRef(
 
     return (
       <Container style={style} className={className}>
-        {label && label}
+        {typeof label === "string" ? <Typography variant="bodySmall" content={label} /> : label}
 
         <div>
           {textarea ? (

@@ -21,11 +21,15 @@ export default {
       },
       defaultValue: Theme,
     },
-
     size: {
       control: {
         type: "radio",
         options: ["sm", "md"],
+      },
+    },
+    rtl: {
+      control: {
+        type: "boolean",
       },
     },
   },
@@ -50,5 +54,5 @@ export const WithContent = Template.bind({});
 WithContent.args = {
   size: "md",
   disabled: false,
-  content: <Typography content={"Remember me"} style={{ marginLeft: "1rem" }} />,
+  label: "Switch Label",
 };
