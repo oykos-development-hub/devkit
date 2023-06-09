@@ -5,7 +5,7 @@ export declare enum SwitchSizes {
     md = "md"
 }
 export interface SwitchProps {
-    label?: ReactNode;
+    content?: ReactNode;
     checked: boolean;
     disabled?: boolean;
     size?: SwitchSizes | `${SwitchSizes}`;

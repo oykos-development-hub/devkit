@@ -4,7 +4,6 @@ import { SwitchProps } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { Switch } from "./index";
-import { Typography } from "../typography";
 
 export default {
   component: Switch,
@@ -54,5 +53,5 @@ export const WithContent = Template.bind({});
 WithContent.args = {
   size: "md",
   disabled: false,
-  label: "Switch Label",
+  content: "Switch Label",
 };

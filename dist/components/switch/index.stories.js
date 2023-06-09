@@ -44,6 +44,6 @@ export const WithContent = Template.bind({});
 WithContent.args = {
     size: "md",
     disabled: false,
-    label: "Switch Label",
+    content: "Switch Label",
 };
 //# sourceMappingURL=index.stories.js.map
