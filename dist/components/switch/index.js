@@ -6,7 +6,7 @@ import { Input } from "./styles/input";
 import { Label } from "./styles/label";
 import { Theme } from "../../shared/theme";
 import { Typography } from "../typography";
-export const Switch = ({ checked, label, size = "md", disabled = false, style, theme = Theme, onChange, className, rtl, }) => {
+export const Switch = ({ checked, content, size = "md", disabled = false, style, theme = Theme, onChange, className, rtl, }) => {
     const ref = useRef(null);
     const [isActive, setIsActive] = useState(false);
     const handleChange = (e) => {
@@ -26,11 +26,11 @@ export const Switch = ({ checked, label, size = "md", disabled = false, style, t
             document.removeEventListener("mousedown", handleClickOutside);
         };
     }, [ref]);
-    return (React.createElement(Container, { style: style, theme: theme, hasLabel: !!label, disabled: disabled, className: className, rtl: rtl },
+    return (React.createElement(Container, { style: style, theme: theme, hasLabel: !!content, disabled: disabled, className: className, rtl: rtl },
         React.createElement(SwitchWrapper, null,
             React.createElement(Label, { ref: ref, size: size, theme: theme, disabled: disabled, isChecked: checked, isActive: isActive },
                 React.createElement(Input, { checked: checked, inputSize: size, disabled: disabled, onChange: handleChange }),
                 React.createElement(Slider, { size: size, theme: theme, disabled: disabled }))),
-        typeof label === "string" ? React.createElement(Typography, { variant: "bodySmall", content: label }) : label));
+        typeof content === "string" ? React.createElement(Typography, { variant: "bodySmall", content: content }) : content));
 };
 //# sourceMappingURL=index.js.map

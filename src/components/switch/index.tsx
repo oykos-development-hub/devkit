@@ -10,7 +10,7 @@ import { Typography } from "../typography";
 
 export const Switch: React.FC<SwitchProps> = ({
   checked,
-  label,
+  content,
   size = "md",
   disabled = false,
   style,
@@ -43,14 +43,14 @@ export const Switch: React.FC<SwitchProps> = ({
   }, [ref]);
 
   return (
-    <Container style={style} theme={theme} hasLabel={!!label} disabled={disabled} className={className} rtl={rtl}>
+    <Container style={style} theme={theme} hasLabel={!!content} disabled={disabled} className={className} rtl={rtl}>
       <SwitchWrapper>
         <Label ref={ref} size={size} theme={theme} disabled={disabled} isChecked={checked} isActive={isActive}>
           <Input checked={checked} inputSize={size} disabled={disabled} onChange={handleChange} />
           <Slider size={size} theme={theme} disabled={disabled} />
         </Label>
       </SwitchWrapper>
-      {typeof label === "string" ? <Typography variant="bodySmall" content={label} /> : label}
+      {typeof content === "string" ? <Typography variant="bodySmall" content={content} /> : content}
     </Container>
   );
 };
