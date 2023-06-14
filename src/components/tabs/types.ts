@@ -4,6 +4,7 @@ export interface Tab {
   id: number | string;
   title: string | React.ReactNode;
   disabled?: boolean;
+  routeName?: string;
 }
 
 export interface TabsProps {
