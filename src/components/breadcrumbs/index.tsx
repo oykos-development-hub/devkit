@@ -11,9 +11,9 @@ export const Breadcrumbs = ({ theme = Theme, onClick, items, separator, style, c
         const isLastItem = items.indexOf(item) === items.length - 1;
 
         const handleLinkClick = (e: MouseEvent<HTMLAnchorElement>) => {
-          e.preventDefault();
-
-          if (onClick) onClick(e);
+          if (onClick) {
+            onClick(e, item);
+          }
         };
 
         return (

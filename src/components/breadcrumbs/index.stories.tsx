@@ -15,7 +15,6 @@ const links: Item[] = [
 ];
 
 const linksWithIcons = links.map((link) => ({ ...link, icon: <XIcon width="1em" /> }));
-console.log(linksWithIcons);
 
 export default {
   component: Breadcrumbs,

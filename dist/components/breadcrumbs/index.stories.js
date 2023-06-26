@@ -10,7 +10,6 @@ const links = [
     { name: "link5", to: "" },
 ];
 const linksWithIcons = links.map((link) => (Object.assign(Object.assign({}, link), { icon: React.createElement(XIcon, { width: "1em" }) })));
-console.log(linksWithIcons);
 export default {
     component: Breadcrumbs,
     title: "Components/Breadcrumbs",
