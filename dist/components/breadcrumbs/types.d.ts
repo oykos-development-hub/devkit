@@ -9,7 +9,7 @@ export interface BreadcrumbsProps {
     theme?: DefaultTheme;
     style?: CSSProperties;
     items?: Item[];
-    onClick?: (e?: MouseEvent<HTMLAnchorElement>) => any;
+    onClick?: (e?: MouseEvent<HTMLAnchorElement>, item?: Item) => any;
     separator?: ReactElement;
     className?: string;
 }

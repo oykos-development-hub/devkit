@@ -6,9 +6,9 @@ export const Breadcrumbs = ({ theme = Theme, onClick, items, separator, style, c
     return (React.createElement(Container, { style: style, className: className }, items === null || items === void 0 ? void 0 : items.map((item) => {
         const isLastItem = items.indexOf(item) === items.length - 1;
         const handleLinkClick = (e) => {
-            e.preventDefault();
-            if (onClick)
-                onClick(e);
+            if (onClick) {
+                onClick(e, item);
+            }
         };
         return (React.createElement("li", { key: item.name },
             React.createElement(Link, { href: item.to, theme: theme, className: isLastItem ? "active" : "", onClick: handleLinkClick },
