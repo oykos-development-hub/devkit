@@ -174,5 +174,13 @@ export const Container = styled.div<{
         }
       }
     }
+
+    .react-datepicker__year-select {
+      cursor: pointer;
+      background-color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.625em 0.875rem;
+    }
   `;
 });

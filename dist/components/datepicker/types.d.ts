@@ -9,4 +9,5 @@ export interface CustomDatePickerProps extends Omit<ReactDatePickerProps, "onCha
     label?: ReactElement | string;
     selectsRange?: boolean;
     className?: string;
+    popperContainerId?: string;
 }

@@ -7,7 +7,7 @@ export declare const Button: ({ onClick, content, customContent, disabled, varia
 export declare const Checkbox: import("react").FC<import("./types").CheckboxProps>;
 export declare const Datepicker: import("react").FC<import("./types").CustomDatePickerProps>;
 export declare const Divider: import("react").FC<import("./types").DividerProps>;
-export declare const Dropdown: ({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, isClearable, backspaceRemovesValue, showArrow, closeMenuOnSelect, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, className, value, ...props }: import("./types").DropdownProps) => JSX.Element;
+export declare const Dropdown: ({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, isClearable, backspaceRemovesValue, showArrow, closeMenuOnSelect, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, className, value, menuPortalTarget, ...props }: import("./types").DropdownProps) => JSX.Element;
 export declare const FileUpload: import("react").FC<import("./types").FileUploadProps>;
 export declare const Input: import("react").ForwardRefExoticComponent<import("./types").InputProps & import("react").RefAttributes<unknown>>;
 export declare const LeadingBadge: import("react").FC<import("./types").LeadingBadgeProps>;

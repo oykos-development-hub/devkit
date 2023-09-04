@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { CustomDatePickerProps } from "./types";
 import { Container } from "./styles/container";
 import DatePicker from "react-datepicker";
@@ -16,6 +16,7 @@ export const Datepicker: React.FC<CustomDatePickerProps> = ({
   onChange,
   selectsRange,
   className,
+  popperContainerId,
   ...rest
 }) => {
   return (
