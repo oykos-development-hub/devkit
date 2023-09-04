@@ -42,4 +42,5 @@ export interface DropdownProps {
     className?: string;
     name?: string;
     error?: string;
+    menuPortalTarget?: HTMLElement;
 }

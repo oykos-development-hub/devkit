@@ -18,7 +18,7 @@ import CalendarIcon from "../icon/variations/CalendarIcon";
 import { DangerIcon } from "../icon";
 import { Theme } from "../../shared/theme";
 export const Datepicker = (_a) => {
-    var { style, theme = Theme, error, label, onChange, selectsRange, className } = _a, rest = __rest(_a, ["style", "theme", "error", "label", "onChange", "selectsRange", "className"]);
+    var { style, theme = Theme, error, label, onChange, selectsRange, className, popperContainerId } = _a, rest = __rest(_a, ["style", "theme", "error", "label", "onChange", "selectsRange", "className", "popperContainerId"]);
     return (React.createElement(Container, { style: style, theme: theme, error: error, className: className },
         React.createElement(DatePicker, Object.assign({ onChange: onChange, selectsRange: selectsRange, customInput: rest.customInput ? (rest.customInput) : (React.createElement(Input, { rightContent: error ? React.createElement(DangerIcon, null) : React.createElement(CalendarIcon, null), error: error, label: label })) }, rest))));
 };

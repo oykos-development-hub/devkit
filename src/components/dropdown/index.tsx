@@ -34,6 +34,7 @@ export const Dropdown = ({
   placeholder = "",
   className,
   value,
+  menuPortalTarget,
   ...props
 }: DropdownProps) => {
   const [controlIconWidth, setControlIconWidth] = useState(0);
@@ -85,6 +86,7 @@ export const Dropdown = ({
           closeMenuOnSelect={closeMenuOnSelect}
           isClearable={isClearable}
           value={value}
+          menuPortalTarget={menuPortalTarget}
           {...props}
           components={isSearchable ? { DropdownIndicator } : {}}
         />
