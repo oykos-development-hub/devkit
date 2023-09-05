@@ -14,4 +14,5 @@ export interface ModalProps {
   style?: CSSProperties;
   variant: Variants | `${Variants}`;
   className?: string;
+  outsideClickClose?: boolean;
 }
