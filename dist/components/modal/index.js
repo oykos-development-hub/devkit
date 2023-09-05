@@ -6,9 +6,11 @@ import { ModalHeader } from "./styles/header";
 import { Typography } from "../typography";
 import { XIcon } from "../icon";
 import { CloseButtonContainer } from "./styles/closeContainer";
-export const Modal = ({ theme = Theme, title, content, open, onClose, variant, style, className }) => {
-    return (React.createElement(ModalContainer, { open: open, onClick: onClose, className: className },
-        React.createElement(ModalBox, { theme: theme, variant: variant, onClick: (e) => {
+export const Modal = ({ theme = Theme, title, content, open, onClose, variant, style, className, outsideClickClose = true, }) => {
+    return (React.createElement(ModalContainer, { open: open, onMouseDown: outsideClickClose ? onClose : undefined, className: className },
+        React.createElement(ModalBox, { theme: theme, variant: variant, onMouseDown: (e) => {
+                e.stopPropagation();
+            }, onClick: (e) => {
                 e.stopPropagation();
             }, style: style },
             React.createElement(ModalHeader, { theme: theme },

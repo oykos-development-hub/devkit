@@ -10,6 +10,7 @@ export const ModalHeader = styled.div(({ theme }) => {
 
     ${H6} {
       flex-grow: 1;
+      padding-right: 1rem;
     }
 
     & ${Path} {
