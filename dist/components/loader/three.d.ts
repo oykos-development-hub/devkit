@@ -6,4 +6,6 @@ export declare const Three: import("styled-components").StyledComponent<"div", D
     secondaryColor?: string | undefined;
     style?: React.CSSProperties | undefined;
     theme?: DefaultTheme | undefined;
+    width?: string | undefined;
+    height?: string | undefined;
 }, never>;

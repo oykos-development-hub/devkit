@@ -14,6 +14,8 @@ export const Button = ({
   theme,
   className,
   type = "button",
+  loading = false,
+  loader,
 }: ButtonProps) => {
   return (
     <ButtonContainer
@@ -25,13 +27,17 @@ export const Button = ({
       theme={theme || Theme}
       className={className}
       type={type}
+      loading={loading}
     >
       {customContent ? (
         customContent
       ) : (
-        <ButtonContent size={size} disabled={disabled} variant={variant} theme={theme || Theme} customStyle={style}>
-          {content}
-        </ButtonContent>
+        <>
+          <ButtonContent size={size} disabled={disabled} variant={variant} theme={theme || Theme} customStyle={style}>
+            {content}
+          </ButtonContent>
+          {loading && !!loader && loader}
+        </>
       )}
     </ButtonContainer>
   );

@@ -4,6 +4,7 @@ import { ButtonProps, ButtonSizes, ButtonVariants } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
 import { Button } from "./index";
+import { Loader } from "../loader";
 
 export default {
   component: Button,
@@ -74,4 +75,14 @@ StyledButton.args = {
     backgroundColor: Theme.palette.success500,
     color: Theme.palette.white,
   },
+};
+
+export const LoadingButton = Template.bind({});
+LoadingButton.args = {
+  content: "Loading Button",
+  onClick: () => alert("Button clicked!"),
+  variant: ButtonVariants.primary,
+  size: ButtonSizes.lg,
+  loading: true,
+  loader: <Loader variant="three" width="16px" height="16px" />,
 };
