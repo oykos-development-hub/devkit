@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 export const ButtonContainer = styled.button.attrs((props) => ({
     disabled: props.disabled,
     type: props.type,
-}))(() => ({ theme, disabled, variant, size, style, loading }) => {
+}))(() => ({ theme, disabled, variant, size, style, isLoading }) => {
     const { gray50, white, primary500, secondary500, gray200, error500, error100, primary800, secondary800, error800 } = theme.palette;
     const background = {
         primary: disabled ? gray200 : primary500,
@@ -40,7 +40,7 @@ export const ButtonContainer = styled.button.attrs((props) => ({
     border-radius: ${theme.borderRadius.lg || "0.5rem"};
     padding: ${padding[size]};
     box-shadow: 0 1px 2px rgba(16, 24, 40, 0.05);
-    display: ${loading ? "flex" : "block"};
+    display: ${isLoading ? "flex" : "block"};
     gap: 0.75rem;
 
     &:hover:enabled {

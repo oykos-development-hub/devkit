@@ -14,7 +14,7 @@ export const Button = ({
   theme,
   className,
   type = "button",
-  loading = false,
+  isLoading = false,
   loader,
 }: ButtonProps) => {
   return (
@@ -27,7 +27,7 @@ export const Button = ({
       theme={theme || Theme}
       className={className}
       type={type}
-      loading={loading}
+      isLoading={isLoading}
     >
       {customContent ? (
         customContent
@@ -36,7 +36,7 @@ export const Button = ({
           <ButtonContent size={size} disabled={disabled} variant={variant} theme={theme || Theme} customStyle={style}>
             {content}
           </ButtonContent>
-          {loading && !!loader && loader}
+          {isLoading && !!loader && loader}
         </>
       )}
     </ButtonContainer>

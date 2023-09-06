@@ -3,7 +3,7 @@ export declare const Alert: import("react").FC<import("./types").AlertProps>;
 export declare const Avatar: import("react").FC<import("./types").AvatarProps>;
 export declare const Badge: import("react").FC<import("./types").BadgeProps>;
 export declare const Breadcrumbs: ({ theme, onClick, items, separator, style, className }: import("./types").BreadcrumbsProps) => JSX.Element;
-export declare const Button: ({ onClick, content, customContent, disabled, variant, size, style, theme, className, type, loading, loader, }: import("./types").ButtonProps) => JSX.Element;
+export declare const Button: ({ onClick, content, customContent, disabled, variant, size, style, theme, className, type, isLoading, loader, }: import("./types").ButtonProps) => JSX.Element;
 export declare const Checkbox: import("react").FC<import("./types").CheckboxProps>;
 export declare const Datepicker: import("react").FC<import("./types").CustomDatePickerProps>;
 export declare const Divider: import("react").FC<import("./types").DividerProps>;

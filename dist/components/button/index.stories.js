@@ -74,7 +74,7 @@ LoadingButton.args = {
     onClick: () => alert("Button clicked!"),
     variant: ButtonVariants.primary,
     size: ButtonSizes.lg,
-    loading: true,
+    isLoading: true,
     loader: React.createElement(Loader, { variant: "three", width: "16px", height: "16px" }),
 };
 //# sourceMappingURL=index.stories.js.map

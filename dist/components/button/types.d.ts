@@ -23,6 +23,6 @@ export interface ButtonProps {
     size?: ButtonSizes | `${ButtonSizes}`;
     className?: string;
     type?: string;
-    loading?: boolean;
+    isLoading?: boolean;
     loader?: ReactNode;
 }

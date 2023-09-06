@@ -83,6 +83,6 @@ LoadingButton.args = {
   onClick: () => alert("Button clicked!"),
   variant: ButtonVariants.primary,
   size: ButtonSizes.lg,
-  loading: true,
+  isLoading: true,
   loader: <Loader variant="three" width="16px" height="16px" />,
 };
