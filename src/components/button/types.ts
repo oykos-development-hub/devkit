@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { DefaultTheme } from "styled-components";
 
 export enum ButtonVariants {
@@ -26,4 +26,6 @@ export interface ButtonProps {
   size?: ButtonSizes | `${ButtonSizes}`;
   className?: string;
   type?: string;
+  isLoading?: boolean;
+  loader?: ReactNode;
 }

@@ -20,27 +20,32 @@ export const Modal = ({
   outsideClickClose = true,
 }: ModalProps) => {
   return (
-    <ModalContainer open={open} onMouseDown={outsideClickClose ? onClose : undefined} className={className}>
-      <ModalBox
-        theme={theme}
-        variant={variant}
-        onMouseDown={(e) => {
-          e.stopPropagation();
-        }}
-        onClick={(e) => {
-          e.stopPropagation();
-        }}
-        style={style}
-      >
-        <ModalHeader theme={theme}>
-          {title && <Typography content={title} variant="h6" />}
-          <CloseButtonContainer>
-            <XIcon size="1rem" onClick={onClose} />
-          </CloseButtonContainer>
-        </ModalHeader>
+    <>
+      <ModalContainer open={open} onMouseDown={outsideClickClose ? onClose : undefined} className={className}>
+        <ModalBox
+          theme={theme}
+          variant={variant}
+          onMouseDown={(e: any) => {
+            if (outsideClickClose) {
+              e.stopPropagation();
+            }
+          }}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+          style={style}
+          className="modalbox"
+        >
+          <ModalHeader theme={theme}>
+            {title && <Typography content={title} variant="h6" />}
+            <CloseButtonContainer>
+              <XIcon size="1rem" onClick={onClose} />
+            </CloseButtonContainer>
+          </ModalHeader>
 
-        {content && content}
-      </ModalBox>
-    </ModalContainer>
+          {content && content}
+        </ModalBox>
+      </ModalContainer>
+    </>
   );
 };

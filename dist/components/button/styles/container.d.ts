@@ -11,4 +11,5 @@ export declare const ButtonContainer: import("styled-components").StyledComponen
     size: ButtonSizes | string;
     theme: DefaultTheme;
     style: React.CSSProperties | undefined;
+    isLoading: boolean;
 }, string | number>;

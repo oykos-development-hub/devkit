@@ -1,13 +1,13 @@
 import styled, { css } from "styled-components";
 import { rem } from "polished";
-export const Three = styled.div(({ style, primaryColor, secondaryColor, theme }) => {
+export const Three = styled.div(({ style, primaryColor, secondaryColor, theme, width, height }) => {
     const { gray200, primary500 } = theme.palette;
     return css `
     border: ${rem("8px")} solid ${primaryColor || gray200};
     border-top: ${rem("8px")} ${secondaryColor || primary500} solid;
     border-radius: 50%;
-    height: ${rem("48px")};
-    width: ${rem("48px")};
+    height: ${height ? height : rem("48px")};
+    width: ${width ? width : rem("48px")};
     animation: spin 1.5s linear infinite;
 
     @keyframes spin {
