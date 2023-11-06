@@ -12,7 +12,7 @@ export const Tooltip = ({ position, theme = Theme, content, children, title, var
         if (node !== null) {
             setTooltipWidth(node.offsetWidth);
         }
-    }, []);
+    }, [content, title]);
     return (React.createElement(Container, { className: className },
         React.createElement(HoverContents, { tooltipWidth: tooltipWidth, position: tooltipPosition }, children),
         React.createElement(StyledTooltip, { style: style, arrow: arrow, content: content, variant: variant, theme: theme, position: tooltipPosition, title: title, ref: tooltipRef },

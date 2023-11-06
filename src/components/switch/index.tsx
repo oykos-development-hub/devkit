@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, useEffect, useRef, useState } from "react";
 import { SwitchProps } from "./types";
 import { Container } from "./styles/container";
 import { SwitchWrapper } from "./styles/switchWrapper";
@@ -22,7 +22,7 @@ export const Switch: React.FC<SwitchProps> = ({
   const ref = useRef<HTMLLabelElement>(null);
   const [isActive, setIsActive] = useState<boolean>(false);
 
-  const handleChange = (e: any) => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (disabled) return;
 
     setIsActive((prev) => !prev);

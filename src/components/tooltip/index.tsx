@@ -20,11 +20,15 @@ export const Tooltip = ({
   const [tooltipWidth, setTooltipWidth] = useState(0);
   const tooltipPosition = TooltipPositions[position] || "bottom";
 
-  const tooltipRef = useCallback((node: HTMLDivElement) => {
-    if (node !== null) {
-      setTooltipWidth(node.offsetWidth);
-    }
-  }, []);
+  const tooltipRef = useCallback(
+    (node: HTMLDivElement) => {
+      if (node !== null) {
+        setTooltipWidth(node.offsetWidth);
+      }
+    },
+    [content, title],
+  );
+
   return (
     <Container className={className}>
       <HoverContents tooltipWidth={tooltipWidth} position={tooltipPosition}>
