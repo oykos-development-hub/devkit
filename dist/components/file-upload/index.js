@@ -10,22 +10,30 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import React, { useRef, useState } from "react";
-import { Container } from "./styles/container";
-import { Content } from "./styles/content";
-import { IconWrapper } from "./styles/iconWrapper";
-import { TextWrapper } from "./styles/textWrapper";
-import { ButtonWrapper } from "./styles/buttonWrapper";
 import { Theme } from "../../shared/theme";
+import { Button } from "../button";
 import { UploadCloudIcon, XIcon } from "../icon";
 import { Typography } from "../typography";
-import { Button } from "../button";
+import { ButtonWrapper } from "./styles/buttonWrapper";
+import { Container } from "./styles/container";
+import { Content } from "./styles/content";
 import { ControlWrapper } from "./styles/controlWrapper";
-import { FileItem, FileList } from "./styles/fileList";
+import { FileItem } from "./styles/fileList";
+import { IconWrapper } from "./styles/iconWrapper";
+import { TextWrapper } from "./styles/textWrapper";
+const copyFileList = (fileList) => {
+    const fileArray = Array.from(fileList);
+    const dataTransfer = new DataTransfer();
+    for (let i = 0; i < fileArray.length; i++) {
+        dataTransfer.items.add(fileArray[i]);
+    }
+    return dataTransfer.files;
+};
 export const FileUpload = (_a) => {
-    var { variant = "primary", buttonVariant = "primary", buttonSize = "sm", onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme = Theme, className, disabled = false } = _a, props = __rest(_a, ["variant", "buttonVariant", "buttonSize", "onUpload", "customContent", "customButton", "buttonText", "note", "hint", "icon", "style", "theme", "className", "disabled"]);
+    var { variant = "primary", buttonVariant = "primary", buttonSize = "sm", onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme = Theme, className, disabled = false, error, onDelete, accept, downloadButton, viewButton, multiple, files } = _a, props = __rest(_a, ["variant", "buttonVariant", "buttonSize", "onUpload", "customContent", "customButton", "buttonText", "note", "hint", "icon", "style", "theme", "className", "disabled", "error", "onDelete", "accept", "downloadButton", "viewButton", "multiple", "files"]);
     const [isDragging, setIsDragging] = useState(false);
-    const [files, setFiles] = useState(null);
     const uploadInputRef = useRef(null);
+    const [internalFileList, setInternalFileList] = useState();
     const handleDragOver = (e) => {
         e.preventDefault();
         !disabled && setIsDragging(true);
@@ -43,41 +51,47 @@ export const FileUpload = (_a) => {
     };
     const handleClick = (e) => {
         var _a;
-        e.preventDefault();
+        e && e.preventDefault();
         !disabled && ((_a = uploadInputRef.current) === null || _a === void 0 ? void 0 : _a.click());
     };
     const handleChange = (e) => {
         e.preventDefault();
         if (e.target.files) {
-            setFiles(e.target.files);
-            !disabled && onUpload(e.target.files);
+            const fileList = copyFileList(e.target.files);
+            !disabled && onUpload(fileList);
+            setInternalFileList(fileList);
+            uploadInputRef.current.value = "";
         }
     };
-    const deleteFile = (index) => {
+    const handleDelete = (index) => {
         const dt = new DataTransfer();
-        if (files) {
-            for (let i = 0; i < files.length; i++) {
-                const file = files[i];
+        if (internalFileList) {
+            for (let i = 0; i < internalFileList.length; i++) {
+                const file = internalFileList[i];
                 if (index !== i)
                     dt.items.add(file);
             }
         }
-        setFiles(dt.files);
+        setInternalFileList(dt.files);
         !disabled && onUpload(dt.files);
     };
-    const defaultNote = `Select file${props.multiple ? "s" : ""} or drag and drop here`;
-    return (React.createElement(Container, { variant: variant, style: style, theme: theme, isDragging: isDragging, disabled: disabled, onDragOver: handleDragOver, onDragLeave: handleDragLeave, onDrop: handleDrop, className: className },
-        React.createElement(ControlWrapper, { variant: variant },
-            React.createElement("input", Object.assign({ type: "file", ref: uploadInputRef, onChange: handleChange }, props)),
-            icon ? (icon) : (React.createElement(IconWrapper, { customIcon: !!icon },
-                React.createElement(UploadCloudIcon, { stroke: theme.palette.gray900 }))),
-            customContent ? (customContent) : (React.createElement(Content, { variant: variant },
-                React.createElement(TextWrapper, { variant: variant, theme: theme },
-                    React.createElement(Typography, { variant: "bodySmall", content: note !== null && note !== void 0 ? note : defaultNote }),
-                    hint && React.createElement(Typography, { variant: "helperText", content: hint })),
-                React.createElement(ButtonWrapper, { variant: variant }, customButton ? (React.cloneElement(customButton, { onClick: handleClick, disabled })) : (React.createElement(Button, { size: buttonSize, variant: buttonVariant, content: buttonText ? buttonText : "SELECT FILE", onClick: handleClick, theme: theme, disabled: disabled })))))),
-        files && (React.createElement(FileList, null, Array.from(files).map((file, index) => (React.createElement(FileItem, { theme: theme, key: `${file.name}-${index}` },
-            React.createElement(Typography, { variant: "bodySmall", content: file.name }),
-            React.createElement(XIcon, { width: "10px", height: "10px", onClick: () => deleteFile(index) }))))))));
+    const defaultNote = `Select file${multiple ? "s" : ""} or drag and drop here`;
+    const fileList = files === undefined ? internalFileList : files;
+    return (React.createElement("div", null,
+        React.createElement(Container, { variant: variant, style: style, theme: theme, isDragging: isDragging, disabled: disabled, onDragOver: handleDragOver, onDragLeave: handleDragLeave, onDrop: handleDrop, className: className },
+            React.createElement(ControlWrapper, { variant: variant },
+                React.createElement("input", Object.assign({ accept: accept, multiple: multiple, type: "file", ref: uploadInputRef, onChange: handleChange }, props)),
+                icon ? (icon) : (React.createElement(IconWrapper, { customIcon: !!icon },
+                    React.createElement(UploadCloudIcon, { stroke: theme.palette.gray900 }))),
+                customContent ? (customContent) : (React.createElement(Content, { variant: variant },
+                    React.createElement(TextWrapper, { variant: variant, theme: theme },
+                        React.createElement(Typography, { variant: "bodySmall", content: note !== null && note !== void 0 ? note : defaultNote }),
+                        hint && React.createElement(Typography, { variant: "helperText", content: hint })),
+                    React.createElement(ButtonWrapper, { variant: variant }, customButton ? (React.cloneElement(customButton, { onClick: handleClick, disabled })) : (React.createElement(Button, { size: buttonSize, variant: buttonVariant, content: buttonText ? buttonText : "SELECT FILE", onClick: handleClick, theme: theme, disabled: disabled })))))),
+            fileList &&
+                Array.from(fileList).map((file, index) => (React.createElement(FileItem, { theme: theme, key: `${file.name}-${index}` },
+                    React.createElement(Typography, { variant: "bodySmall", content: file.name }),
+                    React.createElement(XIcon, { width: "10px", height: "10px", onClick: () => handleDelete(index) }))))),
+        error && !disabled && (React.createElement(Typography, { content: error, variant: "helperText", style: { color: theme.palette.error500, marginTop: 10 } }))));
 };
 //# sourceMappingURL=index.js.map

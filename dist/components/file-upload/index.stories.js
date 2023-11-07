@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { FileUpload } from "./index";
-import { Typography } from "../typography";
 import { Button } from "../button";
 import UploadCloudIcon from "../icon/variations/UploadCloudIcon";
+import { Typography } from "../typography";
+import { FileUpload } from "./index";
 export default {
     component: FileUpload,
     title: "Components/FileUpload",
@@ -26,22 +26,26 @@ export default {
                 options: ["primary", "secondary", "tertiary"],
             },
         },
-        theme: {
+        error: {
             control: {
-                type: "object",
+                type: "text",
             },
-            defaultValue: Theme,
+        },
+        maxSize: {
+            control: {
+                type: "number",
+            },
         },
     },
 };
 const Template = (args) => {
-    const [_, setFiles] = useState(null);
+    const [files, setFiles] = useState();
     const onUpload = (acceptedFiles) => {
         setFiles(acceptedFiles);
         console.log("File(s) uploaded:", acceptedFiles);
     };
     return (React.createElement(StoryWrapper, null,
-        React.createElement(FileUpload, Object.assign({}, args, { onUpload: onUpload }))));
+        React.createElement(FileUpload, Object.assign({}, args, { onUpload: onUpload, files: files }))));
 };
 export const Primary = Template.bind({});
 Primary.args = {
@@ -67,16 +71,15 @@ Secondary.args = {
     hint: "JPG, PNG or PDF, file size no more than 10MB",
     disabled: false,
 };
-export const SecondaryWithoutIcon = Template.bind({});
-SecondaryWithoutIcon.args = {
+export const SecondaryMultiple = Template.bind({});
+SecondaryMultiple.args = {
     variant: "secondary",
     buttonVariant: "secondary",
     buttonText: "SELECT FILES",
     multiple: true,
     note: React.createElement(Typography, { variant: "bodySmall", content: "Select a files or drag and drop here" }),
-    hint: "",
+    hint: "JPG, PNG or PDF, file size no more than 10MB",
     disabled: false,
-    icon: React.createElement(React.Fragment, null),
 };
 export const Tertiary = Template.bind({});
 Tertiary.args = {

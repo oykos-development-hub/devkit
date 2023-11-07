@@ -1,4 +1,4 @@
-import { ReactElement, CSSProperties } from "react";
+import { CSSProperties, ReactElement } from "react";
 import { DefaultTheme } from "styled-components";
 import { ButtonSizes, ButtonVariants } from "../button/types";
 export declare enum FileUploadVariants {
@@ -20,4 +20,10 @@ export interface FileUploadProps extends React.ComponentPropsWithRef<"input"> {
     style?: CSSProperties;
     theme?: DefaultTheme;
     className?: string;
+    error?: string;
+    onDelete?: (id: number) => void;
+    downloadButton?: ReactElement;
+    viewButton?: ReactElement;
+    multiple?: boolean;
+    files?: FileList | null;
 }

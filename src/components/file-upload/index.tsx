@@ -1,18 +1,29 @@
-import React, { ChangeEvent, DragEvent, forwardRef, useRef, useState } from "react";
-import { FileUploadProps } from "./types";
-import { Container } from "./styles/container";
-import { Content } from "./styles/content";
-import { IconWrapper } from "./styles/iconWrapper";
-import { TextWrapper } from "./styles/textWrapper";
-import { ButtonWrapper } from "./styles/buttonWrapper";
+import React, { ChangeEvent, DragEvent, useRef, useState } from "react";
 import { Theme } from "../../shared/theme";
+import { Button } from "../button";
 import { UploadCloudIcon, XIcon } from "../icon";
 import { Typography } from "../typography";
-import { Button } from "../button";
+import { ButtonWrapper } from "./styles/buttonWrapper";
+import { Container } from "./styles/container";
+import { Content } from "./styles/content";
 import { ControlWrapper } from "./styles/controlWrapper";
-import { FileItem, FileList } from "./styles/fileList";
+import { FileItem } from "./styles/fileList";
+import { IconWrapper } from "./styles/iconWrapper";
+import { TextWrapper } from "./styles/textWrapper";
+import { FileUploadProps } from "./types";
 
-export const FileUpload: React.FC<FileUploadProps> = ({
+const copyFileList = (fileList: FileList) => {
+  const fileArray = Array.from(fileList);
+  const dataTransfer = new DataTransfer();
+
+  for (let i = 0; i < fileArray.length; i++) {
+    dataTransfer.items.add(fileArray[i]);
+  }
+
+  return dataTransfer.files;
+};
+
+export const FileUpload = ({
   variant = "primary",
   buttonVariant = "primary",
   buttonSize = "sm",
@@ -27,11 +38,19 @@ export const FileUpload: React.FC<FileUploadProps> = ({
   theme = Theme,
   className,
   disabled = false,
+  error,
+  onDelete,
+  accept,
+  downloadButton,
+  viewButton,
+  multiple,
+  files,
   ...props
-}) => {
+}: FileUploadProps) => {
   const [isDragging, setIsDragging] = useState(false);
-  const [files, setFiles] = useState<FileList | null>(null);
   const uploadInputRef = useRef<HTMLInputElement>(null);
+  // This is for backward compatibility
+  const [internalFileList, setInternalFileList] = useState<FileList>();
 
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -52,93 +71,107 @@ export const FileUpload: React.FC<FileUploadProps> = ({
     }
   };
 
-  const handleClick = (e: any) => {
-    e.preventDefault();
+  const handleClick = (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    e && e.preventDefault();
     !disabled && uploadInputRef.current?.click();
   };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     if (e.target.files) {
-      setFiles(e.target.files);
-      !disabled && onUpload(e.target.files);
+      const fileList = copyFileList(e.target.files);
+
+      !disabled && onUpload(fileList);
+      setInternalFileList(fileList);
+      uploadInputRef.current!.value = "";
     }
   };
 
-  const deleteFile = (index: number) => {
+  const handleDelete = (index: number) => {
     const dt = new DataTransfer();
 
-    if (files) {
-      for (let i = 0; i < files.length; i++) {
-        const file = files[i];
+    if (internalFileList) {
+      for (let i = 0; i < internalFileList.length; i++) {
+        const file = internalFileList[i];
         if (index !== i) dt.items.add(file);
       }
     }
 
-    setFiles(dt.files);
+    setInternalFileList(dt.files);
     !disabled && onUpload(dt.files);
   };
 
-  const defaultNote = `Select file${props.multiple ? "s" : ""} or drag and drop here`;
+  const defaultNote = `Select file${multiple ? "s" : ""} or drag and drop here`;
+
+  const fileList = files === undefined ? internalFileList : files;
 
   return (
-    <Container
-      variant={variant}
-      style={style}
-      theme={theme}
-      isDragging={isDragging}
-      disabled={disabled}
-      onDragOver={handleDragOver}
-      onDragLeave={handleDragLeave}
-      onDrop={handleDrop}
-      className={className}
-    >
-      <ControlWrapper variant={variant}>
-        <input type="file" ref={uploadInputRef} onChange={handleChange} {...props} />
-        {icon ? (
-          icon
-        ) : (
-          <IconWrapper customIcon={!!icon}>
-            <UploadCloudIcon stroke={theme.palette.gray900} />
-          </IconWrapper>
-        )}
-        {customContent ? (
-          customContent
-        ) : (
-          <Content variant={variant}>
-            <TextWrapper variant={variant} theme={theme}>
-              <Typography variant={"bodySmall"} content={note ?? defaultNote} />
-              {hint && <Typography variant={"helperText"} content={hint} />}
-            </TextWrapper>
+    <div>
+      <Container
+        variant={variant}
+        style={style}
+        theme={theme}
+        isDragging={isDragging}
+        disabled={disabled}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDrop}
+        className={className}
+      >
+        <ControlWrapper variant={variant}>
+          <input
+            accept={accept}
+            multiple={multiple}
+            type="file"
+            ref={uploadInputRef}
+            onChange={handleChange}
+            {...props}
+          />
+          {icon ? (
+            icon
+          ) : (
+            <IconWrapper customIcon={!!icon}>
+              <UploadCloudIcon stroke={theme.palette.gray900} />
+            </IconWrapper>
+          )}
+          {customContent ? (
+            customContent
+          ) : (
+            <Content variant={variant}>
+              <TextWrapper variant={variant} theme={theme}>
+                <Typography variant={"bodySmall"} content={note ?? defaultNote} />
+                {hint && <Typography variant={"helperText"} content={hint} />}
+              </TextWrapper>
 
-            <ButtonWrapper variant={variant}>
-              {customButton ? (
-                React.cloneElement(customButton, { onClick: handleClick, disabled })
-              ) : (
-                <Button
-                  size={buttonSize}
-                  variant={buttonVariant}
-                  content={buttonText ? buttonText : "SELECT FILE"}
-                  onClick={handleClick}
-                  theme={theme}
-                  disabled={disabled}
-                />
-              )}
-            </ButtonWrapper>
-          </Content>
-        )}
-      </ControlWrapper>
+              <ButtonWrapper variant={variant}>
+                {customButton ? (
+                  React.cloneElement(customButton, { onClick: handleClick, disabled })
+                ) : (
+                  <Button
+                    size={buttonSize}
+                    variant={buttonVariant}
+                    content={buttonText ? buttonText : "SELECT FILE"}
+                    onClick={handleClick}
+                    theme={theme}
+                    disabled={disabled}
+                  />
+                )}
+              </ButtonWrapper>
+            </Content>
+          )}
+        </ControlWrapper>
 
-      {files && (
-        <FileList>
-          {Array.from(files).map((file, index) => (
+        {fileList &&
+          Array.from(fileList).map((file, index) => (
             <FileItem theme={theme} key={`${file.name}-${index}`}>
               <Typography variant={"bodySmall"} content={file.name} />
-              <XIcon width="10px" height="10px" onClick={() => deleteFile(index)} />
+              <XIcon width="10px" height="10px" onClick={() => handleDelete(index)} />
             </FileItem>
           ))}
-        </FileList>
+      </Container>
+      {error && !disabled && (
+        <Typography content={error} variant="helperText" style={{ color: theme.palette.error500, marginTop: 10 }} />
       )}
-    </Container>
+    </div>
   );
 };
