@@ -1,11 +1,11 @@
-import React from "react";
+/// <reference types="react" />
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { FileUploadProps } from "./types";
-declare const _default: ComponentMeta<React.FC<FileUploadProps>>;
+declare const _default: ComponentMeta<({ variant, buttonVariant, buttonSize, onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme, className, disabled, error, onDelete, accept, downloadButton, viewButton, multiple, files, ...props }: FileUploadProps) => JSX.Element>;
 export default _default;
-export declare const Primary: ComponentStory<React.FC<FileUploadProps>>;
-export declare const PrimaryMultiple: ComponentStory<React.FC<FileUploadProps>>;
-export declare const Secondary: ComponentStory<React.FC<FileUploadProps>>;
-export declare const SecondaryWithoutIcon: ComponentStory<React.FC<FileUploadProps>>;
-export declare const Tertiary: ComponentStory<React.FC<FileUploadProps>>;
-export declare const TertiaryWithCustomButton: ComponentStory<React.FC<FileUploadProps>>;
+export declare const Primary: ComponentStory<({ variant, buttonVariant, buttonSize, onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme, className, disabled, error, onDelete, accept, downloadButton, viewButton, multiple, files, ...props }: FileUploadProps) => JSX.Element>;
+export declare const PrimaryMultiple: ComponentStory<({ variant, buttonVariant, buttonSize, onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme, className, disabled, error, onDelete, accept, downloadButton, viewButton, multiple, files, ...props }: FileUploadProps) => JSX.Element>;
+export declare const Secondary: ComponentStory<({ variant, buttonVariant, buttonSize, onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme, className, disabled, error, onDelete, accept, downloadButton, viewButton, multiple, files, ...props }: FileUploadProps) => JSX.Element>;
+export declare const SecondaryMultiple: ComponentStory<({ variant, buttonVariant, buttonSize, onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme, className, disabled, error, onDelete, accept, downloadButton, viewButton, multiple, files, ...props }: FileUploadProps) => JSX.Element>;
+export declare const Tertiary: ComponentStory<({ variant, buttonVariant, buttonSize, onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme, className, disabled, error, onDelete, accept, downloadButton, viewButton, multiple, files, ...props }: FileUploadProps) => JSX.Element>;
+export declare const TertiaryWithCustomButton: ComponentStory<({ variant, buttonVariant, buttonSize, onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme, className, disabled, error, onDelete, accept, downloadButton, viewButton, multiple, files, ...props }: FileUploadProps) => JSX.Element>;

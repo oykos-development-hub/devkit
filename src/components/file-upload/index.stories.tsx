@@ -1,12 +1,12 @@
-import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import React, { useState } from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { FileUpload } from "./index";
-import { FileUploadProps } from "./types";
-import { Typography } from "../typography";
 import { Button } from "../button";
 import UploadCloudIcon from "../icon/variations/UploadCloudIcon";
+import { Typography } from "../typography";
+import { FileUpload } from "./index";
+import { FileUploadProps } from "./types";
 
 export default {
   component: FileUpload,
@@ -29,17 +29,21 @@ export default {
         options: ["primary", "secondary", "tertiary"],
       },
     },
-    theme: {
+    error: {
       control: {
-        type: "object",
+        type: "text",
       },
-      defaultValue: Theme,
+    },
+    maxSize: {
+      control: {
+        type: "number",
+      },
     },
   },
 } as ComponentMeta<typeof FileUpload>;
 
 const Template: ComponentStory<typeof FileUpload> = (args: FileUploadProps) => {
-  const [_, setFiles] = useState<FileList | null>(null);
+  const [files, setFiles] = useState<FileList | null>();
 
   const onUpload = (acceptedFiles: FileList) => {
     setFiles(acceptedFiles);
@@ -48,7 +52,7 @@ const Template: ComponentStory<typeof FileUpload> = (args: FileUploadProps) => {
 
   return (
     <StoryWrapper>
-      <FileUpload {...args} onUpload={onUpload} />
+      <FileUpload {...args} onUpload={onUpload} files={files} />
     </StoryWrapper>
   );
 };
@@ -80,16 +84,15 @@ Secondary.args = {
   disabled: false,
 };
 
-export const SecondaryWithoutIcon = Template.bind({});
-SecondaryWithoutIcon.args = {
+export const SecondaryMultiple = Template.bind({});
+SecondaryMultiple.args = {
   variant: "secondary",
   buttonVariant: "secondary",
   buttonText: "SELECT FILES",
   multiple: true,
   note: <Typography variant={"bodySmall"} content={"Select a files or drag and drop here"} />,
-  hint: "",
+  hint: "JPG, PNG or PDF, file size no more than 10MB",
   disabled: false,
-  icon: <></>,
 };
 
 export const Tertiary = Template.bind({});
