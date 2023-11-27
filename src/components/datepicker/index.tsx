@@ -28,7 +28,12 @@ export const Datepicker: React.FC<CustomDatePickerProps> = ({
           rest.customInput ? (
             rest.customInput
           ) : (
-            <Input rightContent={error ? <DangerIcon /> : <CalendarIcon />} error={error} label={label} />
+            <Input
+              rightContent={error ? <DangerIcon /> : <CalendarIcon />}
+              error={error}
+              label={label}
+              autoComplete=""
+            />
           )
         }
         {...rest}

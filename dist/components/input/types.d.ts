@@ -25,4 +25,5 @@ export interface InputProps {
     rows?: number;
     cols?: number;
     className?: string;
+    autoComplete?: string;
 }
