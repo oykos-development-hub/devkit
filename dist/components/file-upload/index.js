@@ -29,6 +29,17 @@ const copyFileList = (fileList) => {
     }
     return dataTransfer.files;
 };
+const mergeFileLists = (list) => {
+    const arrayOfFiles = [];
+    list.forEach((fileList) => {
+        arrayOfFiles.push(...Array.from(fileList));
+    });
+    const dataTransfer = new DataTransfer();
+    for (let i = 0; i < arrayOfFiles.length; i++) {
+        dataTransfer.items.add(arrayOfFiles[i]);
+    }
+    return dataTransfer.files;
+};
 export const FileUpload = (_a) => {
     var { variant = "primary", buttonVariant = "primary", buttonSize = "sm", onUpload, customContent, customButton, buttonText, note, hint, icon, style, theme = Theme, className, disabled = false, error, onDelete, accept, downloadButton, viewButton, multiple, files } = _a, props = __rest(_a, ["variant", "buttonVariant", "buttonSize", "onUpload", "customContent", "customButton", "buttonText", "note", "hint", "icon", "style", "theme", "className", "disabled", "error", "onDelete", "accept", "downloadButton", "viewButton", "multiple", "files"]);
     const [isDragging, setIsDragging] = useState(false);
@@ -57,9 +68,12 @@ export const FileUpload = (_a) => {
     const handleChange = (e) => {
         e.preventDefault();
         if (e.target.files) {
-            const fileList = copyFileList(e.target.files);
-            !disabled && onUpload(fileList);
-            setInternalFileList(fileList);
+            const newFiles = copyFileList(e.target.files);
+            const mergedFileLists = fileList ? mergeFileLists([fileList, newFiles]) : newFiles;
+            !disabled && onUpload(mergedFileLists);
+            if (newFiles) {
+                setInternalFileList((prev) => (prev ? mergeFileLists([prev, newFiles]) : newFiles));
+            }
             uploadInputRef.current.value = "";
         }
     };

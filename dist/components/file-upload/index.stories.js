@@ -42,7 +42,6 @@ const Template = (args) => {
     const [files, setFiles] = useState();
     const onUpload = (acceptedFiles) => {
         setFiles(acceptedFiles);
-        console.log("File(s) uploaded:", acceptedFiles);
     };
     return (React.createElement(StoryWrapper, null,
         React.createElement(FileUpload, Object.assign({}, args, { onUpload: onUpload, files: files }))));

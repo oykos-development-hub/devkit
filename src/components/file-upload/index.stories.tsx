@@ -47,7 +47,6 @@ const Template: ComponentStory<typeof FileUpload> = (args: FileUploadProps) => {
 
   const onUpload = (acceptedFiles: FileList) => {
     setFiles(acceptedFiles);
-    console.log("File(s) uploaded:", acceptedFiles);
   };
 
   return (

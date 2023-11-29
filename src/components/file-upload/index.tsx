@@ -23,6 +23,22 @@ const copyFileList = (fileList: FileList) => {
   return dataTransfer.files;
 };
 
+const mergeFileLists = (list: FileList[]) => {
+  const arrayOfFiles: File[] = [];
+
+  list.forEach((fileList) => {
+    arrayOfFiles.push(...Array.from(fileList));
+  });
+
+  const dataTransfer = new DataTransfer();
+
+  for (let i = 0; i < arrayOfFiles.length; i++) {
+    dataTransfer.items.add(arrayOfFiles[i]);
+  }
+
+  return dataTransfer.files;
+};
+
 export const FileUpload = ({
   variant = "primary",
   buttonVariant = "primary",
@@ -79,10 +95,18 @@ export const FileUpload = ({
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     if (e.target.files) {
-      const fileList = copyFileList(e.target.files);
+      // For some uknown reason, this needs to be copied
+      const newFiles = copyFileList(e.target.files);
 
-      !disabled && onUpload(fileList);
-      setInternalFileList(fileList);
+      // Keeping the old files that were uploaded and stacking the new ones on top
+      const mergedFileLists = fileList ? mergeFileLists([fileList, newFiles]) : newFiles;
+      !disabled && onUpload(mergedFileLists);
+
+      if (newFiles) {
+        // When fileList is not passed from the parent, we need to keep track of the files internally
+        setInternalFileList((prev) => (prev ? mergeFileLists([prev, newFiles]) : newFiles));
+      }
+
       uploadInputRef.current!.value = "";
     }
   };
