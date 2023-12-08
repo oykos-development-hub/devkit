@@ -43,4 +43,5 @@ export interface DropdownProps {
   name?: string;
   error?: string;
   menuPortalTarget?: HTMLElement;
+  showSearchIcon?: boolean;
 }
