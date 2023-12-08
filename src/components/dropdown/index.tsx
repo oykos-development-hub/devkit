@@ -35,6 +35,7 @@ export const Dropdown = ({
   className,
   value,
   menuPortalTarget,
+  showSearchIcon = false,
   ...props
 }: DropdownProps) => {
   const [controlIconWidth, setControlIconWidth] = useState(0);
@@ -88,7 +89,7 @@ export const Dropdown = ({
           value={value}
           menuPortalTarget={menuPortalTarget}
           {...props}
-          components={isSearchable ? { DropdownIndicator } : {}}
+          components={isSearchable && showSearchIcon ? { DropdownIndicator } : {}}
         />
         <ControlIconWrapper ref={controlIconWrapperRef}>{controlIcon}</ControlIconWrapper>
       </Wrapper>
