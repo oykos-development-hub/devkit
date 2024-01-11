@@ -57,3 +57,4 @@ export * from "./components/dropdown/styles";
 export * from "./components/icon";
 export * from "./types";
 export * from "./components/accordion/styles";
+export * from "./components/tabs/style";
