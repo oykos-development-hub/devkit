@@ -39,8 +39,8 @@ export const Alert: React.FC<AlertProps> = ({
         </Content>
 
         {closeIcon && (
-          <Content theme={theme}>
-            <CloseIcon stroke={"white"} onClick={onClose} />
+          <Content theme={theme} onClick={onClose}>
+            <CloseIcon stroke={"white"} />
           </Content>
         )}
       </Wrapper>
