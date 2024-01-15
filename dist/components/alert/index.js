@@ -21,8 +21,8 @@ export const Alert = ({ variant = "success", content, description, icon, closeIc
             React.createElement(Content, { theme: theme },
                 icon && icon,
                 React.createElement(Typography, { variant: textVariant(), content: content, theme: theme })),
-            closeIcon && (React.createElement(Content, { theme: theme },
-                React.createElement(CloseIcon, { stroke: "white", onClick: onClose })))),
+            closeIcon && (React.createElement(Content, { theme: theme, onClick: onClose },
+                React.createElement(CloseIcon, { stroke: "white" })))),
         description && description));
 };
 //# sourceMappingURL=index.js.map

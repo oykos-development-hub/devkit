@@ -44,16 +44,16 @@ export const Wrapper = styled.div<{
     }
 
     & ${Content}:nth-child(2) {
+      padding: ${rem("6px")};
+      border-radius: 0.125rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: ${bgColor[variant]};
+      }
       // close icon (right icon)
       & svg {
         width: ${rem("16px")};
-        padding: ${rem("6px")};
-        border-radius: 0.125rem;
-        cursor: pointer;
-
-        &:hover {
-          background-color: ${bgColor[variant]};
-        }
       }
     }
   `;
