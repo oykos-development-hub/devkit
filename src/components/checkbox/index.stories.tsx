@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { Checkbox } from "./";
+import { SSSCheckbox } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { CheckboxSize } from "./types";
+import { CheckboxSize } from "@oykos-development/devkit-react-ts-styled-components";
 import { Theme } from "../../shared/theme";
+import { SSSCheckboxProps } from "./types";
 
 export default {
   title: "Components/Checkbox",
-  component: Checkbox,
+  component: SSSCheckbox,
   argTypes: {
     size: {
       control: {
@@ -34,15 +35,16 @@ export default {
       control: {
         type: "object",
       },
+      defaultValue: Theme,
     },
   },
-} as ComponentMeta<typeof Checkbox>;
+} as ComponentMeta<typeof SSSCheckbox>;
 
-const Template: ComponentStory<typeof Checkbox> = (args) => {
+const Template: ComponentStory<typeof SSSCheckbox> = (args: SSSCheckboxProps) => {
   const [checked, setIsChecked] = useState<boolean>(false);
   return (
     <StoryWrapper>
-      <Checkbox {...args} onClick={() => setIsChecked((prev) => !prev)} checked={checked} />
+      <SSSCheckbox {...args} checked={checked} name="test" onChange={() => setIsChecked((prev) => !prev)} />
     </StoryWrapper>
   );
 };
@@ -51,5 +53,4 @@ export const Default = Template.bind({});
 Default.args = {
   size: CheckboxSize.sm,
   disabled: false,
-  theme: Theme,
 };

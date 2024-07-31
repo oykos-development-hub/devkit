@@ -1,3 +1,3 @@
 import React from "react";
-import { AlertProps } from "./types";
-export declare const Alert: React.FC<AlertProps>;
+import { SSSAlertProps } from "./types";
+export declare const SSSAlert: (props: SSSAlertProps) => React.JSX.Element;

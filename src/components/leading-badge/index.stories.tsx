@@ -2,12 +2,11 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import DotIcon from "../icon/variations/DotIcon";
-import { LeadingBadgeProps, LeadingBadgeSizes } from "./types";
-import { LeadingBadge } from "./";
+import { LeadingBadgeProps, LeadingBadgeSizes } from "@oykos-development/devkit-react-ts-styled-components";
+import { SSSLeadingBadge } from "./index";
 
 export default {
-  component: LeadingBadge,
+  component: SSSLeadingBadge,
   title: "Components/LeadingBadge",
   argTypes: {
     variant: {
@@ -35,11 +34,11 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof LeadingBadge>;
+} as ComponentMeta<typeof SSSLeadingBadge>;
 
-const Template: ComponentStory<typeof LeadingBadge> = (args: LeadingBadgeProps) => (
+const Template: ComponentStory<typeof SSSLeadingBadge> = (args: LeadingBadgeProps) => (
   <StoryWrapper>
-    <LeadingBadge {...args} />
+    <SSSLeadingBadge {...args} />
   </StoryWrapper>
 );
 
@@ -52,19 +51,11 @@ Default.args = {
   size: LeadingBadgeSizes.md,
 };
 
-export const WithHtmlContent = Template.bind({});
-WithHtmlContent.args = {
-  variant: "warning",
-  leadingBadgeTheme: "light",
-  badgeContent: <span>New feature</span>,
-  content: <span>We’ve just released a new feature</span>,
-  size: LeadingBadgeSizes.md,
-};
-
-export const WithDot = Template.bind({});
-WithDot.args = {
+export const WithPlus = Template.bind({});
+WithPlus.args = {
   variant: "success",
   leadingBadgeTheme: "light",
+  content: <span style={{ paddingLeft: "4px" }}>We’ve just released a new feature</span>,
   badgeContent: (
     <div
       style={{
@@ -75,10 +66,11 @@ WithDot.args = {
         columnGap: "7px",
       }}
     >
-      <DotIcon />
       <span>Label</span>
+      <span>+</span>
     </div>
   ),
-  content: <span>We’ve just released a new feature</span>,
+
   size: LeadingBadgeSizes.md,
+  style: { flexDirection: "row-reverse" },
 };

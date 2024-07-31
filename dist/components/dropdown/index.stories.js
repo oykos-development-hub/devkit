@@ -1,22 +1,26 @@
 import React, { useState } from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { Dropdown } from "./index";
-import { CheckIcon, UserIcon } from "../icon";
-import { Typography } from "../typography";
+import { SSSDropdown } from "./index";
+import { CheckIcon, UserIcon } from "@oykos-development/devkit-react-ts-styled-components";
 import Avatar from "./styles/avatar";
 const dropdownOptions = [
-    { value: "one", label: React.createElement(Typography, { content: "One", variant: "bodySmall" }) },
-    { value: "two", label: React.createElement(Typography, { content: "Two", variant: "bodySmall" }) },
-    {
-        value: "three",
-        label: React.createElement(Typography, { variant: "bodySmall", content: "Three" }),
-    },
-    { value: "four", label: React.createElement(Typography, { content: "Four", variant: "bodySmall" }) },
-    { value: "five", label: React.createElement(Typography, { content: "Five", variant: "bodySmall" }) },
+    { id: "one", title: "One" },
+    { id: "two", title: "Two" },
+    { id: "three", title: "Three" },
+    { id: "four", title: "Four" },
+    { id: "five", title: "Five" },
+    { id: "six", title: "Six" },
+    { id: "seven", title: "Seven" },
+    { id: "eight", title: "Eight" },
+    { id: "nine", title: "Nine" },
+    { id: "ten", title: "Ten" },
+    { id: "twelve", title: "Twelve" },
+    { id: "thirteen", title: "Thirteen" },
+    { id: "fourteen", title: "Fourteen" },
 ];
 export default {
-    component: Dropdown,
+    component: SSSDropdown,
     title: "Components/Dropdown",
     argTypes: {
         theme: {
@@ -56,69 +60,91 @@ export default {
                 type: "boolean",
             },
         },
+        placeholder: {
+            control: {
+                type: "text",
+            },
+        },
+        label: {
+            control: {
+                type: "text",
+            },
+        },
+        noOptionsText: {
+            control: {
+                type: "text",
+            },
+        },
+        error: {
+            control: {
+                type: "text",
+            },
+        },
     },
 };
 const Template = (args) => {
     const [value, setValue] = useState(null);
+    const onChange = (value) => {
+        setValue(value);
+    };
     return (React.createElement(StoryWrapper, null,
-        React.createElement("div", { style: { width: "300px", display: "flex" } },
-            React.createElement(Dropdown, Object.assign({}, args, { value: value, onChange: (e) => setValue(e) })))));
+        React.createElement("div", { style: { width: "300px" } },
+            React.createElement(SSSDropdown, Object.assign({ label: "Dropdown label" }, args, { name: "test", value: value, onChange: onChange })))));
 };
 export const DropdownDefault = Template.bind({});
 DropdownDefault.args = {
-    label: "Team member",
     placeholder: "Select team member",
+    rightOptionIcon: React.createElement(CheckIcon, { stroke: Theme.palette.primary500 }),
     showArrow: true,
 };
 export const DropdownWithIcons = Template.bind({});
 DropdownWithIcons.args = {
-    label: React.createElement(Typography, { content: "Team member", variant: "bodySmall", style: { fontWeight: 600 } }),
-    placeholder: React.createElement(Typography, { content: "Select team member", variant: "bodySmall" }),
+    label: "Team member",
+    placeholder: "Select team member",
     leftOptionIcon: React.createElement(UserIcon, { stroke: Theme.palette.primary900, width: "24px" }),
     rightOptionIcon: React.createElement(CheckIcon, { stroke: Theme.palette.primary500 }),
     showArrow: true,
-    closeMenuOnSelect: true,
 };
 export const DropdownSearch = Template.bind({});
 DropdownSearch.args = {
-    label: React.createElement(Typography, { content: "Team member", variant: "bodySmall", style: { fontWeight: 600 } }),
-    placeholder: React.createElement(Typography, { content: "Select team member", variant: "bodySmall" }),
+    label: "Team member",
+    placeholder: "Select team member",
     isSearchable: true,
-    isClearable: true,
-    backspaceRemovesValue: true,
     rightOptionIcon: React.createElement(CheckIcon, { stroke: Theme.palette.primary500 }),
     showArrow: true,
-    closeMenuOnSelect: true,
-    noOptionsText: React.createElement(Typography, { content: "No data", variant: "h6" }),
 };
 export const MultipleSelect = Template.bind({});
 MultipleSelect.args = {
-    label: React.createElement(Typography, { content: "Team member", variant: "bodySmall", style: { fontWeight: 600 } }),
-    placeholder: React.createElement(Typography, { content: "Select team member", variant: "bodySmall" }),
+    label: "Team member",
+    placeholder: "Select team member",
     isMulti: true,
     isSearchable: true,
     rightOptionIcon: React.createElement(CheckIcon, { stroke: Theme.palette.primary500 }),
     showArrow: true,
-    closeMenuOnSelect: false,
 };
 export const MultipleSelectSearch = Template.bind({});
 MultipleSelectSearch.args = {
-    label: React.createElement(Typography, { content: "Team member", variant: "bodySmall", style: { fontWeight: 600 } }),
-    placeholder: React.createElement(Typography, { content: "Select team member", variant: "bodySmall" }),
+    label: "Team member",
+    placeholder: "Select team member",
     isMulti: true,
     isSearchable: true,
     rightOptionIcon: React.createElement(CheckIcon, { stroke: Theme.palette.primary500 }),
     showArrow: true,
-    closeMenuOnSelect: false,
 };
 export const DropdownWithAvatars = Template.bind({});
 DropdownWithAvatars.args = {
-    label: React.createElement(Typography, { content: "Team member", variant: "bodySmall", style: { fontWeight: 600 } }),
-    placeholder: React.createElement(Typography, { content: "Select team member", variant: "helperText" }),
+    label: "Team member",
+    placeholder: "Select team member",
     leftOptionIcon: Avatar,
     rightOptionIcon: React.createElement(CheckIcon, { stroke: Theme.palette.primary500 }),
     showArrow: false,
     isSearchable: true,
-    closeMenuOnSelect: false,
+};
+export const DropdownWithError = Template.bind({});
+DropdownWithError.args = {
+    label: "Team member",
+    placeholder: "Placeholder...",
+    showArrow: true,
+    error: "This is error.",
 };
 //# sourceMappingURL=index.stories.js.map

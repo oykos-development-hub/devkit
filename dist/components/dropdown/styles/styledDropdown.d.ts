@@ -1,0 +1,3 @@
+/// <reference types="react" />
+export declare const StyledDropdown: import("styled-components").StyledComponent<({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, isClearable, backspaceRemovesValue, showArrow, closeMenuOnSelect, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, className, value, menuPortalTarget, showSearchIcon, ...props }: import("@oykos-development/devkit-react-ts-styled-components").DropdownProps) => JSX.Element, import("styled-components").DefaultTheme, {}, never>;
+export declare const LabelWrapper: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {}, never>;

@@ -1,2 +1,2 @@
-export * from "./variants";
+export {};
 //# sourceMappingURL=types.js.map

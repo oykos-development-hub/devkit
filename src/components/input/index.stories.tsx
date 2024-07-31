@@ -1,17 +1,16 @@
-import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Input } from "./";
+import { DangerIcon, HelpCircleIcon, MailIcon } from "@oykos-development/devkit-react-ts-styled-components";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import React, { useEffect, useState } from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { InputProps } from "./types";
 import { Theme } from "../../shared/theme";
-import { DangerIcon, HelpCircleIcon, MailIcon } from "../icon";
-import { Dropdown } from "../dropdown";
-import { Typography } from "../typography";
-import { Datepicker } from "../datepicker";
+import { SSSDropdown } from "../dropdown";
+import { SSSTypography } from "../typography";
+import { SSSInput } from "./";
+import { SSSInputProps } from "./types";
 
 export default {
   title: "Components/Input",
-  component: Input,
+  component: SSSInput,
   argTypes: {
     theme: {
       control: {
@@ -20,42 +19,53 @@ export default {
       defaultValue: Theme,
     },
   },
-} as ComponentMeta<typeof Input>;
+} as ComponentMeta<typeof SSSInput>;
 
-const Template: ComponentStory<typeof Input> = (args: InputProps) => (
-  <StoryWrapper>
-    <div style={{ width: "300px" }}>
-      <Input label="Input label" {...args} />
-    </div>
-  </StoryWrapper>
-);
+const Template: ComponentStory<typeof SSSInput> = (args: SSSInputProps) => {
+  const [value, setValue] = useState("");
+
+  useEffect(() => {
+    setValue(args?.value ?? "");
+  }, [args.value]);
+
+  return (
+    <StoryWrapper>
+      <div style={{ width: "400px" }}>
+        <SSSInput label="Input" {...args} name="test" value={value} onChange={(e) => setValue(e.target.value)} />
+      </div>
+    </StoryWrapper>
+  );
+};
 
 export const InputDefault = Template.bind({});
 InputDefault.args = {
   placeholder: "placeholder...",
 };
 
-export const Amounts = Template.bind({});
-Amounts.args = {
-  label: <Typography content={"Select team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
-  placeholder: "1,000.00",
-  leftContent: <Typography content={<div>&euro;</div>} style={{ color: Theme.palette.gray700 }} />,
+export const Currency = Template.bind({});
+Currency.args = {
+  label: <SSSTypography content={"Amount"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  placeholder: "1.000,00",
+  leftContent: <SSSTypography content={<div>&euro;</div>} style={{ color: Theme.palette.gray700 }} />,
   rightContent: <HelpCircleIcon stroke={Theme.palette.gray700} width="14px" />,
+  type: "currency",
+  value: "123456",
 };
 
 export const PhoneNumber = Template.bind({});
 const options = [
-  { value: "us", label: <Typography content={"US"} variant={"bodySmall"} /> },
-  { value: "es", label: <Typography content={"ES"} variant={"bodySmall"} /> },
+  { id: "us", title: <SSSTypography content={"US"} variant={"bodySmall"} /> },
+  { id: "es", title: <SSSTypography content={"ES"} variant={"bodySmall"} /> },
 ];
 
 PhoneNumber.args = {
-  label: <Typography content={"Phone number"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  label: <SSSTypography content={"Phone number"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
   leftContent: (
-    <Dropdown
+    <SSSDropdown
       options={options}
       style={{ border: "0 !important", padding: 0, boxShadow: "none !important" }}
-      placeholder={options[0].label}
+      placeholder={options[0].title}
+      name="phone_number"
     />
   ),
   rightContent: <HelpCircleIcon stroke={Theme.palette.gray400} width={"16px"} />,
@@ -63,27 +73,22 @@ PhoneNumber.args = {
 
 export const Error = Template.bind({});
 Error.args = {
-  label: <Typography content={"Email"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  label: <SSSTypography content={"Email"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
   placeholder: "Email here...",
   error: "This is error.",
   leftContent: <MailIcon stroke={Theme.palette.gray700} width={"20px"} />,
   rightContent: <DangerIcon stroke={Theme.palette.error500} size="16px" />,
+  disabled: false,
 };
 
 //
 
 export const WithHint = Template.bind({});
 WithHint.args = {
-  label: <Typography content={"Email"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  label: "test",
+  disabled: true,
   placeholder: "Email here...",
   hint: "This is hint.",
   leftContent: <MailIcon stroke={Theme.palette.gray700} width={"20px"} />,
   rightContent: <HelpCircleIcon stroke={Theme.palette.gray400} width={"16px"} />,
-};
-
-export const Textarea = Template.bind({});
-Textarea.args = {
-  label: <Typography content={"Email"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
-  placeholder: "Text here...",
-  textarea: true,
 };

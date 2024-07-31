@@ -1,11 +1,10 @@
-/// <reference types="react" />
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { DropdownProps } from "./types";
-declare const _default: ComponentMeta<({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, isClearable, backspaceRemovesValue, showArrow, closeMenuOnSelect, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, className, value, menuPortalTarget, showSearchIcon, ...props }: DropdownProps) => JSX.Element>;
+import { SSSDropdownProps } from "./types";
+declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, SSSDropdownProps>;
 export default _default;
-export declare const DropdownDefault: ComponentStory<({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, isClearable, backspaceRemovesValue, showArrow, closeMenuOnSelect, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, className, value, menuPortalTarget, showSearchIcon, ...props }: DropdownProps) => JSX.Element>;
-export declare const DropdownWithIcons: ComponentStory<({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, isClearable, backspaceRemovesValue, showArrow, closeMenuOnSelect, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, className, value, menuPortalTarget, showSearchIcon, ...props }: DropdownProps) => JSX.Element>;
-export declare const DropdownSearch: ComponentStory<({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, isClearable, backspaceRemovesValue, showArrow, closeMenuOnSelect, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, className, value, menuPortalTarget, showSearchIcon, ...props }: DropdownProps) => JSX.Element>;
-export declare const MultipleSelect: ComponentStory<({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, isClearable, backspaceRemovesValue, showArrow, closeMenuOnSelect, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, className, value, menuPortalTarget, showSearchIcon, ...props }: DropdownProps) => JSX.Element>;
-export declare const MultipleSelectSearch: ComponentStory<({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, isClearable, backspaceRemovesValue, showArrow, closeMenuOnSelect, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, className, value, menuPortalTarget, showSearchIcon, ...props }: DropdownProps) => JSX.Element>;
-export declare const DropdownWithAvatars: ComponentStory<({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, isClearable, backspaceRemovesValue, showArrow, closeMenuOnSelect, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, className, value, menuPortalTarget, showSearchIcon, ...props }: DropdownProps) => JSX.Element>;
+export declare const DropdownDefault: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSDropdownProps>;
+export declare const DropdownWithIcons: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSDropdownProps>;
+export declare const DropdownSearch: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSDropdownProps>;
+export declare const MultipleSelect: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSDropdownProps>;
+export declare const MultipleSelectSearch: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSDropdownProps>;
+export declare const DropdownWithAvatars: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSDropdownProps>;
+export declare const DropdownWithError: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSDropdownProps>;

@@ -1,3 +1,3 @@
-/// <reference types="react" />
-import { BreadcrumbsProps } from "./types";
-export declare const Breadcrumbs: ({ theme, onClick, items, separator, style, className }: BreadcrumbsProps) => JSX.Element;
+import React from "react";
+import { SSSBreadcrumbsProps } from "./types";
+export declare const SSSBreadcrumbs: (props: SSSBreadcrumbsProps) => React.JSX.Element;

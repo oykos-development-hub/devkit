@@ -1,9 +1,9 @@
 import React from "react";
-import { Divider } from "./index";
+import { SSSDivider } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 export default {
     title: "Components/Divider",
-    component: Divider,
+    component: SSSDivider,
     argTypes: {
         color: {
             control: {
@@ -33,7 +33,7 @@ export default {
     },
 };
 const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement(Divider, Object.assign({}, args))));
+    React.createElement(SSSDivider, Object.assign({}, args))));
 export const Default = Template.bind({});
 Default.args = {
     width: "240px",

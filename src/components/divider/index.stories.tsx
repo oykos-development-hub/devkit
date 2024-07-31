@@ -1,12 +1,12 @@
 import React from "react";
-import { Divider } from "./index";
+import { SSSDivider } from "./index";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { DividerProps } from "./types";
+import { SSSDividerProps } from "./types";
 
 export default {
   title: "Components/Divider",
-  component: Divider,
+  component: SSSDivider,
   argTypes: {
     color: {
       control: {
@@ -34,11 +34,11 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Divider>;
+} as ComponentMeta<typeof SSSDivider>;
 
-const Template: ComponentStory<typeof Divider> = (args: DividerProps) => (
+const Template: ComponentStory<typeof SSSDivider> = (args: SSSDividerProps) => (
   <StoryWrapper>
-    <Divider {...args} />
+    <SSSDivider {...args} />
   </StoryWrapper>
 );
 

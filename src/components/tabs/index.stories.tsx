@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { Tabs } from "./index";
-import { Tab, TabsProps } from "./types";
+import { SSSTabs } from "./index";
+import { SSSTabsProps } from "./types";
 
 const tabsArr = [
   { id: 1, title: "Tab 1" },
@@ -19,38 +19,34 @@ const disabledTabs = [
 ];
 
 export default {
-  component: Tabs,
+  component: SSSTabs,
   title: "Components/Tabs",
-} as ComponentMeta<typeof Tabs>;
+} as ComponentMeta<typeof SSSTabs>;
 
-const Template: ComponentStory<typeof Tabs> = (args: TabsProps) => {
-  const [activeTab, setActiveTab] = useState<string | number>(1);
-
-  const onChange = (tab: Tab) => {
-    setActiveTab(tab.id);
-  };
-
-  return (
-    <StoryWrapper>
-      <Tabs {...args} activeTab={activeTab} onChange={onChange} />
-    </StoryWrapper>
-  );
-};
+const Template: ComponentStory<typeof SSSTabs> = (args: SSSTabsProps) => (
+  <StoryWrapper style={{ gap: 0 }}>
+    <SSSTabs {...args} />
+  </StoryWrapper>
+);
 
 export const DefaultTabs = Template.bind({});
+
 DefaultTabs.args = {
   tabs: tabsArr,
+  style: {
+    borderWidth: "1px",
+    borderRadius: "0.5em 0.5em 0 0",
+  },
 };
+
+//
 
 export const WithDisabledTabs = Template.bind({});
+
 WithDisabledTabs.args = {
   tabs: disabledTabs,
-};
-
-export const StyledTabs = Template.bind({});
-StyledTabs.args = {
-  tabs: tabsArr,
   style: {
+    borderWidth: "1px",
     borderRadius: "0.5em 0.5em 0 0",
   },
 };

@@ -1,6 +1,2 @@
-export var CheckboxSize;
-(function (CheckboxSize) {
-    CheckboxSize["sm"] = "sm";
-    CheckboxSize["md"] = "md";
-})(CheckboxSize || (CheckboxSize = {}));
+export {};
 //# sourceMappingURL=types.js.map

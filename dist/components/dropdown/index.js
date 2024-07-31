@@ -1,46 +1,34 @@
-var __rest = (this && this.__rest) || function (s, e) {
-    var t = {};
-    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
-        t[p] = s[p];
-    if (s != null && typeof Object.getOwnPropertySymbols === "function")
-        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
-                t[p[i]] = s[p[i]];
-        }
-    return t;
-};
-import React, { useEffect, useRef, useState } from "react";
+import React, { useMemo } from "react";
 import { Theme } from "../../shared/theme";
-import { StyledSelect } from "./styles/select";
-import { DropdownContainer } from "./styles/container";
-import { Option, OptionContent } from "./styles/option";
-import { ControlIconWrapper } from "./styles/controlIconWrapper";
-import { rem } from "polished";
-import { Wrapper } from "./styles/wrapper";
-import { components } from "react-select";
-import { SearchIcon } from "../icon";
-import { ErrorContainer } from "./styles/errorContainer";
-import { ErrorText } from "./styles/errorText";
-export const Dropdown = (_a) => {
-    var { options, theme = Theme, isDisabled = false, isSearchable = false, isMulti = false, noOptionsText = "No options", label, style, isClearable, backspaceRemovesValue = true, showArrow = true, closeMenuOnSelect = true, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder = "", className, value, menuPortalTarget, showSearchIcon = false } = _a, props = __rest(_a, ["options", "theme", "isDisabled", "isSearchable", "isMulti", "noOptionsText", "label", "style", "isClearable", "backspaceRemovesValue", "showArrow", "closeMenuOnSelect", "dropdownIndicator", "controlIcon", "leftOptionIcon", "rightOptionIcon", "onChange", "placeholder", "className", "value", "menuPortalTarget", "showSearchIcon"]);
-    const [controlIconWidth, setControlIconWidth] = useState(0);
-    const controlIconWrapperRef = useRef(null);
-    const optionLabel = (e) => (React.createElement(Option, { theme: theme, isDisabled: isDisabled, style: style },
-        React.createElement(OptionContent, null,
-            leftOptionIcon && leftOptionIcon,
-            e.label),
-        !isMulti && (value === null || value === void 0 ? void 0 : value.value) === e.value && React.createElement(OptionContent, null, rightOptionIcon && rightOptionIcon)));
-    useEffect(() => {
-        var _a;
-        if (controlIcon && controlIconWrapperRef.current)
-            setControlIconWidth((_a = controlIconWrapperRef.current) === null || _a === void 0 ? void 0 : _a.offsetWidth);
-    }, []);
-    const DropdownIndicator = (props) => (React.createElement(components.DropdownIndicator, Object.assign({}, props), !dropdownIndicator ? React.createElement(SearchIcon, { stroke: theme.palette.gray700, fill: "none" }) : dropdownIndicator));
-    return (React.createElement(DropdownContainer, { className: className },
-        React.createElement(Wrapper, null,
-            label && label,
-            React.createElement(StyledSelect, Object.assign({ backspaceRemovesValue: backspaceRemovesValue, options: options, classNamePrefix: "select", theme: theme, blurInputOnSelect: true, isSearchable: isSearchable, isDisabled: isDisabled, noOptionsMessage: () => noOptionsText, style: Object.assign({ paddingLeft: `${controlIcon && `calc(${controlIconWidth}px + ${rem("8px")})`}` }, style), onChange: onChange, controlIcon: controlIcon, showArrow: showArrow, isMulti: isMulti, formatOptionLabel: optionLabel, placeholder: placeholder, closeMenuOnSelect: closeMenuOnSelect, isClearable: isClearable, value: value, menuPortalTarget: menuPortalTarget }, props, { components: isSearchable && showSearchIcon ? { DropdownIndicator } : {} })),
-            React.createElement(ControlIconWrapper, { ref: controlIconWrapperRef }, controlIcon)),
-        React.createElement(ErrorContainer, { theme: theme }, typeof props.error === "string" ? (React.createElement(ErrorText, { theme: theme, variant: "bodySmall", content: props.error })) : (props.error))));
+import { LabelWrapper, StyledDropdown } from "./styles/styledDropdown";
+import { SSSTypography } from "../typography";
+export const SSSDropdown = (props) => {
+    var _a, _b, _c, _d, _e, _f, _g, _h;
+    const mergedProps = useMemo(() => (Object.assign(Object.assign({ theme: Theme }, props), { name: props.name || "", isSearchable: props.isSearchable || true, showSearchIcon: props.showSearchIcon || false })), [props]);
+    const handleChange = (value) => {
+        props.onChange &&
+            props.onChange(mergedProps.isMulti ? value : { id: value.value, title: value.label }, mergedProps.name);
+    };
+    const popperContainer = document.getElementById("custom-popper-container");
+    return (React.createElement(StyledDropdown, Object.assign({}, mergedProps, { onChange: handleChange, options: mergedProps.options.map((option) => ({ value: option.id, label: option.title })), value: (mergedProps.value
+            ? mergedProps.isMulti
+                ? mergedProps.value
+                : { value: ((_a = mergedProps.value) === null || _a === void 0 ? void 0 : _a.id) || 0, label: (_b = mergedProps.value) === null || _b === void 0 ? void 0 : _b.title }
+            : null), menuPortalTarget: popperContainer ? popperContainer : document.body, label: typeof mergedProps.label === "string" ? (React.createElement(LabelWrapper, null,
+            React.createElement(SSSTypography, { content: mergedProps.label, variant: "bodySmall", style: {
+                    fontWeight: 600,
+                    color: mergedProps.isDisabled ? (_c = Theme === null || Theme === void 0 ? void 0 : Theme.palette) === null || _c === void 0 ? void 0 : _c.gray300 : (_d = Theme === null || Theme === void 0 ? void 0 : Theme.palette) === null || _d === void 0 ? void 0 : _d.gray900,
+                } }),
+            React.createElement(SSSTypography, { content: "*", variant: "bodyLarge", style: {
+                    marginLeft: 5,
+                    color: mergedProps.isDisabled && mergedProps.isRequired
+                        ? (_e = Theme === null || Theme === void 0 ? void 0 : Theme.palette) === null || _e === void 0 ? void 0 : _e.gray300
+                        : mergedProps.isRequired
+                            ? (_f = Theme === null || Theme === void 0 ? void 0 : Theme.palette) === null || _f === void 0 ? void 0 : _f.error400
+                            : "transparent",
+                } }))) : (React.createElement(SSSTypography, { content: mergedProps.label, variant: "bodySmall", style: {
+                fontWeight: 600,
+                color: mergedProps.isDisabled ? (_g = Theme === null || Theme === void 0 ? void 0 : Theme.palette) === null || _g === void 0 ? void 0 : _g.gray300 : (_h = Theme === null || Theme === void 0 ? void 0 : Theme.palette) === null || _h === void 0 ? void 0 : _h.gray900,
+            } })) })));
 };
 //# sourceMappingURL=index.js.map

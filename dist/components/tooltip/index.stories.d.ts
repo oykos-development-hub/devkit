@@ -1,10 +1,7 @@
-/// <reference types="react" />
-import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { TooltipProps } from "./types";
-declare const _default: ComponentMeta<({ position, theme, content, children, title, variant, arrow, style, className, }: TooltipProps) => JSX.Element>;
+import { SSSTooltipProps } from "./types";
+declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, SSSTooltipProps>;
 export default _default;
-export declare const TooltipDefault: ComponentStory<({ position, theme, content, children, title, variant, arrow, style, className, }: TooltipProps) => JSX.Element>;
-export declare const TooltipWithTitle: ComponentStory<({ position, theme, content, children, title, variant, arrow, style, className, }: TooltipProps) => JSX.Element>;
-export declare const TooltipVariantFilled: ComponentStory<({ position, theme, content, children, title, variant, arrow, style, className, }: TooltipProps) => JSX.Element>;
-export declare const TooltipWithArrow: ComponentStory<({ position, theme, content, children, title, variant, arrow, style, className, }: TooltipProps) => JSX.Element>;
-export declare const StyledTooltip: ComponentStory<({ position, theme, content, children, title, variant, arrow, style, className, }: TooltipProps) => JSX.Element>;
+export declare const NoContent: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSTooltipProps>;
+export declare const WithContent: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSTooltipProps>;
+export declare const NoContentFilled: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSTooltipProps>;
+export declare const WithContentFilled: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSTooltipProps>;

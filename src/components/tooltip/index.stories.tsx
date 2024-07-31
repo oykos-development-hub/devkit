@@ -1,75 +1,60 @@
 import React from "react";
-import { Tooltip } from "./index";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { SSSTooltipProps } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { TooltipProps } from "./types";
+import { SSSTooltip } from "./index";
+import { TooltipPositions, TooltipVariants } from "@oykos-development/devkit-react-ts-styled-components";
 
 export default {
+  component: SSSTooltip,
   title: "Components/Tooltip",
-  component: Tooltip,
   argTypes: {
-    theme: {
-      control: {
-        type: "object",
-      },
-    },
-    style: {},
     position: {
       control: {
         type: "radio",
-        options: ["right", "left", "top", "bottom", "topLeft", "topRight"],
+        options: TooltipPositions,
       },
-    },
-    arrow: {
-      control: {
-        type: "boolean",
-      },
+      defaultValue: TooltipPositions.bottom,
     },
     variant: {
       control: {
         type: "radio",
-        options: ["standard", "filled"],
+        options: TooltipVariants,
       },
     },
   },
-} as ComponentMeta<typeof Tooltip>;
+} as ComponentMeta<typeof SSSTooltip>;
 
-const Template: ComponentStory<typeof Tooltip> = (args: TooltipProps) => (
+const Template: ComponentStory<typeof SSSTooltip> = (args: SSSTooltipProps) => (
   <StoryWrapper>
-    <Tooltip {...args}>
-      <span>Hover over me!</span>
-    </Tooltip>
+    <SSSTooltip {...args}>Hover over me!</SSSTooltip>
   </StoryWrapper>
 );
 
-export const TooltipDefault = Template.bind({});
-TooltipDefault.args = {
-  content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+export const NoContent = Template.bind({});
+NoContent.args = {
+  title: "This is a tooltip",
+  variant: "standard",
 };
 
-export const TooltipWithTitle = Template.bind({});
-TooltipWithTitle.args = {
-  title: "Tooltip title",
-  content: "This is a tooltip",
+export const WithContent = Template.bind({});
+WithContent.args = {
+  title: "This is a tooltip",
+  variant: "standard",
+  content:
+    "Tooltips are used to describe  or identify an element. In most scenarios, tooltips help the user understand the meaning, function or alt-text of an element.",
 };
 
-export const TooltipVariantFilled = Template.bind({});
-TooltipVariantFilled.args = {
-  content: "This is a tooltip",
+export const NoContentFilled = Template.bind({});
+NoContentFilled.args = {
+  title: "This is a tooltip",
   variant: "filled",
 };
 
-export const TooltipWithArrow = Template.bind({});
-TooltipWithArrow.args = {
-  content: "This is a tooltip",
-  arrow: true,
+export const WithContentFilled = Template.bind({});
+WithContentFilled.args = {
+  title: "This is a tooltip",
   variant: "filled",
-};
-
-export const StyledTooltip = Template.bind({});
-StyledTooltip.args = {
-  content: "This is a tooltip",
-  arrow: true,
-  variant: "filled",
-  style: { color: "yellow", backgroundColor: "red", width: "200px" },
+  content:
+    "Tooltips are used to describe  or identify an element. In most scenarios, tooltips help the user understand the meaning, function or alt-text of an element.",
 };

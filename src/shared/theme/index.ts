@@ -1,5 +1,19 @@
-import { DefaultTheme } from "styled-components";
+import { DefaultTheme, createGlobalStyle } from "styled-components";
 import colors from "./color-types";
+
+export const GlobalStyle = createGlobalStyle`
+@font-face {
+  font-family: 'Source Sans Pro';
+  src: url("/fonts/SourceSansPro-Regular.ttf") format('truetype'),
+       url("/fonts/SourceSansPro-SemiBold.ttf") format('truetype');
+  font-weight: 400,700; 
+}
+@font-face {
+  font-family: 'Merriweather';
+  src: url("/fonts/Merriweather-Bold.ttf") format('truetype');
+  font-weight: 700
+}
+`;
 
 export const Theme: DefaultTheme = {
   mediaScreenBreakpoints: {
@@ -88,8 +102,8 @@ export const Theme: DefaultTheme = {
     xxl: "8.5rem",
   },
   fontFamily: {
-    one: "Rubik, sans-serif",
-    two: "Inter, sans-serif",
+    one: "Merriweather, sans-serif",
+    two: "Source Sans Pro, sans-serif",
     three: "JetBrains Mono",
   },
   palette: {

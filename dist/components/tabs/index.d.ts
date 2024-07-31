@@ -1,3 +1,3 @@
-/// <reference types="react" />
-import { TabsProps } from "./types";
-export declare const Tabs: ({ style, theme, tabs, onChange, className, activeTab }: TabsProps) => JSX.Element;
+import React from "react";
+import { SSSTabsProps } from "./types";
+export declare const SSSTabs: (props: SSSTabsProps) => React.JSX.Element;

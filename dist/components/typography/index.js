@@ -1,42 +1,25 @@
-import React from "react";
-import { TypographyVariants } from "./types";
-import { BodyLarge, BodyMedium, BodySmall, Caption, Code, H1, H2, H3, H4, H5, H6, HelperText, LinkLarge, LinkMedium, LinkSmall, } from "./styles/variants";
-export const Typography = (props) => {
-    var _a;
-    const variant = (_a = props.variant) !== null && _a !== void 0 ? _a : TypographyVariants.bodyMedium;
-    switch (variant) {
-        case "h1":
-            return React.createElement(H1, Object.assign({}, props), props.content);
-        case "h2":
-            return React.createElement(H2, Object.assign({}, props), props.content);
-        case "h3":
-            return React.createElement(H3, Object.assign({}, props), props.content);
-        case "h4":
-            return React.createElement(H4, Object.assign({}, props), props.content);
-        case "h5":
-            return React.createElement(H5, Object.assign({}, props), props.content);
-        case "h6":
-            return React.createElement(H6, Object.assign({}, props), props.content);
-        case "bodyLarge":
-            return React.createElement(BodyLarge, Object.assign({}, props), props.content);
-        case "bodyMedium":
-            return React.createElement(BodyMedium, Object.assign({}, props), props.content);
-        case "bodySmall":
-            return React.createElement(BodySmall, Object.assign({}, props), props.content);
-        case "linkLarge":
-            return React.createElement(LinkLarge, Object.assign({}, props), props.content);
-        case "linkMedium":
-            return React.createElement(LinkMedium, Object.assign({}, props), props.content);
-        case "linkSmall":
-            return React.createElement(LinkSmall, Object.assign({}, props), props.content);
-        case "caption":
-            return React.createElement(Caption, Object.assign({}, props), props.content);
-        case "helperText":
-            return React.createElement(HelperText, Object.assign({}, props), props.content);
-        case "code":
-            return React.createElement(Code, Object.assign({}, props), props.content);
-        default:
-            return React.createElement(BodyMedium, Object.assign({}, props), props.content);
-    }
+import React, { useCallback, useMemo } from "react";
+import { Typography, TypographyVariants } from "@oykos-development/devkit-react-ts-styled-components";
+import { GlobalStyle, Theme } from "../../shared/theme";
+export const SSSTypography = (props) => {
+    const fontToUse = useCallback(() => {
+        var _a, _b;
+        switch (props.variant) {
+            case TypographyVariants.h1:
+            case TypographyVariants.h2:
+            case TypographyVariants.h3:
+            case TypographyVariants.h4:
+            case TypographyVariants.h5:
+            case TypographyVariants.h6:
+                return (_a = Theme === null || Theme === void 0 ? void 0 : Theme.fontFamily) === null || _a === void 0 ? void 0 : _a.one;
+            default:
+                return (_b = Theme === null || Theme === void 0 ? void 0 : Theme.fontFamily) === null || _b === void 0 ? void 0 : _b.two;
+        }
+    }, [props.variant]);
+    const fontFamily = fontToUse();
+    const mergedProps = useMemo(() => (Object.assign(Object.assign({}, props), { theme: Theme, style: Object.assign(Object.assign({}, props.style), { fontFamily: fontFamily }) })), [props]);
+    return (React.createElement(React.Fragment, null,
+        React.createElement(GlobalStyle, null),
+        React.createElement(Typography, Object.assign({}, mergedProps))));
 };
 //# sourceMappingURL=index.js.map

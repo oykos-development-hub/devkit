@@ -1,14 +1,10 @@
-import { DefaultTheme } from "styled-components";
+export type LoaderSizes = "sm" | "md" | "lg";
+export type LoaderVariants = "circle" | "square" | "dots";
 
-export interface LoaderProps {
-  variant?: "one" | "two" | "three";
-  width?: string;
-  height?: string;
-  secondaryWidth?: string;
-  secondaryHeight?: string;
-  primaryColor?: string;
-  secondaryColor?: string;
-  wrapperBackgroundColor?: string;
-  theme?: DefaultTheme;
-  className?: string;
-}
+export type SSSLoaderProps = {
+  size?: LoaderSizes;
+  width?: string | number;
+  height?: string | number;
+  variant?: LoaderVariants;
+  color?: string;
+};

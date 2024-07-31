@@ -1,44 +1,28 @@
-import React from "react";
-import { ButtonProps, ButtonSizes, ButtonVariants } from "./types";
+import React, { useMemo } from "react";
+import { SSSButtonProps } from "./types";
 import { Theme } from "../../shared/theme";
-import { ButtonContainer, ButtonContent } from "./styles";
+import { StyledButton } from "./styles/styledButton";
+import CircleLoader from "../loader/circleLoader";
 
-export const Button = ({
-  onClick,
-  content,
-  customContent,
-  disabled = false,
-  variant = ButtonVariants.primary,
-  size = ButtonSizes.lg,
-  style,
-  theme,
-  className,
-  type = "button",
-  isLoading = false,
-  loader,
-}: ButtonProps) => {
+export const SSSButton = (props: SSSButtonProps) => {
+  const mergedProps = useMemo(
+    () => ({
+      theme: Theme,
+      ...props,
+    }),
+    [props],
+  );
+
   return (
-    <ButtonContainer
-      style={style}
-      disabled={disabled}
-      variant={variant}
-      size={size}
-      onClick={onClick}
-      theme={theme || Theme}
-      className={className}
-      type={type}
-      isLoading={isLoading}
-    >
-      {customContent ? (
-        customContent
-      ) : (
-        <>
-          <ButtonContent size={size} disabled={disabled} variant={variant} theme={theme || Theme} customStyle={style}>
-            {content}
-          </ButtonContent>
-          {isLoading && !!loader && loader}
-        </>
-      )}
-    </ButtonContainer>
+    <StyledButton
+      {...mergedProps}
+      loader={
+        <CircleLoader
+          width="16px"
+          height="16px"
+          color={mergedProps.variant === "primary" ? Theme.palette.white : Theme.palette.primary500}
+        />
+      }
+    />
   );
 };

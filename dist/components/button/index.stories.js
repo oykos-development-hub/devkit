@@ -1,15 +1,16 @@
-import React from "react";
-import { ButtonSizes, ButtonVariants } from "./types";
+import React, { useMemo, useState } from "react";
+import { ButtonSizes, ButtonVariants, TypographyVariants } from "@oykos-development/devkit-react-ts-styled-components";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { Button } from "./index";
-import { Loader } from "../loader";
+import { SSSButton } from "./index";
+import { CircleIcon } from "../icons";
+import { SSSTypography } from "../typography";
 export default {
-    component: Button,
+    component: SSSButton,
     title: "Components/Button",
     argTypes: {
         content: {
-            defaultValue: () => "Testiranje",
+            defaultValue: () => React.createElement("span", null, "Button"),
         },
         variant: {
             control: {
@@ -22,24 +23,13 @@ export default {
                 type: "boolean",
             },
         },
-        onClick: {
-            defaultValue: () => alert("Button clicked!"),
-        },
         theme: {
             control: {
                 type: "object",
             },
             defaultValue: Theme,
         },
-        style: {
-            defaultValue: {
-                width: "fit-content",
-                height: "fit-content",
-                margin: "0em",
-                borderWidth: "1px",
-                gap: "0.5em",
-            },
-        },
+        style: {},
         size: {
             control: {
                 type: "radio",
@@ -48,33 +38,56 @@ export default {
         },
     },
 };
-const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement(Button, Object.assign({}, args))));
+const Template = (props) => {
+    const [clickedCounter, setClickedCounter] = useState(0);
+    const clickHandler = useMemo(() => () => setClickedCounter(clickedCounter + 1), [clickedCounter]);
+    const typographyVariant = useMemo(() => {
+        switch (props.size) {
+            case ButtonSizes.xs:
+            case ButtonSizes.sm:
+                return TypographyVariants.bodySmall;
+            case ButtonSizes.md:
+            case ButtonSizes.lg:
+                return TypographyVariants.bodyMedium;
+            default:
+                return TypographyVariants.bodyLarge;
+        }
+    }, [props.size]);
+    const mergedProps = useMemo(() => {
+        var _a;
+        return (Object.assign(Object.assign({ variant: ButtonVariants.primary, size: ButtonSizes.lg, theme: Theme }, props), { onClick: clickHandler, content: (_a = props.content) !== null && _a !== void 0 ? _a : (React.createElement(SSSTypography, { content: `Button is clicked ${clickedCounter} times.`, variant: typographyVariant })) }));
+    }, [props, clickedCounter]);
+    return (React.createElement(StoryWrapper, null,
+        React.createElement(SSSButton, Object.assign({}, mergedProps))));
+};
 export const CustomButton = Template.bind({});
 CustomButton.args = {
-    content: "Button CTA",
-    onClick: () => alert("Button clicked!"),
     variant: ButtonVariants.primary,
     size: ButtonSizes.lg,
+    content: null,
 };
 export const StyledButton = Template.bind({});
 StyledButton.args = {
-    content: "Styled Button",
-    onClick: () => alert("Button clicked!"),
-    variant: ButtonVariants.primary,
-    size: ButtonSizes.lg,
+    variant: ButtonVariants.secondary,
+    size: ButtonSizes.xl,
     style: {
-        backgroundColor: Theme.palette.success500,
-        color: Theme.palette.white,
+        backgroundColor: Theme.palette.gray50,
+        color: Theme.palette.primary500,
     },
+    content: null,
+};
+export const IconButton = Template.bind({});
+IconButton.args = {
+    variant: ButtonVariants.secondary,
+    size: ButtonSizes.xs,
+    style: { padding: "10px" },
+    content: React.createElement(CircleIcon, { width: "16px", height: "16px", fill: "transparent", stroke: "#FFF", style: { display: "flex" } }),
 };
 export const LoadingButton = Template.bind({});
 LoadingButton.args = {
-    content: "Loading Button",
-    onClick: () => alert("Button clicked!"),
-    variant: ButtonVariants.primary,
-    size: ButtonSizes.lg,
+    variant: ButtonVariants.secondary,
+    size: ButtonSizes.xs,
     isLoading: true,
-    loader: React.createElement(Loader, { variant: "three", width: "16px", height: "16px" }),
+    content: React.createElement(SSSTypography, { content: "Loading Button" }),
 };
 //# sourceMappingURL=index.stories.js.map

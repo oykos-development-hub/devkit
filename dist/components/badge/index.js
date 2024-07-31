@@ -1,13 +1,8 @@
-import React from "react";
-import { Container } from "./styles/container";
-export const Badge = ({ variant = "primary", content, leftSlot, rightSlot, size = "md", style, theme, className, }) => (React.createElement(Container, { variant: variant, size: size, style: style, theme: theme, className: className },
-    React.createElement("div", { style: {
-            display: "flex",
-            justifyContent: "center",
-            flexDirection: "row",
-            alignItems: "center",
-        } },
-        leftSlot && React.createElement("div", { style: { marginRight: "7px", display: "flex" } }, leftSlot),
-        React.createElement("div", null, content),
-        rightSlot && React.createElement("div", { style: { marginLeft: "7px", display: "flex" } }, rightSlot))));
+import React, { useMemo } from "react";
+import { Theme } from "../../shared/theme";
+import StyledBadge from "./styles/styledBadge";
+export const SSSBadge = (props) => {
+    const mergedProps = useMemo(() => (Object.assign({ theme: Theme }, props)), [props]);
+    return React.createElement(StyledBadge, Object.assign({}, mergedProps));
+};
 //# sourceMappingURL=index.js.map

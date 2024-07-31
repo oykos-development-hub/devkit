@@ -1,18 +1,6 @@
-import React from "react";
-import { DefaultTheme } from "styled-components";
+import { CheckboxProps } from "@oykos-development/devkit-react-ts-styled-components";
 
-export enum CheckboxSize {
-  sm = "sm",
-  md = "md",
-}
-
-export interface CheckboxProps {
-  size?: CheckboxSize | `${CheckboxSize}`;
-  disabled?: boolean;
-  onClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-  style?: React.CSSProperties;
-  theme?: DefaultTheme;
-  checked: boolean;
-  className?: string;
-  name?: string;
+export interface SSSCheckboxProps extends Omit<CheckboxProps, "onClick"> {
+  name: string;
+  onChange: any;
 }

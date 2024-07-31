@@ -1,26 +1,21 @@
-import React, { useMemo } from "react";
-import { One } from "./one";
-import { Two } from "./two";
+import React from "react";
+import CircleLoader from "./circleLoader";
 import { Theme } from "../../shared/theme";
-import { Three } from "./three";
-const resolveSecondaryValue = (value) => {
-    if (!value)
-        return "";
-    const numericValue = parseFloat(value);
-    const unitValue = value.replace(new RegExp(String(numericValue), "g"), "");
-    return String(numericValue + 20) + unitValue;
+const sizes = {
+    sm: "24px",
+    md: "48px",
+    lg: "96px",
 };
-export const Loader = (props) => {
-    var _a;
-    const variant = (_a = props.variant) !== null && _a !== void 0 ? _a : "one";
-    const secondaryWidth = useMemo(() => resolveSecondaryValue(props.width), []);
-    const secondaryHeight = useMemo(() => resolveSecondaryValue(props.height), []);
-    if (variant === "one")
-        return React.createElement(One, Object.assign({}, props, { secondaryWidth: secondaryWidth, secondaryHeight: secondaryHeight }));
-    if (variant === "two")
-        return React.createElement(Two, Object.assign({}, props, { secondaryWidth: secondaryWidth, secondaryHeight: secondaryHeight }));
-    if (variant === "three")
-        return React.createElement(Three, Object.assign({}, props, { variant: props.variant, theme: props.theme || Theme }));
-    return React.createElement(One, Object.assign({}, props));
+export const SSSLoader = (props) => {
+    const { width, height, size, color } = props;
+    const resolvedWidth = size ? sizes[size] : width ? (typeof width === "string" ? width : `${width}px`) : sizes["md"];
+    const resolvedHeight = size
+        ? sizes[size]
+        : height
+            ? typeof height === "string"
+                ? height
+                : `${height}px`
+            : sizes["md"];
+    return React.createElement(CircleLoader, { width: resolvedWidth, height: resolvedHeight, color: color !== null && color !== void 0 ? color : Theme.palette.primary500 });
 };
 //# sourceMappingURL=index.js.map

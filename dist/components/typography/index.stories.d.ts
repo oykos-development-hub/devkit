@@ -1,14 +1,3 @@
-import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-declare const _default: ComponentMeta<(props: import("./types").TypographyProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
+declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").TypographyProps>;
 export default _default;
-export declare const Headings: ComponentStory<(props: import("./types").TypographyProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const BodyLarge: ComponentStory<(props: import("./types").TypographyProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const BodyMedium: ComponentStory<(props: import("./types").TypographyProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const BodySmall: ComponentStory<(props: import("./types").TypographyProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const LinkLarge: ComponentStory<(props: import("./types").TypographyProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const LinkMedium: ComponentStory<(props: import("./types").TypographyProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const LinkSmall: ComponentStory<(props: import("./types").TypographyProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const Caption: ComponentStory<(props: import("./types").TypographyProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const HelperText: ComponentStory<(props: import("./types").TypographyProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
-export declare const Code: ComponentStory<(props: import("./types").TypographyProps) => React.ReactElement<any, string | React.JSXElementConstructor<any>>>;
+export declare const CustomTypography: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").TypographyProps>;

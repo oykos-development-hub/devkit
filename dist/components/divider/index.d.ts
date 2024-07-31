@@ -1,3 +1,3 @@
 import React from "react";
-import { DividerProps } from "./types";
-export declare const Divider: React.FC<DividerProps>;
+import { SSSDividerProps } from "./types";
+export declare const SSSDivider: (props: SSSDividerProps) => React.JSX.Element;

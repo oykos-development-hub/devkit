@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Checkbox } from "./";
+import { SSSCheckbox } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { CheckboxSize } from "./types";
+import { CheckboxSize } from "@oykos-development/devkit-react-ts-styled-components";
 import { Theme } from "../../shared/theme";
 export default {
     title: "Components/Checkbox",
-    component: Checkbox,
+    component: SSSCheckbox,
     argTypes: {
         size: {
             control: {
@@ -32,18 +32,18 @@ export default {
             control: {
                 type: "object",
             },
+            defaultValue: Theme,
         },
     },
 };
 const Template = (args) => {
     const [checked, setIsChecked] = useState(false);
     return (React.createElement(StoryWrapper, null,
-        React.createElement(Checkbox, Object.assign({}, args, { onClick: () => setIsChecked((prev) => !prev), checked: checked }))));
+        React.createElement(SSSCheckbox, Object.assign({}, args, { checked: checked, name: "test", onChange: () => setIsChecked((prev) => !prev) }))));
 };
 export const Default = Template.bind({});
 Default.args = {
     size: CheckboxSize.sm,
     disabled: false,
-    theme: Theme,
 };
 //# sourceMappingURL=index.stories.js.map

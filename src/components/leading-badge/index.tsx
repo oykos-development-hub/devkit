@@ -1,27 +1,16 @@
-import React from "react";
-import { LeadingBadgeProps } from "./types";
-import { Container } from "./styles/container";
-import { Badge } from "../badge";
+import React, { useMemo } from "react";
+import { LeadingBadge } from "@oykos-development/devkit-react-ts-styled-components";
+import { SSSLeadingBadgeProps } from "./types";
+import { Theme } from "../../shared/theme";
 
-export const LeadingBadge: React.FC<LeadingBadgeProps> = ({
-  variant = "primary",
-  content,
-  badgeContent,
-  size = "md",
-  style,
-  leadingBadgeTheme = "light",
-  theme,
-  className,
-}) => (
-  <Container
-    variant={variant}
-    size={size}
-    style={style}
-    leadingBadgeTheme={leadingBadgeTheme}
-    theme={theme}
-    className={className}
-  >
-    <Badge variant={variant} size={size} content={badgeContent} style={style} theme={theme} />
-    {content}
-  </Container>
-);
+export const SSSLeadingBadge = (props: SSSLeadingBadgeProps) => {
+  const mergedProps = useMemo(
+    () => ({
+      theme: Theme,
+      ...props,
+    }),
+    [props],
+  );
+
+  return <LeadingBadge {...mergedProps} />;
+};

@@ -1,17 +1,8 @@
-import React from "react";
-import { CheckboxSize } from "./types";
-import { Container } from "./styles/container";
-import { Content, HiddenCheckbox } from "./styles/content";
+import React, { useMemo } from "react";
+import { Checkbox } from "@oykos-development/devkit-react-ts-styled-components";
 import { Theme } from "../../shared/theme";
-import { CheckIcon } from "../icon";
-export const Checkbox = ({ size = CheckboxSize.sm, onClick, style, theme = Theme, disabled = false, checked, className, }) => {
-    const handleClick = (e) => {
-        if (disabled)
-            return;
-        onClick && onClick(e);
-    };
-    return (React.createElement(Container, { className: className },
-        React.createElement(HiddenCheckbox, { defaultChecked: checked }),
-        React.createElement(Content, { checked: checked, onClick: handleClick, size: size, style: style, theme: theme, disabled: disabled }, checked && React.createElement(CheckIcon, { stroke: disabled ? theme.palette.gray300 : "white" }))));
+export const SSSCheckbox = (props) => {
+    const mergedProps = useMemo(() => (Object.assign({ theme: Theme }, props)), [props]);
+    return React.createElement(Checkbox, Object.assign({}, mergedProps, { onClick: (e) => mergedProps.onChange(!mergedProps.checked, e) }));
 };
 //# sourceMappingURL=index.js.map

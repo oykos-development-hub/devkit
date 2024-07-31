@@ -1,52 +1,40 @@
-import React, { useCallback, useState } from "react";
+import React, { useMemo } from "react";
+import { Tooltip } from "@oykos-development/devkit-react-ts-styled-components";
+import { SSSTooltipProps } from "./types";
 import { Theme } from "../../shared/theme";
-import { Typography } from "../typography";
-import { HoverContents } from "./styles/hoverContents";
-import { StyledTooltip } from "./styles/tooltip";
-import { TooltipPositions, TooltipProps } from "./types";
-import { Container } from "./styles/container";
+import Container from "./styles/container";
+import TooltipText from "./styles/tooltipText";
 
-export const Tooltip = ({
-  position,
-  theme = Theme,
-  content,
-  children,
-  title,
-  variant = "standard",
-  arrow,
-  style,
-  className,
-}: TooltipProps) => {
-  const [tooltipWidth, setTooltipWidth] = useState(0);
-  const tooltipPosition = TooltipPositions[position] || "bottom";
-
-  const tooltipRef = useCallback(
-    (node: HTMLDivElement) => {
-      if (node !== null) {
-        setTooltipWidth(node.offsetWidth);
-      }
-    },
-    [content, title],
+export const SSSTooltip = (props: SSSTooltipProps) => {
+  const mergedProps = useMemo(
+    () => ({
+      ...props,
+      arrow: true,
+      theme: Theme,
+    }),
+    [props],
   );
 
   return (
-    <Container className={className}>
-      <HoverContents tooltipWidth={tooltipWidth} position={tooltipPosition}>
-        {children}
-      </HoverContents>
-      <StyledTooltip
-        style={style}
-        arrow={arrow}
-        content={content}
-        variant={variant}
-        theme={theme}
-        position={tooltipPosition}
-        title={title}
-        ref={tooltipRef}
-      >
-        {title && <Typography content={title} variant="h6" />}
-        <Typography content={content} variant="bodyMedium" />
-      </StyledTooltip>
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    <Container
+      theme={mergedProps.theme}
+      variant={mergedProps.variant}
+      hasContent={!!mergedProps.content}
+      className={mergedProps.className}
+    >
+      <Tooltip
+        {...mergedProps}
+        content={
+          <TooltipText
+            tooltipVariant={mergedProps.variant}
+            variant="bodySmall"
+            content={mergedProps.content}
+            theme={mergedProps.theme}
+          />
+        }
+      />
     </Container>
   );
 };

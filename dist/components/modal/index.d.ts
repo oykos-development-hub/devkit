@@ -1,3 +1,3 @@
-/// <reference types="react" />
-import { ModalProps } from "./types";
-export declare const Modal: ({ theme, title, content, open, onClose, variant, style, className, outsideClickClose, }: ModalProps) => JSX.Element;
+import React from "react";
+import { SSSModalProps } from "./types";
+export declare const SSSModal: ({ footerText, leftButtonOnClick, leftButtonText, rightButtonOnClick, rightButtonText, width, buttonLoading, customModalContent, ...props }: SSSModalProps) => React.JSX.Element;

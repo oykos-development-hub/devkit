@@ -1,27 +1,25 @@
-import React, { useMemo } from "react";
-import { LoaderProps } from "./types";
-import { One } from "./one";
-import { Two } from "./two";
+import React from "react";
+import { SSSLoaderProps } from "./types";
+import CircleLoader from "./circleLoader";
 import { Theme } from "../../shared/theme";
-import { Three } from "./three";
 
-const resolveSecondaryValue = (value?: string): string => {
-  if (!value) return "";
-
-  const numericValue = parseFloat(value);
-  const unitValue = value.replace(new RegExp(String(numericValue), "g"), "");
-
-  return String(numericValue + 20) + unitValue;
+const sizes = {
+  sm: "24px",
+  md: "48px",
+  lg: "96px",
 };
 
-export const Loader = (props: LoaderProps): React.ReactElement => {
-  const variant = props.variant ?? "one";
-  const secondaryWidth = useMemo(() => resolveSecondaryValue(props.width), []);
-  const secondaryHeight = useMemo(() => resolveSecondaryValue(props.height), []);
+export const SSSLoader = (props: SSSLoaderProps) => {
+  const { width, height, size, color } = props;
 
-  if (variant === "one") return <One {...props} secondaryWidth={secondaryWidth} secondaryHeight={secondaryHeight} />;
-  if (variant === "two") return <Two {...props} secondaryWidth={secondaryWidth} secondaryHeight={secondaryHeight} />;
-  if (variant === "three") return <Three {...props} variant={props.variant} theme={props.theme || Theme} />;
+  const resolvedWidth = size ? sizes[size] : width ? (typeof width === "string" ? width : `${width}px`) : sizes["md"];
+  const resolvedHeight = size
+    ? sizes[size]
+    : height
+    ? typeof height === "string"
+      ? height
+      : `${height}px`
+    : sizes["md"];
 
-  return <One {...props} />;
+  return <CircleLoader width={resolvedWidth} height={resolvedHeight} color={color ?? Theme.palette.primary500} />;
 };

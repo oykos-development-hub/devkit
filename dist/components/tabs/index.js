@@ -1,12 +1,8 @@
-import React from "react";
+import React, { useMemo } from "react";
+import { Tabs } from "@oykos-development/devkit-react-ts-styled-components";
 import { Theme } from "../../shared/theme";
-import { Container } from "./style/container";
-import { TabsContainer } from "./style/tabs-container";
-import { StyledTab } from "./style/tab";
-export const Tabs = ({ style, theme = Theme, tabs, onChange, className, activeTab }) => {
-    return (React.createElement(Container, { className: className },
-        React.createElement(TabsContainer, null, tabs === null || tabs === void 0 ? void 0 : tabs.map((tab) => {
-            return (React.createElement(StyledTab, { key: tab.id, theme: theme, disabled: tab.disabled, style: style, active: activeTab === tab.id, onClick: () => onChange(tab) }, tab.title));
-        }))));
+export const SSSTabs = (props) => {
+    const mergedProps = useMemo(() => (Object.assign(Object.assign({}, props), { theme: Theme })), [props]);
+    return React.createElement(Tabs, Object.assign({}, mergedProps));
 };
 //# sourceMappingURL=index.js.map

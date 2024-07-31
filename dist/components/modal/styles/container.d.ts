@@ -1,3 +1,6 @@
-export declare const ModalContainer: import("styled-components").StyledComponent<"div", import("styled-components").DefaultTheme, {
-    open?: boolean | undefined;
+import { DefaultTheme } from "styled-components";
+declare const Container: import("styled-components").StyledComponent<"div", DefaultTheme, {
+    theme: DefaultTheme;
+    open: boolean;
 }, never>;
+export default Container;

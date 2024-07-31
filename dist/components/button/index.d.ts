@@ -1,3 +1,3 @@
-/// <reference types="react" />
-import { ButtonProps } from "./types";
-export declare const Button: ({ onClick, content, customContent, disabled, variant, size, style, theme, className, type, isLoading, loader, }: ButtonProps) => JSX.Element;
+import React from "react";
+import { SSSButtonProps } from "./types";
+export declare const SSSButton: (props: SSSButtonProps) => React.JSX.Element;

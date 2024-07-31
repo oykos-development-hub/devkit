@@ -1,27 +1,3 @@
-import React, { ReactNode } from "react";
-import { DefaultTheme } from "styled-components";
+import { BadgeProps } from "@oykos-development/devkit-react-ts-styled-components";
 
-export enum BadgeVariants {
-  primary = "primary",
-  secondary = "secondary",
-  warning = "warning",
-  error = "error",
-  success = "success",
-}
-
-export enum BadgeSizes {
-  sm = "sm",
-  md = "md",
-  lg = "lg",
-}
-
-export interface BadgeProps {
-  variant?: BadgeVariants | `${BadgeVariants}`;
-  content?: ReactNode | string;
-  leftSlot?: JSX.Element | React.ReactNode;
-  rightSlot?: JSX.Element | React.ReactNode;
-  size?: BadgeSizes | `${BadgeSizes}`;
-  style?: React.CSSProperties;
-  theme?: DefaultTheme;
-  className?: string;
-}
+export type SSSBadgeProps = BadgeProps;

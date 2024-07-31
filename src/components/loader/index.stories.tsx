@@ -1,18 +1,20 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { Loader } from "./";
+import { SSSLoader } from "./";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { LoaderProps } from "./types";
+import { SSSLoaderProps } from "./types";
 import { Theme } from "../../shared/theme";
+import { SSSTypography } from "../typography";
 
 export default {
   title: "Components/Loader",
-  component: Loader,
+  component: SSSLoader,
   argTypes: {
     variant: {
       control: {
         type: "radio",
       },
+      options: ["one", "two"],
     },
     width: {
       control: {
@@ -45,48 +47,17 @@ export default {
       },
       defaultValue: Theme,
     },
-    testId: {
-      control: {
-        type: "text",
-      },
-    },
   },
-} as ComponentMeta<typeof Loader>;
+} as ComponentMeta<typeof SSSLoader>;
 
-const Template: ComponentStory<typeof Loader> = (args: LoaderProps) => (
+const Template: ComponentStory<typeof SSSLoader> = (args: SSSLoaderProps) => (
   <StoryWrapper>
-    <Loader {...args} />
+    <SSSLoader {...args} />
+    <SSSTypography content="This is a loader" />
   </StoryWrapper>
 );
 
-export const One = Template.bind({});
-One.args = {
-  variant: "one",
-  width: "48px",
-  height: "48px",
-  primaryColor: Theme.palette.gray200,
-  secondaryColor: Theme.palette.gray300,
-  wrapperBackgroundColor: Theme.palette.gray900,
-};
-
-export const Two = Template.bind({});
-Two.args = {
-  variant: "two",
-  width: "100px",
-  height: "100px",
-  primaryColor: Theme.palette.gray200,
-  secondaryColor: Theme.palette.gray300,
-  wrapperBackgroundColor: Theme.palette.gray900,
-};
-
-export const Three = Template.bind({});
-Three.args = {
-  variant: "three",
-  wrapperBackgroundColor: Theme.palette.gray900,
-};
-
-export const VariantTwoThemed = Template.bind({});
-VariantTwoThemed.args = {
-  variant: "two",
-  wrapperBackgroundColor: Theme.palette.gray900,
+export const CircleLoader = Template.bind({});
+CircleLoader.args = {
+  size: "lg",
 };

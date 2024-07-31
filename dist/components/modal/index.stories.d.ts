@@ -1,7 +1,4 @@
-/// <reference types="react" />
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { ModalProps } from "./types";
-declare const _default: ComponentMeta<({ theme, title, content, open, onClose, variant, style, className, outsideClickClose, }: ModalProps) => JSX.Element>;
+import { SSSModalProps } from "./types";
+declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, SSSModalProps>;
 export default _default;
-export declare const ModalDefault: ComponentStory<({ theme, title, content, open, onClose, variant, style, className, outsideClickClose, }: ModalProps) => JSX.Element>;
-export declare const ModalVariantDark: ComponentStory<({ theme, title, content, open, onClose, variant, style, className, outsideClickClose, }: ModalProps) => JSX.Element>;
+export declare const Default: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSModalProps>;

@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { AlertProps } from "./types";
+import { SSSAlertProps } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { Alert } from "./index";
-import { CircleCheckIcon, DangerIcon, InfoIcon } from "../icon";
+import { SSSAlert } from "./";
+import { CircleCheckIcon, DangerIcon, InfoIcon } from "@oykos-development/devkit-react-ts-styled-components";
 import { Theme } from "../../shared/theme";
+import { SSSTypography } from "../typography";
 
 export default {
-  component: Alert,
+  component: SSSAlert,
   title: "Components/Alert",
   argTypes: {
     content: {
@@ -18,17 +19,10 @@ export default {
     variant: {
       control: {
         type: "radio",
-        options: ["primary", "success", "error", "info"],
+        options: ["success", "error", "info"],
       },
     },
-    icon: {
-      control: {
-        type: "object",
-      },
-    },
-    onClose: {
-      defaultValue: () => alert("Closed!"),
-    },
+
     theme: {
       control: {
         type: "object",
@@ -41,7 +35,6 @@ export default {
       },
       defaultValue: {
         width: "600px",
-        height: "auto",
       },
     },
     size: {
@@ -51,25 +44,16 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof Alert>;
+} as ComponentMeta<typeof SSSAlert>;
 
-const Template: ComponentStory<typeof Alert> = (args: AlertProps) => (
-  <StoryWrapper>
-    <Alert {...args} />
-  </StoryWrapper>
-);
-
-export const Primary = Template.bind({});
-Primary.args = {
-  content: "Primary message",
-  variant: "primary",
-  size: "md",
-  closeIcon: true,
+const Template: ComponentStory<typeof SSSAlert> = (args: SSSAlertProps) => {
+  const [closed, setClosed] = useState<boolean>(false);
+  return <StoryWrapper>{!closed && <SSSAlert {...args} onClose={() => setClosed(true)} />}</StoryWrapper>;
 };
 
 export const Success = Template.bind({});
 Success.args = {
-  content: "Success message",
+  content: <SSSTypography content="Success" variant="bodyMedium" />,
   variant: "success",
   size: "md",
   icon: <CircleCheckIcon fill={"none"} stroke={"white"} />,
@@ -78,7 +62,7 @@ Success.args = {
 
 export const Error = Template.bind({});
 Error.args = {
-  content: "Error message",
+  content: <SSSTypography content="Error message" variant="bodyMedium" />,
   variant: "error",
   size: "md",
   icon: <DangerIcon fill={"none"} stroke={"white"} />,
@@ -87,7 +71,7 @@ Error.args = {
 
 export const Warning = Template.bind({});
 Warning.args = {
-  content: "Warning message",
+  content: <SSSTypography content="Warning message" variant="bodyMedium" />,
   variant: "warning",
   size: "md",
   icon: <DangerIcon fill={"none"} stroke={"white"} />,
@@ -96,7 +80,7 @@ Warning.args = {
 
 export const Info = Template.bind({});
 Info.args = {
-  content: "Info message!",
+  content: <SSSTypography content="Info message!" variant="bodyMedium" />,
   variant: "info",
   size: "md",
   icon: <InfoIcon stroke={"white"} />,

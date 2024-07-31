@@ -1,6 +1,10 @@
-/// <reference types="react" />
-import { ComponentMeta, ComponentStory } from "@storybook/react";
-declare const _default: ComponentMeta<({ theme, style, headerContent, bodyContent, titleElement, noDataMessage, className, }: import("./types").TableProps) => JSX.Element>;
+import { SSSTableProps, TableDataItem } from "./types";
+declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, SSSTableProps<TableDataItem>>;
 export default _default;
-export declare const DefaultTable: ComponentStory<({ theme, style, headerContent, bodyContent, titleElement, noDataMessage, className, }: import("./types").TableProps) => JSX.Element>;
-export declare const NoDataTable: ComponentStory<({ theme, style, headerContent, bodyContent, titleElement, noDataMessage, className, }: import("./types").TableProps) => JSX.Element>;
+export declare const DefaultTable: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSTableProps<TableDataItem>>;
+export declare const NoDataTable: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSTableProps<TableDataItem>>;
+export declare const MultipleActionsTable: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSTableProps<TableDataItem>>;
+export declare const TableWithCheckboxes: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSTableProps<TableDataItem>>;
+export declare const TableCustomHeads: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSTableProps<TableDataItem>>;
+export declare const DraggableTable: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSTableProps<TableDataItem>>;
+export declare const DefaultTableWithInputs: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSTableProps<TableDataItem>>;
