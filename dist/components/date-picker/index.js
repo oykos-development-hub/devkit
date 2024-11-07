@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { DangerIcon, Datepicker } from "@oykos-development/devkit-react-ts-styled-components";
 import { registerLocale } from "react-datepicker";
 import { Theme } from "../../shared/theme";
@@ -51,6 +51,10 @@ export const SSSDatepicker = (props) => {
             }
         }
     };
+    useEffect(() => {
+        var _a;
+        setDate((_a = props.selected) !== null && _a !== void 0 ? _a : undefined);
+    }, [props.selected]);
     return (React.createElement(Container, { theme: mergedProps.theme, disabled: mergedProps.disabled, error: !!mergedProps.error, className: mergedProps.className },
         React.createElement(Datepicker, Object.assign({ customInput: React.createElement(SSSInput, { rightContent: mergedProps.error ? React.createElement(DangerIcon, null) : React.createElement(CalendarIcon, null), error: mergedProps.error, name: mergedProps.name, label: typeof mergedProps.label === "string" ? (React.createElement(LabelWrapper, null,
                     React.createElement(SSSTypography, { content: mergedProps.label, variant: "bodySmall", style: {
