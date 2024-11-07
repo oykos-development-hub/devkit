@@ -50,7 +50,7 @@ export const Container = styled.div<{ theme: DefaultTheme; disabled: boolean; er
       font-size: 0.875rem;
       border: 1px solid ${({ error, theme }) => (error ? theme.palette.error500 : theme.palette.primary200)};
       box-shadow: ${({ error, theme }) =>
-        `0 1px 2px rgba(16, 24, 40, 0.05), 0 0 0 4px ${error ? theme.palette.error50 : theme.palette.primary50}`};
+    `0 1px 2px rgba(16, 24, 40, 0.05), 0 0 0 4px ${error ? theme.palette.error50 : theme.palette.primary50}`};
     }
 
     ${DisabledInputStyle}

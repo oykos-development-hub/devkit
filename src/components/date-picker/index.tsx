@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useMemo, useState } from "react";
+import React, { ChangeEvent, useEffect, useMemo, useState } from "react";
 import { DangerIcon, Datepicker } from "@oykos-development/devkit-react-ts-styled-components";
 import { registerLocale } from "react-datepicker";
 import { Theme } from "../../shared/theme";
@@ -66,6 +66,10 @@ export const SSSDatepicker = (props: SSSDatepickerProps) => {
       }
     }
   };
+
+  useEffect(() => {
+    setDate(props.selected ?? undefined);
+  }, [props.selected]);
 
   return (
     <Container

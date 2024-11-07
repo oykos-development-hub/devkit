@@ -9,7 +9,7 @@ export const FooterContainer = styled.div<{ style?: React.CSSProperties }>`
     align-items: center;
     justify-content: center;
     background-color: ${(props) =>
-      props.style?.backgroundColor ? props.style.backgroundColor : Theme.palette.gray200};
+    props.style?.backgroundColor ? props.style.backgroundColor : Theme.palette.gray200};
     padding-bottom: 18px;
     padding-top: 15px;
     position: absolute;
