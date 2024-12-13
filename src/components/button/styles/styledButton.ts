@@ -18,10 +18,10 @@ export const StyledButton = styled(Button)`
 
   ${ButtonContent} {
     color: ${(p) =>
-    p.disabled ? Theme.palette.gray300 : p.variant === "primary" ? Theme.palette.white : Theme.palette.primary500};
+      p.disabled ? Theme.palette.gray300 : p.variant === "primary" ? Theme.palette.white : Theme.palette.primary500};
     > * {
       color: ${(p) =>
-    p.disabled ? Theme.palette.gray300 : p.variant === "primary" ? Theme.palette.white : Theme.palette.primary500};
+        p.disabled ? Theme.palette.gray300 : p.variant === "primary" ? Theme.palette.white : Theme.palette.primary500};
     }
   }
   pointer-events: ${(p) => p.disabled && "none"};

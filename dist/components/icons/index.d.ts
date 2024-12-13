@@ -92,6 +92,7 @@ export { default as ExternalIcon } from "./variations/ExternalIcon";
 export { default as CornerUpIcon } from "./variations/CornerUpIcon";
 export { default as FilterIcon } from "./variations/FilterIcon";
 export { default as FileTextIcon } from "./variations/FileTextIcon";
+export { default as LogsActivityIcon } from "./variations/LogsActivityIcon";
 export { default as FolderMinusIcon } from "./variations/FolderMinusIcon";
 export { default as FolderPlusIcon } from "./variations/FolderPlusIcon";
 export { default as GlobeIcon } from "./variations/GlobeIcon";

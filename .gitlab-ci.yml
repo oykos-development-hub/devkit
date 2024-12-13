@@ -1,0 +1,60 @@
+variables:
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: "/certs"
+  SSH_PRIVATE_KEY: ${SSH_PRIVATE_KEY}
+  SSH_PUBLIC_KEY: ${SSH_PUBLIC_KEY}
+  REMOTE_SERVER: ${REMOTE_SERVER}
+
+image: docker:latest
+
+services:
+  - docker:dind
+
+before_script:
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - eval $(ssh-agent -s)
+  - apk add git --no-cache
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add -
+  - mkdir -p ~/.ssh
+  - echo "$SSH_PUBLIC_KEY" > ~/.ssh/id_rsa.pub
+  - echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+  - chmod 700 ~/.ssh
+  - chmod 600 ~/.ssh/id_rsa
+  - chmod 600 ~/.ssh/id_rsa.pub
+  - ssh-keyscan $REMOTE_SERVER >> ~/.ssh/known_hosts
+  - LATEST_TAG=$(git describe --abbrev=0 --tags --always)
+
+stages:
+  - build
+  - deploy
+
+build_image:
+  stage: build
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE:$LATEST_TAG  .
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+    - docker push $CI_REGISTRY_IMAGE:$LATEST_TAG
+  only:
+    - main
+  tags:
+    - docker
+  environment:
+    name: production
+
+
+deploy:
+  stage: deploy
+  script:
+    - ssh -o "StrictHostKeyChecking=no" $REMOTE_SERVER "docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY"
+    - ssh -o "StrictHostKeyChecking=no" $REMOTE_SERVER "docker pull $CI_REGISTRY_IMAGE:$LATEST_TAG"
+    - ssh -o "StrictHostKeyChecking=no" $REMOTE_SERVER "docker stop erp-front-storybook || true"
+    - ssh -o "StrictHostKeyChecking=no" $REMOTE_SERVER "docker rm erp-front-storybook || true"
+    - ssh -o "StrictHostKeyChecking=no" $REMOTE_SERVER "docker run --name erp-front-storybook -d -p 6006:6006 --network=root_default  $CI_REGISTRY_IMAGE:$LATEST_TAG"
+  only:
+    - main
+  tags:
+    - docker
+  environment:
+    name: production
+  dependencies:
+    - build_image

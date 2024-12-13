@@ -32,8 +32,8 @@ const Template = (args) => {
             setDate(date);
         }
         else {
-            setDate(date[0]);
-            setEndDate(date[1]);
+            setDate(date && date[0]);
+            setEndDate(date && date[1]);
         }
     };
     return (React.createElement(StoryWrapper, null,

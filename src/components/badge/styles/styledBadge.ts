@@ -6,8 +6,8 @@ const StyledBadge = styled(Badge)`
     variant === "success"
       ? theme?.palette?.success50
       : variant === "warning"
-        ? theme?.palette?.error50
-        : theme?.palette?.gray100};
+      ? theme?.palette?.error50
+      : theme?.palette?.gray100};
 `;
 
 export default StyledBadge;

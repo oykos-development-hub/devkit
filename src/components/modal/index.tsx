@@ -1,4 +1,5 @@
 import React, { useMemo } from "react";
+import ReactDOM from "react-dom";
 import { Modal } from "@oykos-development/devkit-react-ts-styled-components";
 import { SSSModalProps } from "./types";
 import { Theme } from "../../shared/theme";
@@ -19,22 +20,23 @@ export const SSSModal = ({
   width,
   buttonLoading,
   customModalContent,
+  priority = 1, // Default priority
   ...props
-}: SSSModalProps) => {
+}: SSSModalProps & { priority?: number }) => {
   const mergedProps = useMemo(
     () => ({
       theme: Theme,
       ...props,
       variant: "light" as const,
-      style: { width, ...props.style },
+      style: { width, zIndex: 1000 + priority * 100, ...props.style }, // Adjust z-index based on priority
     }),
-    [props],
+    [props, priority]
   );
 
-  return (
+  const modalContent = (
     <>
-      <BackgroundBlur open={props.open} />
-      <Container theme={mergedProps.theme} open={props.open}>
+      <BackgroundBlur open={props.open} style={{ zIndex: 999 + priority * 100 }} />
+      <Container theme={mergedProps.theme} open={props.open} style={{ zIndex: 1000 + priority * 100 }}>
         <Modal
           {...mergedProps}
           content={
@@ -71,4 +73,11 @@ export const SSSModal = ({
       </Container>
     </>
   );
+
+  // Render with React Portal for high-priority modals
+  if (priority > 1) {
+    return ReactDOM.createPortal(modalContent, document.body); // Render outside the DOM tree
+  }
+
+  return modalContent;
 };

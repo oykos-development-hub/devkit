@@ -16,6 +16,7 @@ export const StyledInput = styled(Input)`
     &::placeholder {
       font-family: Source Sans Pro, sans-serif;
       color: ${({ theme }) => theme.palette.gray500};
+      text-align: left;
     }
   }
 

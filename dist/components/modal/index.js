@@ -10,6 +10,7 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import React, { useMemo } from "react";
+import ReactDOM from "react-dom";
 import { Modal } from "@oykos-development/devkit-react-ts-styled-components";
 import { Theme } from "../../shared/theme";
 import Container from "./styles/container";
@@ -20,11 +21,11 @@ import { SSSButton } from "../button";
 import ContentWrapper from "./styles/contentWrapper";
 import { BackgroundBlur } from "./styles/backgroundBlur";
 export const SSSModal = (_a) => {
-    var { footerText, leftButtonOnClick, leftButtonText = "Cancel", rightButtonOnClick, rightButtonText = "Save", width, buttonLoading, customModalContent } = _a, props = __rest(_a, ["footerText", "leftButtonOnClick", "leftButtonText", "rightButtonOnClick", "rightButtonText", "width", "buttonLoading", "customModalContent"]);
-    const mergedProps = useMemo(() => (Object.assign(Object.assign({ theme: Theme }, props), { variant: "light", style: Object.assign({ width }, props.style) })), [props]);
-    return (React.createElement(React.Fragment, null,
-        React.createElement(BackgroundBlur, { open: props.open }),
-        React.createElement(Container, { theme: mergedProps.theme, open: props.open },
+    var { footerText, leftButtonOnClick, leftButtonText = "Cancel", rightButtonOnClick, rightButtonText = "Save", width, buttonLoading, customModalContent, priority = 1 } = _a, props = __rest(_a, ["footerText", "leftButtonOnClick", "leftButtonText", "rightButtonOnClick", "rightButtonText", "width", "buttonLoading", "customModalContent", "priority"]);
+    const mergedProps = useMemo(() => (Object.assign(Object.assign({ theme: Theme }, props), { variant: "light", style: Object.assign({ width, zIndex: 1000 + priority * 100 }, props.style) })), [props, priority]);
+    const modalContent = (React.createElement(React.Fragment, null,
+        React.createElement(BackgroundBlur, { open: props.open, style: { zIndex: 999 + priority * 100 } }),
+        React.createElement(Container, { theme: mergedProps.theme, open: props.open, style: { zIndex: 1000 + priority * 100 } },
             React.createElement(Modal, Object.assign({}, mergedProps, { content: customModalContent ? (customModalContent) : (React.createElement(ContentWrapper, null,
                     React.createElement(Content, null, props.content),
                     React.createElement(Footer, { theme: mergedProps.theme },
@@ -32,5 +33,9 @@ export const SSSModal = (_a) => {
                         !props.customButtonsControls ? (React.createElement(Controls, null,
                             React.createElement(SSSButton, { content: leftButtonText, onClick: leftButtonOnClick || mergedProps.onClose, variant: "secondary" }),
                             React.createElement(SSSButton, { content: rightButtonText, onClick: rightButtonOnClick, variant: "primary", isLoading: buttonLoading }))) : (props.customButtonsControls)))), outsideClickClose: false })))));
+    if (priority > 1) {
+        return ReactDOM.createPortal(modalContent, document.body);
+    }
+    return modalContent;
 };
 //# sourceMappingURL=index.js.map

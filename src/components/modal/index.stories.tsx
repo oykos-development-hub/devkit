@@ -31,13 +31,13 @@ const Template: ComponentStory<typeof SSSModal> = (args: SSSModalProps) => {
   const [date, setDate] = useState<Date | null>(null);
   const [endDate, setEndDate] = useState<Date | null>(null);
 
-  const onChange = (date: Date | [Date, Date]) => {
+  const onChange = (date: Date | [Date, Date] | null) => {
     console.log(typeof date);
     if (date instanceof Date) {
       setDate(date);
     } else {
-      setDate(date[0]);
-      setEndDate(date[1]);
+      setDate(date && date[0]);
+      setEndDate(date && date[1]);
     }
   };
 

@@ -6,7 +6,9 @@ export declare const Table: <T extends import("./types").TableDataItem>(props: i
 export declare const Pagination: import("react").FC<import("./types").SSSPaginationProps>;
 export declare const Badge: (props: import("@oykos-development/devkit-react-ts-styled-components").BadgeProps) => import("react").JSX.Element;
 export declare const LeadingBadge: (props: import("@oykos-development/devkit-react-ts-styled-components").LeadingBadgeProps) => import("react").JSX.Element;
-export declare const Modal: ({ footerText, leftButtonOnClick, leftButtonText, rightButtonOnClick, rightButtonText, width, buttonLoading, customModalContent, ...props }: import("./types").SSSModalProps) => import("react").JSX.Element;
+export declare const Modal: ({ footerText, leftButtonOnClick, leftButtonText, rightButtonOnClick, rightButtonText, width, buttonLoading, customModalContent, priority, ...props }: import("./types").SSSModalProps & {
+    priority?: number | undefined;
+}) => import("react").JSX.Element;
 export declare const Breadcrumbs: (props: import("@oykos-development/devkit-react-ts-styled-components").BreadcrumbsProps) => import("react").JSX.Element;
 export declare const Checkbox: (props: import("./types").SSSCheckboxProps) => import("react").JSX.Element;
 export declare const Divider: (props: import("@oykos-development/devkit-react-ts-styled-components").DividerProps) => import("react").JSX.Element;

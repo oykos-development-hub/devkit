@@ -157,7 +157,6 @@ export const SSSSidebar = forwardRef(
     const onSearchClick = () => {
       setMainSidebarCollapsed(false);
     };
-
     return (
       <SidebarContainer>
         {settingsSidebarOpen && (
@@ -210,15 +209,18 @@ export const SSSSidebar = forwardRef(
               <InfoIcon />
               {!mainSidebarCollapsed && <SSSTypography content={footerItems[0].title} variant="bodyMedium" />}
             </SidebarItem>
-            <SidebarItem
-              onClick={() => openSettingsSidebar()}
-              active={activeItem === footerItems[1].id}
-              padding={15}
-              collapsedSidebar={mainSidebarCollapsed}
-            >
-              <SettingsIcon />
-              {!mainSidebarCollapsed && <SSSTypography content={footerItems[1].title} variant="bodyMedium" />}
-            </SidebarItem>
+            {/* If settings route handle is null, this route shouldn't be available for the User */}
+            {!!onSettingsClick && (
+              <SidebarItem
+                onClick={() => openSettingsSidebar()}
+                active={activeItem === footerItems[1].id}
+                padding={15}
+                collapsedSidebar={mainSidebarCollapsed}
+              >
+                <SettingsIcon />
+                {!mainSidebarCollapsed && <SSSTypography content={footerItems[1].title} variant="bodyMedium" />}
+              </SidebarItem>
+            )}
             <SidebarItem
               onClick={logout}
               active={activeItem === footerItems[2].id}
@@ -230,7 +232,8 @@ export const SSSSidebar = forwardRef(
             </SidebarItem>
           </Footer>
         </MainSidebar>
-        {settingsSidebarOpen && (
+        {/* If settings route handle is null, this route shouldn't be available for the User */}
+        {!!onSettingsClick && settingsSidebarOpen && (
           <SettingsSidebar
             mainSidebarCollapsed={mainSidebarCollapsed}
             open={settingsSidebarOpen}

@@ -13,4 +13,5 @@ export interface SSSModalProps extends Omit<ModalProps, "variant" | "open"> {
   disabledControls?: boolean;
   buttonLoading?: boolean;
   customModalContent?: ReactElement;
+  priority?: number
 }

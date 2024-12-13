@@ -14,7 +14,7 @@ export type UserProps = {
 export interface SSSSidebarProps {
     data: Array<SidebarItemProps>;
     onClick: (item: SidebarItemProps) => void;
-    onSettingsClick: (item: SidebarItemProps) => void;
+    onSettingsClick: ((item: SidebarItemProps) => void) | null;
     user?: UserProps;
     settingsData: Array<SidebarItemProps>;
     logout?: () => void;

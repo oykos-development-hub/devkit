@@ -94,6 +94,7 @@ import {
   CornerUpIcon,
   FilterIcon,
   FileTextIcon,
+  LogsActivityIcon,
   FolderMinusIcon,
   FolderPlusIcon,
   GlobeIcon,
@@ -209,6 +210,7 @@ const Template: ComponentStory<typeof XIcon> = (args: SSSIconProps) => (
       <FolderPlusIcon {...args} />
       <FolderMinusIcon {...args} />
       <FileTextIcon {...args} />
+      <LogsActivityIcon {...args} />
       <FilterIcon {...args} />
       <CornerUpIcon {...args} />
       <ExternalIcon {...args} />

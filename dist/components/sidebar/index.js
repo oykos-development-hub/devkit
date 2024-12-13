@@ -136,13 +136,13 @@ export const SSSSidebar = forwardRef(({ data, settingsData, user, onClick, onSet
                 React.createElement(SidebarItem, { onClick: () => handleFooterItemClick(footerItems[0]), active: activeItem === footerItems[0].id, padding: 15, collapsedSidebar: mainSidebarCollapsed },
                     React.createElement(InfoIcon, null),
                     !mainSidebarCollapsed && React.createElement(SSSTypography, { content: footerItems[0].title, variant: "bodyMedium" })),
-                React.createElement(SidebarItem, { onClick: () => openSettingsSidebar(), active: activeItem === footerItems[1].id, padding: 15, collapsedSidebar: mainSidebarCollapsed },
+                !!onSettingsClick && (React.createElement(SidebarItem, { onClick: () => openSettingsSidebar(), active: activeItem === footerItems[1].id, padding: 15, collapsedSidebar: mainSidebarCollapsed },
                     React.createElement(SettingsIcon, null),
-                    !mainSidebarCollapsed && React.createElement(SSSTypography, { content: footerItems[1].title, variant: "bodyMedium" })),
+                    !mainSidebarCollapsed && React.createElement(SSSTypography, { content: footerItems[1].title, variant: "bodyMedium" }))),
                 React.createElement(SidebarItem, { onClick: logout, active: activeItem === footerItems[2].id, padding: 15, collapsedSidebar: mainSidebarCollapsed },
                     React.createElement(ArrowLeftCircleIcon, null),
                     !mainSidebarCollapsed && React.createElement(SSSTypography, { content: footerItems[2].title, variant: "bodyMedium" })))),
-        settingsSidebarOpen && (React.createElement(SettingsSidebar, { mainSidebarCollapsed: mainSidebarCollapsed, open: settingsSidebarOpen, onClick: onSettingsClick, data: settingsData }))));
+        !!onSettingsClick && settingsSidebarOpen && (React.createElement(SettingsSidebar, { mainSidebarCollapsed: mainSidebarCollapsed, open: settingsSidebarOpen, onClick: onSettingsClick, data: settingsData }))));
 });
 SSSSidebar.displayName = "SSSSidebar";
 //# sourceMappingURL=index.js.map

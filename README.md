@@ -1,4 +1,4 @@
-# Devkit Client Library for React Styled Components
+# Client Library for SSS
 
 This module represents a customized, tailor made library of reusable components.
 Goal of this module is to make front-end development faster and more scalable, by reducing time and effort needed to create the same components all over again and just focusing on the implementation and business logic of the application.
@@ -37,7 +37,7 @@ Example: `fix: changed border radius from 4px to 2px`
 
 **NOTE #1**: When you want to make commit, please run `npm run git:commit` if it's not run automatically by Husky for any reason.
 
-**NOTE #2**: When you want to push the branch, please run `npm run git:pull-request` if it's not run automatically by Husky for any reason.
+**NOTE #2**: When you want to push the branch, please run `npm run git:push` if it's not run automatically by Husky for any reason.
 
 This ensures we use the same style of writing code and thus avoid unnecessary styling changes and merge issues.
 
