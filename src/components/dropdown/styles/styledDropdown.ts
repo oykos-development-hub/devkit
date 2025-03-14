@@ -16,7 +16,7 @@ export const StyledDropdown = styled(Dropdown)`
     &:hover {
       border: 1px solid
         ${(p) =>
-    p.isDisabled ? Theme?.palette?.gray300 : p.error ? Theme?.palette?.error200 : Theme?.palette?.gray400};
+          p.isDisabled ? Theme?.palette?.gray300 : p.error ? Theme?.palette?.error200 : Theme?.palette?.gray400};
     }
 
     &:active,
@@ -26,7 +26,7 @@ export const StyledDropdown = styled(Dropdown)`
         0 0 0 4px ${(p) => (p.error ? Theme?.palette?.error50 : Theme?.palette?.primary50)};
       border: 1px solid
         ${(p) =>
-    p.isDisabled ? Theme?.palette?.gray300 : p.error ? Theme?.palette?.error200 : Theme?.palette?.primary200};
+          p.isDisabled ? Theme?.palette?.gray300 : p.error ? Theme?.palette?.error200 : Theme?.palette?.primary200};
     }
 
     & * {
