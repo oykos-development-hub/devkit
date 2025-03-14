@@ -15,4 +15,5 @@ const SearchIcon = (props: IconProps): React.ReactElement => (
   </Svg>
 );
 
+
 export default SearchIcon;
