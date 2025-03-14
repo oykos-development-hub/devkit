@@ -1,36 +1,19 @@
-import styled from "styled-components";
-import TableRow from "./tableRow";
-import TableCell from "./tableCell";
-const Container = styled.div `
-  // TODO: replace with styled components from devkit
-  & > div {
-    border: none;
-    box-shadow: none;
-
-    & > div {
-      padding: unset;
+import styled, { css } from "styled-components";
+export const Container = styled.div(({ theme }) => {
+    const { gray300, gray900 } = theme.palette;
+    return css `
+    & * {
+      font-family: "Inter";
+      color: ${gray900};
     }
 
-    thead {
-      ${TableRow} {
-        border-bottom: 1px solid ${({ theme }) => theme.palette.gray600};
-        cursor: default;
-      }
+    & > * {
+      padding: 1em;
     }
 
-    tbody {
-      ${TableRow} {
-        &:hover {
-          background-color: ${({ theme }) => theme.palette.gray50};
-        }
-
-        ${TableCell} {
-          height: auto;
-          padding: 14px 12px;
-        }
-      }
-    }
-  }
-`;
-export default Container;
+    border: 1px solid ${gray300};
+    border-radius: ${theme.borderRadius.lg || "0.5em"};
+    box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06);
+  `;
+});
 //# sourceMappingURL=container.js.map

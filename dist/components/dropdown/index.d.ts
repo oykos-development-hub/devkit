@@ -1,3 +1,3 @@
-import React from "react";
-import { SSSDropdownProps } from "./types";
-export declare const SSSDropdown: (props: SSSDropdownProps) => React.JSX.Element;
+/// <reference types="react" />
+import { DropdownProps } from "./types";
+export declare const Dropdown: ({ options, theme, isDisabled, isSearchable, isMulti, noOptionsText, label, style, isClearable, backspaceRemovesValue, showArrow, closeMenuOnSelect, dropdownIndicator, controlIcon, leftOptionIcon, rightOptionIcon, onChange, placeholder, className, value, menuPortalTarget, showSearchIcon, ...props }: DropdownProps) => JSX.Element;

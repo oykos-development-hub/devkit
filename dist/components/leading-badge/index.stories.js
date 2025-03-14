@@ -1,10 +1,11 @@
 import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { LeadingBadgeSizes } from "@oykos-development/devkit-react-ts-styled-components";
-import { SSSLeadingBadge } from "./index";
+import DotIcon from "../icon/variations/DotIcon";
+import { LeadingBadgeSizes } from "./types";
+import { LeadingBadge } from "./";
 export default {
-    component: SSSLeadingBadge,
+    component: LeadingBadge,
     title: "Components/LeadingBadge",
     argTypes: {
         variant: {
@@ -34,7 +35,7 @@ export default {
     },
 };
 const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement(SSSLeadingBadge, Object.assign({}, args))));
+    React.createElement(LeadingBadge, Object.assign({}, args))));
 export const Default = Template.bind({});
 Default.args = {
     variant: "primary",
@@ -43,11 +44,18 @@ Default.args = {
     content: React.createElement("span", null, "We\u2019ve just released a new feature"),
     size: LeadingBadgeSizes.md,
 };
-export const WithPlus = Template.bind({});
-WithPlus.args = {
+export const WithHtmlContent = Template.bind({});
+WithHtmlContent.args = {
+    variant: "warning",
+    leadingBadgeTheme: "light",
+    badgeContent: React.createElement("span", null, "New feature"),
+    content: React.createElement("span", null, "We\u2019ve just released a new feature"),
+    size: LeadingBadgeSizes.md,
+};
+export const WithDot = Template.bind({});
+WithDot.args = {
     variant: "success",
     leadingBadgeTheme: "light",
-    content: React.createElement("span", { style: { paddingLeft: "4px" } }, "We\u2019ve just released a new feature"),
     badgeContent: (React.createElement("div", { style: {
             display: "flex",
             justifyContent: "center",
@@ -55,9 +63,9 @@ WithPlus.args = {
             alignItems: "center",
             columnGap: "7px",
         } },
-        React.createElement("span", null, "Label"),
-        React.createElement("span", null, "+"))),
+        React.createElement(DotIcon, null),
+        React.createElement("span", null, "Label"))),
+    content: React.createElement("span", null, "We\u2019ve just released a new feature"),
     size: LeadingBadgeSizes.md,
-    style: { flexDirection: "row-reverse" },
 };
 //# sourceMappingURL=index.stories.js.map

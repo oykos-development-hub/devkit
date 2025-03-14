@@ -1,15 +1,14 @@
 import React, { useState } from "react";
+
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { Theme } from "../../shared/theme";
-import { SSSModal } from "./";
-import { SSSModalProps } from "./types";
-import { SSSTypography } from "../typography";
-import { SSSButton } from "../button";
-import { SSSDatepicker } from "../date-picker";
+
+import { Modal } from "./index";
+import { ModalProps } from "./types";
+import { Typography } from "../typography";
+import { Button } from "../button";
 
 export default {
-  component: SSSModal,
+  component: Modal,
   title: "Components/Modal",
   argTypes: {
     theme: {
@@ -17,62 +16,66 @@ export default {
         type: "object",
       },
     },
-    size: {
+    open: {
       control: {
-        type: "radio",
-        options: ["sm", "md", "lg"],
+        type: "boolean",
+      },
+      defaultValue: true,
+    },
+    variant: {
+      control: {
+        type: "select",
+        options: ["light", "dark"],
       },
     },
   },
-} as ComponentMeta<typeof SSSModal>;
+} as ComponentMeta<typeof Modal>;
 
-const Template: ComponentStory<typeof SSSModal> = (args: SSSModalProps) => {
-  const [modalOpen, setModalOpen] = useState(true);
-  const [date, setDate] = useState<Date | null>(null);
-  const [endDate, setEndDate] = useState<Date | null>(null);
-
-  const onChange = (date: Date | [Date, Date]) => {
-    console.log(typeof date);
-    if (date instanceof Date) {
-      setDate(date);
-    } else {
-      setDate(date[0]);
-      setEndDate(date[1]);
-    }
-  };
-
+const Template: ComponentStory<typeof Modal> = (args: ModalProps) => {
+  const [open, setOpen] = useState(true);
   return (
-    <StoryWrapper>
-      {!modalOpen && <SSSButton content="Open Modal" onClick={() => setModalOpen(true)} />}
-      <SSSModal
-        {...args}
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        outsideClickClose={false}
-        buttonLoading={true}
-        content={
-          <>
-            <SSSDatepicker selected={date} startDate={date} endDate={endDate} onChange={onChange} />
-          </>
-        }
-      />
-    </StoryWrapper>
+    <div style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
+      {!open && <Button content="Open Modal" onClick={() => setOpen(true)} />}
+      <Modal {...args} open={open} onClose={() => setOpen(false)} />
+    </div>
   );
 };
 
-export const Default = Template.bind({});
-Default.args = {
-  theme: Theme,
-  title: "Headline",
+export const ModalDefault = Template.bind({});
+ModalDefault.args = {
+  title: "Modal title",
   content: (
-    <SSSTypography
-      content="Modal contentLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
-      variant="bodyMedium"
-    />
+    <>
+      <div style={{ padding: "2em 0.5em", width: "300px" }}>
+        <Typography content="This is modal content." variant="bodyLarge" />
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Typography content="This is footer text." variant="bodyMedium" />
+        <div style={{ display: "flex", gap: "0.5em" }}>
+          <button>Ok</button>
+          <button>Cancel</button>
+        </div>
+      </div>
+    </>
   ),
-  open: true,
-  footerText: "Footer text row for additional information",
-  leftButtonText: "Zatvori",
-  rightButtonText: "Sačuvaj",
-  width: 640,
+};
+
+export const ModalVariantDark = Template.bind({});
+ModalVariantDark.args = {
+  title: "Modal title",
+  variant: "dark",
+  content: (
+    <>
+      <div style={{ padding: "2em 0.5em", width: "300px" }}>
+        <Typography content="This is modal content." variant="bodyMedium" />
+      </div>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+        <Typography content="This is footer text." variant="bodyMedium" />
+        <div style={{ display: "flex", gap: "0.5em" }}>
+          <button>Ok</button>
+          <button>Cancel</button>
+        </div>
+      </div>
+    </>
+  ),
 };

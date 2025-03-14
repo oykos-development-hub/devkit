@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { SSSTabs } from "./index";
+import { Tabs } from "./index";
 const tabsArr = [
     { id: 1, title: "Tab 1" },
     { id: 2, title: "Tab 2" },
@@ -14,24 +14,29 @@ const disabledTabs = [
     { id: 4, title: "Tab 4" },
 ];
 export default {
-    component: SSSTabs,
+    component: Tabs,
     title: "Components/Tabs",
 };
-const Template = (args) => (React.createElement(StoryWrapper, { style: { gap: 0 } },
-    React.createElement(SSSTabs, Object.assign({}, args))));
+const Template = (args) => {
+    const [activeTab, setActiveTab] = useState(1);
+    const onChange = (tab) => {
+        setActiveTab(tab.id);
+    };
+    return (React.createElement(StoryWrapper, null,
+        React.createElement(Tabs, Object.assign({}, args, { activeTab: activeTab, onChange: onChange }))));
+};
 export const DefaultTabs = Template.bind({});
 DefaultTabs.args = {
     tabs: tabsArr,
-    style: {
-        borderWidth: "1px",
-        borderRadius: "0.5em 0.5em 0 0",
-    },
 };
 export const WithDisabledTabs = Template.bind({});
 WithDisabledTabs.args = {
     tabs: disabledTabs,
+};
+export const StyledTabs = Template.bind({});
+StyledTabs.args = {
+    tabs: tabsArr,
     style: {
-        borderWidth: "1px",
         borderRadius: "0.5em 0.5em 0 0",
     },
 };

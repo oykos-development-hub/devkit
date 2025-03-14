@@ -1,17 +1,23 @@
-import React from "react";
-import { SSSFileUpload } from "./";
+import React, { useState } from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { Button, Typography } from "@oykos-development/devkit-react-ts-styled-components";
-import { UploadCloudIcon } from "@oykos-development/devkit-react-ts-styled-components";
+import { Button } from "../button";
+import UploadCloudIcon from "../icon/variations/UploadCloudIcon";
+import { Typography } from "../typography";
+import { FileUpload } from "./index";
 export default {
+    component: FileUpload,
     title: "Components/FileUpload",
-    component: SSSFileUpload,
     argTypes: {
         variant: {
             control: {
                 type: "radio",
-                options: ["primary", "secondary"],
+                options: ["primary", "secondary", "tertiary"],
+            },
+        },
+        accept: {
+            control: {
+                type: "text",
             },
         },
         buttonVariant: {
@@ -20,30 +26,37 @@ export default {
                 options: ["primary", "secondary", "tertiary"],
             },
         },
-        buttonSize: {
+        error: {
             control: {
-                type: "radio",
-                options: ["xs", "sm", "md", "lg", "xl"],
+                type: "text",
             },
         },
-        theme: {
+        maxSize: {
             control: {
-                type: "object",
+                type: "number",
             },
-            defaultValue: Theme,
         },
     },
 };
-const onFileUpload = (acceptedFiles) => {
-    console.log("File(s) uploaded:", acceptedFiles);
+const Template = (args) => {
+    const [files, setFiles] = useState();
+    const onUpload = (acceptedFiles) => {
+        setFiles(acceptedFiles);
+    };
+    return (React.createElement(StoryWrapper, null,
+        React.createElement(FileUpload, Object.assign({}, args, { onUpload: onUpload, files: files }))));
 };
-const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement(SSSFileUpload, Object.assign({}, args, { onUpload: onFileUpload }))));
 export const Primary = Template.bind({});
 Primary.args = {
     variant: "primary",
     multiple: false,
-    note: "Select a file or drag and drop here",
+    hint: "JPG, PNG or PDF, file size no more than 10MB",
+    disabled: false,
+};
+export const PrimaryMultiple = Template.bind({});
+PrimaryMultiple.args = {
+    variant: "primary",
+    multiple: true,
     hint: "JPG, PNG or PDF, file size no more than 10MB",
     disabled: false,
 };
@@ -57,6 +70,16 @@ Secondary.args = {
     hint: "JPG, PNG or PDF, file size no more than 10MB",
     disabled: false,
 };
+export const SecondaryMultiple = Template.bind({});
+SecondaryMultiple.args = {
+    variant: "secondary",
+    buttonVariant: "secondary",
+    buttonText: "SELECT FILES",
+    multiple: true,
+    note: React.createElement(Typography, { variant: "bodySmall", content: "Select a files or drag and drop here" }),
+    hint: "JPG, PNG or PDF, file size no more than 10MB",
+    disabled: false,
+};
 export const Tertiary = Template.bind({});
 Tertiary.args = {
     variant: "tertiary",
@@ -64,7 +87,7 @@ Tertiary.args = {
     buttonText: "SELECT FILE",
     multiple: false,
     note: "Title",
-    hint: (React.createElement(Typography, { variant: "helperText", style: { marginTop: "2rem", textDecoration: "underline" }, content: "Passport.png" })),
+    hint: (React.createElement(Typography, { variant: "helperText", style: { marginTop: "2rem", textDecoration: "underline" }, content: "JPG or PNG, file size no more than 10MB" })),
     icon: React.createElement(React.Fragment, null),
     disabled: false,
 };
@@ -75,8 +98,8 @@ TertiaryWithCustomButton.args = {
     note: "Title",
     customButton: (React.createElement(Button, { size: "sm", variant: "primary", content: React.createElement("div", { style: { display: "flex", alignItems: "center", gap: "8px" } },
             React.createElement(UploadCloudIcon, { stroke: "white", width: "20px" }),
-            React.createElement(Typography, { variant: "bodyMedium", content: "Ucitaj", style: { color: "white" } })), onClick: () => alert("Success!"), theme: Theme })),
-    hint: (React.createElement(Typography, { variant: "helperText", style: { marginTop: "2rem", textDecoration: "underline", fontWeight: 600 }, content: "Passport.png" })),
+            React.createElement(Typography, { variant: "bodyMedium", content: "Učitaj", style: { color: "white" } })), theme: Theme })),
+    hint: (React.createElement(Typography, { variant: "helperText", style: { marginTop: "2rem", textDecoration: "underline", fontWeight: 600 }, content: "JPG or PNG, file size no more than 10MB" })),
     icon: React.createElement(React.Fragment, null),
     disabled: false,
 };

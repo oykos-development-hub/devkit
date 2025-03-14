@@ -1,17 +1,29 @@
-import React, { useMemo } from "react";
-import { Badge } from "@oykos-development/devkit-react-ts-styled-components";
-import { SSSBadgeProps } from "./types";
-import { Theme } from "../../shared/theme";
-import StyledBadge from "./styles/styledBadge";
+import React from "react";
+import { BadgeProps } from "./types";
+import { Container } from "./styles/container";
 
-export const SSSBadge = (props: SSSBadgeProps) => {
-  const mergedProps = useMemo(
-    () => ({
-      theme: Theme,
-      ...props,
-    }),
-    [props],
-  );
-
-  return <StyledBadge {...mergedProps} />;
-};
+export const Badge: React.FC<BadgeProps> = ({
+  variant = "primary",
+  content,
+  leftSlot,
+  rightSlot,
+  size = "md",
+  style,
+  theme,
+  className,
+}) => (
+  <Container variant={variant} size={size} style={style} theme={theme} className={className}>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        flexDirection: "row",
+        alignItems: "center",
+      }}
+    >
+      {leftSlot && <div style={{ marginRight: "7px", display: "flex" }}>{leftSlot}</div>}
+      <div>{content}</div>
+      {rightSlot && <div style={{ marginLeft: "7px", display: "flex" }}>{rightSlot}</div>}
+    </div>
+  </Container>
+);

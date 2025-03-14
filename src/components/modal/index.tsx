@@ -1,74 +1,51 @@
-import React, { useMemo } from "react";
-import { Modal } from "@oykos-development/devkit-react-ts-styled-components";
-import { SSSModalProps } from "./types";
+import React from "react";
+import { ModalProps, Variants } from "./types";
+import { ModalContainer } from "./styles/container";
 import { Theme } from "../../shared/theme";
-import Container from "./styles/container";
-import Content from "./styles/content";
-import { Footer, HelpText } from "./styles/footer";
-import Controls from "./styles/controls";
-import { SSSButton } from "../button";
-import ContentWrapper from "./styles/contentWrapper";
-import { BackgroundBlur } from "./styles/backgroundBlur";
+import { ModalBox } from "./styles/modal";
+import { ModalHeader } from "./styles/header";
+import { Typography } from "../typography";
+import { XIcon } from "../icon";
+import { CloseButtonContainer } from "./styles/closeContainer";
 
-export const SSSModal = ({
-  footerText,
-  leftButtonOnClick,
-  leftButtonText = "Cancel",
-  rightButtonOnClick,
-  rightButtonText = "Save",
-  width,
-  buttonLoading,
-  customModalContent,
-  ...props
-}: SSSModalProps) => {
-  const mergedProps = useMemo(
-    () => ({
-      theme: Theme,
-      ...props,
-      variant: "light" as const,
-      style: { width, ...props.style },
-    }),
-    [props],
-  );
-
+export const Modal = ({
+  theme = Theme,
+  title,
+  content,
+  open,
+  onClose,
+  variant,
+  style,
+  className,
+  outsideClickClose = true,
+}: ModalProps) => {
   return (
     <>
-      <BackgroundBlur open={props.open} />
-      <Container theme={mergedProps.theme} open={props.open}>
-        <Modal
-          {...mergedProps}
-          content={
-            customModalContent ? (
-              customModalContent
-            ) : (
-              <ContentWrapper>
-                <Content>{props.content}</Content>
-                <Footer theme={mergedProps.theme}>
-                  <HelpText content={footerText} variant="bodySmall" />
-                  {!props.customButtonsControls ? (
-                    <Controls>
-                      <SSSButton
-                        content={leftButtonText}
-                        onClick={leftButtonOnClick || mergedProps.onClose}
-                        variant="secondary"
-                      />
-                      <SSSButton
-                        content={rightButtonText}
-                        onClick={rightButtonOnClick}
-                        variant="primary"
-                        isLoading={buttonLoading}
-                      />
-                    </Controls>
-                  ) : (
-                    props.customButtonsControls
-                  )}
-                </Footer>
-              </ContentWrapper>
-            )
-          }
-          outsideClickClose={false}
-        />
-      </Container>
+      <ModalContainer open={open} onMouseDown={outsideClickClose ? onClose : undefined} className={className}>
+        <ModalBox
+          theme={theme}
+          variant={variant}
+          onMouseDown={(e: any) => {
+            if (outsideClickClose) {
+              e.stopPropagation();
+            }
+          }}
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+          style={style}
+          className="modalbox"
+        >
+          <ModalHeader theme={theme}>
+            {title && <Typography content={title} variant="h6" />}
+            <CloseButtonContainer>
+              <XIcon size="1rem" onClick={onClose} />
+            </CloseButtonContainer>
+          </ModalHeader>
+
+          {content && content}
+        </ModalBox>
+      </ModalContainer>
     </>
   );
 };

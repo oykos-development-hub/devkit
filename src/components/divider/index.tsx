@@ -1,16 +1,8 @@
-import React, { useMemo } from "react";
-import { Divider } from "@oykos-development/devkit-react-ts-styled-components";
-import { SSSDividerProps } from "./types";
+import React from "react";
+import { DividerProps } from "./types";
+import { Container } from "./styles/container";
 import { Theme } from "../../shared/theme";
 
-export const SSSDivider = (props: SSSDividerProps) => {
-  const mergedProps = useMemo(
-    () => ({
-      theme: Theme,
-      ...props,
-    }),
-    [props],
-  );
-
-  return <Divider {...mergedProps} />;
+export const Divider: React.FC<DividerProps> = ({ width, height, color, style, theme = Theme, className }) => {
+  return <Container width={width} height={height} color={color} style={style} theme={theme} className={className} />;
 };

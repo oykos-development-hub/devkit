@@ -1,5 +1,7 @@
-declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").AccordionData>;
+import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { AccordionData } from "./types";
+declare const _default: ComponentMeta<React.FC<AccordionData>>;
 export default _default;
-export declare const Default: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").AccordionData>;
-export declare const CustomAccordion: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").AccordionData>;
-export declare const CustomAccordionWithInput: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").AccordionData>;
+export declare const Default: ComponentStory<React.FC<AccordionData>>;
+export declare const CustomHeaderAndContentAccordion: ComponentStory<React.FC<AccordionData>>;

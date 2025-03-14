@@ -1,5 +1,8 @@
-import { LeadingBadgeProps } from "@oykos-development/devkit-react-ts-styled-components";
-declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, LeadingBadgeProps>;
+import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { LeadingBadgeProps } from "./types";
+declare const _default: ComponentMeta<React.FC<LeadingBadgeProps>>;
 export default _default;
-export declare const Default: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, LeadingBadgeProps>;
-export declare const WithPlus: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, LeadingBadgeProps>;
+export declare const Default: ComponentStory<React.FC<LeadingBadgeProps>>;
+export declare const WithHtmlContent: ComponentStory<React.FC<LeadingBadgeProps>>;
+export declare const WithDot: ComponentStory<React.FC<LeadingBadgeProps>>;

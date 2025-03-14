@@ -1,13 +1,11 @@
 import React from "react";
-import { BadgeSizes } from "@oykos-development/devkit-react-ts-styled-components";
+import { BadgeSizes } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { SSSBadge } from "./index";
-import DotIcon from "../icons/variations/DotIcon";
-import XIcon from "../icons/variations/XIcon";
-import { SSSTypography } from "../typography";
+import { Badge } from "./index";
+import DotIcon from "../icon/variations/DotIcon";
 export default {
-    component: SSSBadge,
+    component: Badge,
     title: "Components/Badge",
     argTypes: {
         variant: {
@@ -31,25 +29,24 @@ export default {
     },
 };
 const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement(SSSBadge, Object.assign({}, args))));
+    React.createElement(Badge, Object.assign({}, args))));
 export const Default = Template.bind({});
 Default.args = {
     variant: "primary",
-    content: React.createElement(SSSTypography, { content: "Label", variant: "bodySmall" }),
+    content: "Label",
+    size: BadgeSizes.md,
+};
+export const WithHtmlContent = Template.bind({});
+WithHtmlContent.args = {
+    variant: "warning",
+    content: React.createElement("span", null, "Label"),
     size: BadgeSizes.md,
 };
 export const WithDot = Template.bind({});
 WithDot.args = {
-    variant: "primary",
+    variant: "success",
+    content: React.createElement("span", null, "Label"),
     leftSlot: React.createElement(DotIcon, null),
-    content: React.createElement(SSSTypography, { content: "Label", variant: "bodySmall" }),
-    size: BadgeSizes.md,
-};
-export const WithXIcon = Template.bind({});
-WithXIcon.args = {
-    variant: "primary",
-    rightSlot: React.createElement(XIcon, null),
-    content: React.createElement(SSSTypography, { content: "Label", variant: "bodySmall" }),
     size: BadgeSizes.md,
 };
 //# sourceMappingURL=index.stories.js.map

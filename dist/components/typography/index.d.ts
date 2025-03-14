@@ -1,3 +1,3 @@
 import React from "react";
-import { SSSTypographyProps } from "./types";
-export declare const SSSTypography: (props: SSSTypographyProps) => React.JSX.Element;
+import { TypographyProps } from "./types";
+export declare const Typography: (props: TypographyProps) => React.ReactElement;

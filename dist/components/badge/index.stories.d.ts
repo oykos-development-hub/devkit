@@ -1,6 +1,8 @@
-import { BadgeProps } from "@oykos-development/devkit-react-ts-styled-components";
-declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, BadgeProps>;
+import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { BadgeProps } from "./types";
+declare const _default: ComponentMeta<React.FC<BadgeProps>>;
 export default _default;
-export declare const Default: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, BadgeProps>;
-export declare const WithDot: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, BadgeProps>;
-export declare const WithXIcon: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, BadgeProps>;
+export declare const Default: ComponentStory<React.FC<BadgeProps>>;
+export declare const WithHtmlContent: ComponentStory<React.FC<BadgeProps>>;
+export declare const WithDot: ComponentStory<React.FC<BadgeProps>>;

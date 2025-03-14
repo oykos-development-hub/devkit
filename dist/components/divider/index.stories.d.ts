@@ -1,3 +1,6 @@
-declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").DividerProps>;
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { DividerProps } from "./types";
+declare const _default: ComponentMeta<React.FC<DividerProps>>;
 export default _default;
-export declare const Default: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").DividerProps>;
+export declare const Default: ComponentStory<React.FC<DividerProps>>;

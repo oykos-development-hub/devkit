@@ -1,9 +1,8 @@
-# Devkit Client Library for React Styled Components
+# Devkit module
 
 This module represents a customized, tailor made library of reusable components.
 Goal of this module is to make front-end development faster and more scalable, by reducing time and effort needed to create the same components all over again and just focusing on the implementation and business logic of the application.
 On the other side, second main goal of this module is to eliminate the need for importing large, not-so-optimized and hard to learn libraries and modules such as MaterialUI, TailwindCSS etc.
-This library uses open-source, public NPM module `@oykos-development/devkit-react-ts-styled-components`, found at https://www.npmjs.com/package/@oykos-development/devkit-react-ts-styled-components
 
 ## Setup
 - Run the command `npm install` in order to install all required `node_modules`
@@ -37,7 +36,7 @@ Example: `fix: changed border radius from 4px to 2px`
 
 **NOTE #1**: When you want to make commit, please run `npm run git:commit` if it's not run automatically by Husky for any reason.
 
-**NOTE #2**: When you want to push the branch, please run `npm run git:pull-request` if it's not run automatically by Husky for any reason.
+**NOTE #2**: When you want to push the branch, please run `npm run git:push` if it's not run automatically by Husky for any reason.
 
 This ensures we use the same style of writing code and thus avoid unnecessary styling changes and merge issues.
 
@@ -58,7 +57,7 @@ yarn add @oykos-development/devkit-react-ts-styled-components
 
 ## Accordion
 
-The `Accordion` element that allows the user to toggle between hiding and displaying content in a vertical list or panel format.
+The `Accordion` element that allows the user to toggle between hiding and displaying content in a vertical list or panel format. 
 
 ```jsx
 interface AccordionData {
@@ -334,7 +333,7 @@ function MyComponent() {
 
 ## Dropdown
 
-A reusable `Dropdown` component allows you to create a customizable and flexible dropdown menu that can be used throughout your application.
+A reusable `Dropdown` component allows you to create a customizable and flexible dropdown menu that can be used throughout your application. 
 
 ```typescript jsx
 type ValueType = { value: string | number; label: string };
@@ -370,12 +369,12 @@ This component has the following props:
 import { Dropdown, CircleCheckIcon } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
-
-    const icon = <CircleCheckIcon fill="grey" size="24px" />;
-
-    return (
-        <Dropdown label="Dropdown label" leftOptionIcon={icon} controlIcon={icon} placeholder="Select item" />
-    );
+  
+  const icon = <CircleCheckIcon fill="grey" size="24px" />;
+  
+  return (
+    <Dropdown label="Dropdown label" leftOptionIcon={icon} controlIcon={icon} placeholder="Select item" />
+  );
 }
 ```
 
@@ -404,13 +403,13 @@ import { FileUpload } from '@oykos-development/devkit-react-ts-styled-components
 
 function MyComponent() {
 
-    const onFileUpload = (acceptedFiles) => {
-        console.log("File(s) uploaded:", acceptedFiles);
-    };
+  const onFileUpload = (acceptedFiles) => {
+    console.log("File(s) uploaded:", acceptedFiles);
+  };
 
-    return (
-        <FileUpload onUpload={onFileUpload} note="Select a file or drag and drop here" hint="JPG, PNG or PDF, file size no more than 10MB" />
-    );
+  return (
+    <FileUpload onUpload={onFileUpload} note="Select a file or drag and drop here" hint="JPG, PNG or PDF, file size no more than 10MB" />
+  );
 }
 ```
 
@@ -437,9 +436,9 @@ import { ChevronUpIcon } from '@oykos-development/devkit-react-ts-styled-compone
 
 function MyComponent() {
 
-    return (
-        <ChevronUpIcon width="100px" height="100px" />
-    );
+  return (
+    <ChevronUpIcon width="100px" height="100px" />
+  );
 }
 ```
 
@@ -479,9 +478,9 @@ This component streamlines the implementation of various input types, styles, ev
 import { Input } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
-    return (
-        <Input placeholder="Type here..." />
-    );
+  return (
+    <Input placeholder="Type here..." />
+  );
 }
 ```
 
@@ -505,9 +504,9 @@ This component is additional kind of badge component. It has the following props
 import { LeadingBadge } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
-    return (
-        <LeadingBadge variant="success" leadingBadgeTheme="dark" size="lg"  badgeContent="This is badge content" content="Some content" />
-    );
+  return (
+    <LeadingBadge variant="success" leadingBadgeTheme="dark" size="lg"  badgeContent="This is badge content" content="Some content" />
+  );
 }
 ```
 
@@ -533,9 +532,9 @@ function MyComponent() {
 import { Loader } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
-    return (
-        <Loader variant="one" width="100px" height="100px" primaryColor="#b2a422" secondaryColor="#7199aa" />
-    );
+  return (
+    <Loader variant="one" width="100px" height="100px" primaryColor="#b2a422" secondaryColor="#7199aa" />
+  );
 }
 ```
 
@@ -559,24 +558,24 @@ function MyComponent() {
 import { Modal, Typography } from '@oykos-development/devkit-react-ts-styled-components';
 
 const customContent = (
-    <>
-        <div style={{ padding: "2em 0.5em", width: "300px" }}>
-            <Typography content="This is modal content." variant="bodyLarge" />
-        </div>
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <Typography content="This is footer text." variant="bodyMedium" />
-            <div style={{ display: "flex", gap: "0.5em" }}>
-                <button>Ok</button>
-                <button>Cancel</button>
-            </div>
-        </div>
-    </>
+  <>
+    <div style={{ padding: "2em 0.5em", width: "300px" }}>
+      <Typography content="This is modal content." variant="bodyLarge" />
+    </div>
+    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <Typography content="This is footer text." variant="bodyMedium" />
+      <div style={{ display: "flex", gap: "0.5em" }}>
+        <button>Ok</button>
+        <button>Cancel</button>
+      </div>
+    </div>
+  </>
 );
 
 function MyComponent() {
-    return (
-        <Modal title="Modal title" content={customContent} />
-    );
+  return (
+    <Modal title="Modal title" content={customContent} />
+  );
 }
 ```
 
@@ -608,47 +607,47 @@ A good reusable pagination component should allow users to navigate between page
 import { Pagination } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
-    const leftIcon = (
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667"
-                stroke="#616161"
-                strokeWidth="1.67"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-    );
+  const leftIcon = (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M12.8334 7H1.16675M1.16675 7L7.00008 12.8333M1.16675 7L7.00008 1.16667"
+        stroke="#616161"
+        strokeWidth="1.67"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
 
-    const rightIcon = (
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333"
-                stroke="#616161"
-                strokeWidth="1.67"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-            />
-        </svg>
-    );
+  const rightIcon = (
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M1.16666 7H12.8333M12.8333 7L7 1.16667M12.8333 7L7 12.8333"
+        stroke="#616161"
+        strokeWidth="1.67"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
 
-    const customPreviousLabel = (
-        <p style={{ display: "flex", alignItems: "center", gap: "0.5em", margin: 0 }}>
-            {leftIcon}
-            Previous
-        </p>
-    );
+  const customPreviousLabel = (
+    <p style={{ display: "flex", alignItems: "center", gap: "0.5em", margin: 0 }}>
+      {leftIcon}
+      Previous
+    </p>
+  );
 
-    const customNextLabel = (
-        <p style={{ display: "flex", alignItems: "center", gap: "0.5em", margin: 0 }}>
-            {rightIcon}
-            Next
-        </p>
-    );
+  const customNextLabel = (
+    <p style={{ display: "flex", alignItems: "center", gap: "0.5em", margin: 0 }}>
+      {rightIcon}
+      Next
+    </p>
+  );
 
-    return (
-        <Pagination itemsPerPage={4} pageRangeDisplayed={3} previousLabel={customPreviousLabel} nextLabel={customNextLabel} />
-    );
+  return (
+    <Pagination itemsPerPage={4} pageRangeDisplayed={3} previousLabel={customPreviousLabel} nextLabel={customNextLabel} />
+  );
 }
 ```
 
@@ -670,9 +669,9 @@ A user interface component that is specifically designed to handle input of PIN 
 import { Pin } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
-    return (
-        <Pin />
-    );
+  return (
+    <Pin />
+  );
 }
 ```
 
@@ -695,9 +694,9 @@ This component allows to manage radio button inputs, enabling users to make sing
 import { Radio } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
-    return (
-        <Radio size="md" />
-    );
+  return (
+    <Radio size="md" />
+  );
 }
 ```
 
@@ -719,13 +718,13 @@ Component that enables toggling between two states, such as on and off. It has t
 ```jsx
 import { Switch, Typography } from '@oykos-development/devkit-react-ts-styled-components';
 
-function MyComponent() {
-
-    const customText = <Typography content={"Remember me"} style={{ marginLeft: "0.7rem" }} />;
-
-    return (
-        <Switch content={customText} />
-    );
+function MyComponent() {  
+  
+  const customText = <Typography content={"Remember me"} style={{ marginLeft: "0.7rem" }} />;
+  
+  return (
+    <Switch content={customText} />
+  );
 }
 ```
 
@@ -749,45 +748,45 @@ import { Table, CircleCheckIcon } from '@oykos-development/devkit-react-ts-style
 
 function MyComponent() {
 
-    const tableHeadings = ["City", "Code", "Latitude", "Longitude"];
+  const tableHeadings = ["City", "Code", "Latitude", "Longitude"];
 
-    const tableData = [
-        { city: "London", code: "UK", latitude: 51.5285578, longitude: -0.2420242 },
-        { city: "Manchester", code: "UK", latitude: 53.4722249, longitude: -2.2936739 },
-    ];
+  const tableData = [
+    { city: "London", code: "UK", latitude: 51.5285578, longitude: -0.2420242 },
+    { city: "Manchester", code: "UK", latitude: 53.4722249, longitude: -2.2936739 },
+  ];
 
-    const titleElement = (
-        <div>
-            <h3 style={{ margin: 0, marginBottom: "0.25em" }}>This is table title</h3>
-            <p style={{ margin: 0 }}>Additional content...</p>
-        </div>
-    );
+  const titleElement = (
+    <div>
+      <h3 style={{ margin: 0, marginBottom: "0.25em" }}>This is table title</h3>
+      <p style={{ margin: 0 }}>Additional content...</p>
+    </div>
+  );
 
-    const headerContent = (
-        <tr>
-            {tableHeadings.map((heading, index) => (
-                <th key={index}>
-                    <div>
-                        <span>{heading}</span>
-                        <CircleCheckIcon size="1em" onClick={() => alert("Icon is clicked")} style={{ cursor: "pointer" }} />
-                    </div>
-                </th>
-            ))}
-        </tr>
-    );
+  const headerContent = (
+    <tr>
+      {tableHeadings.map((heading, index) => (
+        <th key={index}>
+          <div>
+            <span>{heading}</span>
+            <CircleCheckIcon size="1em" onClick={() => alert("Icon is clicked")} style={{ cursor: "pointer" }} />
+          </div>
+        </th>
+      ))}
+    </tr>
+  );
 
-    const bodyContent = tableData.map((data, index) => (
-        <tr key={index}>
-            <td>{data.city}</td>
-            <td>{data.code}</td>
-            <td>{data.latitude}</td>
-            <td>{data.longitude}</td>
-        </tr>
-    ));
-
-    return (
-        <Table titleElement={titleElement} headerContent={headerContent} bodyContent={bodyContent} />
-    );
+  const bodyContent = tableData.map((data, index) => (
+    <tr key={index}>
+      <td>{data.city}</td>
+      <td>{data.code}</td>
+      <td>{data.latitude}</td>
+      <td>{data.longitude}</td>
+    </tr>
+  ));
+  
+  return (
+    <Table titleElement={titleElement} headerContent={headerContent} bodyContent={bodyContent} />
+  );
 }
 ```
 
@@ -799,9 +798,9 @@ Component designed to break up complex interfaces into manageable subsections, a
 
 ```typescript
 interface Tab {
-    id: number | string;
-    title: string;
-    disabled?: boolean;
+  id: number | string;
+  title: string;
+  disabled?: boolean;
 }
 ```
 
@@ -820,16 +819,16 @@ import { Tabs } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
 
-    const tabsArr = [
-        { id: 1, title: "Tab 1" },
-        { id: 2, title: "Tab 2" },
-        { id: 3, title: "Tab 3" },
-        { id: 4, title: "Tab 4" },
-    ];
-
-    return (
-        <Tabs tabs={tabsArr} />
-    );
+  const tabsArr = [
+    { id: 1, title: "Tab 1" },
+    { id: 2, title: "Tab 2" },
+    { id: 3, title: "Tab 3" },
+    { id: 4, title: "Tab 4" },
+  ];
+  
+  return (
+    <Tabs tabs={tabsArr} />
+  );
 }
 ```
 
@@ -855,14 +854,14 @@ import { Tooltip } from '@oykos-development/devkit-react-ts-styled-components';
 
 function MyComponent() {
 
-    const customTitle = "Tooltip title";
-    const customContent = "This is a tooltip";
-
-    return (
-        <Tooltip title={customTitle} content={customContent}>
-            <span>Hover over me!</span>
-        </Tooltip>
-    );
+ const customTitle = "Tooltip title";
+ const customContent = "This is a tooltip";
+  
+  return (
+    <Tooltip title={customTitle} content={customContent}>
+      <span>Hover over me!</span>
+    </Tooltip>
+  );
 }
 ```
 
@@ -884,9 +883,9 @@ Component that helps present design and content as clearly and efficiently as po
 ```jsx
 import { Typography } from '@oykos-development/devkit-react-ts-styled-components';
 
-function MyComponent() {
-    return (
-        <Typography variant="h1" content="Headline" />
-    );
+function MyComponent() {    
+  return (
+    <Typography variant="h1" content="Headline" />
+  );
 }
 ```

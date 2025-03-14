@@ -1,3 +1,3 @@
 import React from "react";
-import { SSSLeadingBadgeProps } from "./types";
-export declare const SSSLeadingBadge: (props: SSSLeadingBadgeProps) => React.JSX.Element;
+import { LeadingBadgeProps } from "./types";
+export declare const LeadingBadge: React.FC<LeadingBadgeProps>;

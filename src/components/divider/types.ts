@@ -1,3 +1,11 @@
-import { DividerProps } from "@oykos-development/devkit-react-ts-styled-components";
+import React from "react";
+import { DefaultTheme } from "styled-components";
 
-export type SSSDividerProps = DividerProps;
+export interface DividerProps {
+  color?: string;
+  width?: string;
+  height?: string;
+  style?: React.CSSProperties;
+  theme?: DefaultTheme;
+  className?: string;
+}
