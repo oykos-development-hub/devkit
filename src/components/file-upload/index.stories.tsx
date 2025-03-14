@@ -1,20 +1,26 @@
-import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { SSSFileUpload } from "./";
+import React, { useState } from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { SSSFileUploadProps } from "./types";
-import { Button, Typography } from "@oykos-development/devkit-react-ts-styled-components";
-import { UploadCloudIcon } from "@oykos-development/devkit-react-ts-styled-components";
+import { Button } from "../button";
+import UploadCloudIcon from "../icon/variations/UploadCloudIcon";
+import { Typography } from "../typography";
+import { FileUpload } from "./index";
+import { FileUploadProps } from "./types";
 
 export default {
+  component: FileUpload,
   title: "Components/FileUpload",
-  component: SSSFileUpload,
   argTypes: {
     variant: {
       control: {
         type: "radio",
-        options: ["primary", "secondary"],
+        options: ["primary", "secondary", "tertiary"],
+      },
+    },
+    accept: {
+      control: {
+        type: "text",
       },
     },
     buttonVariant: {
@@ -23,37 +29,45 @@ export default {
         options: ["primary", "secondary", "tertiary"],
       },
     },
-    buttonSize: {
+    error: {
       control: {
-        type: "radio",
-        options: ["xs", "sm", "md", "lg", "xl"],
+        type: "text",
       },
     },
-    theme: {
+    maxSize: {
       control: {
-        type: "object",
+        type: "number",
       },
-      defaultValue: Theme,
     },
   },
-} as ComponentMeta<typeof SSSFileUpload>;
+} as ComponentMeta<typeof FileUpload>;
 
-const onFileUpload = (acceptedFiles: FileList) => {
-  console.log("File(s) uploaded:", acceptedFiles);
-  // Handle the uploaded files here.
+const Template: ComponentStory<typeof FileUpload> = (args: FileUploadProps) => {
+  const [files, setFiles] = useState<FileList | null>();
+
+  const onUpload = (acceptedFiles: FileList) => {
+    setFiles(acceptedFiles);
+  };
+
+  return (
+    <StoryWrapper>
+      <FileUpload {...args} onUpload={onUpload} files={files} />
+    </StoryWrapper>
+  );
 };
-
-const Template: ComponentStory<typeof SSSFileUpload> = (args: SSSFileUploadProps) => (
-  <StoryWrapper>
-    <SSSFileUpload {...args} onUpload={onFileUpload} />
-  </StoryWrapper>
-);
 
 export const Primary = Template.bind({});
 Primary.args = {
   variant: "primary",
   multiple: false,
-  note: "Select a file or drag and drop here",
+  hint: "JPG, PNG or PDF, file size no more than 10MB",
+  disabled: false,
+};
+
+export const PrimaryMultiple = Template.bind({});
+PrimaryMultiple.args = {
+  variant: "primary",
+  multiple: true,
   hint: "JPG, PNG or PDF, file size no more than 10MB",
   disabled: false,
 };
@@ -69,6 +83,17 @@ Secondary.args = {
   disabled: false,
 };
 
+export const SecondaryMultiple = Template.bind({});
+SecondaryMultiple.args = {
+  variant: "secondary",
+  buttonVariant: "secondary",
+  buttonText: "SELECT FILES",
+  multiple: true,
+  note: <Typography variant={"bodySmall"} content={"Select a files or drag and drop here"} />,
+  hint: "JPG, PNG or PDF, file size no more than 10MB",
+  disabled: false,
+};
+
 export const Tertiary = Template.bind({});
 Tertiary.args = {
   variant: "tertiary",
@@ -80,7 +105,7 @@ Tertiary.args = {
     <Typography
       variant={"helperText"}
       style={{ marginTop: "2rem", textDecoration: "underline" }}
-      content={"Passport.png"}
+      content={"JPG or PNG, file size no more than 10MB"}
     />
   ),
   icon: <></>,
@@ -99,10 +124,9 @@ TertiaryWithCustomButton.args = {
       content={
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           <UploadCloudIcon stroke={"white"} width={"20px"} />
-          <Typography variant={"bodyMedium"} content={"Ucitaj"} style={{ color: "white" }} />
+          <Typography variant={"bodyMedium"} content={"Učitaj"} style={{ color: "white" }} />
         </div>
       }
-      onClick={() => alert("Success!")}
       theme={Theme}
     />
   ),
@@ -110,7 +134,7 @@ TertiaryWithCustomButton.args = {
     <Typography
       variant={"helperText"}
       style={{ marginTop: "2rem", textDecoration: "underline", fontWeight: 600 }}
-      content={"Passport.png"}
+      content={"JPG or PNG, file size no more than 10MB"}
     />
   ),
   icon: <></>,

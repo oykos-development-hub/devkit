@@ -1,6 +1,8 @@
-declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").ButtonProps>;
+/// <reference types="react" />
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ButtonProps } from "./types";
+declare const _default: ComponentMeta<({ onClick, content, customContent, disabled, variant, size, style, theme, className, type, isLoading, loader, }: ButtonProps) => JSX.Element>;
 export default _default;
-export declare const CustomButton: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").ButtonProps>;
-export declare const StyledButton: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").ButtonProps>;
-export declare const IconButton: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").ButtonProps>;
-export declare const LoadingButton: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").ButtonProps>;
+export declare const CustomButton: ComponentStory<({ onClick, content, customContent, disabled, variant, size, style, theme, className, type, isLoading, loader, }: ButtonProps) => JSX.Element>;
+export declare const StyledButton: ComponentStory<({ onClick, content, customContent, disabled, variant, size, style, theme, className, type, isLoading, loader, }: ButtonProps) => JSX.Element>;
+export declare const LoadingButton: ComponentStory<({ onClick, content, customContent, disabled, variant, size, style, theme, className, type, isLoading, loader, }: ButtonProps) => JSX.Element>;

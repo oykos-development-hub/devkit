@@ -1,7 +1,7 @@
 import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { SSSBreadcrumbs } from "./index";
-import { CloseIcon } from "@oykos-development/devkit-react-ts-styled-components";
+import { Breadcrumbs } from "./index";
+import { XIcon } from "../icon";
 const links = [
     { name: "link1", to: "" },
     { name: "link2", to: "" },
@@ -9,14 +9,15 @@ const links = [
     { name: "link4", to: "" },
     { name: "link5", to: "" },
 ];
-const linksWithIcons = links.map((link) => (Object.assign(Object.assign({}, link), { icon: React.createElement(CloseIcon, { width: "0.8em" }) })));
-console.log(linksWithIcons);
+const linksWithIcons = links.map((link) => (Object.assign(Object.assign({}, link), { icon: React.createElement(XIcon, { width: "1em" }) })));
 export default {
-    component: SSSBreadcrumbs,
+    component: Breadcrumbs,
     title: "Components/Breadcrumbs",
 };
-const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement(SSSBreadcrumbs, Object.assign({}, args))));
+const Template = (args) => {
+    return (React.createElement(StoryWrapper, null,
+        React.createElement(Breadcrumbs, Object.assign({}, args))));
+};
 export const BreadcrumbsDefault = Template.bind({});
 BreadcrumbsDefault.args = {
     items: links,

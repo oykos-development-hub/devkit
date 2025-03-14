@@ -1,4 +1,5 @@
-import { SSSCheckboxProps } from "./types";
-declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, SSSCheckboxProps>;
+import React from "react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+declare const _default: ComponentMeta<React.FC<import("./types").CheckboxProps>>;
 export default _default;
-export declare const Default: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSCheckboxProps>;
+export declare const Default: ComponentStory<React.FC<import("./types").CheckboxProps>>;

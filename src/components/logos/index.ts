@@ -1,1 +1,0 @@
-export { LogoMontenegro } from "./montenegro";

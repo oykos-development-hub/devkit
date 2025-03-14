@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { SSSAlert } from "./";
-import { CircleCheckIcon, DangerIcon, InfoIcon } from "@oykos-development/devkit-react-ts-styled-components";
+import { Alert } from "./index";
+import { CircleCheckIcon, DangerIcon, InfoIcon } from "../icon";
 import { Theme } from "../../shared/theme";
-import { SSSTypography } from "../typography";
 export default {
-    component: SSSAlert,
+    component: Alert,
     title: "Components/Alert",
     argTypes: {
         content: {
@@ -16,8 +15,16 @@ export default {
         variant: {
             control: {
                 type: "radio",
-                options: ["success", "error", "info"],
+                options: ["primary", "success", "error", "info"],
             },
+        },
+        icon: {
+            control: {
+                type: "object",
+            },
+        },
+        onClose: {
+            defaultValue: () => alert("Closed!"),
         },
         theme: {
             control: {
@@ -31,6 +38,7 @@ export default {
             },
             defaultValue: {
                 width: "600px",
+                height: "auto",
             },
         },
         size: {
@@ -41,13 +49,18 @@ export default {
         },
     },
 };
-const Template = (args) => {
-    const [closed, setClosed] = useState(false);
-    return React.createElement(StoryWrapper, null, !closed && React.createElement(SSSAlert, Object.assign({}, args, { onClose: () => setClosed(true) })));
+const Template = (args) => (React.createElement(StoryWrapper, null,
+    React.createElement(Alert, Object.assign({}, args))));
+export const Primary = Template.bind({});
+Primary.args = {
+    content: "Primary message",
+    variant: "primary",
+    size: "md",
+    closeIcon: true,
 };
 export const Success = Template.bind({});
 Success.args = {
-    content: React.createElement(SSSTypography, { content: "Success", variant: "bodyMedium" }),
+    content: "Success message",
     variant: "success",
     size: "md",
     icon: React.createElement(CircleCheckIcon, { fill: "none", stroke: "white" }),
@@ -55,7 +68,7 @@ Success.args = {
 };
 export const Error = Template.bind({});
 Error.args = {
-    content: React.createElement(SSSTypography, { content: "Error message", variant: "bodyMedium" }),
+    content: "Error message",
     variant: "error",
     size: "md",
     icon: React.createElement(DangerIcon, { fill: "none", stroke: "white" }),
@@ -63,7 +76,7 @@ Error.args = {
 };
 export const Warning = Template.bind({});
 Warning.args = {
-    content: React.createElement(SSSTypography, { content: "Warning message", variant: "bodyMedium" }),
+    content: "Warning message",
     variant: "warning",
     size: "md",
     icon: React.createElement(DangerIcon, { fill: "none", stroke: "white" }),
@@ -71,7 +84,7 @@ Warning.args = {
 };
 export const Info = Template.bind({});
 Info.args = {
-    content: React.createElement(SSSTypography, { content: "Info message!", variant: "bodyMedium" }),
+    content: "Info message!",
     variant: "info",
     size: "md",
     icon: React.createElement(InfoIcon, { stroke: "white" }),

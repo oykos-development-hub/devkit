@@ -1,9 +1,11 @@
 import React from "react";
-import { SSSInputProps } from "./types";
-declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, SSSInputProps & React.RefAttributes<HTMLInputElement>>;
+import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { InputProps } from "./types";
+declare const _default: ComponentMeta<React.ForwardRefExoticComponent<InputProps & React.RefAttributes<unknown>>>;
 export default _default;
-export declare const InputDefault: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSInputProps & React.RefAttributes<HTMLInputElement>>;
-export declare const Currency: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSInputProps & React.RefAttributes<HTMLInputElement>>;
-export declare const PhoneNumber: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSInputProps & React.RefAttributes<HTMLInputElement>>;
-export declare const Error: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSInputProps & React.RefAttributes<HTMLInputElement>>;
-export declare const WithHint: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, SSSInputProps & React.RefAttributes<HTMLInputElement>>;
+export declare const InputDefault: ComponentStory<React.ForwardRefExoticComponent<InputProps & React.RefAttributes<unknown>>>;
+export declare const Amounts: ComponentStory<React.ForwardRefExoticComponent<InputProps & React.RefAttributes<unknown>>>;
+export declare const PhoneNumber: ComponentStory<React.ForwardRefExoticComponent<InputProps & React.RefAttributes<unknown>>>;
+export declare const Error: ComponentStory<React.ForwardRefExoticComponent<InputProps & React.RefAttributes<unknown>>>;
+export declare const WithHint: ComponentStory<React.ForwardRefExoticComponent<InputProps & React.RefAttributes<unknown>>>;
+export declare const Textarea: ComponentStory<React.ForwardRefExoticComponent<InputProps & React.RefAttributes<unknown>>>;

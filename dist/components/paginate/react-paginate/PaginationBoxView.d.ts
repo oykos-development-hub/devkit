@@ -1,0 +1,107 @@
+export default class PaginationBoxView extends React.Component<any, any, any> {
+    static propTypes: {
+        pageCount: PropTypes.Validator<number>;
+        pageRangeDisplayed: PropTypes.Requireable<number>;
+        marginPagesDisplayed: PropTypes.Requireable<number>;
+        previousLabel: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+        previousAriaLabel: PropTypes.Requireable<string>;
+        prevPageRel: PropTypes.Requireable<string>;
+        prevRel: PropTypes.Requireable<string>;
+        nextLabel: PropTypes.Requireable<PropTypes.ReactNodeLike>;
+        nextAriaLabel: PropTypes.Requireable<string>;
+        nextPageRel: PropTypes.Requireable<string>;
+        nextRel: PropTypes.Requireable<string>;
+        breakLabel: PropTypes.Requireable<NonNullable<PropTypes.ReactNodeLike>>;
+        breakAriaLabels: PropTypes.Requireable<PropTypes.InferProps<{
+            forward: PropTypes.Requireable<string>;
+            backward: PropTypes.Requireable<string>;
+        }>>;
+        hrefBuilder: PropTypes.Requireable<(...args: any[]) => any>;
+        hrefAllControls: PropTypes.Requireable<boolean>;
+        onPageChange: PropTypes.Requireable<(...args: any[]) => any>;
+        onPageActive: PropTypes.Requireable<(...args: any[]) => any>;
+        onClick: PropTypes.Requireable<(...args: any[]) => any>;
+        initialPage: PropTypes.Requireable<number>;
+        forcePage: PropTypes.Requireable<number>;
+        disableInitialCallback: PropTypes.Requireable<boolean>;
+        containerClassName: PropTypes.Requireable<string>;
+        className: PropTypes.Requireable<string>;
+        pageClassName: PropTypes.Requireable<string>;
+        pageLinkClassName: PropTypes.Requireable<string>;
+        pageLabelBuilder: PropTypes.Requireable<(...args: any[]) => any>;
+        activeClassName: PropTypes.Requireable<string>;
+        activeLinkClassName: PropTypes.Requireable<string>;
+        previousClassName: PropTypes.Requireable<string>;
+        nextClassName: PropTypes.Requireable<string>;
+        previousLinkClassName: PropTypes.Requireable<string>;
+        nextLinkClassName: PropTypes.Requireable<string>;
+        disabledClassName: PropTypes.Requireable<string>;
+        disabledLinkClassName: PropTypes.Requireable<string>;
+        breakClassName: PropTypes.Requireable<string>;
+        breakLinkClassName: PropTypes.Requireable<string>;
+        extraAriaContext: PropTypes.Requireable<string>;
+        ariaLabelBuilder: PropTypes.Requireable<(...args: any[]) => any>;
+        eventListener: PropTypes.Requireable<string>;
+        renderOnZeroPageCount: PropTypes.Requireable<(...args: any[]) => any>;
+        selectedPageRel: PropTypes.Requireable<string>;
+    };
+    static defaultProps: {
+        pageRangeDisplayed: number;
+        marginPagesDisplayed: number;
+        activeClassName: string;
+        previousLabel: string;
+        previousClassName: string;
+        previousAriaLabel: string;
+        prevPageRel: string;
+        prevRel: string;
+        nextLabel: string;
+        nextClassName: string;
+        nextAriaLabel: string;
+        nextPageRel: string;
+        nextRel: string;
+        breakLabel: string;
+        breakAriaLabels: {
+            forward: string;
+            backward: string;
+        };
+        disabledClassName: string;
+        disableInitialCallback: boolean;
+        pageLabelBuilder: (page: any) => any;
+        eventListener: string;
+        renderOnZeroPageCount: undefined;
+        selectedPageRel: string;
+        hrefAllControls: boolean;
+    };
+    constructor(props: any);
+    state: {
+        selected: any;
+    };
+    componentDidMount(): void;
+    componentDidUpdate(prevProps: any): void;
+    handlePreviousPage: (event: any) => void;
+    handleNextPage: (event: any) => void;
+    handlePageSelected: (selected: any, event: any) => void;
+    handlePageChange: (selected: any) => void;
+    getEventListener: (handlerFunction: any) => {
+        [x: number]: any;
+    };
+    getForwardJump(): any;
+    getBackwardJump(): number;
+    handleClick: (event: any, index: any, nextSelectedPage: any, { isPrevious, isNext, isBreak, isActive }?: {
+        isPrevious?: boolean | undefined;
+        isNext?: boolean | undefined;
+        isBreak?: boolean | undefined;
+        isActive?: boolean | undefined;
+    }) => void;
+    handleBreakClick: (index: any, event: any) => void;
+    getElementHref(pageIndex: any): any;
+    ariaLabelBuilder(pageIndex: any): any;
+    callCallback: (selectedItem: any) => void;
+    callActiveCallback: (selectedItem: any) => void;
+    getElementPageRel: (index: any) => any;
+    getPageElement(index: any): JSX.Element;
+    pagination: () => JSX.Element[];
+    render(): any;
+}
+import React from "react";
+import PropTypes from "prop-types";

@@ -1,15 +1,17 @@
-import { ModalProps } from "@oykos-development/devkit-react-ts-styled-components";
 import { ReactElement } from "react";
-export interface SSSModalProps extends Omit<ModalProps, "variant" | "open"> {
-    footerText?: string;
-    leftButtonText?: string;
-    rightButtonText?: string;
-    leftButtonOnClick?: () => void;
-    rightButtonOnClick?: () => void;
-    width?: number;
-    customButtonsControls?: ReactElement;
-    open: boolean;
-    disabledControls?: boolean;
-    buttonLoading?: boolean;
-    customModalContent?: ReactElement;
+import { CSSProperties, DefaultTheme } from "styled-components";
+export declare enum Variants {
+    light = "light",
+    dark = "dark"
+}
+export interface ModalProps {
+    theme?: DefaultTheme;
+    title?: string;
+    content?: ReactElement | string;
+    open?: boolean;
+    onClose: () => void;
+    style?: CSSProperties;
+    variant: Variants | `${Variants}`;
+    className?: string;
+    outsideClickClose?: boolean;
 }

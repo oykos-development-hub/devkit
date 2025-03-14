@@ -1,4 +1,8 @@
-declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").TabsProps>;
+/// <reference types="react" />
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { TabsProps } from "./types";
+declare const _default: ComponentMeta<({ style, theme, tabs, onChange, className, activeTab }: TabsProps) => JSX.Element>;
 export default _default;
-export declare const DefaultTabs: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").TabsProps>;
-export declare const WithDisabledTabs: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").TabsProps>;
+export declare const DefaultTabs: ComponentStory<({ style, theme, tabs, onChange, className, activeTab }: TabsProps) => JSX.Element>;
+export declare const WithDisabledTabs: ComponentStory<({ style, theme, tabs, onChange, className, activeTab }: TabsProps) => JSX.Element>;
+export declare const StyledTabs: ComponentStory<({ style, theme, tabs, onChange, className, activeTab }: TabsProps) => JSX.Element>;

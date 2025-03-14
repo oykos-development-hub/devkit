@@ -1,8 +1,7 @@
-import React, { useMemo } from "react";
-import { Divider } from "@oykos-development/devkit-react-ts-styled-components";
+import React from "react";
+import { Container } from "./styles/container";
 import { Theme } from "../../shared/theme";
-export const SSSDivider = (props) => {
-    const mergedProps = useMemo(() => (Object.assign({ theme: Theme }, props)), [props]);
-    return React.createElement(Divider, Object.assign({}, mergedProps));
+export const Divider = ({ width, height, color, style, theme = Theme, className }) => {
+    return React.createElement(Container, { width: width, height: height, color: color, style: style, theme: theme, className: className });
 };
 //# sourceMappingURL=index.js.map

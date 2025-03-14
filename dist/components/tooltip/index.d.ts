@@ -1,3 +1,3 @@
-import React from "react";
-import { SSSTooltipProps } from "./types";
-export declare const SSSTooltip: (props: SSSTooltipProps) => React.JSX.Element;
+/// <reference types="react" />
+import { TooltipProps } from "./types";
+export declare const Tooltip: ({ position, theme, content, children, title, variant, arrow, style, className, }: TooltipProps) => JSX.Element;

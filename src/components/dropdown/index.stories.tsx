@@ -2,29 +2,25 @@ import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { SSSDropdown } from "./index";
-import { SSSDropdownProps } from "./types";
-import { CheckIcon, UserIcon } from "@oykos-development/devkit-react-ts-styled-components";
+import { Dropdown } from "./index";
+import { CheckIcon, UserIcon } from "../icon";
+import { DropdownProps, ValueType } from "./types";
+import { Typography } from "../typography";
 import Avatar from "./styles/avatar";
 
 const dropdownOptions = [
-  { id: "one", title: "One" },
-  { id: "two", title: "Two" },
-  { id: "three", title: "Three" },
-  { id: "four", title: "Four" },
-  { id: "five", title: "Five" },
-  { id: "six", title: "Six" },
-  { id: "seven", title: "Seven" },
-  { id: "eight", title: "Eight" },
-  { id: "nine", title: "Nine" },
-  { id: "ten", title: "Ten" },
-  { id: "twelve", title: "Twelve" },
-  { id: "thirteen", title: "Thirteen" },
-  { id: "fourteen", title: "Fourteen" },
+  { value: "one", label: <Typography content={"One"} variant={"bodySmall"} /> },
+  { value: "two", label: <Typography content={"Two"} variant={"bodySmall"} /> },
+  {
+    value: "three",
+    label: <Typography variant={"bodySmall"} content={"Three"} />,
+  },
+  { value: "four", label: <Typography content={"Four"} variant={"bodySmall"} /> },
+  { value: "five", label: <Typography content={"Five"} variant={"bodySmall"} /> },
 ];
 
 export default {
-  component: SSSDropdown,
+  component: Dropdown,
   title: "Components/Dropdown",
   argTypes: {
     theme: {
@@ -64,105 +60,80 @@ export default {
         type: "boolean",
       },
     },
-    placeholder: {
-      control: {
-        type: "text",
-      },
-    },
-    label: {
-      control: {
-        type: "text",
-      },
-    },
-    noOptionsText: {
-      control: {
-        type: "text",
-      },
-    },
-    error: {
-      control: {
-        type: "text",
-      },
-    },
   },
-} as ComponentMeta<typeof SSSDropdown>;
+} as ComponentMeta<typeof Dropdown>;
 
-const Template: ComponentStory<typeof SSSDropdown> = (args: SSSDropdownProps) => {
-  const [value, setValue] = useState(null);
-
-  const onChange = (value: any) => {
-    setValue(value);
-  };
+const Template: ComponentStory<typeof Dropdown> = (args: DropdownProps) => {
+  const [value, setValue] = useState<ValueType | null>(null);
 
   return (
     <StoryWrapper>
-      <div style={{ width: "300px" }}>
-        <SSSDropdown label="Dropdown label" {...args} name="test" value={value} onChange={onChange} />
+      <div style={{ width: "300px", display: "flex" }}>
+        <Dropdown {...args} value={value} onChange={(e) => setValue(e)} />
       </div>
     </StoryWrapper>
   );
 };
 
 export const DropdownDefault = Template.bind({});
-
 DropdownDefault.args = {
+  label: "Team member",
   placeholder: "Select team member",
-  rightOptionIcon: <CheckIcon stroke={Theme.palette.primary500} />,
   showArrow: true,
 };
 
 export const DropdownWithIcons = Template.bind({});
 DropdownWithIcons.args = {
-  label: "Team member",
-  placeholder: "Select team member",
+  label: <Typography content={"Team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  placeholder: <Typography content={"Select team member"} variant={"bodySmall"} />,
   leftOptionIcon: <UserIcon stroke={Theme.palette.primary900} width="24px" />,
   rightOptionIcon: <CheckIcon stroke={Theme.palette.primary500} />,
   showArrow: true,
+  closeMenuOnSelect: true,
 };
 
 export const DropdownSearch = Template.bind({});
 DropdownSearch.args = {
-  label: "Team member",
-  placeholder: "Select team member",
+  label: <Typography content={"Team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  placeholder: <Typography content={"Select team member"} variant={"bodySmall"} />,
   isSearchable: true,
+  isClearable: true,
+  backspaceRemovesValue: true,
   rightOptionIcon: <CheckIcon stroke={Theme.palette.primary500} />,
   showArrow: true,
+  closeMenuOnSelect: true,
+  noOptionsText: <Typography content={"No data"} variant={"h6"} />,
 };
 
 export const MultipleSelect = Template.bind({});
 MultipleSelect.args = {
-  label: "Team member",
-  placeholder: "Select team member",
+  label: <Typography content={"Team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  placeholder: <Typography content={"Select team member"} variant={"bodySmall"} />,
   isMulti: true,
   isSearchable: true,
   rightOptionIcon: <CheckIcon stroke={Theme.palette.primary500} />,
   showArrow: true,
+  closeMenuOnSelect: false,
 };
 
 export const MultipleSelectSearch = Template.bind({});
 MultipleSelectSearch.args = {
-  label: "Team member",
-  placeholder: "Select team member",
+  label: <Typography content={"Team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  placeholder: <Typography content={"Select team member"} variant={"bodySmall"} />,
   isMulti: true,
   isSearchable: true,
   rightOptionIcon: <CheckIcon stroke={Theme.palette.primary500} />,
   showArrow: true,
+  closeMenuOnSelect: false,
 };
 
 export const DropdownWithAvatars = Template.bind({});
 DropdownWithAvatars.args = {
-  label: "Team member",
-  placeholder: "Select team member",
+  label: <Typography content={"Team member"} variant={"bodySmall"} style={{ fontWeight: 600 }} />,
+  placeholder: <Typography content={"Select team member"} variant={"helperText"} />,
   leftOptionIcon: Avatar,
   rightOptionIcon: <CheckIcon stroke={Theme.palette.primary500} />,
   showArrow: false,
   isSearchable: true,
-};
-
-export const DropdownWithError = Template.bind({});
-DropdownWithError.args = {
-  label: "Team member",
-  placeholder: "Placeholder...",
-  showArrow: true,
-  error: "This is error.",
+  closeMenuOnSelect: false,
 };

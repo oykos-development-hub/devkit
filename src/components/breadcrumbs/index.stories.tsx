@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { SSSBreadcrumbsProps } from "./types";
-import { SSSBreadcrumbs } from "./index";
-import { CloseIcon } from "@oykos-development/devkit-react-ts-styled-components";
-import { SSSBreadcrumbsItem } from "./types";
+import { BreadcrumbsProps } from "./types";
+import { Breadcrumbs } from "./index";
+import { XIcon } from "../icon";
+import { Item } from "./types";
 
-const links: SSSBreadcrumbsItem[] = [
+const links: Item[] = [
   { name: "link1", to: "" },
   { name: "link2", to: "" },
   { name: "link3", to: "" },
@@ -14,33 +14,41 @@ const links: SSSBreadcrumbsItem[] = [
   { name: "link5", to: "" },
 ];
 
-const linksWithIcons = links.map((link) => ({ ...link, icon: <CloseIcon width="0.8em" /> }));
-console.log(linksWithIcons);
+const linksWithIcons = links.map((link) => ({ ...link, icon: <XIcon width="1em" /> }));
 
 export default {
-  component: SSSBreadcrumbs,
+  component: Breadcrumbs,
   title: "Components/Breadcrumbs",
-} as ComponentMeta<typeof SSSBreadcrumbs>;
+} as ComponentMeta<typeof Breadcrumbs>;
 
-const Template: ComponentStory<typeof SSSBreadcrumbs> = (args: SSSBreadcrumbsProps) => (
-  <StoryWrapper>
-    <SSSBreadcrumbs {...args} />
-  </StoryWrapper>
-);
+const Template: ComponentStory<typeof Breadcrumbs> = (args: BreadcrumbsProps) => {
+  return (
+    <StoryWrapper>
+      <Breadcrumbs {...args} />
+    </StoryWrapper>
+  );
+};
 
 export const BreadcrumbsDefault = Template.bind({});
+
 BreadcrumbsDefault.args = {
   items: links,
   separator: <span>&gt;</span>,
 };
 
+//
+
 export const BreadcrumbsWithIcon = Template.bind({});
+
 BreadcrumbsWithIcon.args = {
   items: linksWithIcons,
   separator: <span>&gt;</span>,
 };
 
+//
+
 export const StyledBreadcrumbs = Template.bind({});
+
 StyledBreadcrumbs.args = {
   items: linksWithIcons,
   separator: <span>&gt;</span>,

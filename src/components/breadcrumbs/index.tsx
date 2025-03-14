@@ -1,18 +1,32 @@
-import React, { useMemo } from "react";
-import { Breadcrumbs, ChevronRightIcon } from "@oykos-development/devkit-react-ts-styled-components";
-import { SSSBreadcrumbsProps } from "./types";
+import React, { MouseEvent } from "react";
+import { BreadcrumbsProps } from "./types";
 import { Theme } from "../../shared/theme";
+import { Container } from "./style/container";
+import { Link } from "./style/link";
 
-export const SSSBreadcrumbs = (props: SSSBreadcrumbsProps) => {
-  const mergedProps = useMemo(
-    () => ({
-      ...props,
-      theme: Theme,
-    }),
-    [props],
+export const Breadcrumbs = ({ theme = Theme, onClick, items, separator, style, className }: BreadcrumbsProps) => {
+  return (
+    <Container style={style} className={className}>
+      {items?.map((item) => {
+        const isLastItem = items.indexOf(item) === items.length - 1;
+
+        const handleLinkClick = (e: MouseEvent<HTMLAnchorElement>) => {
+          if (onClick) {
+            onClick(e, item);
+          }
+        };
+
+        return (
+          <li key={item.name}>
+            <Link href={item.to} theme={theme} className={isLastItem ? "active" : ""} onClick={handleLinkClick}>
+              {item.icon}
+              {item.name}
+            </Link>
+
+            {!isLastItem && separator}
+          </li>
+        );
+      })}
+    </Container>
   );
-
-  const { gray900 } = mergedProps.theme!.palette;
-
-  return <Breadcrumbs {...mergedProps} separator={<ChevronRightIcon stroke={gray900 || "#000"} />} />;
 };

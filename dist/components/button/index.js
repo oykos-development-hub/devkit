@@ -1,9 +1,10 @@
-import React, { useMemo } from "react";
+import React from "react";
+import { ButtonSizes, ButtonVariants } from "./types";
 import { Theme } from "../../shared/theme";
-import { StyledButton } from "./styles/styledButton";
-import CircleLoader from "../loader/circleLoader";
-export const SSSButton = (props) => {
-    const mergedProps = useMemo(() => (Object.assign({ theme: Theme }, props)), [props]);
-    return (React.createElement(StyledButton, Object.assign({}, mergedProps, { loader: React.createElement(CircleLoader, { width: "16px", height: "16px", color: mergedProps.variant === "primary" ? Theme.palette.white : Theme.palette.primary500 }) })));
+import { ButtonContainer, ButtonContent } from "./styles";
+export const Button = ({ onClick, content, customContent, disabled = false, variant = ButtonVariants.primary, size = ButtonSizes.lg, style, theme, className, type = "button", isLoading = false, loader, }) => {
+    return (React.createElement(ButtonContainer, { style: style, disabled: disabled, variant: variant, size: size, onClick: onClick, theme: theme || Theme, className: className, type: type, isLoading: isLoading }, customContent ? (customContent) : (React.createElement(React.Fragment, null,
+        React.createElement(ButtonContent, { size: size, disabled: disabled, variant: variant, theme: theme || Theme, customStyle: style }, content),
+        isLoading && !!loader && loader))));
 };
 //# sourceMappingURL=index.js.map

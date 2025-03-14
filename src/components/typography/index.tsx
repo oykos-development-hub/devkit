@@ -1,38 +1,58 @@
-import React, { useCallback, useMemo } from "react";
-import { Typography, TypographyVariants } from "@oykos-development/devkit-react-ts-styled-components";
-import { SSSTypographyProps } from "./types";
-import { GlobalStyle, Theme } from "../../shared/theme";
+import React from "react";
+import { TypographyProps, TypographyVariants } from "./types";
+import {
+  BodyLarge,
+  BodyMedium,
+  BodySmall,
+  Caption,
+  Code,
+  H1,
+  H2,
+  H3,
+  H4,
+  H5,
+  H6,
+  HelperText,
+  LinkLarge,
+  LinkMedium,
+  LinkSmall,
+} from "./styles/variants";
 
-export const SSSTypography = (props: SSSTypographyProps) => {
-  const fontToUse = useCallback(() => {
-    switch (props.variant) {
-      case TypographyVariants.h1:
-      case TypographyVariants.h2:
-      case TypographyVariants.h3:
-      case TypographyVariants.h4:
-      case TypographyVariants.h5:
-      case TypographyVariants.h6:
-        return Theme?.fontFamily?.one;
+export const Typography = (props: TypographyProps): React.ReactElement => {
+  const variant = props.variant ?? TypographyVariants.bodyMedium;
 
-      default:
-        return Theme?.fontFamily?.two;
-    }
-  }, [props.variant]);
-  const fontFamily = fontToUse();
-
-  const mergedProps = useMemo(
-    () => ({
-      ...props,
-      theme: Theme,
-      style: { ...props.style, fontFamily: fontFamily },
-    }),
-    [props],
-  );
-
-  return (
-    <>
-      <GlobalStyle />
-      <Typography {...mergedProps} />
-    </>
-  );
+  switch (variant) {
+    case "h1":
+      return <H1 {...props}>{props.content}</H1>;
+    case "h2":
+      return <H2 {...props}>{props.content}</H2>;
+    case "h3":
+      return <H3 {...props}>{props.content}</H3>;
+    case "h4":
+      return <H4 {...props}>{props.content}</H4>;
+    case "h5":
+      return <H5 {...props}>{props.content}</H5>;
+    case "h6":
+      return <H6 {...props}>{props.content}</H6>;
+    case "bodyLarge":
+      return <BodyLarge {...props}>{props.content}</BodyLarge>;
+    case "bodyMedium":
+      return <BodyMedium {...props}>{props.content}</BodyMedium>;
+    case "bodySmall":
+      return <BodySmall {...props}>{props.content}</BodySmall>;
+    case "linkLarge":
+      return <LinkLarge {...props}>{props.content}</LinkLarge>;
+    case "linkMedium":
+      return <LinkMedium {...props}>{props.content}</LinkMedium>;
+    case "linkSmall":
+      return <LinkSmall {...props}>{props.content}</LinkSmall>;
+    case "caption":
+      return <Caption {...props}>{props.content}</Caption>;
+    case "helperText":
+      return <HelperText {...props}>{props.content}</HelperText>;
+    case "code":
+      return <Code {...props}>{props.content}</Code>;
+    default:
+      return <BodyMedium {...props}>{props.content}</BodyMedium>;
+  }
 };

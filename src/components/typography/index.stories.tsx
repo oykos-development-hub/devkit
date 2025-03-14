@@ -1,14 +1,13 @@
-import React, { useMemo } from "react";
-import { TypographyVariants, VariantNames } from "@oykos-development/devkit-react-ts-styled-components";
+import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { SSSTypographyProps } from "./types";
+import { Typography } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { SSSTypography } from "./index";
+import { TypographyVariants, VariantNames } from "./variants";
 
 export default {
   title: "Components/Typography",
-  component: SSSTypography,
+  component: Typography,
   argTypes: {
     content: {
       defaultValue: () => <span>Button</span>,
@@ -46,29 +45,80 @@ export default {
       color: "#333",
     },
   },
-} as ComponentMeta<typeof SSSTypography>;
+} as ComponentMeta<typeof Typography>;
 
-const Template: ComponentStory<typeof SSSTypography> = (props: SSSTypographyProps) => {
-  const mergedProps = useMemo(
-    () => ({
-      variant: TypographyVariants.h1,
-      theme: Theme,
-      ...props,
-      content: "Typography",
-    }),
-    [props],
-  );
+const Template: ComponentStory<typeof Typography> = (args) => (
+  <StoryWrapper>
+    <Typography {...args}>{args.content}</Typography>
+  </StoryWrapper>
+);
 
-  return (
-    <StoryWrapper>
-      <SSSTypography {...mergedProps} />
-    </StoryWrapper>
-  );
-};
-
-export const CustomTypography = Template.bind({});
-CustomTypography.args = {
+export const Headings = Template.bind({});
+Headings.args = {
   variant: TypographyVariants.h1,
   content: "Headline",
+  theme: Theme,
+};
+
+export const BodyLarge = Template.bind({});
+BodyLarge.args = {
+  variant: TypographyVariants.bodyLarge,
+  content: "Body Large",
+  theme: Theme,
+};
+
+export const BodyMedium = Template.bind({});
+BodyMedium.args = {
+  variant: TypographyVariants.bodyMedium,
+  content: "Body Medium",
+  theme: Theme,
+};
+
+export const BodySmall = Template.bind({});
+BodySmall.args = {
+  variant: TypographyVariants.bodySmall,
+  content: "Body Small",
+  theme: Theme,
+};
+
+export const LinkLarge = Template.bind({});
+LinkLarge.args = {
+  variant: TypographyVariants.linkLarge,
+  content: "Link Large",
+  theme: Theme,
+};
+
+export const LinkMedium = Template.bind({});
+LinkMedium.args = {
+  variant: TypographyVariants.linkMedium,
+  content: "Link Medium",
+  theme: Theme,
+};
+
+export const LinkSmall = Template.bind({});
+LinkSmall.args = {
+  variant: TypographyVariants.linkSmall,
+  content: "Link Small",
+  theme: Theme,
+};
+
+export const Caption = Template.bind({});
+Caption.args = {
+  variant: TypographyVariants.caption,
+  content: "Caption",
+  theme: Theme,
+};
+
+export const HelperText = Template.bind({});
+HelperText.args = {
+  variant: TypographyVariants.helperText,
+  content: "Helper Text",
+  theme: Theme,
+};
+
+export const Code = Template.bind({});
+Code.args = {
+  variant: TypographyVariants.code,
+  content: "Code",
   theme: Theme,
 };

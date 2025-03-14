@@ -1,48 +1,63 @@
 import React from "react";
+import { Tooltip } from "./index";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
-import { SSSTooltip } from "./index";
-import { TooltipPositions, TooltipVariants } from "@oykos-development/devkit-react-ts-styled-components";
 export default {
-    component: SSSTooltip,
     title: "Components/Tooltip",
+    component: Tooltip,
     argTypes: {
+        theme: {
+            control: {
+                type: "object",
+            },
+        },
+        style: {},
         position: {
             control: {
                 type: "radio",
-                options: TooltipPositions,
+                options: ["right", "left", "top", "bottom", "topLeft", "topRight"],
             },
-            defaultValue: TooltipPositions.bottom,
+        },
+        arrow: {
+            control: {
+                type: "boolean",
+            },
         },
         variant: {
             control: {
                 type: "radio",
-                options: TooltipVariants,
+                options: ["standard", "filled"],
             },
         },
     },
 };
 const Template = (args) => (React.createElement(StoryWrapper, null,
-    React.createElement(SSSTooltip, Object.assign({}, args), "Hover over me!")));
-export const NoContent = Template.bind({});
-NoContent.args = {
-    title: "This is a tooltip",
-    variant: "standard",
+    React.createElement(Tooltip, Object.assign({}, args),
+        React.createElement("span", null, "Hover over me!"))));
+export const TooltipDefault = Template.bind({});
+TooltipDefault.args = {
+    content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
 };
-export const WithContent = Template.bind({});
-WithContent.args = {
-    title: "This is a tooltip",
-    variant: "standard",
-    content: "Tooltips are used to describe  or identify an element. In most scenarios, tooltips help the user understand the meaning, function or alt-text of an element.",
+export const TooltipWithTitle = Template.bind({});
+TooltipWithTitle.args = {
+    title: "Tooltip title",
+    content: "This is a tooltip",
 };
-export const NoContentFilled = Template.bind({});
-NoContentFilled.args = {
-    title: "This is a tooltip",
+export const TooltipVariantFilled = Template.bind({});
+TooltipVariantFilled.args = {
+    content: "This is a tooltip",
     variant: "filled",
 };
-export const WithContentFilled = Template.bind({});
-WithContentFilled.args = {
-    title: "This is a tooltip",
+export const TooltipWithArrow = Template.bind({});
+TooltipWithArrow.args = {
+    content: "This is a tooltip",
+    arrow: true,
     variant: "filled",
-    content: "Tooltips are used to describe  or identify an element. In most scenarios, tooltips help the user understand the meaning, function or alt-text of an element.",
+};
+export const StyledTooltip = Template.bind({});
+StyledTooltip.args = {
+    content: "This is a tooltip",
+    arrow: true,
+    variant: "filled",
+    style: { color: "yellow", backgroundColor: "red", width: "200px" },
 };
 //# sourceMappingURL=index.stories.js.map

@@ -1,3 +1,15 @@
-import { BreadcrumbsProps, Item } from "@oykos-development/devkit-react-ts-styled-components";
-export type SSSBreadcrumbsItem = Item;
-export type SSSBreadcrumbsProps = BreadcrumbsProps;
+import { CSSProperties, ReactElement, MouseEvent } from "react";
+import { DefaultTheme } from "styled-components";
+export interface Item {
+    name: string;
+    to: string;
+    icon?: ReactElement;
+}
+export interface BreadcrumbsProps {
+    theme?: DefaultTheme;
+    style?: CSSProperties;
+    items?: Item[];
+    onClick?: (e?: MouseEvent<HTMLAnchorElement>, item?: Item) => any;
+    separator?: ReactElement;
+    className?: string;
+}

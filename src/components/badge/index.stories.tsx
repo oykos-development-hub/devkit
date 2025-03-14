@@ -1,15 +1,13 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { BadgeProps, BadgeSizes } from "@oykos-development/devkit-react-ts-styled-components";
+import { BadgeProps, BadgeSizes } from "./types";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
 import { Theme } from "../../shared/theme";
-import { SSSBadge } from "./index";
-import DotIcon from "../icons/variations/DotIcon";
-import XIcon from "../icons/variations/XIcon";
-import { SSSTypography } from "../typography";
+import { Badge } from "./index";
+import DotIcon from "../icon/variations/DotIcon";
 
 export default {
-  component: SSSBadge,
+  component: Badge,
   title: "Components/Badge",
   argTypes: {
     variant: {
@@ -31,33 +29,32 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof SSSBadge>;
+} as ComponentMeta<typeof Badge>;
 
-const Template: ComponentStory<typeof SSSBadge> = (args: BadgeProps) => (
+const Template: ComponentStory<typeof Badge> = (args: BadgeProps) => (
   <StoryWrapper>
-    <SSSBadge {...args} />
+    <Badge {...args} />
   </StoryWrapper>
 );
 
 export const Default = Template.bind({});
 Default.args = {
   variant: "primary",
-  content: <SSSTypography content="Label" variant="bodySmall" />,
+  content: "Label",
+  size: BadgeSizes.md,
+};
+
+export const WithHtmlContent = Template.bind({});
+WithHtmlContent.args = {
+  variant: "warning",
+  content: <span>Label</span>,
   size: BadgeSizes.md,
 };
 
 export const WithDot = Template.bind({});
 WithDot.args = {
-  variant: "primary",
+  variant: "success",
+  content: <span>Label</span>,
   leftSlot: <DotIcon />,
-  content: <SSSTypography content="Label" variant="bodySmall" />,
-  size: BadgeSizes.md,
-};
-
-export const WithXIcon = Template.bind({});
-WithXIcon.args = {
-  variant: "primary",
-  rightSlot: <XIcon />,
-  content: <SSSTypography content="Label" variant="bodySmall" />,
   size: BadgeSizes.md,
 };

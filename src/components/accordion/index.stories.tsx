@@ -1,13 +1,15 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
-import { SSSAccordionProps } from "./types";
-import { SSSAccordion } from "./index";
+import { AccordionData, AccordionProps } from "./types";
+import { Accordion, AccordionItem } from "./index";
+import { Button, Typography } from "../../index";
 import { Theme } from "../../shared/theme";
-import { ChevronDownIcon, MoreVerticalIcon } from "@oykos-development/devkit-react-ts-styled-components";
+import { BellIcon, ChevronDownIcon, InfoIcon, MenuIcon, MoreVerticalIcon } from "../icon";
 import { StoryWrapper } from "../../shared/components/story-wrapper";
+import { Input } from "../input";
 
 export default {
-  component: SSSAccordion,
+  component: Accordion,
   title: "Components/Accordion",
   argTypes: {
     theme: {
@@ -22,65 +24,47 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof SSSAccordion>;
+} as ComponentMeta<typeof AccordionItem>;
 
-const Template: ComponentStory<typeof SSSAccordion> = (args: SSSAccordionProps) => (
-  <StoryWrapper style={{ display: "grid", alignContent: "center" }}>
-    <div style={{ width: "400px" }}>
-      <SSSAccordion {...args} />
-    </div>
-  </StoryWrapper>
-);
+const Template: ComponentStory<typeof AccordionItem> = (args: AccordionData) => {
+  const [open, setOpen] = React.useState(false);
+  return (
+    <StoryWrapper style={{ display: "grid", alignContent: "center" }}>
+      <div style={{ width: "400px" }}>
+        <AccordionItem isOpen={open} toggle={() => setOpen(!open)} {...args} />
+      </div>
+    </StoryWrapper>
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
-  title: "Accordion title",
-  content: "Accordion content",
+  title: <Typography variant="bodySmall" content="Accordion Title" />,
+  content: <Typography variant="bodySmall" content="Accordion Content" />,
 };
 
-const moreOptionsIcon = (e: any) => {
-  e.stopPropagation();
-  console.log("clicked");
-};
-
-export const CustomAccordion = Template.bind({});
-CustomAccordion.args = {
+export const CustomHeaderAndContentAccordion = Template.bind({});
+CustomHeaderAndContentAccordion.args = {
   customHeader: (
-    <div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
-      <div style={{ fontSize: "16px" }}>Test custom accordion</div>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <ChevronDownIcon width="15px" height="8px" />
-        <MoreVerticalIcon
-          width="4px"
-          height="16px"
-          style={{ paddingRight: "12px", paddingLeft: "20px" }}
-          onClick={(e) => moreOptionsIcon(e)}
-        />
-      </div>
-    </div>
-  ),
-  customContent: <div style={{ padding: "4px 16px 16px 16px", fontSize: "14px" }}>custom accordion content</div>,
-};
-
-export const CustomAccordionWithInput = Template.bind({});
-CustomAccordionWithInput.args = {
-  customHeader: (
-    <div style={{ display: "flex", justifyContent: "space-between", width: "100%" }}>
-      <div style={{ fontSize: "16px" }}>Test custom accordion</div>
-      <div style={{ display: "flex", alignItems: "center" }}>
-        <ChevronDownIcon width="15px" height="8px" />
-        <MoreVerticalIcon
-          width="4px"
-          height="16px"
-          style={{ paddingRight: "12px", paddingLeft: "20px" }}
-          onClick={(e) => moreOptionsIcon(e)}
-        />
+    <div style={{ width: "100%" }}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <InfoIcon style={{ marginRight: "0.5rem" }} width="20px" height="20px" />
+          <Typography variant="bodySmall" content="Custom Accordion" />
+        </div>
+        <ChevronDownIcon />
       </div>
     </div>
   ),
   customContent: (
-    <div style={{ padding: "4px 16px 16px 16px", fontSize: "14px" }}>
-      <input type="text" placeholder="name" />
+    <div style={{ padding: "4px 16px 16px" }}>
+      <Typography
+        content="This is an example accordion with custom content. It has some text with an Input and a Button below it."
+        variant="bodySmall"
+        style={{ marginBottom: "0.25rem" }}
+      />
+      <Input style={{ marginBottom: "0.25rem" }} />
+      <Button content="Button" />
     </div>
   ),
 };

@@ -1,82 +1,105 @@
-import React, { useMemo } from "react";
-import { ValueType } from "@oykos-development/devkit-react-ts-styled-components";
-import { SSSDropdownProps } from "./types";
+import React, { useEffect, useRef, useState } from "react";
 import { Theme } from "../../shared/theme";
-import { LabelWrapper, StyledDropdown } from "./styles/styledDropdown";
-import { SSSTypography } from "../typography";
+import { StyledSelect } from "./styles/select";
+import { DropdownProps } from "./types";
+import { DropdownContainer } from "./styles/container";
+import { Option, OptionContent } from "./styles/option";
+import { ControlIconWrapper } from "./styles/controlIconWrapper";
+import { rem } from "polished";
+import { Wrapper } from "./styles/wrapper";
+import { DropdownIndicatorProps } from "react-select/dist/declarations/src/components/indicators";
+import { components } from "react-select";
+import { SearchIcon } from "../icon";
+import { ErrorContainer } from "./styles/errorContainer";
+import { ErrorText } from "./styles/errorText";
 
-export const SSSDropdown = (props: SSSDropdownProps) => {
-  const mergedProps = useMemo(
-    () => ({
-      theme: Theme,
-      ...props,
-      name: props.name || "",
-      isSearchable: props.isSearchable || true,
-      showSearchIcon: props.showSearchIcon || false,
-    }),
-    [props],
+export const Dropdown = ({
+  options,
+  theme = Theme,
+  isDisabled = false,
+  isSearchable = false,
+  isMulti = false,
+  noOptionsText = "No options",
+  label,
+  style,
+  isClearable,
+  backspaceRemovesValue = true,
+  showArrow = true,
+  closeMenuOnSelect = true,
+  dropdownIndicator,
+  controlIcon,
+  leftOptionIcon,
+  rightOptionIcon,
+  onChange,
+  placeholder = "",
+  className,
+  value,
+  menuPortalTarget,
+  showSearchIcon = false,
+  ...props
+}: DropdownProps) => {
+  const [controlIconWidth, setControlIconWidth] = useState(0);
+  const controlIconWrapperRef = useRef<HTMLDivElement>(null);
+
+  const optionLabel = (e: any) => (
+    <Option theme={theme} isDisabled={isDisabled} style={style}>
+      <OptionContent>
+        {leftOptionIcon && leftOptionIcon}
+        {e.label}
+      </OptionContent>
+      {!isMulti && value?.value === e.value && <OptionContent>{rightOptionIcon && rightOptionIcon}</OptionContent>}
+    </Option>
   );
 
-  const handleChange = (value: ValueType) => {
-    props.onChange &&
-      props.onChange(
-        mergedProps.isMulti ? value : ({ id: value.value as any, title: value.label } as any),
-        mergedProps.name,
-      );
-  };
+  useEffect(() => {
+    if (controlIcon && controlIconWrapperRef.current) setControlIconWidth(controlIconWrapperRef.current?.offsetWidth);
+  }, []);
 
-  const popperContainer = document.getElementById("custom-popper-container");
+  const DropdownIndicator = (props: DropdownIndicatorProps) => (
+    <components.DropdownIndicator {...props}>
+      {!dropdownIndicator ? <SearchIcon stroke={theme.palette.gray700} fill={"none"} /> : dropdownIndicator}
+    </components.DropdownIndicator>
+  );
 
   return (
-    <StyledDropdown
-      {...mergedProps}
-      onChange={handleChange}
-      options={mergedProps.options.map((option) => ({ value: option.id, label: option.title }))}
-      value={
-        (mergedProps.value
-          ? mergedProps.isMulti
-            ? mergedProps.value
-            : { value: mergedProps.value?.id || 0, label: mergedProps.value?.title }
-          : null) as any
-      }
-      menuPortalTarget={popperContainer ? popperContainer : document.body}
-      label={
-        typeof mergedProps.label === "string" ? (
-          <LabelWrapper>
-            <SSSTypography
-              content={mergedProps.label}
-              variant={"bodySmall"}
-              style={{
-                fontWeight: 600,
-                color: mergedProps.isDisabled ? Theme?.palette?.gray300 : Theme?.palette?.gray900,
-              }}
-            />
-
-            <SSSTypography
-              content="*"
-              variant="bodyLarge"
-              style={{
-                marginLeft: 5,
-                color:
-                  mergedProps.isDisabled && mergedProps.isRequired
-                    ? Theme?.palette?.gray300
-                    : mergedProps.isRequired
-                    ? Theme?.palette?.error400
-                    : "transparent",
-              }}
-            />
-          </LabelWrapper>
+    <DropdownContainer className={className}>
+      <Wrapper>
+        {label && label}
+        <StyledSelect
+          backspaceRemovesValue={backspaceRemovesValue}
+          options={options}
+          classNamePrefix="select"
+          theme={theme}
+          blurInputOnSelect
+          isSearchable={isSearchable}
+          isDisabled={isDisabled}
+          noOptionsMessage={() => noOptionsText}
+          style={{
+            paddingLeft: `${controlIcon && `calc(${controlIconWidth}px + ${rem("8px")})`}`,
+            ...style,
+          }}
+          onChange={onChange as any}
+          controlIcon={controlIcon}
+          showArrow={showArrow}
+          isMulti={isMulti}
+          formatOptionLabel={optionLabel}
+          placeholder={placeholder}
+          closeMenuOnSelect={closeMenuOnSelect}
+          isClearable={isClearable}
+          value={value}
+          menuPortalTarget={menuPortalTarget}
+          {...props}
+          components={isSearchable && showSearchIcon ? { DropdownIndicator } : {}}
+        />
+        <ControlIconWrapper ref={controlIconWrapperRef}>{controlIcon}</ControlIconWrapper>
+      </Wrapper>
+      <ErrorContainer theme={theme}>
+        {typeof props.error === "string" ? (
+          <ErrorText theme={theme} variant="bodySmall" content={props.error} />
         ) : (
-          <SSSTypography
-            content={mergedProps.label}
-            variant={"bodySmall"}
-            style={{
-              fontWeight: 600,
-              color: mergedProps.isDisabled ? Theme?.palette?.gray300 : Theme?.palette?.gray900,
-            }}
-          />
-        )
-      }
-    />
+          props.error
+        )}
+      </ErrorContainer>
+    </DropdownContainer>
   );
 };

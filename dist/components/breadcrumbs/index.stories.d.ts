@@ -1,5 +1,8 @@
-declare const _default: import("@storybook/types").ComponentAnnotations<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").BreadcrumbsProps>;
+/// <reference types="react" />
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { BreadcrumbsProps } from "./types";
+declare const _default: ComponentMeta<({ theme, onClick, items, separator, style, className }: BreadcrumbsProps) => JSX.Element>;
 export default _default;
-export declare const BreadcrumbsDefault: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").BreadcrumbsProps>;
-export declare const BreadcrumbsWithIcon: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").BreadcrumbsProps>;
-export declare const StyledBreadcrumbs: import("@storybook/types").AnnotatedStoryFn<import("@storybook/react/dist/types-0fc72a6d").R, import("@oykos-development/devkit-react-ts-styled-components").BreadcrumbsProps>;
+export declare const BreadcrumbsDefault: ComponentStory<({ theme, onClick, items, separator, style, className }: BreadcrumbsProps) => JSX.Element>;
+export declare const BreadcrumbsWithIcon: ComponentStory<({ theme, onClick, items, separator, style, className }: BreadcrumbsProps) => JSX.Element>;
+export declare const StyledBreadcrumbs: ComponentStory<({ theme, onClick, items, separator, style, className }: BreadcrumbsProps) => JSX.Element>;
